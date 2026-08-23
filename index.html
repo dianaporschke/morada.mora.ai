@@ -174,6 +174,13 @@ main{padding:18px}
 .bubble.loading{color:#a5aaaa}
 .mora-error{font-size:10px;color:#d98b6a;margin-top:8px}
 
+
+.mora-input{display:flex!important;align-items:center;gap:8px;padding:12px;background:#090a0a;border-top:1px solid #292b2b}
+.mora-text{display:block!important;flex:1!important;min-width:0!important;background:#1b1d1d!important;border:1px solid #303333!important;outline:none!important;border-radius:13px!important;padding:12px 14px!important;color:#f1eee9!important;font-size:12px!important}
+.mora-text::placeholder{color:#8d9292!important}
+.mora-send{width:42px;height:42px;border-radius:13px;background:#242626;color:#c9653a;display:grid;place-items:center;font-weight:900;border:0;cursor:pointer}
+.mora-input-star{width:42px;height:42px;min-width:42px;border-radius:13px;background:#242626;display:grid;place-items:center}
+
 </style>
 </head>
 <body>
@@ -299,10 +306,10 @@ main{padding:18px}
       </div>
     </div>
     <form class="mora-input" id="moraForm">
-      <span class="mora-input-star"><span class="mora-star small"></span></span>
-      <input id="moraText" class="mora-text" type="text" autocomplete="off" placeholder="Nachricht an MORA …">
-      <button class="mora-send" id="moraSend" type="submit">↑</button>
-    </form>
+  <span class="mora-input-star"><span class="mora-star small"></span></span>
+  <input id="moraText" class="mora-text" type="text" autocomplete="off" placeholder="Nachricht an MORA …" aria-label="Nachricht an MORA">
+  <button class="mora-send" id="moraSend" type="submit" aria-label="Nachricht senden">↑</button>
+</form>
   </div>
 
   <nav class="nav">
