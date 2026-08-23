@@ -147,7 +147,42 @@ main{padding:18px}
 }
 
 .app-logo{width:128px;height:42px;object-fit:contain;object-position:left center}
-.mora-fab{position:fixed;right:max(18px,calc((100vw - 480px)/2 + 18px));bottom:92px;z-index:30;width:62px;height:62px;border-radius:50%;background:#090a0a;display:grid;place-items:center;box-shadow:0 12px 28px rgba(0,0,0,.28);border:2px solid #242626}
+.mora-fab{
+    position:fixed;
+    right:max(18px,calc((100vw - 480px)/2 + 18px));
+    bottom:82px;
+    z-index:30;
+
+    width:150px;
+    height:52px;
+
+    border-radius:26px;
+    border:2px solid #b9683f;
+
+    background:#0d0f0f;
+    color:#ffffff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+
+    font-size:14px;
+    font-weight:700;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.18);
+    cursor:pointer;
+}
+  .mora-fab-text{
+    display:block;
+    white-space:nowrap;
+}
+
+.mora-fab .mora-star{
+    width:24px;
+    height:24px;
+    flex-shrink:0;
+}
 .mora-star{width:31px;height:31px;background:#c96b42;clip-path:polygon(50% 0%,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0% 50%,39% 39%);filter:drop-shadow(0 0 7px rgba(201,107,66,.22))}
 .mora-panel{position:fixed;z-index:40;left:50%;transform:translateX(-50%);bottom:82px;width:min(448px,calc(100% - 24px));background:#fff;border:1px solid #ded8d0;border-radius:22px;box-shadow:0 24px 70px rgba(0,0,0,.24);padding:0;display:none;overflow:hidden}
 #mora:checked~.app .mora-panel{display:block}
@@ -543,7 +578,7 @@ main{padding:18px}
   </main>
 
 
-  <label for="mora" class="mora-fab" aria-label="MORA fragen"><span class="mora-star"></span></label>
+ <label for="mora" class="mora-fab" aria-label="MORA fragen"><span class="mora-star"></span><span class="mora-fab-text">MORA fragen</span></label>
   <div class="mora-panel">
     <div class="mora-head">
       <div class="mora-id"><div class="mora-dot"><span class="mora-star small"></span></div><div><b>MORA fragen</b><small>MORADA ASSISTENT</small></div></div>
