@@ -355,6 +355,85 @@ main{padding:18px}
     margin-bottom: 2px !important;
   }
 }
+/* ===== MORADA MOBILE FINAL ===== */
+@media (max-width: 600px){
+
+  /* Header etwas größer und hochwertiger */
+  .topbar,
+  .header,
+  header{
+    min-height: 92px !important;
+    padding: 14px 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  /* MORADA Logo oben links größer */
+  .topbar img,
+  .header img,
+  .brand img,
+  header img{
+    width: 118px !important;
+    max-width: 118px !important;
+    height: auto !important;
+  }
+
+  /* DK-Kreis etwas klarer positionieren */
+  .avatar,
+  .profile-circle,
+  .user-badge{
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+  }
+
+  /* Mehr Luft im Hauptbereich */
+  main,
+  .content,
+  .page{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Schnellzugriffe mit etwas mehr Abstand */
+  .quick-grid,
+  .cards-grid{
+    gap: 12px !important;
+    margin-bottom: 28px !important;
+  }
+
+  /* MORA Button sauber vom Rand */
+  .mora-fab{
+    right: 20px !important;
+    bottom: 92px !important;
+  }
+
+  /* Bottom Navigation deutlich flacher */
+  .nav{
+    min-height: 74px !important;
+    height: 74px !important;
+    padding: 8px 6px 7px !important;
+  }
+
+  .nav label{
+    min-height: 58px !important;
+    padding: 4px 2px !important;
+    font-size: 11px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+  }
+
+  .nav label b{
+    font-size: 20px !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+  }
+}
+
 </style>
 </head>
 <body>
