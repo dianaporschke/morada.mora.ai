@@ -275,6 +275,59 @@ main{padding:18px}
 .mora-input{
   flex-shrink: 0 !important;
 }
+/* ===== MORA MOBILE ===== */
+@media (max-width: 600px){
+
+  .mora-panel{
+    width: calc(100vw - 18px) !important;
+    max-width: none !important;
+    max-height: 82vh !important;
+    border-radius: 22px !important;
+  }
+
+  .mora-head{
+    padding: 16px 16px !important;
+  }
+
+  .mora-body{
+    padding: 16px !important;
+  }
+
+  .mora-body .bubble{
+    max-width: 92% !important;
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+  }
+
+  .mora-suggestions{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    margin: 10px 0 16px !important;
+  }
+
+  .mora-suggestions button{
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 10px 8px !important;
+    font-size: 13px !important;
+  }
+
+  .mora-input{
+    padding: 10px !important;
+    gap: 8px !important;
+  }
+
+  .mora-text{
+    font-size: 16px !important;
+  }
+
+  .mora-send{
+    width: 46px !important;
+    min-width: 46px !important;
+    height: 46px !important;
+  }
+}
 </style>
 </head>
 <body>
