@@ -213,6 +213,68 @@ main{padding:18px}
 .mora-input {
   border-top: 1px solid rgba(185,104,63,.28) !important;
 }
+/* ===== MORA CHAT – mehr Platz & sauberer Verlauf ===== */
+
+/* Chatfenster etwas größer */
+.mora-panel{
+  width: min(560px, calc(100vw - 32px)) !important;
+  max-height: 78vh !important;
+}
+
+/* Nachrichtenbereich luftiger */
+.mora-body{
+  padding: 24px 22px 26px !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(185,104,63,.35) transparent;
+}
+
+/* Chrome / Edge Scrollbar */
+.mora-body::-webkit-scrollbar{
+  width: 5px;
+}
+
+.mora-body::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+.mora-body::-webkit-scrollbar-thumb{
+  background: rgba(185,104,63,.35);
+  border-radius: 20px;
+}
+
+/* Nachrichten nicht so breit und gequetscht */
+.mora-body .bubble{
+  max-width: 84% !important;
+  line-height: 1.5 !important;
+  margin-bottom: 14px !important;
+}
+
+/* Eigene Nachricht rechts */
+.mora-body .bubble.user{
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* MORA Nachricht links */
+.mora-body .bubble:not(.user){
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Vorschlagsbuttons sauber als eigene Zeile */
+.mora-suggestions{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 9px !important;
+  margin: 4px 0 18px !important;
+  justify-content: flex-start !important;
+}
+
+/* Eingabebereich bleibt unten klar getrennt */
+.mora-input{
+  flex-shrink: 0 !important;
+}
 </style>
 </head>
 <body>
