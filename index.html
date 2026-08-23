@@ -181,6 +181,38 @@ main{padding:18px}
 .mora-send{width:42px;height:42px;border-radius:13px;background:#242626;color:#c9653a;display:grid;place-items:center;font-weight:900;border:0;cursor:pointer}
 .mora-input-star{width:42px;height:42px;min-width:42px;border-radius:13px;background:#242626;display:grid;place-items:center}
 
+/* ===== MORA – MORADA Orange Outline ===== */
+
+/* Äussere Umrandung des gesamten MORA-Fensters */
+.mora-panel {
+  border: 1.5px solid #b9683f !important;
+  box-shadow:
+    0 22px 55px rgba(0,0,0,.20),
+    0 0 0 1px rgba(185,104,63,.08) !important;
+}
+
+/* Dezente orange Trennlinie unter dem Kopf */
+.mora-head {
+  border-bottom: 1px solid rgba(185,104,63,.28) !important;
+}
+
+/* Die 4 Buttons:
+   Dokumente / Anliegen / Meine Immobilie / WalkThrough */
+.mora-suggestions button {
+  border: 1px solid rgba(185,104,63,.75) !important;
+  transition: all .2s ease;
+}
+
+/* Beim Darüberfahren etwas stärker orange */
+.mora-suggestions button:hover {
+  border-color: #b9683f !important;
+  background: rgba(185,104,63,.08) !important;
+}
+
+/* Trennlinie beim Eingabebereich */
+.mora-input {
+  border-top: 1px solid rgba(185,104,63,.28) !important;
+}
 </style>
 </head>
 <body>
