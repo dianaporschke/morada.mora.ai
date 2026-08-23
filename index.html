@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
+<meta charset="ut</stylef-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>MORADA Immobilien · Kundenportal</title>
 <style>
@@ -328,7 +328,33 @@ main{padding:18px}
     height: 46px !important;
   }
 }
+/* ===== MOBILE HEADER + NAV VERBESSERN ===== */
+@media (max-width: 600px){
 
+  /* Logo oben links größer */
+  .topbar img,
+  .header img,
+  .brand img{
+    width: 92px !important;
+    height: auto !important;
+  }
+
+  /* untere schwarze Navigation flacher */
+  .nav{
+    min-height: 68px !important;
+    padding: 7px 8px 8px !important;
+  }
+
+  .nav label{
+    padding: 5px 4px !important;
+    font-size: 11px !important;
+  }
+
+  .nav label b{
+    font-size: 20px !important;
+    margin-bottom: 2px !important;
+  }
+}
 </style>
 </head>
 <body>
