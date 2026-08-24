@@ -499,39 +499,50 @@ main{padding:18px}
     width:23px !important;
     height:23px !important;
 }
-/* MORADA Header */
+/* ===== MORADA HEADER ===== */
+
 .brand-header{
   display:flex !important;
   align-items:center !important;
-  gap:12px !important;
+  gap:16px !important;
 }
 
 .brand-header .app-logo{
   width:58px !important;
   height:58px !important;
-  object-fit:contain !important;
+  object-fit:cover !important;
+  object-position:top center !important;
+  clip-path:inset(0 0 35% 0) !important;
+  transform:scale(1.35) !important;
+  transform-origin:center top !important;
+  margin-right:4px !important;
+  margin-bottom:-20px !important;
 }
 
 .brand-header-text{
   display:flex !important;
   flex-direction:column !important;
+  align-items:flex-start !important;
   justify-content:center !important;
 }
 
 .brand-header-title{
-  font-size:23px !important;
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-size:22px !important;
   font-weight:800 !important;
   line-height:1 !important;
-  letter-spacing:.5px !important;
-  color:#25282a !important;
+  letter-spacing:1px !important;
+  color:#292c2d !important;
 }
 
 .brand-header-subtitle{
-  margin-top:5px !important;
+  margin-top:6px !important;
+  margin-left:2px !important;
+  font-family:Arial,Helvetica,sans-serif !important;
   font-size:7px !important;
   font-weight:700 !important;
   line-height:1 !important;
-  letter-spacing:3px !important;
+  letter-spacing:3.5px !important;
   color:#b9683f !important;
 }
 </style>
