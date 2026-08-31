@@ -110,6 +110,22 @@ main{padding:18px}
 .dark .muted{color:#a9adad}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
 .stat{padding:13px;border-radius:13px;background:#f5f1eb}
+.dark{
+  position:relative;
+}
+
+.property-icon{
+  position:absolute;
+  top:28px;
+  right:20px;
+  width:94px;
+  height:auto;
+  object-fit:contain;
+}
+
+.dark .big{
+  padding-right:100px;
+}
 .dark .stat{background:#282b2b}
 .stat b{display:block;font-size:17px;margin-bottom:3px}
 .stat span{font-size:10px;color:#8c8985}
@@ -628,6 +644,7 @@ main{padding:18px}
 
     <div class="card dark">
       <div class="kicker">IHRE LIEGENSCHAFT</div>
+      <img class="property-icon" src="icons/property.svg" alt="">
       <div class="big">Wohnliegenschaft Baden</div>
       <div class="muted">12 Einheiten · persönlich durch MORADA betreut</div>
       <div class="stats">
