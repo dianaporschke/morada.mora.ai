@@ -135,7 +135,14 @@ main{padding:18px}
   z-index:20;border-top:1px solid #292b2b
 }
 .nav label{font-size:9px;text-align:center;padding:7px 2px}
-.nav label b{font-size:19px;display:block;margin-bottom:4px;color:#d5d8d8}
+.nav label b{font-size:19px;display:block;margin-bottom:4px;color:#d5d8d8}.
+.nav-icon{
+  width:27px;
+  height:27px;
+  display:block;
+  margin:0 auto 4px;
+  object-fit:contain;
+}
 #home:checked~.app .nav label[for=home],
 #portfolio:checked~.app .nav label[for=portfolio],
 #service:checked~.app .nav label[for=service],
@@ -709,7 +716,7 @@ main{padding:18px}
   </div>
 
   <nav class="nav">
-    <label for="home"><b>⌂</b>Home</label>
+  <label for="home"><img class="nav-icon" src="icons/home.svg" alt="">Home</label>
     <label for="portfolio"><b>▥</b>Portfolio</label>
     <label for="service"><b>＋</b>Service</label>
     <label for="docs"><b>▤</b>Dokumente</label>
