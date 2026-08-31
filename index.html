@@ -142,6 +142,15 @@ main{padding:18px}
   display:block;
   margin:0 auto 4px;
   object-fit:contain;
+  filter:grayscale(1) brightness(1.6);
+}
+  #home:checked~.app .nav label[for=home] .nav-icon,
+#portfolio:checked~.app .nav label[for=portfolio] .nav-icon,
+#service:checked~.app .nav label[for=service] .nav-icon,
+#docs:checked~.app .nav label[for=docs] .nav-icon,
+#profile:checked~.app .nav label[for=profile] .nav-icon{
+  filter:brightness(0) saturate(100%) invert(48%) sepia(43%)
+         saturate(1120%) hue-rotate(335deg) brightness(91%) contrast(88%);
 }
 #home:checked~.app .nav label[for=home],
 #portfolio:checked~.app .nav label[for=portfolio],
