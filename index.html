@@ -246,8 +246,24 @@ main{padding:18px}
 .row{display:flex;justify-content:space-between;gap:12px;align-items:center}
 .pill{font-size:9px;padding:7px 9px;border-radius:20px;background:#eee8e1}
 .button{
-  display:block;text-align:center;background:#c9653a;color:white;
-  padding:14px;border-radius:13px;font-size:12px;font-weight:800;margin-top:14px
+  display:block;
+  position:relative;
+  text-align:center;
+  background:#c9653a;
+  color:white;
+  padding:14px;
+  border-radius:13px;
+  font-size:12px;
+  font-weight:800;
+  margin-top:14px;
+}
+.button-arrow{
+  position:absolute;
+  right:28px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:22px;
+  font-weight:300;
 }
 
 .app-logo{width:128px;height:42px;object-fit:contain;object-position:left center}
@@ -719,7 +735,10 @@ main{padding:18px}
         <div class="stat"><b>98 %</b><span>Vermietet</span></div>
         <div class="stat"><b>CHF 26'400</b><span>Miete / Monat</span></div>
       </div>
-      <label for="portfolio" class="button">Immobilie ansehen</label>
+     <label for="portfolio" class="button">
+  <span>Immobilie ansehen</span>
+  <span class="button-arrow">→</span>
+</label>
     </div>
 
     <div class="quick">
