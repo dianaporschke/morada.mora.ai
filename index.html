@@ -129,12 +129,78 @@ main{padding:18px}
 .dark .stat{background:#282b2b}
 .stat b{display:block;font-size:17px;margin-bottom:3px}
 .stat span{font-size:10px;color:#8c8985}
-.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.quick label{
-  background:#fff;border:1px solid #ded8d0;
-  border-radius:16px;padding:16px;
-  font-size:12px;font-weight:700
+.quick{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:14px;
 }
+
+.quick .quick-card{
+  min-height:92px;
+  display:grid;
+  grid-template-columns:42px minmax(0,1fr) 16px;
+  align-items:center;
+  column-gap:10px;
+  padding:13px;
+  background:#fff;
+  border:1px solid #ded8d0;
+  border-radius:16px;
+  box-shadow:0 4px 12px rgba(31,29,27,.08);
+  cursor:pointer;
+}
+
+.quick-card img{
+  width:38px;
+  height:38px;
+  object-fit:contain;
+  filter:brightness(0) saturate(100%) invert(48%) sepia(43%)
+         saturate(1120%) hue-rotate(335deg) brightness(91%) contrast(88%);
+}
+
+.quick-circle{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#f1ded2;
+  color:#1f211f;
+  font-size:28px;
+  font-weight:300;
+  line-height:1;
+}
+
+.quick-text{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+
+.quick-text strong{
+  color:#242424;
+  font-size:12px;
+  font-weight:750;
+  line-height:1.1;
+}
+
+.quick-text small{
+  color:#87837f;
+  font-size:9px;
+  font-weight:400;
+  line-height:1.25;
+  white-space:nowrap;
+}
+
+.quick-arrow{
+  color:#222;
+  font-size:25px;
+  font-weight:300;
+  line-height:1;
+}
+  
 .view{display:none}
 #home:checked~.app .home,
 #portfolio:checked~.app .portfolio,
@@ -655,11 +721,43 @@ main{padding:18px}
     </div>
 
     <div class="quick">
-      <label for="docs">▤ &nbsp; Dokumente</label>
-      <label for="service">＋ &nbsp; Anliegen</label>
-      <label for="portfolio">⌂ &nbsp; Portfolio</label>
-      <label for="profile">◎ &nbsp; Profil</label>
-    </div>
+
+  <label for="docs" class="quick-card">
+    <img src="icons/documents.svg" alt="">
+    <span class="quick-text">
+      <strong>Dokumente</strong>
+      <small>Unterlagen einsehen</small>
+    </span>
+    <span class="quick-arrow">›</span>
+  </label>
+
+  <label for="service" class="quick-card">
+    <span class="quick-circle">+</span>
+    <span class="quick-text">
+      <strong>Anliegen</strong>
+      <small>Neues Anliegen melden</small>
+    </span>
+    <span class="quick-arrow">›</span>
+  </label>
+
+  <label for="portfolio" class="quick-card">
+    <img src="icons/portfolio.svg" alt="">
+    <span class="quick-text">
+      <strong>Portfolio</strong>
+      <small>Alle Liegenschaften</small>
+    </span>
+    <span class="quick-arrow">›</span>
+  </label>
+
+  <label for="profile" class="quick-card">
+    <img src="icons/profile.svg" alt="">
+    <span class="quick-text">
+      <strong>Profil</strong>
+      <small>Persönliche Daten</small>
+    </span>
+    <span class="quick-arrow">›</span>
+  </label>
+</div>
   </main>
 
   <main class="view portfolio">
