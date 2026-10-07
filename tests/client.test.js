@@ -26,14 +26,27 @@ function fixture(width = 1280) {
   return {dom,window,document:window.document,requests,ui};
 }
 
+async function waitForIdle(f) {
+  for (let i = 0; i < 100; i++) {
+    await new Promise(resolve => setImmediate(resolve));
+    if (!f.document.getElementById('moraSend').disabled) return;
+  }
+  assert.fail('Chat did not finish processing the form submission');
+}
+async function sendForm(f, message) {
+  f.document.getElementById('moraText').value = message;
+  f.document.getElementById('moraForm').dispatchEvent(new f.window.Event('submit', { bubbles:true, cancelable:true }));
+  await waitForIdle(f);
+}
+
 for (const width of [1280,390]) test(`DOM flow at ${width}px: chat → API → actions → prefilled service draft`, async () => {
   const f = fixture(width); await f.ui.ready;
-  await f.ui.submit({message:'lampe geht nicht'},'lampe geht nicht');
+  await sendForm(f, 'lampe geht nicht');
   const choice = f.document.querySelector('[data-action-id="answer-location-common"]'); assert.ok(choice); assert.equal(choice.disabled,false);
-  await f.ui.onAction({type:'select',id:'answer-location-common',label:'Treppenhaus / Allgemeinbereich'});
+  choice.click(); await waitForIdle(f);
   assert.equal(choice.disabled,true);
-  await f.ui.submit({message:'seit gestern'},'seit gestern');
-  await f.ui.submit({message:'nur diese lampe'},'nur diese lampe');
+  await sendForm(f, 'seit gestern');
+  await sendForm(f, 'nur diese lampe');
   assert.equal(f.ui.getState().issue.category,'electricity');
   const handover = f.document.querySelector('.mora-actions:last-child [data-action-id="prepare-request"]');
   assert.ok(handover.classList.contains('primary'));
@@ -45,6 +58,26 @@ for (const width of [1280,390]) test(`DOM flow at ${width}px: chat → API → a
   assert.match(f.document.getElementById('moraDraftStatus').textContent,/Noch nicht übermittelt/);
   assert.equal(f.requests.some(req => req.url==='/api/requests'),false);
   assert.equal(f.ui.getDrafts().length,1); f.window.close();
+});
+
+test('Typing follow-up answers through the real form retains both context and attached photos', async () => {
+  const f = fixture(390); await f.ui.ready;
+  await sendForm(f, 'heizung funktioniert nicht');
+  await f.ui.addFiles([new f.window.File(['photo'], 'Heizung.png', { type:'image/png' })]);
+  const issueId = f.ui.getState().issue.id;
+  await sendForm(f, 'seit gestern');
+  await sendForm(f, 'alle heizkörper');
+  await sendForm(f, 'in meiner Wohnung');
+  const issue = f.ui.getState().issue;
+  assert.equal(issue.id, issueId);
+  assert.equal(issue.since, 'seit gestern');
+  assert.equal(issue.extent, 'Alle Heizkörper');
+  assert.equal(issue.attachments[0].name, 'Heizung.png');
+  assert.ok(f.requests.slice(-3).every(request => request.body.attachments.length === 1));
+  await f.ui.onAction({ type:'handover' });
+  assert.match(f.document.getElementById('moraDraftSummary').textContent, /seit gestern/);
+  assert.match(f.document.getElementById('moraDraftPhotos').textContent, /Heizung.png/);
+  f.window.close();
 });
 
 test('Photos are attached, persisted in IndexedDB and survive a draft reload', async () => {
