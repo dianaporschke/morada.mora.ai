@@ -18,6 +18,15 @@
 .mora-file-input { display:none!important; }
 .mora-attachments { background:#121414; padding:8px 12px; border-top:1px solid #44332b; max-height:100px; overflow:auto; }
 .mora-attachments[hidden] { display:none; }
+.mora-issue-controls { flex-shrink:0; background:#121414; padding:7px 12px; border-top:1px solid #302c28; }
+.mora-issue-controls[hidden],.mora-issue-controls [hidden],.mora-drafts [hidden] { display:none!important; }
+.mora-issue-controls label { display:grid; gap:4px; color:#baa694; font-size:10px; margin-bottom:7px; }
+.mora-issue-controls select { display:block!important; width:100%; max-width:100%; padding:8px; background:#1b1d1d; color:#e1d3c5; border:1px solid #73503c; border-radius:9px; font:inherit; font-size:12px; }
+.mora-issue-tools { display:flex; gap:10px; justify-content:space-between; flex-wrap:wrap; }
+.mora-issue-tools button { min-height:38px; padding:6px 2px; border:0; color:#c7ae99; background:transparent; font:inherit; font-size:11px; cursor:pointer; }
+.mora-issue-tools button:hover { color:#f4d1b2; }
+.mora-issue-tools button:disabled { opacity:.48; cursor:default; }
+.mora-issue-tools button:focus-visible,.mora-issue-controls select:focus-visible { outline:2px solid #e6a27c; outline-offset:2px; }
 .mora-photo { display:flex; align-items:center; gap:8px; color:#d7c7b9; font-size:11px; padding:4px 0; }
 .mora-photo img { width:38px; height:38px; object-fit:cover; border-radius:7px; }
 .mora-photo span { min-width:0; flex:1; overflow-wrap:anywhere; }
@@ -31,7 +40,7 @@
 .mora-drafts .draft-notice { margin:12px 0; padding:12px; border-radius:12px; background:#eee2d5; color:#73533d; font-size:12px; line-height:1.5; }
 .mora-draft-fields { display:grid; gap:12px; margin-top:16px; }
 .mora-draft-fields label { display:grid; gap:6px; font-size:12px; color:#6e6359; }
-.mora-draft-fields input,.mora-draft-fields textarea,.mora-draft-picker { display:block!important; width:100%; min-width:0; border:1px solid #d3c3b5; border-radius:11px; padding:11px; background:#faf7f2; color:#252727; font:inherit; font-size:14px; }
+.mora-draft-fields input,.mora-draft-fields textarea,.mora-draft-fields select,.mora-draft-picker { display:block!important; width:100%; min-width:0; border:1px solid #d3c3b5; border-radius:11px; padding:11px; background:#faf7f2; color:#252727; font:inherit; font-size:14px; }
 .mora-draft-fields textarea { min-height:100px; resize:vertical; }
 .mora-draft-picker { margin-top:12px; }
 .mora-draft-summary { white-space:pre-line; font-size:12px; line-height:1.6; overflow-wrap:anywhere; margin-top:14px; }
@@ -46,6 +55,7 @@
   .mora-action.primary { flex-basis:100%; }
   .mora-new-chat { font-size:10px; padding:8px; }
   .mora-head-actions { gap:8px; }
-  .mora-draft-fields input,.mora-draft-fields textarea { font-size:16px; }
+  .mora-draft-fields input,.mora-draft-fields textarea,.mora-draft-fields select,.mora-issue-controls select { font-size:16px; }
+  .mora-issue-tools button { min-height:44px; }
 }
 @media (prefers-reduced-motion:reduce) { .mora-action { transition:none; } }

@@ -819,16 +819,21 @@ main{padding:18px}
     </div>
     <section class="card mora-drafts" id="moraDrafts" hidden aria-label="Vorbereitetes Anliegen">
       <div class="kicker">IHR ANLIEGENENTWURF</div>
-      <div class="big">Für MORADA vorbereitet.</div>
-      <div class="draft-notice">Noch nicht übermittelt. Ihre Angaben und Fotos bleiben lokal auf diesem Gerät. Die direkte Übermittlung an MORADA ist noch nicht angeschlossen.</div>
+      <div class="big" id="moraDraftHeading">Für MORADA vorbereitet.</div>
+      <div class="draft-notice" id="moraDraftNotice">Noch nicht übermittelt. Ihre Angaben und Fotos bleiben lokal auf diesem Gerät. Die direkte Übermittlung an MORADA ist noch nicht angeschlossen.</div>
       <label for="moraDraftPicker" class="muted">Gespeicherte Entwürfe</label>
       <select id="moraDraftPicker" class="mora-draft-picker"></select>
       <div class="mora-draft-fields">
         <label>Beschreibung<textarea id="moraDraftDescription" maxlength="2000"></textarea></label>
+        <label>Betroffene Einrichtung<select id="moraDraftEquipment"><option value="">Noch nicht angegeben</option><option value="unknown">Noch unklar</option><option value="socket">Steckdose</option><option value="light">Lampe / Leuchte</option><option value="switch">Lichtschalter</option><option value="power">Stromversorgung</option><option value="heater">Heizkörper</option><option value="key">Schlüssel / Zugang</option><option value="washer">Waschmaschine</option><option value="dryer">Tumbler</option><option value="dishwasher">Geschirrspüler</option><option value="tap">Wasserhahn</option><option value="drain">Abfluss</option><option value="pipe">Leitung</option><option value="leak">Wasseraustritt</option><option value="noise">Geräusch / Lärm</option></select></label>
+        <label>Konkreter Defekt<input id="moraDraftDefect" type="text" maxlength="2000"></label>
+        <label>Anzahl betroffener Einrichtungen<input id="moraDraftCount" type="number" min="1" max="10000" step="1" inputmode="numeric"></label>
+        <label>Umfang / Situation<input id="moraDraftExtent" type="text" maxlength="2000"></label>
         <label>Betroffener Bereich<input id="moraDraftLocation" type="text" maxlength="2000"></label>
         <label>Seit wann<input id="moraDraftSince" type="text" maxlength="2000"></label>
         <label>Weitere Angaben<textarea id="moraDraftDetails" maxlength="6000"></textarea></label>
       </div>
+      <div id="moraDraftConflict" class="draft-notice" role="status" hidden></div>
       <details><summary>Gesammelte Zusammenfassung</summary><div class="mora-draft-summary" id="moraDraftSummary"></div></details>
       <div class="mora-draft-photos" id="moraDraftPhotos" aria-label="Fotos im Entwurf"></div>
       <div class="mora-draft-controls">
@@ -878,6 +883,10 @@ main{padding:18px}
         <button type="button" data-mora-message="Was kann ich in der Immobilienübersicht sehen?">Meine Immobilie</button>
         <button type="button" data-mora-message="Wie funktioniert der 360° WalkThrough?">WalkThrough</button>
       </div>
+    </div>
+    <div class="mora-issue-controls" id="moraIssueControls" hidden>
+      <label id="moraIssuePickerLabel" hidden>Aktuelles Anliegen<select id="moraIssuePicker" aria-label="Aktuelles Anliegen wechseln"></select></label>
+      <div class="mora-issue-tools"><button id="moraAttachPhoto" type="button">Foto hinzufügen</button><button id="moraPrepareIssue" type="button">Für MORADA vorbereiten</button></div>
     </div>
     <div class="mora-attachments" id="moraAttachments" hidden></div>
     <div class="mora-storage-note" id="moraStorageNote">Fotos werden lokal hinzugefügt und erst mit einer angebundenen Übermittlung versendet.</div>

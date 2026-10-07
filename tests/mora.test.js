@@ -23,7 +23,7 @@ const examples = [
 for (const [message, category] of examples) test(`Guided recovery: ${message}`, async () => {
   const result = await turn(message);
   assert.equal(result.state.issue.category, category);
-  assert.ok(result.state.actions.some(item => item.type === 'handover'));
+  assert.ok(result.state.actions.length <= 4); // Draft preparation remains in the persistent issue toolbar.
   assert.doesNotMatch(result.reply, /kostenlosen Testversion|Glühbirne austauschen|selbst reparieren/i);
 });
 
@@ -73,9 +73,9 @@ test('Immediate danger returns without depending on any remote model response', 
   assert.equal(result.state.issue.urgency, 'emergency'); assert.equal(result.state.actions[0].number, '112');
 });
 
-test('Unknown messages offer handover, and arbitrary data stays literal in a draft', async () => {
+test('Unknown messages clarify without guessing, and arbitrary data stays literal in a draft', async () => {
   const a = await turn('Da ist so ein komisches Ding'); assert.equal(a.state.issue.category, 'general');
-  assert.ok(a.state.actions.some(action => action.type === 'handover'));
+  assert.equal(a.state.issue.equipment, 'unknown'); assert.ok(a.state.actions.length <= 4);
   const b = await turn('<script>alert(1)</script>', a.state);
   assert.ok(b.state.issue.answers.some(item => item.answer.includes('<script>')));
 });
@@ -110,7 +110,7 @@ test('Signed state cannot be modified or reused after expiry', async () => {
   const state = (await turn('lampe geht nicht')).state;
   const signed = sealSession(state); assert.equal(readSession(signed).issue.id, state.issue.id);
   const [payload, signature] = signed.split('.');
-  const tampered = Buffer.from(JSON.stringify({ ...JSON.parse(Buffer.from(payload,'base64url')), issue:{ category:'general' } })).toString('base64url');
+  const tampered = payload.slice(0,-1) + (payload.endsWith('a') ? 'b' : 'a');
   assert.throws(() => readSession(`${tampered}.${signature}`), { code:'INVALID_SESSION' });
   const now = Date.now;
   try { Date.now = () => now() + 13 * 60 * 60 * 1000;

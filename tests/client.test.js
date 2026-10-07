@@ -10,18 +10,22 @@ import { guidedUnderstanding } from '../lib/mora/understanding.js';
 const html = readFileSync('index.html','utf8');
 const css = readFileSync('assets/mora.css','utf8');
 const handler = createChatHandler(async (message,state) => ({data:guidedUnderstanding(message,state),mode:'guided'}));
-function fixture(width = 1280) {
+function fixture(width = 1280, options = {}) {
   const dom = new JSDOM(html, {url:'https://morada-portal.vercel.app/',pretendToBeVisual:true});
-  const { window } = dom; window.indexedDB = new IDBFactory(); window.scrollTo = () => {};
+  const { window } = dom; window.indexedDB = options.indexedDB || new IDBFactory(); window.scrollTo = () => {};
+  if (options.thread) window.sessionStorage.setItem('morada.mora.v2.thread', options.thread);
   Object.defineProperty(window,'innerWidth',{value:width,writable:true});
   const style = window.document.createElement('style'); style.textContent = css; window.document.head.appendChild(style);
   const requests = [];
   const fetcher = async (url,options) => {
     requests.push({url,body:JSON.parse(options.body)});
+    if (url === '/api/requests' && simulatedReceipt) return { ok:true, status:200, json:async () => simulatedReceipt };
     const res = {statusCode:200,setHeader() {},status(code) {this.statusCode=code;return this;},json(body) {this.body=body;return this;}};
     await handler({method:options.method,body:JSON.parse(options.body)},res);
+    if (simulatedReceipt && res.body.capabilities) res.body.capabilities = { ...res.body.capabilities, submitRequest:true };
     return {ok:res.statusCode<400,status:res.statusCode,json:async () => res.body};
   };
+  const simulatedReceipt = options.simulatedReceipt;
   const ui = createMora(window.document,window,fetcher);
   return {dom,window,document:window.document,requests,ui};
 }
@@ -130,4 +134,124 @@ test('Portal navigation and iPhone icon paths are preserved; chat has responsive
   assert.ok(f.document.querySelector('meta[name="apple-mobile-web-app-capable"]'));
   assert.match(css,/@media \(max-width:600px\)/); assert.match(css,/min-height:46px/);
   assert.match(css,/flex:1; min-height:0/); f.window.close();
+});
+
+test('An answer without actions disables all previous choices and keeps them disabled after reload', async () => {
+  const f = fixture(); await f.ui.ready;
+  await sendForm(f, 'Steckdose geht nicht');
+  const oldChoices = [...f.document.querySelectorAll('#moraMessages .mora-action')];
+  assert.ok(oldChoices.length > 0);
+  await sendForm(f, 'Was bedeutet Mietkaution?');
+  assert.match(f.document.getElementById('moraMessages').textContent, /Sicherheit|Sicherheitsleistung/);
+  assert.equal(f.document.querySelectorAll('#moraMessages .mora-action:not(:disabled)').length, 0);
+  assert.ok(oldChoices.every(button => button.disabled));
+  const restored = fixture(390, { thread:f.window.sessionStorage.getItem('morada.mora.v2.thread') }); await restored.ui.ready;
+  assert.equal(restored.document.querySelectorAll('#moraMessages .mora-action:not(:disabled)').length, 0);
+  assert.equal(restored.document.getElementById('moraPrepareIssue').disabled, false);
+  f.window.close(); restored.window.close();
+});
+
+test('The issue picker switches through the server and keeps photos and draft data with their own issue', async () => {
+  const f = fixture(390); await f.ui.ready;
+  await sendForm(f, 'Heizung kaputt');
+  await f.ui.addFiles([new f.window.File(['heater'], 'Heizung.png', { type:'image/png' })]);
+  const heatingId = f.ui.getState().issue.id;
+  await sendForm(f, 'Ausserdem geht die Waschmaschine im Keller nicht');
+  const applianceId = f.ui.getState().issue.id;
+  assert.notEqual(applianceId, heatingId);
+  assert.equal(f.ui.getState().issues.length, 2);
+  assert.equal(f.ui.getState().files.length, 0);
+  await f.ui.addFiles([new f.window.File(['washer'], 'Waschmaschine.png', { type:'image/png' })]);
+  assert.equal(f.document.getElementById('moraIssuePickerLabel').hidden, false);
+  const picker = f.document.getElementById('moraIssuePicker'); picker.value = heatingId;
+  picker.dispatchEvent(new f.window.Event('change')); await waitForIdle(f);
+  assert.equal(f.requests.at(-1).body.actionId, `switch-${heatingId}`);
+  assert.equal(f.ui.getState().issue.id, heatingId);
+  assert.deepEqual(f.ui.getState().files.map(file => file.name), ['Heizung.png']);
+  assert.equal(f.ui.getState().issues.find(issue => issue.id === applianceId).attachments[0].name, 'Waschmaschine.png');
+  await f.ui.onAction({ type:'handover' });
+  const drafts = f.ui.getDrafts();
+  assert.equal(drafts.length, 2);
+  assert.deepEqual(drafts.find(draft => draft.id === heatingId).attachments.map(file => file.name), ['Heizung.png']);
+  assert.deepEqual(drafts.find(draft => draft.id === applianceId).attachments.map(file => file.name), ['Waschmaschine.png']);
+  f.window.close();
+});
+
+test('Draft edits rebuild the summary and survive handover autosave, conflict and reload', async () => {
+  const f = fixture(); await f.ui.ready;
+  await sendForm(f, 'Seit gestern funktionieren drei Steckdosen im Wohnzimmer nicht');
+  await f.ui.onAction({ type:'handover' });
+  const edit = (id, value) => { const control = f.document.getElementById(id); control.value = value; control.dispatchEvent(new f.window.Event('input')); };
+  edit('moraDraftCount', '2');
+  assert.doesNotMatch(f.document.getElementById('moraDraftSummary').textContent, /3 Steckdosen|drei Steckdosen/);
+  edit('moraDraftExtent', 'Zwei Steckdosen an der Fensterseite');
+  edit('moraDraftLocation', 'Büro'); edit('moraDraftDescription', 'Steckdosen an der Fensterseite ohne Strom');
+  const summary = f.document.getElementById('moraDraftSummary').textContent;
+  assert.match(summary, /Anzahl: 2/); assert.match(summary, /Bereich: Büro/); assert.match(summary, /Fensterseite/);
+  assert.doesNotMatch(summary, /Anzahl: 3|drei Steckdosen/);
+  f.document.getElementById('moraSaveDraft').click();
+  for (let i=0; i<20 && !/lokal gespeichert/.test(f.document.getElementById('moraDraftStatus').textContent); i++) await new Promise(resolve => setImmediate(resolve));
+  await sendForm(f, 'Nein, vier Steckdosen');
+  await f.ui.onAction({ type:'handover' });
+  assert.equal(f.document.getElementById('moraDraftCount').value, '2');
+  assert.equal(f.document.getElementById('moraDraftLocation').value, 'Büro');
+  assert.equal(f.document.getElementById('moraDraftConflict').hidden, false);
+  assert.match(f.document.getElementById('moraDraftConflict').textContent, /Anzahl/);
+  const restored = fixture(390, { indexedDB:f.window.indexedDB }); await restored.ui.ready;
+  assert.equal(restored.document.getElementById('moraDraftCount').value, '2');
+  assert.match(restored.document.getElementById('moraDraftSummary').textContent, /Anzahl: 2/);
+  assert.equal(restored.document.getElementById('moraDraftLocation').value, 'Büro');
+  f.window.close(); restored.window.close();
+});
+
+test('Persistent preparation controls are hidden before any issue and available for free-text questions', async () => {
+  const f = fixture(390); await f.ui.ready;
+  assert.equal(f.document.getElementById('moraIssueControls').hidden, true);
+  await sendForm(f, 'Heizung kaputt');
+  assert.equal(f.document.getElementById('moraIssueControls').hidden, false);
+  assert.equal(f.document.querySelectorAll('#moraMessages .mora-action:not(:disabled)').length, 0);
+  assert.equal(f.document.getElementById('moraPrepareIssue').textContent, 'Für MORADA vorbereiten');
+  f.document.getElementById('moraPrepareIssue').click(); await waitForIdle(f);
+  assert.equal(f.document.getElementById('service').checked, true);
+  assert.match(f.document.getElementById('moraDraftStatus').textContent, /Noch nicht übermittelt/);
+  f.window.close();
+});
+
+test('Persistent tools avoid duplicate actions, return on plain replies and hide photos during emergencies', async () => {
+  const f = fixture(390); await f.ui.ready;
+  await sendForm(f, 'Seit gestern funktionieren drei Steckdosen im Wohnzimmer nicht');
+  assert.ok(f.document.querySelector('#moraMessages [data-action-type="handover"]:not(:disabled)'));
+  assert.equal(f.document.getElementById('moraPrepareIssue').hidden, true);
+  assert.equal(f.document.getElementById('moraAttachPhoto').hidden, false);
+  await sendForm(f, 'Was bedeutet Mietkaution?');
+  assert.equal(f.document.getElementById('moraPrepareIssue').hidden, false);
+  assert.equal(f.document.getElementById('moraAttachPhoto').hidden, false);
+  await sendForm(f, 'Aus der Steckdose kommen Funken und es riecht verbrannt');
+  assert.equal(f.ui.getState().issue.urgency, 'emergency');
+  assert.equal(f.document.getElementById('moraAttachPhoto').hidden, true);
+  assert.equal(f.document.getElementById('moraPrepareIssue').hidden, true);
+  assert.equal(f.document.querySelector('#moraMessages [data-action-type="attachment"]:not(:disabled)'), null);
+  f.window.close();
+  const water = fixture(); await water.ui.ready;
+  await sendForm(water, 'Ich habe einen Rohrbruch');
+  assert.ok(water.document.querySelector('#moraMessages [data-action-type="attachment"]:not(:disabled)'));
+  assert.equal(water.document.getElementById('moraAttachPhoto').hidden, true);
+  assert.equal(water.document.getElementById('moraPrepareIssue').hidden, true);
+  water.window.close();
+});
+
+test('A mocked future submission receipt is displayed consistently and restored with its confirmation', async () => {
+  const f = fixture(1280, { simulatedReceipt:{ accepted:true, requestId:'TEST-RECEIPT-42' } }); await f.ui.ready;
+  await sendForm(f, 'Heizung kaputt'); await f.ui.onAction({ type:'handover' });
+  assert.equal(f.document.getElementById('moraDraftHeading').textContent, 'An MORADA übermittelt.');
+  assert.match(f.document.getElementById('moraDraftStatus').textContent, /Übermittlung bestätigt.*TEST-RECEIPT-42/);
+  assert.doesNotMatch(f.document.getElementById('moraDraftStatus').textContent, /Noch nicht übermittelt/);
+  assert.match(f.document.getElementById('moraDraftNotice').textContent, /Fotos bleiben lokal/);
+  const restored = fixture(390, { indexedDB:f.window.indexedDB }); await restored.ui.ready;
+  assert.match(restored.document.getElementById('moraDraftStatus').textContent, /Übermittlung bestätigt.*TEST-RECEIPT-42/);
+  const location = restored.document.getElementById('moraDraftLocation'); location.value = 'Küche'; location.dispatchEvent(new restored.window.Event('input'));
+  restored.document.getElementById('moraSaveDraft').click();
+  for (let i=0; i<20 && !/Lokal gespeichert/.test(restored.document.getElementById('moraDraftStatus').textContent); i++) await new Promise(resolve => setImmediate(resolve));
+  assert.match(restored.document.getElementById('moraDraftStatus').textContent, /Nachträgliche lokale Änderungen wurden noch nicht übermittelt/);
+  f.window.close(); restored.window.close();
 });

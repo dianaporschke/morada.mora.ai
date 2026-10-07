@@ -3,11 +3,12 @@ import assert from 'node:assert/strict';
 import { MockLanguageModelV4 } from 'ai/test';
 import { extractUnderstanding, generateUnderstanding } from '../lib/mora/understanding.js';
 import { processTurn } from '../lib/mora/engine.js';
+import { emptyUnderstanding } from '../lib/mora/schema.js';
 
 test('SDK structured output contract passes signed context to the model and validates the result', async () => {
   let captured;
-  const expected = { intent:'issue', newIssue:false, confidence:'clear', category:'heating', subcategory:null,
-    description:null, location:null, since:'seit gestern', extent:null, details:null, urgency:'normal', hazard:'none' };
+  const expected = emptyUnderstanding({ equipment:'heater', intent:'issue', newIssue:false, confidence:'clear', category:'heating', subcategory:null,
+    description:null, location:null, since:'seit gestern', extent:null, details:null, urgency:'normal', hazard:'none' });
   const model = new MockLanguageModelV4({ doGenerate:async options => {
     captured = options;
     return { content:[{type:'text',text:JSON.stringify(expected)}], finishReason:{unified:'stop',raw:'stop'},
@@ -24,8 +25,8 @@ test('SDK structured output contract passes signed context to the model and vali
 });
 
 test('A semantic paraphrase without any original keyword gets the same qualification flow', async () => {
-  const data = { intent:'issue', newIssue:false, confidence:'clear', category:'electricity', subcategory:'Beleuchtung',
-    description:'Beleuchtung fällt aus', location:'Flur', since:null, extent:null, details:null, urgency:'normal', hazard:'none' };
+  const data = emptyUnderstanding({ equipment:'light', intent:'issue', newIssue:false, confidence:'clear', category:'electricity', subcategory:'Beleuchtung',
+    description:'Beleuchtung fällt aus', location:'Flur', since:null, extent:null, details:null, urgency:'normal', hazard:'none' });
   const result = await processTurn({message:'Wenn ich den Schalter im Flur drücke bleibt es dunkel'}, null, async () => ({data,mode:'model'}));
   assert.equal(result.state.issue.category,'electricity'); assert.equal(result.state.issue.location,'Flur');
   assert.equal(result.state.pendingKey,'since'); assert.equal(result.understanding,'model');
