@@ -18,7 +18,7 @@ export function createChatHandler(understand = extractUnderstanding) {
       const result = await processTurn(parsed.data, previous, understand);
       return res.status(200).json({ version: 2, reply: result.reply, actions: result.state.actions,
         issue: result.state.issue, session: sealSession(result.state), capabilities: portalCapabilities,
-        understanding: result.understanding });
+        understanding: result.understanding, modelAvailability:result.availability });
     } catch (error) {
       if (error.code === 'INVALID_SESSION' || error.code === 'INVALID_ACTION') {
         return res.status(409).json({ error: 'Diese Unterhaltung oder Aktion ist nicht mehr aktuell. Ihre Angaben bleiben im Chat erhalten. Bitte starten Sie eine neue Unterhaltung.', code: error.code });
