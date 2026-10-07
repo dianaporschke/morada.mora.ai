@@ -4,7 +4,7 @@ Stand: 7. Oktober 2026. Auftrag: natürliche Gesprächsführung, Korrekturen, ge
 
 **Die neue Gesprächsarchitektur ist implementiert. Der produktive Zugriff auf das Sprachmodell ist weiterhin blockiert.** Der aktuelle Gateway-Aufruf antwortet mit `403 customer_verification_required`. MORA verwendet deshalb die ausdrücklich begrenzte geführte Erfassung. Deren Ergebnisse sind kein Nachweis für freies semantisches KI-Verständnis.
 
-Dieser Bericht unterscheidet die Status **«implementiert und getestet»**, **«implementiert, noch nicht vollständig getestet»**, **«technisch vorbereitet»** und **«nicht umgesetzt»**. Tests mit simulierten Modell- oder Backendantworten werden ausdrücklich als solche bezeichnet. Der abschliessende lokale Gesamtlauf ist in Abschnitt 9 dokumentiert; die Bereitstellungsevidenz wird in Abschnitt 12 ergänzt.
+Dieser Bericht unterscheidet die Status **«implementiert und getestet»**, **«implementiert, noch nicht vollständig getestet»**, **«technisch vorbereitet»** und **«nicht umgesetzt»**. Tests mit simulierten Modell- oder Backendantworten werden ausdrücklich als solche bezeichnet. Der abschliessende lokale Gesamtlauf und die Liveprüfung sind in Abschnitt 9 dokumentiert, die Bereitstellungsevidenz in Abschnitt 12.
 
 ## 1. Wie funktionierte MORA vorher?
 
@@ -127,13 +127,19 @@ Weitere Regressionen prüfen manipulierte und abgelaufene Sitzungen, nicht erlau
 | `npm run build` | Bestanden; erstellt statische Portaldateien in `dist`, Serverrouten verbleiben unter `api`. |
 | `git diff --check` | Bestanden; keine Formatfehler im Diff. |
 
+Zusätzlich wurden die Fälle **A–L auf der veröffentlichten Produktion bestanden: 12/12 Fälle, 33 HTTP-Aufrufe im abschliessenden Lauf, keine fehlgeschlagene Assertion**. Der Übermittlungsendpunkt antwortete korrekt mit `503`, `accepted:false` und `integration_required`. Ausschliesslich synthetische Testdaten wurden verwendet. Die tatsächlichen Antwortmodi waren `guided` und `safety`; Gateway meldete weiterhin `403 customer_verification_required`.
+
 Ein bestandener Vertragstest mit simuliertem Modell bestätigt Schema und Verarbeitung, nicht die Antwortqualität eines echten Sprachmodells.
 
 ## 10. Desktop, Mobile, PWA und bestehendes Portal
 
 DOM-Tests mit Desktop- und Mobilkonfigurationen von 1280 und 390 Pixeln sind **implementiert und getestet**. Sie bedienen das tatsächliche Chatformular, Aktionen, Anliegenwechsel, Fotos und vorausgefüllte Serviceentwürfe. Prüfungen kontrollieren weiterhin vorhandene Portalnavigation, Iconpfade und responsive Bedienelemente.
 
-Die visuelle Desktopprüfung ist zum Zeitpunkt dieser Berichtsfassung **implementiert, noch nicht vollständig getestet**; ihr Ergebnis wird nach dem Browserlauf ergänzt. Eine reale Prüfung auf iPhone/Safari und als installierte PWA ist **nicht umgesetzt**. DOM-Tests beweisen keine korrekte Bildschirmdarstellung, Bildschirmtastatur, Installation oder Safari-Dateiauswahl. Ebenso besteht noch keine produktive Kundenanmeldung, deren echten End-to-End-Ablauf man bestätigen könnte.
+Die **visuelle Desktopprüfung ist implementiert und getestet** in Chrome auf der öffentlichen Produktion. Geprüft wurden der bestehende Demo-Zugang, das Öffnen des Chats, «steckdose kaput», die freie Folgeantwort zum ganzen Wohnzimmer, «Seit gestern», die vorausgefüllte Übernahme, eine manuelle Ergänzung, lokales Speichern und erneutes Laden. Der gespeicherte Entwurf und die Ergänzung blieben erhalten. Die Mietkautionsfrage wurde ohne Antwortbuttons beantwortet; der Dokumentenausflug und die Rückkehr behielten die Steckdosendaten. Das dunkle Chatdesign, die Aktionsfarben, Zeilenumbrüche und Bedienelemente wurden visuell kontrolliert. In den erfassten Browserlogs gab es keine Fehler aus der Portal-Anwendung; Meldungen einer Browsererweiterung wurden davon getrennt.
+
+![Desktopprüfung: erhaltener Steckdosenkontext nach Dokumentenausflug](evidence/mora-desktop.jpg)
+
+Eine reale Prüfung auf iPhone/Safari und als installierte PWA ist **nicht umgesetzt**. DOM-Tests beweisen keine korrekte mobile Bildschirmdarstellung, Bildschirmtastatur, Installation oder Safari-Dateiauswahl. Ebenso besteht noch keine produktive Kundenanmeldung, deren echten End-to-End-Ablauf man bestätigen könnte.
 
 ## 11. Offene Einschränkungen
 
@@ -150,11 +156,12 @@ Echte Kundenidentität, dauerhafte Vorgangsablage, internes MORADA-Postfach, Kun
 | Repository | `dianaporschke/morada.mora.ai` |
 | Arbeitsbranch | `main` |
 | Ausgangscommit | `220a28b` – dies ist ausdrücklich nicht der Abschlusscommit der neuen Änderungen. |
-| Abschlusscommit | Nach Sicherung der Änderungen einzutragen. |
-| Überprüfter neuer Deployment-Link | Nach Bereitstellung und Liveprüfung einzutragen. |
-| Bekannte Portaladresse | https://morada-portal.vercel.app/ – die Adresse allein beweist noch nicht den Stand der neuen Änderungen. |
+| Implementierungscommit | `236aba11d596176fe688622b087e16bf43b19bf8` |
+| Geprüftes Implementierungsdeployment | `dpl_CuCNxjGoD6wzUFCfPzagH2JneqDM`, Produktion, Zustand `READY` |
+| Unveränderliche Deployment-Adresse | https://morada-mora-dojc79f1y-dianaporschke-1255s-projects.vercel.app/ – Vorschauzugang kann Vercel-Anmeldung verlangen. |
+| Öffentlich geprüfter Deployment-Link | https://morada-portal.vercel.app/ – beim API- und Browserlauf nachweislich dem obigen Commit zugeordnet. |
 
-Es wurde für diesen Bericht keine Commit-ID oder erfolgreiche Bereitstellung erfunden. Die abschliessende Evidenz muss mit dem tatsächlich geprüften Stand übereinstimmen.
+Code wurde über die verbundene GitHub-Schnittstelle auf `main` gesichert; der hochgeladene Git-Baum entsprach exakt dem lokal geprüften Baum. Vercel hat daraus automatisch die Produktion gebaut. Der nachfolgende Nachweiscommit ergänzt ausschliesslich diesen Bericht und das Bildschirmfoto; der geprüfte Anwendungscode bleibt unverändert.
 
 ## 13. Konkrete nächste Schritte für Phase 2
 
