@@ -22,6 +22,7 @@
   "homepage": "https://github.com/dianaporschke/morada.mora.ai#readme",
   "dependencies": {
     "@ai-sdk/openai": "^4.0.86",
+    "@vercel/oidc": "^4.0.0",
     "ai": "^7.0.130",
     "zod": "^4.6.5"
   },

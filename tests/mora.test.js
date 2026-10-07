@@ -66,8 +66,10 @@ test('Urgency precedes qualification, ordinary lamp failure and negations stay c
   assert.equal(detectHazard('Rauchmelder piept, aber kein Rauch').hazard, 'none');
 });
 
-test('Immediate danger overrides a model that misclassifies the message', async () => {
-  const result = await processTurn({ message:'Ich rieche Gasgeruch' }, null, async () => ({ data:guidedUnderstanding('Hallo', null), mode:'model' }));
+test('Immediate danger returns without depending on any remote model response', async () => {
+  let modelCalls = 0;
+  const result = await processTurn({ message:'Ich rieche Gasgeruch' }, null, async () => { modelCalls++; throw new Error('Remote model must not be called'); });
+  assert.equal(modelCalls,0);
   assert.equal(result.state.issue.urgency, 'emergency'); assert.equal(result.state.actions[0].number, '112');
 });
 
@@ -110,6 +112,17 @@ test('Signed state cannot be modified or reused after expiry', async () => {
   const [payload, signature] = signed.split('.');
   const tampered = Buffer.from(JSON.stringify({ ...JSON.parse(Buffer.from(payload,'base64url')), issue:{ category:'general' } })).toString('base64url');
   assert.throws(() => readSession(`${tampered}.${signature}`), { code:'INVALID_SESSION' });
+  const now = Date.now;
+  try { Date.now = () => now() + 13 * 60 * 60 * 1000;
+    assert.throws(() => readSession(signed), { code:'INVALID_SESSION' });
+  } finally { Date.now = now; }
+});
+
+test('An unsolicited scope answer is retained without being mistaken for a time', async () => {
+  const first = await turn('heizung funktioniert nicht');
+  const next = await turn('alle heizkörper', first.state);
+  assert.equal(next.state.issue.extent,'Alle Heizkörper'); assert.equal(next.state.issue.since,null);
+  assert.equal(next.state.pendingKey,'since');
 });
 test('Unconnected requests API returns an honest unsent status, no fake receipt', async () => {
   const result = await turn('habe einen rohrbruch'); const res = response();
