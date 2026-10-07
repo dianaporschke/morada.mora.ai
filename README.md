@@ -9,10 +9,11 @@ MORA versteht Anliegen, stellt jeweils eine Rückfrage, sammelt strukturierte An
 
 Node.js 24, JavaScript ES Modules, AI SDK 7, Zod. Keine Frameworkmigration.
 
-- `OPENAI_API_KEY`: vorhandene serverseitige Vercel-Konfiguration, keine Client-Schlüssel.
-- `OPENAI_MODEL`: optional; Standard `gpt-5.4-mini`, über OpenAI Responses mit validierter strukturierter Ausgabe. Referenz: https://developers.openai.com/api/docs/models/gpt-5.4-mini
+- Auf Vercel nutzt MORA AI Gateway mit dem automatisch bereitgestellten OIDC-Token. Kein API-Key gelangt in den Client. Der vorhandene direkte OpenAI-Zugang antwortete beim ersten Live-Test mit HTTP 429; deshalb wird auf Vercel der Gateway-Pfad verwendet.
+- `AI_GATEWAY_MODEL`: optional; Standard `openai/gpt-6-luna`, im vollständigen aktuellen Gateway-Katalog auf strukturierte Ausgabe und V4-Unterstützung geprüft. Katalog: https://ai-gateway.vercel.sh/v1/models
+- `AI_GATEWAY_API_KEY`: optional für lokale Development-/Testumgebungen ohne Vercel OIDC.
+- `OPENAI_API_KEY` und optional `OPENAI_MODEL`: bestehender alternativer direkter Zugang für Umgebungen ohne Gateway-Authentifizierung; Standard `gpt-5.4-mini`. Referenz: https://developers.openai.com/api/docs/models/gpt-5.4-mini
 - `MORA_SESSION_SECRET`: optionaler separater Signaturschlüssel. Ohne ihn wird der vorhandene serverseitige API-Key verwendet. Rotation macht bestehende Chats ungültig, lokal gespeicherte Entwürfe bleiben erhalten.
-- Optionaler alternativer Provider: `AI_GATEWAY_API_KEY` und `AI_GATEWAY_MODEL` gemeinsam setzen. Modell-ID aus dem aktuellen Gateway-Katalog wählen. Der vorhandene Provider wird ohne diese beiden Einstellungen beibehalten.
 
 Die produktiven Secrets bleiben in Vercel. Für lokale Entwicklung nur eigene Development-Secrets verwenden. Ohne Provider-Konfiguration oder bei Modellfehlern funktioniert eine begrenzte, kontextfähige geführte Erfassung. Ein Modellfehler wird nur mit technischem Statuscode protokolliert, ohne Kundentexte oder Secrets.
 
