@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { MockLanguageModelV4 } from 'ai/test';
-import { generateUnderstanding } from '../lib/mora/understanding.js';
+import { extractUnderstanding, generateUnderstanding } from '../lib/mora/understanding.js';
 import { processTurn } from '../lib/mora/engine.js';
 
 test('SDK structured output contract passes signed context to the model and validates the result', async () => {
@@ -29,4 +29,40 @@ test('A semantic paraphrase without any original keyword gets the same qualifica
   const result = await processTurn({message:'Wenn ich den Schalter im Flur drücke bleibt es dunkel'}, null, async () => ({data,mode:'model'}));
   assert.equal(result.state.issue.category,'electricity'); assert.equal(result.state.issue.location,'Flur');
   assert.equal(result.state.pendingKey,'since'); assert.equal(result.understanding,'model');
+});
+
+test('Provider refusal keeps context usable, avoids repeated slow calls, and retries after the cooldown', async t => {
+  const originalKey = process.env.OPENAI_API_KEY;
+  const originalGatewayKey = process.env.AI_GATEWAY_API_KEY;
+  const originalOidc = process.env.VERCEL_OIDC_TOKEN;
+  process.env.OPENAI_API_KEY = 'test-only-key';
+  delete process.env.AI_GATEWAY_API_KEY;
+  delete process.env.VERCEL_OIDC_TOKEN;
+  let requests = 0;
+  let now = Date.now();
+  t.mock.method(Date, 'now', () => now);
+  t.mock.method(console, 'warn', () => {});
+  t.mock.method(globalThis, 'fetch', async () => {
+    requests++;
+    return new Response(JSON.stringify({ error:{ message:'Test provider refusal', type:'insufficient_quota', code:'insufficient_quota' } }), {
+      status:429, headers:{ 'Content-Type':'application/json' },
+    });
+  });
+  try {
+    const first = await extractUnderstanding('heizung funktioniert nicht', null);
+    assert.equal(first.mode, 'guided');
+    assert.equal(first.availability.reason, 'insufficient_quota');
+    const state = { issue:{ category:'heating' }, pendingKey:'since' };
+    const second = await extractUnderstanding('seit gestern', state);
+    assert.equal(requests, 1);
+    assert.equal(second.data.category, 'heating');
+    assert.equal(second.data.since, 'seit gestern');
+    now += 61_000;
+    await extractUnderstanding('alle heizkörper', { ...state, pendingKey:'extent' });
+    assert.equal(requests, 2);
+  } finally {
+    for (const [key, value] of Object.entries({ OPENAI_API_KEY:originalKey, AI_GATEWAY_API_KEY:originalGatewayKey, VERCEL_OIDC_TOKEN:originalOidc })) {
+      if (value === undefined) delete process.env[key]; else process.env[key] = value;
+    }
+  }
 });

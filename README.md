@@ -5,6 +5,8 @@ Repository: `dianaporschke/morada.mora.ai` · Vercel-Projekt: `morada-mora-ai`.
 
 MORA versteht Anliegen, stellt jeweils eine Rückfrage, sammelt strukturierte Angaben und bietet passende Aktionen an. Die bestehende Portalnavigation, dunkle Chatoberfläche und die aktuellen v3-App-Icons bleiben erhalten.
 
+**Verifizierter Betriebsstand, 7. Oktober 2026:** Die geführte Erfassung und die Actions laufen auf Vercel. Die echte semantische KI-Auswertung ist noch extern gesperrt: AI Gateway antwortet mit `403 customer_verification_required`; der vorhandene direkte OpenAI-Zugang lieferte `429`. Der Team-Inhaber muss die Kundenverifizierung bzw. Zahlungsmethode im AI-Gateway-Bereich des Vercel-Kontos abschliessen. Es wurden keine Credits gekauft oder Zahlungsdaten verändert. Ein erfolgreicher echter Modellaufruf und die anschliessenden semantischen Live-Tests stehen deshalb noch aus. Account-Hinweise: https://vercel.com/docs/ai-gateway/pricing
+
 ## Laufzeit und Konfiguration
 
 Node.js 24, JavaScript ES Modules, AI SDK 7, Zod. Keine Frameworkmigration.
@@ -15,7 +17,7 @@ Node.js 24, JavaScript ES Modules, AI SDK 7, Zod. Keine Frameworkmigration.
 - `OPENAI_API_KEY` und optional `OPENAI_MODEL`: bestehender alternativer direkter Zugang für Umgebungen ohne Gateway-Authentifizierung; Standard `gpt-5.4-mini`. Referenz: https://developers.openai.com/api/docs/models/gpt-5.4-mini
 - `MORA_SESSION_SECRET`: optionaler separater Signaturschlüssel. Ohne ihn wird der vorhandene serverseitige API-Key verwendet. Rotation macht bestehende Chats ungültig, lokal gespeicherte Entwürfe bleiben erhalten.
 
-Die produktiven Secrets bleiben in Vercel. Für lokale Entwicklung nur eigene Development-Secrets verwenden. Ohne Provider-Konfiguration oder bei Modellfehlern funktioniert eine begrenzte, kontextfähige geführte Erfassung. Ein Modellfehler wird nur mit technischem Statuscode protokolliert, ohne Kundentexte oder Secrets.
+Die produktiven Secrets bleiben in Vercel. Für lokale Entwicklung nur eigene Development-Secrets verwenden. Ohne Provider-Konfiguration oder bei Modellfehlern funktioniert eine begrenzte, kontextfähige geführte Erfassung. Ein Modellfehler wird nur mit Anbieter, Statuscode und bereinigtem Fehlercode protokolliert, ohne Kundentexte oder Secrets. Bei 401/403/429 setzt dieselbe Funktionsinstanz weitere Modellaufrufe für 60 Sekunden aus und versucht es danach automatisch erneut. Bestätigte unmittelbare Gefahren und Auswahlaktionen benötigen keinen Modellaufruf.
 
 ## Architektur
 
