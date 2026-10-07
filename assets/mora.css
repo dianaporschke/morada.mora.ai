@@ -1,0 +1,51 @@
+/* MORA 2.0: scoped additions; portal layout, navigation and logo assets stay intact. */
+.mora-panel { background:#0e1010; max-height:var(--mora-max-height,78dvh)!important; bottom:var(--mora-bottom,82px); }
+#mora:checked~.app .mora-panel { display:flex!important; flex-direction:column; }
+.mora-head { flex-shrink:0; gap:12px; }
+.mora-head-actions { display:flex; align-items:center; gap:12px; }
+.mora-new-chat { font:inherit; font-size:11px; border:1px solid #73503c; border-radius:12px; padding:8px 10px; background:#242626; color:#e1d3c5; cursor:pointer; }
+.mora-close { cursor:pointer; }
+.mora-body { flex:1; min-height:0; max-height:none!important; overscroll-behavior:contain; }
+.mora-body .bubble { white-space:pre-line; overflow-wrap:anywhere; }
+.mora-actions { display:flex; flex-wrap:wrap; align-items:stretch; gap:8px; margin:-3px 0 20px; }
+.mora-action { min-height:42px; max-width:100%; font:inherit; font-size:12px; line-height:1.35; padding:10px 14px; color:#e9dfd1; background:#1b1d1d; border:1px solid #73503c; border-radius:15px; cursor:pointer; text-align:left; transition:background .15s,border-color .15s; }
+.mora-action:hover { border-color:#c96b42; background:#28211d; }
+.mora-action.primary { background:#b9683f; border-color:#b9683f; color:#fff; font-weight:600; }
+.mora-action.primary:hover { background:#a85d37; }
+.mora-action:disabled { opacity:.48; cursor:default; }
+.mora-action:focus-visible,.mora-new-chat:focus-visible,.mora-close:focus-visible { outline:2px solid #e6a27c; outline-offset:3px; }
+.mora-text:focus-visible { border-color:#c96b42!important; }
+.mora-file-input { display:none!important; }
+.mora-attachments { background:#121414; padding:8px 12px; border-top:1px solid #44332b; max-height:100px; overflow:auto; }
+.mora-attachments[hidden] { display:none; }
+.mora-photo { display:flex; align-items:center; gap:8px; color:#d7c7b9; font-size:11px; padding:4px 0; }
+.mora-photo img { width:38px; height:38px; object-fit:cover; border-radius:7px; }
+.mora-photo span { min-width:0; flex:1; overflow-wrap:anywhere; }
+.mora-photo button { background:transparent; border:1px solid #73503c; color:#dcc1ae; border-radius:8px; font:inherit; padding:6px 8px; cursor:pointer; }
+.mora-storage-note { font-size:11px; line-height:1.5; color:#af9783; padding:0 12px 9px; background:#121414; }
+.mora-drafts[hidden] { display:none; }
+.mora-drafts { border-color:#c9ac96; }
+#moraCaptureRequest { border:0; font:inherit; text-align:left; width:100%; cursor:pointer; }
+.mora-contact-card { display:block; width:100%; text-align:left; font:inherit; cursor:pointer; }
+.mora-contact-card .muted { display:block; }
+.mora-drafts .draft-notice { margin:12px 0; padding:12px; border-radius:12px; background:#eee2d5; color:#73533d; font-size:12px; line-height:1.5; }
+.mora-draft-fields { display:grid; gap:12px; margin-top:16px; }
+.mora-draft-fields label { display:grid; gap:6px; font-size:12px; color:#6e6359; }
+.mora-draft-fields input,.mora-draft-fields textarea,.mora-draft-picker { display:block!important; width:100%; min-width:0; border:1px solid #d3c3b5; border-radius:11px; padding:11px; background:#faf7f2; color:#252727; font:inherit; font-size:14px; }
+.mora-draft-fields textarea { min-height:100px; resize:vertical; }
+.mora-draft-picker { margin-top:12px; }
+.mora-draft-summary { white-space:pre-line; font-size:12px; line-height:1.6; overflow-wrap:anywhere; margin-top:14px; }
+.mora-draft-controls { display:flex; gap:8px; flex-wrap:wrap; margin-top:15px; }
+.mora-draft-controls button { font:inherit; font-size:12px; border:1px solid #bb8c6e; border-radius:13px; background:#b9683f; color:#fff; padding:12px; cursor:pointer; }
+.mora-draft-controls button.secondary { background:#f5eee7; color:#73533d; }
+.mora-draft-status { font-size:12px; line-height:1.5; color:#846346; margin-top:12px; }
+.mora-draft-photos { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+.mora-draft-photos img { width:66px; height:66px; border-radius:10px; object-fit:cover; }
+@media (max-width:600px) {
+  .mora-action { min-height:46px; font-size:13px; flex:1 1 140px; }
+  .mora-action.primary { flex-basis:100%; }
+  .mora-new-chat { font-size:10px; padding:8px; }
+  .mora-head-actions { gap:8px; }
+  .mora-draft-fields input,.mora-draft-fields textarea { font-size:16px; }
+}
+@media (prefers-reduced-motion:reduce) { .mora-action { transition:none; } }

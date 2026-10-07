@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="ut</stylef-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>MORADA Immobilien · Kundenportal</title>
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/morada-app-icon-v3-180.png">
@@ -698,6 +698,7 @@ main{padding:18px}
 
 }
 </style>
+<link rel="stylesheet" href="/assets/mora.css">
 </head>
 <body>
 
@@ -814,8 +815,28 @@ main{padding:18px}
       <div class="kicker">NEUES ANLIEGEN</div>
       <div class="big">Wie können wir helfen?</div>
       <div class="muted">Schaden, Handwerkerkoordination, Übergabe, Vermietung oder allgemeine Anfrage.</div>
-      <div class="button">Anliegen erfassen</div>
+      <button type="button" class="button" id="moraCaptureRequest">Anliegen erfassen</button>
     </div>
+    <section class="card mora-drafts" id="moraDrafts" hidden aria-label="Vorbereitetes Anliegen">
+      <div class="kicker">IHR ANLIEGENENTWURF</div>
+      <div class="big">Für MORADA vorbereitet.</div>
+      <div class="draft-notice">Noch nicht übermittelt. Ihre Angaben und Fotos bleiben lokal auf diesem Gerät. Die direkte Übermittlung an MORADA ist noch nicht angeschlossen.</div>
+      <label for="moraDraftPicker" class="muted">Gespeicherte Entwürfe</label>
+      <select id="moraDraftPicker" class="mora-draft-picker"></select>
+      <div class="mora-draft-fields">
+        <label>Beschreibung<textarea id="moraDraftDescription" maxlength="2000"></textarea></label>
+        <label>Betroffener Bereich<input id="moraDraftLocation" type="text" maxlength="2000"></label>
+        <label>Seit wann<input id="moraDraftSince" type="text" maxlength="2000"></label>
+        <label>Weitere Angaben<textarea id="moraDraftDetails" maxlength="6000"></textarea></label>
+      </div>
+      <details><summary>Gesammelte Zusammenfassung</summary><div class="mora-draft-summary" id="moraDraftSummary"></div></details>
+      <div class="mora-draft-photos" id="moraDraftPhotos" aria-label="Fotos im Entwurf"></div>
+      <div class="mora-draft-controls">
+        <button id="moraSaveDraft" type="button">Entwurf speichern</button>
+        <button id="moraDownloadDraft" class="secondary" type="button">Entwurf mit Fotos herunterladen</button>
+      </div>
+      <div id="moraDraftStatus" class="mora-draft-status" role="status"></div>
+    </section>
     <div class="card">
       <div class="row">
         <div><b>Fenster · Einheit 3A</b><div class="muted">Handwerker angefragt</div></div>
@@ -839,28 +860,31 @@ main{padding:18px}
       <div class="muted">Eigentümer-Ansicht · Demo-Konto</div>
     </div>
     <div class="card"><b>Benachrichtigungen</b><div class="muted">Updates zu Anliegen, Dokumenten und Ihrer Immobilie.</div></div>
-    <div class="card"><b>MORADA kontaktieren</b><div class="muted">Direkter Kontakt zu Ihrer Betreuung.</div></div>
+    <button type="button" class="card mora-contact-card" id="moraContactCard"><b>MORADA kontaktieren</b><span class="muted">Anfrage an Ihre Betreuung vorbereiten.</span></button>
   </main>
 
 
  <label for="mora" class="mora-fab" aria-label="MORA fragen"><span class="mora-star"></span><span class="mora-fab-text">MORA fragen</span></label>
-  <div class="mora-panel">
+  <div class="mora-panel" role="dialog" aria-label="MORA Assistenz">
     <div class="mora-head">
       <div class="mora-id"><div class="mora-dot"><span class="mora-star small"></span></div><div><b>MORA fragen</b><small>MORADA ASSISTENT</small></div></div>
-      <label for="mora" class="mora-close">×</label>
+      <div class="mora-head-actions"><button type="button" id="moraNewChat" class="mora-new-chat">Neuer Chat</button><label for="mora" class="mora-close" aria-label="MORA schliessen">×</label></div>
     </div>
-    <div class="mora-body" id="moraMessages">
+    <div class="mora-body" id="moraMessages" role="log" aria-live="polite" aria-relevant="additions">
       <div class="bubble">Guten Tag. Ich bin MORA. Wie kann ich Ihnen rund um Ihre Immobilie helfen?</div>
       <div class="mora-suggestions">
-        <button type="button" onclick="askSuggestion('Welche Dokumente finde ich hier im Portal?')">Dokumente finden</button>
-        <button type="button" onclick="askSuggestion('Ich möchte ein Anliegen zu meiner Immobilie melden.')">Anliegen melden</button>
-        <button type="button" onclick="askSuggestion('Was kann ich in der Immobilienübersicht sehen?')">Meine Immobilie</button>
-        <button type="button" onclick="askSuggestion('Wie funktioniert der 360° WalkThrough?')">WalkThrough</button>
+        <button type="button" data-mora-message="Welche Dokumente finde ich hier im Portal?">Dokumente finden</button>
+        <button type="button" data-mora-message="Ich möchte ein Anliegen zu meiner Immobilie melden.">Anliegen melden</button>
+        <button type="button" data-mora-message="Was kann ich in der Immobilienübersicht sehen?">Meine Immobilie</button>
+        <button type="button" data-mora-message="Wie funktioniert der 360° WalkThrough?">WalkThrough</button>
       </div>
     </div>
+    <div class="mora-attachments" id="moraAttachments" hidden></div>
+    <div class="mora-storage-note" id="moraStorageNote">Fotos werden lokal hinzugefügt und erst mit einer angebundenen Übermittlung versendet.</div>
+    <input class="mora-file-input" id="moraFileInput" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" multiple aria-label="Fotos zum Anliegen hinzufügen">
     <form class="mora-input" id="moraForm">
   <span class="mora-input-star"><span class="mora-star small"></span></span>
-  <input id="moraText" class="mora-text" type="text" autocomplete="off" placeholder="Nachricht an MORA …" aria-label="Nachricht an MORA">
+  <input id="moraText" class="mora-text" type="text" maxlength="2000" autocomplete="off" placeholder="Nachricht an MORA …" aria-label="Nachricht an MORA">
   <button class="mora-send" id="moraSend" type="submit" aria-label="Nachricht senden">↑</button>
 </form>
   </div>
@@ -875,67 +899,7 @@ main{padding:18px}
 </div>
 
 
-<script>
-const moraForm = document.getElementById('moraForm');
-const moraText = document.getElementById('moraText');
-const moraMessages = document.getElementById('moraMessages');
-const moraSend = document.getElementById('moraSend');
-
-function addBubble(text, who='assistant', cls='') {
-  const div = document.createElement('div');
-  div.className = 'bubble ' + (who === 'user' ? 'user ' : '') + cls;
-  div.textContent = text;
-  moraMessages.appendChild(div);
-  moraMessages.scrollTop = moraMessages.scrollHeight;
-  return div;
-}
-
-async function sendToMora(message) {
-  const clean = (message || '').trim();
-  if (!clean) return;
-
-  addBubble(clean, 'user');
-  moraText.value = '';
-  moraSend.disabled = true;
-  const loading = addBubble('MORA denkt nach …', 'assistant', 'loading');
-
-  try {
-    const res = await fetch('/api/chat', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({message: clean})
-    });
-
-    let data = {};
-    try { data = await res.json(); } catch (e) {}
-
-    loading.remove();
-
-    if (!res.ok) {
-      addBubble(data.error || 'MORA konnte gerade keine Antwort laden. Bitte versuchen Sie es nochmals.');
-      return;
-    }
-
-    addBubble(data.reply || 'Ich konnte dazu gerade keine Antwort erstellen.');
-  } catch (err) {
-    loading.remove();
-    addBubble('Die Verbindung zu MORA ist gerade nicht erreichbar. Sobald die App auf Vercel läuft, funktioniert der KI-Chat.');
-  } finally {
-    moraSend.disabled = false;
-    moraText.focus();
-  }
-}
-
-moraForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  sendToMora(moraText.value);
-});
-
-function askSuggestion(text) {
-  document.getElementById('mora').checked = true;
-  sendToMora(text);
-}
-</script>
+<script type="module" src="/assets/mora-client.js"></script>
 
 </body>
 </html>

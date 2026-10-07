@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES2023", "module": "NodeNext", "moduleResolution": "NodeNext",
+    "allowJs": true, "checkJs": true, "noEmit": true, "skipLibCheck": true, "strict": false,
+    "lib": ["ES2023", "DOM"], "types": ["node"]
+  },
+  "include": ["api/**/*.js", "lib/**/*.js", "assets/**/*.js"]
+}
