@@ -699,6 +699,7 @@ main{padding:18px}
 }
 </style>
 <link rel="stylesheet" href="/assets/mora.css">
+<link rel="stylesheet" href="/assets/portal.css">
 </head>
 <body>
 
@@ -718,36 +719,46 @@ main{padding:18px}
   </div>
 </div>
 
-<div class="app">
+<div class="app portal-shell">
  <header class="top">
   <div class="brand-header">
     <img class="app-logo" src="transparent 2.0.png" alt="MORADA Immobilien">
   </div>
 
-  <div class="avatar">DP</div>
+  <label for="profile" class="portal-account" tabindex="0" role="button" aria-label="Profil öffnen">
+    <span class="avatar">DP</span>
+    <span class="portal-account-copy"><strong>Diana K. Pörschke</strong><small>Eigentümer-Ansicht · Demo</small></span>
+    <span class="portal-account-arrow" aria-hidden="true">↗</span>
+  </label>
 </header>
   
 
   <main class="view home">
-    <div class="hello">Guten Tag</div>
-    <div class="title">Ihre Übersicht.</div>
-
-    <div class="card dark">
-      <div class="kicker">IHRE LIEGENSCHAFT</div>
-      <img class="property-icon" src="icons/property.svg" alt="">
-      <div class="big">Wohnliegenschaft Baden</div>
-      <div class="muted">12 Einheiten · persönlich durch MORADA betreut</div>
-      <div class="stats">
-        <div class="stat"><b>98 %</b><span>Vermietet</span></div>
-        <div class="stat"><b>CHF 26'400</b><span>Miete / Monat</span></div>
-      </div>
-     <label for="portfolio" class="button">
-  <span>Immobilie ansehen</span>
-  <span class="button-arrow">→</span>
-</label>
+    <div class="portal-page-heading">
+      <div><div class="hello">Guten Tag, Diana.</div><h1 class="title">Ihre Übersicht.</h1></div>
+      <span class="portal-demo-badge">Demo-Ansicht</span>
     </div>
-
-    <div class="quick">
+    <section class="portal-hero" aria-label="Ihre Liegenschaft im Überblick">
+      <img class="portal-hero-photo" src="/assets/portal-property.webp" alt="" width="1536" height="1024" fetchpriority="high">
+      <div class="portal-hero-copy">
+        <div class="portal-eyebrow">PERSÖNLICH NAH. DIGITAL VERBUNDEN.</div>
+        <h2>Ihre Immobilie.<br><em>Alles im Blick.</em></h2>
+        <p>Ein Ort für Ihre Unterlagen, Anliegen<br class="portal-desktop-break"> und den Überblick über Ihre Immobilie.</p>
+      </div>
+      <div class="portal-property-glass">
+        <div class="portal-property-heading"><div><span class="portal-eyebrow">IHRE LIEGENSCHAFT</span><h3>Wohnliegenschaft Baden</h3></div><span class="portal-region">Baden · Aargau</span></div>
+        <div class="portal-property-bottom">
+          <div class="portal-property-stats">
+            <div><strong>12</strong><span>Wohneinheiten</span></div>
+            <div><strong>98 <small>%</small></strong><span>Vermietet</span></div>
+            <div><strong><small>CHF</small> 26'400</strong><span>Miete / Monat</span></div>
+          </div>
+          <label for="portfolio" class="portal-property-link" tabindex="0" role="button">Immobilie ansehen <span aria-hidden="true">↗</span></label>
+        </div>
+      </div>
+    </section>
+    <div class="portal-section-heading"><h2>Direkt zum Wesentlichen.</h2><span>Ihre Schnellzugriffe</span></div>
+    <div class="quick portal-quick">
 
   <label for="docs" class="quick-card">
     <img src="icons/documents.svg" alt="">
@@ -785,6 +796,18 @@ main{padding:18px}
     <span class="quick-arrow">›</span>
   </label>
 </div>
+    <div class="portal-dashboard-details">
+      <section class="portal-overview-card" aria-labelledby="portal-activity-title">
+        <div class="portal-detail-heading"><h2 id="portal-activity-title">Aktuelles Anliegen</h2><label for="service" class="portal-text-link" tabindex="0" role="button">Service öffnen <span aria-hidden="true">↗</span></label></div>
+        <div class="portal-activity"><span class="portal-activity-icon" aria-hidden="true">↗</span><div><strong>Fenster · Einheit 3A</strong><p>Handwerker angefragt</p></div><span class="portal-status">In Bearbeitung</span></div>
+        <p class="portal-demo-note">Die Übersicht zeigt Beispieldaten Ihres Demo-Kontos.</p>
+      </section>
+      <section class="portal-overview-card portal-documents-preview" aria-labelledby="portal-documents-title">
+        <div class="portal-detail-heading"><h2 id="portal-documents-title">Ihre Unterlagen</h2><img src="/icons/documents.svg" alt="" width="22" height="22"></div>
+        <label for="docs" class="portal-document-link" tabindex="0" role="button"><span>Mieterspiegel 2026<small>Dokumentenübersicht öffnen</small></span><span aria-hidden="true">↗</span></label>
+        <div class="portal-document-count">3 Beispiel-Unterlagen <span>PDF</span></div>
+      </section>
+    </div>
   </main>
 
   <main class="view portfolio">
@@ -898,17 +921,20 @@ main{padding:18px}
 </form>
   </div>
 
-  <nav class="nav">
-  <label for="home"><img class="nav-icon" src="icons/home-neutral.svg" alt="">Home</label>
-    <label for="portfolio"><img class="nav-icon" src="icons/portfolio.svg" alt="">Portfolio</label>
-   <label for="service"><img class="nav-icon" src="icons/service.svg" alt="">Service</label>
-    <label for="docs"><img class="nav-icon" src="icons/documents.svg" alt="">Dokumente</label>
-    <label for="profile"><img class="nav-icon" src="icons/profile.svg" alt="">Profil</label>
+  <nav class="nav portal-nav" aria-label="Portalbereiche">
+    <p class="portal-nav-caption">IHR KUNDENPORTAL</p>
+    <label for="home" tabindex="0" role="button"><img class="nav-icon" src="icons/home-neutral.svg" alt=""><span>Home</span><i aria-hidden="true">↗</i></label>
+    <label for="portfolio" tabindex="0" role="button"><img class="nav-icon" src="icons/portfolio.svg" alt=""><span>Portfolio</span><i aria-hidden="true">↗</i></label>
+    <label for="service" tabindex="0" role="button"><img class="nav-icon" src="icons/service.svg" alt=""><span>Service</span><i aria-hidden="true">↗</i></label>
+    <label for="docs" tabindex="0" role="button"><img class="nav-icon" src="icons/documents.svg" alt=""><span>Dokumente</span><i aria-hidden="true">↗</i></label>
+    <label for="profile" tabindex="0" role="button"><img class="nav-icon" src="icons/profile.svg" alt=""><span>Profil</span><i aria-hidden="true">↗</i></label>
+    <div class="portal-nav-signature"><span>MORADA IMMOBILIEN</span><small>Persönlich. Digital. Für Sie.</small></div>
   </nav>
 </div>
 
 
 <script type="module" src="/assets/mora-client.js"></script>
+<script type="module" src="/assets/portal-navigation.js"></script>
 
 </body>
 </html>
