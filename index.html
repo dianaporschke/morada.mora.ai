@@ -810,36 +810,49 @@ main{padding:18px}
     </div>
   </main>
 
-  <main class="view portfolio">
-    <div class="section-title">Portfolio</div>
-    <div class="card">
-      <div class="kicker">BADEN · AARGAU</div>
-      <div class="big">Wohnliegenschaft Baden</div>
-      <div class="muted">12 Wohneinheiten · 98 % vermietet</div>
+  <main class="view portfolio portal-subpage">
+    <div class="portal-page-heading">
+      <div><div class="hello">Ihre Liegenschaften</div><h1 class="title">Ihr Portfolio.</h1></div>
+      <span class="portal-demo-badge">Demo-Ansicht</span>
     </div>
-    <div class="card">
-      <div class="row"><b>Aktueller Status</b><span class="pill">Aktiv</span></div>
-      <div class="stats">
-        <div class="stat"><b>12</b><span>Einheiten</span></div>
-        <div class="stat"><b>1</b><span>Offenes Anliegen</span></div>
+    <section class="portal-property-feature" aria-labelledby="portal-property-title">
+      <div class="portal-property-media"><img src="/assets/portal-property.webp" alt="" width="1536" height="1024" loading="lazy"><span>Beispielansicht</span></div>
+      <div class="portal-property-summary">
+        <span class="portal-eyebrow">BADEN · AARGAU</span>
+        <h2 id="portal-property-title">Wohnliegenschaft Baden</h2>
+        <p class="portal-description">12 Wohneinheiten · 98 % vermietet</p>
+        <div class="portal-property-stats"><div><strong>12</strong><span>Wohneinheiten</span></div><div><strong>98 <small>%</small></strong><span>Vermietet</span></div></div>
+        <label for="docs" class="portal-inline-action" tabindex="0" role="button">Unterlagen ansehen <span aria-hidden="true">↗</span></label>
       </div>
+    </section>
+    <div class="portal-page-grid">
+      <section class="portal-content-card" aria-labelledby="portal-property-status">
+        <div class="portal-card-heading"><span class="portal-icon-tile"><svg class="portal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V7h7v14M11 21V3h9v18M2 21h20M7 10h1m-1 4h1m-1 4h1m6-11h3m-3 4h3m-3 4h3m-3 4h3"/></svg></span><span class="portal-status">Aktiv</span></div>
+        <h2 id="portal-property-status">Aktueller Status</h2>
+        <div class="portal-metrics"><div><strong>12</strong><span>Einheiten</span></div><div><strong>1</strong><span>Offenes Anliegen</span></div></div>
+        <label for="service" class="portal-inline-action" tabindex="0" role="button">Anliegen ansehen <span aria-hidden="true">↗</span></label>
+      </section>
+      <section class="portal-content-card portal-walkthrough" aria-labelledby="portal-walkthrough-title">
+        <div class="portal-card-heading"><span class="portal-panorama" aria-hidden="true">360°</span><span class="portal-neutral-badge">Vorschau</span></div>
+        <div class="portal-eyebrow">360° WALKTHROUGH</div>
+        <h2 id="portal-walkthrough-title">Immobilie digital begehen</h2>
+        <p class="portal-description">Virtueller Rundgang durch ausgewählte Bereiche Ihrer Immobilie.</p>
+        <div class="portal-unavailable" aria-disabled="true">WalkThrough öffnen <span aria-hidden="true">↗</span></div>
+        <p class="portal-card-note">Der Rundgang ist in dieser Demo noch nicht verfügbar.</p>
+      </section>
     </div>
-    <div class="card">
-      <div class="kicker">360° WALKTHROUGH</div>
-      <div class="big">Immobilie digital begehen</div>
-      <div class="muted">Virtueller Rundgang durch ausgewählte Bereiche Ihrer Immobilie.</div>
-      <div class="button">WalkThrough öffnen</div>
-    </div>
+    <p class="portal-page-note">Die Übersicht zeigt Beispieldaten Ihres Demo-Kontos.</p>
   </main>
 
-  <main class="view service">
-    <div class="section-title">Anliegen</div>
-    <div class="card">
-      <div class="kicker">NEUES ANLIEGEN</div>
-      <div class="big">Wie können wir helfen?</div>
-      <div class="muted">Schaden, Handwerkerkoordination, Übergabe, Vermietung oder allgemeine Anfrage.</div>
-      <button type="button" class="button" id="moraCaptureRequest">Anliegen erfassen</button>
+  <main class="view service portal-subpage">
+    <div class="portal-page-heading">
+      <div><div class="hello">Meldungen und Unterstützung</div><h1 class="title">Ihre Anliegen.</h1></div>
+      <span class="portal-demo-badge">Demo-Ansicht</span>
     </div>
+    <section class="portal-content-card portal-capture" aria-labelledby="portal-capture-title">
+      <div class="portal-capture-copy"><span class="portal-eyebrow">NEUES ANLIEGEN</span><h2 id="portal-capture-title">Wie können wir helfen?</h2><p class="portal-description">Schaden, Handwerkerkoordination, Übergabe, Vermietung oder allgemeine Anfrage.</p></div>
+      <div class="portal-capture-action"><span class="portal-icon-tile" aria-hidden="true"><svg class="portal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg></span><button type="button" class="button" id="moraCaptureRequest">Anliegen erfassen</button></div>
+    </section>
     <section class="card mora-drafts" id="moraDrafts" hidden aria-label="Vorbereitetes Anliegen">
       <div class="kicker">IHR ANLIEGENENTWURF</div>
       <div class="big" id="moraDraftHeading">Für MORADA vorbereitet.</div>
@@ -865,30 +878,62 @@ main{padding:18px}
       </div>
       <div id="moraDraftStatus" class="mora-draft-status" role="status"></div>
     </section>
-    <div class="card">
-      <div class="row">
-        <div><b>Fenster · Einheit 3A</b><div class="muted">Handwerker angefragt</div></div>
-        <span class="pill">In Bearbeitung</span>
+    <section class="portal-content-card" aria-labelledby="portal-open-issues-title">
+      <div class="portal-card-heading"><h2 id="portal-open-issues-title">Aktuelles Anliegen</h2><span class="portal-neutral-badge">Beispieleintrag</span></div>
+      <div class="portal-issue-row"><span class="portal-icon-tile"><svg class="portal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg></span><div><h3>Fenster · Einheit 3A</h3><p class="portal-description">Handwerker angefragt</p></div><span class="portal-status">In Bearbeitung</span></div>
+    </section>
+    <p class="portal-page-note">Die Übersicht zeigt Beispieldaten Ihres Demo-Kontos. Ihre vorbereiteten Anliegen finden Sie im lokalen Entwurf.</p>
+  </main>
+
+  <main class="view docs portal-subpage">
+    <div class="portal-page-heading">
+      <div><div class="hello">Alles an einem Ort</div><h1 class="title">Ihre Dokumente.</h1></div>
+      <span class="portal-demo-badge">Demo-Ansicht</span>
+    </div>
+    <div class="portal-documents-grid">
+      <section class="portal-content-card" aria-labelledby="portal-file-list-title">
+        <div class="portal-card-heading"><h2 id="portal-file-list-title">Ihre Unterlagen</h2><span class="portal-neutral-badge">3 Dokumente</span></div>
+        <ul class="portal-file-list">
+        <li class="portal-file-row"><span class="portal-icon-tile"><svg class="portal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H6v18h12V7l-4-4ZM14 3v5h4M9 12h6m-6 4h6"/></svg></span><div><h3>Mieterspiegel 2026</h3><p class="portal-description">PDF · aktualisiert</p></div><span class="portal-neutral-badge">Beispiel</span></li>
+        <li class="portal-file-row"><span class="portal-icon-tile"><svg class="portal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H6v18h12V7l-4-4ZM14 3v5h4M9 12h6m-6 4h6"/></svg></span><div><h3>Übergabeprotokoll</h3><p class="portal-description">PDF · Einheit 2B</p></div><span class="portal-neutral-badge">Beispiel</span></li>
+        <li class="portal-file-row"><span class="portal-icon-tile"><svg class="portal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H6v18h12V7l-4-4ZM14 3v5h4M9 12h6m-6 4h6"/></svg></span><div><h3>Abrechnung</h3><p class="portal-description">PDF · August 2026</p></div><span class="portal-neutral-badge">Beispiel</span></li>
+        </ul>
+        <p class="portal-card-note">Beispielunterlagen. Dokumentenanzeige und Downloads sind in dieser Demo noch nicht verfügbar.</p>
+      </section>
+      <aside class="portal-content-card portal-documents-aside" aria-labelledby="portal-documents-property-title">
+        <span class="portal-icon-tile"><svg class="portal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V7h7v14M11 21V3h9v18M2 21h20M7 10h1m-1 4h1m-1 4h1m6-11h3m-3 4h3m-3 4h3m-3 4h3"/></svg></span>
+        <span class="portal-eyebrow">IHRE LIEGENSCHAFT</span>
+        <h2 id="portal-documents-property-title">Wohnliegenschaft Baden</h2>
+        <p class="portal-description">Baden · Aargau</p>
+        <label for="portfolio" class="portal-inline-action" tabindex="0" role="button">Zum Portfolio <span aria-hidden="true">↗</span></label>
+      </aside>
+    </div>
+  </main>
+
+  <main class="view profile portal-subpage">
+    <div class="portal-page-heading">
+      <div><div class="hello">Ihr persönlicher Bereich</div><h1 class="title">Ihr Profil.</h1></div>
+      <span class="portal-demo-badge">Demo-Ansicht</span>
+    </div>
+    <section class="portal-profile-summary" aria-labelledby="portal-profile-title">
+      <span class="portal-profile-avatar" aria-hidden="true">DP</span>
+      <div><span class="portal-eyebrow">MORADA KUNDE</span><h2 id="portal-profile-title">Diana K. Pörschke</h2><p>Eigentümer-Ansicht · Demo-Konto</p></div>
+      <span class="portal-profile-mark" aria-hidden="true"><svg class="portal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="9" r="3"/><path d="M6 19v-1a6 6 0 0 1 12 0v1"/></svg></span>
+    </section>
+    <div class="portal-page-grid">
+      <section class="portal-content-card" aria-labelledby="portal-notifications-title">
+        <div class="portal-card-heading"><span class="portal-icon-tile"><svg class="portal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H6v18h12V7l-4-4ZM14 3v5h4M9 12h6m-6 4h6"/></svg></span><span class="portal-neutral-badge">Vorschau</span></div>
+        <h2 id="portal-notifications-title">Benachrichtigungen</h2>
+        <p class="portal-description">Updates zu Anliegen, Dokumenten und Ihrer Immobilie.</p>
+        <p class="portal-card-note">Benachrichtigungseinstellungen sind in dieser Demo noch nicht verfügbar.</p>
+      </section>
+      <div class="portal-content-card portal-contact-surface">
+        <span class="portal-icon-tile"><svg class="portal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg></span>
+    <button type="button" class="card mora-contact-card" id="moraContactCard"><b>MORADA kontaktieren</b><span class="muted">Anfrage an Ihre Betreuung vorbereiten.</span></button>
+        <span class="portal-contact-arrow" aria-hidden="true">↗</span>
       </div>
     </div>
-  </main>
-
-  <main class="view docs">
-    <div class="section-title">Dokumente</div>
-    <div class="card"><b>Mieterspiegel 2026</b><div class="muted">PDF · aktualisiert</div></div>
-    <div class="card"><b>Übergabeprotokoll</b><div class="muted">PDF · Einheit 2B</div></div>
-    <div class="card"><b>Abrechnung</b><div class="muted">PDF · August 2026</div></div>
-  </main>
-
-  <main class="view profile">
-    <div class="section-title">Profil</div>
-    <div class="card dark">
-      <div class="kicker">MORADA KUNDE</div>
-      <div class="big">Diana K. Pörschke</div>
-      <div class="muted">Eigentümer-Ansicht · Demo-Konto</div>
-    </div>
-    <div class="card"><b>Benachrichtigungen</b><div class="muted">Updates zu Anliegen, Dokumenten und Ihrer Immobilie.</div></div>
-    <button type="button" class="card mora-contact-card" id="moraContactCard"><b>MORADA kontaktieren</b><span class="muted">Anfrage an Ihre Betreuung vorbereiten.</span></button>
+    <p class="portal-page-note">Sie verwenden das MORADA Demo-Konto.</p>
   </main>
 
 

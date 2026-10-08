@@ -1,6 +1,9 @@
 # MORADA Kundenportal – Dashboard und Navigation
 
 Stand: 8. Oktober 2026. Arbeitsbranch: `alex-portal`.
+
+Dieses Dokument beschreibt die Dashboard-Phase. Die anschliessende Gestaltung
+der Unterseiten ist in `PORTAL_DESIGN_PHASE_2.md` dokumentiert.
 Basis: `0b86dfc3344df62d3de02d8297959a495cc822d3`.
 
 Die bestehende Anwendung wird weiterentwickelt. Die Desktopansicht erhält
