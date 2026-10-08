@@ -32,9 +32,10 @@ Keine Änderungen an `assets/mora-client.js`, `assets/mora.css`, `api/`,
 Abhängigkeiten oder Vercel-Konfiguration.
 
 MORA-Fenster, MORA-Schaltfläche, Anliegenformular, ursprünglicher Inline-CSS-
-Block und Inhalte von Service, Portfolio, Dokumenten und Profil wurden mit der
-Basisversion verglichen und sind identisch. Der neue Portalrahmen beeinflusst
-die verfügbare Breite dieser bestehenden Ansichten.
+Block und Inhalte von Portfolio, Dokumenten und Profil bleiben identisch.
+Im bisherigen Servicebereich wurde ausschliesslich die sichtbare Überschrift
+in „Anliegen“ umbenannt; das Formular und seine IDs bleiben identisch. Der neue
+Portalrahmen beeinflusst die verfügbare Breite dieser bestehenden Ansichten.
 
 `index.html` bleibt eine gemeinsam verwendete Datei. Änderungen daran müssen
 bei einer späteren Zusammenführung gezielt verglichen werden. Keine komplette
@@ -69,3 +70,30 @@ die bestehenden API-Handler isoliert mit Development-Konfiguration laufen.
 kein Force-Push und kein manueller Produktionsdeploy. Vercel-Workspace-Zugriff
 war bei der Bestandsaufnahme eingeschränkt; Vorschau- und Produktionsregeln
 sind daher nicht durch direkten Zugriff auf die Projekteinstellungen bestätigt.
+
+## Feinschliff vom 8. Oktober 2026
+
+Ausgangspunkt: `fcd21ad7304e0ce5761633b5e498c86fcf67004f` auf `alex-portal`.
+
+- `assets/portal.css`: dunklere, grössere Nebenbeschriftungen; etwas kompaktere
+  Immobilienfläche; einheitliche SVG-Strichstärke und Kupfertöne. Aktive
+  Navigationssymbole übernehmen die Textfarbe ohne ursprüngliche Bildfilter.
+  Bei 761–900 Pixeln stehen Kennzahlen und Immobilienlink untereinander,
+  damit die grössere Beschriftung nicht den Einführungstext überdeckt.
+- `index.html`: einheitliche dekorative SVGs für Navigation, Schnellzugriffe
+  und Dokumentenvorschau; sichtbare Navigation, Bereichsüberschrift und
+  Dashboard-Verknüpfung heissen nun „Anliegen“. Die interne Tab-ID `service`
+  bleibt bestehen. Die ursprünglichen Icon-Dateien bleiben unverändert.
+- Diese Dokumentation wurde um Umfang und Prüfergebnis ergänzt.
+
+136 Tests, Typprüfung und Build bestanden. Erneuter Chromium-Durchlauf bei
+320, 390, 600, 760, 768, 820, 900, 901, 1024, 1101 und 1440 Pixeln:
+fünf Ansichten, Tastatur, Navigationsstatus,
+Symbolfarben ohne Legacy-Filter und Abstand zwischen Begrüssungstext und
+Kennzahlenkarte geprüft. Kein horizontaler Überlauf oder JavaScriptfehler.
+Bei 390 und 1440 Pixeln wurde die lokale MORA-Erfassung mit Foto, Übergabe,
+Bearbeiten/Speichern und Wiederherstellung nach Neuladen erneut geprüft.
+Die Testgrenzen zu echter Modellinferenz, Übermittlung und Safari/PWA gelten
+weiterhin. MORA-Markup, Logo, Inline-CSS und bestehende Unterseiten wurden
+gegen den Ausgangscommit verglichen; abgesehen von der genannten Überschrift
+sind sie identisch. Keine Änderung an MORA-Code, API oder Vercel-Konfiguration.
