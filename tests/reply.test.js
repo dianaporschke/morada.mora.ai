@@ -8,7 +8,7 @@ import { createChatHandler } from '../api/chat.js';
 import { readSession } from '../lib/mora/session.js';
 import { modelUnavailable } from '../lib/mora/provider.js';
 
-const understand = async () => ({mode:'model',data:emptyUnderstanding({intent:'issue',category:'heating',equipment:'heater',confidence:'clear',location:'Küche'})});
+const understand = async () => ({mode:'model',data:emptyUnderstanding({intent:'issue',category:'heating',equipment:'heater',confidence:'clear',location:'Küche',question:'since',clarification:'Seit wann bleibt der Heizkörper in der Küche kalt?'})});
 const response = output => new MockLanguageModelV4({doGenerate:async options => ({
   content:[{type:'text',text:JSON.stringify(output)}],finishReason:{unified:'stop',raw:'stop'},
   usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:60,text:60,reasoning:0}},warnings:[],
@@ -58,7 +58,7 @@ test('Safety and validated selections remain available independently of the lang
   const danger = await invoke(handler, {message:'Ich rieche Gasgeruch.'});
   assert.equal(danger.status, 200); assert.equal(danger.data.responseMode, 'safety'); assert.equal(remoteCalls, 0);
   assert.equal(danger.data.actions[0].number, '112');
-  const light = async () => ({mode:'model',data:emptyUnderstanding({intent:'issue',category:'electricity',equipment:'light',confidence:'clear'})});
+  const light = async () => ({mode:'model',data:emptyUnderstanding({intent:'issue',category:'electricity',equipment:'light',confidence:'clear',question:'location'})});
   const basic = await invoke(createChatHandler(light, {env:{}}), {message:'Lampe kaputt'});
   const input = {session:basic.data.session,actionId:basic.data.actions.find(item => item.type === 'select').id};
   const selected = await invoke(handler, input);

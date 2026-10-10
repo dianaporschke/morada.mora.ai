@@ -26,7 +26,7 @@ test('SDK structured output contract passes signed context to the model and vali
 
 test('A semantic paraphrase without any original keyword gets the same qualification flow', async () => {
   const data = emptyUnderstanding({ equipment:'light', intent:'issue', newIssue:false, confidence:'clear', category:'electricity', subcategory:'Beleuchtung',
-    description:'Beleuchtung fällt aus', location:'Flur', since:null, extent:null, details:null, urgency:'normal', hazard:'none' });
+    description:'Beleuchtung fällt aus', location:'Flur', since:null, extent:null, details:null, urgency:'normal', hazard:'none',question:'since' });
   const result = await processTurn({message:'Wenn ich den Schalter im Flur drücke bleibt es dunkel'}, null, async () => ({data,mode:'model'}));
   assert.equal(result.state.issue.category,'electricity'); assert.equal(result.state.issue.location,'Flur');
   assert.equal(result.state.pendingKey,'since'); assert.equal(result.understanding,'model');
