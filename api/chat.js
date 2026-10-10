@@ -4,6 +4,7 @@ import { processTurn } from '../lib/mora/engine.js';
 import { extractUnderstanding } from '../lib/mora/understanding.js';
 import { portalCapabilities } from '../lib/portal/adapter.js';
 import { canComposeReply, composeNaturalReply } from '../lib/mora/reply.js';
+import { modelFailure } from '../lib/mora/availability.js';
 
 export function createChatHandler(understand = extractUnderstanding, { compose = composeNaturalReply, env = process.env } = {}) {
   return async function handler(req, res) {
@@ -30,10 +31,11 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
         issue: result.state.issue, issues: result.state.issues, session: sealSession(result.state), capabilities: portalCapabilities,
         understanding: result.understanding, responseMode, modelAvailability:result.availability });
     } catch (error) {
-      if (error.code === 'MODEL_UNAVAILABLE') return res.status(503).json({
-        error:'Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.',
-        code:'MODEL_UNAVAILABLE', modelAvailability:error.availability,
-      });
+      if (error.code === 'MODEL_UNAVAILABLE') {
+        const failure = modelFailure(error.availability);
+        console.warn('MORA model unavailable', {...failure.modelAvailability,category:failure.category,retryable:failure.retryable});
+        return res.status(503).json(failure);
+      }
       if (error.code === 'ISSUE_LIMIT') return res.status(409).json({ error:'In dieser Unterhaltung sind bereits acht Anliegen aufgenommen. Öffnen Sie die vorhandenen Entwürfe und starten Sie für weitere Probleme einen neuen Chat.', code:'ISSUE_LIMIT' });
       if (error.code === 'INVALID_SESSION' || error.code === 'INVALID_ACTION') {
         return res.status(409).json({ error: 'Diese Unterhaltung oder Aktion ist nicht mehr aktuell. Ihre Angaben bleiben im Chat erhalten. Bitte starten Sie eine neue Unterhaltung.', code: error.code });

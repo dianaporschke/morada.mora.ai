@@ -118,7 +118,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
       const response = await fetcher('/api/chat', { method:'POST', headers:{'Content-Type':'application/json'},
         body:JSON.stringify({ ...(state.issue ? { attachments:state.files } : {}), ...payload, ...(state.session ? { session:state.session } : {}) }), signal:controller.signal });
       const data = await response.json(); loading.remove();
-      if (!response.ok) throw Object.assign(new Error(data.error || 'Die Antwort konnte nicht geladen werden.'), { code:data.code });
+      if (!response.ok) throw Object.assign(new Error(data.error || 'Die Antwort konnte nicht geladen werden.'), { code:data.code, retryable:data.retryable });
       if (typeof data.reply !== 'string' || typeof data.session !== 'string') throw new Error('Die Antwort konnte nicht geladen werden.');
       if (previousIssue && data.issue?.id !== previousIssue.id) await saveDraft(previousIssue, false);
       state.session = data.session; state.issue = data.issue || null; state.capabilities = data.capabilities;
@@ -127,7 +127,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
       retryPayload = null; addBubble(data.reply, 'assistant', data.actions || []); renderIssueControls(); await renderPhotos(); persist();
     } catch (error) {
       loading.remove(); retryPayload = { payload, displayText };
-      const actions = error.code === 'INVALID_SESSION' || error.code === 'INVALID_ACTION' ? [] : [{ id:'retry', label:'Erneut versuchen', type:'retry', variant:'primary' }];
+      const actions = error.retryable === false || error.code === 'INVALID_SESSION' || error.code === 'INVALID_ACTION' ? [] : [{ id:'retry', label:'Erneut versuchen', type:'retry', variant:'primary' }];
       if (state.issue) actions.push({ id:'prepare-request', label:'Anliegenentwurf öffnen', type:'handover', variant:'secondary' });
       actions.push({ id:'new-request', label:'Neuen Chat starten', type:'reset', variant:'secondary' });
       addBubble(error.code ? error.message : 'MORA ist gerade nicht erreichbar. Ihre Angaben bleiben im Chat erhalten. Sie können es erneut versuchen oder den bisherigen Anliegenentwurf öffnen.', 'assistant', actions);

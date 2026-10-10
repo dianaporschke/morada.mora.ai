@@ -13,7 +13,7 @@ async function invoke(handler, method='GET') {
   await handler({method}, {setHeader(){},status(value){status=value;return this;},json(value){body=value;return this;}});
   return {status,body};
 }
-const preview = {VERCEL_ENV:'preview',VERCEL_GIT_COMMIT_REF:'codex/mora-ai-2.0',MORA_AI_CREDIT_CHECK:'true',MORA_AI_ENABLED:'false'};
+const preview = {VERCEL_ENV:'preview',VERCEL_GIT_COMMIT_REF:'codex/mora-ai-2.0',MORA_AI_CREDIT_CHECK:'true',MORA_AI_ENABLED:'false',MORA_AI_PROVIDER:'gateway'};
 
 test('Disabled AI never generates, including when valid-looking credentials exist', async () => {
   for (const provider of ['gateway','openai']) {
@@ -39,10 +39,13 @@ test('Credit audit is unavailable in production, other branches and without expl
 test('Read-only credit audit caches concurrent requests; balance does not prove free usage', async () => {
   let calls=0, clock=100000, logged;
   const handler = createReadinessHandler({env:preview,now:()=>clock,log:(message,data)=>{logged=data;},
-    readCredits:async()=>{calls++;return {balance:'5.00',totalUsed:'1.25',secret:'private'};}});
+    readCredits:async()=>{calls++;return {balance:'5.00',totalUsed:'1.25',secret:'private'};},
+    readModels:async()=>({models:[{id:'openai/gpt-6-luna'}]})});
   const results = await Promise.all([invoke(handler),invoke(handler)]);
   assert.equal(calls,1); assert.equal(results[0].status,200);
   assert.equal(results[0].body.freeUseVerified,false); assert.equal(results[0].body.inferenceEnabled,false);
+  assert.equal(results[0].body.configuration.reason,'inference_disabled');
+  assert.equal(results[0].body.modelCatalog.modelListed,true); assert.equal(results[0].body.modelInferenceAccessVerified,false);
   assert.equal(logged.balanceUsd,5); assert.equal(logged.totalUsedUsd,1.25);
   assert.ok(!JSON.stringify(results).includes('1.25')); assert.ok(!JSON.stringify(logged).includes('private'));
   assert.equal((await invoke(handler,'POST')).status,405); assert.equal(calls,1);

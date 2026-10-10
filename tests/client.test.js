@@ -127,6 +127,22 @@ test('Offline and expired session errors preserve the issue and offer recovery',
   assert.ok(f.document.querySelector('[data-action-id="prepare-request"]')); f.window.close();
 });
 
+test('A disabled or misconfigured model does not offer useless retries and preserves drafts', async () => {
+  const f=fixture(); await f.ui.ready;
+  await f.ui.submit({message:'heizung funktioniert nicht'},'heizung funktioniert nicht');
+  const previous=f.ui.getState();
+  const unavailable=createMora(f.document,f.window,async()=>({ok:false,status:503,json:async()=>({
+    code:'MODEL_UNAVAILABLE',retryable:false,error:'Die KI ist in dieser Testversion noch nicht aktiviert.',
+  })}));
+  await unavailable.ready; await unavailable.submit({message:'seit gestern'},'seit gestern');
+  assert.equal(unavailable.getState().session,previous.session);
+  assert.equal(unavailable.getState().issue.id,previous.issue.id);
+  assert.match(f.document.getElementById('moraMessages').textContent,/noch nicht aktiviert/);
+  assert.equal(f.document.querySelector('[data-action-id="retry"]'),null);
+  assert.ok(f.document.querySelector('[data-action-id="prepare-request"]'));
+  f.window.close();
+});
+
 test('Portal navigation and iPhone icon paths are preserved; chat has responsive touch targets', () => {
   const f=fixture(390);
   for (const tab of ['home','portfolio','service','docs','profile']) assert.ok(f.document.getElementById(tab));
