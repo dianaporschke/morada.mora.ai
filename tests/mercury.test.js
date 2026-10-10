@@ -6,6 +6,7 @@ import { generateNaturalReply } from '../lib/mora/reply.js';
 import { emptyUnderstanding } from '../lib/mora/schema.js';
 import { processTurn } from '../lib/mora/engine.js';
 import { estimateTokenCost } from '../lib/mora/costs.js';
+import { classifyModelError } from '../lib/mora/provider.js';
 
 function mercury(output, inspect = () => {}) {
   return new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options => {
@@ -24,12 +25,21 @@ test('Mercury carries the understanding schema through one answer tool without r
     assert.equal(options.responseFormat, undefined);
     assert.deepEqual(options.toolChoice, {type:'tool',toolName:'mora_result'});
     assert.equal(options.tools.length, 1);
+    assert.equal(options.providerOptions.inception.reasoningEffort,'low');
     assert.ok(options.tools[0].inputSchema.properties.unknownFields);
     assert.match(JSON.stringify(options.prompt), /Steckdose im Schlafzimmer kaputt/);
   }));
   assert.deepEqual(result.data, expected); assert.equal(calls, 1);
   assert.equal(result.usage.inputTokens, 200);
   assert.equal(estimateTokenCost('inception/mercury-2.5',result.usage),0.000023);
+});
+
+test('A Gateway-wrapped local timeout is distinguished from provider 500 errors', () => {
+  const selection = {provider:'gateway',model:'inception/mercury-2.5'};
+  const error = Object.assign(new Error('Wrapped transport error'),{type:'response_error',statusCode:500,cause:new DOMException('Deadline reached','TimeoutError')});
+  assert.equal(classifyModelError(error,selection).reason,'model_timeout');
+  delete error.cause;
+  assert.equal(classifyModelError(error,selection).reason,'response_error');
 });
 
 test('Mercury tool arguments cannot add executable actions and invalid usage remains accounted', async () => {
