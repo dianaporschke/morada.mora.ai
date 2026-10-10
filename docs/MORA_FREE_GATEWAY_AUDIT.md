@@ -8,9 +8,11 @@ Vercel-Projekt `morada-mora-ai`, ID `prj_vI6F07O5rdsXOdFlinN4kHAR1Nvd`, Team `te
 
 Die Vercel-Verbindung erlaubt Projekt-/Deployment-/Env-/Log-Abfragen, bietet jedoch keine direkte Guthaben-/Auto-Top-up-Kontoabfrage. Die Gateway-Kontoansicht verlangt eine Anmeldung. Bei der sicheren Anmeldung hat die automatische Freigabeprüfung die Weiterleitung zu OpenAI abgelehnt, weil sie keine ausreichende ausdrückliche Autorisierung dieses zusätzlichen Anmeldeziels erkennen konnte. Dieser Weg wurde weder fortgesetzt noch umgangen.
 
-Eine zusätzlich vorbereitete **rein lesende** Preview-Diagnose fragt Credits über die bestehende serverseitige Gateway-Authentifizierung ab, ohne Modellgenerierung. Finanzwerte bleiben in privaten Vercel-Runtime-Logs. Ein positiver Kontostand beweist weder Gratisherkunft noch ausgeschaltete Aufladung. Der konkrete Laufzeitbefund wird nach der Preview-Prüfung ergänzt.
+Die **rein lesende** Preview-Diagnose hat Credits über die bestehende serverseitige Gateway-Authentifizierung erfolgreich abgefragt: **5,00 USD verfügbar, bisheriger Gateway-Verbrauch 0,00 USD**, geprüft am 10. Oktober 2026 um 01:36:41 UTC. HTTP 200 und die privaten Runtime-Logs bestätigen diesen Kontobefund. Es wurde keine Modellgenerierung ausgeführt. Finanzwerte erscheinen nicht in der HTTP-Antwort. Der positive Kontostand beweist weder Gratisherkunft noch ausgeschaltete Aufladung.
 
 Ungeprüft bleiben Gratis-/Kaufguthaben-Zuordnung, Auto-Top-up, Zahlungsmethode/Verifizierung, kontospezifische kostenlose Modellberechtigung, Budgets und Team-Provider-Richtlinien. Modellanfragen bleiben deshalb abgeschaltet. Kein Guthaben wurde gekauft, kein Tarif geändert, keine automatische Aufladung eingerichtet.
+
+Die Bereitstellung `dpl_9ZtU7nJUbTpERBimq4pCa5wtfTs9` ist READY, Preview, Commit `47040f1716138940477dd710ac74c611d581f085`. [Geschützte geprüfte Preview](https://morada-mora-6ykhbc2ah-dianaporschke-1255s-projects.vercel.app/). Sie ist eine technische Preview mit abgeschalteter Modellinferenz, noch kein natürlicher KI-Dialog zum Qualitätstest. Die Produktionsbereitstellung bleibt unverändert `dpl_GRaJ77V8QaKEZCe8Rx5UJsyQX7Fe` auf `main` / `0b86dfc3344df62d3de02d8297959a495cc822d3`. Die Remote-Branchprüfung bestätigt `alex-portal` weiterhin auf `15bfa257ddbe312f7f4658b342ec4703b869b90e`.
 
 Vercel dokumentiert 5 USD monatlich im Free Tier, nur eine Teilmenge der Modelle und niedrigere Limits. Dies bestätigt keinen konkreten Kontostand. Beim Kauf von Credits endet laut Dokumentation die monatliche Gratiszuteilung. Die Gateway-Fachanleitung nennt eine gültige Zahlungsmethode als Voraussetzung zur Freischaltung; ob sie in diesem Konto noch fehlt, ist offen. Eine pauschale Pflicht, 20 USD einzuzahlen, ist nicht belegt.
 
@@ -56,6 +58,8 @@ Vorhandene Grenzen: 3'000 Ausgabetokens pro Modellstufe, keine SDK-Retries, bis 
 ## Verifikation und echte Gesprächsqualität
 
 152 automatisierte Tests bestanden, ausserdem Typecheck, Syntax-/Assetprüfung und Build. Enthalten sind mobile/Desktop-DOM-Flows, Manipulationsschutz, Kontext, Korrekturen, getrennte Anliegen, lokale Fotos/Entwürfe, Fehlerfälle, unbekannte Angaben und die lesende Diagnose. Modellverträge werden mit simulierten Modellausgaben geprüft.
+
+Zusätzliche echte HTTP-Prüfung der geschützten Preview: normale Steckdosenanfrage liefert `503 MODEL_UNAVAILABLE` mit `reason: inference_disabled`, ohne modellgenerierte Antwort. Der Funkenfall liefert `200`, `responseMode: safety` und die erlaubte Aktion für 112. Die Portalstartseite und Credit-Diagnose liefern 200, GET auf den POST-only Chat erwartungsgemäss 405. Diese Ergebnisse belegen die Bereitstellung und Abschaltung, nicht die Gesprächsqualität eines Modells.
 
 **In diesem Auftrag wurde keine echte Modellgenerierung gestartet: 0 Inferenztokens, 0 USD Modell-Testverbrauch.** Es gibt noch keine belastbare Live-Bewertung der Natürlichkeit oder Zuverlässigkeit. Bestehende Kontokosten sowie Hosting-/Build-Verbrauch sind davon getrennt; die gesamte Vercel-Rechnung wurde nicht geprüft.
 
