@@ -16,8 +16,8 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
     const parsed = chatInputSchema.safeParse(req.body);
     if (!parsed.success) return res.status(400).json({ error: 'Bitte geben Sie eine kurze Nachricht oder eine gültige Aktion ein.' });
     try {
-      // Both optional model stages share one budget within the 30-second Function limit.
-      const deadline = Date.now() + 25000;
+      // Extraction and wording share one bounded budget, below the Function limit.
+      const deadline = Date.now() + 55000;
       const previous = parsed.data.session ? readSession(parsed.data.session) : null;
       const result = await processTurn(parsed.data, previous, (message, state) => understand(message, state, {timeoutMs:deadline - Date.now()}));
       let responseMode = result.understanding === 'safety' ? 'safety' : 'engine';

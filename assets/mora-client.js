@@ -112,7 +112,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     if (displayText && !retry) addBubble(displayText, 'user');
     if (!retry && payload.message) text.value = '';
     const loading = addBubble('MORA nimmt Ihr Anliegen auf …', 'assistant', [], false); loading.classList.add('loading');
-    const controller = new AbortController(); const timer = window.setTimeout(() => controller.abort(), 30000);
+    const controller = new AbortController(); const timer = window.setTimeout(() => controller.abort(), 65000);
     const previousIssue = state.issue;
     try {
       const response = await fetcher('/api/chat', { method:'POST', headers:{'Content-Type':'application/json'},
