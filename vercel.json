@@ -7,6 +7,9 @@
     },
     "api/requests.js": {
       "maxDuration": 30
+    },
+    "api/ai-readiness.js": {
+      "maxDuration": 15
     }
   }
 }

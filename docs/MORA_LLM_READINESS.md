@@ -1,5 +1,7 @@
 # MORA: technische Prüfung der echten KI-Anbindung
 
+**Aktueller Folgeauftrag:** Vorerst keine kostenpflichtige Aktivierung. Der neuere Gratiszugangs- und Kostenprüfstand steht in [MORA_FREE_GATEWAY_AUDIT.md](MORA_FREE_GATEWAY_AUDIT.md). Frühere Pilot-/Budgetvorschläge sind keine Zahlungsfreigabe.
+
 Prüfdatum: 10. Oktober 2026. Repository: [dianaporschke/morada.mora.ai](https://github.com/dianaporschke/morada.mora.ai). Arbeitsbranch: `codex/mora-ai-2.0`.
 
 ## 1. Gesicherter Ausgangsstand

@@ -1,5 +1,7 @@
 # MORADA MORA 2.0 · Phase 1
 
+Aktueller Stand: [Gratiszugang, Modellprüfung und Kostenkontrollen](docs/MORA_FREE_GATEWAY_AUDIT.md). Modellinferenz bleibt auf der Entwicklungs-Preview abgeschaltet, bis kostenlose Nutzung und Aufladungseinstellungen tatsächlich verifiziert sind.
+
 Bestehendes Portal: https://morada-portal.vercel.app/
 Repository: `dianaporschke/morada.mora.ai` · Vercel-Projekt: `morada-mora-ai`.
 
