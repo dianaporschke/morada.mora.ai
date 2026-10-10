@@ -1,6 +1,6 @@
 import { conversationProfiles, estimateTokenCost } from '../lib/mora/costs.js';
 
-const models = ['openai/gpt-6-luna','openai/gpt-6.1-sol'];
+const models = ['inception/mercury-2.5','openai/gpt-6-luna','openai/gpt-6.1-sol'];
 console.log('Planning estimates, USD, standard uncached tokens; not measured conversations or invoice.');
 for (const [profile, usage] of Object.entries(conversationProfiles)) {
   for (const model of models) {
