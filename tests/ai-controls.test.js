@@ -45,11 +45,20 @@ test('Read-only credit audit caches concurrent requests; balance does not prove 
   assert.equal(calls,1); assert.equal(results[0].status,200);
   assert.equal(results[0].body.freeUseVerified,false); assert.equal(results[0].body.inferenceEnabled,false);
   assert.equal(results[0].body.configuration.reason,'inference_disabled');
+  assert.equal(results[0].body.configuration.gatewayCredential,'oidc');
   assert.equal(results[0].body.modelCatalog.modelListed,true); assert.equal(results[0].body.modelInferenceAccessVerified,false);
   assert.equal(logged.balanceUsd,5); assert.equal(logged.totalUsedUsd,1.25);
   assert.ok(!JSON.stringify(results).includes('1.25')); assert.ok(!JSON.stringify(logged).includes('private'));
   assert.equal((await invoke(handler,'POST')).status,405); assert.equal(calls,1);
   clock+=61000; await invoke(handler); assert.equal(calls,2);
+});
+
+test('Preview reports API-key presence without returning the credential', async () => {
+  const key='SYNTHETIC_GATEWAY_SECRET';
+  const result=await invoke(createReadinessHandler({env:{...preview,AI_GATEWAY_API_KEY:key},log(){},
+    readCredits:async()=>({balance:'5.00',totalUsed:'0.00'}),readModels:async()=>({models:[]})}));
+  assert.equal(result.body.configuration.gatewayCredential,'api_key');
+  assert.ok(!JSON.stringify(result).includes(key));
 });
 
 test('Credit failure returns safe machine codes and never exposes provider bodies', async () => {

@@ -49,6 +49,7 @@ export function createReadinessHandler({env=process.env, readCredits=async () =>
       freeUseVerified:false,autoTopUpVerified:false,inferenceEnabled:env.MORA_AI_ENABLED !== 'false',
       inferenceStarted:false,financialDetails:'private_runtime_logs',
       configuration:{provider:selection.provider,model:selection.model,ready:selection.ready,
+        gatewayCredential:env.AI_GATEWAY_API_KEY ? 'api_key' : 'oidc',
         reason:selection.availability?.reason || null,requiredMode:env.MORA_AI_REQUIRED === 'true',naturalReplies:env.MORA_AI_NATURAL_REPLIES === 'true'},
       modelCatalog:last.modelCatalog,modelInferenceAccessVerified:false});
   };

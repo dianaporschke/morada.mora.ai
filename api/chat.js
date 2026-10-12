@@ -17,7 +17,7 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
     if (!parsed.success) return res.status(400).json({ error: 'Bitte geben Sie eine kurze Nachricht oder eine gültige Aktion ein.' });
     try {
       // Extraction and wording share one bounded budget, below the Function limit.
-      const deadline = Date.now() + 55000;
+      const deadline = Date.now() + 105000;
       const previous = parsed.data.session ? readSession(parsed.data.session) : null;
       const result = await processTurn(parsed.data, previous, (message, state) => understand(message, state, {timeoutMs:deadline - Date.now()}));
       let responseMode = result.understanding === 'safety' ? 'safety' : 'engine';
