@@ -4,7 +4,7 @@ import { MockLanguageModelV4 } from 'ai/test';
 import { createUnderstandingService } from '../lib/mora/understanding.js';
 import { createChatHandler } from '../api/chat.js';
 import { processTurn } from '../lib/mora/engine.js';
-import { emptyUnderstanding } from '../lib/mora/schema.js';
+import { emptyUnderstanding, issuePatchSchema } from '../lib/mora/schema.js';
 import { readSession } from '../lib/mora/session.js';
 
 const dialogue=(reply,stage='discuss',buttons=[])=>({reply,stage,buttons});
@@ -124,4 +124,27 @@ test('Duplicate draft proposals are discarded as actions, while an explicit cont
   assert.ok(!turn.state.actions.some(a=>a.type==='handover'));
   turn=await processTurn({message:'Kann ich das direkt melden?'},turn.state,model({intent:'contact',dialogue:dialogue('Ich kann den Entwurf öffnen. Er wird nicht automatisch versendet.','offer_draft')}));
   assert.equal(turn.state.actions[0].type,'handover');
+});
+
+
+test('A multi-issue model question activates its own issue; device refinement stays with the leak',async()=>{
+  let turn=await processTurn({message:'Heizung kalt und Wasser im Bad'},null,model({category:'heating',equipment:'heater',
+    question:'details',clarification:'Wo genau tropft das Wasser?',
+    additionalIssues:[Object.fromEntries(Object.keys(issuePatchSchema.shape).map(key=>[key,emptyUnderstanding({category:'water',equipment:'leak',location:'Bad'})[key]]))],
+    dialogue:{...dialogue('Wo genau tropft das Wasser?','clarify'),forIssueIndex:1}}));
+  const heater=turn.state.issues.find(i=>i.equipment==='heater');
+  const water=turn.state.issues.find(i=>i.equipment==='leak');
+  assert.equal(turn.state.issue.id,water.id);assert.equal(turn.state.pendingKey,'details');
+  turn=await processTurn({message:'Aus dem Rohr unterm Lavabo'},turn.state,model({category:'water',equipment:'pipe',
+    details:'Aus dem Rohr unterm Lavabo',dialogue:dialogue('Die Angabe zum Rohr ist notiert.')}));
+  assert.equal(turn.state.issues.length,2);assert.equal(turn.state.issue.id,water.id);assert.equal(turn.state.issue.equipment,'pipe');
+  assert.equal(turn.state.issue.location,'Bad');assert.equal(turn.state.issues.find(i=>i.id===heater.id).location,null);
+});
+
+
+test('Existing symptom details do not suppress a different model clarification about installation',async()=>{
+  const turn=await processTurn({message:'Lampe flackert'},null,model({details:'Flackert',question:'details',clarification:'Ist die Leuchte fest installiert?',
+    dialogue:dialogue('Ist die Leuchte fest installiert oder Ihre eigene?','clarify',[button('select',{label:'Fest installiert',field:'details',value:'Fest installiert'})])}));
+  assert.equal(turn.state.pendingKey,'details');assert.equal(turn.state.issue.details,'Flackert');
+  assert.equal(turn.state.actions[0].type,'select');
 });

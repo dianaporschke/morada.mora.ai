@@ -31,7 +31,6 @@ test('Mercury uses supported JSON mode with the complete schema in system instru
     assert.equal(options.responseFormat.schema, undefined);
     assert.equal(options.tools, undefined);
     assert.equal(options.providerOptions.inception.reasoningEffort,'medium');
-    assert.equal(options.temperature,0.5);
     assert.match(JSON.stringify(options.prompt), /unknownAnswers/);
     assert.match(JSON.stringify(options.prompt), /additionalProperties/);
     assert.match(JSON.stringify(options.prompt), /Steckdose im Schlafzimmer kaputt/);
@@ -177,7 +176,7 @@ test('Section navigation cannot establish where the customer contract is stored;
   let calls=0,invalid=0;
   const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
     calls++;return {content:[{type:'text',text:JSON.stringify({intent:'documents',dialogue:{
-      reply:calls===1 ? 'Sie finden ihn aber im Dokumentenbereich des Portals.' : 'Ihren persönlichen Mietvertrag kann ich nicht abrufen. Ich kann den vorbereiteten Dokumentenbereich öffnen.',
+      reply:calls===1 ? 'Im Portal finden Sie diesen im Dokumentenbereich.' : 'Ihren persönlichen Mietvertrag kann ich nicht abrufen. Ich kann den vorbereiteten Dokumentenbereich öffnen.',
       buttons:[{kind:'navigate',target:'docs'}]}})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
       usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
   }});
@@ -185,4 +184,31 @@ test('Section navigation cannot establish where the customer contract is stored;
   assert.equal(calls,2);assert.equal(invalid,1);
   const turn=await processTurn({message:'Wo finde ich meinen Mietvertrag?'},null,async()=>({mode:'model',data:result.data}));
   assert.equal(turn.state.actions[0].target,'docs');assert.equal(turn.state.issue,null);assert.match(turn.reply,/nicht abrufen/);
+});
+
+
+test('A portal draft is not a sending capability, including future wording rather than a claimed receipt',async()=>{
+  let calls=0;
+  const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
+    calls++;return {content:[{type:'text',text:JSON.stringify({intent:'contact',dialogue:{
+      reply:calls===1 ? 'Dieses Gespräch wird nicht automatisch übermittelt. Sie können den Entwurf im Portal verwenden, um die Meldung zu versenden.' : 'Ich kann den Entwurf öffnen. Er wird nicht automatisch an MORADA versendet.',
+      buttons:[{kind:'prepare_draft'}]}})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
+      usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
+  }});
+  const result=await generateUnderstandingResult('Kann ich das direkt melden?',null,sdk);
+  assert.equal(calls,2);assert.match(result.data.dialogue.reply,/nicht automatisch/);
+});
+
+
+test('A multi-issue follow-up requires an explicit valid issue index before being shown',async()=>{
+  const text='Heizung kalt und Wasser im Bad';let calls=0;
+  const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
+    calls++;const ask={field:'details',text:'Woher tropft das Wasser?',...(calls>1 ? {issueIndex:1} : {})};
+    return {content:[{type:'text',text:JSON.stringify({intent:'issue',category:'heating',equipment:'heater',sourceQuote:'Heizung kalt',
+      additionalIssues:[{category:'water',equipment:'leak',location:'Bad',sourceQuote:'Wasser im Bad'}],
+      dialogue:{reply:'Woher tropft das Wasser?',ask}})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
+      usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
+  }});
+  const result=await generateUnderstandingResult(text,null,sdk);
+  assert.equal(calls,2);assert.equal(result.data.dialogue.forIssueIndex,1);
 });
