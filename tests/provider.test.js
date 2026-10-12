@@ -106,11 +106,14 @@ test('Strict mode requires credentials, and successful generation reports actual
 test('Bounded context retains signed facts while excluding photos, archives and excess history', () => {
   const state = {issue:{id:'a',equipment:'heater',count:2,details:'confirmed',attachments:[{name:'PRIVATE.jpg'}],answers:[{answer:'ARCHIVE'}]},
     history:Array.from({length:24}, (_, i) => ({role:i % 2 ? 'assistant' : 'user',content:`${i} ` + 'x'.repeat(1990)})),
-    pendingKey:'since', issues:[{id:'a',category:'heating',location:'Küche',attachments:[{name:'PRIVATE.jpg'}]}]};
+    pendingKey:'since', issues:[{id:'a',category:'heating',location:'Küche',attachments:[{name:'PRIVATE.jpg'}]},
+      {id:'b',category:'water',location:'Badezimmer'}]};
   const context = modelContext(state);
   assert.ok(context.history.reduce((n, item) => n + item.content.length, 0) <= 12000);
   assert.equal(context.activeIssue.count, 2); assert.equal(context.pendingQuestion, 'since');
-  assert.equal(context.knownIssues[0].location, 'Küche');
+  assert.equal(context.activeIssue.location,'Küche'); assert.equal(context.activeIssue.localPhotoCount,1);
+  assert.equal(context.knownIssues[0].location,'Badezimmer'); assert.equal(context.knownIssues[0].id,'b');
+  assert.ok(!context.knownIssues.some(issue=>issue.id==='a'));
   assert.ok(!JSON.stringify(context).includes('PRIVATE')); assert.ok(!JSON.stringify(context).includes('ARCHIVE'));
   assert.match(context.history.at(-1).content, /^23 /);
 });

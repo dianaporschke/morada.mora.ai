@@ -16,20 +16,33 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
     const parsed = chatInputSchema.safeParse(req.body);
     if (!parsed.success) return res.status(400).json({ error: 'Bitte geben Sie eine kurze Nachricht oder eine gültige Aktion ein.' });
     try {
+      const startedAt=Date.now();
+      let modelMs=0,modelCalls=0;
       // Extraction and wording share one bounded budget, below the Function limit.
-      const deadline = Date.now() + 105000;
+      const deadline = Date.now() + 55000;
       const previous = parsed.data.session ? readSession(parsed.data.session) : null;
-      const result = await processTurn(parsed.data, previous, (message, state) => understand(message, state, {timeoutMs:deadline - Date.now()}));
-      let responseMode = result.understanding === 'safety' ? 'safety' : 'engine';
-      if (env.MORA_AI_NATURAL_REPLIES === 'true' && canComposeReply(result)) {
-        result.reply = await compose(result, {env, timeoutMs:deadline - Date.now()});
+      const result = await processTurn(parsed.data, previous, async(message, state) => {
+        const start=Date.now(); modelCalls++;
+        try { return await understand(message,state,{timeoutMs:deadline-Date.now()}); }
+        finally { modelMs+=Date.now()-start; }
+      });
+      const activeDanger=result.state.issue && (result.state.issue.hazard!=='none' || result.state.issue.urgency==='emergency');
+      let responseMode = result.understanding === 'safety' || activeDanger ? 'safety' : result.singleModelReply ? 'model' : 'engine';
+      if (!result.singleModelReply && env.MORA_AI_NATURAL_REPLIES === 'true' && canComposeReply(result)) {
+        const start=Date.now(); modelCalls++;
+        try { result.reply = await compose(result, {env, timeoutMs:deadline - Date.now()}); }
+        finally { modelMs+=Date.now()-start; }
         // The signed context must contain the wording actually shown to the customer.
         result.state.history.at(-1).content = result.reply;
         responseMode = 'model';
       }
+      const totalMs=Date.now()-startedAt;
+      const timingMs={total:totalMs,model:modelMs,application:Math.max(0,totalMs-modelMs)};
+      console.info('MORA turn timing',{...timingMs,modelCalls,responseMode,architecture:result.singleModelReply?'single_generation':'legacy_or_safety'});
       return res.status(200).json({ version: 2, reply: result.reply, actions: result.state.actions,
         issue: result.state.issue, issues: result.state.issues, session: sealSession(result.state), capabilities: portalCapabilities,
-        understanding: result.understanding, responseMode, modelAvailability:result.availability });
+        understanding: result.understanding, responseMode, modelAvailability:result.availability,
+        timingMs,modelCalls,modelUsage:result.modelUsage || null });
     } catch (error) {
       if (error.code === 'MODEL_UNAVAILABLE') {
         const failure = modelFailure(error.availability);

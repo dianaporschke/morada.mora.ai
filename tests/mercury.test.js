@@ -19,7 +19,8 @@ function mercury(output, inspect = () => {}) {
 
 test('Mercury uses supported JSON mode with the complete schema in system instructions', async () => {
   let calls = 0;
-  const expected = emptyUnderstanding({intent:'issue',confidence:'clear',category:'electricity',equipment:'socket',location:'Schlafzimmer'});
+  const expected = emptyUnderstanding({intent:'issue',confidence:'clear',category:'electricity',equipment:'socket',location:'Schlafzimmer',
+    dialogue:{reply:'Die Steckdose im Schlafzimmer ist aufgenommen. Seit wann funktioniert sie nicht?',stage:'clarify',buttons:[]}});
   const result = await generateUnderstandingResult('Steckdose im Schlafzimmer kaputt', null, mercury(expected, options => {
     calls++;
     assert.equal(options.responseFormat.type, 'json');

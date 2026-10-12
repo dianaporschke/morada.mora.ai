@@ -8,7 +8,8 @@ import { emptyUnderstanding } from '../lib/mora/schema.js';
 test('SDK structured output contract passes signed context to the model and validates the result', async () => {
   let captured;
   const expected = emptyUnderstanding({ equipment:'heater', intent:'issue', newIssue:false, confidence:'clear', category:'heating', subcategory:null,
-    description:null, location:null, since:'seit gestern', extent:null, details:null, urgency:'normal', hazard:'none' });
+    description:null, location:null, since:'seit gestern', extent:null, details:null, urgency:'normal', hazard:'none',
+    dialogue:{reply:'Danke, seit gestern also. Ich halte das so fest.',stage:'discuss',buttons:[]} });
   const model = new MockLanguageModelV4({ doGenerate:async options => {
     captured = options;
     return { content:[{type:'text',text:JSON.stringify(expected)}], finishReason:{unified:'stop',raw:'stop'},

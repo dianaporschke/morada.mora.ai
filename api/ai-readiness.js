@@ -8,7 +8,10 @@ export function createReadinessHandler({env=process.env, readCredits=async () =>
 }).getCredits(), readModels=async () => createGateway({
   apiKey:env.AI_GATEWAY_API_KEY || undefined,
   fetch:(url, options) => fetch(url, {...options,signal:AbortSignal.timeout(8000)}),
-}).getAvailableModels(), log=console.info, now=Date.now} = {}) {
+}).getAvailableModels(), readGeneration=async id=>createGateway({
+  apiKey:env.AI_GATEWAY_API_KEY || undefined,
+  fetch:(url,options)=>fetch(url,{...options,signal:AbortSignal.timeout(8000)}),
+}).getGenerationInfo({id}), log=console.info, now=Date.now} = {}) {
   let last = null;
   let pending = null;
   return async (req, res) => {
@@ -18,6 +21,23 @@ export function createReadinessHandler({env=process.env, readCredits=async () =>
     }
     if (req.method !== 'GET') {res.setHeader('Allow','GET'); return res.status(405).json({code:'METHOD_NOT_ALLOWED'});}
     const selection = await resolveProvider(env);
+    const generationId=req.query?.generation;
+    if (generationId!==undefined) {
+      if (typeof generationId!=='string' || !/^gen_[a-zA-Z0-9_-]{1,100}$/.test(generationId)) return res.status(400).json({code:'INVALID_GENERATION_ID'});
+      try {
+        const generation=await readGeneration(generationId);
+        if (generation.id!==generationId || !Number.isFinite(generation.totalCost) || generation.totalCost<0) throw {type:'invalid_generation_response'};
+        // Actual billing/timing only, never prompt content, credentials or raw provider bodies.
+        log('MORA Gateway generation audit',{generationId,totalCostUsd:generation.totalCost,
+          latencyMs:generation.latency,generationTimeMs:generation.generationTime,
+          inputTokens:generation.promptTokens,outputTokens:generation.completionTokens,
+          reasoningTokens:generation.reasoningTokens,cachedTokens:generation.cachedTokens,
+          model:generation.model,provider:generation.providerName,streamed:generation.streamed});
+        return res.status(200).json({generationAudited:true,financialDetails:'private_runtime_logs',inferenceStarted:false});
+      } catch (error) {
+        return res.status(503).json({generationAudited:false,reason:classifyModelError(error,selection).reason,inferenceStarted:false});
+      }
+    }
     if (!last || now() - last.checkedAt >= 60000) {
       pending ||= (async () => {
         const checkedAt = now();

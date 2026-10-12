@@ -8,9 +8,9 @@ import { processTurn } from '../lib/mora/engine.js';
 import { emptyUnderstanding } from '../lib/mora/schema.js';
 import { modelContext } from '../lib/mora/context.js';
 
-async function invoke(handler, method='GET') {
+async function invoke(handler, method='GET',query={}) {
   let status, body;
-  await handler({method}, {setHeader(){},status(value){status=value;return this;},json(value){body=value;return this;}});
+  await handler({method,query}, {setHeader(){},status(value){status=value;return this;},json(value){body=value;return this;}});
   return {status,body};
 }
 const preview = {VERCEL_ENV:'preview',VERCEL_GIT_COMMIT_REF:'codex/mora-ai-2.0',MORA_AI_CREDIT_CHECK:'true',MORA_AI_ENABLED:'false',MORA_AI_PROVIDER:'gateway'};
@@ -67,6 +67,20 @@ test('Credit failure returns safe machine codes and never exposes provider bodie
   }}));
   assert.equal(result.status,503); assert.equal(result.body.reason,'customer_verification_required');
   assert.ok(!JSON.stringify(result).includes('SECRET_CUSTOMER_BODY')); assert.equal(result.body.inferenceStarted,false);
+});
+
+test('Generation cost audit stays preview-only, validates IDs and never returns private billing or content',async()=>{
+  let calls=0,logged;
+  const readGeneration=async id=>{calls++;return {id,totalCost:0.00023,promptTokens:500,completionTokens:90,
+    model:'inception/mercury-2.5',providerName:'inception',prompt:'PRIVATE_CUSTOMER_TEXT',secret:'PRIVATE_API_KEY'};};
+  const handler=createReadinessHandler({env:preview,readGeneration,log:(message,data)=>{logged=data;}});
+  assert.equal((await invoke(handler,'GET',{generation:'https://other.test'})).status,400); assert.equal(calls,0);
+  const result=await invoke(handler,'GET',{generation:'gen_synthetic123'});
+  assert.equal(result.status,200); assert.equal(result.body.generationAudited,true); assert.equal(result.body.inferenceStarted,false);
+  assert.equal(logged.totalCostUsd,0.00023); assert.ok(!JSON.stringify(result).includes('0.00023'));
+  assert.ok(!JSON.stringify(logged).includes('PRIVATE'));
+  const production=createReadinessHandler({env:{...preview,VERCEL_ENV:'production'},readGeneration});
+  assert.equal((await invoke(production,'GET',{generation:'gen_synthetic123'})).status,404); assert.equal(calls,1);
 });
 
 test('Costs count reasoning once, unknown usage stays unknown, metadata logs exclude secrets', t => {
