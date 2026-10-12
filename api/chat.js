@@ -46,7 +46,7 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
     } catch (error) {
       if (error.code === 'MODEL_UNAVAILABLE') {
         const failure = modelFailure(error.availability);
-        console.warn('MORA model unavailable', {...failure.modelAvailability,category:failure.category,retryable:failure.retryable});
+        console.warn('MORA model unavailable', {...failure.modelAvailability,category:failure.category,retryable:failure.retryable,validation:error.validation || null});
         return res.status(503).json(failure);
       }
       if (error.code === 'ISSUE_LIMIT') return res.status(409).json({ error:'In dieser Unterhaltung sind bereits acht Anliegen aufgenommen. Öffnen Sie die vorhandenen Entwürfe und starten Sie für weitere Probleme einen neuen Chat.', code:'ISSUE_LIMIT' });

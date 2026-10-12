@@ -9,9 +9,11 @@ import { estimateTokenCost } from '../lib/mora/costs.js';
 import { classifyModelError } from '../lib/mora/provider.js';
 
 function mercury(output, inspect = () => {}) {
+  const {unknownFields,...rest}=output;
+  const contractOutput=unknownFields ? {...rest,unknownAnswers:output.unknownAnswers || []} : output;
   return new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options => {
     inspect(options);
-    return {content:[{type:'text',text:JSON.stringify(output)}],
+    return {content:[{type:'text',text:JSON.stringify(contractOutput)}],
       finishReason:{unified:'stop',raw:'stop'},
       usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:100,reasoning:0}},warnings:[]};
   }});
@@ -27,13 +29,23 @@ test('Mercury uses supported JSON mode with the complete schema in system instru
     assert.equal(options.responseFormat.schema, undefined);
     assert.equal(options.tools, undefined);
     assert.equal(options.providerOptions.inception.reasoningEffort,'low');
-    assert.match(JSON.stringify(options.prompt), /unknownFields/);
+    assert.match(JSON.stringify(options.prompt), /unknownAnswers/);
     assert.match(JSON.stringify(options.prompt), /additionalProperties/);
     assert.match(JSON.stringify(options.prompt), /Steckdose im Schlafzimmer kaputt/);
   }));
   assert.deepEqual(result.data, expected); assert.equal(calls, 1);
   assert.equal(result.usage.inputTokens, 200);
   assert.equal(estimateTokenCost('inception/mercury-2.5',result.usage),0.000023);
+});
+
+test('Unknown facts require direct provenance from this customer turn, not absent values or invented quotes',async()=>{
+  const base=emptyUnderstanding({intent:'issue',equipment:'socket',dialogue:{reply:'Den Beginn können wir offenlassen.',stage:'discuss',buttons:[]}});
+  const modelOutput={...base,unknownAnswers:[{field:'since',quote:'Keine Ahnung seit wann'}]};
+  const missing=await generateUnderstandingResult('Meine Steckdose funktioniert nicht.',null,mercury(modelOutput));
+  assert.deepEqual(missing.data.unknownFields,[]);
+  const explicit=await generateUnderstandingResult('Keine Ahnung seit wann',null,mercury(modelOutput));
+  assert.deepEqual(explicit.data.unknownFields,['since']); assert.equal(explicit.data.since,null);
+  assert.equal(explicit.data.unknownAnswers,undefined);
 });
 
 test('A Gateway-wrapped local timeout is distinguished from provider 500 errors', () => {

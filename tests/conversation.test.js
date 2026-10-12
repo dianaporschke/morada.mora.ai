@@ -22,7 +22,8 @@ test('One SDK generation supplies facts, wording and signed history; a second co
   const output=emptyUnderstanding({intent:'greeting',dialogue:dialogue('Grüezi! Was beschäftigt Sie rund um Ihre Immobilie?','information')});
   const sdkModel=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
     calls++;
-    return {content:[{type:'text',text:JSON.stringify(output)}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
+    const {unknownFields,...rest}=output;
+    return {content:[{type:'text',text:JSON.stringify({...rest,unknownAnswers:[]})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
       usage:{inputTokens:{total:120,noCache:120,cacheRead:0,cacheWrite:0},outputTokens:{total:90,text:90,reasoning:0}}};
   }});
   const understand=createUnderstandingService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>sdkModel}),log(){}});
@@ -70,6 +71,11 @@ test('Topic changes retain drafts without attaching a document question to the h
     dialogue:dialogue('Welche Position Ihrer Abrechnung möchten Sie verstehen? Einen persönlichen Beleg kann ich hier noch nicht abrufen.','information',[button('navigate',{target:'docs',label:'Mietvertrag herunterladen'}),button('handover')])}));
   assert.equal(turn.state.issue.id,before.id); assert.equal(turn.state.issue.location,'Küche'); assert.equal(turn.state.issue.answers.length,before.answers.length);
   assert.equal(turn.state.pendingKey,null); assert.equal(turn.state.conversationTopic,'knowledge');
+  assert.deepEqual(turn.state.actions,[]);
+  turn=await processTurn({message:'Wo finde ich den Mietvertrag?'},turn.state,model({intent:'documents',category:null,equipment:null,
+    dialogue:dialogue('Ihr persönlicher Mietvertrag ist noch nicht angebunden. Den vorbereiteten Dokumentenbereich können Sie öffnen.','information',[
+      button('navigate',{target:'docs',label:'Mietvertrag herunterladen'}),button('navigate',{target:'portfolio',label:'Immobilie'}),
+    ])}));
   assert.deepEqual(turn.state.actions.map(a=>a.type),['navigate']); assert.equal(turn.state.actions[0].target,'docs');
   assert.equal(turn.state.actions[0].label,'Dokumentenbereich öffnen');
 });
