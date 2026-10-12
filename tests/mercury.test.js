@@ -128,3 +128,17 @@ test('Mercury JSON reply retains the question contract and does not mutate porta
   assert.deepEqual(turn.state.actions,actions);
   await assert.rejects(generateNaturalReply(turn,mercury({reply:'Seit wann?',questionKey:'since'})),error => error.type === 'invalid_model_output');
 });
+
+
+test('SDK JSON parse failure receives one genuine corrective generation, with failed usage accounted',async()=>{
+  let calls=0,invalid=0;
+  const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
+    calls++;
+    return {content:[{type:'text',text:calls===1 ? '...' : JSON.stringify({intent:'knowledge',dialogue:{reply:'Ich kann Ihre Anliegen hier vorbereiten. Übermittelt wird dabei noch nichts.'}})}],
+      finishReason:{unified:'stop',raw:'stop'},warnings:[],
+      usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
+  }});
+  const result=await generateUnderstandingResult('Wie funktioniert das?',null,sdk,{logInvalid:error=>{invalid++;assert.deepEqual(error.validationFields,['root:unreadable_json']);}});
+  assert.equal(calls,2);assert.equal(invalid,1);assert.equal(result.generationCount,2);
+  assert.equal(result.totalUsage.inputTokens,400);assert.match(result.data.dialogue.reply,/Übermittelt/);
+});
