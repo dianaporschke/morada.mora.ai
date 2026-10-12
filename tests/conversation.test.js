@@ -103,3 +103,13 @@ test('A fabricated successful submission is rejected; a truthful unsent draft re
   const valid=await processTurn({message:'Lampe defekt'},null,model({dialogue:dialogue('Ich habe die Angaben aufgenommen, aber noch nicht übermittelt.')}));
   assert.equal(valid.singleModelReply,true);
 });
+
+
+test('Resume buttons appear after a topic change, not while already discussing the active issue',async()=>{
+  let turn=await processTurn({message:'Lampe kaputt'},null,model({question:'location',clarification:'In welchem Raum?',
+    dialogue:dialogue('In welchem Raum ist die Lampe?','clarify',[button('continue')])}));
+  assert.deepEqual(turn.state.actions,[]); assert.equal(turn.state.pendingKey,'location');
+  turn=await processTurn({message:'Jetzt eine allgemeine Frage'},turn.state,model({intent:'knowledge',
+    dialogue:dialogue('Gerne, was möchten Sie wissen?','information',[button('continue')])}));
+  assert.equal(turn.state.actions[0].type,'continue');
+});

@@ -30,7 +30,7 @@ test('Mercury uses supported JSON mode with the complete schema in system instru
     assert.equal(options.responseFormat.type, 'json');
     assert.equal(options.responseFormat.schema, undefined);
     assert.equal(options.tools, undefined);
-    assert.equal(options.providerOptions.inception.reasoningEffort,'medium');
+    assert.equal(options.providerOptions.inception.reasoningEffort,'low');
     assert.match(JSON.stringify(options.prompt), /unknownAnswers/);
     assert.match(JSON.stringify(options.prompt), /additionalProperties/);
     assert.match(JSON.stringify(options.prompt), /Steckdose im Schlafzimmer kaputt/);
@@ -43,7 +43,7 @@ test('Mercury uses supported JSON mode with the complete schema in system instru
 test('A sparse genuine greeting needs no unrelated damage facts, placeholder arrays or second model call',async()=>{
   let calls=0;
   const output={intent:'greeting',dialogue:{reply:'Grüezi! Wie kann ich Ihnen helfen?'}};
-  const result=await generateUnderstandingResult('Hey',null,mercury(output,()=>{calls++;}));
+  const result=await generateUnderstandingResult('Hey',null,mercury(output,options=>{calls++;assert.equal(options.providerOptions.inception.reasoningEffort,'low');}));
   assert.equal(calls,1);assert.equal(result.data.dialogue.reply,output.dialogue.reply);
   assert.equal(result.data.category,null);assert.equal(result.data.count,null);assert.equal(result.data.hazard,'none');
   assert.deepEqual(result.data.additionalIssues,[]);assert.deepEqual(result.data.unknownFields,[]);assert.deepEqual(result.data.dialogue.buttons,[]);
