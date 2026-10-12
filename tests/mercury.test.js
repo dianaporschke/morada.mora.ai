@@ -9,7 +9,7 @@ import { estimateTokenCost } from '../lib/mora/costs.js';
 import { classifyModelError } from '../lib/mora/provider.js';
 
 function mercury(output, inspect = () => {}) {
-  const {unknownFields,topic,answer,hazard,...rest}=output;
+  const {unknownFields,topic,answer,hazard,confidence,...rest}=output;
   const contractOutput=unknownFields ? {...rest,risk:hazard==='water' ? 'flood' : hazard,sourceQuote:output.sourceQuote || null,
     additionalIssues:output.additionalIssues.map(({hazard,...issue})=>({...issue,risk:hazard==='water' ? 'flood' : hazard,sourceQuote:issue.sourceQuote || null})),
     unknownAnswers:output.unknownAnswers || []} : output;
@@ -23,7 +23,7 @@ function mercury(output, inspect = () => {}) {
 
 test('Mercury uses supported JSON mode with the complete schema in system instructions', async () => {
   let calls = 0;
-  const expected = emptyUnderstanding({intent:'issue',confidence:'clear',category:'electricity',equipment:'socket',location:'Schlafzimmer',
+  const expected = emptyUnderstanding({intent:'issue',category:'electricity',equipment:'socket',location:'Schlafzimmer',
     dialogue:{reply:'Die Steckdose im Schlafzimmer ist aufgenommen. Seit wann funktioniert sie nicht?',stage:'clarify',buttons:[]}});
   const result = await generateUnderstandingResult('Steckdose im Schlafzimmer kaputt', null, mercury(expected, options => {
     calls++;
@@ -40,6 +40,15 @@ test('Mercury uses supported JSON mode with the complete schema in system instru
   assert.equal(estimateTokenCost('inception/mercury-2.5',result.usage),0.000023);
 });
 
+test('A sparse genuine greeting needs no unrelated damage facts, placeholder arrays or second model call',async()=>{
+  let calls=0;
+  const output={intent:'greeting',dialogue:{reply:'Grüezi! Wie kann ich Ihnen helfen?'}};
+  const result=await generateUnderstandingResult('Hey',null,mercury(output,()=>{calls++;}));
+  assert.equal(calls,1);assert.equal(result.data.dialogue.reply,output.dialogue.reply);
+  assert.equal(result.data.category,null);assert.equal(result.data.count,null);assert.equal(result.data.hazard,'none');
+  assert.deepEqual(result.data.additionalIssues,[]);assert.deepEqual(result.data.unknownFields,[]);assert.deepEqual(result.data.dialogue.buttons,[]);
+});
+
 test('Unknown facts require direct provenance from this customer turn, not absent values or invented quotes',async()=>{
   const base=emptyUnderstanding({intent:'issue',equipment:'socket',dialogue:{reply:'Den Beginn können wir offenlassen.',stage:'discuss',buttons:[]}});
   const modelOutput={...base,unknownAnswers:[{field:'since',quote:'Keine Ahnung seit wann'}]};
@@ -53,7 +62,7 @@ test('Unknown facts require direct provenance from this customer turn, not absen
 test('One genuine corrective generation can repair a capability violation; tokens and failed attempt stay accounted',async()=>{
   let calls=0,invalid=0;
   const base=emptyUnderstanding({intent:'contact',dialogue:{reply:'Möchten Sie die Meldung jetzt absenden?',stage:'offer_draft',buttons:[]}});
-  const {unknownFields,topic,answer,hazard,...rest}=base;
+  const {unknownFields,topic,answer,hazard,confidence,...rest}=base;
   const model=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options=>{
     calls++;
     if(calls===2) assert.match(JSON.stringify(options.prompt),/previous JSON was rejected/);
