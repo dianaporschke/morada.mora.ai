@@ -1,0 +1,143 @@
+{
+  "url": "https://morada-mora-1yriczkmy-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-12T20:18:07.671595+00:00",
+      "case": "E – Finale Begrüssung",
+      "message": "Hey.",
+      "status": 200,
+      "seconds": 8.904,
+      "reply": "Grüezi! Ich unterstütze Sie gerne bei allgemeinen Immobilienfragen. Was kann ich für Sie tun?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": null,
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2875,
+        "model": 2870,
+        "application": 5
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3742,
+        "outputTokens": 1154,
+        "reasoningTokens": 1097,
+        "cachedInputTokens": 1810
+      }
+    },
+    {
+      "startedAt": "2026-10-12T20:18:36.579451+00:00",
+      "case": "F – Dokumentzugriff nach Validierungskorrektur",
+      "message": "Wo finde ich meinen Mietvertrag?",
+      "status": 503,
+      "seconds": 11.162,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "understanding": null,
+      "responseMode": null,
+      "activeIssueId": null,
+      "actions": null,
+      "issues": [],
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null
+    },
+    {
+      "startedAt": "2026-10-12T20:19:07.742340+00:00",
+      "case": "I – Themenwechsel nach Validierungskorrektur",
+      "message": "Meine Heizung geht nicht.",
+      "status": 200,
+      "seconds": 8.978,
+      "reply": "Das tut mir leid, dass die Heizung nicht funktioniert. In welchem Raum ist die betroffene Heizung?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "8252e351-9549-48de-9c6f-1ae997b22c3f",
+      "actions": [],
+      "issues": [
+        {
+          "id": "8252e351-9549-48de-9c6f-1ae997b22c3f",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2816,
+        "model": 2814,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3799,
+        "outputTokens": 1298,
+        "reasoningTokens": 1158,
+        "cachedInputTokens": 1836
+      }
+    },
+    {
+      "startedAt": "2026-10-12T20:19:36.721941+00:00",
+      "case": "I – Themenwechsel nach Validierungskorrektur",
+      "message": "Eigentlich wollte ich noch etwas zur Nebenkostenabrechnung fragen.",
+      "status": 200,
+      "seconds": 10.888,
+      "reply": "Leider kann ich keine persönlichen Nebenkostenabrechnungen oder Dokumente im System einsehen. Im Servicebereich unter Dokumente können Sie gerne nachschauen.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "8252e351-9549-48de-9c6f-1ae997b22c3f",
+      "actions": [
+        {
+          "id": "view-docs",
+          "label": "Dokumentenbereich öffnen",
+          "variant": "secondary",
+          "type": "navigate",
+          "target": "docs"
+        }
+      ],
+      "issues": [
+        {
+          "id": "8252e351-9549-48de-9c6f-1ae997b22c3f",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4700,
+        "model": 4699,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3808,
+        "outputTokens": 1879,
+        "reasoningTokens": 1766,
+        "cachedInputTokens": 1786
+      }
+    }
+  ],
+  "codeCommit": "d666c8759044094ed2fdf3f03e592f1707ebf80e",
+  "acceptance": "Not accepted: F rejected twice; I preserves issue but verbal section association still wrong"
+}

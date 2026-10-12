@@ -1,0 +1,560 @@
+{
+  "url": "https://morada-mora-jw6swruuq-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-12T19:46:33.763433+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Hey.",
+      "status": 200,
+      "seconds": 9.647,
+      "reply": "Grüezi mitenand. Ich helfe Ihnen gerne bei allgemeinen Immobilienfragen oder beim Erstellen von Anliegenentwürfen.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": null,
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 5919,
+        "model": 5915,
+        "application": 4
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3713,
+        "outputTokens": 2074,
+        "reasoningTokens": 1895,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:47:03.413124+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Was kannst du eigentlich alles?",
+      "status": 200,
+      "seconds": 6.42,
+      "reply": "Ich helfe Ihnen gerne bei allgemeinen Immobilienfragen und beim Erstellen von Anliegenentwürfen. Auf persönliche Dokumente oder den direkten Versand von Meldungen habe ich jedoch keinen Zugriff.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": null,
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2724,
+        "model": 2722,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3742,
+        "outputTokens": 1301,
+        "reasoningTokens": 1211,
+        "cachedInputTokens": 1832
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:47:29.836349+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Und wie funktioniert das mit MORADA?",
+      "status": 200,
+      "seconds": 10.254,
+      "reply": "MORADA ist das menschliche Verwaltungsteam, während ich die digitale Chatassistenz im Portal bin. Ich helfe Ihnen bei Fragen und beim Erstellen von Anliegenentwürfen, die jedoch nicht automatisch an das Team übermittelt werden.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": null,
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4101,
+        "model": 4100,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3767,
+        "outputTokens": 1290,
+        "reasoningTokens": 1190,
+        "cachedInputTokens": 1819
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:48:00.092795+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Meine Lampe geht nicht.",
+      "status": 200,
+      "seconds": 7.141,
+      "reply": "Ich habe Ihre Meldung zur Lampe notiert. In welchem Raum befindet sie sich?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "b83a7789-5d98-4857-aa3c-b0b09d47ffe0",
+      "actions": [],
+      "issues": [
+        {
+          "id": "b83a7789-5d98-4857-aa3c-b0b09d47ffe0",
+          "equipment": "light",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 3265,
+        "model": 3263,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3747,
+        "outputTokens": 1042,
+        "reasoningTokens": 908,
+        "cachedInputTokens": 1853
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:48:27.234812+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Im Badezimmer.",
+      "status": 200,
+      "seconds": 12.566,
+      "reply": "Das Badezimmer habe ich notiert. Handelt es sich um eine fest installierte Leuchte oder Ihre eigene Lampe?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "b83a7789-5d98-4857-aa3c-b0b09d47ffe0",
+      "actions": [
+        {
+          "id": "answer-details-model-0",
+          "label": "Fest installiert",
+          "variant": "secondary",
+          "type": "select",
+          "field": "details",
+          "value": "fest installiert"
+        },
+        {
+          "id": "answer-details-model-1",
+          "label": "Eigene Lampe",
+          "variant": "secondary",
+          "type": "select",
+          "field": "details",
+          "value": "eigene Lampe"
+        }
+      ],
+      "issues": [
+        {
+          "id": "b83a7789-5d98-4857-aa3c-b0b09d47ffe0",
+          "equipment": "light",
+          "category": "electricity",
+          "location": "Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 6012,
+        "model": 6010,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3848,
+        "outputTokens": 2661,
+        "reasoningTokens": 2403,
+        "cachedInputTokens": 1838
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:48:59.806680+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Seit gestern.",
+      "status": 200,
+      "seconds": 11.7,
+      "reply": "Danke, ich habe notiert, dass das Problem seit gestern besteht. Handelt es sich um eine fest installierte Leuchte oder Ihre eigene Lampe?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "b83a7789-5d98-4857-aa3c-b0b09d47ffe0",
+      "actions": [],
+      "issues": [
+        {
+          "id": "b83a7789-5d98-4857-aa3c-b0b09d47ffe0",
+          "equipment": "light",
+          "category": "electricity",
+          "location": "Badezimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 5214,
+        "model": 5214,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3822,
+        "outputTokens": 1923,
+        "reasoningTokens": 1701,
+        "cachedInputTokens": 1807
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:49:31.510944+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Kann ich das direkt melden?",
+      "status": 200,
+      "seconds": 10.886,
+      "reply": "Sie können den Entwurf im Servicebereich vorbereiten, er wird aber nicht automatisch versendet.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "b83a7789-5d98-4857-aa3c-b0b09d47ffe0",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "b83a7789-5d98-4857-aa3c-b0b09d47ffe0",
+          "equipment": "light",
+          "category": "electricity",
+          "location": "Badezimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4445,
+        "model": 4444,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3938,
+        "outputTokens": 1773,
+        "reasoningTokens": 1612,
+        "cachedInputTokens": 1839
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:50:02.401222+00:00",
+      "case": "B – Unbekannte Informationen",
+      "message": "Meine Steckdose funktioniert nicht.",
+      "status": 200,
+      "seconds": 9.357,
+      "reply": "Vielen Dank für Ihre Meldung. Als digitale Assistentin kann ich Anliegen noch nicht automatisch versenden. In welchem Raum befindet sich die defekte Steckdose?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "d6759806-c0a0-4c96-9650-3ce9014b9609",
+      "actions": [],
+      "issues": [
+        {
+          "id": "d6759806-c0a0-4c96-9650-3ce9014b9609",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 3896,
+        "model": 3896,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3689,
+        "outputTokens": 1695,
+        "reasoningTokens": 1536,
+        "cachedInputTokens": 1824
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:50:31.760093+00:00",
+      "case": "B – Unbekannte Informationen",
+      "message": "Keine Ahnung seit wann.",
+      "status": 200,
+      "seconds": 10.093,
+      "reply": "Verstanden, dass Sie den Zeitpunkt nicht genau kennen. In welchem Raum befindet sich die defekte Steckdose?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "d6759806-c0a0-4c96-9650-3ce9014b9609",
+      "actions": [],
+      "issues": [
+        {
+          "id": "d6759806-c0a0-4c96-9650-3ce9014b9609",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [
+            "since"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 3702,
+        "model": 3701,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3760,
+        "outputTokens": 1782,
+        "reasoningTokens": 1560,
+        "cachedInputTokens": 1784
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:51:01.854968+00:00",
+      "case": "B – Unbekannte Informationen",
+      "message": "Ich weiss auch nicht, was genau kaputt ist.",
+      "status": 200,
+      "seconds": 14.326,
+      "reply": "Das ist kein Problem, wenn der Defekt nicht ganz klar ist. Sie können einen Entwurf im Servicebereich vorbereiten; dieser wird nicht automatisch versendet.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "d6759806-c0a0-4c96-9650-3ce9014b9609",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "d6759806-c0a0-4c96-9650-3ce9014b9609",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [
+            "since",
+            "details"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 10953,
+        "model": 10952,
+        "application": 1
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 8219,
+        "outputTokens": 4724,
+        "reasoningTokens": 4184,
+        "cachedInputTokens": 3592
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:51:36.184078+00:00",
+      "case": "C – Korrekturen",
+      "message": "Im Wohnzimmer.",
+      "status": 200,
+      "seconds": 8.05,
+      "reply": "Der Standort im Wohnzimmer ist not. Der Entwurf bleibt im Servicebereich und wird nicht automatisch versendet.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "d6759806-c0a0-4c96-9650-3ce9014b9609",
+      "actions": [],
+      "issues": [
+        {
+          "id": "d6759806-c0a0-4c96-9650-3ce9014b9609",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [
+            "since",
+            "details"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4363,
+        "model": 4361,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3992,
+        "outputTokens": 1875,
+        "reasoningTokens": 1764,
+        "cachedInputTokens": 1852
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:52:04.235876+00:00",
+      "case": "C – Korrekturen",
+      "message": "Nein, ich meinte Schlafzimmer.",
+      "status": 200,
+      "seconds": 11.117,
+      "reply": "Verstanden, die defekte Steckdose befindet sich also im Schlafzimmer.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "d6759806-c0a0-4c96-9650-3ce9014b9609",
+      "actions": [],
+      "issues": [
+        {
+          "id": "d6759806-c0a0-4c96-9650-3ce9014b9609",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [
+            "since",
+            "details"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4475,
+        "model": 4473,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 4022,
+        "outputTokens": 1949,
+        "reasoningTokens": 1761,
+        "cachedInputTokens": 1847
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:52:35.357507+00:00",
+      "case": "D – Mehrere Anliegen",
+      "message": "Meine Heizung funktioniert nicht und im Badezimmer tropft Wasser.",
+      "status": 200,
+      "seconds": 18.009,
+      "reply": "Besten Dank für Ihre Meldung. Woher tropft das Wasser im Badezimmer genau?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "ed985ac6-d4bb-4d92-ac6d-b911bd55df5d",
+      "actions": [],
+      "issues": [
+        {
+          "id": "ed985ac6-d4bb-4d92-ac6d-b911bd55df5d",
+          "equipment": "leak",
+          "category": "water",
+          "location": "Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        },
+        {
+          "id": "ee7944f3-d43d-447c-954c-bd282f4e83dc",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 11622,
+        "model": 11621,
+        "application": 1
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 7752,
+        "outputTokens": 4428,
+        "reasoningTokens": 4004,
+        "cachedInputTokens": 3574
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:53:13.370236+00:00",
+      "case": "D – Mehrere Anliegen",
+      "message": "Es tropft aus dem Rohr unterm Lavabo.",
+      "status": 503,
+      "seconds": 16.743,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "understanding": null,
+      "responseMode": null,
+      "activeIssueId": null,
+      "actions": null,
+      "issues": [],
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null
+    }
+  ]
+}

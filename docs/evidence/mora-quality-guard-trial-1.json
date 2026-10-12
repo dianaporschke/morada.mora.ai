@@ -1,0 +1,53 @@
+{
+  "url": "https://morada-mora-na1cpwejr-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-12T20:12:31.353349+00:00",
+      "case": "E – Finale Begrüssung",
+      "message": "Hey.",
+      "status": 200,
+      "seconds": 9.344,
+      "reply": "Guten Tag. Ich helfe Ihnen gerne bei allgemeinen Immobilienfragen oder lokalen Anliegenentwürfen. Was darf ich für Sie tun?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": null,
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4136,
+        "model": 4132,
+        "application": 4
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3743,
+        "outputTokens": 1535,
+        "reasoningTokens": 1459,
+        "cachedInputTokens": 1811
+      }
+    },
+    {
+      "startedAt": "2026-10-12T20:13:00.701962+00:00",
+      "case": "F – Dokumentzugriff nach Validierungskorrektur",
+      "message": "Wo finde ich meinen Mietvertrag?",
+      "status": 503,
+      "seconds": 13.441,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "understanding": null,
+      "responseMode": null,
+      "activeIssueId": null,
+      "actions": null,
+      "issues": [],
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null
+    }
+  ]
+}

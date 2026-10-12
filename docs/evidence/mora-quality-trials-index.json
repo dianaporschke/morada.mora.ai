@@ -1,0 +1,100 @@
+[
+  {
+    "trial": "mora-quality-trial-1.json",
+    "turns": 6,
+    "httpFailures": 1,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "Incorrect unknown facts/wording and failed since update"
+  },
+  {
+    "trial": "mora-quality-trial-2.json",
+    "turns": 9,
+    "httpFailures": 1,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "Obsolete FAQ enum and unsupported sending wording"
+  },
+  {
+    "trial": "mora-quality-trial-3.json",
+    "turns": 19,
+    "httpFailures": 0,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "Mixed rooms/risks across issues, false emergency for dripping; status duplication"
+  },
+  {
+    "trial": "mora-quality-trial-4.json",
+    "turns": 4,
+    "httpFailures": 1,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "Mandatory output/Reasoning budget exhaustion"
+  },
+  {
+    "trial": "mora-quality-trial-5.json",
+    "turns": 19,
+    "httpFailures": 0,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "Direct report question did not offer the existing draft"
+  },
+  {
+    "trial": "mora-quality-trial-6.json",
+    "turns": 3,
+    "httpFailures": 1,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "SDK JSON parsing bypassed corrective generation"
+  },
+  {
+    "trial": "mora-quality-trial-7.json",
+    "turns": 4,
+    "httpFailures": 1,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "Known device type confused with clarification target"
+  },
+  {
+    "trial": "mora-quality-trial-8.json",
+    "turns": 6,
+    "httpFailures": 1,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "Low Reasoning lost a room update; repeated draft offer blocked the turn"
+  },
+  {
+    "trial": "mora-quality-trial-9.json",
+    "turns": 6,
+    "httpFailures": 1,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "Redundant question/phase fields generated contradictory next-question data"
+  },
+  {
+    "trial": "mora-quality-trial-10.json",
+    "turns": 19,
+    "httpFailures": 0,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "All HTTP turns succeeded; an unsupported contract-location claim required a later capability correction"
+  },
+  {
+    "trial": "mora-quality-trial-11.json",
+    "turns": 19,
+    "httpFailures": 0,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "Temperature 0.5 comparison: no demonstrated quality gain; unsupported delivery/document wording; setting reverted"
+  },
+  {
+    "trial": "mora-quality-trial-12.json",
+    "turns": 20,
+    "httpFailures": 0,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "An acknowledged water-component refinement was not reflected in stored structured fields; existing update and question targets were subsequently separated"
+  },
+  {
+    "trial": "mora-quality-trial-13.json",
+    "turns": 20,
+    "httpFailures": 0,
+    "notes": "Intermediate iteration, not final acceptance evidence",
+    "qualityFailure": "Structured context and separate issue refinement passed, but reply used wrong draft section Portfolio and suggested a personal bill in Docs; whole-Preview capability grounding clarified afterwards"
+  },
+  {
+    "trial": "mora-quality-trial-14.json",
+    "turns": 14,
+    "httpFailures": 1,
+    "notes": "Failed final candidate preserved; not accepted",
+    "qualityFailure": "D2: unexpected output properties then invalid/ambiguous next-question issue reference. Short request-local references and explicit existing-reference precedence implemented next. Also stilted language and a truncated word in C1."
+  }
+]

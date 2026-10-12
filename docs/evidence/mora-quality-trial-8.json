@@ -1,0 +1,186 @@
+{
+  "url": "https://morada-mora-19ba4s9t4-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-12T16:54:49.356993+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Hey.",
+      "status": 200,
+      "seconds": 6.09,
+      "reply": "Grüezi! Herzlich willkommen bei MORADA Immobilien. Wie kann ich Ihnen heute helfen?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1960,
+        "model": 1957,
+        "application": 3
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3021,
+        "outputTokens": 305,
+        "reasoningTokens": 258,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T16:55:15.449288+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Was kannst du eigentlich alles?",
+      "status": 200,
+      "seconds": 7.898,
+      "reply": "Als MORA unterstütze ich Sie bei allgemeinen Immobilienfragen und beim Erstellen von lokalen Anliegenentwürfen. Echte Kundendokumente, Termine oder Foto-Uploads sind jedoch noch nicht direkt angebunden.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 3399,
+        "model": 3397,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2949,
+        "outputTokens": 1270,
+        "reasoningTokens": 1182,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T16:55:43.349424+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Und wie funktioniert das mit MORADA?",
+      "status": 200,
+      "seconds": 6.944,
+      "reply": "Ich bin MORA, die digitale Chatassistenz, während MORADA das menschliche Verwaltungsteam ist. Ich unterstütze Sie hier im Chat bei allgemeinen Fragen und beim Ausarbeiten von Anliegenentwürfen. Dieses Gespräch wird derzeit nicht automatisch an das Team übermittelt.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2226,
+        "model": 2225,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3122,
+        "outputTokens": 971,
+        "reasoningTokens": 846,
+        "cachedInputTokens": 1843
+      }
+    },
+    {
+      "startedAt": "2026-10-12T16:56:10.296710+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Meine Lampe geht nicht.",
+      "status": 200,
+      "seconds": 16.818,
+      "reply": "Guten Tag. Ich brauche den Raum für die Meldung. In welchem Raum befindet sich die Lampe?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [
+        {
+          "id": "78e37de4-e05d-4c2c-89c7-bfff7d1877c5",
+          "equipment": "light",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 11469,
+        "model": 11467,
+        "application": 2
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 6191,
+        "outputTokens": 4476,
+        "reasoningTokens": 4227,
+        "cachedInputTokens": 1777
+      }
+    },
+    {
+      "startedAt": "2026-10-12T16:56:47.117257+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Im Badezimmer.",
+      "status": 200,
+      "seconds": 6.101,
+      "reply": "Danke. Der Standort ist nun klar. Möchten Sie den Bericht jetzt verfassen?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "78e37de4-e05d-4c2c-89c7-bfff7d1877c5",
+          "equipment": "light",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1641,
+        "model": 1639,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3153,
+        "outputTokens": 543,
+        "reasoningTokens": 318,
+        "cachedInputTokens": 1836
+      }
+    },
+    {
+      "startedAt": "2026-10-12T16:57:13.221785+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Seit gestern.",
+      "status": 503,
+      "seconds": 7.136,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "understanding": null,
+      "responseMode": null,
+      "actions": null,
+      "issues": [],
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null
+    }
+  ]
+}

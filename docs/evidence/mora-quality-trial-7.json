@@ -1,0 +1,101 @@
+{
+  "url": "https://morada-mora-37b8n5p0w-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-12T16:47:05.882757+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Hey.",
+      "status": 200,
+      "seconds": 9.178,
+      "reply": "Ich begrüsse Sie bei MORADA Immobilien. Wie kann ich Ihnen heute helfen?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2156,
+        "model": 2151,
+        "application": 5
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2938,
+        "outputTokens": 343,
+        "reasoningTokens": 270,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T16:47:35.063149+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Was kannst du eigentlich alles?",
+      "status": 200,
+      "seconds": 7.209,
+      "reply": "Ich helfe Ihnen im Chat bei allgemeinen Immobilienfragen und kann Entwürfe für Anliegen vorbereiten. Echte Dokumente, Termine oder das Hochladen von Fotos sind noch nicht möglich. Was interessiert Sie genau?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2165,
+        "model": 2164,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2937,
+        "outputTokens": 422,
+        "reasoningTokens": 302,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T16:48:02.273227+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Und wie funktioniert das mit MORADA?",
+      "status": 200,
+      "seconds": 6.136,
+      "reply": "MORADA ist das menschliche Verwaltungsteam, und ich unterstütze Sie digital im Chat. Ich kann bei allgemeinen Immobilienfragen helfen und Entwürfe für Ihre Anliegen vorbereiten, aber Dokumente oder Termine sind noch nicht direkt eingebunden. Womit möchten Sie beginnen?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1743,
+        "model": 1741,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2957,
+        "outputTokens": 463,
+        "reasoningTokens": 309,
+        "cachedInputTokens": 742
+      }
+    },
+    {
+      "startedAt": "2026-10-12T16:48:28.411189+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Meine Lampe geht nicht.",
+      "status": 503,
+      "seconds": 8.118,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "understanding": null,
+      "responseMode": null,
+      "actions": null,
+      "issues": [],
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null
+    }
+  ]
+}

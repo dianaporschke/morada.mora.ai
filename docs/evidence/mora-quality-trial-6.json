@@ -1,0 +1,76 @@
+{
+  "url": "https://morada-mora-d749h8stt-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-12T16:41:56.587730+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Hey.",
+      "status": 200,
+      "seconds": 5.527,
+      "reply": "Grüezi! Willkommen bei MORADA. Wie kann ich Ihnen heute helfen?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1719,
+        "model": 1715,
+        "application": 4
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2855,
+        "outputTokens": 304,
+        "reasoningTokens": 238,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T16:42:22.118023+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Was kannst du eigentlich alles?",
+      "status": 200,
+      "seconds": 7.589,
+      "reply": "Grüezi! Ich helfe Ihnen hier im Chat bei allgemeinen Immobilienfragen und entwerfe lokale Anliegen für das MORADA-Verwaltungsteam. Dokumente, Termine oder den Versand von Nachrichten kann ich jedoch noch nicht direkt bearbeiten.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2093,
+        "model": 2091,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2868,
+        "outputTokens": 359,
+        "reasoningTokens": 286,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T16:42:49.708802+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Und wie funktioniert das mit MORADA?",
+      "status": 503,
+      "seconds": 6.617,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "understanding": null,
+      "responseMode": null,
+      "actions": null,
+      "issues": [],
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null
+    }
+  ]
+}

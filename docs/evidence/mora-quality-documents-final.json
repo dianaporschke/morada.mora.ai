@@ -1,0 +1,38 @@
+{
+  "url": "https://morada-mora-qzcp6aoz2-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-12T17:30:06.299994+00:00",
+      "case": "F – Dokumente nach Fähigkeitsprüfung",
+      "message": "Wo finde ich meinen Mietvertrag?",
+      "status": 200,
+      "seconds": 9.619,
+      "reply": "Leider habe ich keinen Zugriff auf Ihre persönlichen Unterlagen. Ich kann Ihnen aber gerne den Dokumentenbereich öffnen, wo Sie Dokumente einsehen können.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [
+        {
+          "id": "view-docs",
+          "label": "Dokumentenbereich öffnen",
+          "variant": "secondary",
+          "type": "navigate",
+          "target": "docs"
+        }
+      ],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4432,
+        "model": 4425,
+        "application": 7
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3068,
+        "outputTokens": 1551,
+        "reasoningTokens": 1430,
+        "cachedInputTokens": 0
+      }
+    }
+  ]
+}

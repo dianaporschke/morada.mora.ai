@@ -1,0 +1,832 @@
+{
+  "url": "https://morada-mora-a2jnwcr87-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-12T15:37:42.204363+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Hey.",
+      "status": 200,
+      "seconds": 9.638,
+      "reply": "Grüezi! Wie kann ich Ihnen heute helfen?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2182,
+        "model": 2180,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2267,
+        "outputTokens": 535,
+        "reasoningTokens": 326,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:38:11.850157+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Was kannst du eigentlich alles?",
+      "status": 200,
+      "seconds": 6.239,
+      "reply": "Ich bin die digitale Chatassistenz von MORADA Immobilien und helfe Ihnen bei allgemeinen Immobilienfragen. Ausserdem kann ich Entwürfe für lokale Anliegen vorbereiten. Bitte beachten Sie, dass Dokumente, Termine oder Foto-Uploads aktuell noch nicht möglich sind.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1837,
+        "model": 1835,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2405,
+        "outputTokens": 568,
+        "reasoningTokens": 309,
+        "cachedInputTokens": 770
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:38:38.093046+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Und wie funktioniert das mit MORADA?",
+      "status": 200,
+      "seconds": 8.191,
+      "reply": "Ich bin die digitale Chatassistenz von MORADA Immobilien. MORADA ist das menschliche Verwaltungsteam, das Sie persönlich betreut. Ich kann Ihnen hier im Chat bei allgemeinen Fragen helfen und Entwürfe für Anliegen vorbereiten.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1697,
+        "model": 1695,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2370,
+        "outputTokens": 538,
+        "reasoningTokens": 302,
+        "cachedInputTokens": 738
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:39:06.286176+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Meine Lampe geht nicht.",
+      "status": 200,
+      "seconds": 8.398,
+      "reply": "Gerne helfe ich weiter. Handelt es sich um eine eigene Leuchte oder um eine im Allgemeinbereich?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [
+        {
+          "id": "answer-location-model-0",
+          "label": "Eigene Leuchte",
+          "variant": "secondary",
+          "type": "select",
+          "field": "location",
+          "value": "Eigene Leuchte"
+        },
+        {
+          "id": "answer-location-model-1",
+          "label": "Allgemeinbereich",
+          "variant": "secondary",
+          "type": "select",
+          "field": "location",
+          "value": "Allgemeinbereich"
+        }
+      ],
+      "issues": [
+        {
+          "id": "0df69408-26d5-4fa7-af4b-7dd6e6cac19e",
+          "equipment": "light",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1906,
+        "model": 1904,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2313,
+        "outputTokens": 631,
+        "reasoningTokens": 284,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:39:34.686293+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Im Badezimmer.",
+      "status": 200,
+      "seconds": 8.824,
+      "reply": "Danke für die Information. Ich habe den Ort als Badezimmer notiert. Möchten Sie, dass ich einen Meldungsentwurf vorbereite?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "0df69408-26d5-4fa7-af4b-7dd6e6cac19e",
+          "equipment": "light",
+          "category": "electricity",
+          "location": "Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1781,
+        "model": 1780,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2438,
+        "outputTokens": 709,
+        "reasoningTokens": 392,
+        "cachedInputTokens": 748
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:40:03.511736+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Seit gestern.",
+      "status": 200,
+      "seconds": 8.365,
+      "reply": "Ich habe notiert, dass die Lampe seit gestern nicht geht. Möchten Sie, dass ich einen Meldungsentwurf vorbereite?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "0df69408-26d5-4fa7-af4b-7dd6e6cac19e",
+          "equipment": "light",
+          "category": "electricity",
+          "location": "Badezimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1857,
+        "model": 1856,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2452,
+        "outputTokens": 593,
+        "reasoningTokens": 285,
+        "cachedInputTokens": 740
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:40:31.879437+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Kann ich das direkt melden?",
+      "status": 200,
+      "seconds": 9.338,
+      "reply": "Ich verstehe Ihren Wunsch. Aktuell kann ich Meldungen aber noch nicht direkt versenden. Ich kann jedoch gerne einen lokalen Entwurf für Sie vorbereiten.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "0df69408-26d5-4fa7-af4b-7dd6e6cac19e",
+          "equipment": "light",
+          "category": "electricity",
+          "location": "Badezimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2966,
+        "model": 2965,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2545,
+        "outputTokens": 614,
+        "reasoningTokens": 289,
+        "cachedInputTokens": 755
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:41:01.219105+00:00",
+      "case": "B – Unbekannte Informationen",
+      "message": "Meine Steckdose funktioniert nicht.",
+      "status": 200,
+      "seconds": 9.353,
+      "reply": "Das bedaure ich sehr. In welchem Raum befindet sich die Steckdose?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [
+        {
+          "id": "62711408-ddbd-49ee-9e8f-f67708dc87d6",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 3083,
+        "model": 3083,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2368,
+        "outputTokens": 649,
+        "reasoningTokens": 413,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:41:30.574445+00:00",
+      "case": "B – Unbekannte Informationen",
+      "message": "Keine Ahnung seit wann.",
+      "status": 200,
+      "seconds": 9.085,
+      "reply": "Vielen Dank für die Rückmeldung. In welchem Raum befindet sich die Steckdose?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [
+        {
+          "id": "62711408-ddbd-49ee-9e8f-f67708dc87d6",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "unknownFields": [
+            "since"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2103,
+        "model": 2103,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2463,
+        "outputTokens": 692,
+        "reasoningTokens": 380,
+        "cachedInputTokens": 755
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:41:59.661758+00:00",
+      "case": "B – Unbekannte Informationen",
+      "message": "Ich weiss auch nicht, was genau kaputt ist.",
+      "status": 200,
+      "seconds": 13.374,
+      "reply": "Das ist nicht weiter schlimm. Ich kann Ihnen einen lokalen Entwurf vorbereiten, den Sie später ergänzen können.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "62711408-ddbd-49ee-9e8f-f67708dc87d6",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "unknownFields": [
+            "since"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4249,
+        "model": 4249,
+        "application": 0
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 5340,
+        "outputTokens": 1290,
+        "reasoningTokens": 686,
+        "cachedInputTokens": 1525
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:42:33.038342+00:00",
+      "case": "C – Korrekturen",
+      "message": "Im Wohnzimmer.",
+      "status": 200,
+      "seconds": 8.314,
+      "reply": "Die Steckdose befindet sich also im Wohnzimmer. Soll ich einen lokalen Entwurf für die Meldung vorbereiten?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "62711408-ddbd-49ee-9e8f-f67708dc87d6",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "unknownFields": [
+            "since"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1560,
+        "model": 1560,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2469,
+        "outputTokens": 580,
+        "reasoningTokens": 269,
+        "cachedInputTokens": 735
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:43:01.354176+00:00",
+      "case": "C – Korrekturen",
+      "message": "Nein, ich meinte Schlafzimmer.",
+      "status": 200,
+      "seconds": 7.905,
+      "reply": "Der Standort ist jetzt klar. Möchten Sie, dass ich den lokalen Entwurf für das Schlafzimmer vorbereite?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "62711408-ddbd-49ee-9e8f-f67708dc87d6",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "unknownFields": [
+            "since"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1580,
+        "model": 1580,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2500,
+        "outputTokens": 580,
+        "reasoningTokens": 268,
+        "cachedInputTokens": 733
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:43:29.260929+00:00",
+      "case": "D – Mehrere Anliegen",
+      "message": "Meine Heizung funktioniert nicht und im Badezimmer tropft Wasser.",
+      "status": 200,
+      "seconds": 8.9,
+      "reply": "Bei starkem Wasseraustritt halten Sie Abstand zu elektrischen Geräten und nassen Leitungen. Stoppen Sie die Wasserzufuhr nur, wenn das gefahrlos möglich ist. Bei unmittelbarer Gefahr rufen Sie 112 an; warten Sie nicht auf das Portal.\n\nIch habe 2 getrennte Anliegen aufgenommen: Heizkörper und Wasseraustritt. Die Angaben sind im Chat aufgenommen. Ein Anliegenentwurf ersetzt keinen Notruf oder direkten Kontakt.",
+      "understanding": "model",
+      "responseMode": "safety",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        },
+        {
+          "id": "add-details",
+          "label": "Noch etwas ergänzen",
+          "variant": "secondary",
+          "type": "add_details"
+        },
+        {
+          "id": "attach-photo",
+          "label": "Foto hinzufügen",
+          "variant": "secondary",
+          "type": "attachment"
+        }
+      ],
+      "issues": [
+        {
+          "id": "8c6336dc-43e0-445d-a23a-a3c0cfced600",
+          "equipment": "heater",
+          "category": "heating",
+          "location": "Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "water",
+          "urgency": "high",
+          "status": "draft"
+        },
+        {
+          "id": "0797d697-0400-4f81-8b66-dc3ceec454d9",
+          "equipment": "leak",
+          "category": "water",
+          "location": "Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "water",
+          "urgency": "high",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2446,
+        "model": 2445,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": null
+    },
+    {
+      "startedAt": "2026-10-12T15:43:58.168394+00:00",
+      "case": "F – Dokumente",
+      "message": "Wo finde ich meinen Mietvertrag?",
+      "status": 200,
+      "seconds": 8.28,
+      "reply": "Der Mietvertrag ist aktuell noch nicht im Portal hinterlegt. Wir können Ihnen gerne helfen, einen Entwurf für Anfragen zu erstellen, wenn Sie uns die Details nennen.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1730,
+        "model": 1730,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2312,
+        "outputTokens": 488,
+        "reasoningTokens": 252,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:44:26.462749+00:00",
+      "case": "G – Bestehende Anliegen",
+      "message": "Was ist mit meinem gemeldeten Wasserschaden?",
+      "status": 200,
+      "seconds": 8.012,
+      "reply": "Ich habe in diesem Chat keine Informationen zu einem früheren Wasserschaden. Um Ihnen weiterzuhelfen, müssten wir den Schaden neu erfassen, da der direkte Versand noch nicht möglich ist.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1775,
+        "model": 1774,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2337,
+        "outputTokens": 663,
+        "reasoningTokens": 289,
+        "cachedInputTokens": 754
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:44:54.482561+00:00",
+      "case": "H – Gefahr (Sicherheitsweg)",
+      "message": "Aus meiner Steckdose kommen Funken und es riecht verbrannt.",
+      "status": 200,
+      "seconds": 6.534,
+      "reply": "Bitte halten Sie Abstand zu beschädigten elektrischen Teilen und berühren Sie keine Kabel oder nassen Geräte. Bei unmittelbarer Gefahr rufen Sie von einem sicheren Ort 112 an. Warten Sie nicht auf eine Antwort im Portal.\n\nDie Angaben sind im Chat aufgenommen. Ein Anliegenentwurf ersetzt keinen Notruf oder direkten Kontakt.",
+      "understanding": "safety",
+      "responseMode": "safety",
+      "actions": [
+        {
+          "id": "emergency-112",
+          "label": "Notruf 112",
+          "variant": "primary",
+          "type": "call",
+          "number": "112"
+        },
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "secondary",
+          "type": "handover"
+        },
+        {
+          "id": "add-details",
+          "label": "Noch etwas ergänzen",
+          "variant": "secondary",
+          "type": "add_details"
+        }
+      ],
+      "issues": [
+        {
+          "id": "530b321f-2edc-4d00-9269-50831261c3fc",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "electric",
+          "urgency": "emergency",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 7,
+        "model": 0,
+        "application": 7
+      },
+      "modelCalls": 0,
+      "modelUsage": null
+    },
+    {
+      "startedAt": "2026-10-12T15:45:21.020571+00:00",
+      "case": "I – Themenwechsel",
+      "message": "Meine Heizung geht nicht.",
+      "status": 200,
+      "seconds": 8.108,
+      "reply": "Ich verstehe, dass Ihre Heizung nicht funktioniert. Um den lokalen Entwurf korrekt auszufüllen, könnte ich noch wissen, wo genau das Problem ist?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [
+        {
+          "id": "answer-location-model-0",
+          "label": "Wohnzimmer",
+          "variant": "secondary",
+          "type": "select",
+          "field": "location",
+          "value": "Wohnzimmer"
+        },
+        {
+          "id": "answer-location-model-1",
+          "label": "Schlafzimmer",
+          "variant": "secondary",
+          "type": "select",
+          "field": "location",
+          "value": "Schlafzimmer"
+        },
+        {
+          "id": "answer-location-model-2",
+          "label": "Küche",
+          "variant": "secondary",
+          "type": "select",
+          "field": "location",
+          "value": "Küche"
+        },
+        {
+          "id": "answer-location-model-3",
+          "label": "Badezimmer",
+          "variant": "secondary",
+          "type": "select",
+          "field": "location",
+          "value": "Badezimmer"
+        }
+      ],
+      "issues": [
+        {
+          "id": "22040938-da65-4e8b-a499-39f3af99dc49",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 1528,
+        "model": 1528,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2306,
+        "outputTokens": 706,
+        "reasoningTokens": 277,
+        "cachedInputTokens": 746
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:45:49.137117+00:00",
+      "case": "I – Themenwechsel",
+      "message": "Eigentlich wollte ich noch etwas zur Nebenkostenabrechnung fragen.",
+      "status": 200,
+      "seconds": 9.053,
+      "reply": "Gerne beantworte ich Ihre allgemeine Frage zur Nebenkostenabrechnung. Allerdings habe ich keinen direkten Zugriff auf Ihre persönlichen Unterlagen oder Belege.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [
+        {
+          "id": "22040938-da65-4e8b-a499-39f3af99dc49",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2515,
+        "model": 2515,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2460,
+        "outputTokens": 548,
+        "reasoningTokens": 318,
+        "cachedInputTokens": 749
+      }
+    },
+    {
+      "startedAt": "2026-10-12T15:46:18.196237+00:00",
+      "case": "J – Freie Sprache",
+      "message": "Iwie tropfts bi mir unterm Lavabo und ich weiss ned wieso.",
+      "status": 200,
+      "seconds": 9.32,
+      "reply": "Bei starkem Wasseraustritt halten Sie Abstand zu elektrischen Geräten und nassen Leitungen. Stoppen Sie die Wasserzufuhr nur, wenn das gefahrlos möglich ist. Bei unmittelbarer Gefahr rufen Sie 112 an; warten Sie nicht auf das Portal.\n\nDie Angaben sind im Chat aufgenommen. Ein Anliegenentwurf ersetzt keinen Notruf oder direkten Kontakt.",
+      "understanding": "model",
+      "responseMode": "safety",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        },
+        {
+          "id": "add-details",
+          "label": "Noch etwas ergänzen",
+          "variant": "secondary",
+          "type": "add_details"
+        },
+        {
+          "id": "attach-photo",
+          "label": "Foto hinzufügen",
+          "variant": "secondary",
+          "type": "attachment"
+        }
+      ],
+      "issues": [
+        {
+          "id": "8d14b527-e6ee-4880-a044-61494842e5fb",
+          "equipment": "unknown",
+          "category": "water",
+          "location": "unterm Lavabo",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "unknownFields": [],
+          "hazard": "water",
+          "urgency": "high",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 3013,
+        "model": 3013,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": null
+    }
+  ]
+}

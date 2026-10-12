@@ -1,0 +1,111 @@
+{
+  "url": "https://morada-mora-no7kxhgsr-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-12T19:25:02.282416+00:00",
+      "case": "D – Mehrere Anliegen",
+      "message": "Meine Heizung funktioniert nicht und im Badezimmer tropft Wasser.",
+      "status": 200,
+      "seconds": 16.179,
+      "reply": "Gerne nehme ich beide Vorkommnisse auf. In welchem Raum steht die Heizung?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "c8ae4bfc-cd33-4e2a-afba-f64d6855258e",
+      "actions": [],
+      "issues": [
+        {
+          "id": "c8ae4bfc-cd33-4e2a-afba-f64d6855258e",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        },
+        {
+          "id": "a0b635ff-e70c-4773-894b-b3d7b8476b21",
+          "equipment": "leak",
+          "category": "water",
+          "location": "Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 10306,
+        "model": 10301,
+        "application": 5
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 7422,
+        "outputTokens": 4554,
+        "reasoningTokens": 4115,
+        "cachedInputTokens": 1795
+      }
+    },
+    {
+      "startedAt": "2026-10-12T19:25:38.464076+00:00",
+      "case": "D – Mehrere Anliegen",
+      "message": "Es tropft aus dem Rohr unterm Lavabo.",
+      "status": 200,
+      "seconds": 12.279,
+      "reply": "Das Rohr unterm Lavabo habe ich notiert. Wo steht die Heizung genau?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "c8ae4bfc-cd33-4e2a-afba-f64d6855258e",
+      "actions": [],
+      "issues": [
+        {
+          "id": "c8ae4bfc-cd33-4e2a-afba-f64d6855258e",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        },
+        {
+          "id": "a0b635ff-e70c-4773-894b-b3d7b8476b21",
+          "equipment": "pipe",
+          "category": "water",
+          "location": "Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": "unterm Lavabo",
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 5752,
+        "model": 5750,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3692,
+        "outputTokens": 2252,
+        "reasoningTokens": 2036,
+        "cachedInputTokens": 1786
+      }
+    }
+  ]
+}

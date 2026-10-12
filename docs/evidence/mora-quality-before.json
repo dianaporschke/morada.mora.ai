@@ -1,0 +1,70 @@
+{
+  "url": "https://morada-mora-hkex2uzmz-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "case": "Vorher-Begruessung",
+      "message": "Hey.",
+      "status": 200,
+      "seconds": 9.949,
+      "reply": "Ich bin für Ihre Fragen und Anliegen rund um Ihre Immobilie da. Sie können einfach frei schreiben.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": null
+    },
+    {
+      "case": "Vorher-Lampe",
+      "message": "Meine Lampe geht nicht.",
+      "status": 200,
+      "seconds": 8.964,
+      "reply": "Gerne helfe ich Ihnen weiter. Wo befindet sich die defekte Lampe? Bitte wählen Sie aus, ob sie in Ihrer Wohnung, im Treppenhaus/Allgemeinbereich oder im Aussenbereich ist.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [
+        {
+          "id": "answer-location-flat",
+          "label": "In meiner Wohnung",
+          "variant": "secondary",
+          "type": "select",
+          "field": "location",
+          "value": "In meiner Wohnung"
+        },
+        {
+          "id": "answer-location-common",
+          "label": "Treppenhaus / Allgemeinbereich",
+          "variant": "secondary",
+          "type": "select",
+          "field": "location",
+          "value": "Treppenhaus / Allgemeinbereich"
+        },
+        {
+          "id": "answer-location-outside",
+          "label": "Aussenbereich",
+          "variant": "secondary",
+          "type": "select",
+          "field": "location",
+          "value": "Aussenbereich"
+        }
+      ],
+      "issues": [
+        {
+          "id": "681adae1-9398-4d67-a7bc-4b49e7b0289e",
+          "equipment": "light",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": null
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "url": "https://morada-mora-lxc927x4s-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-12T17:02:38.165956+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Hey.",
+      "status": 200,
+      "seconds": 8.141,
+      "reply": "Guten Tag! Ich bin MORA, die digitale Chatassistenz von MORADA Immobilien. Wie kann ich Ihnen heute bei allgemeinen Immobilienfragen oder lokalen Anliegen behilflich sein?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 3478,
+        "model": 3474,
+        "application": 4
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2981,
+        "outputTokens": 1275,
+        "reasoningTokens": 1193,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T17:03:06.309431+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Was kannst du eigentlich alles?",
+      "status": 200,
+      "seconds": 8.037,
+      "reply": "Ich helfe Ihnen bei allgemeinen Immobilienfragen und unterstütze, Entwürfe für lokale Anliegen wie Defekte zu formulieren. Für echte Dokumente, Termine oder Statusabfragen wenden Sie sich bitte direkt an das MORADA-Team, da diese Funktionen hier noch nicht eingebunden sind.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 2923,
+        "model": 2922,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3040,
+        "outputTokens": 1377,
+        "reasoningTokens": 1266,
+        "cachedInputTokens": 1819
+      }
+    },
+    {
+      "startedAt": "2026-10-12T17:03:34.350464+00:00",
+      "case": "E – Natürliche Unterhaltung",
+      "message": "Und wie funktioniert das mit MORADA?",
+      "status": 200,
+      "seconds": 10.717,
+      "reply": "MORADA ist das menschliche Verwaltungsteam, das Ihre Anliegen persönlich betreut. Ich unterstütze Sie hier im Chat bei allgemeinen Fragen und beim Erstellen von Entwürfen für Anliegen.",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4479,
+        "model": 4479,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3026,
+        "outputTokens": 1889,
+        "reasoningTokens": 1798,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-12T17:04:05.069783+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Meine Lampe geht nicht.",
+      "status": 200,
+      "seconds": 13.078,
+      "reply": "Gerne helfe ich bei der defekten Lampe. In welchem Raum befindet sie sich?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [
+        {
+          "id": "0ce417a2-f296-4935-8208-bd71e8a7b039",
+          "equipment": "light",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 8211,
+        "model": 8208,
+        "application": 3
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 6189,
+        "outputTokens": 3773,
+        "reasoningTokens": 3501,
+        "cachedInputTokens": 3579
+      }
+    },
+    {
+      "startedAt": "2026-10-12T17:04:38.149313+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Im Badezimmer.",
+      "status": 200,
+      "seconds": 16.661,
+      "reply": "Danke, das habe ich notiert. Handelt es sich um eine fest installierte Lampe oder eine eigene Leuchte?",
+      "understanding": "model",
+      "responseMode": "model",
+      "actions": [],
+      "issues": [
+        {
+          "id": "0ce417a2-f296-4935-8208-bd71e8a7b039",
+          "equipment": "light",
+          "category": "electricity",
+          "location": "Im Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 11598,
+        "model": 11596,
+        "application": 2
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 6510,
+        "outputTokens": 4767,
+        "reasoningTokens": 4412,
+        "cachedInputTokens": 3588
+      }
+    },
+    {
+      "startedAt": "2026-10-12T17:05:14.821522+00:00",
+      "case": "A – Defekte Lampe",
+      "message": "Seit gestern.",
+      "status": 503,
+      "seconds": 16.462,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "understanding": null,
+      "responseMode": null,
+      "actions": null,
+      "issues": [],
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null
+    }
+  ]
+}

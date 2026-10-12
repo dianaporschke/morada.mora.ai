@@ -1,0 +1,78 @@
+{
+  "source": "https://ai-gateway.vercel.sh/v1/models",
+  "retrievedAt": "2026-10-12T20:09:40.865635+00:00",
+  "catalogIsNotInferenceAccessProof": true,
+  "models": [
+    {
+      "id": "inception/mercury-2.5",
+      "contextWindow": 260000,
+      "tags": [
+        "implicit-caching",
+        "reasoning",
+        "tool-use",
+        "structured-output"
+      ],
+      "standardUsdPerMillionInput": 0.04,
+      "standardUsdPerMillionOutput": 0.15,
+      "noTraining": "all",
+      "zdr": "none"
+    },
+    {
+      "id": "openai/gpt-5.4-mini",
+      "contextWindow": 400000,
+      "tags": [
+        "file-input",
+        "implicit-caching",
+        "reasoning",
+        "tool-use",
+        "vision",
+        "web-search",
+        "structured-output",
+        "websocket-realtime",
+        "fast"
+      ],
+      "standardUsdPerMillionInput": 0.75,
+      "standardUsdPerMillionOutput": 4.5,
+      "noTraining": "all",
+      "zdr": "all"
+    },
+    {
+      "id": "openai/gpt-6-luna",
+      "contextWindow": 1050000,
+      "tags": [
+        "explicit-caching",
+        "file-input",
+        "implicit-caching",
+        "reasoning",
+        "structured-output",
+        "tool-use",
+        "vision",
+        "web-search",
+        "fast"
+      ],
+      "standardUsdPerMillionInput": 0.09999999999999999,
+      "standardUsdPerMillionOutput": 0.5,
+      "noTraining": "all",
+      "zdr": "some"
+    },
+    {
+      "id": "openai/gpt-6.1-sol",
+      "contextWindow": 1050000,
+      "tags": [
+        "explicit-caching",
+        "file-input",
+        "implicit-caching",
+        "reasoning",
+        "structured-output",
+        "tool-use",
+        "vision",
+        "web-search",
+        "fast"
+      ],
+      "standardUsdPerMillionInput": 2.0,
+      "standardUsdPerMillionOutput": 10.0,
+      "noTraining": "all",
+      "zdr": "some"
+    }
+  ]
+}

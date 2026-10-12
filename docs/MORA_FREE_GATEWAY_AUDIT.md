@@ -1,5 +1,11 @@
 # MORA AI 2.0: Gratiszugang, Umsetzung und Kosten
 
+> Historischer Prüfstand vor der kostenlosen Aktivierung. Aktuelle Modellanbindung,
+> Ursachen und echte Gesprächsergebnisse werden in `MORA_MERCURY_LIVE_VERIFICATION.md`
+> dokumentiert. Die nachfolgenden Aussagen über abgeschaltete Inferenz und ungeprüfte
+> Gratisherkunft beschreiben den damaligen Stand, nicht die aktuelle Preview.
+> Der aktuelle Architektur- und Prüfstand vom 12. Oktober steht in `MORA_PREMIUM_QUALITY_REPORT.md`.
+
 Prüfdatum: 10. Oktober 2026. Repository `dianaporschke/morada.mora.ai`, ausschliesslich Branch `codex/mora-ai-2.0`. Ausgangsstand `fd184003864e165235750d26914756103b10c19d`, lokal und auf GitHub sauber gespeichert. Kein Merge, Produktionsdeployment oder Schreibzugriff auf `main` / `alex-portal`.
 
 ## Tatsächliche Konfiguration und Zugang
