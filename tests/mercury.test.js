@@ -9,8 +9,8 @@ import { estimateTokenCost } from '../lib/mora/costs.js';
 import { classifyModelError } from '../lib/mora/provider.js';
 
 function mercury(output, inspect = () => {}) {
-  const {unknownFields,topic,answer,hazard,confidence,...rest}=output;
-  const contractOutput=unknownFields ? {...rest,risk:hazard==='water' ? 'flood' : hazard,sourceQuote:output.sourceQuote || null,
+  const {unknownFields,topic,answer,hazard,confidence,question,clarification,...rest}=output;
+  const contractOutput=unknownFields ? {...rest,dialogue:output.dialogue && {reply:output.dialogue.reply,buttons:output.dialogue.buttons,...(question && clarification ? {ask:{field:question,text:clarification}} : {})},risk:hazard==='water' ? 'flood' : hazard,sourceQuote:output.sourceQuote || null,
     additionalIssues:output.additionalIssues.map(({hazard,...issue})=>({...issue,risk:hazard==='water' ? 'flood' : hazard,sourceQuote:issue.sourceQuote || null})),
     unknownAnswers:output.unknownAnswers || []} : output;
   return new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options => {
@@ -62,11 +62,11 @@ test('Unknown facts require direct provenance from this customer turn, not absen
 test('One genuine corrective generation can repair a capability violation; tokens and failed attempt stay accounted',async()=>{
   let calls=0,invalid=0;
   const base=emptyUnderstanding({intent:'contact',dialogue:{reply:'Möchten Sie die Meldung jetzt absenden?',stage:'offer_draft',buttons:[]}});
-  const {unknownFields,topic,answer,hazard,confidence,...rest}=base;
+  const {unknownFields,topic,answer,hazard,confidence,question,clarification,...rest}=base;
   const model=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options=>{
     calls++;
     if(calls===2) assert.match(JSON.stringify(options.prompt),/previous JSON was rejected/);
-    const output={...rest,risk:hazard,sourceQuote:null,unknownAnswers:[],dialogue:{...rest.dialogue,reply:calls===1 ? rest.dialogue.reply : 'Ich kann den lokalen Entwurf öffnen. Der direkte Versand ist noch nicht angebunden.'}};
+    const output={...rest,risk:hazard,sourceQuote:null,unknownAnswers:[],dialogue:{reply:calls===1 ? rest.dialogue.reply : 'Ich kann den lokalen Entwurf öffnen. Der direkte Versand ist noch nicht angebunden.'}};
     return {content:[{type:'text',text:JSON.stringify(output)}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
       usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
   }});
@@ -148,13 +148,25 @@ test('A fact question cannot simultaneously trigger a premature handover stage',
   let calls=0;
   const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
     calls++;
-    return {content:[{type:'text',text:JSON.stringify({intent:'issue',equipment:'light',question:'location',clarification:'In welchem Raum?',
-      dialogue:{reply:'In welchem Raum ist die Lampe?',stage:calls===1 ? 'offer_draft' : 'clarify',buttons:[]}})}],
+    return {content:[{type:'text',text:JSON.stringify({intent:'issue',equipment:'light',
+      dialogue:{reply:'In welchem Raum ist die Lampe?',ask:{field:'location',text:'In welchem Raum?'},buttons:[{kind:'prepare_draft'}]}})}],
       finishReason:{unified:'stop',raw:'stop'},warnings:[],
       usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
   }});
   const result=await generateUnderstandingResult('Lampe kaputt',null,sdk);
-  assert.equal(result.generationCount,2);assert.equal(result.data.dialogue.stage,'clarify');
+  assert.equal(result.generationCount,1);assert.equal(result.data.dialogue.stage,'clarify');
   const turn=await processTurn({message:'Lampe kaputt'},null,async()=>({mode:'model',data:result.data}));
   assert.equal(turn.state.pendingKey,'location');assert.ok(!turn.state.actions.some(a=>a.type==='handover'));
+});
+
+
+test('The SDK accepts a repeated draft proposal without a repair call and still stores the new fact',async()=>{
+  const first=await processTurn({message:'Lampe kaputt'},null,async()=>({mode:'model',data:emptyUnderstanding({intent:'issue',equipment:'light',
+    dialogue:{reply:'Ich kann einen Entwurf vorbereiten.',stage:'offer_draft',buttons:[]}})}));
+  let calls=0;
+  const result=await generateUnderstandingResult('Seit gestern',first.state,mercury({intent:'issue',since:'gestern',
+    dialogue:{reply:'Der Beginn ist notiert.',buttons:[{kind:'prepare_draft'}]}},()=>{calls++;}));
+  assert.equal(calls,1);assert.equal(result.generationCount,1);
+  const turn=await processTurn({message:'Seit gestern'},first.state,async()=>({mode:'model',data:result.data}));
+  assert.equal(turn.state.issue.since,'gestern');assert.ok(!turn.state.actions.some(a=>a.type==='handover'));
 });
