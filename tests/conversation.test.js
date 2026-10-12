@@ -22,8 +22,8 @@ test('One SDK generation supplies facts, wording and signed history; a second co
   const output=emptyUnderstanding({intent:'greeting',dialogue:dialogue('Grüezi! Was beschäftigt Sie rund um Ihre Immobilie?','information')});
   const sdkModel=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
     calls++;
-    const {unknownFields,topic,answer,...rest}=output;
-    return {content:[{type:'text',text:JSON.stringify({...rest,unknownAnswers:[]})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
+    const {unknownFields,topic,answer,hazard,...rest}=output;
+    return {content:[{type:'text',text:JSON.stringify({...rest,risk:hazard,sourceQuote:null,unknownAnswers:[]})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
       usage:{inputTokens:{total:120,noCache:120,cacheRead:0,cacheWrite:0},outputTokens:{total:90,text:90,reasoning:0}}};
   }});
   const understand=createUnderstandingService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>sdkModel}),log(){}});

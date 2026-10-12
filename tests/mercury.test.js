@@ -9,8 +9,10 @@ import { estimateTokenCost } from '../lib/mora/costs.js';
 import { classifyModelError } from '../lib/mora/provider.js';
 
 function mercury(output, inspect = () => {}) {
-  const {unknownFields,topic,answer,...rest}=output;
-  const contractOutput=unknownFields ? {...rest,unknownAnswers:output.unknownAnswers || []} : output;
+  const {unknownFields,topic,answer,hazard,...rest}=output;
+  const contractOutput=unknownFields ? {...rest,risk:hazard==='water' ? 'flood' : hazard,sourceQuote:output.sourceQuote || null,
+    additionalIssues:output.additionalIssues.map(({hazard,...issue})=>({...issue,risk:hazard==='water' ? 'flood' : hazard,sourceQuote:issue.sourceQuote || null})),
+    unknownAnswers:output.unknownAnswers || []} : output;
   return new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options => {
     inspect(options);
     return {content:[{type:'text',text:JSON.stringify(contractOutput)}],
@@ -28,7 +30,7 @@ test('Mercury uses supported JSON mode with the complete schema in system instru
     assert.equal(options.responseFormat.type, 'json');
     assert.equal(options.responseFormat.schema, undefined);
     assert.equal(options.tools, undefined);
-    assert.equal(options.providerOptions.inception.reasoningEffort,'low');
+    assert.equal(options.providerOptions.inception.reasoningEffort,'medium');
     assert.match(JSON.stringify(options.prompt), /unknownAnswers/);
     assert.match(JSON.stringify(options.prompt), /additionalProperties/);
     assert.match(JSON.stringify(options.prompt), /Steckdose im Schlafzimmer kaputt/);
@@ -51,11 +53,11 @@ test('Unknown facts require direct provenance from this customer turn, not absen
 test('One genuine corrective generation can repair a capability violation; tokens and failed attempt stay accounted',async()=>{
   let calls=0,invalid=0;
   const base=emptyUnderstanding({intent:'contact',dialogue:{reply:'Möchten Sie die Meldung jetzt absenden?',stage:'offer_draft',buttons:[]}});
-  const {unknownFields,topic,answer,...rest}=base;
+  const {unknownFields,topic,answer,hazard,...rest}=base;
   const model=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options=>{
     calls++;
     if(calls===2) assert.match(JSON.stringify(options.prompt),/previous JSON was rejected/);
-    const output={...rest,unknownAnswers:[],dialogue:{...rest.dialogue,reply:calls===1 ? rest.dialogue.reply : 'Ich kann den lokalen Entwurf öffnen. Der direkte Versand ist noch nicht angebunden.'}};
+    const output={...rest,risk:hazard,sourceQuote:null,unknownAnswers:[],dialogue:{...rest.dialogue,reply:calls===1 ? rest.dialogue.reply : 'Ich kann den lokalen Entwurf öffnen. Der direkte Versand ist noch nicht angebunden.'}};
     return {content:[{type:'text',text:JSON.stringify(output)}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
       usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
   }});
@@ -66,6 +68,27 @@ test('One genuine corrective generation can repair a capability violation; token
   assert.equal(result.totalUsage.inputTokens,400);assert.equal(result.totalUsage.outputTokens,200);
   assert.equal(result.totalUsage.outputTokenDetails.reasoningTokens,40);assert.equal(result.usage.inputTokens,200);
   assert.ok(result.data.dialogue.reply.includes('lokalen Entwurf'));
+});
+
+test('Multi-issue rooms require disjoint customer sources and cannot leak from water into heating',async()=>{
+  const message='Meine Heizung funktioniert nicht und im Badezimmer tropft Wasser.';
+  const heater='Meine Heizung funktioniert nicht',water='im Badezimmer tropft Wasser';
+  const base=emptyUnderstanding({intent:'issue',category:'heating',equipment:'heater',confidence:'clear',
+    description:heater,sourceQuote:heater,dialogue:{reply:'Ich habe Heizung und Tropfen als getrennte Anliegen aufgenommen.',stage:'discuss',buttons:[]},
+    additionalIssues:[{category:'water',equipment:'leak',description:water,sourceQuote:water,subcategory:null,defect:null,count:null,location:'Badezimmer',since:null,extent:null,details:null,urgency:'normal',hazard:'none'}]});
+  let calls=0;
+  const responseModel=mercury(base);
+  const model=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options=>{
+    calls++;
+    const result=await responseModel.doGenerate(options);
+    const output=JSON.parse(result.content[0].text);
+    output.location=calls===1 ? 'Badezimmer' : null;
+    return {...result,content:[{type:'text',text:JSON.stringify(output)}]};
+  }});
+  const result=await generateUnderstandingResult(message,null,model);
+  assert.equal(calls,2);assert.equal(result.data.location,null);assert.equal(result.data.hazard,'none');
+  assert.equal(result.data.additionalIssues[0].location,'Badezimmer');assert.equal(result.data.additionalIssues[0].hazard,'none');
+  assert.equal(result.data.sourceQuote,undefined);assert.equal(result.data.additionalIssues[0].sourceQuote,undefined);
 });
 
 test('Repeated invalid JSON data stops after two generations instead of an unbounded repair loop',async()=>{
