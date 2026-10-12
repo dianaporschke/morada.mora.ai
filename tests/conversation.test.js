@@ -113,3 +113,15 @@ test('Resume buttons appear after a topic change, not while already discussing t
     dialogue:dialogue('Gerne, was möchten Sie wissen?','information',[button('continue')])}));
   assert.equal(turn.state.actions[0].type,'continue');
 });
+
+
+test('Duplicate draft proposals are discarded as actions, while an explicit contact wish stays available',async()=>{
+  let turn=await processTurn({message:'Lampe kaputt'},null,model({dialogue:dialogue('Ich kann Ihre Angaben für MORADA vorbereiten.','offer_draft',[button('prepare_draft')])}));
+  assert.equal(turn.state.actions[0].type,'handover');
+  const id=turn.state.issue.id;
+  turn=await processTurn({message:'Seit gestern'},turn.state,model({since:'gestern',dialogue:dialogue('Der Beginn ist notiert.','offer_draft',[button('prepare_draft')])}));
+  assert.equal(turn.reply,'Der Beginn ist notiert.');assert.equal(turn.state.issue.id,id);assert.equal(turn.state.issue.since,'gestern');
+  assert.ok(!turn.state.actions.some(a=>a.type==='handover'));
+  turn=await processTurn({message:'Kann ich das direkt melden?'},turn.state,model({intent:'contact',dialogue:dialogue('Ich kann den Entwurf öffnen. Er wird nicht automatisch versendet.','offer_draft')}));
+  assert.equal(turn.state.actions[0].type,'handover');
+});
