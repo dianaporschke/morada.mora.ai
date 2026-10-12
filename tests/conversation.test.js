@@ -184,3 +184,9 @@ test('Navigation and a truthful access limitation remain allowed without any per
   const reply='Ihren persönlichen Mietvertrag kann ich hier nicht abrufen. Ich kann den vorbereiteten Dokumentenbereich öffnen.';
   assert.equal(validatedDialogueReply({intent:'documents',dialogue:{reply}}),reply);
 });
+
+
+test('Negated personal-record locations are not mistaken for an affirmative access promise',()=>{
+  const reply='Ihren persönlichen Mietvertrag finden Sie hier im Portal noch nicht. Ich kann den vorbereiteten Dokumentenbereich öffnen.';
+  assert.equal(validatedDialogueReply({intent:'documents',dialogue:{reply}}),reply);
+});
