@@ -212,3 +212,13 @@ test('A multi-issue follow-up requires an explicit valid issue index before bein
   const result=await generateUnderstandingResult(text,null,sdk);
   assert.equal(calls,2);assert.equal(result.data.dialogue.forIssueIndex,1);
 });
+
+
+test('The next question can target a different existing issue than the updated facts',async()=>{
+  const heater={id:'heater-1',category:'heating',equipment:'heater',location:null,attempts:{}};
+  const water={id:'water-1',category:'water',equipment:'leak',location:'Bad',attempts:{}};let calls=0;
+  const result=await generateUnderstandingResult('Rohr unterm Lavabo', {issue:heater,issues:[heater,water]},mercury({
+    intent:'issue',targetIssueId:water.id,category:'water',equipment:'pipe',location:'Bad',details:'Rohr unterm Lavabo',
+    dialogue:{reply:'Das Rohr ist notiert. In welchem Raum ist die Heizung?',ask:{field:'location',text:'In welchem Raum ist die Heizung?',targetIssueId:heater.id}}},()=>{calls++;}));
+  assert.equal(calls,1);assert.equal(result.data.targetIssueId,water.id);assert.equal(result.data.dialogue.forIssueId,heater.id);
+});

@@ -148,3 +148,15 @@ test('Existing symptom details do not suppress a different model clarification a
   assert.equal(turn.state.pendingKey,'details');assert.equal(turn.state.issue.details,'Flackert');
   assert.equal(turn.state.actions[0].type,'select');
 });
+
+
+test('Updating water while asking about the heater preserves both facts and the independent question target',async()=>{
+  let turn=await processTurn({message:'Heizung und Wasser'},null,model({category:'heating',equipment:'heater',
+    additionalIssues:[Object.fromEntries(Object.keys(issuePatchSchema.shape).map(key=>[key,emptyUnderstanding({category:'water',equipment:'leak',location:'Bad'})[key]]))]}));
+  const heater=turn.state.issues.find(i=>i.equipment==='heater'),water=turn.state.issues.find(i=>i.equipment==='leak');
+  turn=await processTurn({message:'Aus dem Rohr unterm Lavabo'},turn.state,model({targetIssueId:water.id,category:'water',equipment:'pipe',details:'Rohr unterm Lavabo',
+    question:'location',clarification:'In welchem Raum ist die Heizung?',dialogue:{...dialogue('Das Rohr ist notiert. In welchem Raum ist die Heizung?','clarify'),forIssueId:heater.id}}));
+  assert.equal(turn.state.issues.length,2);assert.equal(turn.state.issue.id,heater.id);assert.equal(turn.state.pendingKey,'location');
+  assert.equal(turn.state.issues.find(i=>i.id===water.id).equipment,'pipe');assert.equal(turn.state.issues.find(i=>i.id===water.id).details,'Rohr unterm Lavabo');
+  assert.equal(turn.state.issues.find(i=>i.id===water.id).location,'Bad');assert.equal(turn.state.issue.location,null);
+});
