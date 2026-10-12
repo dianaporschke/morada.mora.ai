@@ -219,7 +219,23 @@ test('The next question can target a different existing issue than the updated f
   const heater={id:'heater-1',category:'heating',equipment:'heater',location:null,attempts:{}};
   const water={id:'water-1',category:'water',equipment:'leak',location:'Bad',attempts:{}};let calls=0;
   const result=await generateUnderstandingResult('Rohr unterm Lavabo', {issue:heater,issues:[heater,water]},mercury({
-    intent:'issue',targetIssueId:water.id,category:'water',equipment:'pipe',location:'Bad',details:'Rohr unterm Lavabo',
-    dialogue:{reply:'Das Rohr ist notiert. In welchem Raum ist die Heizung?',ask:{field:'location',text:'In welchem Raum ist die Heizung?',targetIssueId:heater.id}}},()=>{calls++;}));
-  assert.equal(calls,1);assert.equal(result.data.targetIssueId,water.id);assert.equal(result.data.dialogue.forIssueId,heater.id);
+    intent:'issue',targetIssueId:'other1',category:'water',equipment:'pipe',location:'Bad',details:'Rohr unterm Lavabo',
+    dialogue:{reply:'Das Rohr ist notiert. In welchem Raum ist die Heizung?',ask:{field:'location',text:'In welchem Raum ist die Heizung?',targetIssueId:'active',issueIndex:1}}},()=>{calls++;}));
+  assert.equal(calls,1);assert.equal(result.data.targetIssueId,water.id);assert.equal(result.data.dialogue.forIssueId,heater.id);assert.equal(result.data.dialogue.forIssueIndex,undefined);
+});
+
+
+test('Opaque issue IDs stay server-side and hallucinated references are repaired before applying updates',async()=>{
+  const issue={id:'729a6810-41ef-43e9-b4e3-46c7559906fd',equipment:'socket',location:'Bad',attempts:{}};
+  let calls=0;
+  const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options=>{
+    calls++;
+    assert.ok(!JSON.stringify(options.prompt).includes(issue.id));
+    const output={intent:'issue',targetIssueId:calls===1 ? 'other99' : 'active',details:'Fest installiert',
+      dialogue:{reply:'Die fest installierte Steckdose ist notiert.'}};
+    return {content:[{type:'text',text:JSON.stringify(output)}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
+      usage:{inputTokens:{total:100,noCache:100,cacheRead:0,cacheWrite:0},outputTokens:{total:90,text:90,reasoning:0}}};
+  }});
+  const result=await generateUnderstandingResult('Fest installiert',{issue,issues:[issue]},sdk);
+  assert.equal(calls,2);assert.equal(result.data.targetIssueId,issue.id);assert.equal(result.data.details,'Fest installiert');
 });
