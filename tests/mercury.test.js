@@ -211,6 +211,7 @@ test('A multi-issue follow-up requires an explicit valid issue index before bein
   }});
   const result=await generateUnderstandingResult(text,null,sdk);
   assert.equal(calls,2);assert.equal(result.data.dialogue.forIssueIndex,1);
+  assert.equal(result.data.description,'Heizung kalt');assert.equal(result.data.additionalIssues[0].description,'Wasser im Bad');
 });
 
 

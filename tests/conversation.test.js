@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { MockLanguageModelV4 } from 'ai/test';
 import { createUnderstandingService } from '../lib/mora/understanding.js';
 import { createChatHandler } from '../api/chat.js';
+import { modelContext } from '../lib/mora/context.js';
 import { processTurn } from '../lib/mora/engine.js';
 import { emptyUnderstanding, issuePatchSchema } from '../lib/mora/schema.js';
 import { readSession } from '../lib/mora/session.js';
@@ -159,4 +160,14 @@ test('Updating water while asking about the heater preserves both facts and the 
   assert.equal(turn.state.issues.length,2);assert.equal(turn.state.issue.id,heater.id);assert.equal(turn.state.pendingKey,'location');
   assert.equal(turn.state.issues.find(i=>i.id===water.id).equipment,'pipe');assert.equal(turn.state.issues.find(i=>i.id===water.id).details,'Rohr unterm Lavabo');
   assert.equal(turn.state.issues.find(i=>i.id===water.id).location,'Bad');assert.equal(turn.state.issue.location,null);
+});
+
+
+test('Other-issue context preserves device details without replaying archived customer statements',()=>{
+  const active={id:'heat',category:'heating',equipment:'heater',answers:[]};
+  const other={id:'water',category:'water',equipment:'leak',location:'Bad',defect:'Tropft',details:'unterm Lavabo',
+    answers:[{answer:'Es tropft aus dem Rohr unterm Lavabo.'}]};
+  const context=modelContext({issue:active,issues:[active,other],history:[]});
+  assert.equal(context.knownIssues[0].details,'unterm Lavabo');assert.equal(context.knownIssues[0].defect,'Tropft');
+  assert.equal(context.knownIssues[0].recentCustomerStatements,undefined);
 });
