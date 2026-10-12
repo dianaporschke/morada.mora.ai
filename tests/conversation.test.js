@@ -4,6 +4,7 @@ import { MockLanguageModelV4 } from 'ai/test';
 import { createUnderstandingService } from '../lib/mora/understanding.js';
 import { createChatHandler } from '../api/chat.js';
 import { modelContext } from '../lib/mora/context.js';
+import { validatedDialogueReply } from '../lib/mora/dialogue.js';
 import { processTurn } from '../lib/mora/engine.js';
 import { emptyUnderstanding, issuePatchSchema } from '../lib/mora/schema.js';
 import { readSession } from '../lib/mora/session.js';
@@ -170,4 +171,16 @@ test('Other-issue context preserves device details without replaying archived cu
   const context=modelContext({issue:active,issues:[active,other],history:[]});
   assert.equal(context.knownIssues[0].details,'unterm Lavabo');assert.equal(context.knownIssues[0].defect,'Tropft');
   assert.equal(context.knownIssues[0].recentCustomerStatements,undefined);
+});
+
+
+test('Personal-record capability claims cannot bypass validation through knowledge intent or a pronoun',()=>{
+  const reply='Ich kann keine persönlichen Abrechnungen abrufen. Im Dokumentenbereich können Sie diese jedoch nachsehen.';
+  assert.throws(()=>validatedDialogueReply({intent:'knowledge',dialogue:{reply}}),{validation:'unsupported_document_claim'});
+  assert.throws(()=>validatedDialogueReply({intent:'documents',dialogue:{reply:'Sie können den Dokumentenbereich im Servicebereich anzeigen.'}}),{validation:'unsupported_document_claim'});
+});
+
+test('Navigation and a truthful access limitation remain allowed without any personal-record promise',()=>{
+  const reply='Ihren persönlichen Mietvertrag kann ich hier nicht abrufen. Ich kann den vorbereiteten Dokumentenbereich öffnen.';
+  assert.equal(validatedDialogueReply({intent:'documents',dialogue:{reply}}),reply);
 });
