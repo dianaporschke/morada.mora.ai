@@ -170,3 +170,18 @@ test('The SDK accepts a repeated draft proposal without a repair call and still 
   const turn=await processTurn({message:'Seit gestern'},first.state,async()=>({mode:'model',data:result.data}));
   assert.equal(turn.state.issue.since,'gestern');assert.ok(!turn.state.actions.some(a=>a.type==='handover'));
 });
+
+
+test('Section navigation cannot establish where the customer contract is stored; a real correction preserves navigation',async()=>{
+  let calls=0,invalid=0;
+  const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
+    calls++;return {content:[{type:'text',text:JSON.stringify({intent:'documents',dialogue:{
+      reply:calls===1 ? 'Sie finden ihn aber im Dokumentenbereich des Portals.' : 'Ihren persönlichen Mietvertrag kann ich nicht abrufen. Ich kann den vorbereiteten Dokumentenbereich öffnen.',
+      buttons:[{kind:'navigate',target:'docs'}]}})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
+      usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
+  }});
+  const result=await generateUnderstandingResult('Wo finde ich meinen Mietvertrag?',null,sdk,{logInvalid:error=>{invalid++;assert.ok(error.validationFields.includes('dialogue.reply:unsupported_document_claim'));}});
+  assert.equal(calls,2);assert.equal(invalid,1);
+  const turn=await processTurn({message:'Wo finde ich meinen Mietvertrag?'},null,async()=>({mode:'model',data:result.data}));
+  assert.equal(turn.state.actions[0].target,'docs');assert.equal(turn.state.issue,null);assert.match(turn.reply,/nicht abrufen/);
+});
