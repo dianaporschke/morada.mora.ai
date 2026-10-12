@@ -31,6 +31,7 @@ test('Mercury uses supported JSON mode with the complete schema in system instru
     assert.equal(options.responseFormat.schema, undefined);
     assert.equal(options.tools, undefined);
     assert.equal(options.providerOptions.inception.reasoningEffort,'medium');
+    assert.equal(options.temperature,0.5);
     assert.match(JSON.stringify(options.prompt), /unknownAnswers/);
     assert.match(JSON.stringify(options.prompt), /additionalProperties/);
     assert.match(JSON.stringify(options.prompt), /Steckdose im Schlafzimmer kaputt/);
