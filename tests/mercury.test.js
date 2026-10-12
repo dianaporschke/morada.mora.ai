@@ -23,14 +23,14 @@ function mercury(output, inspect = () => {}) {
 
 test('Mercury uses supported JSON mode with the complete schema in system instructions', async () => {
   let calls = 0;
-  const expected = emptyUnderstanding({intent:'issue',category:'electricity',equipment:'socket',location:'Schlafzimmer',
+  const expected = emptyUnderstanding({intent:'issue',category:'electricity',equipment:'socket',location:'Schlafzimmer',question:'since',clarification:'Seit wann funktioniert sie nicht?',
     dialogue:{reply:'Die Steckdose im Schlafzimmer ist aufgenommen. Seit wann funktioniert sie nicht?',stage:'clarify',buttons:[]}});
   const result = await generateUnderstandingResult('Steckdose im Schlafzimmer kaputt', null, mercury(expected, options => {
     calls++;
     assert.equal(options.responseFormat.type, 'json');
     assert.equal(options.responseFormat.schema, undefined);
     assert.equal(options.tools, undefined);
-    assert.equal(options.providerOptions.inception.reasoningEffort,'low');
+    assert.equal(options.providerOptions.inception.reasoningEffort,'medium');
     assert.match(JSON.stringify(options.prompt), /unknownAnswers/);
     assert.match(JSON.stringify(options.prompt), /additionalProperties/);
     assert.match(JSON.stringify(options.prompt), /Steckdose im Schlafzimmer kaputt/);
@@ -141,4 +141,20 @@ test('SDK JSON parse failure receives one genuine corrective generation, with fa
   const result=await generateUnderstandingResult('Wie funktioniert das?',null,sdk,{logInvalid:error=>{invalid++;assert.deepEqual(error.validationFields,['root:unreadable_json']);}});
   assert.equal(calls,2);assert.equal(invalid,1);assert.equal(result.generationCount,2);
   assert.equal(result.totalUsage.inputTokens,400);assert.match(result.data.dialogue.reply,/Übermittelt/);
+});
+
+
+test('A fact question cannot simultaneously trigger a premature handover stage',async()=>{
+  let calls=0;
+  const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
+    calls++;
+    return {content:[{type:'text',text:JSON.stringify({intent:'issue',equipment:'light',question:'location',clarification:'In welchem Raum?',
+      dialogue:{reply:'In welchem Raum ist die Lampe?',stage:calls===1 ? 'offer_draft' : 'clarify',buttons:[]}})}],
+      finishReason:{unified:'stop',raw:'stop'},warnings:[],
+      usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
+  }});
+  const result=await generateUnderstandingResult('Lampe kaputt',null,sdk);
+  assert.equal(result.generationCount,2);assert.equal(result.data.dialogue.stage,'clarify');
+  const turn=await processTurn({message:'Lampe kaputt'},null,async()=>({mode:'model',data:result.data}));
+  assert.equal(turn.state.pendingKey,'location');assert.ok(!turn.state.actions.some(a=>a.type==='handover'));
 });
