@@ -23,7 +23,11 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
       const previous = parsed.data.session ? readSession(parsed.data.session) : null;
       const result = await processTurn(parsed.data, previous, async(message, state) => {
         const start=Date.now(); modelCalls++;
-        try { return await understand(message,state,{timeoutMs:deadline-Date.now()}); }
+        try {
+          const interpreted=await understand(message,state,{timeoutMs:deadline-Date.now()});
+          if (interpreted.generationCount===2) modelCalls++;
+          return interpreted;
+        }
         finally { modelMs+=Date.now()-start; }
       });
       const activeDanger=result.state.issue && (result.state.issue.hazard!=='none' || result.state.issue.urgency==='emergency');

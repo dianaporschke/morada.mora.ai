@@ -12,7 +12,7 @@ test('SDK structured output contract passes signed context to the model and vali
     dialogue:{reply:'Danke, seit gestern also. Ich halte das so fest.',stage:'discuss',buttons:[]} });
   const model = new MockLanguageModelV4({ doGenerate:async options => {
     captured = options;
-    const {unknownFields,...rest}=expected;
+    const {unknownFields,topic,answer,...rest}=expected;
     return { content:[{type:'text',text:JSON.stringify({...rest,unknownAnswers:[]})}], finishReason:{unified:'stop',raw:'stop'},
       usage:{ inputTokens:{total:100,noCache:100,cacheRead:0,cacheWrite:0}, outputTokens:{total:80,text:80,reasoning:0} }, warnings:[] };
   } });

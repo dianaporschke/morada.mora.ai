@@ -22,7 +22,7 @@ test('One SDK generation supplies facts, wording and signed history; a second co
   const output=emptyUnderstanding({intent:'greeting',dialogue:dialogue('Grüezi! Was beschäftigt Sie rund um Ihre Immobilie?','information')});
   const sdkModel=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
     calls++;
-    const {unknownFields,...rest}=output;
+    const {unknownFields,topic,answer,...rest}=output;
     return {content:[{type:'text',text:JSON.stringify({...rest,unknownAnswers:[]})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
       usage:{inputTokens:{total:120,noCache:120,cacheRead:0,cacheWrite:0},outputTokens:{total:90,text:90,reasoning:0}}};
   }});
@@ -39,7 +39,7 @@ test('No question does not automatically become a handover, and clarification ch
     dialogue:dialogue('Ist das eine fest installierte Lampe oder Ihre eigene?','clarify',[
       button('select',{label:'Fest installiert',field:'details',value:'Die Lampe ist fest installiert.'}),
       button('select',{label:'Eigene Lampe',field:'details',value:'Das ist meine eigene Lampe.'}),
-      button('select',{label:'Seit gestern',field:'since',value:'Seit gestern'}),button('handover'),
+      button('select',{label:'Seit gestern',field:'since',value:'Seit gestern'}),button('prepare_draft'),
     ])}));
   assert.equal(first.state.actions.length,2); assert.ok(first.state.actions.every(a=>a.field==='details'));
   let received;
@@ -57,18 +57,27 @@ test('Unknown facts and room corrections survive direct handover without a manda
   const id=turn.state.issue.id;
   turn=await processTurn({message:'Keine Ahnung seit wann'},turn.state,model({equipment:'socket',unknownFields:['since'],dialogue:dialogue('Das ist in Ordnung, den Beginn lassen wir offen.')}));
   turn=await processTurn({message:'Nein, Schlafzimmer. Direkt melden bitte.'},turn.state,model({intent:'contact',equipment:'socket',location:'Schlafzimmer',correction:true,
-    dialogue:dialogue('Schlafzimmer ist korrigiert. Ich kann den lokalen Entwurf öffnen; der direkte Versand ist noch nicht angebunden.','offer_handover',[button('handover',{label:'Sofort senden'})])}));
+    dialogue:dialogue('Schlafzimmer ist korrigiert. Ich kann den lokalen Entwurf öffnen; der direkte Versand ist noch nicht angebunden.','offer_draft',[button('prepare_draft',{label:'Sofort senden'})])}));
   assert.equal(turn.state.issue.id,id); assert.equal(turn.state.issue.location,'Schlafzimmer');
   assert.equal(turn.state.issue.since,null); assert.ok(turn.state.issue.unknownFields.includes('since'));
   assert.equal(turn.state.pendingKey,null); assert.equal(turn.state.actions[0].type,'handover');
   assert.equal(turn.state.actions[0].label,'Für MORADA vorbereiten'); assert.equal(turn.state.issue.status,'draft');
 });
 
+test('Additional free-text symptoms retain earlier details; explicit corrections may replace them',async()=>{
+  let turn=await processTurn({message:'Lampe flackert'},null,model({details:'Flackert'}));
+  const id=turn.state.issue.id;
+  turn=await processTurn({message:'Nur beim Einschalten'},turn.state,model({details:'Nur beim Einschalten'}));
+  assert.equal(turn.state.issue.id,id); assert.match(turn.state.issue.details,/Flackert/); assert.match(turn.state.issue.details,/Nur beim Einschalten/);
+  turn=await processTurn({message:'Nein, sie bleibt vollständig dunkel.'},turn.state,model({details:'Vollständig dunkel',correction:true}));
+  assert.equal(turn.state.issue.details,'Vollständig dunkel');
+});
+
 test('Topic changes retain drafts without attaching a document question to the heater or inventing customer access',async()=>{
   let turn=await processTurn({message:'Heizung kalt'},null,model({category:'heating',equipment:'heater',location:'Küche',dialogue:dialogue('Was fällt Ihnen an der Heizung auf?')}));
   const before=structuredClone(turn.state.issue);
   turn=await processTurn({message:'Eigentlich zur Nebenkostenabrechnung'},turn.state,model({intent:'knowledge',category:null,equipment:null,question:'details',clarification:'Welche Position?',
-    dialogue:dialogue('Welche Position Ihrer Abrechnung möchten Sie verstehen? Einen persönlichen Beleg kann ich hier noch nicht abrufen.','information',[button('navigate',{target:'docs',label:'Mietvertrag herunterladen'}),button('handover')])}));
+    dialogue:dialogue('Welche Position Ihrer Abrechnung möchten Sie verstehen? Einen persönlichen Beleg kann ich hier noch nicht abrufen.','information',[button('navigate',{target:'docs',label:'Mietvertrag herunterladen'}),button('prepare_draft')])}));
   assert.equal(turn.state.issue.id,before.id); assert.equal(turn.state.issue.location,'Küche'); assert.equal(turn.state.issue.answers.length,before.answers.length);
   assert.equal(turn.state.pendingKey,null); assert.equal(turn.state.conversationTopic,'knowledge');
   assert.deepEqual(turn.state.actions,[]);

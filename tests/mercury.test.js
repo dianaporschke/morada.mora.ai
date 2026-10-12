@@ -9,7 +9,7 @@ import { estimateTokenCost } from '../lib/mora/costs.js';
 import { classifyModelError } from '../lib/mora/provider.js';
 
 function mercury(output, inspect = () => {}) {
-  const {unknownFields,...rest}=output;
+  const {unknownFields,topic,answer,...rest}=output;
   const contractOutput=unknownFields ? {...rest,unknownAnswers:output.unknownAnswers || []} : output;
   return new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options => {
     inspect(options);
@@ -46,6 +46,33 @@ test('Unknown facts require direct provenance from this customer turn, not absen
   const explicit=await generateUnderstandingResult('Keine Ahnung seit wann',null,mercury(modelOutput));
   assert.deepEqual(explicit.data.unknownFields,['since']); assert.equal(explicit.data.since,null);
   assert.equal(explicit.data.unknownAnswers,undefined);
+});
+
+test('One genuine corrective generation can repair a capability violation; tokens and failed attempt stay accounted',async()=>{
+  let calls=0,invalid=0;
+  const base=emptyUnderstanding({intent:'contact',dialogue:{reply:'Möchten Sie die Meldung jetzt absenden?',stage:'offer_draft',buttons:[]}});
+  const {unknownFields,topic,answer,...rest}=base;
+  const model=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options=>{
+    calls++;
+    if(calls===2) assert.match(JSON.stringify(options.prompt),/previous JSON was rejected/);
+    const output={...rest,unknownAnswers:[],dialogue:{...rest.dialogue,reply:calls===1 ? rest.dialogue.reply : 'Ich kann den lokalen Entwurf öffnen. Der direkte Versand ist noch nicht angebunden.'}};
+    return {content:[{type:'text',text:JSON.stringify(output)}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
+      usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
+  }});
+  const result=await generateUnderstandingResult('Direkt melden bitte',null,model,{logInvalid:error=>{
+    invalid++;assert.equal(error.usage.inputTokens,200);assert.ok(error.validationFields.includes('dialogue.reply:unsupported_delivery_claim'));
+  }});
+  assert.equal(calls,2);assert.equal(invalid,1);assert.equal(result.generationCount,2);
+  assert.equal(result.totalUsage.inputTokens,400);assert.equal(result.totalUsage.outputTokens,200);
+  assert.equal(result.totalUsage.outputTokenDetails.reasoningTokens,40);assert.equal(result.usage.inputTokens,200);
+  assert.ok(result.data.dialogue.reply.includes('lokalen Entwurf'));
+});
+
+test('Repeated invalid JSON data stops after two generations instead of an unbounded repair loop',async()=>{
+  let calls=0;
+  await assert.rejects(generateUnderstandingResult('Hey',null,mercury({...emptyUnderstanding(),intent:'invalid',dialogue:{reply:'Hallo',stage:'information',buttons:[]}},()=>{calls++;})),
+    error=>error.type==='invalid_model_output');
+  assert.equal(calls,2);
 });
 
 test('A Gateway-wrapped local timeout is distinguished from provider 500 errors', () => {
