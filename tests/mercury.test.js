@@ -118,6 +118,18 @@ test('Unsupported optional component metadata is discarded in one generation whi
   assert.deepEqual(result.data.unknownFields,['cause']);
 });
 
+test('An explicit current pipe statement updates a signed water issue even when its quote isolates the timing',async()=>{
+  const heater={id:'heater-id',category:'heating',equipment:'heater',answers:[],attempts:{},unknownFields:[]};
+  const water={id:'water-id',category:'water',equipment:'leak',location:'Badezimmer',answers:[],attempts:{},unknownFields:[]};
+  const result=await generateUnderstandingResult('Die Heizung ist im Wohnzimmer. Beim Wasser ist es das Rohr, es tropft seit heute Morgen.',{issue:heater,issues:[heater,water]},mercury({
+    intent:'issue',targetIssueId:'active',equipment:'heater',location:'Wohnzimmer',sourceQuote:'Die Heizung ist im Wohnzimmer',
+    additionalIssues:[{targetIssueId:'other1',equipment:'pipe',since:'heute Morgen',sourceQuote:'es tropft seit heute Morgen'}],
+    dialogue:{reply:'Das Rohr im Badezimmer tropft seit heute Morgen; die Heizung ist im Wohnzimmer.'},
+  }));
+  assert.equal(result.generationCount,1);assert.equal(result.data.additionalIssues[0].equipment,'pipe');
+  assert.equal(result.data.additionalIssues[0].targetIssueId,water.id);
+});
+
 test('Unknown facts require direct provenance from this customer turn, not absent values or invented quotes',async()=>{
   const base=emptyUnderstanding({intent:'issue',equipment:'socket',dialogue:{reply:'Den Beginn können wir offenlassen.',stage:'discuss',buttons:[]}});
   const modelOutput={...base,unknownAnswers:[{field:'since',quote:'Keine Ahnung seit wann'}]};
