@@ -95,6 +95,20 @@ test('Unknown cause is retained separately from physical location details and ca
   assert.equal(turn.state.issue.cause,'Die Dichtung ist locker.');assert.deepEqual(turn.state.issue.unknownFields,[]);
 });
 
+test('Water below a basin does not establish a pipe fault; one genuine correction preserves the position',async()=>{
+  let calls=0;
+  const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
+    calls++;
+    const output={intent:'issue',category:'water',equipment:calls===1?'pipe':'leak',details:'unterm Lavabo',
+      unknownAnswers:[{field:'cause',quote:'weiss nöd warum'}],dialogue:{reply:'Seit wann tropft es unter dem Lavabo?',ask:{field:'since',text:'Seit wann tropft es?'}}};
+    return {content:[{type:'text',text:JSON.stringify(output)}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
+      usage:{inputTokens:{total:100,noCache:100,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:100,reasoning:0}}};
+  }});
+  const result=await generateUnderstandingResult('bi mir tropfts unterm Lavabo, weiss nöd warum',null,sdk);
+  assert.equal(calls,2);assert.equal(result.data.equipment,'leak');assert.equal(result.data.details,'unterm Lavabo');
+  assert.deepEqual(result.data.unknownFields,['cause']);
+});
+
 test('Unknown facts require direct provenance from this customer turn, not absent values or invented quotes',async()=>{
   const base=emptyUnderstanding({intent:'issue',equipment:'socket',dialogue:{reply:'Den Beginn können wir offenlassen.',stage:'discuss',buttons:[]}});
   const modelOutput={...base,unknownAnswers:[{field:'since',quote:'Keine Ahnung seit wann'}]};
