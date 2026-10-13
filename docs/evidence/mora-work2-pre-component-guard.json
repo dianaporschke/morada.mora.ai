@@ -1,0 +1,458 @@
+{
+  "url": "https://morada-mora-2fjk0brj9-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-13T17:27:37.350551+00:00",
+      "case": "F – Mietvertrag",
+      "message": "Wo finde ich meinen Mietvertrag?",
+      "status": 200,
+      "seconds": 13.325,
+      "reply": "Ich kann Ihren Mietvertrag aktuell nicht einsehen, da persönliche Dokumente noch nicht angebunden sind. Ich helfe Ihnen gerne bei allgemeinen Fragen zum Vertrag weiter.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": null,
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 6121,
+        "model": 6116,
+        "application": 5
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3969,
+        "outputTokens": 1855,
+        "reasoningTokens": 1796,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:28:10.675935+00:00",
+      "case": "A/B – Lampe und direkter Meldewunsch",
+      "message": "Meine Lampe im Badezimmer geht seit gestern nicht.",
+      "status": 200,
+      "seconds": 12.539,
+      "reply": "Ich habe verstanden, dass Ihre Lampe im Badezimmer seit gestern nicht funktioniert. Möchten Sie, dass ich ein Anliegen dafür vorbereite?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "27dbca16-1a39-4240-9529-959f86cec8d6",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "27dbca16-1a39-4240-9529-959f86cec8d6",
+          "equipment": "light",
+          "category": "electricity",
+          "location": "Badezimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 5456,
+        "model": 5452,
+        "application": 4
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3974,
+        "outputTokens": 2061,
+        "reasoningTokens": 1910,
+        "cachedInputTokens": 2881
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:28:43.215585+00:00",
+      "case": "A/B – Lampe und direkter Meldewunsch",
+      "message": "Ich weiss nicht, ob die Lampe fest installiert ist.",
+      "status": 200,
+      "seconds": 16.023,
+      "reply": "Kein Problem, wir notieren den aktuellen Zustand. Ist die Lampe im Badezimmer das einzige Thema?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "27dbca16-1a39-4240-9529-959f86cec8d6",
+      "actions": [],
+      "issues": [
+        {
+          "id": "27dbca16-1a39-4240-9529-959f86cec8d6",
+          "equipment": "light",
+          "category": "electricity",
+          "location": "Badezimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [
+            "details"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 7044,
+        "model": 7042,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 4008,
+        "outputTokens": 2564,
+        "reasoningTokens": 2463,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:29:19.239186+00:00",
+      "case": "A/B – Lampe und direkter Meldewunsch",
+      "message": "Kann ich das direkt melden?",
+      "status": 200,
+      "seconds": 12.812,
+      "reply": "Eine direkte Meldung ist aktuell nicht möglich, aber ich kann gerne einen Entwurf für Sie vorbereiten. Möchten Sie, dass wir das jetzt tun?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "27dbca16-1a39-4240-9529-959f86cec8d6",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "27dbca16-1a39-4240-9529-959f86cec8d6",
+          "equipment": "light",
+          "category": "electricity",
+          "location": "Badezimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [
+            "details"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 5194,
+        "model": 5192,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 4148,
+        "outputTokens": 1849,
+        "reasoningTokens": 1739,
+        "cachedInputTokens": 1818
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:29:52.052369+00:00",
+      "case": "C – Korrektur",
+      "message": "Die Steckdose im Wohnzimmer geht nicht. Seit wann weiss ich nicht.",
+      "status": 200,
+      "seconds": 15.702,
+      "reply": "Verstanden, die Steckdose im Wohnzimmer funktioniert nicht. Ich kann Ihnen gerne einen Entwurf für das Meldung vorbereiten.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "44744dfd-8905-4a02-8317-a00b6ed1785f",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "44744dfd-8905-4a02-8317-a00b6ed1785f",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [
+            "since"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 7915,
+        "model": 7914,
+        "application": 1
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 8119,
+        "outputTokens": 3697,
+        "reasoningTokens": 3322,
+        "cachedInputTokens": 4764
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:30:27.755060+00:00",
+      "case": "C – Korrektur",
+      "message": "Nein, im Schlafzimmer.",
+      "status": 200,
+      "seconds": 12.023,
+      "reply": "Verstanden, die Steckdose ist im Schlafzimmer. Ich habe den Ort entsprechend angepasst.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "44744dfd-8905-4a02-8317-a00b6ed1785f",
+      "actions": [],
+      "issues": [
+        {
+          "id": "44744dfd-8905-4a02-8317-a00b6ed1785f",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [
+            "since"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4867,
+        "model": 4867,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 4200,
+        "outputTokens": 2189,
+        "reasoningTokens": 2109,
+        "cachedInputTokens": 1857
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:30:59.778344+00:00",
+      "case": "D – Gleichzeitige Updates",
+      "message": "Meine Heizung bleibt kalt und im Badezimmer tropft es unter dem Lavabo.",
+      "status": 200,
+      "seconds": 21.669,
+      "reply": "Ich habe Ihre Meldung notiert: die kalte Heizung und das Tropfen im Bad. Soll ich Ihnen einen Entwurf für das Serviceteam vorbereiten?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "be7b9dd3-25d7-4ee8-a259-60ae5b028d59",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "be7b9dd3-25d7-4ee8-a259-60ae5b028d59",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        },
+        {
+          "id": "be4ffc12-1aeb-449e-b2e3-fe1b71252125",
+          "equipment": "unknown",
+          "category": "water",
+          "location": "Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": "unter dem Lavabo",
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 14413,
+        "model": 14411,
+        "application": 2
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 7968,
+        "outputTokens": 5242,
+        "reasoningTokens": 4808,
+        "cachedInputTokens": 4634
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:31:41.448106+00:00",
+      "case": "D – Gleichzeitige Updates",
+      "message": "Die Heizung ist im Wohnzimmer. Beim Wasser ist es das Rohr, es tropft seit heute Morgen.",
+      "status": 200,
+      "seconds": 20.584,
+      "reply": "Ich danke Ihnen für die Ergänzungen. Ich habe notiert, dass die Heizung im Wohnzimmer steht und das Rohr im Bad seit heute Morgen tropft.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "be7b9dd3-25d7-4ee8-a259-60ae5b028d59",
+      "actions": [],
+      "issues": [
+        {
+          "id": "be7b9dd3-25d7-4ee8-a259-60ae5b028d59",
+          "equipment": "heater",
+          "category": "heating",
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        },
+        {
+          "id": "be4ffc12-1aeb-449e-b2e3-fe1b71252125",
+          "equipment": "pipe",
+          "category": "water",
+          "location": "Badezimmer",
+          "since": "heute Morgen",
+          "extent": null,
+          "details": "unter dem Lavabo",
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 13154,
+        "model": 13152,
+        "application": 2
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 8377,
+        "outputTokens": 4493,
+        "reasoningTokens": 4173,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:32:22.032780+00:00",
+      "case": "J – Unbekannte Ursache",
+      "message": "bi mir tropfts unterm lavabo, weiss nöd warum",
+      "status": 200,
+      "seconds": 25.036,
+      "reply": "Verstehe, es tropft unter dem Waschbecken. Ich habe zwar keinen direkten Zugriff auf Ihre Details, kann aber gerne einen Meldungs-Entwurf für Sie vorbereiten.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "2bc5b0db-7920-49c9-a7cc-1540c34a22e4",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "2bc5b0db-7920-49c9-a7cc-1540c34a22e4",
+          "equipment": "pipe",
+          "category": "water",
+          "location": "unter dem Waschbecken",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [
+            "cause"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 5587,
+        "model": 5587,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3897,
+        "outputTokens": 2024,
+        "reasoningTokens": 1859,
+        "cachedInputTokens": 2823
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:33:07.069423+00:00",
+      "case": "G – Status",
+      "message": "Wie steht es um meinem bereits gemeldeten Wasserschaden?",
+      "status": 200,
+      "seconds": 10.598,
+      "reply": "Ich habe leider keinen Zugriff auf den aktuellen Bearbeitungsstand Ihres gemeldeten Anliegens. Als digitale Assistenz kann ich diese Informationen nicht einsehen. Falls Sie Rückfragen haben, können Sie sich gerne an das Bewirtschaftungsteam wenden.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": null,
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 3309,
+        "model": 3309,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3990,
+        "outputTokens": 1369,
+        "reasoningTokens": 1292,
+        "cachedInputTokens": 2890
+      }
+    }
+  ]
+}

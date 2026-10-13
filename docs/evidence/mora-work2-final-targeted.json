@@ -1,0 +1,122 @@
+{
+  "url": "https://morada-mora-ktwflvxpa-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-13T18:17:20.848675+00:00",
+      "case": "D – Abschliessender Mehrfachanliegen-Test",
+      "message": "Meine Heizung bleibt kalt und im Badezimmer tropft es unter dem Lavabo.",
+      "status": 200,
+      "seconds": 17.605,
+      "reply": "Ich vermerke gerne beide Anliegen: die kalte Heizung und das Tropfen im Badezimmer. Möchten Sie, dass ich einen Entwurf für die Meldung vorbereite?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "2c018010-85ee-4b52-9967-624a529daff7",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "2c018010-85ee-4b52-9967-624a529daff7",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        },
+        {
+          "id": "9c9c8d23-6091-4e48-9b7c-1cc484703d73",
+          "equipment": "unknown",
+          "category": "water",
+          "location": "Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 9439,
+        "model": 9401,
+        "application": 38
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3951,
+        "outputTokens": 2186,
+        "reasoningTokens": 1962,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-13T18:17:58.454641+00:00",
+      "case": "D – Abschliessender Mehrfachanliegen-Test",
+      "message": "Die Heizung ist im Wohnzimmer. Beim Wasser ist es das Rohr, es tropft seit heute Morgen.",
+      "status": 200,
+      "seconds": 22.064,
+      "reply": "Ich habe Ihre Ergänzungen zu beiden Anliegen notiert. Gibt es noch etwas, das Sie hinzufügen möchten?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "2c018010-85ee-4b52-9967-624a529daff7",
+      "actions": [],
+      "issues": [
+        {
+          "id": "2c018010-85ee-4b52-9967-624a529daff7",
+          "equipment": "heater",
+          "category": "heating",
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        },
+        {
+          "id": "9c9c8d23-6091-4e48-9b7c-1cc484703d73",
+          "equipment": "pipe",
+          "category": "water",
+          "location": "Badezimmer",
+          "since": "heute Morgen",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 14617,
+        "model": 14613,
+        "application": 4
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 8567,
+        "outputTokens": 5211,
+        "reasoningTokens": 4869,
+        "cachedInputTokens": 1788
+      }
+    }
+  ]
+}

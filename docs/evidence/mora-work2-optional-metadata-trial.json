@@ -1,0 +1,158 @@
+{
+  "url": "https://morada-mora-jrdnyr6yr-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-13T17:52:40.219495+00:00",
+      "case": "J – Unbekannte Ursache ohne Bauteilannahme",
+      "message": "bi mir tropfts unterm lavabo, weiss nöd warum",
+      "status": 200,
+      "seconds": 16.211,
+      "reply": "Ich habe verstanden, dass unter dem Waschbecken tropft. Können Sie erkennen, ob es vom Wasserhahn oder von einer Leitung stammt?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "0b61283e-0be4-49f1-8ffe-c23b75272362",
+      "actions": [],
+      "issues": [
+        {
+          "id": "0b61283e-0be4-49f1-8ffe-c23b75272362",
+          "equipment": "unknown",
+          "category": "general",
+          "location": "unter dem Waschbecken",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [
+            "cause"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 8596,
+        "model": 8585,
+        "application": 11
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3897,
+        "outputTokens": 2688,
+        "reasoningTokens": 2481,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:53:16.431836+00:00",
+      "case": "D – Mehrere Anliegen und bestehende Updates",
+      "message": "Meine Heizung bleibt kalt und im Badezimmer tropft es unter dem Lavabo.",
+      "status": 200,
+      "seconds": 14.294,
+      "reply": "Ich habe Ihre Meldung zur Heizung und zum tropfenden Wasser im Badezimmer erhalten. Möchten Sie, dass ich einen Entwurf im Service-Bereich dafür vorbereite?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "ac9b3e43-83e8-486c-9652-e60d21609d33",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "ac9b3e43-83e8-486c-9652-e60d21609d33",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        },
+        {
+          "id": "b27594d2-9728-4be8-b830-667f0089bf7b",
+          "equipment": "leak",
+          "category": "water",
+          "location": "Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 6967,
+        "model": 6964,
+        "application": 3
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 4052,
+        "outputTokens": 2760,
+        "reasoningTokens": 2527,
+        "cachedInputTokens": 2933
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:53:50.726227+00:00",
+      "case": "D – Mehrere Anliegen und bestehende Updates",
+      "message": "Die Heizung ist im Wohnzimmer. Beim Wasser ist es das Rohr, es tropft seit heute Morgen.",
+      "status": 503,
+      "seconds": 19.043,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "understanding": null,
+      "responseMode": null,
+      "activeIssueId": null,
+      "actions": null,
+      "issues": [],
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null
+    },
+    {
+      "startedAt": "2026-10-13T17:54:29.769664+00:00",
+      "case": "F – Mietvertrag",
+      "message": "Wo finde ich meinen Mietvertrag?",
+      "status": 200,
+      "seconds": 11.47,
+      "reply": "Leider habe ich derzeit keinen Zugriff auf Ihre persönlichen Dokumente wie den Mietvertrag. Ich stehe Ihnen aber gerne für allgemeine Fragen zum Vertragsinhalt zur Verfügung.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": null,
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4251,
+        "model": 4251,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 4001,
+        "outputTokens": 1187,
+        "reasoningTokens": 1121,
+        "cachedInputTokens": 2902
+      }
+    }
+  ]
+}

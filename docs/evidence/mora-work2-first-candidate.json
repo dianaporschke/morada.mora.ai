@@ -1,0 +1,145 @@
+{
+  "url": "https://morada-mora-lw003iss9-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-13T17:07:48.394247+00:00",
+      "case": "E – Begrüssung",
+      "message": "Hey.",
+      "status": 200,
+      "seconds": 10.772,
+      "reply": "Grüezi! Ich bin die digitale Assistentin von MORADA und stehe Ihnen gerne zur Verfügung. Womit kann ich Sie heute unterstützen?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": null,
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 3324,
+        "model": 3319,
+        "application": 5
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3388,
+        "outputTokens": 1265,
+        "reasoningTokens": 1200,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:08:19.166522+00:00",
+      "case": "F – Mietvertrag",
+      "message": "Wo finde ich meinen Mietvertrag?",
+      "status": 200,
+      "seconds": 13.216,
+      "reply": "Mietverträge finden Sie im Bereich 'Dokumente'. Möchten Sie dorthin navigieren?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": null,
+      "actions": [
+        {
+          "id": "view-docs",
+          "label": "Dokumentenbereich öffnen",
+          "variant": "secondary",
+          "type": "navigate",
+          "target": "docs"
+        }
+      ],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4719,
+        "model": 4717,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3312,
+        "outputTokens": 1945,
+        "reasoningTokens": 1857,
+        "cachedInputTokens": 1768
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:08:52.383838+00:00",
+      "case": "I – Themenwechsel",
+      "message": "Meine Heizung geht nicht.",
+      "status": 200,
+      "seconds": 12.608,
+      "reply": "Verstehe, dass Ihre Heizung nicht funktioniert. Damit wir gezielt helfen können, in welchem Raum tritt das Problem auf?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "80be246a-75bc-42e7-bb8c-624feaf64d49",
+      "actions": [],
+      "issues": [
+        {
+          "id": "80be246a-75bc-42e7-bb8c-624feaf64d49",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4872,
+        "model": 4870,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3471,
+        "outputTokens": 1912,
+        "reasoningTokens": 1764,
+        "cachedInputTokens": 1853
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:09:24.992573+00:00",
+      "case": "I – Themenwechsel",
+      "message": "Eigentlich wollte ich noch etwas zur Nebenkostenabrechnung fragen.",
+      "status": 200,
+      "seconds": 13.019,
+      "reply": "Ich kann keine persönlichen Dokumente einsehen, helfe aber gerne bei Fragen zur Nebenkostenabrechnung. Prüfen Sie im Bereich Dokumente, ob die Abrechnung dort hinterlegt ist. Falls Sie eine konkrete Position diskutieren möchten, nennen Sie mir gerne die Bezeichnung.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "80be246a-75bc-42e7-bb8c-624feaf64d49",
+      "actions": [],
+      "issues": [
+        {
+          "id": "80be246a-75bc-42e7-bb8c-624feaf64d49",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 6023,
+        "model": 6022,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3611,
+        "outputTokens": 2575,
+        "reasoningTokens": 2488,
+        "cachedInputTokens": 1855
+      }
+    }
+  ]
+}

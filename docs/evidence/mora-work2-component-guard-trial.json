@@ -1,0 +1,200 @@
+{
+  "url": "https://morada-mora-dlkubh0zn-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-13T17:38:46.525987+00:00",
+      "case": "J – Bauteil und unbekannte Ursache",
+      "message": "bi mir tropfts unterm lavabo, weiss nöd warum",
+      "status": 200,
+      "seconds": 20.309,
+      "reply": "Es tut mir leid, dass unter dem Lavabo tropft. Ich kann Ihnen gerne einen entsprechenden Anliegenentwurf vorbereiten.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "a0b769e9-e153-48ec-b24e-10f205daa5f9",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "a0b769e9-e153-48ec-b24e-10f205daa5f9",
+          "equipment": "leak",
+          "category": "water",
+          "location": "unterm lavabo",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [
+            "cause"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 12914,
+        "model": 12906,
+        "application": 8
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 8186,
+        "outputTokens": 5243,
+        "reasoningTokens": 4883,
+        "cachedInputTokens": 3694
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:39:26.836353+00:00",
+      "case": "D – Zwei vorhandene Anliegen",
+      "message": "Meine Heizung bleibt kalt und im Badezimmer tropft es unter dem Lavabo.",
+      "status": 503,
+      "seconds": 20.982,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "understanding": null,
+      "responseMode": null,
+      "activeIssueId": null,
+      "actions": null,
+      "issues": [],
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null
+    },
+    {
+      "startedAt": "2026-10-13T17:40:07.819493+00:00",
+      "case": "D – Zwei vorhandene Anliegen",
+      "message": "Die Heizung ist im Wohnzimmer. Beim Wasser ist es das Rohr, es tropft seit heute Morgen.",
+      "status": 200,
+      "seconds": 11.543,
+      "reply": "Ich habe verstanden, dass das Rohr seit heute Morgen tropft. In welchem Raum befindet sich das tropfende Rohr, damit ich es korrekt zuordnen kann?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "144c3404-2294-433d-a78b-2b4f2f114a92",
+      "actions": [],
+      "issues": [
+        {
+          "id": "144c3404-2294-433d-a78b-2b4f2f114a92",
+          "equipment": "pipe",
+          "category": "water",
+          "location": null,
+          "since": "heute Morgen",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4466,
+        "model": 4465,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 4005,
+        "outputTokens": 2694,
+        "reasoningTokens": 2388,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:40:39.363580+00:00",
+      "case": "F – Vertrag",
+      "message": "Wo finde ich meinen Mietvertrag?",
+      "status": 200,
+      "seconds": 12.336,
+      "reply": "Ich habe leider keinen Zugriff auf Ihre persönlichen Unterlagen wie den Mietvertrag. Ich kann Ihnen aber gerne bei allgemeinen Fragen zum Vertrag behilflich sein.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": null,
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4843,
+        "model": 4843,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3969,
+        "outputTokens": 1888,
+        "reasoningTokens": 1824,
+        "cachedInputTokens": 2879
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:41:11.700058+00:00",
+      "case": "H – Akute Sicherheit",
+      "message": "Die Steckdose wirft Funken und es riecht verbrannt.",
+      "status": 200,
+      "seconds": 7.388,
+      "reply": "Bitte halten Sie Abstand zu beschädigten elektrischen Teilen und berühren Sie keine Kabel oder nassen Geräte. Bei unmittelbarer Gefahr rufen Sie von einem sicheren Ort 112 an. Warten Sie nicht auf eine Antwort im Portal.\n\nDie Angaben sind im Chat aufgenommen. Ein Anliegenentwurf ersetzt keinen Notruf oder direkten Kontakt.",
+      "understanding": "safety",
+      "responseMode": "safety",
+      "activeIssueId": "bee944ad-19c6-49b6-a843-81dde2185db6",
+      "actions": [
+        {
+          "id": "emergency-112",
+          "label": "Notruf 112",
+          "variant": "primary",
+          "type": "call",
+          "number": "112"
+        },
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "secondary",
+          "type": "handover"
+        },
+        {
+          "id": "add-details",
+          "label": "Noch etwas ergänzen",
+          "variant": "secondary",
+          "type": "add_details"
+        }
+      ],
+      "issues": [
+        {
+          "id": "bee944ad-19c6-49b6-a843-81dde2185db6",
+          "equipment": "socket",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "electric",
+          "urgency": "emergency",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 12,
+        "model": 0,
+        "application": 12
+      },
+      "modelCalls": 0,
+      "modelUsage": null
+    }
+  ]
+}

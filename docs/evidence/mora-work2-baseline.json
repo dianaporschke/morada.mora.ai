@@ -1,0 +1,133 @@
+{
+  "url": "https://morada-mora-prb0gzdyd-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-13T17:00:58.702776+00:00",
+      "case": "E – Begrüssung",
+      "message": "Hey.",
+      "status": 200,
+      "seconds": 14.507,
+      "reply": "Grüezi und herzlich willkommen bei MORADA Immobilien. Ich helfe Ihnen gerne bei allgemeinen Immobilienfragen oder beim Erstellen eines Anliegenentwurfs im Servicebereich.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": null,
+      "actions": [],
+      "issues": [],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 6566,
+        "model": 6562,
+        "application": 4
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3764,
+        "outputTokens": 1750,
+        "reasoningTokens": 1682,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:01:33.210650+00:00",
+      "case": "F – Mietvertrag",
+      "message": "Wo finde ich meinen Mietvertrag?",
+      "status": 503,
+      "seconds": 37.684,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "understanding": null,
+      "responseMode": null,
+      "activeIssueId": null,
+      "actions": null,
+      "issues": [],
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null
+    },
+    {
+      "startedAt": "2026-10-13T17:02:30.894892+00:00",
+      "case": "I – Themenwechsel",
+      "message": "Meine Heizung geht nicht.",
+      "status": 200,
+      "seconds": 12.739,
+      "reply": "Es tut mir leid zu hören, dass Ihre Heizung nicht funktioniert. In welchem Raum ist der Defekt?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "c2dc905d-32a9-47ec-ba7c-dd1ff32d06d2",
+      "actions": [],
+      "issues": [
+        {
+          "id": "c2dc905d-32a9-47ec-ba7c-dd1ff32d06d2",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 5361,
+        "model": 5357,
+        "application": 4
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3771,
+        "outputTokens": 1406,
+        "reasoningTokens": 1256,
+        "cachedInputTokens": 1823
+      }
+    },
+    {
+      "startedAt": "2026-10-13T17:03:03.634479+00:00",
+      "case": "I – Themenwechsel",
+      "message": "Eigentlich wollte ich noch etwas zur Nebenkostenabrechnung fragen.",
+      "status": 200,
+      "seconds": 10.8,
+      "reply": "Ich kann keine persönlichen Unterlagen wie die Nebenkostenabrechnung einsehen. Ihr Heizungsentwurf bleibt im Servicebereich gespeichert. Was möchten Sie sonst noch wissen?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "c2dc905d-32a9-47ec-ba7c-dd1ff32d06d2",
+      "actions": [],
+      "issues": [
+        {
+          "id": "c2dc905d-32a9-47ec-ba7c-dd1ff32d06d2",
+          "equipment": "heater",
+          "category": "heating",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4929,
+        "model": 4927,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3961,
+        "outputTokens": 1717,
+        "reasoningTokens": 1642,
+        "cachedInputTokens": 1857
+      }
+    }
+  ]
+}
