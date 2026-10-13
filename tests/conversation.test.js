@@ -197,6 +197,8 @@ test('The final live wrong-section failure and denial-then-promise variants are 
     'Ich kann Ihre Abrechnung nicht abrufen, aber im Portal können Sie diese einsehen.',
     'Den Vertrag kann ich nicht öffnen; dort können Sie Ihren Mietvertrag herunterladen.',
     'Ihre Dokumente finden Sie im Servicebereich.',
+    "Mietverträge finden Sie im Bereich 'Dokumente'. Möchten Sie dorthin navigieren?",
+    'Prüfen Sie im Bereich Dokumente, ob die Abrechnung dort hinterlegt ist.',
   ]) assert.throws(()=>validatedDialogueReply({intent:'knowledge',dialogue:{reply}}),{validation:'unsupported_document_claim'});
   assert.throws(()=>validatedDialogueReply({intent:'contact',dialogue:{reply:'Ich kann nicht selbst senden, aber Sie können das Anliegen hier absenden.'}}),{validation:'unsupported_delivery_claim'});
 });
@@ -206,4 +208,18 @@ test('The model receives the exact pending clarification, attempt fields and dis
   const context=modelContext({issue,issues:[issue],pendingKey:'details'});
   assert.equal(context.pendingQuestionText,issue.clarification);
   assert.deepEqual(context.activeIssue.askedFields,['details']);
+});
+
+test('One customer turn updates two existing issues without duplicating them or mixing rooms',async()=>{
+  let turn=await processTurn({message:'Heizung kalt; Wasser tropft im Bad'},null,model({category:'heating',equipment:'heater',
+    additionalIssues:[Object.fromEntries(Object.keys(issuePatchSchema.shape).map(key=>[key,emptyUnderstanding({category:'water',equipment:'leak',location:'Bad'})[key]]))]}));
+  const heater=turn.state.issues.find(issue=>issue.equipment==='heater'),water=turn.state.issues.find(issue=>issue.equipment==='leak');
+  turn=await processTurn({message:'Heizung im Wohnzimmer. Beim Wasser das Rohr seit heute.'},turn.state,model({targetIssueId:heater.id,category:'heating',equipment:'heater',location:'Wohnzimmer',
+    additionalIssues:[{...Object.fromEntries(Object.keys(issuePatchSchema.shape).map(key=>[key,emptyUnderstanding({category:'water',equipment:'pipe',since:'heute'})[key]])),targetIssueId:water.id}],
+    dialogue:dialogue('Die Heizung ist im Wohnzimmer; das Rohr tropft seit heute.')}));
+  assert.equal(turn.state.issues.length,2);
+  assert.equal(turn.state.issues.find(issue=>issue.id===heater.id).location,'Wohnzimmer');
+  assert.equal(turn.state.issues.find(issue=>issue.id===water.id).location,'Bad');
+  assert.equal(turn.state.issues.find(issue=>issue.id===water.id).equipment,'pipe');
+  assert.equal(turn.state.issues.find(issue=>issue.id===water.id).since,'heute');
 });

@@ -49,6 +49,28 @@ test('A sparse genuine greeting needs no unrelated damage facts, placeholder arr
   assert.deepEqual(result.data.additionalIssues,[]);assert.deepEqual(result.data.unknownFields,[]);assert.deepEqual(result.data.dialogue.buttons,[]);
 });
 
+test('The SDK resolves additional existing-issue updates solely against signed context references',async()=>{
+  const heater={id:'heater-id',category:'heating',equipment:'heater',answers:[],attempts:{},unknownFields:[]};
+  const water={id:'water-id',category:'water',equipment:'leak',location:'Bad',answers:[],attempts:{},unknownFields:[]};
+  const output={intent:'issue',targetIssueId:'active',category:'heating',equipment:'heater',location:'Wohnzimmer',sourceQuote:'Heizung im Wohnzimmer',
+    additionalIssues:[{targetIssueId:'other1',equipment:'pipe',since:'heute',sourceQuote:'Beim Wasser das Rohr seit heute'}],
+    dialogue:{reply:'Die Heizung ist im Wohnzimmer; das Rohr tropft seit heute.'}};
+  const result=await generateUnderstandingResult('Heizung im Wohnzimmer. Beim Wasser das Rohr seit heute',{issue:heater,issues:[heater,water]},mercury(output));
+  assert.equal(result.data.targetIssueId,heater.id);
+  assert.equal(result.data.additionalIssues[0].targetIssueId,water.id);
+  assert.equal(result.data.additionalIssues[0].equipment,'pipe');
+});
+
+test('An invented additional-issue reference is rejected before either existing draft changes',async()=>{
+  const heater={id:'heater-id',category:'heating',equipment:'heater',answers:[],attempts:{},unknownFields:[]};
+  const water={id:'water-id',category:'water',equipment:'leak',location:'Bad',answers:[],attempts:{},unknownFields:[]};
+  const state={issue:heater,issues:[heater,water]}; const before=structuredClone(state);
+  const output={intent:'issue',sourceQuote:'Heizung im Wohnzimmer',location:'Wohnzimmer',
+    additionalIssues:[{targetIssueId:'other99',equipment:'pipe',sourceQuote:'Wasser aus dem Rohr'}],dialogue:{reply:'Die Angaben sind aufgenommen.'}};
+  await assert.rejects(generateUnderstandingResult('Heizung im Wohnzimmer; Wasser aus dem Rohr',state,mercury(output)),{type:'invalid_model_output'});
+  assert.deepEqual(state,before);
+});
+
 test('Unknown facts require direct provenance from this customer turn, not absent values or invented quotes',async()=>{
   const base=emptyUnderstanding({intent:'issue',equipment:'socket',dialogue:{reply:'Den Beginn können wir offenlassen.',stage:'discuss',buttons:[]}});
   const modelOutput={...base,unknownAnswers:[{field:'since',quote:'Keine Ahnung seit wann'}]};
