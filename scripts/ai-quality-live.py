@@ -36,7 +36,7 @@ for case in config['cases']:
         row={'startedAt':startedAt,'case':case['name'],'message':message,'status':status,'seconds':elapsed,
              'reply':data.get('reply',data.get('error')),'understanding':data.get('understanding'),
              'responseMode':data.get('responseMode'),'activeIssueId':(data.get('issue') or {}).get('id'),'actions':data.get('actions'),
-             'issues':[{k:i.get(k) for k in ['id','equipment','category','location','since','extent','details','unknownFields','hazard','urgency','status']} for i in data.get('issues',[])],
+             'issues':[{k:i.get(k) for k in ['id','equipment','category','location','since','extent','details','cause','unknownFields','hazard','urgency','status']} for i in data.get('issues',[])],
              'modelAvailability':data.get('modelAvailability'),'timingMs':data.get('timingMs'),'modelCalls':data.get('modelCalls'),'modelUsage':data.get('modelUsage')}
         rows.append(row)
         path=pathlib.Path(config['output']);path.parent.mkdir(parents=True,exist_ok=True)

@@ -71,6 +71,30 @@ test('An invented additional-issue reference is rejected before either existing 
   assert.deepEqual(state,before);
 });
 
+test('A simple correction is regenerated as acknowledgement rather than restarting qualification',async()=>{
+  let calls=0;
+  const issue={id:'socket-id',equipment:'socket',category:'electricity',location:'Wohnzimmer',unknownFields:['since'],attempts:{},answers:[]};
+  const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
+    calls++;
+    const output={intent:'issue',correction:true,location:'Schlafzimmer',dialogue:{reply:calls===1 ? 'Im Schlafzimmer. Sind weitere Steckdosen betroffen?' : 'Die Steckdose ist im Schlafzimmer.',
+      ...(calls===1 ? {ask:{field:'extent',text:'Sind weitere Steckdosen betroffen?'}} : {})}};
+    return {content:[{type:'text',text:JSON.stringify(output)}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
+      usage:{inputTokens:{total:100,noCache:100,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:100,reasoning:0}}};
+  }});
+  const result=await generateUnderstandingResult('Nein, im Schlafzimmer.',{issue,issues:[issue]},sdk);
+  assert.equal(calls,2);assert.equal(result.data.location,'Schlafzimmer');assert.equal(result.data.question,null);
+  assert.equal(result.data.dialogue.reply,'Die Steckdose ist im Schlafzimmer.');
+});
+
+test('Unknown cause is retained separately from physical location details and can later be supplied',async()=>{
+  const result=await generateUnderstandingResult('bi mir tropfts unterm lavabo, weiss nöd warum',null,mercury({intent:'issue',category:'water',equipment:'leak',details:'unterm lavabo',
+    unknownAnswers:[{field:'cause',quote:'weiss nöd warum'}],dialogue:{reply:'Seit wann tropft es unter dem Lavabo?',ask:{field:'since',text:'Seit wann tropft es?'}}}));
+  let turn=await processTurn({message:'bi mir tropfts unterm lavabo, weiss nöd warum'},null,async()=>({mode:'model',data:result.data}));
+  assert.equal(turn.state.issue.details,'unterm lavabo');assert.deepEqual(turn.state.issue.unknownFields,['cause']);
+  turn=await processTurn({message:'Die Dichtung ist locker.'},turn.state,async()=>({mode:'model',data:emptyUnderstanding({intent:'issue',cause:'Die Dichtung ist locker.',dialogue:{reply:'Die Angabe zur Dichtung ist aufgenommen.',stage:'discuss',buttons:[]}})}));
+  assert.equal(turn.state.issue.cause,'Die Dichtung ist locker.');assert.deepEqual(turn.state.issue.unknownFields,[]);
+});
+
 test('Unknown facts require direct provenance from this customer turn, not absent values or invented quotes',async()=>{
   const base=emptyUnderstanding({intent:'issue',equipment:'socket',dialogue:{reply:'Den Beginn können wir offenlassen.',stage:'discuss',buttons:[]}});
   const modelOutput={...base,unknownAnswers:[{field:'since',quote:'Keine Ahnung seit wann'}]};

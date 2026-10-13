@@ -210,6 +210,22 @@ test('The model receives the exact pending clarification, attempt fields and dis
   assert.deepEqual(context.activeIssue.askedFields,['details']);
 });
 
+test('Observed corrupt German is rejected without rewriting a genuine model response',()=>{
+  for (const reply of ['Ich habe not vermerkt, dass die Lampe defekt ist.','Ich habe den Stand not.','Das ist bedauert.']) {
+    assert.throws(()=>validatedDialogueReply({intent:'issue',dialogue:{reply}}),{validation:'invalid_response_language'});
+  }
+  const reply='Die Lampe im Badezimmer ist seit gestern defekt.';
+  assert.equal(validatedDialogueReply({intent:'issue',dialogue:{reply}}),reply);
+  assert.equal(validatedDialogueReply({intent:'knowledge',dialogue:{reply:'Bei akuter Not wählen Sie 112.'}}),'Bei akuter Not wählen Sie 112.');
+});
+
+test('A concrete draft offer requires its validated action, while plain acknowledgements stay button-free',()=>{
+  const reply='Möchten Sie einen Anliegenentwurf vorbereiten?';
+  assert.throws(()=>validatedDialogueReply({intent:'issue',dialogue:{reply,buttons:[]}}),{validation:'missing_draft_action'});
+  assert.equal(validatedDialogueReply({intent:'issue',dialogue:{reply,buttons:[{kind:'prepare_draft'}]}}),reply);
+  assert.equal(validatedDialogueReply({intent:'issue',dialogue:{reply:'Schlafzimmer ist korrigiert.',buttons:[]}}),'Schlafzimmer ist korrigiert.');
+});
+
 test('One customer turn updates two existing issues without duplicating them or mixing rooms',async()=>{
   let turn=await processTurn({message:'Heizung kalt; Wasser tropft im Bad'},null,model({category:'heating',equipment:'heater',
     additionalIssues:[Object.fromEntries(Object.keys(issuePatchSchema.shape).map(key=>[key,emptyUnderstanding({category:'water',equipment:'leak',location:'Bad'})[key]]))]}));
