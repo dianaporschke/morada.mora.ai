@@ -130,6 +130,14 @@ test('An explicit current pipe statement updates a signed water issue even when 
   assert.equal(result.data.additionalIssues[0].targetIssueId,water.id);
 });
 
+test('Two patches cannot disguise a duplicate existing-issue target by repeating its short reference',async()=>{
+  const issue={id:'heater-id',category:'heating',equipment:'heater',answers:[],attempts:{},unknownFields:[]};
+  await assert.rejects(generateUnderstandingResult('Heizung im Wohnzimmer; sie ist noch kalt',{issue,issues:[issue]},mercury({
+    intent:'issue',targetIssueId:'active',equipment:'heater',location:'Wohnzimmer',sourceQuote:'Heizung im Wohnzimmer',
+    additionalIssues:[{targetIssueId:'active',defect:'kalt',sourceQuote:'sie ist noch kalt'}],dialogue:{reply:'Die Angaben sind aufgenommen.'},
+  })),{type:'invalid_model_output'});
+});
+
 test('Unknown facts require direct provenance from this customer turn, not absent values or invented quotes',async()=>{
   const base=emptyUnderstanding({intent:'issue',equipment:'socket',dialogue:{reply:'Den Beginn können wir offenlassen.',stage:'discuss',buttons:[]}});
   const modelOutput={...base,unknownAnswers:[{field:'since',quote:'Keine Ahnung seit wann'}]};
