@@ -111,7 +111,8 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     disableActions(); lock(true);
     if (displayText && !retry) addBubble(displayText, 'user');
     if (!retry && payload.message) text.value = '';
-    const loading = addBubble('MORA nimmt Ihr Anliegen auf …', 'assistant', [], false); loading.classList.add('loading');
+    const loading = addBubble('MORA antwortet …', 'assistant', [], false); loading.classList.add('loading');
+    const startedAt=window.performance.now();
     const controller = new AbortController(); const timer = window.setTimeout(() => controller.abort(), 65000);
     const previousIssue = state.issue;
     try {
@@ -125,6 +126,10 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
       state.issues = Array.isArray(data.issues) ? data.issues : (data.issue ? [data.issue] : []);
       state.files = structuredClone(data.issue?.attachments || []);
       retryPayload = null; addBubble(data.reply, 'assistant', data.actions || []); renderIssueControls(); await renderPhotos(); persist();
+      // Measure the actual browser roundtrip, separately from server/model time.
+      // No text, signed sessions, photos or personal data are logged.
+      window.console.info('MORA response timing',{roundtripMs:Math.round(window.performance.now()-startedAt),
+        serverMs:data.timingMs?.total ?? null,modelMs:data.timingMs?.model ?? null,modelCalls:data.modelCalls ?? null});
     } catch (error) {
       loading.remove(); retryPayload = { payload, displayText };
       const actions = error.retryable === false || error.code === 'INVALID_SESSION' || error.code === 'INVALID_ACTION' ? [] : [{ id:'retry', label:'Erneut versuchen', type:'retry', variant:'primary' }];

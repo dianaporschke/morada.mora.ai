@@ -66,6 +66,7 @@ test('One genuine corrective generation can repair a capability violation; token
   const model=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options=>{
     calls++;
     if(calls===2) assert.match(JSON.stringify(options.prompt),/previous JSON was rejected/);
+    if(calls===2) assert.equal(options.prompt.filter(message=>message.role==='user').length,1,'Correction must not impersonate a customer turn');
     const output={...rest,risk:hazard,sourceQuote:null,unknownAnswers:[],dialogue:{reply:calls===1 ? rest.dialogue.reply : 'Ich kann den lokalen Entwurf öffnen. Der direkte Versand ist noch nicht angebunden.'}};
     return {content:[{type:'text',text:JSON.stringify(output)}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
       usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};

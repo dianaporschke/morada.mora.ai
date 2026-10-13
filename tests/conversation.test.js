@@ -190,3 +190,20 @@ test('Negated personal-record locations are not mistaken for an affirmative acce
   const reply='Ihren persönlichen Mietvertrag finden Sie hier im Portal noch nicht. Ich kann den vorbereiteten Dokumentenbereich öffnen.';
   assert.equal(validatedDialogueReply({intent:'documents',dialogue:{reply}}),reply);
 });
+
+test('The final live wrong-section failure and denial-then-promise variants are rejected',()=>{
+  for (const reply of [
+    'Im Servicebereich unter Dokumente können Sie gerne nachschauen.',
+    'Ich kann Ihre Abrechnung nicht abrufen, aber im Portal können Sie diese einsehen.',
+    'Den Vertrag kann ich nicht öffnen; dort können Sie Ihren Mietvertrag herunterladen.',
+    'Ihre Dokumente finden Sie im Servicebereich.',
+  ]) assert.throws(()=>validatedDialogueReply({intent:'knowledge',dialogue:{reply}}),{validation:'unsupported_document_claim'});
+  assert.throws(()=>validatedDialogueReply({intent:'contact',dialogue:{reply:'Ich kann nicht selbst senden, aber Sie können das Anliegen hier absenden.'}}),{validation:'unsupported_delivery_claim'});
+});
+
+test('The model receives the exact pending clarification, attempt fields and distinct portal sections',()=>{
+  const issue={id:'light',equipment:'light',clarification:'Ist die Leuchte fest installiert?',attempts:{details:1,since:0}};
+  const context=modelContext({issue,issues:[issue],pendingKey:'details'});
+  assert.equal(context.pendingQuestionText,issue.clarification);
+  assert.deepEqual(context.activeIssue.askedFields,['details']);
+});
