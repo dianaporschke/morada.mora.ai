@@ -1,0 +1,74 @@
+{
+  "url": "https://morada-mora-423u9vtpx-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-2.5",
+  "intervalSeconds": 25.0,
+  "cases": 1,
+  "rows": [
+    {
+      "caseId": "21-freies-gespraech",
+      "case": "Freies Kennenlernen ohne Meldungsdruck",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:27:33.795546+00:00",
+      "message": "Guten Abend. Ich möchte erst einmal verstehen, wobei Sie mir helfen können.",
+      "status": 200,
+      "seconds": 12.834,
+      "reply": "Guten Abend. Ich unterstütze Sie bei Fragen zu Ihrer Immobilie, bei technischen Anliegen wie Wasserschäden oder Störungen sowie bei allgemeinen Informationen. Womit können wir Sie heute konkret unterstützen?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4609,
+        "model": 4602,
+        "application": 7
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3963,
+        "outputTokens": 1251,
+        "reasoningTokens": 1184,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "natürliches Gespräch",
+        "keine erfundenen Funktionen",
+        "keine erzwungene Meldung"
+      ]
+    },
+    {
+      "caseId": "21-freies-gespraech",
+      "case": "Freies Kennenlernen ohne Meldungsdruck",
+      "turn": 2,
+      "startedAt": "2026-10-15T17:27:58.795711+00:00",
+      "message": "Kann ich Ihnen auch einfach etwas schildern, ohne sofort eine Meldung daraus zu machen?",
+      "status": 200,
+      "seconds": 9.846,
+      "reply": "Ja, das können Sie gerne tun. Sie können mir Ihr Anliegen schildern, und wir bereiten dann gegebenenfalls einen Entwurf vor, der nicht automatisch versendet wird.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 3306,
+        "model": 3305,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 4108,
+        "outputTokens": 1330,
+        "reasoningTokens": 1260,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "natürliches Gespräch",
+        "keine erfundenen Funktionen",
+        "keine erzwungene Meldung"
+      ]
+    }
+  ]
+}

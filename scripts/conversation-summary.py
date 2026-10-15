@@ -22,7 +22,9 @@ if rest.exists():
         tail_data=json.loads(tail.read_text());assert tail_data['url']==rest_data['url']
         after+=tail_data['rows']
     extra=root/'mora-intelligence-after-extra.json'
-    if extra.exists():after+=json.loads(extra.read_text())['rows']
+    if extra.exists():
+        extra_data=json.loads(extra.read_text())
+        after+=[{**r,'testedPreviewUrl':extra_data['url']}for r in extra_data['rows']]
     safety=root/'mora-intelligence-final-safety.json'
     if safety.exists():
         safety_data=json.loads(safety.read_text())
@@ -30,7 +32,8 @@ if rest.exists():
             after=[r for r in after if r['caseId']!='18-gefahr']+[{**r,'testedPreviewUrl':safety_data['url']}for r in safety_data['rows']]
     after=sorted(after,key=lambda r:(r['caseId'],r['turn']))
     (root/'mora-intelligence-after.json').write_text(json.dumps({'url':rest_data['url'],
-      'applicationCodeSha':'f8510c7deb5df662f7275c636f1025579587f8f7',
+      'conversationCodeSha':'f8510c7deb5df662f7275c636f1025579587f8f7',
+      'finalApplicationCommit':'64670c66f3aff0c8a77f44e8fbbdba46f9788ed5',
       'sources':['mora-intelligence-after-json-trial.json','mora-intelligence-after-json-rest-rejected.json','mora-intelligence-after-json-tail.json','mora-intelligence-after-extra.json','mora-intelligence-final-safety.json'],
       'rows':after},ensure_ascii=False,indent=2)+'\n')
 else:

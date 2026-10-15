@@ -1,0 +1,74 @@
+{
+  "url": "https://morada-mora-knuh72tp4-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-2.5",
+  "intervalSeconds": 25.0,
+  "cases": 1,
+  "rows": [
+    {
+      "caseId": "21-freies-gespraech",
+      "case": "Freies Kennenlernen ohne Meldungsdruck",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:29:25.175506+00:00",
+      "message": "Guten Abend. Ich möchte erst einmal verstehen, wobei Sie mir helfen können.",
+      "status": 200,
+      "seconds": 7.874,
+      "reply": "Guten Abend. Ich bin MORA, Ihre digitale Immobilienassistenz von MORADA. Ich helfe Ihnen bei Anliegen rund um Ihre Immobilie, zum Beispiel bei Schäden oder technischen Fragen. MORADA übernimmt die persönliche Bewirtschaftung und die fachliche Bearbeitung vor Ort. Was beschäftigt Sie konkret?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 3243,
+        "model": 3238,
+        "application": 5
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3536,
+        "outputTokens": 1348,
+        "reasoningTokens": 1256,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "natürliches Gespräch",
+        "keine erfundenen Funktionen",
+        "keine erzwungene Meldung"
+      ]
+    },
+    {
+      "caseId": "21-freies-gespraech",
+      "case": "Freies Kennenlernen ohne Meldungsdruck",
+      "turn": 2,
+      "startedAt": "2026-10-15T17:29:50.175649+00:00",
+      "message": "Kann ich Ihnen auch einfach etwas schildern, ohne sofort eine Meldung daraus zu machen?",
+      "status": 200,
+      "seconds": 9.571,
+      "reply": "Natürlich können Sie das. Wir können uns zunächst austauschen, damit ich verstehe, worum es geht. Wenn Sie später entscheiden, dass eine Meldung nötig ist, helfe ich Ihnen gerne dabei, den Entwurf vorzubereiten. Was möchten Sie mir gerne schildern?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 3006,
+        "model": 3005,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3537,
+        "outputTokens": 1009,
+        "reasoningTokens": 920,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "natürliches Gespräch",
+        "keine erfundenen Funktionen",
+        "keine erzwungene Meldung"
+      ]
+    }
+  ]
+}

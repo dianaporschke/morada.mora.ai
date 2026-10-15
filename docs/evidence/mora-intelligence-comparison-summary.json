@@ -1,0 +1,443 @@
+{
+  "before": {
+    "casesAttempted": 21,
+    "turns": 43,
+    "modelReplies": 37,
+    "failures": [
+      {
+        "caseId": "13-kein-angebot",
+        "turn": 3,
+        "status": 503,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": null,
+          "reason": "invalid_model_output"
+        }
+      },
+      {
+        "caseId": "17-frust",
+        "turn": 2,
+        "status": 503,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": null,
+          "reason": "invalid_model_output"
+        }
+      },
+      {
+        "caseId": "19-berechtigung",
+        "turn": 1,
+        "status": 503,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": 400,
+          "reason": "unavailable"
+        }
+      },
+      {
+        "caseId": "20-navigation",
+        "turn": 1,
+        "status": 503,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": null,
+          "reason": "invalid_model_output"
+        }
+      }
+    ],
+    "safetyReplies": 2,
+    "serverMs": {
+      "n": 37,
+      "median": 6507,
+      "min": 3115,
+      "max": 21312
+    },
+    "clientSeconds": {
+      "n": 37,
+      "median": 13.158,
+      "min": 6.38,
+      "max": 27.514
+    },
+    "modelCalls": 41,
+    "repairTurns": 4,
+    "allReportedModelCalls": 42,
+    "missingUsageTurns": 1,
+    "tokens": {
+      "inputTokens": 165629,
+      "outputTokens": 76976,
+      "reasoningTokens": 71693,
+      "cachedInputTokens": 83936
+    },
+    "knownUncachedEstimateUsd": 0.018172,
+    "knownCacheAdjustedEstimateUsd": 0.01515,
+    "costBasis": "2026-10-15 Mercury catalog rates; uncached estimate for returned usage, including returned repair usage, not an invoice; failed generations may be missing",
+    "textSignals": {
+      "routineIntroductions": 16,
+      "administrativeWording": 10,
+      "draftMentions": 13,
+      "turnsWithButtons": 8
+    },
+    "caseCoverage": [
+      {
+        "id": "01-lampe",
+        "turns": 3,
+        "allHttp200": true
+      },
+      {
+        "id": "02-dialekt",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "03-korrektur",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "04-mehrfach",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "05-themenwechsel",
+        "turns": 3,
+        "allHttp200": true
+      },
+      {
+        "id": "06-nichtwissen",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "07-widerspruch",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "08-vertrag",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "09-status",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "10-abrechnung",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "11-termin",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "12-meldewunsch",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "13-kein-angebot",
+        "turns": 3,
+        "allHttp200": false
+      },
+      {
+        "id": "14-foto",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "15-bezug",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "16-mehr-info",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "17-frust",
+        "turns": 2,
+        "allHttp200": false
+      },
+      {
+        "id": "18-gefahr",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "19-berechtigung",
+        "turns": 1,
+        "allHttp200": false
+      },
+      {
+        "id": "20-navigation",
+        "turns": 1,
+        "allHttp200": false
+      },
+      {
+        "id": "21-freies-gespraech",
+        "turns": 2,
+        "allHttp200": true
+      }
+    ]
+  },
+  "after": {
+    "casesAttempted": 21,
+    "turns": 39,
+    "modelReplies": 31,
+    "failures": [
+      {
+        "caseId": "04-mehrfach",
+        "turn": 1,
+        "status": 503,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": null,
+          "reason": "invalid_model_output"
+        }
+      },
+      {
+        "caseId": "08-vertrag",
+        "turn": 1,
+        "status": 503,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": null,
+          "reason": "invalid_model_output"
+        }
+      },
+      {
+        "caseId": "11-termin",
+        "turn": 1,
+        "status": 503,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": null,
+          "reason": "invalid_model_output"
+        }
+      },
+      {
+        "caseId": "12-meldewunsch",
+        "turn": 1,
+        "status": 503,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": null,
+          "reason": "invalid_model_output"
+        }
+      },
+      {
+        "caseId": "19-berechtigung",
+        "turn": 1,
+        "status": 503,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": 400,
+          "reason": "unavailable"
+        }
+      },
+      {
+        "caseId": "20-navigation",
+        "turn": 1,
+        "status": 503,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": null,
+          "reason": "invalid_model_output"
+        }
+      }
+    ],
+    "safetyReplies": 2,
+    "serverMs": {
+      "n": 31,
+      "median": 4500,
+      "min": 2800,
+      "max": 9690
+    },
+    "clientSeconds": {
+      "n": 31,
+      "median": 11.801,
+      "min": 7.874,
+      "max": 15.819
+    },
+    "modelCalls": 34,
+    "repairTurns": 3,
+    "allReportedModelCalls": 34,
+    "missingUsageTurns": 0,
+    "tokens": {
+      "inputTokens": 122709,
+      "outputTokens": 60780,
+      "reasoningTokens": 55985,
+      "cachedInputTokens": 30825
+    },
+    "knownUncachedEstimateUsd": 0.014025,
+    "knownCacheAdjustedEstimateUsd": 0.012916,
+    "costBasis": "2026-10-15 Mercury catalog rates; uncached estimate for returned usage, including returned repair usage, not an invoice; failed generations may be missing",
+    "textSignals": {
+      "routineIntroductions": 12,
+      "administrativeWording": 6,
+      "draftMentions": 21,
+      "turnsWithButtons": 19
+    },
+    "caseCoverage": [
+      {
+        "id": "01-lampe",
+        "turns": 3,
+        "allHttp200": true
+      },
+      {
+        "id": "02-dialekt",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "03-korrektur",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "04-mehrfach",
+        "turns": 1,
+        "allHttp200": false
+      },
+      {
+        "id": "05-themenwechsel",
+        "turns": 3,
+        "allHttp200": true
+      },
+      {
+        "id": "06-nichtwissen",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "07-widerspruch",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "08-vertrag",
+        "turns": 1,
+        "allHttp200": false
+      },
+      {
+        "id": "09-status",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "10-abrechnung",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "11-termin",
+        "turns": 1,
+        "allHttp200": false
+      },
+      {
+        "id": "12-meldewunsch",
+        "turns": 1,
+        "allHttp200": false
+      },
+      {
+        "id": "13-kein-angebot",
+        "turns": 3,
+        "allHttp200": true
+      },
+      {
+        "id": "14-foto",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "15-bezug",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "16-mehr-info",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "17-frust",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "18-gefahr",
+        "turns": 2,
+        "allHttp200": true
+      },
+      {
+        "id": "19-berechtigung",
+        "turns": 1,
+        "allHttp200": false
+      },
+      {
+        "id": "20-navigation",
+        "turns": 1,
+        "allHttp200": false
+      },
+      {
+        "id": "21-freies-gespraech",
+        "turns": 2,
+        "allHttp200": true
+      }
+    ]
+  },
+  "pairedTurns": 39,
+  "pairedPacedPerformance": {
+    "turns": 22,
+    "beforeServerMs": {
+      "n": 22,
+      "median": 5305.0,
+      "min": 3115,
+      "max": 14287
+    },
+    "afterServerMs": {
+      "n": 22,
+      "median": 4295.0,
+      "min": 3006,
+      "max": 9690
+    },
+    "beforeClientSeconds": {
+      "n": 22,
+      "median": 12.303,
+      "min": 7.412,
+      "max": 22.7
+    },
+    "afterClientSeconds": {
+      "n": 22,
+      "median": 11.475,
+      "min": 7.874,
+      "max": 15.819
+    }
+  },
+  "pairedKnownUsage": {
+    "turns": 22,
+    "beforeUncachedEstimateUsd": 0.009764,
+    "afterUncachedEstimateUsd": 0.009771
+  },
+  "limitations": [
+    "Synthetic fixed conversations, not adaptive customer interviews or an independent blinded benchmark.",
+    "Routine-introduction and administrative-wording counts are transparent regex signals, not semantic quality scores.",
+    "Safety replies are excluded from model speed and style statistics.",
+    "No inference is performed by this summary script."
+  ]
+}
