@@ -21,18 +21,18 @@ function mercury(output, inspect = () => {}) {
   }});
 }
 
-test('Mercury uses supported JSON mode with the complete schema in system instructions', async () => {
+test('Mercury receives its native schema and remains independently validated on the server', async () => {
   let calls = 0;
   const expected = emptyUnderstanding({intent:'issue',category:'electricity',equipment:'socket',location:'Schlafzimmer',question:'since',clarification:'Seit wann funktioniert sie nicht?',
     dialogue:{reply:'Die Steckdose im Schlafzimmer ist aufgenommen. Seit wann funktioniert sie nicht?',stage:'clarify',buttons:[]}});
   const result = await generateUnderstandingResult('Steckdose im Schlafzimmer kaputt', null, mercury(expected, options => {
     calls++;
     assert.equal(options.responseFormat.type, 'json');
-    assert.equal(options.responseFormat.schema, undefined);
+    assert.ok(options.responseFormat.schema);
     assert.equal(options.tools, undefined);
     assert.equal(options.providerOptions.inception.reasoningEffort,'medium');
-    assert.match(JSON.stringify(options.prompt), /unknownAnswers/);
-    assert.match(JSON.stringify(options.prompt), /additionalProperties/);
+    assert.match(JSON.stringify(options.responseFormat.schema), /unknownAnswers/);
+    assert.match(JSON.stringify(options.responseFormat.schema), /additionalProperties/);
     assert.match(JSON.stringify(options.prompt), /Steckdose im Schlafzimmer kaputt/);
   }));
   assert.deepEqual(result.data, expected); assert.equal(calls, 1);

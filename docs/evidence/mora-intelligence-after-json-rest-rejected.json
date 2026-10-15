@@ -1,0 +1,819 @@
+{
+  "url": "https://morada-mora-hm4qysw5i-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-2.5",
+  "intervalSeconds": 25.0,
+  "cases": 18,
+  "rows": [
+    {
+      "caseId": "03-korrektur",
+      "case": "Raum und Anzahl korrigieren",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:06:04.893861+00:00",
+      "message": "Zwei Steckdosen im Wohnzimmer gehen seit gestern nicht.",
+      "status": 200,
+      "seconds": 12.916,
+      "reply": "Gerne unterstütze ich bei der Meldung. Sind nur die beiden Steckdosen im Wohnzimmer betroffen oder auch andere Bereiche? Falls Sie eine Meldung wünschen, kann ich direkt einen Entwurf für den Service vorbereiten.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "c548ef92-100a-4fc8-8c4a-3182cccbc99c",
+      "issues": [
+        {
+          "id": "c548ef92-100a-4fc8-8c4a-3182cccbc99c",
+          "equipment": "socket",
+          "category": "electricity",
+          "description": "Zwei Steckdosen im Wohnzimmer gehen seit gestern nicht.",
+          "defect": null,
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": "Zwei Steckdosen",
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4159,
+        "model": 4142,
+        "application": 17
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3552,
+        "outputTokens": 1782,
+        "reasoningTokens": 1555,
+        "cachedInputTokens": 1824
+      },
+      "modelAvailability": null,
+      "checks": [
+        "gleiches Anliegen",
+        "Schlafzimmer",
+        "Anzahl 1"
+      ]
+    },
+    {
+      "caseId": "03-korrektur",
+      "case": "Raum und Anzahl korrigieren",
+      "turn": 2,
+      "startedAt": "2026-10-15T17:06:29.893995+00:00",
+      "message": "Nein, im Schlafzimmer, und es ist doch nur eine.",
+      "status": 200,
+      "seconds": 10.687,
+      "reply": "Verstanden, dann korrigiere ich das auf das Schlafzimmer und eine Steckdose. Ich passe die Angaben im Entwurf an. Möchten Sie, dass ich den vorbereiteten Entwurf für den Service öffne, damit Sie ihn prüfen können?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "c548ef92-100a-4fc8-8c4a-3182cccbc99c",
+      "issues": [
+        {
+          "id": "c548ef92-100a-4fc8-8c4a-3182cccbc99c",
+          "equipment": "socket",
+          "category": "electricity",
+          "description": "Zwei Steckdosen im Wohnzimmer gehen seit gestern nicht.",
+          "defect": null,
+          "count": 1,
+          "location": "Schlafzimmer",
+          "since": "gestern",
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": "Eine Steckdose",
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 2800,
+        "model": 2798,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3702,
+        "outputTokens": 1226,
+        "reasoningTokens": 1047,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "gleiches Anliegen",
+        "Schlafzimmer",
+        "Anzahl 1"
+      ]
+    },
+    {
+      "caseId": "04-mehrfach",
+      "case": "Zwei Anliegen getrennt ergänzen",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:06:56.621187+00:00",
+      "message": "Meine Heizung bleibt kalt und im Badezimmer tropft es unter dem Lavabo.",
+      "status": 503,
+      "seconds": 21.959,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null,
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "checks": [
+        "zwei stabile IDs",
+        "Wohnzimmer nur Heizung",
+        "Badezimmer und heute Morgen nur Wasser"
+      ]
+    },
+    {
+      "caseId": "05-themenwechsel",
+      "case": "Vom Schaden zur Abrechnung und zurück",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:07:35.025927+00:00",
+      "message": "Meine Heizung im Schlafzimmer wird seit gestern nicht warm.",
+      "status": 200,
+      "seconds": 11.413,
+      "reply": "Das ist ärgerlich, wenn die Heizung im Schlafzimmer nicht warm wird. Ich kann Ihnen gerne einen Entwurf für die Meldung bei MORADA vorbereiten. Wollen wir das direkt weitermachen?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "f37f7830-e4d2-40b6-812a-2ae8c015d056",
+      "issues": [
+        {
+          "id": "f37f7830-e4d2-40b6-812a-2ae8c015d056",
+          "equipment": "heater",
+          "category": "heating",
+          "description": "Meine Heizung im Schlafzimmer wird seit gestern nicht warm.",
+          "defect": null,
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 3616,
+        "model": 3615,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3468,
+        "outputTokens": 1210,
+        "reasoningTokens": 1055,
+        "cachedInputTokens": 1781
+      },
+      "modelAvailability": null,
+      "checks": [
+        "allgemeine Frage beantworten",
+        "keinen Abruf behaupten",
+        "Heizungsanliegen erhalten"
+      ]
+    },
+    {
+      "caseId": "05-themenwechsel",
+      "case": "Vom Schaden zur Abrechnung und zurück",
+      "turn": 2,
+      "startedAt": "2026-10-15T17:08:00.026110+00:00",
+      "message": "Andere Frage: Was bedeutet Akontozahlung auf einer Nebenkostenabrechnung?",
+      "status": 200,
+      "seconds": 11.304,
+      "reply": "Eine Akontozahlung ist eine monatliche Vorauszahlung auf Ihre jährlichen Nebenkosten. Am Ende des Jahres wird der tatsächliche Verbrauch abgerechnet. Wenn Sie im Voraus mehr bezahlt haben, als Sie verbraucht haben, erhalten Sie Geld zurück. Wenn weniger, müssen Sie den Rest nachzahlen.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "f37f7830-e4d2-40b6-812a-2ae8c015d056",
+      "issues": [
+        {
+          "id": "f37f7830-e4d2-40b6-812a-2ae8c015d056",
+          "equipment": "heater",
+          "category": "heating",
+          "description": "Meine Heizung im Schlafzimmer wird seit gestern nicht warm.",
+          "defect": null,
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 3579,
+        "model": 3577,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3635,
+        "outputTokens": 1198,
+        "reasoningTokens": 1104,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "allgemeine Frage beantworten",
+        "keinen Abruf behaupten",
+        "Heizungsanliegen erhalten"
+      ]
+    },
+    {
+      "caseId": "05-themenwechsel",
+      "case": "Vom Schaden zur Abrechnung und zurück",
+      "turn": 3,
+      "startedAt": "2026-10-15T17:08:25.026257+00:00",
+      "message": "Zurück zur Heizung: Es betrifft auch das Wohnzimmer.",
+      "status": 200,
+      "seconds": 12.001,
+      "reply": "Vielen Dank für die Info. Ich passe den Entwurf an, damit sowohl das Schlafzimmer als auch das Wohnzimmer erfasst sind. Möchten Sie den Entwurf jetzt im Service öffnen?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "f37f7830-e4d2-40b6-812a-2ae8c015d056",
+      "issues": [
+        {
+          "id": "f37f7830-e4d2-40b6-812a-2ae8c015d056",
+          "equipment": "heater",
+          "category": "heating",
+          "description": "Meine Heizung im Schlafzimmer wird seit gestern nicht warm.",
+          "defect": null,
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": "auch Wohnzimmer",
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4082,
+        "model": 4082,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3842,
+        "outputTokens": 1785,
+        "reasoningTokens": 1660,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "allgemeine Frage beantworten",
+        "keinen Abruf behaupten",
+        "Heizungsanliegen erhalten"
+      ]
+    },
+    {
+      "caseId": "06-nichtwissen",
+      "case": "Nichtwissen ohne Fragenkatalog",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:08:52.814013+00:00",
+      "message": "Die Waschmaschine im Keller startet nicht. Seit wann weiss ich nicht.",
+      "status": 200,
+      "seconds": 11.67,
+      "reply": "Gerne nehme ich den Hinweis zur Waschmaschine im Keller auf. Dass Sie den Zeitpunkt nicht kennen, ist für die erste Meldung nicht hinderlich. Ich kann einen Entwurf für die Bearbeitung durch MORADA vorbereiten, sodass Sie nur noch bestätigen müssen.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "1c99ebb7-2456-4a49-a12e-da9b7a167b28",
+      "issues": [
+        {
+          "id": "1c99ebb7-2456-4a49-a12e-da9b7a167b28",
+          "equipment": "washer",
+          "category": "appliances",
+          "description": "Die Waschmaschine im Keller startet nicht. Seit wann weiss ich nicht.",
+          "defect": "startet nicht",
+          "count": null,
+          "location": "Keller",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [
+            "since"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 3861,
+        "model": 3860,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3474,
+        "outputTokens": 1628,
+        "reasoningTokens": 1413,
+        "cachedInputTokens": 1783
+      },
+      "modelAvailability": null,
+      "checks": [
+        "since unbekannt",
+        "kein Diagnosezwang",
+        "keine Wiederholungsfrage"
+      ]
+    },
+    {
+      "caseId": "06-nichtwissen",
+      "case": "Nichtwissen ohne Fragenkatalog",
+      "turn": 2,
+      "startedAt": "2026-10-15T17:09:17.814220+00:00",
+      "message": "Das weiss ich leider auch nicht. Bitte fragen Sie mich nicht immer weitere technische Sachen.",
+      "status": 200,
+      "seconds": 12.271,
+      "reply": "Kein Problem, ich frage nicht weiter. Ich kann den Entwurf für Ihre Meldung für Sie öffnen.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "1c99ebb7-2456-4a49-a12e-da9b7a167b28",
+      "issues": [
+        {
+          "id": "1c99ebb7-2456-4a49-a12e-da9b7a167b28",
+          "equipment": "washer",
+          "category": "appliances",
+          "description": "Die Waschmaschine im Keller startet nicht. Seit wann weiss ich nicht.",
+          "defect": "startet nicht",
+          "count": null,
+          "location": "Keller",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [
+            "since"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4500,
+        "model": 4499,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3719,
+        "outputTokens": 1903,
+        "reasoningTokens": 1813,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "since unbekannt",
+        "kein Diagnosezwang",
+        "keine Wiederholungsfrage"
+      ]
+    },
+    {
+      "caseId": "07-widerspruch",
+      "case": "Offene widersprüchliche Angaben",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:09:45.911698+00:00",
+      "message": "Im Bad ist die Lampe kaputt.",
+      "status": 200,
+      "seconds": 15.26,
+      "reply": "Gerne helfe ich weiter. Soll ich einen Serviceentwurf für die Lampe im Bad vorbereiten? Falls Sie es wissen: handelte es sich um eine Decken- oder Wandleuchte?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        },
+        {
+          "id": "attach-photo",
+          "label": "Foto hinzufügen",
+          "variant": "secondary",
+          "type": "attachment"
+        }
+      ],
+      "activeIssueId": "f87893a8-f34a-4d56-9129-e8591f01a729",
+      "issues": [
+        {
+          "id": "f87893a8-f34a-4d56-9129-e8591f01a729",
+          "equipment": "light",
+          "category": "electricity",
+          "description": "Im Bad ist die Lampe kaputt.",
+          "defect": "kaputt",
+          "count": null,
+          "location": "Bad",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 7367,
+        "model": 7366,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3602,
+        "outputTokens": 2826,
+        "reasoningTokens": 2594,
+        "cachedInputTokens": 1852
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Widerspruch gezielt klären",
+        "keine Gewissheit erfinden"
+      ]
+    },
+    {
+      "caseId": "07-widerspruch",
+      "case": "Offene widersprüchliche Angaben",
+      "turn": 2,
+      "startedAt": "2026-10-15T17:10:10.911854+00:00",
+      "message": "Im Bad geht sie eigentlich, aber dort ist sie kaputt. Ich habe mich gerade unklar ausgedrückt.",
+      "status": 200,
+      "seconds": 13.128,
+      "reply": "Danke für die Klärung. Es klingt etwas widersprüchlich. Ist die Lampe im Bad defekt oder funktioniert sie doch?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "f87893a8-f34a-4d56-9129-e8591f01a729",
+      "issues": [
+        {
+          "id": "f87893a8-f34a-4d56-9129-e8591f01a729",
+          "equipment": "light",
+          "category": "electricity",
+          "description": "Im Bad ist die Lampe kaputt.",
+          "defect": "kaputt",
+          "count": null,
+          "location": "Bad",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 5157,
+        "model": 5155,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3749,
+        "outputTokens": 1935,
+        "reasoningTokens": 1799,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Widerspruch gezielt klären",
+        "keine Gewissheit erfinden"
+      ]
+    },
+    {
+      "caseId": "08-vertrag",
+      "case": "Persönlichen Mietvertrag suchen",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:10:47.792225+00:00",
+      "message": "Wo finde ich meinen Mietvertrag?",
+      "status": 503,
+      "seconds": 12.038,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null,
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "checks": [
+        "ehrliche Zugriffsgrenze",
+        "kein erfundener Fundort oder Dokumentbutton"
+      ]
+    },
+    {
+      "caseId": "09-status",
+      "case": "Stand eines bereits gemeldeten Schadens",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:11:12.792364+00:00",
+      "message": "Wie steht es um meinen bereits gemeldeten Wasserschaden?",
+      "status": 200,
+      "seconds": 10.982,
+      "reply": "Ich habe leider keinen Zugriff auf den aktuellen Bearbeitungsstand Ihrer bereits gemeldeten Schäden. Für aktuelle Informationen empfehle ich, sich direkt an die Bewirtschaftung zu wenden.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4248,
+        "model": 4248,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3531,
+        "outputTokens": 1516,
+        "reasoningTokens": 1440,
+        "cachedInputTokens": 1813
+      },
+      "modelAvailability": null,
+      "checks": [
+        "keinen Status oder Termin erfinden",
+        "kein Duplikat anbieten"
+      ]
+    },
+    {
+      "caseId": "09-status",
+      "case": "Stand eines bereits gemeldeten Schadens",
+      "turn": 2,
+      "startedAt": "2026-10-15T17:11:37.792589+00:00",
+      "message": "Der wurde letzte Woche gemeldet. Wissen Sie, ob ein Handwerker kommt?",
+      "status": 200,
+      "seconds": 10.613,
+      "reply": "Ich habe leider keinen Zugriff auf den aktuellen Bearbeitungsstand von bereits gemeldeten Schäden. Ob ein Handwerker kommt, kann ich daher nicht sehen. Für solche Rückfragen zum Ablauf wenden Sie sich bitte direkt an die Bewirtschaftung vor Ort.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4207,
+        "model": 4207,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3543,
+        "outputTokens": 1713,
+        "reasoningTokens": 1624,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "keinen Status oder Termin erfinden",
+        "kein Duplikat anbieten"
+      ]
+    },
+    {
+      "caseId": "10-abrechnung",
+      "case": "Mitgeteilte Abrechnungszahlen erklären",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:12:02.792751+00:00",
+      "message": "Auf meiner Abrechnung stehen 1800 Franken Kosten und 1440 Franken Akonto. Was heisst das?",
+      "status": 200,
+      "seconds": 10.116,
+      "reply": "Bei der Abrechnung bedeuten die Zahlen meist folgendes: Die 1800 Franken Kosten sind die gesamten Aufwendungen für die betrachtete Periode. Die 1440 Franken Akonto sind die Vorauszahlungen, die Sie bereits geleistet haben. Die Differenz ergibt dann Ihren Saldo – also ob noch etwas offen ist oder Sie eine Gutschrift haben. Ich habe keinen direkten Einblick in Ihre Unterlagen, aber das ist die übliche Aufstellung. Haben Sie dazu noch weitere Fragen?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4002,
+        "model": 4002,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3621,
+        "outputTokens": 1803,
+        "reasoningTokens": 1666,
+        "cachedInputTokens": 1852
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Differenz 360",
+        "keinen Dokumentzugriff behaupten",
+        "keinen individuellen Rechtsentscheid"
+      ]
+    },
+    {
+      "caseId": "10-abrechnung",
+      "case": "Mitgeteilte Abrechnungszahlen erklären",
+      "turn": 2,
+      "startedAt": "2026-10-15T17:12:27.792964+00:00",
+      "message": "Also muss ich nach dieser Rechnung noch 360 Franken zahlen?",
+      "status": 200,
+      "seconds": 11.537,
+      "reply": "Genau, das trifft zu. Die Differenz zwischen den Gesamtkosten und den bereits gezahlten Akontobeträgen ist der offene Betrag. Wenn auf der Rechnung keine weiteren Positionen stehen, müssen Sie 360 Franken nachzahlen. Bitte beachten Sie auch das Fälligkeitsdatum.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 5163,
+        "model": 5162,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3579,
+        "outputTokens": 1211,
+        "reasoningTokens": 1117,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Differenz 360",
+        "keinen Dokumentzugriff behaupten",
+        "keinen individuellen Rechtsentscheid"
+      ]
+    },
+    {
+      "caseId": "11-termin",
+      "case": "Nicht angebundenen Termin erfragen",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:12:52.793117+00:00",
+      "message": "Wann ist meine nächste Wohnungsbesichtigung?",
+      "status": 503,
+      "seconds": 14.151,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null,
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "checks": [
+        "keinen Termin erfinden",
+        "keine nutzlosen Terminbuttons"
+      ]
+    },
+    {
+      "caseId": "12-meldewunsch",
+      "case": "Direkte Übergabe ohne Pflichtfelder",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:13:19.449238+00:00",
+      "message": "Die Balkontür im Wohnzimmer schliesst nicht richtig. Bitte direkt an MORADA melden.",
+      "status": 503,
+      "seconds": 12.902,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null,
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "checks": [
+        "echter Entwurfsbutton",
+        "kein Versand behaupten",
+        "keine Pflichtfragen"
+      ]
+    },
+    {
+      "caseId": "13-kein-angebot",
+      "case": "Angebot ablehnen und später selbst wählen",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:13:44.974596+00:00",
+      "message": "Meine Lampe im Wohnzimmer geht nicht. Bitte noch nichts für MORADA vorbereiten, ich möchte zuerst etwas fragen.",
+      "status": 200,
+      "seconds": 9.978,
+      "reply": "Natürlich frage ich Sie zuerst. Was möchten Sie gerne wissen? Ich helfe gerne weiter.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "b8296ac8-d031-46f6-bccf-d334a58a04c3",
+      "issues": [
+        {
+          "id": "b8296ac8-d031-46f6-bccf-d334a58a04c3",
+          "equipment": "light",
+          "category": "electricity",
+          "description": "Meine Lampe im Wohnzimmer geht nicht.",
+          "defect": "geht nicht",
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 3827,
+        "model": 3827,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3575,
+        "outputTokens": 1362,
+        "reasoningTokens": 1257,
+        "cachedInputTokens": 1830
+      },
+      "modelAvailability": null,
+      "checks": [
+        "ausdrücklichen Wunsch respektieren",
+        "sachliche Orientierung ohne Beauftragung",
+        "später echte Aktion möglich"
+      ]
+    }
+  ]
+}
