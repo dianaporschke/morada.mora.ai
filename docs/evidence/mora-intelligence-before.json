@@ -1,0 +1,544 @@
+{
+  "url": "https://morada-mora-423u9vtpx-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-2.5",
+  "intervalSeconds": 12.0,
+  "cases": 20,
+  "rows": [
+    {
+      "caseId": "01-lampe",
+      "case": "Lampe und kurze Antwort",
+      "turn": 1,
+      "startedAt": "2026-10-15T16:33:33.426837+00:00",
+      "message": "Meine Lampe geht nicht.",
+      "status": 200,
+      "seconds": 10.076,
+      "reply": "Das bedauern wir. Könnten Sie mir mitteilen, in welchem Raum die Lampe steht?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "5e8a4a78-fc93-4201-959d-e09e9f39b135",
+      "issues": [
+        {
+          "id": "5e8a4a78-fc93-4201-959d-e09e9f39b135",
+          "equipment": "light",
+          "category": "electricity",
+          "description": "Meine Lampe geht nicht.",
+          "defect": null,
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4217,
+        "model": 4217,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3882,
+        "outputTokens": 1621,
+        "reasoningTokens": 1510,
+        "cachedInputTokens": 2817
+      },
+      "modelAvailability": null,
+      "checks": [
+        "light",
+        "Wohnzimmer",
+        "keine wiederholte Entwurfswerbung"
+      ]
+    },
+    {
+      "caseId": "01-lampe",
+      "case": "Lampe und kurze Antwort",
+      "turn": 2,
+      "startedAt": "2026-10-15T16:33:57.427178+00:00",
+      "message": "wohnzimmer",
+      "status": 200,
+      "seconds": 14.196,
+      "reply": "Vielen Dank für die Angabe. Ich habe vermerkt, dass die Lampe im Wohnzimmer nicht funktioniert. Möchten Sie, dass ich Ihnen einen Entwurf für das Serviceteam vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "5e8a4a78-fc93-4201-959d-e09e9f39b135",
+      "issues": [
+        {
+          "id": "5e8a4a78-fc93-4201-959d-e09e9f39b135",
+          "equipment": "light",
+          "category": "electricity",
+          "description": "Meine Lampe geht nicht.",
+          "defect": null,
+          "count": null,
+          "location": "wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 7909,
+        "model": 7909,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 4158,
+        "outputTokens": 1689,
+        "reasoningTokens": 1525,
+        "cachedInputTokens": 1848
+      },
+      "modelAvailability": null,
+      "checks": [
+        "light",
+        "Wohnzimmer",
+        "keine wiederholte Entwurfswerbung"
+      ]
+    },
+    {
+      "caseId": "01-lampe",
+      "case": "Lampe und kurze Antwort",
+      "turn": 3,
+      "startedAt": "2026-10-15T16:34:21.436545+00:00",
+      "message": "Seit gestern. Die anderen Lampen funktionieren.",
+      "status": 200,
+      "seconds": 17.318,
+      "reply": "Das ist bedauerlich. Ich habe vermerkt, dass seit gestern nur diese Lampe im Wohnzimmer betroffen ist. Gibt es noch weitere Details oder möchten Sie den bestehenden Entwurf für das Team nutzen?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "5e8a4a78-fc93-4201-959d-e09e9f39b135",
+      "issues": [
+        {
+          "id": "5e8a4a78-fc93-4201-959d-e09e9f39b135",
+          "equipment": "light",
+          "category": "electricity",
+          "description": "Meine Lampe geht nicht.",
+          "defect": null,
+          "count": null,
+          "location": "wohnzimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": "Die anderen Lampen funktionieren",
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 11441,
+        "model": 11440,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 4070,
+        "outputTokens": 2548,
+        "reasoningTokens": 2446,
+        "cachedInputTokens": 1786
+      },
+      "modelAvailability": null,
+      "checks": [
+        "light",
+        "Wohnzimmer",
+        "keine wiederholte Entwurfswerbung"
+      ]
+    },
+    {
+      "caseId": "02-dialekt",
+      "case": "Dialekt und unbekannte Ursache",
+      "turn": 1,
+      "startedAt": "2026-10-15T16:33:21.426704+00:00",
+      "message": "bi mir tropfts unterm lavabo, weiss nöd warum",
+      "status": 200,
+      "seconds": 21.781,
+      "reply": "Wir verstehen das Problem gut. Damit wir das Anliegen korrekt vorbereiten können, in welchem Raum befindet sich das lavabo?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "5f8d5b61-0f64-4a88-8fe2-26c79795df56",
+      "issues": [
+        {
+          "id": "5f8d5b61-0f64-4a88-8fe2-26c79795df56",
+          "equipment": "unknown",
+          "category": "general",
+          "description": "bi mir tropfts unterm lavabo, weiss nöd warum",
+          "defect": null,
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [
+            "cause"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 14905,
+        "model": 14901,
+        "application": 4
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 7969,
+        "outputTokens": 4463,
+        "reasoningTokens": 4107,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Ursache unbekannt",
+        "kein erfundener Rohrdefekt",
+        "Ort und Zeit"
+      ]
+    },
+    {
+      "caseId": "02-dialekt",
+      "case": "Dialekt und unbekannte Ursache",
+      "turn": 2,
+      "startedAt": "2026-10-15T16:33:45.426999+00:00",
+      "message": "im bad, sit hüt am morge",
+      "status": 200,
+      "seconds": 12.421,
+      "reply": "Vielen Dank für die Angaben. Wir notieren, dass es im Bad seit heute Morgen tropft. Möchten Sie, dass ich das Anliegen nun für Sie vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "2e801eb1-45b0-4001-98af-848bc4be9a12",
+      "issues": [
+        {
+          "id": "5f8d5b61-0f64-4a88-8fe2-26c79795df56",
+          "equipment": "unknown",
+          "category": "general",
+          "description": "bi mir tropfts unterm lavabo, weiss nöd warum",
+          "defect": null,
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [
+            "cause"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        },
+        {
+          "id": "2e801eb1-45b0-4001-98af-848bc4be9a12",
+          "equipment": "unknown",
+          "category": "water",
+          "description": "im bad, sit hüt am morge",
+          "defect": null,
+          "count": null,
+          "location": "im bad",
+          "since": "hüt am morge",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 7087,
+        "model": 7085,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 4176,
+        "outputTokens": 2310,
+        "reasoningTokens": 2117,
+        "cachedInputTokens": 1845
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Ursache unbekannt",
+        "kein erfundener Rohrdefekt",
+        "Ort und Zeit"
+      ]
+    },
+    {
+      "caseId": "03-korrektur",
+      "case": "Raum und Anzahl korrigieren",
+      "turn": 1,
+      "startedAt": "2026-10-15T16:34:09.436272+00:00",
+      "message": "Zwei Steckdosen im Wohnzimmer gehen seit gestern nicht.",
+      "status": 200,
+      "seconds": 22.228,
+      "reply": "Vielen Dank für die Meldung. Ich habe verstanden, dass zwei Steckdosen im Wohnzimmer seit gestern nicht funktionieren. Möchten Sie, dass ich einen Entwurf für das Service-Team vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 16343,
+        "model": 16343,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3914,
+        "outputTokens": 2335,
+        "reasoningTokens": 2142,
+        "cachedInputTokens": 2836
+      },
+      "modelAvailability": null,
+      "checks": [
+        "gleiches Anliegen",
+        "Schlafzimmer",
+        "Anzahl 1"
+      ]
+    },
+    {
+      "caseId": "03-korrektur",
+      "case": "Raum und Anzahl korrigieren",
+      "turn": 2,
+      "startedAt": "2026-10-15T16:34:33.436635+00:00",
+      "message": "Nein, im Schlafzimmer, und es ist doch nur eine.",
+      "status": 200,
+      "seconds": 13.43,
+      "reply": "Ich habe Ihre Berichtigung vermerkt: Es geht um eine Steckdose im Schlafzimmer, die seit gestern nicht funktioniert. Das alte Datum im Wohnzimmer habe ich entsprechend aktualisiert.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "b21e1ebd-57ef-4e53-9cac-589808158490",
+      "issues": [
+        {
+          "id": "b21e1ebd-57ef-4e53-9cac-589808158490",
+          "equipment": "socket",
+          "category": "electricity",
+          "description": "Eine Steckdose im Schlafzimmer funktioniert seit gestern nicht.",
+          "defect": null,
+          "count": 1,
+          "location": "Schlafzimmer",
+          "since": "gestern",
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 7172,
+        "model": 7171,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3958,
+        "outputTokens": 2027,
+        "reasoningTokens": 1851,
+        "cachedInputTokens": 1781
+      },
+      "modelAvailability": null,
+      "checks": [
+        "gleiches Anliegen",
+        "Schlafzimmer",
+        "Anzahl 1"
+      ]
+    },
+    {
+      "caseId": "04-mehrfach",
+      "case": "Zwei Anliegen getrennt ergänzen",
+      "turn": 1,
+      "startedAt": "2026-10-15T16:34:45.628011+00:00",
+      "message": "Meine Heizung bleibt kalt und im Badezimmer tropft es unter dem Lavabo.",
+      "status": 200,
+      "seconds": 12.789,
+      "reply": "Guten Tag, vielen Dank für Ihre Mitteilung. Ich habe das Problem mit der kalten Heizung und dem Tropfen unter dem Lavabo im Badezimmer erfasst. Möchten Sie, dass ich einen Entwurf für beide Anliegen im Service-Bereich vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "f6f9ab06-e8ba-4aaa-995d-402ce338d753",
+      "issues": [
+        {
+          "id": "f6f9ab06-e8ba-4aaa-995d-402ce338d753",
+          "equipment": "heater",
+          "category": "heating",
+          "description": "Meine Heizung bleibt kalt",
+          "defect": "bleibt kalt",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        },
+        {
+          "id": "5f8c65b1-b722-4f8f-b9e1-6d4cddaacb7c",
+          "equipment": "leak",
+          "category": "water",
+          "description": "im Badezimmer tropft es unter dem Lavabo",
+          "defect": "tropft unter dem Lavabo",
+          "count": null,
+          "location": "Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 6871,
+        "model": 6870,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 4028,
+        "outputTokens": 2050,
+        "reasoningTokens": 1799,
+        "cachedInputTokens": 2916
+      },
+      "modelAvailability": null,
+      "checks": [
+        "zwei stabile IDs",
+        "Wohnzimmer nur Heizung",
+        "Badezimmer und heute Morgen nur Wasser"
+      ]
+    },
+    {
+      "caseId": "04-mehrfach",
+      "case": "Zwei Anliegen getrennt ergänzen",
+      "turn": 2,
+      "startedAt": "2026-10-15T16:35:09.628361+00:00",
+      "message": "Die Heizung ist im Wohnzimmer. Beim Wasser ist es das Rohr, es tropft seit heute Morgen.",
+      "status": 503,
+      "seconds": 10.899,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null,
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": 429,
+        "reason": "rate_limit_exceeded"
+      },
+      "checks": [
+        "zwei stabile IDs",
+        "Wohnzimmer nur Heizung",
+        "Badezimmer und heute Morgen nur Wasser"
+      ]
+    },
+    {
+      "caseId": "05-themenwechsel",
+      "case": "Vom Schaden zur Abrechnung und zurück",
+      "turn": 1,
+      "startedAt": "2026-10-15T16:34:57.628172+00:00",
+      "message": "Meine Heizung im Schlafzimmer wird seit gestern nicht warm.",
+      "status": 200,
+      "seconds": 12.417,
+      "reply": "Es tut mir leid zu hören, dass Ihre Heizung im Schlafzimmer seit gestern nicht warm wird. Gerne bieten wir Ihnen an, ein entsprechendes Anliegen vorzubereiten. Möchten Sie, dass wir das für Sie tun?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "546e3850-7850-4a51-aafa-497e9beb945f",
+      "issues": [
+        {
+          "id": "546e3850-7850-4a51-aafa-497e9beb945f",
+          "equipment": "heater",
+          "category": "heating",
+          "description": "Meine Heizung im Schlafzimmer wird seit gestern nicht warm.",
+          "defect": "wird nicht warm",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 6396,
+        "model": 6396,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3925,
+        "outputTokens": 2210,
+        "reasoningTokens": 2039,
+        "cachedInputTokens": 2844
+      },
+      "modelAvailability": null,
+      "checks": [
+        "allgemeine Frage beantworten",
+        "keinen Abruf behaupten",
+        "Heizungsanliegen erhalten"
+      ]
+    }
+  ]
+}

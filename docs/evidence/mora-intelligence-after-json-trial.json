@@ -1,0 +1,360 @@
+{
+  "url": "https://morada-mora-hm4qysw5i-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-2.5",
+  "intervalSeconds": 25.0,
+  "cases": 20,
+  "rows": [
+    {
+      "caseId": "01-lampe",
+      "case": "Lampe und kurze Antwort",
+      "turn": 1,
+      "startedAt": "2026-10-15T16:56:50.384285+00:00",
+      "message": "Meine Lampe geht nicht.",
+      "status": 200,
+      "seconds": 13.029,
+      "reply": "Das tut uns leid. In welchem Raum befindet sich die Lampe? Ich kann einen Entwurf vorbereiten, um die Sache für Sie zu bearbeiten.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "5497de74-26bb-4cda-828f-fc393a946a59",
+      "issues": [
+        {
+          "id": "5497de74-26bb-4cda-828f-fc393a946a59",
+          "equipment": "light",
+          "category": "electricity",
+          "description": "Meine Lampe geht nicht.",
+          "defect": null,
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4335,
+        "model": 4316,
+        "application": 19
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3594,
+        "outputTokens": 1698,
+        "reasoningTokens": 1544,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "light",
+        "Wohnzimmer",
+        "keine wiederholte Entwurfswerbung"
+      ]
+    },
+    {
+      "caseId": "01-lampe",
+      "case": "Lampe und kurze Antwort",
+      "turn": 2,
+      "startedAt": "2026-10-15T16:57:15.384409+00:00",
+      "message": "wohnzimmer",
+      "status": 200,
+      "seconds": 14.626,
+      "reply": "Verstanden, der Standort ist das Wohnzimmer. Möchten Sie, dass ich den Entwurf für Ihr Anliegen vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "5497de74-26bb-4cda-828f-fc393a946a59",
+      "issues": [
+        {
+          "id": "5497de74-26bb-4cda-828f-fc393a946a59",
+          "equipment": "light",
+          "category": "electricity",
+          "description": "Meine Lampe geht nicht.",
+          "defect": null,
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 6710,
+        "model": 6708,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3578,
+        "outputTokens": 2592,
+        "reasoningTokens": 2474,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "light",
+        "Wohnzimmer",
+        "keine wiederholte Entwurfswerbung"
+      ]
+    },
+    {
+      "caseId": "01-lampe",
+      "case": "Lampe und kurze Antwort",
+      "turn": 3,
+      "startedAt": "2026-10-15T16:57:40.384526+00:00",
+      "message": "Seit gestern. Die anderen Lampen funktionieren.",
+      "status": 200,
+      "seconds": 14.139,
+      "reply": "Danke für die Details. Ich habe vermerkt, dass es seit gestern nur diese Lampe im Wohnzimmer betrifft. Wollen Sie, dass ich den Entwurf dafür im Service öffne?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "5497de74-26bb-4cda-828f-fc393a946a59",
+      "issues": [
+        {
+          "id": "5497de74-26bb-4cda-828f-fc393a946a59",
+          "equipment": "light",
+          "category": "electricity",
+          "description": "Meine Lampe geht nicht.",
+          "defect": null,
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": "gestern",
+          "extent": null,
+          "details": "nur diese eine Lampe betroffen, andere funktionieren",
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 6191,
+        "model": 6189,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3690,
+        "outputTokens": 2020,
+        "reasoningTokens": 1880,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "light",
+        "Wohnzimmer",
+        "keine wiederholte Entwurfswerbung"
+      ]
+    },
+    {
+      "caseId": "02-dialekt",
+      "case": "Dialekt und unbekannte Ursache",
+      "turn": 1,
+      "startedAt": "2026-10-15T16:58:10.272933+00:00",
+      "message": "bi mir tropfts unterm lavabo, weiss nöd warum",
+      "status": 200,
+      "seconds": 14.799,
+      "reply": "Es tropft unter dem Lavabo. Möchten Sie, dass wir einen Entwurf für die Schadensmeldung vorbereiten, damit MORADA die Bearbeitung übernimmt?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "a18d3cd8-3ee9-4d96-a231-89211fd25636",
+      "issues": [
+        {
+          "id": "a18d3cd8-3ee9-4d96-a231-89211fd25636",
+          "equipment": "unknown",
+          "category": "water",
+          "description": "bi mir tropfts unterm lavabo, weiss nöd warum",
+          "defect": null,
+          "count": null,
+          "location": "unter dem Lavabo",
+          "since": null,
+          "extent": null,
+          "details": "tropft",
+          "cause": null,
+          "unknownFields": [
+            "cause"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 6880,
+        "model": 6879,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3485,
+        "outputTokens": 2117,
+        "reasoningTokens": 1942,
+        "cachedInputTokens": 1789
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Ursache unbekannt",
+        "kein erfundener Rohrdefekt",
+        "Ort und Zeit"
+      ]
+    },
+    {
+      "caseId": "02-dialekt",
+      "case": "Dialekt und unbekannte Ursache",
+      "turn": 2,
+      "startedAt": "2026-10-15T16:58:35.273094+00:00",
+      "message": "im bad, sit hüt am morge",
+      "status": 200,
+      "seconds": 13.368,
+      "reply": "Danke für die Info. Das Tropfen heute Morgen im Bad unter dem Lavabo ist notiert. Sollen wir den Entwurf für die Meldung vorbereiten?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "a18d3cd8-3ee9-4d96-a231-89211fd25636",
+      "issues": [
+        {
+          "id": "a18d3cd8-3ee9-4d96-a231-89211fd25636",
+          "equipment": "unknown",
+          "category": "water",
+          "description": "bi mir tropfts unterm lavabo, weiss nöd warum",
+          "defect": null,
+          "count": null,
+          "location": "Bad",
+          "since": "Heute Morgen",
+          "extent": null,
+          "details": "tropft\nunter dem Lavabo",
+          "cause": null,
+          "unknownFields": [
+            "cause"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 5553,
+        "model": 5551,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3602,
+        "outputTokens": 2116,
+        "reasoningTokens": 1963,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Ursache unbekannt",
+        "kein erfundener Rohrdefekt",
+        "Ort und Zeit"
+      ]
+    },
+    {
+      "caseId": "03-korrektur",
+      "case": "Raum und Anzahl korrigieren",
+      "turn": 1,
+      "startedAt": "2026-10-15T16:59:04.499685+00:00",
+      "message": "Zwei Steckdosen im Wohnzimmer gehen seit gestern nicht.",
+      "status": 200,
+      "seconds": 11.774,
+      "reply": "Ich habe Ihre Notiz erhalten. Zwei Steckdosen im Wohnzimmer funktionieren seit gestern nicht. Möchten Sie, dass ich einen Serviceentwurf für Sie vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "8e0215e0-5b52-43ce-a730-517fc24966eb",
+      "issues": [
+        {
+          "id": "8e0215e0-5b52-43ce-a730-517fc24966eb",
+          "equipment": "socket",
+          "category": "electricity",
+          "description": "Zwei Steckdosen im Wohnzimmer gehen seit gestern nicht.",
+          "defect": null,
+          "count": 2,
+          "location": "Wohnzimmer",
+          "since": "gestern",
+          "extent": "2 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 3731,
+        "model": 3731,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3589,
+        "outputTokens": 1302,
+        "reasoningTokens": 1139,
+        "cachedInputTokens": 1843
+      },
+      "modelAvailability": null,
+      "checks": [
+        "gleiches Anliegen",
+        "Schlafzimmer",
+        "Anzahl 1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "url": "https://morada-mora-423u9vtpx-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-2.5",
+  "intervalSeconds": 25.0,
+  "cases": 1,
+  "rows": [
+    {
+      "caseId": "20-navigation",
+      "case": "Tatsächlichen Portalbereich öffnen",
+      "turn": 1,
+      "startedAt": "2026-10-15T16:55:14.267082+00:00",
+      "message": "Öffnen Sie bitte den Servicebereich mit meinen Anliegenentwürfen.",
+      "status": 503,
+      "seconds": 19.246,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null,
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "checks": [
+        "gültige Navigation",
+        "Bereiche korrekt unterscheiden",
+        "keine persönlichen Daten behaupten"
+      ]
+    }
+  ]
+}

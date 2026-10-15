@@ -59,7 +59,9 @@ def run(case):
             rows.append(row);persist()
             print(json.dumps({'completedTurns':len(rows),'caseId':case['id'],'turn':turn,'status':status,'seconds':row['seconds'],'reply':row['reply']},ensure_ascii=False),flush=True)
         if status!=200:
-            if status!=503 or (data.get('modelAvailability') or {}).get('reason')!='invalid_model_output':
+            availability=data.get('modelAvailability') or {}
+            case_failure=status==503 and (availability.get('reason')=='invalid_model_output' or availability.get('status')==400)
+            if not case_failure:
                 stopped.set();print('STOP: access, billing, rate or transport boundary; inspect before resuming.',flush=True)
             return
 with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
