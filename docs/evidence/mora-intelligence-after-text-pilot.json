@@ -1,0 +1,177 @@
+{
+  "url": "https://morada-mora-gvwe6obgb-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-2.5",
+  "intervalSeconds": 25.0,
+  "cases": 2,
+  "rows": [
+    {
+      "caseId": "01-lampe",
+      "case": "Lampe und kurze Antwort",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:03:08.717000+00:00",
+      "message": "Meine Lampe geht nicht.",
+      "status": 200,
+      "seconds": 13.346,
+      "reply": "Gerne helfe ich bei der Meldung. In welchem Raum befindet sich die Lampe? Ich kann einen Entwurf für Sie vorbereiten.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "a6b13759-aeb5-45ad-a17e-4e1ee7998a74",
+      "issues": [
+        {
+          "id": "a6b13759-aeb5-45ad-a17e-4e1ee7998a74",
+          "equipment": "light",
+          "category": "electricity",
+          "description": "Meine Lampe geht nicht.",
+          "defect": "geht nicht",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 5258,
+        "model": 5241,
+        "application": 17
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3535,
+        "outputTokens": 2110,
+        "reasoningTokens": 1947,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "light",
+        "Wohnzimmer",
+        "keine wiederholte Entwurfswerbung"
+      ]
+    },
+    {
+      "caseId": "01-lampe",
+      "case": "Lampe und kurze Antwort",
+      "turn": 2,
+      "startedAt": "2026-10-15T17:03:33.717153+00:00",
+      "message": "wohnzimmer",
+      "status": 200,
+      "seconds": 12.244,
+      "reply": "Verstanden, die Lampe im Wohnzimmer. Gerne bereite ich einen Entwurf für die Meldung vor.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "a6b13759-aeb5-45ad-a17e-4e1ee7998a74",
+      "issues": [
+        {
+          "id": "a6b13759-aeb5-45ad-a17e-4e1ee7998a74",
+          "equipment": "light",
+          "category": "electricity",
+          "description": "Meine Lampe geht nicht.",
+          "defect": "geht nicht",
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4178,
+        "model": 4176,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 3697,
+        "outputTokens": 1692,
+        "reasoningTokens": 1579,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "light",
+        "Wohnzimmer",
+        "keine wiederholte Entwurfswerbung"
+      ]
+    },
+    {
+      "caseId": "01-lampe",
+      "case": "Lampe und kurze Antwort",
+      "turn": 3,
+      "startedAt": "2026-10-15T17:03:58.717570+00:00",
+      "message": "Seit gestern. Die anderen Lampen funktionieren.",
+      "status": 503,
+      "seconds": 16.402,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null,
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "checks": [
+        "light",
+        "Wohnzimmer",
+        "keine wiederholte Entwurfswerbung"
+      ]
+    },
+    {
+      "caseId": "02-dialekt",
+      "case": "Dialekt und unbekannte Ursache",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:04:30.909830+00:00",
+      "message": "bi mir tropfts unterm lavabo, weiss nöd warum",
+      "status": 0,
+      "seconds": 11.276,
+      "reply": "RemoteDisconnected",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null,
+      "modelAvailability": null,
+      "checks": [
+        "Ursache unbekannt",
+        "kein erfundener Rohrdefekt",
+        "Ort und Zeit"
+      ]
+    }
+  ]
+}

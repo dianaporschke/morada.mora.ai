@@ -11,7 +11,19 @@ for name in before_files:
     for row in source['rows']:by_case.setdefault(row['caseId'],[]).append(row)
     for key,rows in by_case.items():selected[key]=rows
 before=[row for key in sorted(selected) for row in selected[key]]
-after=json.loads((root/'mora-intelligence-after.json').read_text())['rows'] if (root/'mora-intelligence-after.json').exists() else []
+rest=root/'mora-intelligence-after-json-rest.json'
+if rest.exists():
+    pilot=json.loads((root/'mora-intelligence-after-json-trial.json').read_text())
+    rest_data=json.loads(rest.read_text())
+    assert pilot['url']==rest_data['url'],'Compare the same immutable application Preview'
+    after=[r for r in pilot['rows'] if r['caseId'] in ['01-lampe','02-dialekt']]+rest_data['rows']
+    after=sorted(after,key=lambda r:(r['caseId'],r['turn']))
+    (root/'mora-intelligence-after.json').write_text(json.dumps({'url':rest_data['url'],
+      'applicationCodeSha':'f8510c7deb5df662f7275c636f1025579587f8f7',
+      'sources':['mora-intelligence-after-json-trial.json','mora-intelligence-after-json-rest.json'],
+      'rows':after},ensure_ascii=False,indent=2)+'\n')
+else:
+    after=[]
 intro=re.compile(r'^\s*(?:vielen dank|danke\b|(?:ich|wir)\s+(?:versteh|notier|hab(?:e|en).{0,45}(?:notiert|vermerkt|erfasst|aufgenommen))|verstehe|verstanden|es tut|das (?:tut|bedauer))',re.I)
 admin=re.compile(r'\b(?:notiert|notiere|vermerkt|erfasst|aufgenommen|hinterlegt)\b',re.I)
 draft=re.compile(r'\b(?:Entwurf|Entwürfe|Entwurfs|vorbereiten|vorbereitet)\b',re.I)

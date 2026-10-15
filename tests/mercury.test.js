@@ -21,14 +21,14 @@ function mercury(output, inspect = () => {}) {
   }});
 }
 
-test('Mercury text transport keeps the complete schema and server validation without constrained JSON decoding', async () => {
+test('Mercury uses supported JSON mode with the complete schema in system instructions', async () => {
   let calls = 0;
   const expected = emptyUnderstanding({intent:'issue',category:'electricity',equipment:'socket',location:'Schlafzimmer',question:'since',clarification:'Seit wann funktioniert sie nicht?',
     dialogue:{reply:'Die Steckdose im Schlafzimmer ist aufgenommen. Seit wann funktioniert sie nicht?',stage:'clarify',buttons:[]}});
   const result = await generateUnderstandingResult('Steckdose im Schlafzimmer kaputt', null, mercury(expected, options => {
     calls++;
-    assert.notEqual(options.responseFormat?.type, 'json');
-    assert.equal(options.responseFormat?.schema, undefined);
+    assert.equal(options.responseFormat.type, 'json');
+    assert.equal(options.responseFormat.schema, undefined);
     assert.equal(options.tools, undefined);
     assert.equal(options.providerOptions.inception.reasoningEffort,'medium');
     assert.match(JSON.stringify(options.prompt), /unknownAnswers/);
