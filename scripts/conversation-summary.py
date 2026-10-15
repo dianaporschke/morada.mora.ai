@@ -11,16 +11,20 @@ for name in before_files:
     for row in source['rows']:by_case.setdefault(row['caseId'],[]).append(row)
     for key,rows in by_case.items():selected[key]=rows
 before=[row for key in sorted(selected) for row in selected[key]]
-rest=root/'mora-intelligence-after-json-rest.json'
+rest=root/'mora-intelligence-after-json-rest-rejected.json'
 if rest.exists():
     pilot=json.loads((root/'mora-intelligence-after-json-trial.json').read_text())
     rest_data=json.loads(rest.read_text())
     assert pilot['url']==rest_data['url'],'Compare the same immutable application Preview'
-    after=[r for r in pilot['rows'] if r['caseId'] in ['01-lampe','02-dialekt']]+rest_data['rows']
+    after=[r for r in pilot['rows'] if r['caseId'] in ['01-lampe','02-dialekt']]+[r for r in rest_data['rows'] if r['caseId']<'13-']
+    tail=root/'mora-intelligence-after-json-tail.json'
+    if tail.exists():
+        tail_data=json.loads(tail.read_text());assert tail_data['url']==rest_data['url']
+        after+=tail_data['rows']
     after=sorted(after,key=lambda r:(r['caseId'],r['turn']))
     (root/'mora-intelligence-after.json').write_text(json.dumps({'url':rest_data['url'],
       'applicationCodeSha':'f8510c7deb5df662f7275c636f1025579587f8f7',
-      'sources':['mora-intelligence-after-json-trial.json','mora-intelligence-after-json-rest.json'],
+      'sources':['mora-intelligence-after-json-trial.json','mora-intelligence-after-json-rest-rejected.json','mora-intelligence-after-json-tail.json'],
       'rows':after},ensure_ascii=False,indent=2)+'\n')
 else:
     after=[]

@@ -1,0 +1,94 @@
+{
+  "url": "https://morada-mora-2z013smlf-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-2.5",
+  "intervalSeconds": 25.0,
+  "cases": 3,
+  "rows": [
+    {
+      "caseId": "01-lampe",
+      "case": "Lampe und kurze Antwort",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:16:52.717202+00:00",
+      "message": "Meine Lampe geht nicht.",
+      "status": 503,
+      "seconds": 18.427,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null,
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "checks": [
+        "light",
+        "Wohnzimmer",
+        "keine wiederholte Entwurfswerbung"
+      ]
+    },
+    {
+      "caseId": "04-mehrfach",
+      "case": "Zwei Anliegen getrennt ergänzen",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:17:23.555218+00:00",
+      "message": "Meine Heizung bleibt kalt und im Badezimmer tropft es unter dem Lavabo.",
+      "status": 503,
+      "seconds": 20.643,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null,
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "checks": [
+        "zwei stabile IDs",
+        "Wohnzimmer nur Heizung",
+        "Badezimmer und heute Morgen nur Wasser"
+      ]
+    },
+    {
+      "caseId": "08-vertrag",
+      "case": "Persönlichen Mietvertrag suchen",
+      "turn": 1,
+      "startedAt": "2026-10-15T17:17:57.098023+00:00",
+      "message": "Wo finde ich meinen Mietvertrag?",
+      "status": 503,
+      "seconds": 20.993,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": null,
+      "modelCalls": null,
+      "modelUsage": null,
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "checks": [
+        "ehrliche Zugriffsgrenze",
+        "kein erfundener Fundort oder Dokumentbutton"
+      ]
+    }
+  ]
+}
