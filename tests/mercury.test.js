@@ -71,7 +71,7 @@ test('An invented additional-issue reference is rejected before either existing 
   assert.deepEqual(state,before);
 });
 
-test('A simple correction is regenerated as acknowledgement rather than restarting qualification',async()=>{
+test('The model may ask a useful new question after a correction without a forced acknowledgement or repair',async()=>{
   let calls=0;
   const issue={id:'socket-id',equipment:'socket',category:'electricity',location:'Wohnzimmer',unknownFields:['since'],attempts:{},answers:[]};
   const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
@@ -82,8 +82,8 @@ test('A simple correction is regenerated as acknowledgement rather than restarti
       usage:{inputTokens:{total:100,noCache:100,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:100,reasoning:0}}};
   }});
   const result=await generateUnderstandingResult('Nein, im Schlafzimmer.',{issue,issues:[issue]},sdk);
-  assert.equal(calls,2);assert.equal(result.data.location,'Schlafzimmer');assert.equal(result.data.question,null);
-  assert.equal(result.data.dialogue.reply,'Die Steckdose ist im Schlafzimmer.');
+  assert.equal(calls,1);assert.equal(result.data.location,'Schlafzimmer');assert.equal(result.data.question,'extent');
+  assert.equal(result.data.dialogue.reply,'Im Schlafzimmer. Sind weitere Steckdosen betroffen?');
 });
 
 test('Unknown cause is retained separately from physical location details and can later be supplied',async()=>{
@@ -234,7 +234,7 @@ test('SDK JSON parse failure receives one genuine corrective generation, with fa
 });
 
 
-test('A fact question cannot simultaneously trigger a premature handover stage',async()=>{
+test('A model-selected real draft action is independent of optional question metadata',async()=>{
   let calls=0;
   const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
     calls++;
@@ -246,19 +246,44 @@ test('A fact question cannot simultaneously trigger a premature handover stage',
   const result=await generateUnderstandingResult('Lampe kaputt',null,sdk);
   assert.equal(result.generationCount,1);assert.equal(result.data.dialogue.stage,'clarify');
   const turn=await processTurn({message:'Lampe kaputt'},null,async()=>({mode:'model',data:result.data}));
-  assert.equal(turn.state.pendingKey,'location');assert.ok(!turn.state.actions.some(a=>a.type==='handover'));
+  assert.equal(turn.state.pendingKey,'location');assert.ok(turn.state.actions.some(a=>a.type==='handover'));
 });
 
 
 test('The SDK accepts a repeated draft proposal without a repair call and still stores the new fact',async()=>{
   const first=await processTurn({message:'Lampe kaputt'},null,async()=>({mode:'model',data:emptyUnderstanding({intent:'issue',equipment:'light',
-    dialogue:{reply:'Ich kann einen Entwurf vorbereiten.',stage:'offer_draft',buttons:[]}})}));
+    dialogue:{reply:'Ich kann einen Entwurf vorbereiten.',stage:'offer_draft',buttons:[{kind:'prepare_draft',label:'Vorschlag',field:null,value:null,target:null}]}})}));
   let calls=0;
   const result=await generateUnderstandingResult('Seit gestern',first.state,mercury({intent:'issue',since:'gestern',
     dialogue:{reply:'Der Beginn ist notiert.',buttons:[{kind:'prepare_draft'}]}},()=>{calls++;}));
   assert.equal(calls,1);assert.equal(result.generationCount,1);
   const turn=await processTurn({message:'Seit gestern'},first.state,async()=>({mode:'model',data:result.data}));
-  assert.equal(turn.state.issue.since,'gestern');assert.ok(!turn.state.actions.some(a=>a.type==='handover'));
+  assert.equal(turn.state.issue.since,'gestern');assert.ok(turn.state.actions.some(a=>a.type==='handover'));
+});
+
+test('The final customer turn remains plain text while verified application context is separate',async()=>{
+  const message='wohnzimmer';
+  await generateUnderstandingResult(message,null,mercury({intent:'general',dialogue:{reply:'Was möchten Sie dazu wissen?'}},options=>{
+    const last=options.prompt.at(-1);
+    assert.equal(last.role,'user');
+    assert.equal(last.content[0].text,message);
+    assert.ok(options.prompt.some(item=>item.role==='system' && item.content.includes('availableIssueReferences')));
+  }));
+});
+
+test('New contradictory evidence permits a focused question about a known fact without changing the fact',async()=>{
+  const issue={id:'light-id',equipment:'light',category:'electricity',location:'Bad',unknownFields:[],attempts:{location:2},answers:[]};
+  const message='Im Bad geht sie eigentlich, aber dort ist sie kaputt.';
+  const result=await generateUnderstandingResult(message,{issue,issues:[issue]},mercury({intent:'issue',
+    dialogue:{reply:'Meinen Sie zwei verschiedene Lampen im Bad?',ask:{field:'location',text:'Meinen Sie zwei verschiedene Lampen im Bad?',reconsiderationQuote:message}}}));
+  assert.equal(result.generationCount,1);assert.equal(result.data.question,'location');
+  assert.equal(result.data.location,null);assert.equal(issue.location,'Bad');
+});
+
+test('A fabricated reconsideration quote cannot bypass known-fact validation',async()=>{
+  const issue={id:'light-id',equipment:'light',category:'electricity',location:'Bad',unknownFields:[],attempts:{},answers:[]};
+  await assert.rejects(generateUnderstandingResult('Die Lampe ist fest installiert.',{issue,issues:[issue]},mercury({intent:'issue',
+    dialogue:{reply:'In welchem Raum?',ask:{field:'location',text:'In welchem Raum?',reconsiderationQuote:'Vielleicht doch im Keller'}}})),{type:'invalid_model_output'});
 });
 
 

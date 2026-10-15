@@ -43,7 +43,9 @@ test('No question does not automatically become a handover, and clarification ch
       button('select',{label:'Eigene Lampe',field:'details',value:'Das ist meine eigene Lampe.'}),
       button('select',{label:'Seit gestern',field:'since',value:'Seit gestern'}),button('prepare_draft'),
     ])}));
-  assert.equal(first.state.actions.length,2); assert.ok(first.state.actions.every(a=>a.field==='details'));
+  assert.equal(first.state.actions.length,3);
+  assert.ok(first.state.actions.filter(a=>a.type==='select').every(a=>a.field==='details'));
+  assert.equal(first.state.actions.filter(a=>a.type==='handover').length,1);
   let received;
   const second=await processTurn({actionId:first.state.actions[0].id},first.state,async(message)=>{
     received=message; return {mode:'model',data:data({details:'Fest installiert',dialogue:dialogue('Verstanden, es geht um die fest installierte Beleuchtung.')})};
@@ -75,11 +77,20 @@ test('Additional free-text symptoms retain earlier details; explicit corrections
   assert.equal(turn.state.issue.details,'Vollständig dunkel');
 });
 
+test('Device classification changes follow the model issue decision instead of silently creating duplicate drafts',async()=>{
+  let turn=await processTurn({message:'Es tropft im Bad.'},null,model({category:'water',equipment:'leak',location:'Bad'}));
+  const id=turn.state.issue.id;
+  turn=await processTurn({message:'Es ist das Rohr unterm Lavabo.'},turn.state,model({category:'water',equipment:'pipe',details:'unterm Lavabo'}));
+  assert.equal(turn.state.issues.length,1);assert.equal(turn.state.issue.id,id);assert.equal(turn.state.issue.equipment,'pipe');
+  turn=await processTurn({message:'Und meine Heizung bleibt kalt.'},turn.state,model({newIssue:true,category:'heating',equipment:'heater'}));
+  assert.equal(turn.state.issues.length,2);assert.notEqual(turn.state.issue.id,id);
+});
+
 test('Topic changes retain drafts without attaching a document question to the heater or inventing customer access',async()=>{
   let turn=await processTurn({message:'Heizung kalt'},null,model({category:'heating',equipment:'heater',location:'Küche',dialogue:dialogue('Was fällt Ihnen an der Heizung auf?')}));
   const before=structuredClone(turn.state.issue);
   turn=await processTurn({message:'Eigentlich zur Nebenkostenabrechnung'},turn.state,model({intent:'knowledge',category:null,equipment:null,question:'details',clarification:'Welche Position?',
-    dialogue:dialogue('Welche Position Ihrer Abrechnung möchten Sie verstehen? Einen persönlichen Beleg kann ich hier noch nicht abrufen.','information',[button('navigate',{target:'docs',label:'Mietvertrag herunterladen'}),button('prepare_draft')])}));
+    dialogue:dialogue('Welche Position Ihrer Abrechnung möchten Sie verstehen?','information')}));
   assert.equal(turn.state.issue.id,before.id); assert.equal(turn.state.issue.location,'Küche'); assert.equal(turn.state.issue.answers.length,before.answers.length);
   assert.equal(turn.state.pendingKey,null); assert.equal(turn.state.conversationTopic,'knowledge');
   assert.deepEqual(turn.state.actions,[]);
@@ -87,7 +98,7 @@ test('Topic changes retain drafts without attaching a document question to the h
     dialogue:dialogue('Ihr persönlicher Mietvertrag ist noch nicht angebunden. Den vorbereiteten Dokumentenbereich können Sie öffnen.','information',[
       button('navigate',{target:'docs',label:'Mietvertrag herunterladen'}),button('navigate',{target:'portfolio',label:'Immobilie'}),
     ])}));
-  assert.deepEqual(turn.state.actions.map(a=>a.type),['navigate']); assert.equal(turn.state.actions[0].target,'docs');
+  assert.deepEqual(turn.state.actions.map(a=>a.type),['navigate','navigate']); assert.equal(turn.state.actions[0].target,'docs');
   assert.equal(turn.state.actions[0].label,'Dokumentenbereich öffnen');
 });
 
@@ -117,14 +128,16 @@ test('Resume buttons appear after a topic change, not while already discussing t
 });
 
 
-test('Duplicate draft proposals are discarded as actions, while an explicit contact wish stays available',async()=>{
+test('The model owns offer timing; the server never adds a handover merely because an intent or stage says contact',async()=>{
   let turn=await processTurn({message:'Lampe kaputt'},null,model({dialogue:dialogue('Ich kann Ihre Angaben für MORADA vorbereiten.','offer_draft',[button('prepare_draft')])}));
   assert.equal(turn.state.actions[0].type,'handover');
   const id=turn.state.issue.id;
-  turn=await processTurn({message:'Seit gestern'},turn.state,model({since:'gestern',dialogue:dialogue('Der Beginn ist notiert.','offer_draft',[button('prepare_draft')])}));
+  turn=await processTurn({message:'Seit gestern'},turn.state,model({since:'gestern',dialogue:dialogue('Der Beginn ist notiert.','offer_draft')}));
   assert.equal(turn.reply,'Der Beginn ist notiert.');assert.equal(turn.state.issue.id,id);assert.equal(turn.state.issue.since,'gestern');
   assert.ok(!turn.state.actions.some(a=>a.type==='handover'));
-  turn=await processTurn({message:'Kann ich das direkt melden?'},turn.state,model({intent:'contact',dialogue:dialogue('Ich kann den Entwurf öffnen. Er wird nicht automatisch versendet.','offer_draft')}));
+  turn=await processTurn({message:'Wurde etwas verschickt?'},turn.state,model({intent:'contact',dialogue:dialogue('Es wurde noch nichts übermittelt.','information')}));
+  assert.deepEqual(turn.state.actions,[]);
+  turn=await processTurn({message:'Kann ich das direkt melden?'},turn.state,model({intent:'contact',dialogue:dialogue('Ich kann den Entwurf öffnen. Er wird nicht automatisch versendet.','offer_draft',[button('prepare_draft')])}));
   assert.equal(turn.state.actions[0].type,'handover');
 });
 
