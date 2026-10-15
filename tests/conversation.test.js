@@ -68,6 +68,14 @@ test('Unknown facts and room corrections survive direct handover without a manda
   assert.equal(turn.state.actions[0].label,'Für MORADA vorbereiten'); assert.equal(turn.state.issue.status,'draft');
 });
 
+test('A first message with both damage facts and a direct contact wish creates its real draft action',async()=>{
+  const turn=await processTurn({message:'Die Lampe im Wohnzimmer geht nicht. Bitte direkt melden.'},null,model({intent:'contact',
+    equipment:'light',location:'Wohnzimmer',dialogue:dialogue('Hier können Sie die Angaben für MORADA vorbereiten.','offer_draft',[button('prepare_draft')])}));
+  assert.equal(turn.state.issues.length,1);assert.equal(turn.state.issue.location,'Wohnzimmer');
+  assert.equal(turn.state.pendingKey,null);assert.equal(turn.state.actions[0].type,'handover');
+  assert.equal(turn.state.issue.status,'draft');assert.equal(turn.singleModelReply,true);
+});
+
 test('Additional free-text symptoms retain earlier details; explicit corrections may replace them',async()=>{
   let turn=await processTurn({message:'Lampe flackert'},null,model({details:'Flackert'}));
   const id=turn.state.issue.id;
@@ -223,13 +231,27 @@ test('The model receives the exact pending clarification, attempt fields and dis
   assert.deepEqual(context.activeIssue.askedFields,['details']);
 });
 
-test('Observed corrupt German is rejected without rewriting a genuine model response',()=>{
-  for (const reply of ['Ich habe not vermerkt, dass die Lampe defekt ist.','Ich habe den Stand not.','Das ist bedauert.']) {
-    assert.throws(()=>validatedDialogueReply({intent:'issue',dialogue:{reply}}),{validation:'invalid_response_language'});
-  }
+test('A quoted English word does not trigger word-level style policing or local rewriting',()=>{
+  const quoted='Auf dem Gerät steht "It is not working". Diese Angabe beschreibt die Fehlermeldung.';
+  assert.equal(validatedDialogueReply({intent:'knowledge',dialogue:{reply:quoted}}),quoted);
   const reply='Die Lampe im Badezimmer ist seit gestern defekt.';
   assert.equal(validatedDialogueReply({intent:'issue',dialogue:{reply}}),reply);
   assert.equal(validatedDialogueReply({intent:'knowledge',dialogue:{reply:'Bei akuter Not wählen Sie 112.'}}),'Bei akuter Not wählen Sie 112.');
+});
+
+test('Missing appointment or status APIs cannot be bypassed with another portal section',()=>{
+  assert.throws(()=>validatedDialogueReply({intent:'appointments',dialogue:{reply:'Ich habe keinen Terminzugriff. Bitte prüfen Sie das Profil oder den Servicebereich für weitere Details.'}}),{validation:'unsupported_record_claim'});
+  assert.throws(()=>validatedDialogueReply({intent:'status',dialogue:{reply:'Den Bearbeitungsstand finden Sie im Servicebereich.'}}),{validation:'unsupported_record_claim'});
+  const reply='Ihre Termine kann ich hier nicht abrufen. Wenn Sie mir die Einladung nennen, helfe ich beim Einordnen.';
+  assert.equal(validatedDialogueReply({intent:'appointments',dialogue:{reply}}),reply);
+});
+
+test('A fabricated booking or paid order is rejected without suppressing general coordination advice',()=>{
+  for(const reply of ['Ich habe einen Elektriker für Sie beauftragt.','Ich werde einen kostenpflichtigen Termin buchen.']) {
+    assert.throws(()=>validatedDialogueReply({intent:'general',dialogue:{reply}}),{validation:'unsupported_booking_claim'});
+  }
+  const reply='MORADA kann mit Ihnen klären, welche Fachperson zuständig ist. Ich habe nichts beauftragt.';
+  assert.equal(validatedDialogueReply({intent:'general',dialogue:{reply}}),reply);
 });
 
 test('A concrete draft offer requires its validated action, while plain acknowledgements stay button-free',()=>{
