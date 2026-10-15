@@ -19,6 +19,18 @@ const urgent = [
   ['Es gibt nicht nur Rauch, sondern auch Flammen', 'fire'],
   ['Theoretisch könnte es ein Defekt sein, aber jetzt rieche ich Gas', 'gas'],
 ];
+
+test('An unsafe intervention follow-up to signed electrical danger never waits for or calls the model',async()=>{
+  let calls=0;
+  const unavailable=async()=>{calls++;throw new Error('Provider unavailable');};
+  const first=await processTurn({message:'Die Steckdose wirft Funken und es riecht verbrannt.'},null,unavailable);
+  const id=first.state.issue.id;
+  const second=await processTurn({message:'Soll ich sie aufschrauben und nachsehen?'},first.state,unavailable);
+  assert.equal(calls,0);assert.equal(second.understanding,'safety');assert.equal(second.state.issue.id,id);
+  assert.equal(second.state.issue.hazard,'electric');assert.match(second.reply,/112/);
+  assert.ok(!second.state.actions.some(action=>action.type==='attachment'));
+  assert.equal(second.state.history.at(-2).content,'Soll ich sie aufschrauben und nachsehen?');
+});
 for (const [message, hazard] of urgent) test(`Immediate hazard: ${message}`, () => {
   assert.deepEqual(detectHazard(message), { hazard, urgency:hazard === 'water' ? 'high' : 'emergency' });
 });
