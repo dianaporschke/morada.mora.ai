@@ -7,7 +7,7 @@ import {createChatHandler} from '../api/chat.js';
 import {readSession} from '../lib/mora/session.js';
 import {acceptPreparationProposal} from '../lib/mora/actions.js';
 import {modelUnavailable} from '../lib/mora/provider.js';
-import {mapServiceDraft} from '../assets/mora-data.js';
+import {mapServiceDraft,explicitAvailabilityEvidence} from '../assets/mora-data.js';
 
 const sdk=(generate,tokens=50)=>new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options=>({
  content:[{type:'text',text:JSON.stringify(generate(options))}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
@@ -120,7 +120,7 @@ test('Unsafe planner wording is never reused on wording failure; facts and local
 test('A spontaneous availability note updates the prepared issue and mapped draft without losing negative observations',async()=>{
  let round=0;
  const planner=sdk(()=>round++===0?{reply:'Planung.',intent:'issue',updates:[{ref:'new',equipment:'light',location:'Wohnzimmer',count:1,since:'gestern',defect:'lässt sich nicht einschalten',details:'Keine weiteren Symptome'}],actions:[{kind:'prepare_draft'}]}
-  :{reply:'Notiert.',intent:'general',updates:[{ref:'active',details:'Erreichbar morgen ab 16 Uhr'}]});
+  :{reply:'Wir berücksichtigen Ihre Erreichbarkeit.',intent:'general'});
  const handler=createChatHandler(service(planner),{env:{},compose:turn=>generateNaturalReply(turn,sdk(()=>({reply:'Sie können die Angaben im Entwurf prüfen.',questionKey:null,requestPreparation:true})))});
  let result=await invoke(handler,{message:'Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.'});assert.equal(result.code,200);
  const original=mapServiceDraft(result.data.issue),id=result.data.issue.id;
@@ -131,4 +131,13 @@ test('A spontaneous availability note updates the prepared issue and mapped draf
  const updated=mapServiceDraft(result.data.issue,original);
  assert.equal(updated.id,id);assert.equal(updated.equipment,'light');assert.equal(updated.count,1);assert.equal(updated.location,'Wohnzimmer');assert.equal(updated.since,'gestern');
  assert.match(updated.details,/Keine weiteren Symptome/);assert.match(updated.details,/morgen ab 16 Uhr/);
+});
+
+test('Availability loss prevention preserves exact negative assertions and never guesses from questions or other people',()=>{
+ assert.equal(explicitAvailabilityEvidence('Ich bin morgen ab 16 Uhr erreichbar.'),'Ich bin morgen ab 16 Uhr erreichbar.');
+ assert.equal(explicitAvailabilityEvidence('Ich bin morgen nicht erreichbar.'),'Ich bin morgen nicht erreichbar.');
+ assert.equal(explicitAvailabilityEvidence('Bin ich morgen erreichbar?'),null);
+ assert.equal(explicitAvailabilityEvidence('Ich bin morgen erreichbar?'),null);
+ assert.equal(explicitAvailabilityEvidence('Der Nachbar ist morgen erreichbar.'),null);
+ assert.equal(explicitAvailabilityEvidence('Morgen um 16 Uhr.'),null);
 });

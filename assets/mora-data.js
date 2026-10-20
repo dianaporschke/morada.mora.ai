@@ -123,3 +123,15 @@ export function explicitSymptomsEvidence(evidence) {
   const match=evidence.match(/(?:^|[.!?;\n])\s*(keine(?:n)?\s+(?:(?:weiteren?|zusätzlichen?|besonderen?|ungewöhnlichen?)\s+)*(?:Symptome|Auffälligkeiten|Gerüche|Geräusche)(?:\s+(?:oder|und)\s+(?:Gerüche|Geräusche))?)(?=[.!?,;\n]|$)/iu);
   return match?.[1] || null;
 }
+
+/** Preserve an explicit first-person availability assertion as a verbatim note.
+ * This neither interprets times nor books contact. Questions/third parties are
+ * not assertions; ambiguous issue targets are handled by the semantic layer.
+ */
+export function explicitAvailabilityEvidence(evidence) {
+  for(const sentence of evidence.split(/(?<=[.!?;])\s+|\n/gu)) {
+    if(sentence.length>700 || sentence.includes('?'))continue;
+    if(/^\s*ich bin\b.+\berreichbar\b/iu.test(sentence) || /^\s*sie (?:können|koennen) mich\b.+\berreichen\b/iu.test(sentence))return sentence.trim();
+  }
+  return null;
+}
