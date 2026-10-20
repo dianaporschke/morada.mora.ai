@@ -14,11 +14,20 @@ const urgent = [
   ['habe einen rohrbruch', 'water'], ['rorbruch im bad', 'water'], ['rohrbrcuh in der küche', 'water'],
   ['waser kommt aus der deke', 'water'], ['Wasser tropft von der Decke', 'water'],
   ['die Decke tropft', 'water'], ['Der Keller steht unter Wasser', 'water'],
+  ['Aus der Leitung schiesst unkontrolliert Wasser und der Boden steht schon unter Wasser.', 'water'],
   ['Kein Rauch, aber die Steckdose wirft Funken', 'electric'],
   ['Ich rieche kein Gas, aber hier ist Rauch', 'fire'],
   ['Es gibt nicht nur Rauch, sondern auch Flammen', 'fire'],
   ['Theoretisch könnte es ein Defekt sein, aber jetzt rieche ich Gas', 'gas'],
 ];
+
+test('Uncontrolled water surge is immediate, while ordinary, denied and hypothetical flow stays non-urgent',async()=>{
+  const message='Aus der Leitung schiesst unkontrolliert Wasser und der Boden steht schon unter Wasser.';
+  const result=await processTurn({message},null,async()=>{assert.fail('Explicit flooding must not wait for a model');});
+  assert.equal(result.understanding,'safety');assert.match(result.reply,/starkem Wasseraustritt/);
+  for (const text of ['Aus dem Wasserhahn läuft Wasser.','Es schiesst kein Wasser aus der Leitung.','Nur theoretisch: Wasser strömt unkontrolliert aus.'])
+    assert.equal(detectHazard(text).hazard,'none',text);
+});
 
 test('An unsafe intervention follow-up to signed electrical danger never waits for or calls the model',async()=>{
   let calls=0;

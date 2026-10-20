@@ -28,11 +28,16 @@ def summarize(rows):
     safety=[r for r in rows if r.get('responseMode')=='safety']
     starts=re.compile(r'^(?:Vielen Dank|Danke|Ich verstehe|Verstehe|Verstanden|Guten Tag|Es tut mir leid|Das habe ich notiert|Ich habe (?:not|Ihre|vermerkt)|Ich nehme)',re.I)
     return {'attemptedCases':len({r['caseId'] for r in rows}),'normalCases':len({r['caseId'] for r in normal}),
-      'normalTurns':len(normal),'genuineReplies':len(ai),'localSafetyReplies':len(safety),
+      'normalTurns':len(normal),'genuineReplies':len(ai),'safetyWordedReplies':len(safety),
+      'localSafetyReplies':sum(r.get('modelCalls')==0 for r in safety),
+      'modelTriggeredSafetyReplies':sum((r.get('modelCalls') or 0)>0 for r in safety),
+      'normalCasesWithSafetyWording':sorted({r['caseId'] for r in normal if r.get('responseMode')=='safety'}),
       'normalFailedCases':sorted({r['caseId'] for r in normal if r['status']!=200}),
       'normalFailures':[{'caseId':r['caseId'],'turn':r['turn'],'availability':r.get('modelAvailability')} for r in normal if r['status']!=200],
       'formulaicStartSignals':sum(bool(starts.search(r['reply'])) for r in ai),
       'draftMentionSignals':sum(bool(re.search(r'entwurf|bericht',r['reply'],re.I)) for r in ai),
+      'handoverOrFormMentionSignals':sum(bool(re.search(r'entwurf|bericht|formular',r['reply'],re.I)) for r in ai),
+      'multipleQuestionMarkSignals':sum(r['reply'].count('?')>1 for r in ai),
       'repliesWithActions':sum(bool(r.get('actions')) for r in ai),
       'medianServerSeconds':median([r['timingMs']['total']/1000 for r in ai if r.get('timingMs')]),
       'medianTestClientSeconds':median([r['seconds'] for r in ai]),
