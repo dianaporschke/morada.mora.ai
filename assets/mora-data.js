@@ -33,7 +33,21 @@ export function canonicalEquipment(value, evidence = '') {
 export const draftFields = ['category','equipment','description','defect','count','location','since','extent','details','cause','urgency','hazard','attachments','unknownFields','fieldFacts'];
 export const editableFields = ['description','equipment','defect','count','extent','location','since','details'];
 export function issueContent(issue) {
-  return JSON.stringify(draftFields.map(key=>issue[key] ?? null));
+  // Provenance/audit wording is not a change to the customer's service data.
+  return JSON.stringify(draftFields.map(key=>key==='fieldFacts'
+    ? Object.entries(issue.fieldFacts || {}).sort(([a],[b])=>a.localeCompare(b)).map(([field,fact])=>[field,fact.status,fact.value ?? null,fact.candidate ?? null])
+    : issue[key] ?? null));
+}
+export function matchesIssueContent(content,issue) {
+  if(content===issueContent(issue))return true;
+  // Existing local drafts used an audit-inclusive snapshot. Upgrade on read.
+  try {
+    const values=JSON.parse(content);
+    if(!Array.isArray(values) || values.length!==draftFields.length)return false;
+    const facts=values[draftFields.indexOf('fieldFacts')];
+    if(!facts || Array.isArray(facts) || typeof facts!=='object')return false;
+    return issueContent(Object.fromEntries(draftFields.map((key,index)=>[key,values[index]])))===issueContent(issue);
+  }catch{return false;}
 }
 export function draftLabel(draft) {
   return draft.equipment && draft.equipment!=='unknown' ? equipmentLabels[draft.equipment] || draft.equipment : categoryLabels[draft.category] || 'Anliegen';
@@ -55,7 +69,7 @@ export function mapServiceDraft(issue, existing, {session=null, now=new Date().t
   source.category=equipmentCategories[source.equipment] || source.category || 'general';
   const draft={...source,attachments:source.attachments || [],status:'draft',session,updatedAt:now,
     sourceRevision:issue.revision || 1,delivery:existing?.delivery || 'not_sent',
-    ...(existing?.requestId ? {requestId:existing.requestId,unsentChanges:existing.unsentChanges || issueContent(issue)!==existing.sourceContent} : {}),
+    ...(existing?.requestId ? {requestId:existing.requestId,unsentChanges:existing.unsentChanges || !matchesIssueContent(existing.sourceContent,issue)} : {}),
     sourceContent:issueContent(issue),localEdits:existing?.localEdits || (existing?.locallyEdited ? Object.fromEntries(editableFields.map(field=>[field,true])) : {}),
     chatSnapshot:Object.fromEntries(editableFields.map(field=>[field,source[field] ?? null])),conflictFields:[]};
   for (const field of Object.keys(draft.localEdits)) {
@@ -71,9 +85,24 @@ export function mapServiceDraft(issue, existing, {session=null, now=new Date().t
 export function preparationState(issue, draft) {
   if (!issue) return 'not_prepared';
   if (draft?.delivery==='sent' && draft.requestId && !draft.unsentChanges) return 'sent';
-  if (draft && draft.sourceContent===issueContent(issue)) return 'portal_received';
-  if (issue.preparation?.revision===issue.revision && issue.preparation?.status==='portal_received') return 'portal_received';
+  if (draft && matchesIssueContent(draft.sourceContent,issue)) return 'portal_received';
+  if (issue.preparation?.status==='portal_received' && (issue.preparation.content ? issue.preparation.content===issueContent(issue) : issue.preparation.revision===issue.revision)) return 'portal_received';
   return issue.preparation?.status==='error' ? 'error' : 'ready';
+}
+
+/** One action policy for model context, validation and browser controls.
+ * An offered create action remains accessible without being offered in every reply.
+ * Updates refer to the same draft and require a meaningful content change.
+ */
+export function draftActionState(issue, draft) {
+  const status=preparationState(issue,draft);
+  if(!issue)return {status,operation:null,canOffer:false,showControl:false};
+  if(['portal_received','sent'].includes(status))return {status,operation:'open',canOffer:false,showControl:false};
+  const operation=draft || issue.preparation?.status==='portal_received' ? 'update':'create';
+  const offered=issue.draftOffer?.operation===operation && (operation==='create' || issue.draftOffer.content===issueContent(issue)) || operation==='create' && issue.draftOfferShown && !issue.draftOffer;
+  const canOffer=Boolean(issue.description || issue.defect) && (!offered || status==='error');
+  return {status:status==='error'?'error':operation==='update'?'changes_pending':offered?'offered':'not_prepared',operation,canOffer,
+    showControl:Boolean(offered || operation==='update' || status==='error')};
 }
 
 /** Loss prevention for explicit counts beside a known facility, never singular grammar alone. */

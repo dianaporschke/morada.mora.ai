@@ -234,31 +234,32 @@ test('SDK JSON parse failure receives one genuine corrective generation, with fa
 });
 
 
-test('A model-selected real draft action is independent of optional question metadata',async()=>{
+test('A clarification plus draft action is repaired before either wording or buttons reach the client',async()=>{
   let calls=0;
   const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
     calls++;
     return {content:[{type:'text',text:JSON.stringify({intent:'issue',equipment:'light',
-      dialogue:{reply:'In welchem Raum ist die Lampe?',ask:{field:'location',text:'In welchem Raum?'},buttons:[{kind:'prepare_draft'}]}})}],
+      dialogue:{reply:'In welchem Raum ist die Lampe?',ask:{field:'location',text:'In welchem Raum?'},buttons:calls===1?[{kind:'prepare_draft'}]:[]}})}],
       finishReason:{unified:'stop',raw:'stop'},warnings:[],
       usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
   }});
   const result=await generateUnderstandingResult('Lampe kaputt',null,sdk);
-  assert.equal(result.generationCount,1);assert.equal(result.data.dialogue.stage,'clarify');
+  assert.equal(result.generationCount,2);assert.equal(result.data.dialogue.stage,'clarify');
   const turn=await processTurn({message:'Lampe kaputt'},null,async()=>({mode:'model',data:result.data}));
-  assert.equal(turn.state.pendingKey,'location');assert.ok(turn.state.actions.some(a=>a.type==='handover'));
+  assert.equal(turn.state.pendingKey,'location');assert.ok(!turn.state.actions.some(a=>a.type==='handover'));
 });
 
-
-test('The SDK accepts a repeated draft proposal without a repair call and still stores the new fact',async()=>{
+test('A repeated draft proposal is repaired while retaining the newly supplied fact',async()=>{
   const first=await processTurn({message:'Lampe kaputt'},null,async()=>({mode:'model',data:emptyUnderstanding({intent:'issue',equipment:'light',
     dialogue:{reply:'Ich kann einen Entwurf vorbereiten.',stage:'offer_draft',buttons:[{kind:'prepare_draft',label:'Vorschlag',field:null,value:null,target:null}]}})}));
   let calls=0;
-  const result=await generateUnderstandingResult('Seit gestern',first.state,mercury({intent:'issue',since:'gestern',
-    dialogue:{reply:'Der Beginn ist notiert.',buttons:[{kind:'prepare_draft'}]}},()=>{calls++;}));
-  assert.equal(calls,1);assert.equal(result.generationCount,1);
+  const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>({content:[{type:'text',text:JSON.stringify({intent:'issue',since:'gestern',
+    dialogue:{reply:'Der Beginn ist notiert.',buttons:++calls===1?[{kind:'prepare_draft'}]:[]}})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
+    usage:{inputTokens:{total:100},outputTokens:{total:80}}})});
+  const result=await generateUnderstandingResult('Seit gestern',first.state,sdk);
+  assert.equal(calls,2);assert.equal(result.generationCount,2);
   const turn=await processTurn({message:'Seit gestern'},first.state,async()=>({mode:'model',data:result.data}));
-  assert.equal(turn.state.issue.since,'gestern');assert.ok(turn.state.actions.some(a=>a.type==='handover'));
+  assert.equal(turn.state.issue.since,'gestern');assert.ok(!turn.state.actions.some(a=>a.type==='handover'));
 });
 
 test('The final customer turn remains plain text while verified application context is separate',async()=>{

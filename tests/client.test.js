@@ -174,7 +174,7 @@ test('Portal navigation and iPhone icon paths are preserved; chat has responsive
   assert.match(css,/flex:1; min-height:0/); f.window.close();
 });
 
-test('An answer without actions disables all previous choices and keeps them disabled after reload', async () => {
+test('An answer without actions removes previous choices and does not restore them after reload', async () => {
   const f = fixture(); await f.ui.ready;
   await sendForm(f, 'Steckdose geht nicht');
   const oldChoices = [...f.document.querySelectorAll('#moraMessages .mora-action')];
@@ -182,7 +182,8 @@ test('An answer without actions disables all previous choices and keeps them dis
   await sendForm(f, 'Was bedeutet Mietkaution?');
   assert.match(f.document.getElementById('moraMessages').textContent, /Sicherheit|Sicherheitsleistung/);
   assert.equal(f.document.querySelectorAll('#moraMessages .mora-action:not(:disabled)').length, 0);
-  assert.ok(oldChoices.every(button => button.disabled));
+  assert.ok(oldChoices.every(button => button.disabled && !button.isConnected));
+  assert.equal(f.document.querySelectorAll('#moraMessages .mora-actions').length,0);
   const restored = fixture(390, { thread:f.window.sessionStorage.getItem('morada.mora.v2.thread') }); await restored.ui.ready;
   assert.equal(restored.document.querySelectorAll('#moraMessages .mora-action:not(:disabled)').length, 0);
   assert.equal(restored.document.getElementById('moraPrepareIssue').disabled, false);
@@ -244,16 +245,15 @@ test('Draft edits rebuild the summary and survive handover autosave, conflict an
   f.window.close(); restored.window.close();
 });
 
-test('Persistent preparation controls are hidden before any issue and available for free-text questions', async () => {
+test('Persistent preparation controls wait for an offered action instead of racing a free-text question', async () => {
   const f = fixture(390); await f.ui.ready;
   assert.equal(f.document.getElementById('moraIssueControls').hidden, true);
   await sendForm(f, 'Heizung kaputt');
   assert.equal(f.document.getElementById('moraIssueControls').hidden, false);
   assert.equal(f.document.querySelectorAll('#moraMessages .mora-action:not(:disabled)').length, 0);
   assert.equal(f.document.getElementById('moraPrepareIssue').textContent, 'Für MORADA vorbereiten');
-  f.document.getElementById('moraPrepareIssue').click(); await waitForIdle(f);
-  assert.equal(f.document.getElementById('service').checked, true);
-  assert.match(f.document.getElementById('moraDraftStatus').textContent, /Noch nicht übermittelt/);
+  assert.equal(f.document.getElementById('moraPrepareIssue').hidden,true);
+  assert.equal(f.ui.getDrafts().length,0);
   f.window.close();
 });
 

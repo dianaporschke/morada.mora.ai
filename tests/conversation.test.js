@@ -41,11 +41,11 @@ test('No question does not automatically become a handover, and clarification ch
     dialogue:dialogue('Ist das eine fest installierte Lampe oder Ihre eigene?','clarify',[
       button('select',{label:'Fest installiert',field:'details',value:'Die Lampe ist fest installiert.'}),
       button('select',{label:'Eigene Lampe',field:'details',value:'Das ist meine eigene Lampe.'}),
-      button('select',{label:'Seit gestern',field:'since',value:'Seit gestern'}),button('prepare_draft'),
+      button('select',{label:'Seit gestern',field:'since',value:'Seit gestern'}),
     ])}));
-  assert.equal(first.state.actions.length,3);
+  assert.equal(first.state.actions.length,2);
   assert.ok(first.state.actions.filter(a=>a.type==='select').every(a=>a.field==='details'));
-  assert.equal(first.state.actions.filter(a=>a.type==='handover').length,1);
+  assert.equal(first.state.actions.filter(a=>a.type==='handover').length,0);
   let received;
   const second=await processTurn({actionId:first.state.actions[0].id},first.state,async(message)=>{
     received=message; return {mode:'model',data:data({details:'Fest installiert',dialogue:dialogue('Verstanden, es geht um die fest installierte Beleuchtung.')})};
@@ -145,8 +145,7 @@ test('The model owns offer timing; the server never adds a handover merely becau
   assert.ok(!turn.state.actions.some(a=>a.type==='handover'));
   turn=await processTurn({message:'Wurde etwas verschickt?'},turn.state,model({intent:'contact',dialogue:dialogue('Es wurde noch nichts übermittelt.','information')}));
   assert.deepEqual(turn.state.actions,[]);
-  turn=await processTurn({message:'Kann ich das direkt melden?'},turn.state,model({intent:'contact',dialogue:dialogue('Ich kann den Entwurf öffnen. Er wird nicht automatisch versendet.','offer_draft',[button('prepare_draft')])}));
-  assert.equal(turn.state.actions[0].type,'handover');
+  await assert.rejects(processTurn({message:'Kann ich das direkt melden?'},turn.state,model({intent:'contact',dialogue:dialogue('Ich kann den Entwurf öffnen. Er wird nicht automatisch versendet.','offer_draft',[button('prepare_draft')])})),{validation:'draft_action_unavailable'});
 });
 
 
@@ -257,7 +256,7 @@ test('A fabricated booking or paid order is rejected without suppressing general
 test('A concrete draft offer requires its validated action, while plain acknowledgements stay button-free',()=>{
   const reply='Möchten Sie einen Anliegenentwurf vorbereiten?';
   assert.throws(()=>validatedDialogueReply({intent:'issue',dialogue:{reply,buttons:[]}}),{validation:'missing_draft_action'});
-  assert.equal(validatedDialogueReply({intent:'issue',dialogue:{reply,buttons:[{kind:'prepare_draft'}]}}),reply);
+  assert.equal(validatedDialogueReply({intent:'issue',description:'Lampe kaputt',dialogue:{reply,buttons:[{kind:'prepare_draft'}]}}),reply);
   assert.equal(validatedDialogueReply({intent:'issue',dialogue:{reply:'Schlafzimmer ist korrigiert.',buttons:[]}}),'Schlafzimmer ist korrigiert.');
 });
 

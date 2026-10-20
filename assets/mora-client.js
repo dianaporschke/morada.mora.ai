@@ -2,7 +2,7 @@ const TYPES = new Set(['select', 'handover', 'attachment', 'add_details', 'navig
 const TABS = new Set(['docs', 'service', 'profile', 'portfolio']);
 const IMAGE_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif']);
 const STORAGE_KEY = 'morada.mora.v2.thread';
-import { categoryLabels as LABELS, equipmentLabels as EQUIPMENT, equipmentCategories, mapServiceDraft, draftSummary, draftLabel, preparationState } from './mora-data.js';
+import { categoryLabels as LABELS, equipmentLabels as EQUIPMENT, equipmentCategories, mapServiceDraft, draftSummary, draftLabel, preparationState, draftActionState } from './mora-data.js';
 const DRAFT_FIELDS = [['moraDraftDescription','description'], ['moraDraftEquipment','equipment'], ['moraDraftDefect','defect'], ['moraDraftCount','count'], ['moraDraftExtent','extent'], ['moraDraftLocation','location'], ['moraDraftSince','since'], ['moraDraftDetails','details']];
 const FIELD_LABELS = { description:'Beschreibung', equipment:'Einrichtung', defect:'Defekt', count:'Anzahl', extent:'Umfang', location:'Bereich', since:'Beginn', details:'Zusatzangaben' };
 
@@ -55,7 +55,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     catch { document.getElementById('moraStorageNote').textContent = 'Der Browser kann den Chat gerade nicht speichern. Bitte laden Sie Ihren Anliegenentwurf herunter.'; }
   };
   const addBubble = (content, who = 'assistant', actions = [], remember = true) => {
-    if (who === 'assistant') { disableActions(); latestActions = null; }
+    clearActions();
     const bubble = document.createElement('div'); bubble.className = `bubble${who === 'user' ? ' user' : ''}`;
     bubble.textContent = content; messages.appendChild(bubble);
     actions=actions.map(item=>item.type==='handover' && drafts.some(draft=>draft.id===state.issue?.id) ? {...item,label:'Entwurf aktualisieren'} : item);
@@ -66,6 +66,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     scroll(); return bubble;
   };
   const disableActions = () => { messages.querySelectorAll('.mora-action').forEach(button => { button.disabled = true; }); };
+  const clearActions = () => { disableActions(); messages.querySelectorAll('.mora-actions').forEach(group=>group.remove()); latestActions=null; };
   const lock = value => {
     busy = value; send.disabled = value;
     if (latestActions) latestActions.querySelectorAll('button').forEach(button => { button.disabled = value; });
@@ -85,9 +86,9 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     const attach = document.getElementById('moraAttachPhoto'); const prepare = document.getElementById('moraPrepareIssue');
     attach.disabled = busy; prepare.disabled = busy;
     attach.hidden = state.issue?.urgency === 'emergency' || Boolean(latestActions?.querySelector('[data-action-type="attachment"]'));
-    const phase=preparationState(state.issue,drafts.find(draft=>draft.id===state.issue?.id));
+    const policy=draftActionState(state.issue,drafts.find(draft=>draft.id===state.issue?.id));
     prepare.textContent=drafts.some(draft=>draft.id===state.issue?.id) ? 'Entwurf aktualisieren' : 'Für MORADA vorbereiten';
-    prepare.hidden = phase==='portal_received' || phase==='sent' || Boolean(latestActions?.querySelector('[data-action-type="handover"]'));
+    prepare.hidden = !policy.showControl || Boolean(latestActions?.querySelector('[data-action-type="handover"]'));
     const tools = issueControls.querySelector('.mora-issue-tools'); tools.hidden = attach.hidden && prepare.hidden;
     issueControls.hidden = !state.issue || (retained.length < 2 && tools.hidden);
   }
@@ -109,7 +110,10 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     const previousIssue = state.issue;
     try {
       const local=drafts.find(draft=>draft.id===state.issue?.id);
-      if (local && preparationState(state.issue,local)==='portal_received' && (state.issue.preparation?.status!=='portal_received' || state.issue.preparation?.revision!==state.issue.revision)) {try {await acknowledgeDraft(state.issue,'portal_received');} catch {}}
+      if (local && preparationState(state.issue,local)==='portal_received' && (state.issue.preparation?.status!=='portal_received' || state.issue.preparation?.revision!==state.issue.revision)) {
+        try {await acknowledgeDraft(state.issue,'portal_received');}
+        catch {throw Object.assign(new Error('Der Entwurf ist lokal gespeichert. Sein Status konnte gerade nicht mit MORA abgeglichen werden. Bitte versuchen Sie es erneut.'),{code:'DRAFT_SYNC',retryable:true});}
+      }
       const response = await fetcher('/api/chat', { method:'POST', headers:{'Content-Type':'application/json'},
         body:JSON.stringify({ ...(!payload.draftReceipt && state.issue ? { attachments:state.files } : {}), ...payload, ...(state.session ? { session:state.session } : {}) }), signal:controller.signal });
       const data = await response.json(); loading.remove();
@@ -119,6 +123,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
       state.session = data.session; state.issue = data.issue || null; state.capabilities = data.capabilities;
       state.issues = Array.isArray(data.issues) ? data.issues : (data.issue ? [data.issue] : []);
       state.files = structuredClone(data.issue?.attachments || []);
+      preparationPhase=preparationState(state.issue,drafts.find(draft=>draft.id===state.issue?.id));
       retryPayload = null; delete state.pendingTurn; addBubble(data.reply, 'assistant', data.actions || []); renderIssueControls(); await renderPhotos(); persist();
       // Measure the actual browser roundtrip, separately from server/model time.
       // No text, signed sessions, photos or personal data are logged.
@@ -127,7 +132,9 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     } catch (error) {
       loading.remove(); retryPayload = { payload, displayText }; state.pendingTurn=retryPayload;
       const actions = error.retryable === false || error.code === 'INVALID_SESSION' || error.code === 'INVALID_ACTION' ? [] : [{ id:'retry', label:'Erneut versuchen', type:'retry', variant:'primary' }];
-      if (state.issue) actions.push({ id:'prepare-request', label:'Anliegenentwurf öffnen', type:'handover', variant:'secondary' });
+      if (state.issue) actions.push(drafts.some(draft=>draft.id===state.issue.id)
+        ? {id:'view-service',label:'Anliegenentwürfe öffnen',type:'navigate',target:'service',variant:'secondary'}
+        : { id:'prepare-request', label:'Anliegenentwurf öffnen', type:'handover', variant:'secondary' });
       actions.push({ id:'new-request', label:'Neuen Chat starten', type:'reset', variant:'secondary' });
       addBubble(error.code ? error.message : 'MORA ist gerade nicht erreichbar. Ihre Angaben bleiben im Chat erhalten. Sie können es erneut versuchen oder den bisherigen Anliegenentwurf öffnen.', 'assistant', actions);
       persist();
@@ -275,7 +282,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
       // Existing local Service view is the receiving boundary. No submit operation.
       navigate('service');preparationPhase='portal_received';
       try { await acknowledgeDraft(state.issue,'portal_received'); }
-      catch { draft.receiptPending=true; }
+      catch { draft.receiptPending=true; await dbOperation(window,'drafts','readwrite',store=>store.put(draft)); }
       addBubble(current ? 'Der bestehende Entwurf wurde im Servicebereich aktualisiert. Er wurde noch nicht versendet.' : 'Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.');
       persist();
     } catch {
@@ -342,12 +349,17 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     try {
       const saved = JSON.parse(window.sessionStorage.getItem(STORAGE_KEY) || 'null');
       if ((saved?.session || saved?.pendingTurn) && Array.isArray(saved.thread)) { state = saved; state.issues ||= state.issue ? [state.issue] : []; state.files ||= state.issue?.attachments || []; messages.replaceChildren();
-        for (const entry of state.thread) addBubble(entry.content, entry.who, entry.actions || [], false);
-        if (state.thread.at(-1)?.who !== 'assistant') { disableActions(); latestActions = null; }
+        // Only the last response can own current suggestions. Historical offers
+        // remain conversation text; they never become buttons again on reload.
         await renderPhotos(); }
     } catch {}
-    renderIssueControls();
     try { drafts = await dbOperation(window, 'drafts', 'readonly', store => store.getAll()); drafts.sort((a,b) => b.updatedAt.localeCompare(a.updatedAt)); activeDraft = drafts[0]; renderDraft(); } catch {}
+    if(state.thread.length) {
+      messages.replaceChildren();
+      for(const [index,entry] of state.thread.entries()) addBubble(entry.content,entry.who,index===state.thread.length-1 && entry.who==='assistant'?entry.actions || []:[],false);
+    }
+    preparationPhase=preparationState(state.issue,drafts.find(draft=>draft.id===state.issue?.id));
+    renderIssueControls();
   })();
   return { ready, submit, onAction, addFiles, getState:() => structuredClone(state), getDrafts:() => structuredClone(drafts), getPreparationState:()=>preparationPhase };
 }
