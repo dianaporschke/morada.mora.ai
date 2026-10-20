@@ -8,7 +8,7 @@ const DRAFT_FIELDS = [['moraDraftDescription','description'], ['moraDraftEquipme
 const FIELD_LABELS = { description:'Beschreibung', equipment:'Einrichtung', defect:'Defekt', count:'Anzahl', extent:'Umfang', location:'Bereich', since:'Beginn', details:'Zusatzangaben' };
 
 function draftSummary(draft) {
-  const title = draft.equipment && draft.equipment !== 'unknown' ? EQUIPMENT[draft.equipment] : LABELS[draft.category];
+  const title = draft.equipment && draft.equipment !== 'unknown' ? EQUIPMENT[draft.equipment] || draft.equipment : LABELS[draft.category];
   return [title || 'Anliegen', draft.localEdits?.description ? draft.description : (draft.defect || (!draft.count ? draft.description : null)),
     draft.count && `Anzahl: ${draft.count}`,
     draft.location && `Bereich: ${draft.location}`, draft.since && `Seit wann: ${draft.since}`,
@@ -229,8 +229,14 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     draftSection.hidden = false; draftPicker.replaceChildren();
     for (const draft of drafts) {
       const option = document.createElement('option'); option.value = draft.id;
-      option.textContent = `${EQUIPMENT[draft.equipment] || LABELS[draft.category] || 'Anliegen'}${draft.location ? ` · ${draft.location}` : ''} · ${draft.delivery === 'sent' && draft.requestId ? 'Übermittelt' : 'Entwurf'}`;
+      option.textContent = `${EQUIPMENT[draft.equipment] || draft.equipment || LABELS[draft.category] || 'Anliegen'}${draft.location ? ` · ${draft.location}` : ''} · ${draft.delivery === 'sent' && draft.requestId ? 'Übermittelt' : 'Entwurf'}`;
       option.selected = draft.id === activeDraft.id; draftPicker.appendChild(option);
+    }
+    const equipmentSelect=document.getElementById('moraDraftEquipment');
+    equipmentSelect.querySelectorAll('[data-mora-custom]').forEach(option=>option.remove());
+    if (activeDraft.equipment && ![...equipmentSelect.options].some(option=>option.value===activeDraft.equipment)) {
+      const option=document.createElement('option');option.value=activeDraft.equipment;option.textContent=activeDraft.equipment;
+      option.dataset.moraCustom='true';equipmentSelect.appendChild(option);
     }
     for (const [id, field] of DRAFT_FIELDS) document.getElementById(id).value = activeDraft[field] ?? '';
     activeDraft.summary = draftSummary(activeDraft); document.getElementById('moraDraftSummary').textContent = activeDraft.summary;

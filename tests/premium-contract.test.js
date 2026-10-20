@@ -77,3 +77,13 @@ test('HTTP clients cannot supply roles or permissions; only the server loader po
   assert.equal(res.statusCode,200);assert.equal(loaded,1);assert.deepEqual(options.portalContext.properties[0].roles,['tenant']);
   assert.equal(res.body.capabilities.documents,false);assert.equal(res.body.capabilities.submitRequest,false);
 });
+
+
+test('Corrections remove stale original rooms and counts from the current handover description',async()=>{
+  const reply={reply:'Welche Angaben möchten Sie ergänzen?',stage:'discuss',buttons:[]};
+  const first=await processTurn({message:'Drei Steckdosen im Wohnzimmer gehen nicht.'},null,async()=>({mode:'model',data:emptyUnderstanding({intent:'issue',equipment:'socket',category:'electricity',count:3,location:'Wohnzimmer',defect:'ohne Funktion',dialogue:reply})}));
+  const next=await processTurn({message:'Nein, zwei im Schlafzimmer.'},first.state,async()=>({mode:'model',data:emptyUnderstanding({intent:'issue',correction:true,count:2,location:'Schlafzimmer',dialogue:reply})}));
+  assert.doesNotMatch(next.state.issue.description,/Wohnzimmer|Drei/);
+  assert.match(next.state.issue.description,/Schlafzimmer/);assert.match(next.state.issue.description,/Anzahl: 2/);
+  assert.match(next.state.issue.answers[0].answer,/Drei Steckdosen im Wohnzimmer/);
+});

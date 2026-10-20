@@ -140,6 +140,15 @@ test('A failed first message can be retried after reload without duplicating the
   assert.equal(reloaded.ui.getState().pendingTurn,undefined);reloaded.window.close();
 });
 
+test('A customer-named fixture outside the old catalogue survives the existing handover form',async()=>{
+  const first=fixture();await first.ui.ready;await first.ui.submit({message:'lampe geht nicht'},'lampe geht nicht');
+  const saved=first.ui.getState();saved.issue.equipment='Rollladen';saved.issues=[saved.issue];first.window.close();
+  const f=fixture(390,{thread:JSON.stringify(saved)});await f.ui.ready;await f.ui.onAction({type:'handover'});
+  assert.equal(f.document.getElementById('moraDraftEquipment').value,'Rollladen');
+  assert.match(f.document.getElementById('moraDraftSummary').textContent,/Rollladen/);
+  assert.equal(f.requests.some(request=>request.url==='/api/requests'),false);f.window.close();
+});
+
 test('A disabled or misconfigured model does not offer useless retries and preserves drafts', async () => {
   const f=fixture(); await f.ui.ready;
   await f.ui.submit({message:'heizung funktioniert nicht'},'heizung funktioniert nicht');
