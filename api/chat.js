@@ -6,6 +6,10 @@ import { portalCapabilities } from '../lib/portal/adapter.js';
 import { canComposeReply, composeNaturalReply } from '../lib/mora/reply.js';
 import { modelFailure } from '../lib/mora/availability.js';
 import { readPortalContext } from '../lib/mora/portal-context.js';
+import { safeUsage } from '../lib/mora/provider.js';
+
+const sumUsage=(first,second)=>Object.fromEntries(['inputTokens','outputTokens','reasoningTokens','cachedInputTokens'].map(key=>[key,
+  Number.isSafeInteger(first?.[key]) && Number.isSafeInteger(second?.[key])?first[key]+second[key]:null]));
 
 export function createChatHandler(understand = extractUnderstanding, { compose = composeNaturalReply, env = process.env, loadPortalContext=undefined } = {}) {
   return async function handler(req, res) {
@@ -27,7 +31,7 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
         const start=Date.now(); modelCalls++;
         try {
           const interpreted=await understand(message,state,{timeoutMs:deadline-Date.now(),portalContext});
-          if (interpreted.generationCount===2) modelCalls++;
+          if (interpreted.generationCount>1) modelCalls+=interpreted.generationCount-1;
           return interpreted;
         }
         catch (error) { if (error.modelCalls===2) modelCalls++; throw error; }
@@ -35,9 +39,18 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
       });
       const activeDanger=result.state.issue && (result.state.issue.hazard!=='none' || result.state.issue.urgency==='emergency');
       let responseMode = result.understanding === 'safety' || activeDanger ? 'safety' : result.recoveredFacts ? 'recovery' : result.singleModelReply ? 'model' : 'engine';
-      if (!result.singleModelReply && env.MORA_AI_NATURAL_REPLIES === 'true' && canComposeReply(result)) {
+      if ((result.needsWording || !result.singleModelReply && env.MORA_AI_NATURAL_REPLIES === 'true') && canComposeReply(result)) {
         const start=Date.now(); modelCalls++;
-        try { result.reply = await compose(result, {env, timeoutMs:deadline - Date.now()}); }
+        try {
+          const composed=await compose(result, {env, timeoutMs:deadline - Date.now()});
+          result.reply=typeof composed==='string'?composed:composed.reply;
+          if(typeof composed!=='string') {
+            modelCalls+=Math.max(0,(composed.generationCount || 1)-1);
+            const usage=safeUsage(composed.usage);
+            result.modelUsage=sumUsage(result.modelUsage,usage);
+          }
+        }
+        catch(error) {if(error.modelCalls>1)modelCalls+=error.modelCalls-1;error.modelUsage=sumUsage(result.modelUsage,error.modelUsage);throw error;}
         finally { modelMs+=Date.now()-start; }
         // The signed context must contain the wording actually shown to the customer.
         result.state.history.at(-1).content = result.reply;
@@ -45,7 +58,7 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
       }
       const totalMs=Date.now()-startedAt;
       const timingMs={total:totalMs,model:modelMs,application:Math.max(0,totalMs-modelMs)};
-      console.info('MORA turn timing',{...timingMs,modelCalls,responseMode,architecture:result.singleModelReply?'single_generation':'legacy_or_safety'});
+      console.info('MORA turn timing',{...timingMs,modelCalls,responseMode,architecture:result.needsWording?'verified_state_then_wording':result.singleModelReply?'single_generation':'legacy_or_safety'});
       return res.status(200).json({ version: 2, reply: result.reply, actions: result.state.actions,
         issue: result.state.issue, issues: result.state.issues, session: sealSession(result.state), capabilities: portalCapabilities,
         understanding: result.understanding, responseMode, modelAvailability:result.availability,

@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { MockLanguageModelV4 } from 'ai/test';
 import { createUnderstandingService } from '../lib/mora/understanding.js';
 import { createChatHandler } from '../api/chat.js';
+import { generateNaturalReply } from '../lib/mora/reply.js';
 import { modelContext } from '../lib/mora/context.js';
 import { validatedDialogueReply } from '../lib/mora/dialogue.js';
 import { processTurn } from '../lib/mora/engine.js';
@@ -19,7 +20,7 @@ async function invoke(handler,body) {
   return {status,output};
 }
 
-test('One SDK generation supplies facts, wording and signed history; a second composer is never invoked',async()=>{
+test('Real understanding is followed by wording from validated state; only the displayed answer is signed',async()=>{
   let calls=0;
   const output=emptyUnderstanding({intent:'greeting',dialogue:dialogue('Grüezi! Was beschäftigt Sie rund um Ihre Immobilie?','information')});
   const sdkModel=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
@@ -29,11 +30,13 @@ test('One SDK generation supplies facts, wording and signed history; a second co
       usage:{inputTokens:{total:120,noCache:120,cacheRead:0,cacheWrite:0},outputTokens:{total:90,text:90,reasoning:0}}};
   }});
   const understand=createUnderstandingService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>sdkModel}),log(){}});
-  const result=await invoke(createChatHandler(understand,{env:{MORA_AI_NATURAL_REPLIES:'true'},compose:async()=>{throw new Error('Redundant model call');}}),{message:'Hey'});
-  assert.equal(result.status,200); assert.equal(calls,1);
+  const finalReply='Grüezi. Worum geht es?';
+  const wording=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{calls++;return {content:[{type:'text',text:JSON.stringify({reply:finalReply,questionKey:null})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],usage:{inputTokens:{total:80,noCache:80,cacheRead:0,cacheWrite:0},outputTokens:{total:30,text:30,reasoning:0}}};}});
+  const result=await invoke(createChatHandler(understand,{env:{},compose:turn=>{assert.equal(turn.needsWording,true);return generateNaturalReply(turn,wording);}}),{message:'Hey'});
+  assert.equal(result.status,200); assert.equal(calls,2);assert.equal(result.output.modelCalls,2);
   assert.equal(result.output.responseMode,'model'); assert.equal(result.output.understanding,'model');
-  assert.equal(result.output.reply,output.dialogue.reply); assert.equal(readSession(result.output.session).history.at(-1).content,output.dialogue.reply);
-  assert.equal(result.output.issue,null); assert.deepEqual(result.output.actions,[]); assert.equal(result.output.modelUsage.inputTokens,120);
+  assert.equal(result.output.reply,finalReply); assert.equal(readSession(result.output.session).history.at(-1).content,finalReply);
+  assert.equal(result.output.issue,null); assert.deepEqual(result.output.actions,[]); assert.equal(result.output.modelUsage.inputTokens,200);
 });
 
 test('No question does not automatically become a handover, and clarification choices come from the actual model question',async()=>{
