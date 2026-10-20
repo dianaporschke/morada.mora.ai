@@ -179,3 +179,9 @@ test('An unknown quantity clears its stale numeric scope and records unknown sep
  r=await turn('Die Anzahl weiss ich nicht.',{reply:'Sie können das Anliegen vorbereiten.',intent:'issue',updates:[{ref:'active',unknownAnswers:[{field:'count',quote:'Die Anzahl weiss ich nicht'}]}]},r.state);
  assert.equal(r.state.issue.count,null);assert.equal(r.state.issue.extent,null);assert.equal(r.state.issue.fieldFacts.count.status,'unknown');
 });
+
+
+test('Canonical equipment aliases still pass the physical-component provenance guard',async()=>{
+ const r=await turn('Unter dem Lavabo tropft Wasser.',{reply:'Wo genau tropft es?',intent:'issue',updates:[{ref:'new',equipment:'Rohr',category:'water',location:'unter dem Lavabo',defect:'tropft'}]});
+ assert.notEqual(r.state.issue.equipment,'pipe');
+});
