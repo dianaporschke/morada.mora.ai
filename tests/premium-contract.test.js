@@ -48,6 +48,14 @@ test('A compact proposed send action cannot become an executable portal operatio
   await assert.rejects(generateUnderstandingResult('Melden',null,model({reply:'Alles erledigt.',intent:'contact',actions:[{kind:'submit_request'}]})),{type:'invalid_model_output'});
 });
 
+test('Owner claims cannot invent personal-data access through an existing navigation view',async()=>{
+  await assert.rejects(generateUnderstandingResult('Zeigen Sie meine vermieteten Liegenschaften',null,model({
+    reply:'Eine Übersicht Ihrer Liegenschaften können Sie im Portfolio einsehen.',intent:'property',actions:[{kind:'navigate',target:'portfolio'}],
+  })),{type:'invalid_model_output'});
+  const result=await generateUnderstandingResult('Öffnen Sie bitte das Portfolio',null,model({reply:'Ich öffne die vorbereitete Portfolioansicht.',intent:'property',actions:[{kind:'navigate',target:'portfolio'}]}));
+  assert.equal(result.data.dialogue.buttons[0].target,'portfolio');
+});
+
 test('Failed generations retain known token usage and call count without exposing model text',async()=>{
   await assert.rejects(generateUnderstandingResult('Hallo',null,model({reply:'Hallo',intent:'greeting',actions:[{kind:'delete_everything'}]})),error=>{
     assert.equal(error.generationCount,2);assert.equal(error.totalUsage.inputTokens,200);
