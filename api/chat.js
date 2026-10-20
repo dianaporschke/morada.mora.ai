@@ -3,7 +3,7 @@ import { readSession, sealSession } from '../lib/mora/session.js';
 import { processTurn } from '../lib/mora/engine.js';
 import { extractUnderstanding } from '../lib/mora/understanding.js';
 import { portalCapabilities } from '../lib/portal/adapter.js';
-import { canComposeReply, composeNaturalReply } from '../lib/mora/reply.js';
+import { canComposeReply, composeNaturalReply, retainValidatedConversation } from '../lib/mora/reply.js';
 import { modelFailure } from '../lib/mora/availability.js';
 import { readPortalContext } from '../lib/mora/portal-context.js';
 import { safeUsage } from '../lib/mora/provider.js';
@@ -52,11 +52,16 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
             result.modelUsage=sumUsage(result.modelUsage,usage);
           }
         }
-        catch(error) {if(error.modelCalls>1)modelCalls+=error.modelCalls-1;error.modelUsage=sumUsage(result.modelUsage,error.modelUsage);throw error;}
+        catch(error) {
+          if(error.modelCalls>1)modelCalls+=error.modelCalls-1;
+          error.modelUsage=sumUsage(result.modelUsage,error.modelUsage);
+          if(error.code==='MODEL_UNAVAILABLE' && retainValidatedConversation(result,error.availability))result.modelUsage=error.modelUsage;
+          else throw error;
+        }
         finally { modelMs+=Date.now()-start; }
         // The signed context must contain the wording actually shown to the customer.
         result.state.history.at(-1).content = result.reply;
-        responseMode = 'model';
+        responseMode = result.recoveredFacts?'recovery':'model';
       }
       const totalMs=Date.now()-startedAt;
       const timingMs={total:totalMs,model:modelMs,application:Math.max(0,totalMs-modelMs)};
@@ -64,7 +69,7 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
       return res.status(200).json({ version: 2, reply: result.reply, actions: result.state.actions,
         issue: result.state.issue, issues: result.state.issues, session: sealSession(result.state), capabilities: portalCapabilities,
         understanding: result.understanding, responseMode, modelAvailability:result.availability,
-        timingMs,modelCalls,recoveredFacts:Boolean(result.recoveredFacts),modelUsage:result.modelUsage || null });
+        timingMs,modelCalls,recoveredFacts:Boolean(result.recoveredFacts),wordingFallback:result.wordingFallback || null,degraded:Boolean(result.wordingFallback),modelUsage:result.modelUsage || null });
     } catch (error) {
       if (error.code === 'MODEL_UNAVAILABLE') {
         const failure = modelFailure(error.availability);

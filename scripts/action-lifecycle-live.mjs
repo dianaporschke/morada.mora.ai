@@ -48,7 +48,7 @@ try {
     const {session,...safe}=response.body;
     result.http.push({message:body.message||null,receipt:receipt?body.draftReceipt:null,status:response.status,...safe});persist();
     console.log(JSON.stringify({case:c.id,message:body.message||'receipt',status:response.status,reply:safe.reply,actions:safe.actions,responseMode:safe.responseMode,modelCalls:safe.modelCalls}));
-    if(response.status!==200){fatal=Error(`Real request failed: ${response.status}`);throw fatal;}
+    if(response.status!==200 || [401,402,403,404,429].includes(safe.modelAvailability?.status)){fatal=Error(`Real request or provider boundary: ${response.status}`);throw fatal;}
     return {ok:true,status:response.status,json:async()=>response.body};
    });await ui.ready;
   };await open();
