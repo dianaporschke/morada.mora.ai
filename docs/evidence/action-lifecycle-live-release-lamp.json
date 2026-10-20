@@ -1,0 +1,2259 @@
+{
+  "url": "https://morada-mora-1sb8r9gzo-dianaporschke-1255s-projects.vercel.app",
+  "sourceCommit": "91d4538f54e14f66ae151b1c3c09acf595920f84",
+  "model": "inception/mercury-2.5",
+  "realHTTP": true,
+  "dom": "jsdom + IndexedDB",
+  "cases": [
+    {
+      "id": "complete-lamp",
+      "http": [
+        {
+          "message": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Gerne helfe ich weiter. Möchten Sie, dass ich den Serviceentwurf für die Lampe im Wohnzimmer vorbereite?",
+          "actions": [
+            {
+              "id": "prepare-request",
+              "label": "Für MORADA vorbereiten",
+              "variant": "primary",
+              "type": "handover"
+            }
+          ],
+          "issue": {
+            "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.",
+            "defect": "lässt sich nicht einschalten",
+            "count": 1,
+            "location": "Wohnzimmer",
+            "since": "gestern",
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": "Keine weiteren Symptome",
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 2,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "defect": {
+                "status": "known",
+                "value": "lässt sich nicht einschalten",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "since": {
+                "status": "known",
+                "value": "gestern",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "details": {
+                "status": "known",
+                "value": "Keine weiteren Symptome",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T13:01:17.137Z",
+            "updatedAt": "2026-10-20T13:01:17.140Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "revision": 2
+            }
+          },
+          "issues": [
+            {
+              "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.",
+              "defect": "lässt sich nicht einschalten",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": "gestern",
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": "Keine weiteren Symptome",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "lässt sich nicht einschalten",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "gestern",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "details": {
+                  "status": "known",
+                  "value": "Keine weiteren Symptome",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:01:17.137Z",
+              "updatedAt": "2026-10-20T13:01:17.140Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "revision": 2
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 21648,
+            "model": 21639,
+            "application": 9
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 2587,
+            "outputTokens": 1620,
+            "reasoningTokens": 1442,
+            "cachedInputTokens": 0
+          }
+        },
+        {
+          "message": null,
+          "receipt": {
+            "issueId": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "revision": 2,
+            "status": "portal_received"
+          },
+          "status": 200,
+          "version": 2,
+          "reply": "Der Entwurf ist im Servicebereich auf diesem Gerät verfügbar. Er wurde noch nicht an MORADA gesendet.",
+          "actions": [],
+          "issue": {
+            "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.",
+            "defect": "lässt sich nicht einschalten",
+            "count": 1,
+            "location": "Wohnzimmer",
+            "since": "gestern",
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": "Keine weiteren Symptome",
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 2,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "defect": {
+                "status": "known",
+                "value": "lässt sich nicht einschalten",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "since": {
+                "status": "known",
+                "value": "gestern",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "details": {
+                "status": "known",
+                "value": "Keine weiteren Symptome",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 2,
+              "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:01:23.533Z"
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T13:01:17.137Z",
+            "updatedAt": "2026-10-20T13:01:23.533Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "revision": 2
+            }
+          },
+          "issues": [
+            {
+              "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.",
+              "defect": "lässt sich nicht einschalten",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": "gestern",
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": "Keine weiteren Symptome",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "lässt sich nicht einschalten",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "gestern",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "details": {
+                  "status": "known",
+                  "value": "Keine weiteren Symptome",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 2,
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:01:23.533Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:01:17.137Z",
+              "updatedAt": "2026-10-20T13:01:23.533Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "revision": 2
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "guided",
+          "responseMode": "engine",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 1,
+            "model": 0,
+            "application": 1
+          },
+          "modelCalls": 0,
+          "recoveredFacts": false,
+          "modelUsage": null
+        },
+        {
+          "message": "Ich bin morgen ab 16 Uhr erreichbar.",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Ich habe Ihre Erreichbarkeit notiert.",
+          "actions": [],
+          "issue": {
+            "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+            "defect": "lässt sich nicht einschalten",
+            "count": 1,
+            "location": "Wohnzimmer",
+            "since": "gestern",
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              {
+                "question": "description",
+                "answer": "Ich bin morgen ab 16 Uhr erreichbar."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "details": {
+                    "from": "Keine weiteren Symptome",
+                    "to": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen"
+                  }
+                },
+                "source": "Ich bin morgen ab 16 Uhr erreichbar.",
+                "at": "2026-10-20T13:01:51.402Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 3,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "defect": {
+                "status": "known",
+                "value": "lässt sich nicht einschalten",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "since": {
+                "status": "known",
+                "value": "gestern",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "details": {
+                "status": "corrected",
+                "value": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+                "source": "Ich bin morgen ab 16 Uhr erreichbar."
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 2,
+              "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:01:23.533Z"
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T13:01:17.137Z",
+            "updatedAt": "2026-10-20T13:01:51.403Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "revision": 2
+            }
+          },
+          "issues": [
+            {
+              "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+              "defect": "lässt sich nicht einschalten",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": "gestern",
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                {
+                  "question": "description",
+                  "answer": "Ich bin morgen ab 16 Uhr erreichbar."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "details": {
+                      "from": "Keine weiteren Symptome",
+                      "to": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen"
+                    }
+                  },
+                  "source": "Ich bin morgen ab 16 Uhr erreichbar.",
+                  "at": "2026-10-20T13:01:51.402Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "lässt sich nicht einschalten",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "gestern",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "details": {
+                  "status": "corrected",
+                  "value": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+                  "source": "Ich bin morgen ab 16 Uhr erreichbar."
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 2,
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:01:23.533Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:01:17.137Z",
+              "updatedAt": "2026-10-20T13:01:51.403Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "revision": 2
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 21894,
+            "model": 21890,
+            "application": 4
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 3051,
+            "outputTokens": 2625,
+            "reasoningTokens": 2482,
+            "cachedInputTokens": 0
+          }
+        },
+        {
+          "message": null,
+          "receipt": {
+            "issueId": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "revision": 3,
+            "status": "portal_received"
+          },
+          "status": 200,
+          "version": 2,
+          "reply": "Der Entwurf ist im Servicebereich auf diesem Gerät verfügbar. Er wurde noch nicht an MORADA gesendet.",
+          "actions": [],
+          "issue": {
+            "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+            "defect": "lässt sich nicht einschalten",
+            "count": 1,
+            "location": "Wohnzimmer",
+            "since": "gestern",
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              {
+                "question": "description",
+                "answer": "Ich bin morgen ab 16 Uhr erreichbar."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "details": {
+                    "from": "Keine weiteren Symptome",
+                    "to": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen"
+                  }
+                },
+                "source": "Ich bin morgen ab 16 Uhr erreichbar.",
+                "at": "2026-10-20T13:01:51.402Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 3,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "defect": {
+                "status": "known",
+                "value": "lässt sich nicht einschalten",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "since": {
+                "status": "known",
+                "value": "gestern",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "details": {
+                "status": "corrected",
+                "value": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+                "source": "Ich bin morgen ab 16 Uhr erreichbar."
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 3,
+              "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",null],[\"details\",\"corrected\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:01:57.431Z"
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T13:01:17.137Z",
+            "updatedAt": "2026-10-20T13:01:57.431Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "revision": 2
+            }
+          },
+          "issues": [
+            {
+              "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+              "defect": "lässt sich nicht einschalten",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": "gestern",
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                {
+                  "question": "description",
+                  "answer": "Ich bin morgen ab 16 Uhr erreichbar."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "details": {
+                      "from": "Keine weiteren Symptome",
+                      "to": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen"
+                    }
+                  },
+                  "source": "Ich bin morgen ab 16 Uhr erreichbar.",
+                  "at": "2026-10-20T13:01:51.402Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "lässt sich nicht einschalten",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "gestern",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "details": {
+                  "status": "corrected",
+                  "value": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+                  "source": "Ich bin morgen ab 16 Uhr erreichbar."
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 3,
+                "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",null],[\"details\",\"corrected\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:01:57.431Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:01:17.137Z",
+              "updatedAt": "2026-10-20T13:01:57.431Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "revision": 2
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "guided",
+          "responseMode": "engine",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 1,
+            "model": 0,
+            "application": 1
+          },
+          "modelCalls": 0,
+          "recoveredFacts": false,
+          "modelUsage": null
+        },
+        {
+          "message": "danke",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Gerne. Melden Sie sich einfach, falls noch etwas offen ist.",
+          "actions": [],
+          "issue": {
+            "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+            "defect": "lässt sich nicht einschalten",
+            "count": 1,
+            "location": "Wohnzimmer",
+            "since": "gestern",
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              {
+                "question": "description",
+                "answer": "Ich bin morgen ab 16 Uhr erreichbar."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "details": {
+                    "from": "Keine weiteren Symptome",
+                    "to": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen"
+                  }
+                },
+                "source": "Ich bin morgen ab 16 Uhr erreichbar.",
+                "at": "2026-10-20T13:01:51.402Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 3,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "defect": {
+                "status": "known",
+                "value": "lässt sich nicht einschalten",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "since": {
+                "status": "known",
+                "value": "gestern",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "details": {
+                "status": "corrected",
+                "value": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+                "source": "Ich bin morgen ab 16 Uhr erreichbar."
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+                "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 3,
+              "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",null],[\"details\",\"corrected\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:01:57.431Z"
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T13:01:17.137Z",
+            "updatedAt": "2026-10-20T13:02:10.235Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "revision": 2
+            }
+          },
+          "issues": [
+            {
+              "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+              "defect": "lässt sich nicht einschalten",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": "gestern",
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                {
+                  "question": "description",
+                  "answer": "Ich bin morgen ab 16 Uhr erreichbar."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "details": {
+                      "from": "Keine weiteren Symptome",
+                      "to": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen"
+                    }
+                  },
+                  "source": "Ich bin morgen ab 16 Uhr erreichbar.",
+                  "at": "2026-10-20T13:01:51.402Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "lässt sich nicht einschalten",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "gestern",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "details": {
+                  "status": "corrected",
+                  "value": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+                  "source": "Ich bin morgen ab 16 Uhr erreichbar."
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 3,
+                "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",null],[\"details\",\"corrected\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:01:57.431Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:01:17.137Z",
+              "updatedAt": "2026-10-20T13:02:10.235Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "revision": 2
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 6124,
+            "model": 6123,
+            "application": 1
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 3143,
+            "outputTokens": 1272,
+            "reasoningTokens": 1238,
+            "cachedInputTokens": 749
+          }
+        }
+      ],
+      "steps": [
+        {
+          "step": {
+            "message": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome."
+          },
+          "issue": {
+            "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "lässt sich nicht einschalten",
+            "description": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.",
+            "location": "Wohnzimmer",
+            "count": 1,
+            "since": "gestern",
+            "details": "Keine weiteren Symptome",
+            "revision": 2,
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [],
+          "phase": "ready",
+          "visibleChatActions": [
+            {
+              "label": "Für MORADA vorbereiten",
+              "type": "handover",
+              "disabled": false
+            }
+          ],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Für MORADA vorbereiten"
+          },
+          "form": {
+            "equipment": "",
+            "location": "",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. Möchten Sie, dass ich den Serviceentwurf für die Lampe im Wohnzimmer vorbereite?",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "prepare": true
+          },
+          "issue": {
+            "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "lässt sich nicht einschalten",
+            "description": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.",
+            "location": "Wohnzimmer",
+            "count": 1,
+            "since": "gestern",
+            "details": "Keine weiteren Symptome",
+            "revision": 2,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 2,
+              "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:01:23.533Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "lässt sich nicht einschalten",
+              "description": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.",
+              "location": "Wohnzimmer",
+              "count": 1,
+              "since": "gestern",
+              "details": "Keine weiteren Symptome",
+              "revision": 2,
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "portal_received",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "Wohnzimmer",
+            "details": "Keine weiteren Symptome"
+          },
+          "thread": [
+            {
+              "content": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. Möchten Sie, dass ich den Serviceentwurf für die Lampe im Wohnzimmer vorbereite?",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "message": "Ich bin morgen ab 16 Uhr erreichbar."
+          },
+          "issue": {
+            "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "lässt sich nicht einschalten",
+            "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+            "location": "Wohnzimmer",
+            "count": 1,
+            "since": "gestern",
+            "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+            "revision": 3,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 2,
+              "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:01:23.533Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "lässt sich nicht einschalten",
+              "description": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.",
+              "location": "Wohnzimmer",
+              "count": 1,
+              "since": "gestern",
+              "details": "Keine weiteren Symptome",
+              "revision": 2,
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "ready",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": false,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "Wohnzimmer",
+            "details": "Keine weiteren Symptome"
+          },
+          "thread": [
+            {
+              "content": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. Möchten Sie, dass ich den Serviceentwurf für die Lampe im Wohnzimmer vorbereite?",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ich bin morgen ab 16 Uhr erreichbar.",
+              "who": "user"
+            },
+            {
+              "content": "Ich habe Ihre Erreichbarkeit notiert.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "prepare": true
+          },
+          "issue": {
+            "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "lässt sich nicht einschalten",
+            "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+            "location": "Wohnzimmer",
+            "count": 1,
+            "since": "gestern",
+            "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+            "revision": 3,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 3,
+              "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",null],[\"details\",\"corrected\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:01:57.431Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "lässt sich nicht einschalten",
+              "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+              "location": "Wohnzimmer",
+              "count": 1,
+              "since": "gestern",
+              "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+              "revision": 3,
+              "preparation": {
+                "status": "portal_received",
+                "revision": 2,
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:01:23.533Z"
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "portal_received",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "Wohnzimmer",
+            "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen"
+          },
+          "thread": [
+            {
+              "content": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. Möchten Sie, dass ich den Serviceentwurf für die Lampe im Wohnzimmer vorbereite?",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ich bin morgen ab 16 Uhr erreichbar.",
+              "who": "user"
+            },
+            {
+              "content": "Ich habe Ihre Erreichbarkeit notiert.",
+              "who": "assistant"
+            },
+            {
+              "content": "Der bestehende Entwurf wurde im Servicebereich aktualisiert. Er wurde noch nicht versendet.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "message": "danke"
+          },
+          "issue": {
+            "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "lässt sich nicht einschalten",
+            "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+            "location": "Wohnzimmer",
+            "count": 1,
+            "since": "gestern",
+            "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+            "revision": 3,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 3,
+              "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",null],[\"details\",\"corrected\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:01:57.431Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "lässt sich nicht einschalten",
+              "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+              "location": "Wohnzimmer",
+              "count": 1,
+              "since": "gestern",
+              "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+              "revision": 3,
+              "preparation": {
+                "status": "portal_received",
+                "revision": 2,
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:01:23.533Z"
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "portal_received",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "Wohnzimmer",
+            "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen"
+          },
+          "thread": [
+            {
+              "content": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. Möchten Sie, dass ich den Serviceentwurf für die Lampe im Wohnzimmer vorbereite?",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ich bin morgen ab 16 Uhr erreichbar.",
+              "who": "user"
+            },
+            {
+              "content": "Ich habe Ihre Erreichbarkeit notiert.",
+              "who": "assistant"
+            },
+            {
+              "content": "Der bestehende Entwurf wurde im Servicebereich aktualisiert. Er wurde noch nicht versendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "danke",
+              "who": "user"
+            },
+            {
+              "content": "Gerne. Melden Sie sich einfach, falls noch etwas offen ist.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "reload": true
+          },
+          "issue": {
+            "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "lässt sich nicht einschalten",
+            "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+            "location": "Wohnzimmer",
+            "count": 1,
+            "since": "gestern",
+            "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+            "revision": 3,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 3,
+              "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: gestern\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nZusatzangaben: Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\\nDringlichkeit: Normal\",null],[\"details\",\"corrected\",\"Keine weiteren Symptome\\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:01:57.431Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "49574bc1-1cb8-44db-964d-8f486f287cd8",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "lässt sich nicht einschalten",
+              "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen\nDringlichkeit: Normal",
+              "location": "Wohnzimmer",
+              "count": 1,
+              "since": "gestern",
+              "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen",
+              "revision": 3,
+              "preparation": {
+                "status": "portal_received",
+                "revision": 2,
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",\"gestern\",\"1 betroffene Einrichtung(en)\",\"Keine weiteren Symptome\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\",null],[\"details\",\"known\",\"Keine weiteren Symptome\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:01:23.533Z"
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "portal_received",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "Wohnzimmer",
+            "details": "Keine weiteren Symptome\nKeine weiteren Symptome; Erreichbarkeit ab 16 Uhr morgen"
+          },
+          "thread": [
+            {
+              "content": "Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. Möchten Sie, dass ich den Serviceentwurf für die Lampe im Wohnzimmer vorbereite?",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ich bin morgen ab 16 Uhr erreichbar.",
+              "who": "user"
+            },
+            {
+              "content": "Ich habe Ihre Erreichbarkeit notiert.",
+              "who": "assistant"
+            },
+            {
+              "content": "Der bestehende Entwurf wurde im Servicebereich aktualisiert. Er wurde noch nicht versendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "danke",
+              "who": "user"
+            },
+            {
+              "content": "Gerne. Melden Sie sich einfach, falls noch etwas offen ist.",
+              "who": "assistant"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic-and-second-issue",
+      "http": [
+        {
+          "message": "Meine Lampe im Wohnzimmer geht nicht.",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Gerne nehme ich das auf. Ich kann das Serviceformular für die Lampe im Wohnzimmer vorbereiten.",
+          "actions": [
+            {
+              "id": "prepare-request",
+              "label": "Für MORADA vorbereiten",
+              "variant": "primary",
+              "type": "handover"
+            }
+          ],
+          "issue": {
+            "id": "07f56f05-e443-4c41-ba34-8b5106f6dff7",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Meine Lampe im Wohnzimmer geht nicht.",
+            "defect": "Lampe lässt sich nicht einschalten.",
+            "count": null,
+            "location": "Wohnzimmer",
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Meine Lampe im Wohnzimmer geht nicht."
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 2,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              },
+              "defect": {
+                "status": "known",
+                "value": "Lampe lässt sich nicht einschalten.",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Meine Lampe im Wohnzimmer geht nicht.",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T13:02:39.025Z",
+            "updatedAt": "2026-10-20T13:02:39.026Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 2
+            }
+          },
+          "issues": [
+            {
+              "id": "07f56f05-e443-4c41-ba34-8b5106f6dff7",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Meine Lampe im Wohnzimmer geht nicht.",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe im Wohnzimmer geht nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Lampe im Wohnzimmer geht nicht.",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:02:39.025Z",
+              "updatedAt": "2026-10-20T13:02:39.026Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 10648,
+            "model": 10647,
+            "application": 1
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 2684,
+            "outputTokens": 2237,
+            "reasoningTokens": 2082,
+            "cachedInputTokens": 762
+          }
+        }
+      ],
+      "steps": [
+        {
+          "step": {
+            "message": "Meine Lampe im Wohnzimmer geht nicht."
+          },
+          "issue": {
+            "id": "07f56f05-e443-4c41-ba34-8b5106f6dff7",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "Lampe lässt sich nicht einschalten.",
+            "description": "Meine Lampe im Wohnzimmer geht nicht.",
+            "location": "Wohnzimmer",
+            "count": null,
+            "since": null,
+            "details": null,
+            "revision": 2,
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [],
+          "phase": "ready",
+          "visibleChatActions": [
+            {
+              "label": "Für MORADA vorbereiten",
+              "type": "handover",
+              "disabled": false
+            }
+          ],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Für MORADA vorbereiten"
+          },
+          "form": {
+            "equipment": "",
+            "location": "",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "Meine Lampe im Wohnzimmer geht nicht.",
+              "who": "user"
+            },
+            {
+              "content": "Gerne nehme ich das auf. Ich kann das Serviceformular für die Lampe im Wohnzimmer vorbereiten.",
+              "who": "assistant"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

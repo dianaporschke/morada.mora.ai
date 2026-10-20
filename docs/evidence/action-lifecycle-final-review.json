@@ -1,0 +1,12 @@
+{
+  "sourceCommit": "43c89d061ee36b7b1ad3c8fe6f3e0669837549a8",
+  "modelTurns": 3,
+  "actualGenerations": 5,
+  "httpErrors": 0,
+  "degradedTurns": 0,
+  "singleDraftAfterReload": true,
+  "equipment": "light",
+  "room": "wohnzimmer",
+  "visibleActionRequiredBeforeHandover": true,
+  "scope": "full short regression before the subsequent detail-prefix-only change; final build is separately browser-tested"
+}

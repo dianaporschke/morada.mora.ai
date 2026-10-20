@@ -1,0 +1,20 @@
+{
+  "sourceCommit": "6ef24cda89f2d4d0cab0fdf9ba28234a387bc336",
+  "preview": "https://morada-mora-hwg0nkuia-dianaporschke-1255s-projects.vercel.app/",
+  "model": "inception/mercury-2.5",
+  "customerModelTurns": 4,
+  "localHandovers": 3,
+  "visibleOfferBeforeCreate": true,
+  "sameLampDraftUpdated": true,
+  "additionalNoteRetainedOnce": true,
+  "negativeSymptomsRetainedOnce": true,
+  "twoSeparateDrafts": true,
+  "heaterCount": 2,
+  "lampCount": 1,
+  "noOldPreparationActionsAfterHandover": true,
+  "truthfulNotSentAnswer": true,
+  "portalFormValuesMatchChatFacts": true,
+  "languageQuality": "Technically accurate; acknowledgements remain somewhat formal/repetitive. No guarantee of consistently natural German.",
+  "evidence": "action-lifecycle-final-browser.json",
+  "screenshot": "mora-action-final.jpg"
+}

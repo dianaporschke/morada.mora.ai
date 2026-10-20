@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "c53954ee23cd5b40b5ea1133368ba76e68bd03f0",
+  "url": "https://morada-mora-2dry5dy6p-dianaporschke-1255s-projects.vercel.app/",
+  "model": "inception/mercury-2.5",
+  "startedAt": "2026-10-20T13:49:17.135Z",
+  "steps": [
+    {
+      "step": "wording failure before safe retention fix",
+      "snapshot": "- banner:\n  - img \"MORADA Immobilien\"\n  - generic: DP\n- main:\n  - generic: Guten Tag\n  - generic: Ihre Übersicht.\n  - generic: IHRE LIEGENSCHAFT\n  - generic: Wohnliegenschaft Baden\n  - generic: 12 Einheiten · persönlich durch MORADA betreut\n  - generic: 98 %\n  - text: Vermietet\n  - generic: CHF 26'400\n  - text: Miete / Monat\n  - text: Immobilie ansehen\n  - generic: →\n  - strong: Dokumente\n  - generic: Unterlagen einsehen\n  - generic: ›\n  - generic: +\n  - strong: Anliegen\n  - generic: Neues Anliegen melden\n  - generic: ›\n  - strong: Portfolio\n  - generic: Alle Liegenschaften\n  - generic: ›\n  - strong: Profil\n  - generic: Persönliche Daten\n  - generic: ›\n- button \"MORA fragen\":\n  - generic: MORA fragen\n- dialog \"MORA Assistenz\":\n  - text: MORA fragen\n  - generic: MORADA ASSISTENT\n  - button \"Neuer Chat\"\n  - button \"MORA schliessen\": ×\n  - log:\n    - generic: Guten Tag. Ich bin MORA. Wie kann ich Ihnen rund um Ihre Immobilie helfen?\n    - button \"Dokumente finden\"\n    - button \"Anliegen melden\"\n    - button \"Meine Immobilie\"\n    - button \"WalkThrough\"\n    - generic: Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.\n    - generic: Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.\n    - button \"Erneut versuchen\"\n    - button \"Neuen Chat starten\"\n  - generic: Fotos werden lokal hinzugefügt und erst mit einer angebundenen Übermittlung versendet.\n  - textbox \"Nachricht an MORA\":\n    - /placeholder: Nachricht an MORA …\n  - button \"Nachricht senden\": ↑\n- navigation:\n  - generic: Home\n  - generic: Portfolio\n  - generic: Service\n  - generic: Dokumente\n  - generic: Profil",
+      "diagnosis": "Runtime confirmed a successful semantic plan followed by reply_invalid_output. This candidate returned a technical failure instead of retaining the validated turn."
+    }
+  ]
+}

@@ -1,0 +1,3158 @@
+{
+  "url": "https://morada-mora-mh42owo5x-dianaporschke-1255s-projects.vercel.app",
+  "sourceCommit": "1099cd3ea83efa9756e2d0d6fa479e63ac95794f",
+  "model": "inception/mercury-2.5",
+  "realHTTP": true,
+  "dom": "jsdom + IndexedDB",
+  "cases": [
+    {
+      "id": "reported-lamp",
+      "http": [
+        {
+          "message": "lampe kaputt",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Gerne helfe ich weiter. In welchem Raum ist die Lampe defekt?",
+          "actions": [],
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "lampe kaputt",
+            "defect": "defekt",
+            "count": null,
+            "location": null,
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\ndefekt\nDringlichkeit: Normal",
+            "pendingKey": "location",
+            "clarification": "In welchem Raum befindet sich die defekte Lampe?",
+            "attempts": {
+              "location": 1
+            },
+            "revision": 2,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "defekt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "lampe kaputt",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T12:47:57.817Z",
+            "updatedAt": "2026-10-20T12:47:57.832Z",
+            "shortLabel": "Lampe / Leuchte"
+          },
+          "issues": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe kaputt",
+              "defect": "defekt",
+              "count": null,
+              "location": null,
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\ndefekt\nDringlichkeit: Normal",
+              "pendingKey": "location",
+              "clarification": "In welchem Raum befindet sich die defekte Lampe?",
+              "attempts": {
+                "location": 1
+              },
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "defekt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe kaputt",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T12:47:57.817Z",
+              "updatedAt": "2026-10-20T12:47:57.832Z",
+              "shortLabel": "Lampe / Leuchte"
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 6211,
+            "model": 6193,
+            "application": 18
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 2436,
+            "outputTokens": 1494,
+            "reasoningTokens": 1375,
+            "cachedInputTokens": 0
+          }
+        },
+        {
+          "message": "wohnzimmer",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Danke für die Angabe. Ich habe das Wohnzimmer als Ort notiert. Ich kann das Serviceformular nun für Sie vorbereiten.",
+          "actions": [
+            {
+              "id": "prepare-request",
+              "label": "Für MORADA vorbereiten",
+              "variant": "primary",
+              "type": "handover"
+            }
+          ],
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "lampe kaputt",
+            "defect": "defekt",
+            "count": null,
+            "location": "wohnzimmer",
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\ndefekt\nBereich: wohnzimmer\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {
+              "location": 1
+            },
+            "revision": 3,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "defekt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "known",
+                "value": "wohnzimmer",
+                "source": "wohnzimmer"
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "lampe kaputt",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T12:47:57.817Z",
+            "updatedAt": "2026-10-20T12:48:19.350Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 3
+            }
+          },
+          "issues": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe kaputt",
+              "defect": "defekt",
+              "count": null,
+              "location": "wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                },
+                {
+                  "question": "location",
+                  "answer": "wohnzimmer"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\ndefekt\nBereich: wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {
+                "location": 1
+              },
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "defekt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "wohnzimmer",
+                  "source": "wohnzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe kaputt",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T12:47:57.817Z",
+              "updatedAt": "2026-10-20T12:48:19.350Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 5802,
+            "model": 5801,
+            "application": 1
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 2734,
+            "outputTokens": 1652,
+            "reasoningTokens": 1500,
+            "cachedInputTokens": 0
+          }
+        },
+        {
+          "message": "seit gestern",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Gerne habe ich den Zeitpunkt notiert. Der Entwurf ist damit aktuell.",
+          "actions": [],
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "lampe kaputt",
+            "defect": "defekt",
+            "count": null,
+            "location": "wohnzimmer",
+            "since": "seit gestern",
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              },
+              {
+                "question": "description",
+                "answer": "seit gestern"
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\ndefekt\nBereich: wohnzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {
+              "location": 1
+            },
+            "revision": 4,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "defekt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "known",
+                "value": "wohnzimmer",
+                "source": "wohnzimmer"
+              },
+              "since": {
+                "status": "known",
+                "value": "seit gestern",
+                "source": "seit gestern"
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "lampe kaputt",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T12:47:57.817Z",
+            "updatedAt": "2026-10-20T12:48:48.486Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 3
+            }
+          },
+          "issues": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe kaputt",
+              "defect": "defekt",
+              "count": null,
+              "location": "wohnzimmer",
+              "since": "seit gestern",
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                },
+                {
+                  "question": "location",
+                  "answer": "wohnzimmer"
+                },
+                {
+                  "question": "description",
+                  "answer": "seit gestern"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\ndefekt\nBereich: wohnzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {
+                "location": 1
+              },
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "defekt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "wohnzimmer",
+                  "source": "wohnzimmer"
+                },
+                "since": {
+                  "status": "known",
+                  "value": "seit gestern",
+                  "source": "seit gestern"
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe kaputt",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T12:47:57.817Z",
+              "updatedAt": "2026-10-20T12:48:48.486Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 7042,
+            "model": 7040,
+            "application": 2
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 2811,
+            "outputTokens": 1938,
+            "reasoningTokens": 1815,
+            "cachedInputTokens": 766
+          }
+        },
+        {
+          "message": null,
+          "receipt": {
+            "issueId": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "revision": 4,
+            "status": "portal_received"
+          },
+          "status": 200,
+          "version": 2,
+          "reply": "Der Entwurf ist im Servicebereich auf diesem Gerät verfügbar. Er wurde noch nicht an MORADA gesendet.",
+          "actions": [],
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "lampe kaputt",
+            "defect": "defekt",
+            "count": null,
+            "location": "wohnzimmer",
+            "since": "seit gestern",
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              },
+              {
+                "question": "description",
+                "answer": "seit gestern"
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\ndefekt\nBereich: wohnzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {
+              "location": 1
+            },
+            "revision": 4,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "defekt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "known",
+                "value": "wohnzimmer",
+                "source": "wohnzimmer"
+              },
+              "since": {
+                "status": "known",
+                "value": "seit gestern",
+                "source": "seit gestern"
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "lampe kaputt",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 4,
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T12:48:53.356Z"
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T12:47:57.817Z",
+            "updatedAt": "2026-10-20T12:48:53.356Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 3
+            }
+          },
+          "issues": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe kaputt",
+              "defect": "defekt",
+              "count": null,
+              "location": "wohnzimmer",
+              "since": "seit gestern",
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                },
+                {
+                  "question": "location",
+                  "answer": "wohnzimmer"
+                },
+                {
+                  "question": "description",
+                  "answer": "seit gestern"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\ndefekt\nBereich: wohnzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {
+                "location": 1
+              },
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "defekt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "wohnzimmer",
+                  "source": "wohnzimmer"
+                },
+                "since": {
+                  "status": "known",
+                  "value": "seit gestern",
+                  "source": "seit gestern"
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe kaputt",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 4,
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T12:48:53.356Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T12:47:57.817Z",
+              "updatedAt": "2026-10-20T12:48:53.356Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "guided",
+          "responseMode": "engine",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 1,
+            "model": 0,
+            "application": 1
+          },
+          "modelCalls": 0,
+          "recoveredFacts": false,
+          "modelUsage": null
+        },
+        {
+          "message": "danke",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Gerne geschehen. Ich bin weiter für Sie da.",
+          "actions": [],
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "lampe kaputt",
+            "defect": "defekt",
+            "count": null,
+            "location": "wohnzimmer",
+            "since": "seit gestern",
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              },
+              {
+                "question": "description",
+                "answer": "seit gestern"
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\ndefekt\nBereich: wohnzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {
+              "location": 1
+            },
+            "revision": 4,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "defekt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "known",
+                "value": "wohnzimmer",
+                "source": "wohnzimmer"
+              },
+              "since": {
+                "status": "known",
+                "value": "seit gestern",
+                "source": "seit gestern"
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "lampe kaputt",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 4,
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T12:48:53.356Z"
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T12:47:57.817Z",
+            "updatedAt": "2026-10-20T12:49:10.156Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 3
+            }
+          },
+          "issues": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe kaputt",
+              "defect": "defekt",
+              "count": null,
+              "location": "wohnzimmer",
+              "since": "seit gestern",
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                },
+                {
+                  "question": "location",
+                  "answer": "wohnzimmer"
+                },
+                {
+                  "question": "description",
+                  "answer": "seit gestern"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\ndefekt\nBereich: wohnzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {
+                "location": 1
+              },
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "defekt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "wohnzimmer",
+                  "source": "wohnzimmer"
+                },
+                "since": {
+                  "status": "known",
+                  "value": "seit gestern",
+                  "source": "seit gestern"
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe kaputt",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 4,
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T12:48:53.356Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T12:47:57.817Z",
+              "updatedAt": "2026-10-20T12:49:10.156Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 3718,
+            "model": 3705,
+            "application": 13
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 2858,
+            "outputTokens": 957,
+            "reasoningTokens": 919,
+            "cachedInputTokens": 770
+          }
+        },
+        {
+          "message": "Nein, ich meinte Schlafzimmer.",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Alles klar, ich habe das Schlafzimmer als Ort notiert.",
+          "actions": [],
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+            "defect": "defekt",
+            "count": null,
+            "location": "Schlafzimmer",
+            "since": "seit gestern",
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              },
+              {
+                "question": "description",
+                "answer": "seit gestern"
+              },
+              {
+                "question": "description",
+                "answer": "Nein, ich meinte Schlafzimmer."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "location": {
+                    "from": "wohnzimmer",
+                    "to": "Schlafzimmer"
+                  }
+                },
+                "source": "Nein, ich meinte Schlafzimmer.",
+                "at": "2026-10-20T12:49:36.967Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {
+              "location": 1
+            },
+            "revision": 5,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "defekt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "corrected",
+                "value": "Schlafzimmer",
+                "source": "Nein, ich meinte Schlafzimmer."
+              },
+              "since": {
+                "status": "known",
+                "value": "seit gestern",
+                "source": "seit gestern"
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 4,
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T12:48:53.356Z"
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T12:47:57.817Z",
+            "updatedAt": "2026-10-20T12:49:36.968Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 3
+            }
+          },
+          "issues": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+              "defect": "defekt",
+              "count": null,
+              "location": "Schlafzimmer",
+              "since": "seit gestern",
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                },
+                {
+                  "question": "location",
+                  "answer": "wohnzimmer"
+                },
+                {
+                  "question": "description",
+                  "answer": "seit gestern"
+                },
+                {
+                  "question": "description",
+                  "answer": "Nein, ich meinte Schlafzimmer."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "location": {
+                      "from": "wohnzimmer",
+                      "to": "Schlafzimmer"
+                    }
+                  },
+                  "source": "Nein, ich meinte Schlafzimmer.",
+                  "at": "2026-10-20T12:49:36.967Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {
+                "location": 1
+              },
+              "revision": 5,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "defekt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Schlafzimmer",
+                  "source": "Nein, ich meinte Schlafzimmer."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "seit gestern",
+                  "source": "seit gestern"
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 4,
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T12:48:53.356Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T12:47:57.817Z",
+              "updatedAt": "2026-10-20T12:49:36.968Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 5011,
+            "model": 5009,
+            "application": 2
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 2753,
+            "outputTokens": 1773,
+            "reasoningTokens": 1650,
+            "cachedInputTokens": 734
+          }
+        },
+        {
+          "message": null,
+          "receipt": {
+            "issueId": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "revision": 5,
+            "status": "portal_received"
+          },
+          "status": 200,
+          "version": 2,
+          "reply": "Der Entwurf ist im Servicebereich auf diesem Gerät verfügbar. Er wurde noch nicht an MORADA gesendet.",
+          "actions": [],
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+            "defect": "defekt",
+            "count": null,
+            "location": "Schlafzimmer",
+            "since": "seit gestern",
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              },
+              {
+                "question": "description",
+                "answer": "seit gestern"
+              },
+              {
+                "question": "description",
+                "answer": "Nein, ich meinte Schlafzimmer."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "location": {
+                    "from": "wohnzimmer",
+                    "to": "Schlafzimmer"
+                  }
+                },
+                "source": "Nein, ich meinte Schlafzimmer.",
+                "at": "2026-10-20T12:49:36.967Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {
+              "location": 1
+            },
+            "revision": 5,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "defekt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "corrected",
+                "value": "Schlafzimmer",
+                "source": "Nein, ich meinte Schlafzimmer."
+              },
+              "since": {
+                "status": "known",
+                "value": "seit gestern",
+                "source": "seit gestern"
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 5,
+              "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\ndefekt\\nBereich: Schlafzimmer\\nSeit wann: seit gestern\\nDringlichkeit: Normal\",\"defekt\",null,\"Schlafzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"Lampe / Leuchte\\ndefekt\\nBereich: Schlafzimmer\\nSeit wann: seit gestern\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T12:49:42.773Z"
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T12:47:57.817Z",
+            "updatedAt": "2026-10-20T12:49:42.773Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 3
+            }
+          },
+          "issues": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+              "defect": "defekt",
+              "count": null,
+              "location": "Schlafzimmer",
+              "since": "seit gestern",
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                },
+                {
+                  "question": "location",
+                  "answer": "wohnzimmer"
+                },
+                {
+                  "question": "description",
+                  "answer": "seit gestern"
+                },
+                {
+                  "question": "description",
+                  "answer": "Nein, ich meinte Schlafzimmer."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "location": {
+                      "from": "wohnzimmer",
+                      "to": "Schlafzimmer"
+                    }
+                  },
+                  "source": "Nein, ich meinte Schlafzimmer.",
+                  "at": "2026-10-20T12:49:36.967Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {
+                "location": 1
+              },
+              "revision": 5,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "defekt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Schlafzimmer",
+                  "source": "Nein, ich meinte Schlafzimmer."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "seit gestern",
+                  "source": "seit gestern"
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 5,
+                "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\ndefekt\\nBereich: Schlafzimmer\\nSeit wann: seit gestern\\nDringlichkeit: Normal\",\"defekt\",null,\"Schlafzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"Lampe / Leuchte\\ndefekt\\nBereich: Schlafzimmer\\nSeit wann: seit gestern\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T12:49:42.773Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T12:47:57.817Z",
+              "updatedAt": "2026-10-20T12:49:42.773Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "guided",
+          "responseMode": "engine",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 0,
+            "model": 0,
+            "application": 0
+          },
+          "modelCalls": 0,
+          "recoveredFacts": false,
+          "modelUsage": null
+        },
+        {
+          "message": "danke",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Gerne. Ich bin weiter für Sie da.",
+          "actions": [],
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+            "defect": "defekt",
+            "count": null,
+            "location": "Schlafzimmer",
+            "since": "seit gestern",
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              },
+              {
+                "question": "description",
+                "answer": "seit gestern"
+              },
+              {
+                "question": "description",
+                "answer": "Nein, ich meinte Schlafzimmer."
+              },
+              {
+                "question": "description",
+                "answer": "danke"
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "location": {
+                    "from": "wohnzimmer",
+                    "to": "Schlafzimmer"
+                  }
+                },
+                "source": "Nein, ich meinte Schlafzimmer.",
+                "at": "2026-10-20T12:49:36.967Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {
+              "location": 1
+            },
+            "revision": 5,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "defekt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "corrected",
+                "value": "Schlafzimmer",
+                "source": "Nein, ich meinte Schlafzimmer."
+              },
+              "since": {
+                "status": "known",
+                "value": "seit gestern",
+                "source": "seit gestern"
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 5,
+              "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\ndefekt\\nBereich: Schlafzimmer\\nSeit wann: seit gestern\\nDringlichkeit: Normal\",\"defekt\",null,\"Schlafzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"Lampe / Leuchte\\ndefekt\\nBereich: Schlafzimmer\\nSeit wann: seit gestern\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T12:49:42.773Z"
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T12:47:57.817Z",
+            "updatedAt": "2026-10-20T12:50:01.081Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 3
+            }
+          },
+          "issues": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+              "defect": "defekt",
+              "count": null,
+              "location": "Schlafzimmer",
+              "since": "seit gestern",
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                },
+                {
+                  "question": "location",
+                  "answer": "wohnzimmer"
+                },
+                {
+                  "question": "description",
+                  "answer": "seit gestern"
+                },
+                {
+                  "question": "description",
+                  "answer": "Nein, ich meinte Schlafzimmer."
+                },
+                {
+                  "question": "description",
+                  "answer": "danke"
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "location": {
+                      "from": "wohnzimmer",
+                      "to": "Schlafzimmer"
+                    }
+                  },
+                  "source": "Nein, ich meinte Schlafzimmer.",
+                  "at": "2026-10-20T12:49:36.967Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {
+                "location": 1
+              },
+              "revision": 5,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "defekt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Schlafzimmer",
+                  "source": "Nein, ich meinte Schlafzimmer."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "seit gestern",
+                  "source": "seit gestern"
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 5,
+                "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\ndefekt\\nBereich: Schlafzimmer\\nSeit wann: seit gestern\\nDringlichkeit: Normal\",\"defekt\",null,\"Schlafzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"Lampe / Leuchte\\ndefekt\\nBereich: Schlafzimmer\\nSeit wann: seit gestern\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T12:49:42.773Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T12:47:57.817Z",
+              "updatedAt": "2026-10-20T12:50:01.081Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 4598,
+            "model": 4596,
+            "application": 2
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 2935,
+            "outputTokens": 1230,
+            "reasoningTokens": 1194,
+            "cachedInputTokens": 764
+          }
+        }
+      ],
+      "steps": [
+        {
+          "step": {
+            "message": "lampe kaputt"
+          },
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "defekt",
+            "description": "lampe kaputt",
+            "location": null,
+            "count": null,
+            "since": null,
+            "details": null,
+            "revision": 2,
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "draftOfferShown": null,
+            "draftAction": null
+          },
+          "drafts": [],
+          "phase": "ready",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Für MORADA vorbereiten"
+          },
+          "form": {
+            "equipment": "",
+            "location": "",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "lampe kaputt",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. In welchem Raum ist die Lampe defekt?",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "message": "wohnzimmer"
+          },
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "defekt",
+            "description": "lampe kaputt",
+            "location": "wohnzimmer",
+            "count": null,
+            "since": null,
+            "details": null,
+            "revision": 3,
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [],
+          "phase": "ready",
+          "visibleChatActions": [
+            {
+              "label": "Für MORADA vorbereiten",
+              "type": "handover",
+              "disabled": false
+            }
+          ],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Für MORADA vorbereiten"
+          },
+          "form": {
+            "equipment": "",
+            "location": "",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "lampe kaputt",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. In welchem Raum ist die Lampe defekt?",
+              "who": "assistant"
+            },
+            {
+              "content": "wohnzimmer",
+              "who": "user"
+            },
+            {
+              "content": "Danke für die Angabe. Ich habe das Wohnzimmer als Ort notiert. Ich kann das Serviceformular nun für Sie vorbereiten.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "message": "seit gestern"
+          },
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "defekt",
+            "description": "lampe kaputt",
+            "location": "wohnzimmer",
+            "count": null,
+            "since": "seit gestern",
+            "details": null,
+            "revision": 4,
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [],
+          "phase": "ready",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": false,
+            "label": "Für MORADA vorbereiten"
+          },
+          "form": {
+            "equipment": "",
+            "location": "",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "lampe kaputt",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. In welchem Raum ist die Lampe defekt?",
+              "who": "assistant"
+            },
+            {
+              "content": "wohnzimmer",
+              "who": "user"
+            },
+            {
+              "content": "Danke für die Angabe. Ich habe das Wohnzimmer als Ort notiert. Ich kann das Serviceformular nun für Sie vorbereiten.",
+              "who": "assistant"
+            },
+            {
+              "content": "seit gestern",
+              "who": "user"
+            },
+            {
+              "content": "Gerne habe ich den Zeitpunkt notiert. Der Entwurf ist damit aktuell.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "prepare": true
+          },
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "defekt",
+            "description": "lampe kaputt",
+            "location": "wohnzimmer",
+            "count": null,
+            "since": "seit gestern",
+            "details": null,
+            "revision": 4,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 4,
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T12:48:53.356Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "defekt",
+              "description": "lampe kaputt",
+              "location": "wohnzimmer",
+              "count": null,
+              "since": "seit gestern",
+              "details": null,
+              "revision": 4,
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "portal_received",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "wohnzimmer",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "lampe kaputt",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. In welchem Raum ist die Lampe defekt?",
+              "who": "assistant"
+            },
+            {
+              "content": "wohnzimmer",
+              "who": "user"
+            },
+            {
+              "content": "Danke für die Angabe. Ich habe das Wohnzimmer als Ort notiert. Ich kann das Serviceformular nun für Sie vorbereiten.",
+              "who": "assistant"
+            },
+            {
+              "content": "seit gestern",
+              "who": "user"
+            },
+            {
+              "content": "Gerne habe ich den Zeitpunkt notiert. Der Entwurf ist damit aktuell.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "message": "danke"
+          },
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "defekt",
+            "description": "lampe kaputt",
+            "location": "wohnzimmer",
+            "count": null,
+            "since": "seit gestern",
+            "details": null,
+            "revision": 4,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 4,
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T12:48:53.356Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "defekt",
+              "description": "lampe kaputt",
+              "location": "wohnzimmer",
+              "count": null,
+              "since": "seit gestern",
+              "details": null,
+              "revision": 4,
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "portal_received",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "wohnzimmer",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "lampe kaputt",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. In welchem Raum ist die Lampe defekt?",
+              "who": "assistant"
+            },
+            {
+              "content": "wohnzimmer",
+              "who": "user"
+            },
+            {
+              "content": "Danke für die Angabe. Ich habe das Wohnzimmer als Ort notiert. Ich kann das Serviceformular nun für Sie vorbereiten.",
+              "who": "assistant"
+            },
+            {
+              "content": "seit gestern",
+              "who": "user"
+            },
+            {
+              "content": "Gerne habe ich den Zeitpunkt notiert. Der Entwurf ist damit aktuell.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "danke",
+              "who": "user"
+            },
+            {
+              "content": "Gerne geschehen. Ich bin weiter für Sie da.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "reload": true
+          },
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "defekt",
+            "description": "lampe kaputt",
+            "location": "wohnzimmer",
+            "count": null,
+            "since": "seit gestern",
+            "details": null,
+            "revision": 4,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 4,
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T12:48:53.356Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "defekt",
+              "description": "lampe kaputt",
+              "location": "wohnzimmer",
+              "count": null,
+              "since": "seit gestern",
+              "details": null,
+              "revision": 4,
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "portal_received",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "wohnzimmer",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "lampe kaputt",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. In welchem Raum ist die Lampe defekt?",
+              "who": "assistant"
+            },
+            {
+              "content": "wohnzimmer",
+              "who": "user"
+            },
+            {
+              "content": "Danke für die Angabe. Ich habe das Wohnzimmer als Ort notiert. Ich kann das Serviceformular nun für Sie vorbereiten.",
+              "who": "assistant"
+            },
+            {
+              "content": "seit gestern",
+              "who": "user"
+            },
+            {
+              "content": "Gerne habe ich den Zeitpunkt notiert. Der Entwurf ist damit aktuell.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "danke",
+              "who": "user"
+            },
+            {
+              "content": "Gerne geschehen. Ich bin weiter für Sie da.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "message": "Nein, ich meinte Schlafzimmer."
+          },
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "defekt",
+            "description": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+            "location": "Schlafzimmer",
+            "count": null,
+            "since": "seit gestern",
+            "details": null,
+            "revision": 5,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 4,
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T12:48:53.356Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "defekt",
+              "description": "lampe kaputt",
+              "location": "wohnzimmer",
+              "count": null,
+              "since": "seit gestern",
+              "details": null,
+              "revision": 4,
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "ready",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": false,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "wohnzimmer",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "lampe kaputt",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. In welchem Raum ist die Lampe defekt?",
+              "who": "assistant"
+            },
+            {
+              "content": "wohnzimmer",
+              "who": "user"
+            },
+            {
+              "content": "Danke für die Angabe. Ich habe das Wohnzimmer als Ort notiert. Ich kann das Serviceformular nun für Sie vorbereiten.",
+              "who": "assistant"
+            },
+            {
+              "content": "seit gestern",
+              "who": "user"
+            },
+            {
+              "content": "Gerne habe ich den Zeitpunkt notiert. Der Entwurf ist damit aktuell.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "danke",
+              "who": "user"
+            },
+            {
+              "content": "Gerne geschehen. Ich bin weiter für Sie da.",
+              "who": "assistant"
+            },
+            {
+              "content": "Nein, ich meinte Schlafzimmer.",
+              "who": "user"
+            },
+            {
+              "content": "Alles klar, ich habe das Schlafzimmer als Ort notiert.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "prepare": true
+          },
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "defekt",
+            "description": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+            "location": "Schlafzimmer",
+            "count": null,
+            "since": "seit gestern",
+            "details": null,
+            "revision": 5,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 5,
+              "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\ndefekt\\nBereich: Schlafzimmer\\nSeit wann: seit gestern\\nDringlichkeit: Normal\",\"defekt\",null,\"Schlafzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"Lampe / Leuchte\\ndefekt\\nBereich: Schlafzimmer\\nSeit wann: seit gestern\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T12:49:42.773Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "defekt",
+              "description": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+              "location": "Schlafzimmer",
+              "count": null,
+              "since": "seit gestern",
+              "details": null,
+              "revision": 5,
+              "preparation": {
+                "status": "portal_received",
+                "revision": 4,
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T12:48:53.356Z"
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "portal_received",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "Schlafzimmer",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "lampe kaputt",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. In welchem Raum ist die Lampe defekt?",
+              "who": "assistant"
+            },
+            {
+              "content": "wohnzimmer",
+              "who": "user"
+            },
+            {
+              "content": "Danke für die Angabe. Ich habe das Wohnzimmer als Ort notiert. Ich kann das Serviceformular nun für Sie vorbereiten.",
+              "who": "assistant"
+            },
+            {
+              "content": "seit gestern",
+              "who": "user"
+            },
+            {
+              "content": "Gerne habe ich den Zeitpunkt notiert. Der Entwurf ist damit aktuell.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "danke",
+              "who": "user"
+            },
+            {
+              "content": "Gerne geschehen. Ich bin weiter für Sie da.",
+              "who": "assistant"
+            },
+            {
+              "content": "Nein, ich meinte Schlafzimmer.",
+              "who": "user"
+            },
+            {
+              "content": "Alles klar, ich habe das Schlafzimmer als Ort notiert.",
+              "who": "assistant"
+            },
+            {
+              "content": "Der bestehende Entwurf wurde im Servicebereich aktualisiert. Er wurde noch nicht versendet.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "message": "danke"
+          },
+          "issue": {
+            "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "defekt",
+            "description": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+            "location": "Schlafzimmer",
+            "count": null,
+            "since": "seit gestern",
+            "details": null,
+            "revision": 5,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 5,
+              "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\ndefekt\\nBereich: Schlafzimmer\\nSeit wann: seit gestern\\nDringlichkeit: Normal\",\"defekt\",null,\"Schlafzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"Lampe / Leuchte\\ndefekt\\nBereich: Schlafzimmer\\nSeit wann: seit gestern\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T12:49:42.773Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "155c4853-f5c0-4f94-9a0b-55c748613b0a",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "defekt",
+              "description": "Lampe / Leuchte\ndefekt\nBereich: Schlafzimmer\nSeit wann: seit gestern\nDringlichkeit: Normal",
+              "location": "Schlafzimmer",
+              "count": null,
+              "since": "seit gestern",
+              "details": null,
+              "revision": 5,
+              "preparation": {
+                "status": "portal_received",
+                "revision": 4,
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"defekt\",null,\"wohnzimmer\",\"seit gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"defekt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"wohnzimmer\",null],[\"since\",\"known\",\"seit gestern\",null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T12:48:53.356Z"
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "portal_received",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "Schlafzimmer",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "lampe kaputt",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. In welchem Raum ist die Lampe defekt?",
+              "who": "assistant"
+            },
+            {
+              "content": "wohnzimmer",
+              "who": "user"
+            },
+            {
+              "content": "Danke für die Angabe. Ich habe das Wohnzimmer als Ort notiert. Ich kann das Serviceformular nun für Sie vorbereiten.",
+              "who": "assistant"
+            },
+            {
+              "content": "seit gestern",
+              "who": "user"
+            },
+            {
+              "content": "Gerne habe ich den Zeitpunkt notiert. Der Entwurf ist damit aktuell.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "danke",
+              "who": "user"
+            },
+            {
+              "content": "Gerne geschehen. Ich bin weiter für Sie da.",
+              "who": "assistant"
+            },
+            {
+              "content": "Nein, ich meinte Schlafzimmer.",
+              "who": "user"
+            },
+            {
+              "content": "Alles klar, ich habe das Schlafzimmer als Ort notiert.",
+              "who": "assistant"
+            },
+            {
+              "content": "Der bestehende Entwurf wurde im Servicebereich aktualisiert. Er wurde noch nicht versendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "danke",
+              "who": "user"
+            },
+            {
+              "content": "Gerne. Ich bin weiter für Sie da.",
+              "who": "assistant"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1954 @@
+{
+  "url": "https://morada-mora-1sb8r9gzo-dianaporschke-1255s-projects.vercel.app",
+  "sourceCommit": "91d4538f54e14f66ae151b1c3c09acf595920f84",
+  "model": "inception/mercury-2.5",
+  "realHTTP": true,
+  "dom": "jsdom + IndexedDB",
+  "cases": [
+    {
+      "id": "topic-and-second-issue",
+      "http": [
+        {
+          "message": "Meine Lampe im Wohnzimmer geht nicht.",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Gerne helfe ich weiter. Wir können das im Serviceformular festhalten.",
+          "actions": [
+            {
+              "id": "prepare-request",
+              "label": "Für MORADA vorbereiten",
+              "variant": "primary",
+              "type": "handover"
+            }
+          ],
+          "issue": {
+            "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Meine Lampe im Wohnzimmer geht nicht.",
+            "defect": "Lampe lässt sich nicht einschalten.",
+            "count": null,
+            "location": "Wohnzimmer",
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Meine Lampe im Wohnzimmer geht nicht."
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 2,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              },
+              "defect": {
+                "status": "known",
+                "value": "Lampe lässt sich nicht einschalten.",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Meine Lampe im Wohnzimmer geht nicht.",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T13:03:41.915Z",
+            "updatedAt": "2026-10-20T13:03:41.915Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 2
+            }
+          },
+          "issues": [
+            {
+              "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Meine Lampe im Wohnzimmer geht nicht.",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe im Wohnzimmer geht nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Lampe im Wohnzimmer geht nicht.",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:03:41.915Z",
+              "updatedAt": "2026-10-20T13:03:41.915Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 7128,
+            "model": 7126,
+            "application": 2
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 2600,
+            "outputTokens": 1809,
+            "reasoningTokens": 1661,
+            "cachedInputTokens": 738
+          }
+        },
+        {
+          "message": null,
+          "receipt": {
+            "issueId": "5c448005-ed36-4653-9fce-67a66b199f3f",
+            "revision": 2,
+            "status": "portal_received"
+          },
+          "status": 200,
+          "version": 2,
+          "reply": "Der Entwurf ist im Servicebereich auf diesem Gerät verfügbar. Er wurde noch nicht an MORADA gesendet.",
+          "actions": [],
+          "issue": {
+            "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Meine Lampe im Wohnzimmer geht nicht.",
+            "defect": "Lampe lässt sich nicht einschalten.",
+            "count": null,
+            "location": "Wohnzimmer",
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Meine Lampe im Wohnzimmer geht nicht."
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 2,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              },
+              "defect": {
+                "status": "known",
+                "value": "Lampe lässt sich nicht einschalten.",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Meine Lampe im Wohnzimmer geht nicht.",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 2,
+              "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:03:48.396Z"
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T13:03:41.915Z",
+            "updatedAt": "2026-10-20T13:03:48.396Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 2
+            }
+          },
+          "issues": [
+            {
+              "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Meine Lampe im Wohnzimmer geht nicht.",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe im Wohnzimmer geht nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Lampe im Wohnzimmer geht nicht.",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 2,
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:03:48.396Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:03:41.915Z",
+              "updatedAt": "2026-10-20T13:03:48.396Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "guided",
+          "responseMode": "engine",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 1,
+            "model": 0,
+            "application": 1
+          },
+          "modelCalls": 0,
+          "recoveredFacts": false,
+          "modelUsage": null
+        },
+        {
+          "message": "Was bedeutet Mietkaution?",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Die Mietkaution ist eine Sicherheit, die Sie als Mieter hinterlegen, um den Vermieter gegen Schäden oder unbezahlte Miete abzusichern. In der Schweiz beträgt sie meist maximal drei Monatsmieten ohne Nebenkosten und wird auf einem separaten Konto für Mieter verwahrt.",
+          "actions": [],
+          "issue": {
+            "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Meine Lampe im Wohnzimmer geht nicht.",
+            "defect": "Lampe lässt sich nicht einschalten.",
+            "count": null,
+            "location": "Wohnzimmer",
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Meine Lampe im Wohnzimmer geht nicht."
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 2,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              },
+              "defect": {
+                "status": "known",
+                "value": "Lampe lässt sich nicht einschalten.",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Meine Lampe im Wohnzimmer geht nicht.",
+                "source": "Meine Lampe im Wohnzimmer geht nicht."
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 2,
+              "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:03:48.396Z"
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T13:03:41.915Z",
+            "updatedAt": "2026-10-20T13:04:05.191Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 2
+            }
+          },
+          "issues": [
+            {
+              "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Meine Lampe im Wohnzimmer geht nicht.",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe im Wohnzimmer geht nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Lampe im Wohnzimmer geht nicht.",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 2,
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:03:48.396Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:03:41.915Z",
+              "updatedAt": "2026-10-20T13:04:05.191Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 5502,
+            "model": 5501,
+            "application": 1
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 2934,
+            "outputTokens": 1346,
+            "reasoningTokens": 1248,
+            "cachedInputTokens": 747
+          }
+        },
+        {
+          "message": "Ausserdem wird die Heizung im Bad nicht warm.",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Verstanden. Ich merke mir die Heizung im Bad fest.",
+          "actions": [],
+          "issue": {
+            "id": "ac158e08-91cc-45c4-8de1-97d7c0e91975",
+            "category": "heating",
+            "equipment": "heater",
+            "subcategory": null,
+            "description": "Heizung im Bad nicht warm",
+            "defect": "Heizung wird nicht warm",
+            "count": null,
+            "location": "Bad",
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Ausserdem wird die Heizung im Bad nicht warm."
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Heizkörper\nHeizung wird nicht warm\nBereich: Bad\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 2,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "heater",
+                "source": "Ausserdem wird die Heizung im Bad nicht warm."
+              },
+              "defect": {
+                "status": "known",
+                "value": "Heizung wird nicht warm",
+                "source": "Ausserdem wird die Heizung im Bad nicht warm."
+              },
+              "location": {
+                "status": "known",
+                "value": "Bad",
+                "source": "Ausserdem wird die Heizung im Bad nicht warm."
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "heating",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Heizung im Bad nicht warm",
+                "source": "Ausserdem wird die Heizung im Bad nicht warm."
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T13:04:50.117Z",
+            "updatedAt": "2026-10-20T13:04:50.117Z",
+            "shortLabel": "Heizkörper"
+          },
+          "issues": [
+            {
+              "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Meine Lampe im Wohnzimmer geht nicht.",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe im Wohnzimmer geht nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Lampe im Wohnzimmer geht nicht.",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 2,
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:03:48.396Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:03:41.915Z",
+              "updatedAt": "2026-10-20T13:04:24.493Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            {
+              "id": "ac158e08-91cc-45c4-8de1-97d7c0e91975",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Heizung im Bad nicht warm",
+              "defect": "Heizung wird nicht warm",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Ausserdem wird die Heizung im Bad nicht warm."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Heizkörper\nHeizung wird nicht warm\nBereich: Bad\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "heater",
+                  "source": "Ausserdem wird die Heizung im Bad nicht warm."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Heizung wird nicht warm",
+                  "source": "Ausserdem wird die Heizung im Bad nicht warm."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Ausserdem wird die Heizung im Bad nicht warm."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Heizung im Bad nicht warm",
+                  "source": "Ausserdem wird die Heizung im Bad nicht warm."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:04:50.117Z",
+              "updatedAt": "2026-10-20T13:04:50.117Z",
+              "shortLabel": "Heizkörper"
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 25625,
+            "model": 25624,
+            "application": 1
+          },
+          "modelCalls": 2,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 6256,
+            "outputTokens": 5194,
+            "reasoningTokens": 4902,
+            "cachedInputTokens": 2563
+          }
+        },
+        {
+          "message": "Seit gestern.",
+          "receipt": null,
+          "status": 200,
+          "version": 2,
+          "reply": "Verstanden. Ich schlage vor, beide Anliegen im Serviceformular zusammenzufassen.",
+          "actions": [
+            {
+              "id": "prepare-request",
+              "label": "Für MORADA vorbereiten",
+              "variant": "primary",
+              "type": "handover"
+            }
+          ],
+          "issue": {
+            "id": "ac158e08-91cc-45c4-8de1-97d7c0e91975",
+            "category": "heating",
+            "equipment": "heater",
+            "subcategory": null,
+            "description": "Heizung im Bad nicht warm",
+            "defect": "Heizung wird nicht warm",
+            "count": null,
+            "location": "Bad",
+            "since": "gestern",
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Ausserdem wird die Heizung im Bad nicht warm."
+              },
+              {
+                "question": "description",
+                "answer": "Seit gestern."
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Heizkörper\nHeizung wird nicht warm\nBereich: Bad\nSeit wann: gestern\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 3,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "heater",
+                "source": "Ausserdem wird die Heizung im Bad nicht warm."
+              },
+              "defect": {
+                "status": "known",
+                "value": "Heizung wird nicht warm",
+                "source": "Ausserdem wird die Heizung im Bad nicht warm."
+              },
+              "location": {
+                "status": "known",
+                "value": "Bad",
+                "source": "Ausserdem wird die Heizung im Bad nicht warm."
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "since": {
+                "status": "known",
+                "value": "gestern",
+                "source": "Seit gestern."
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "heating",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Heizung im Bad nicht warm",
+                "source": "Ausserdem wird die Heizung im Bad nicht warm."
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-20T13:04:50.117Z",
+            "updatedAt": "2026-10-20T13:05:10.123Z",
+            "shortLabel": "Heizkörper",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"heating\",\"heater\",\"Heizung im Bad nicht warm\",\"Heizung wird nicht warm\",null,\"Bad\",\"gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Heizung wird nicht warm\",null],[\"description\",\"known\",\"Heizung im Bad nicht warm\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"heater\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Bad\",null],[\"since\",\"known\",\"gestern\",null]]]",
+              "revision": 3
+            }
+          },
+          "issues": [
+            {
+              "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Meine Lampe im Wohnzimmer geht nicht.",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe im Wohnzimmer geht nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Lampe im Wohnzimmer geht nicht.",
+                  "source": "Meine Lampe im Wohnzimmer geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 2,
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:03:48.396Z"
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:03:41.915Z",
+              "updatedAt": "2026-10-20T13:04:57.611Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            {
+              "id": "ac158e08-91cc-45c4-8de1-97d7c0e91975",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Heizung im Bad nicht warm",
+              "defect": "Heizung wird nicht warm",
+              "count": null,
+              "location": "Bad",
+              "since": "gestern",
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Ausserdem wird die Heizung im Bad nicht warm."
+                },
+                {
+                  "question": "description",
+                  "answer": "Seit gestern."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Heizkörper\nHeizung wird nicht warm\nBereich: Bad\nSeit wann: gestern\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "heater",
+                  "source": "Ausserdem wird die Heizung im Bad nicht warm."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Heizung wird nicht warm",
+                  "source": "Ausserdem wird die Heizung im Bad nicht warm."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Ausserdem wird die Heizung im Bad nicht warm."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "known",
+                  "value": "gestern",
+                  "source": "Seit gestern."
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Heizung im Bad nicht warm",
+                  "source": "Ausserdem wird die Heizung im Bad nicht warm."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-20T13:04:50.117Z",
+              "updatedAt": "2026-10-20T13:05:10.123Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"heating\",\"heater\",\"Heizung im Bad nicht warm\",\"Heizung wird nicht warm\",null,\"Bad\",\"gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Heizung wird nicht warm\",null],[\"description\",\"known\",\"Heizung im Bad nicht warm\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"heater\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Bad\",null],[\"since\",\"known\",\"gestern\",null]]]",
+                "revision": 3
+              }
+            }
+          ],
+          "capabilities": {
+            "customerContext": false,
+            "documents": false,
+            "appointments": false,
+            "requests": false,
+            "submitRequest": false,
+            "uploadAttachments": false,
+            "navigation": [
+              "docs",
+              "service",
+              "profile",
+              "portfolio"
+            ],
+            "sections": {
+              "docs": {
+                "label": "Dokumente",
+                "purpose": "Dokumentenansicht",
+                "personalRecords": false
+              },
+              "service": {
+                "label": "Service",
+                "purpose": "Anliegenentwürfe",
+                "transmitted": false
+              },
+              "profile": {
+                "label": "Profil",
+                "purpose": "Profilansicht",
+                "verifiedCustomer": false
+              },
+              "portfolio": {
+                "label": "Portfolio",
+                "purpose": "Immobilienübersicht",
+                "personalRecords": false
+              }
+            },
+            "previewScope": "No verified personal records or request transmission anywhere in this Preview. Navigation opens prepared UI sections, not an alternative personal-data or sending integration.",
+            "localDraft": {
+              "view": "service",
+              "sectionLabel": "Service",
+              "storage": "customer_device",
+              "transmitted": false,
+              "requiresCustomerClick": true,
+              "openingAction": "prepare_draft",
+              "serverHasOpeningReceipt": false
+            }
+          },
+          "understanding": "model",
+          "responseMode": "model",
+          "modelAvailability": null,
+          "timingMs": {
+            "total": 12513,
+            "model": 12511,
+            "application": 2
+          },
+          "modelCalls": 1,
+          "recoveredFacts": false,
+          "modelUsage": {
+            "inputTokens": 3334,
+            "outputTokens": 2656,
+            "reasoningTokens": 2482,
+            "cachedInputTokens": 761
+          }
+        },
+        {
+          "message": null,
+          "receipt": {
+            "issueId": "ac158e08-91cc-45c4-8de1-97d7c0e91975",
+            "revision": 3,
+            "status": "portal_received"
+          },
+          "status": 0,
+          "error": "URLError"
+        }
+      ],
+      "steps": [
+        {
+          "step": {
+            "message": "Meine Lampe im Wohnzimmer geht nicht."
+          },
+          "issue": {
+            "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "Lampe lässt sich nicht einschalten.",
+            "description": "Meine Lampe im Wohnzimmer geht nicht.",
+            "location": "Wohnzimmer",
+            "count": null,
+            "since": null,
+            "details": null,
+            "revision": 2,
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [],
+          "phase": "ready",
+          "visibleChatActions": [
+            {
+              "label": "Für MORADA vorbereiten",
+              "type": "handover",
+              "disabled": false
+            }
+          ],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Für MORADA vorbereiten"
+          },
+          "form": {
+            "equipment": "",
+            "location": "",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "Meine Lampe im Wohnzimmer geht nicht.",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. Wir können das im Serviceformular festhalten.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "prepare": true
+          },
+          "issue": {
+            "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "Lampe lässt sich nicht einschalten.",
+            "description": "Meine Lampe im Wohnzimmer geht nicht.",
+            "location": "Wohnzimmer",
+            "count": null,
+            "since": null,
+            "details": null,
+            "revision": 2,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 2,
+              "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:03:48.396Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "description": "Meine Lampe im Wohnzimmer geht nicht.",
+              "location": "Wohnzimmer",
+              "count": null,
+              "since": null,
+              "details": null,
+              "revision": 2,
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "portal_received",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "Wohnzimmer",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "Meine Lampe im Wohnzimmer geht nicht.",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. Wir können das im Serviceformular festhalten.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "message": "Was bedeutet Mietkaution?"
+          },
+          "issue": {
+            "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+            "equipment": "light",
+            "category": "electricity",
+            "defect": "Lampe lässt sich nicht einschalten.",
+            "description": "Meine Lampe im Wohnzimmer geht nicht.",
+            "location": "Wohnzimmer",
+            "count": null,
+            "since": null,
+            "details": null,
+            "revision": 2,
+            "preparation": {
+              "status": "portal_received",
+              "revision": 2,
+              "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "source": "client_local_storage",
+              "at": "2026-10-20T13:03:48.396Z"
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "description": "Meine Lampe im Wohnzimmer geht nicht.",
+              "location": "Wohnzimmer",
+              "count": null,
+              "since": null,
+              "details": null,
+              "revision": 2,
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "portal_received",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Entwurf aktualisieren"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "Wohnzimmer",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "Meine Lampe im Wohnzimmer geht nicht.",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. Wir können das im Serviceformular festhalten.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "Was bedeutet Mietkaution?",
+              "who": "user"
+            },
+            {
+              "content": "Die Mietkaution ist eine Sicherheit, die Sie als Mieter hinterlegen, um den Vermieter gegen Schäden oder unbezahlte Miete abzusichern. In der Schweiz beträgt sie meist maximal drei Monatsmieten ohne Nebenkosten und wird auf einem separaten Konto für Mieter verwahrt.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "message": "Ausserdem wird die Heizung im Bad nicht warm."
+          },
+          "issue": {
+            "id": "ac158e08-91cc-45c4-8de1-97d7c0e91975",
+            "equipment": "heater",
+            "category": "heating",
+            "defect": "Heizung wird nicht warm",
+            "description": "Heizung im Bad nicht warm",
+            "location": "Bad",
+            "count": null,
+            "since": null,
+            "details": null,
+            "revision": 2,
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "draftOfferShown": null,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "description": "Meine Lampe im Wohnzimmer geht nicht.",
+              "location": "Wohnzimmer",
+              "count": null,
+              "since": null,
+              "details": null,
+              "revision": 2,
+              "preparation": {
+                "status": "portal_received",
+                "revision": 2,
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:03:48.396Z"
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "ready",
+          "visibleChatActions": [],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Für MORADA vorbereiten"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "Wohnzimmer",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "Meine Lampe im Wohnzimmer geht nicht.",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. Wir können das im Serviceformular festhalten.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "Was bedeutet Mietkaution?",
+              "who": "user"
+            },
+            {
+              "content": "Die Mietkaution ist eine Sicherheit, die Sie als Mieter hinterlegen, um den Vermieter gegen Schäden oder unbezahlte Miete abzusichern. In der Schweiz beträgt sie meist maximal drei Monatsmieten ohne Nebenkosten und wird auf einem separaten Konto für Mieter verwahrt.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ausserdem wird die Heizung im Bad nicht warm.",
+              "who": "user"
+            },
+            {
+              "content": "Verstanden. Ich merke mir die Heizung im Bad fest.",
+              "who": "assistant"
+            }
+          ]
+        },
+        {
+          "step": {
+            "message": "Seit gestern."
+          },
+          "issue": {
+            "id": "ac158e08-91cc-45c4-8de1-97d7c0e91975",
+            "equipment": "heater",
+            "category": "heating",
+            "defect": "Heizung wird nicht warm",
+            "description": "Heizung im Bad nicht warm",
+            "location": "Bad",
+            "count": null,
+            "since": "gestern",
+            "details": null,
+            "revision": 3,
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "draftOfferShown": true,
+            "draftAction": null
+          },
+          "drafts": [
+            {
+              "id": "5c448005-ed36-4653-9fce-67a66b199f3f",
+              "equipment": "light",
+              "category": "electricity",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "description": "Meine Lampe im Wohnzimmer geht nicht.",
+              "location": "Wohnzimmer",
+              "count": null,
+              "since": null,
+              "details": null,
+              "revision": 2,
+              "preparation": {
+                "status": "portal_received",
+                "revision": 2,
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Wohnzimmer geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Wohnzimmer geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "source": "client_local_storage",
+                "at": "2026-10-20T13:03:48.396Z"
+              },
+              "draftOfferShown": true,
+              "draftAction": null
+            }
+          ],
+          "phase": "ready",
+          "visibleChatActions": [
+            {
+              "label": "Für MORADA vorbereiten",
+              "type": "handover",
+              "disabled": false
+            }
+          ],
+          "prepareControl": {
+            "hidden": true,
+            "label": "Für MORADA vorbereiten"
+          },
+          "form": {
+            "equipment": "light",
+            "location": "Wohnzimmer",
+            "details": ""
+          },
+          "thread": [
+            {
+              "content": "Meine Lampe im Wohnzimmer geht nicht.",
+              "who": "user"
+            },
+            {
+              "content": "Gerne helfe ich weiter. Wir können das im Serviceformular festhalten.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.",
+              "who": "assistant"
+            },
+            {
+              "content": "Was bedeutet Mietkaution?",
+              "who": "user"
+            },
+            {
+              "content": "Die Mietkaution ist eine Sicherheit, die Sie als Mieter hinterlegen, um den Vermieter gegen Schäden oder unbezahlte Miete abzusichern. In der Schweiz beträgt sie meist maximal drei Monatsmieten ohne Nebenkosten und wird auf einem separaten Konto für Mieter verwahrt.",
+              "who": "assistant"
+            },
+            {
+              "content": "Ausserdem wird die Heizung im Bad nicht warm.",
+              "who": "user"
+            },
+            {
+              "content": "Verstanden. Ich merke mir die Heizung im Bad fest.",
+              "who": "assistant"
+            },
+            {
+              "content": "Seit gestern.",
+              "who": "user"
+            },
+            {
+              "content": "Verstanden. Ich schlage vor, beide Anliegen im Serviceformular zusammenzufassen.",
+              "who": "assistant"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

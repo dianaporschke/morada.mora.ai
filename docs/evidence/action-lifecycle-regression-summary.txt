@@ -1,0 +1,16 @@
+Final local verification: 2026-10-20
+node --test --test-timeout=20000 tests/*.test.js
+279 tests; 279 passed; 0 failed; 0 cancelled; 0 skipped
+npm run typecheck: passed
+npm run lint: passed (62 files)
+npm run build: passed (static dist + server routes)
+git diff --check: passed
+No new API keys, environment settings, paid settings, portal navigation or general portal forms changed.
+
+Verified-state wording tests additionally cover: successful wording uses only the final response; original planner wording can appear only as an independently revalidated, explicitly degraded fallback; accurate current draft existence; distinct heater versus prepared lamp; real bounded regeneration of a false merge claim; aggregate model call count and token usage.
+An unchanged thank-you after handover remains one generation; receipt remains zero generations.
+Verbal offer regression: Sie-form repetition is rejected against the same offer state even without an action button.
+Typed request regression: exactly one signed button without execution; repeated request remains idempotent; completed/clarifying states cannot authorize preparation.
+Optional wording failure: preserve validated real model output with explicit degradation, or preserve facts with technical recovery; unsafe planner claims are never shown as model success.
+Source-backed availability recovery: exact first-person quote only; negative assertions preserved; questions/third parties not inferred; prepared draft updates under same ID with existing observations retained.
+Observed repeated note prefix is merged once; punctuation-only repeats retain the prepared revision and action state.

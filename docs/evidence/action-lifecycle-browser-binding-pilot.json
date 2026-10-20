@@ -1,0 +1,103 @@
+{
+  "sourceCommit": "60deb9fe926b2cc863ae04d43a455319ec08754d",
+  "url": "https://morada-mora-q9nnux1re-dianaporschke-1255s-projects.vercel.app/",
+  "model": "inception/mercury-2.5",
+  "steps": [
+    {
+      "step": "full lamp understood",
+      "snapshot": "- banner:\n  - img \"MORADA Immobilien\"\n  - generic: DP\n- main:\n  - generic: Guten Tag\n  - generic: Ihre Übersicht.\n  - generic: IHRE LIEGENSCHAFT\n  - generic: Wohnliegenschaft Baden\n  - generic: 12 Einheiten · persönlich durch MORADA betreut\n  - generic: 98 %\n  - text: Vermietet\n  - generic: CHF 26'400\n  - text: Miete / Monat\n  - text: Immobilie ansehen\n  - generic: →\n  - strong: Dokumente\n  - generic: Unterlagen einsehen\n  - generic: ›\n  - generic: +\n  - strong: Anliegen\n  - generic: Neues Anliegen melden\n  - generic: ›\n  - strong: Portfolio\n  - generic: Alle Liegenschaften\n  - generic: ›\n  - strong: Profil\n  - generic: Persönliche Daten\n  - generic: ›\n- button \"MORA fragen\":\n  - generic: MORA fragen\n- dialog \"MORA Assistenz\":\n  - text: MORA fragen\n  - generic: MORADA ASSISTENT\n  - button \"Neuer Chat\"\n  - button \"MORA schliessen\": ×\n  - log:\n    - generic: Guten Tag. Ich bin MORA. Wie kann ich Ihnen rund um Ihre Immobilie helfen?\n    - button \"Dokumente finden\"\n    - button \"Anliegen melden\"\n    - button \"Meine Immobilie\"\n    - button \"WalkThrough\"\n    - generic: Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.\n    - generic: Ich habe Ihr Anliegen zur Lampe im Wohnzimmer notiert. Sie können den Entwurf im Service-Bereich weiter vorbereiten, sobald Sie dazu bereit sind.\n    - button \"Für MORADA vorbereiten\"\n  - button \"Foto hinzufügen\"\n  - generic: Fotos werden lokal hinzugefügt und erst mit einer angebundenen Übermittlung versendet.\n  - textbox \"Nachricht an MORA\":\n    - /placeholder: Nachricht an MORA …\n  - button \"Nachricht senden\": ↑\n- navigation:\n  - generic: Home\n  - generic: Portfolio\n  - generic: Service\n  - generic: Dokumente\n  - generic: Profil",
+      "chatPreparationActions": 1
+    },
+    {
+      "step": "lamp draft created",
+      "form": {
+        "count": "1",
+        "defect": "lässt sich nicht einschalten",
+        "details": "Keine weiteren Symptome",
+        "draftCount": 1,
+        "draftId": "7210fc40-d0c3-45a1-a753-5fc71014a787",
+        "equipment": "light",
+        "location": "Wohnzimmer",
+        "since": "gestern"
+      },
+      "snapshot": "- banner:\n  - img \"MORADA Immobilien\"\n  - generic: DP\n- main:\n  - generic: Service\n  - generic: NEUES ANLIEGEN\n  - generic: Wie können wir helfen?\n  - generic: Schaden, Handwerkerkoordination, Übergabe, Vermietung oder allgemeine Anfrage.\n  - button \"Anliegen erfassen\"\n  - region \"Vorbereitetes Anliegen\":\n    - generic: IHR ANLIEGENENTWURF\n    - generic: Für MORADA vorbereitet.\n    - generic: Noch nicht übermittelt. Ihre Angaben und Fotos bleiben lokal auf diesem Gerät. Die direkte Übermittlung an MORADA ist noch nicht angeschlossen.\n    - text: Gespeicherte Entwürfe\n    - combobox \"Gespeicherte Entwürfe\":\n      - option \"Lampe / Leuchte · Wohnzimmer · Entwurf\" [selected]\n    - text: Beschreibung\n    - textbox \"Beschreibung\": Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\n    - text: Betroffene Einrichtung\n    - combobox \"Betroffene Einrichtung\":\n      - option \"Noch nicht angegeben\"\n      - option \"Noch unklar\"\n      - option \"Steckdose\"\n      - option \"Lampe / Leuchte\" [selected]\n      - option \"Lichtschalter\"\n      - option \"Stromversorgung\"\n      - option \"Heizkörper\"\n      - option \"Schlüssel / Zugang\"\n      - option \"Waschmaschine\"\n      - option \"Tumbler\"\n      - option \"Geschirrspüler\"\n      - option \"Wasserhahn\"\n      - option \"Abfluss\"\n      - option \"Leitung\"\n      - option \"Wasseraustritt\"\n      - option \"Geräusch / Lärm\"\n    - text: Konkreter Defekt\n    - textbox \"Konkreter Defekt\": lässt sich nicht einschalten\n    - text: Anzahl betroffener Einrichtungen\n    - spinbutton \"Anzahl betroffener Einrichtungen\": \"1\"\n    - text: Umfang / Situation\n    - textbox \"Umfang / Situation\": 1 betroffene Einrichtung(en)\n    - text: Betroffener Bereich\n    - textbox \"Betroffener Bereich\": Wohnzimmer\n    - text: Seit wann\n    - textbox \"Seit wann\": gestern\n    - text: Weitere Angaben\n    - textbox \"Weitere Angaben\": Keine weiteren Symptome\n    - generic \"Gesammelte Zusammenfassung\"\n    - generic \"Fotos im Entwurf\"\n    - button \"Entwurf speichern\"\n    - button \"Entwurf mit Fotos herunterladen\"\n    - status: Noch nicht übermittelt. Die direkte Übermittlung ist noch nicht angeschlossen. Der Entwurf bleibt auf diesem Gerät.\n  - text: Fenster · Einheit 3A\n  - generic: Handwerker angefragt\n  - generic: In Bearbeitung\n- button \"MORA fragen\":\n  - generic: MORA fragen\n- navigation:\n  - generic: Home\n  - generic: Portfolio\n  - generic: Service\n  - generic: Dokumente\n  - generic: Profil"
+    },
+    {
+      "step": "after first handover",
+      "chatPreparationActions": 0,
+      "prepareHidden": ""
+    },
+    {
+      "step": "additional availability understood; not yet saved",
+      "snapshot": "- banner:\n  - img \"MORADA Immobilien\"\n  - generic: DP\n- main:\n  - generic: Service\n  - generic: NEUES ANLIEGEN\n  - generic: Wie können wir helfen?\n  - generic: Schaden, Handwerkerkoordination, Übergabe, Vermietung oder allgemeine Anfrage.\n  - button \"Anliegen erfassen\"\n  - region \"Vorbereitetes Anliegen\":\n    - generic: IHR ANLIEGENENTWURF\n    - generic: Für MORADA vorbereitet.\n    - generic: Noch nicht übermittelt. Ihre Angaben und Fotos bleiben lokal auf diesem Gerät. Die direkte Übermittlung an MORADA ist noch nicht angeschlossen.\n    - text: Gespeicherte Entwürfe\n    - combobox \"Gespeicherte Entwürfe\":\n      - option \"Lampe / Leuchte · Wohnzimmer · Entwurf\" [selected]\n    - text: Beschreibung\n    - textbox \"Beschreibung\": Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten.\n    - text: Betroffene Einrichtung\n    - combobox \"Betroffene Einrichtung\":\n      - option \"Noch nicht angegeben\"\n      - option \"Noch unklar\"\n      - option \"Steckdose\"\n      - option \"Lampe / Leuchte\" [selected]\n      - option \"Lichtschalter\"\n      - option \"Stromversorgung\"\n      - option \"Heizkörper\"\n      - option \"Schlüssel / Zugang\"\n      - option \"Waschmaschine\"\n      - option \"Tumbler\"\n      - option \"Geschirrspüler\"\n      - option \"Wasserhahn\"\n      - option \"Abfluss\"\n      - option \"Leitung\"\n      - option \"Wasseraustritt\"\n      - option \"Geräusch / Lärm\"\n    - text: Konkreter Defekt\n    - textbox \"Konkreter Defekt\": lässt sich nicht einschalten\n    - text: Anzahl betroffener Einrichtungen\n    - spinbutton \"Anzahl betroffener Einrichtungen\": \"1\"\n    - text: Umfang / Situation\n    - textbox \"Umfang / Situation\": 1 betroffene Einrichtung(en)\n    - text: Betroffener Bereich\n    - textbox \"Betroffener Bereich\": Wohnzimmer\n    - text: Seit wann\n    - textbox \"Seit wann\": gestern\n    - text: Weitere Angaben\n    - textbox \"Weitere Angaben\": Keine weiteren Symptome\n    - generic \"Gesammelte Zusammenfassung\"\n    - generic \"Fotos im Entwurf\"\n    - button \"Entwurf speichern\"\n    - button \"Entwurf mit Fotos herunterladen\"\n    - status: Noch nicht übermittelt. Die direkte Übermittlung ist noch nicht angeschlossen. Der Entwurf bleibt auf diesem Gerät.\n  - text: Fenster · Einheit 3A\n  - generic: Handwerker angefragt\n  - generic: In Bearbeitung\n- button \"MORA fragen\":\n  - generic: MORA fragen\n- dialog \"MORA Assistenz\":\n  - text: MORA fragen\n  - generic: MORADA ASSISTENT\n  - button \"Neuer Chat\"\n  - button \"MORA schliessen\": ×\n  - log:\n    - generic: Guten Tag. Ich bin MORA. Wie kann ich Ihnen rund um Ihre Immobilie helfen?\n    - button \"Dokumente finden\"\n    - button \"Anliegen melden\"\n    - button \"Meine Immobilie\"\n    - button \"WalkThrough\"\n    - generic: Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.\n    - generic: Ich habe Ihr Anliegen zur Lampe im Wohnzimmer notiert. Sie können den Entwurf im Service-Bereich weiter vorbereiten, sobald Sie dazu bereit sind.\n    - generic: Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.\n    - generic: Ich bin morgen ab 16 Uhr erreichbar.\n    - generic: Ich habe Ihre Erreichbarkeit morgen ab 16 Uhr notiert. Sie können den Entwurf im Service-Bereich aktualisieren, sobald Sie dazu bereit sind.\n    - button \"Entwurf aktualisieren\"\n  - button \"Foto hinzufügen\"\n  - generic: Fotos werden lokal hinzugefügt und erst mit einer angebundenen Übermittlung versendet.\n  - textbox \"Nachricht an MORA\":\n    - /placeholder: Nachricht an MORA …\n  - button \"Nachricht senden\": ↑\n- navigation:\n  - generic: Home\n  - generic: Portfolio\n  - generic: Service\n  - generic: Dokumente\n  - generic: Profil",
+      "chatPreparationActions": 1,
+      "storedDetails": "Keine weiteren Symptome"
+    },
+    {
+      "step": "same lamp draft updated",
+      "form": {
+        "count": "1",
+        "details": "Keine weiteren Symptome\nErreichbar morgen ab 16 Uhr",
+        "draftCount": 1,
+        "draftId": "7210fc40-d0c3-45a1-a753-5fc71014a787",
+        "equipment": "light",
+        "location": "Wohnzimmer",
+        "since": "gestern"
+      },
+      "snapshot": "- banner:\n  - img \"MORADA Immobilien\"\n  - generic: DP\n- main:\n  - generic: Service\n  - generic: NEUES ANLIEGEN\n  - generic: Wie können wir helfen?\n  - generic: Schaden, Handwerkerkoordination, Übergabe, Vermietung oder allgemeine Anfrage.\n  - button \"Anliegen erfassen\"\n  - region \"Vorbereitetes Anliegen\":\n    - generic: IHR ANLIEGENENTWURF\n    - generic: Für MORADA vorbereitet.\n    - generic: Noch nicht übermittelt. Ihre Angaben und Fotos bleiben lokal auf diesem Gerät. Die direkte Übermittlung an MORADA ist noch nicht angeschlossen.\n    - text: Gespeicherte Entwürfe\n    - combobox \"Gespeicherte Entwürfe\":\n      - option \"Lampe / Leuchte · Wohnzimmer · Entwurf\" [selected]\n    - text: Beschreibung\n    - textbox \"Beschreibung\": \"Lampe / Leuchte lässt sich nicht einschalten Anzahl: 1 Bereich: Wohnzimmer Seit wann: gestern Umfang / Situation: 1 betroffene Einrichtung(en) Zusatzangaben: Keine weiteren Symptome Erreichbar morgen ab 16 Uhr Dringlichkeit: Normal\"\n    - text: Betroffene Einrichtung\n    - combobox \"Betroffene Einrichtung\":\n      - option \"Noch nicht angegeben\"\n      - option \"Noch unklar\"\n      - option \"Steckdose\"\n      - option \"Lampe / Leuchte\" [selected]\n      - option \"Lichtschalter\"\n      - option \"Stromversorgung\"\n      - option \"Heizkörper\"\n      - option \"Schlüssel / Zugang\"\n      - option \"Waschmaschine\"\n      - option \"Tumbler\"\n      - option \"Geschirrspüler\"\n      - option \"Wasserhahn\"\n      - option \"Abfluss\"\n      - option \"Leitung\"\n      - option \"Wasseraustritt\"\n      - option \"Geräusch / Lärm\"\n    - text: Konkreter Defekt\n    - textbox \"Konkreter Defekt\": lässt sich nicht einschalten\n    - text: Anzahl betroffener Einrichtungen\n    - spinbutton \"Anzahl betroffener Einrichtungen\": \"1\"\n    - text: Umfang / Situation\n    - textbox \"Umfang / Situation\": 1 betroffene Einrichtung(en)\n    - text: Betroffener Bereich\n    - textbox \"Betroffener Bereich\": Wohnzimmer\n    - text: Seit wann\n    - textbox \"Seit wann\": gestern\n    - text: Weitere Angaben\n    - textbox \"Weitere Angaben\": Keine weiteren Symptome Erreichbar morgen ab 16 Uhr\n    - generic \"Gesammelte Zusammenfassung\"\n    - generic \"Fotos im Entwurf\"\n    - button \"Entwurf speichern\"\n    - button \"Entwurf mit Fotos herunterladen\"\n    - status: Noch nicht übermittelt. Die direkte Übermittlung ist noch nicht angeschlossen. Der Entwurf bleibt auf diesem Gerät.\n  - text: Fenster · Einheit 3A\n  - generic: Handwerker angefragt\n  - generic: In Bearbeitung\n- button \"MORA fragen\":\n  - generic: MORA fragen\n- navigation:\n  - generic: Home\n  - generic: Portfolio\n  - generic: Service\n  - generic: Dokumente\n  - generic: Profil"
+    },
+    {
+      "step": "after update",
+      "chatPreparationActions": 0,
+      "prepareHidden": ""
+    },
+    {
+      "step": "second issue wording lacked a bound action",
+      "snapshot": "- banner:\n  - img \"MORADA Immobilien\"\n  - generic: DP\n- main:\n  - generic: Service\n  - generic: NEUES ANLIEGEN\n  - generic: Wie können wir helfen?\n  - generic: Schaden, Handwerkerkoordination, Übergabe, Vermietung oder allgemeine Anfrage.\n  - button \"Anliegen erfassen\"\n  - region \"Vorbereitetes Anliegen\":\n    - generic: IHR ANLIEGENENTWURF\n    - generic: Für MORADA vorbereitet.\n    - generic: Noch nicht übermittelt. Ihre Angaben und Fotos bleiben lokal auf diesem Gerät. Die direkte Übermittlung an MORADA ist noch nicht angeschlossen.\n    - text: Gespeicherte Entwürfe\n    - combobox \"Gespeicherte Entwürfe\":\n      - option \"Lampe / Leuchte · Wohnzimmer · Entwurf\" [selected]\n    - text: Beschreibung\n    - textbox \"Beschreibung\": \"Lampe / Leuchte lässt sich nicht einschalten Anzahl: 1 Bereich: Wohnzimmer Seit wann: gestern Umfang / Situation: 1 betroffene Einrichtung(en) Zusatzangaben: Keine weiteren Symptome Erreichbar morgen ab 16 Uhr Dringlichkeit: Normal\"\n    - text: Betroffene Einrichtung\n    - combobox \"Betroffene Einrichtung\":\n      - option \"Noch nicht angegeben\"\n      - option \"Noch unklar\"\n      - option \"Steckdose\"\n      - option \"Lampe / Leuchte\" [selected]\n      - option \"Lichtschalter\"\n      - option \"Stromversorgung\"\n      - option \"Heizkörper\"\n      - option \"Schlüssel / Zugang\"\n      - option \"Waschmaschine\"\n      - option \"Tumbler\"\n      - option \"Geschirrspüler\"\n      - option \"Wasserhahn\"\n      - option \"Abfluss\"\n      - option \"Leitung\"\n      - option \"Wasseraustritt\"\n      - option \"Geräusch / Lärm\"\n    - text: Konkreter Defekt\n    - textbox \"Konkreter Defekt\": lässt sich nicht einschalten\n    - text: Anzahl betroffener Einrichtungen\n    - spinbutton \"Anzahl betroffener Einrichtungen\": \"1\"\n    - text: Umfang / Situation\n    - textbox \"Umfang / Situation\": 1 betroffene Einrichtung(en)\n    - text: Betroffener Bereich\n    - textbox \"Betroffener Bereich\": Wohnzimmer\n    - text: Seit wann\n    - textbox \"Seit wann\": gestern\n    - text: Weitere Angaben\n    - textbox \"Weitere Angaben\": Keine weiteren Symptome Erreichbar morgen ab 16 Uhr\n    - generic \"Gesammelte Zusammenfassung\"\n    - generic \"Fotos im Entwurf\"\n    - button \"Entwurf speichern\"\n    - button \"Entwurf mit Fotos herunterladen\"\n    - status: Noch nicht übermittelt. Die direkte Übermittlung ist noch nicht angeschlossen. Der Entwurf bleibt auf diesem Gerät.\n  - text: Fenster · Einheit 3A\n  - generic: Handwerker angefragt\n  - generic: In Bearbeitung\n- button \"MORA fragen\":\n  - generic: MORA fragen\n- dialog \"MORA Assistenz\":\n  - text: MORA fragen\n  - generic: MORADA ASSISTENT\n  - button \"Neuer Chat\"\n  - button \"MORA schliessen\": ×\n  - log:\n    - generic: Guten Tag. Ich bin MORA. Wie kann ich Ihnen rund um Ihre Immobilie helfen?\n    - button \"Dokumente finden\"\n    - button \"Anliegen melden\"\n    - button \"Meine Immobilie\"\n    - button \"WalkThrough\"\n    - generic: Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.\n    - generic: Ich habe Ihr Anliegen zur Lampe im Wohnzimmer notiert. Sie können den Entwurf im Service-Bereich weiter vorbereiten, sobald Sie dazu bereit sind.\n    - generic: Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.\n    - generic: Ich bin morgen ab 16 Uhr erreichbar.\n    - generic: Ich habe Ihre Erreichbarkeit morgen ab 16 Uhr notiert. Sie können den Entwurf im Service-Bereich aktualisieren, sobald Sie dazu bereit sind.\n    - generic: Der bestehende Entwurf wurde im Servicebereich aktualisiert. Er wurde noch nicht versendet.\n    - generic: Ausserdem bleiben zwei Heizkörper im Bad seit gestern kalt.\n    - generic: Ich habe das mit den zwei kalten Heizkörpern im Bad ebenfalls notiert. Den entsprechenden Entwurf können Sie im Service-Bereich vorbereiten, sobald Sie möchten.\n  - text: Aktuelles Anliegen\n  - combobox \"Aktuelles Anliegen wechseln\":\n    - option \"Lampe / Leuchte · Wohnzimmer\"\n    - option \"Heizkörper · Bad\" [selected]\n  - button \"Foto hinzufügen\"\n  - generic: Fotos werden lokal hinzugefügt und erst mit einer angebundenen Übermittlung versendet.\n  - textbox \"Nachricht an MORA\":\n    - /placeholder: Nachricht an MORA …\n  - button \"Nachricht senden\": ↑\n- navigation:\n  - generic: Home\n  - generic: Portfolio\n  - generic: Service\n  - generic: Dokumente\n  - generic: Profil",
+      "chatPreparationActions": 0,
+      "note": "Candidate rejected: wording offered preparation for the separate heater issue without a matching current action."
+    }
+  ],
+  "logs": [
+    {
+      "level": "info",
+      "message": "MORA response timing Object",
+      "timestamp": "2026-10-20T11:32:49.625Z"
+    },
+    {
+      "level": "info",
+      "message": "MORA response timing Object",
+      "timestamp": "2026-10-20T13:05:59.908Z"
+    },
+    {
+      "level": "info",
+      "message": "MORA response timing Object",
+      "timestamp": "2026-10-20T13:07:01.838Z"
+    },
+    {
+      "level": "info",
+      "message": "MORA response timing Object",
+      "timestamp": "2026-10-20T13:08:00.025Z"
+    },
+    {
+      "level": "info",
+      "message": "MORA response timing Object",
+      "timestamp": "2026-10-20T13:08:43.759Z"
+    },
+    {
+      "level": "info",
+      "message": "MORA response timing Object",
+      "timestamp": "2026-10-20T13:33:59.497Z"
+    },
+    {
+      "level": "info",
+      "message": "MORA response timing Object",
+      "timestamp": "2026-10-20T13:35:36.112Z"
+    },
+    {
+      "level": "info",
+      "message": "MORA response timing Object",
+      "timestamp": "2026-10-20T13:37:31.948Z"
+    }
+  ]
+}

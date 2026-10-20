@@ -1,0 +1,17 @@
+{
+  "sourceCommit": "60deb9fe926b2cc863ae04d43a455319ec08754d",
+  "completeConversations": 1,
+  "modelTurns": 3,
+  "actualGenerations": 4,
+  "httpErrors": 0,
+  "singleDraftAfterReload": true,
+  "mappedEquipment": "light",
+  "mappedRoom": "wohnzimmer",
+  "checks": [
+    "single current action",
+    "no early action in room question",
+    "no repeat after preparation or thank-you",
+    "reload preserves prepared state",
+    "no revision change on thank-you"
+  ]
+}

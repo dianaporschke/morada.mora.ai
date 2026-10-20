@@ -1,0 +1,11 @@
+{
+  "sourceCommit": "c53954ee23cd5b40b5ea1133368ba76e68bd03f0",
+  "completeConversations": 1,
+  "modelTurns": 3,
+  "actualGenerations": 4,
+  "httpErrors": 0,
+  "singleDraftAfterReload": true,
+  "equipment": "light",
+  "room": "wohnzimmer",
+  "checks": "no combined room question and preparation; one current offer; none after save, thank-you, or reload; no revision change on thank-you; form equals chat"
+}

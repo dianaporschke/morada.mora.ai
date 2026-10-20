@@ -1,0 +1,21 @@
+{
+  "checks": [
+    {
+      "file": "action-lifecycle-live-release-lamp.json",
+      "case": "complete-lamp",
+      "sourceCommit": "91d4538f54e14f66ae151b1c3c09acf595920f84",
+      "complete": true,
+      "successfulModelTurns": 3,
+      "failedHTTP": 0
+    },
+    {
+      "file": "action-lifecycle-live-release-topics.json",
+      "case": "topic-and-second-issue",
+      "sourceCommit": "91d4538f54e14f66ae151b1c3c09acf595920f84",
+      "complete": false,
+      "successfulModelTurns": 4,
+      "failedHTTP": 1
+    }
+  ],
+  "assertions": "single current preparation action; none after confirmed save; separate fixtures and rooms; no claim that the interrupted topic flow completed"
+}

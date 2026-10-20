@@ -1,0 +1,20 @@
+{
+  "sourceCommit": "5a405708ff6b21076a7d17e5f079b21746dd04bc",
+  "completeConversations": 1,
+  "modelTurns": 3,
+  "actualGenerations": 5,
+  "httpErrors": 0,
+  "degradedTurns": 0,
+  "singleDraftAfterReload": true,
+  "equipment": "light",
+  "room": "wohnzimmer",
+  "checks": [
+    "one current action",
+    "no preparation with pending clarification",
+    "none after save, thank-you or reload",
+    "no revision change on thank-you",
+    "count not invented",
+    "form equals chat"
+  ],
+  "languageAssessment": "State/action flow passed; free German wording remains uneven; raw replies are retained."
+}
