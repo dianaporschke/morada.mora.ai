@@ -44,6 +44,18 @@ test('Short followups merge; room correction retains device, count and defect an
  assert.doesNotMatch(d.description,/Wohnzimmer/);assert.equal(d.fieldFacts.location.status,'corrected');
 });
 
+test('A prefixed old note is merged once and punctuation-only repetition cannot reopen a saved draft',async()=>{
+ let r=await turn('Eine Lampe im Wohnzimmer geht nicht. Keine weiteren Symptome.',{...output({equipment:'light',count:1,location:'Wohnzimmer',details:'Keine weiteren Symptome'}),reply:'Sie können das Anliegen vorbereiten.',actions:[{kind:'prepare_draft'}]});
+ r=await processTurn({draftReceipt:{issueId:r.state.issue.id,revision:r.state.issue.revision,status:'portal_received'}},r.state,()=>assert.fail());
+ r=await turn('Ich bin morgen ab 16 Uhr erreichbar.',{reply:'Sie können den Entwurf aktualisieren.',intent:'issue',updates:[{ref:'active',details:'Keine weiteren Symptome. Morgen ab 16 Uhr erreichbar.'}],actions:[{kind:'prepare_draft'}]},r.state);
+ assert.equal((r.state.issue.details.match(/Keine weiteren Symptome/g)||[]).length,1);
+ assert.match(r.state.issue.details,/Morgen ab 16 Uhr/);assert.equal(r.state.issue.location,'Wohnzimmer');assert.equal(r.state.issue.count,1);
+ r=await processTurn({draftReceipt:{issueId:r.state.issue.id,revision:r.state.issue.revision,status:'portal_received'}},r.state,()=>assert.fail());
+ const revision=r.state.issue.revision;
+ r=await turn('danke',{reply:'Gerne.',intent:'issue',updates:[{ref:'active',details:'Keine weiteren Symptome! Morgen ab 16 Uhr erreichbar'}]},r.state);
+ assert.equal(r.state.issue.revision,revision);assert.equal(preparationState(r.state.issue),'portal_received');
+});
+
 test('Explicitly unknown start retracts an old time, but absent null values never erase known facts',async()=>{
  let r=await turn('Eine Lampe im Wohnzimmer geht seit gestern nicht.',output({equipment:'light',count:1,location:'Wohnzimmer',since:'gestern'}));
  r=await turn('Seit wann weiss ich doch nicht.',{reply:'Möchten Sie noch etwas ergänzen?',intent:'issue',updates:[{ref:'active',unknownAnswers:[{field:'since',quote:'Seit wann weiss ich doch nicht'}],location:null,count:null}]},r.state);
