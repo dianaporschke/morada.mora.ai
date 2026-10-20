@@ -1,0 +1,41 @@
+{
+  "source": "Existing Preview /api/ai-readiness generation audit; read-only Gateway getGenerationInfo. No new inference.",
+  "queriedAt": "2026-10-20T10:00:52Z",
+  "sdkFieldMeaning": {
+    "latency": "Time to first token, ms",
+    "generationTime": "Total generation time, ms",
+    "promptTokens": "Uncached prompt tokens; cachedTokens reported separately",
+    "completionTokens": "Text output; reasoning tokens reported separately"
+  },
+  "before": [
+    {
+      "caseId": "30",
+      "generationId": "gen_01M5CBJFZPN8F42E502GTYFTPB",
+      "totalCostUsd": 0.000292492,
+      "latencyMs": 3198,
+      "generationTimeMs": 3198,
+      "inputTokens": 1744,
+      "outputTokens": 88,
+      "reasoningTokens": 1348,
+      "cachedTokens": 1833,
+      "model": "inception/mercury-2.5",
+      "provider": "inception",
+      "streamed": false
+    },
+    {
+      "caseId": "29",
+      "note": "Last successful generation only; case required two generations.",
+      "generationId": "gen_01M5CBHR24415F6V0BX8Y4B08H",
+      "totalCostUsd": 0.000420104,
+      "latencyMs": 5644,
+      "generationTimeMs": 5644,
+      "inputTokens": 1830,
+      "outputTokens": 77,
+      "reasoningTokens": 2187,
+      "cachedTokens": 1826,
+      "model": "inception/mercury-2.5",
+      "provider": "inception",
+      "streamed": false
+    }
+  ]
+}

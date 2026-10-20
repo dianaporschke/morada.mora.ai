@@ -1,0 +1,55 @@
+{
+  "url": "https://morada-mora-epj16srye-dianaporschke-1255s-projects.vercel.app",
+  "model": "anthropic/claude-sonnet-5.5",
+  "sourceCommit": "3d6927035a9a347e89691b4bae25eb49aecab871",
+  "reasoning": "provider default (native Output.object)",
+  "intervalSeconds": 30.0,
+  "cases": 9,
+  "rows": [
+    {
+      "caseId": "01",
+      "case": "Lampe und kurze Antwort",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:04:19.732431+00:00",
+      "message": "Meine Lampe geht nicht.",
+      "status": 503,
+      "seconds": 5.693,
+      "reply": "Für das gewählte KI-Modell steht derzeit kein freigegebener Zugang zur Verfügung. Bitte wenden Sie sich an MORADA. Ihre bisherigen Angaben bleiben erhalten.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 391,
+        "model": 389,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": null,
+        "outputTokens": null,
+        "reasoningTokens": null,
+        "cachedInputTokens": null
+      },
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "anthropic/claude-sonnet-5.5",
+        "status": 403,
+        "reason": "no_providers_available"
+      },
+      "evaluation": {
+        "model": "anthropic/claude-sonnet-5.5",
+        "caseId": "01",
+        "turn": 1,
+        "synthetic": true,
+        "productModelChanged": false
+      },
+      "checks": [
+        "natürliche Rückfrage statt Formular",
+        "Wohnzimmer am selben Anliegen",
+        "kein wiederholtes Entwurfsangebot"
+      ]
+    }
+  ]
+}

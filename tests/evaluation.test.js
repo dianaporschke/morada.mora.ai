@@ -18,7 +18,7 @@ test('Evaluation never runs in production, main, or a non-authorized diagnostic 
   }
   assert.equal(calls,0);
 });
-test('Evaluation accepts only fixed scenarios and two explicit models; arbitrary prompts and customer sessions are rejected',async()=>{
+test('Evaluation accepts only fixed scenarios and an explicit model allowlist; arbitrary prompts and customer sessions are rejected',async()=>{
   let calls=0;const handler=createEvaluationHandler({env:preview,makeUnderstanding:()=>{calls++;}});
   for (const body of [
     {model:'attacker/paid-model',caseId:'01',turn:1},

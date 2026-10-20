@@ -1,0 +1,185 @@
+{
+  "url": "https://morada-mora-mhubjzl03-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-2.5",
+  "intervalSeconds": 60.0,
+  "cases": 3,
+  "rows": [
+    {
+      "caseId": "01",
+      "case": "Lampe und kurze Antwort",
+      "turn": 1,
+      "startedAt": "2026-10-20T09:40:50.693672+00:00",
+      "message": "Meine Lampe geht nicht.",
+      "status": 200,
+      "seconds": 12.409,
+      "reply": "Es tut mir leid zu hören, dass Ihre Lampe defekt ist. Ich helfe Ihnen gerne weiter. Könnten Sie mir bitte sagen, in welchem Raum sich die Lampe befindet und um welche Art es sich handelt (z. B. Deckenleuchte, Stehlampe)?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "8dd4d06d-2e34-4c0b-9e8e-5ccfe2c2165b",
+      "issues": [
+        {
+          "id": "8dd4d06d-2e34-4c0b-9e8e-5ccfe2c2165b",
+          "equipment": "unknown",
+          "category": "electricity",
+          "description": "Meine Lampe geht nicht.",
+          "defect": "funktioniert nicht",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 6419,
+        "model": 6413,
+        "application": 6
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1963,
+        "outputTokens": 1752,
+        "reasoningTokens": 1574,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "natürliche Rückfrage statt Formular",
+        "Wohnzimmer am selben Anliegen",
+        "kein wiederholtes Entwurfsangebot"
+      ]
+    },
+    {
+      "caseId": "01",
+      "case": "Lampe und kurze Antwort",
+      "turn": 2,
+      "startedAt": "2026-10-20T09:41:50.693829+00:00",
+      "message": "wohnzimmer",
+      "status": 200,
+      "seconds": 7.89,
+      "reply": "Vielen Dank für die Information. Das Wohnzimmer ist not. Können Sie mir bitte noch sagen, um welche Art von Lampe es sich handelt? Zum Beispiel Deckenleuchte, Stehlampe oder Tischlampe?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "8dd4d06d-2e34-4c0b-9e8e-5ccfe2c2165b",
+      "issues": [
+        {
+          "id": "8dd4d06d-2e34-4c0b-9e8e-5ccfe2c2165b",
+          "equipment": "unknown",
+          "category": "electricity",
+          "description": "Meine Lampe geht nicht.",
+          "defect": "funktioniert nicht",
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4279,
+        "model": 4276,
+        "application": 3
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2054,
+        "outputTokens": 2061,
+        "reasoningTokens": 1915,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "natürliche Rückfrage statt Formular",
+        "Wohnzimmer am selben Anliegen",
+        "kein wiederholtes Entwurfsangebot"
+      ]
+    },
+    {
+      "caseId": "05",
+      "case": "Zwei Schäden getrennt",
+      "turn": 1,
+      "startedAt": "2026-10-20T09:42:50.693973+00:00",
+      "message": "Meine Heizung funktioniert nicht und im Badezimmer tropft Wasser.",
+      "status": 503,
+      "seconds": 13.689,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 10117,
+        "model": 10116,
+        "application": 1
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 4055,
+        "outputTokens": 4735,
+        "reasoningTokens": 4190,
+        "cachedInputTokens": 1512
+      },
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "checks": [
+        "zwei getrennte Anliegen",
+        "keine Badezimmerzuordnung zur Heizung",
+        "Korrekte Zuordnung im zweiten Turn"
+      ]
+    },
+    {
+      "caseId": "21",
+      "case": "Persönlicher Termin",
+      "turn": 1,
+      "startedAt": "2026-10-20T09:43:50.694126+00:00",
+      "message": "Wann ist meine Wohnungsübergabe?",
+      "status": 503,
+      "seconds": 3.448,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 107,
+        "model": 106,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": null,
+        "outputTokens": null,
+        "reasoningTokens": null,
+        "cachedInputTokens": null
+      },
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": 429,
+        "reason": "rate_limit_exceeded"
+      },
+      "checks": [
+        "kein erfundener Termin oder alternativer Portalabruf",
+        "Grenze verständlich und knapp"
+      ]
+    }
+  ]
+}

@@ -7,7 +7,7 @@ import { readSession, sealSession } from '../lib/mora/session.js';
 // Evaluation only: never a customer-selectable model, arbitrary-prompt proxy,
 // fallback model, portal data access or production endpoint.
 const inputSchema=z.object({
-  model:z.enum(['openai/gpt-6-luna','anthropic/claude-sonnet-5.5']),
+  model:z.enum(['openai/gpt-6-luna','anthropic/claude-sonnet-5.5','inception/mercury-3']),
   caseId:z.enum(['01','03','05','09','19','24','27','29','30']),
   turn:z.number().int().min(1).max(3),session:z.string().max(180000).optional(),
 }).strict();
