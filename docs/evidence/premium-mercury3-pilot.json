@@ -1,0 +1,55 @@
+{
+  "url": "https://morada-mora-q3wzcffgs-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-3",
+  "sourceCommit": "2b8b372e086e312562ac25683c9390a54875388b",
+  "reasoning": "provider default (native Output.object)",
+  "intervalSeconds": 30.0,
+  "cases": 1,
+  "rows": [
+    {
+      "caseId": "01",
+      "case": "Lampe und kurze Antwort",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:08:30.522548+00:00",
+      "message": "Meine Lampe geht nicht.",
+      "status": 503,
+      "seconds": 17.605,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 12390,
+        "model": 12379,
+        "application": 11
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 2583,
+        "outputTokens": 5516,
+        "reasoningTokens": 4973,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-3",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "evaluation": {
+        "model": "inception/mercury-3",
+        "caseId": "01",
+        "turn": 1,
+        "synthetic": true,
+        "productModelChanged": false
+      },
+      "checks": [
+        "natürliche Rückfrage statt Formular",
+        "Wohnzimmer am selben Anliegen",
+        "kein wiederholtes Entwurfsangebot"
+      ]
+    }
+  ]
+}

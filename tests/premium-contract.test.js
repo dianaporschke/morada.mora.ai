@@ -63,6 +63,24 @@ test('Failed generations retain known token usage and call count without exposin
   });
 });
 
+test('Model-detected safety responses retain usage even when local safety wording takes precedence',async()=>{
+  const usage={inputTokens:100,outputTokens:50,reasoningTokens:20,cachedInputTokens:0};
+  const result=await processTurn({message:'Das wirkt sehr gefährlich.'},null,async()=>({mode:'model',usage,data:emptyUnderstanding({
+    intent:'issue',hazard:'electric',urgency:'emergency',dialogue:{reply:'Testantwort, die aus Sicherheitsgründen nicht erscheint.',stage:'discuss',buttons:[]},
+  })}));
+  assert.deepEqual(result.modelUsage,usage);assert.doesNotMatch(result.reply,/Testantwort/);
+});
+
+test('The separate Mercury 3 evaluation uses the verified JSON contract after its native-schema pilot failed',async()=>{
+  const model3=new MockLanguageModelV4({modelId:'inception/mercury-3',doGenerate:async options=>{
+    assert.equal(options.responseFormat.type,'json');assert.equal(options.responseFormat.schema,undefined);assert.equal(options.reasoning,'high');
+    assert.match(JSON.stringify(options.prompt),/updates/);
+    return {content:[{type:'text',text:JSON.stringify({reply:'Grüezi.',intent:'greeting'})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
+      usage:{inputTokens:{total:100,noCache:100,cacheRead:0,cacheWrite:0},outputTokens:{total:50,text:40,reasoning:10}}};
+  }});
+  assert.equal((await generateUnderstandingResult('Grüezi',null,model3)).data.dialogue.reply,'Grüezi.');
+});
+
 test('Trusted portal context validates property scope and supports both roles without inventing data APIs',async()=>{
   const fixture={version:1,status:'verified',properties:[{id:'p1',label:'Wohnung A',unitId:'u1',roles:['tenant','owner']}],selectedPropertyId:'p1'};
   assert.deepEqual(await readPortalContext({},async()=>fixture),fixture);
