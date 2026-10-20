@@ -74,3 +74,14 @@ export function preparationState(issue, draft) {
   if (issue.preparation?.revision===issue.revision && issue.preparation?.status==='portal_received') return 'portal_received';
   return issue.preparation?.status==='error' ? 'error' : 'ready';
 }
+
+/** Loss prevention for explicit counts beside a known facility, never singular grammar alone. */
+export function explicitEquipmentCount(evidence, equipment) {
+  const names=aliases[equipment];if(!names)return null;
+  const words={ein:1,eine:1,einer:1,eins:1,zwei:2,drei:3,vier:4,fünf:5,fuenf:5,sechs:6,sieben:7,acht:8,neun:9,zehn:10};
+  const text=normal(evidence);
+  if (/\b(?:vielleicht|unsicher|eventuell|oder|nicht eine|nicht zwei)\b/.test(text)) return null;
+  const re=new RegExp(`\\b(\\d{1,4}|${Object.keys(words).join('|')})\\s+(?:(?:betroffene|defekte|kaputte)\\s+)?(?:${names.join('|')})\\b`,'gu');
+  const values=[...text.matchAll(re)].map(match=>words[match[1]] || Number(match[1]));
+  return new Set(values).size===1 && values[0]>=1 ? values[0] : null;
+}

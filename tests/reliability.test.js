@@ -11,7 +11,7 @@ import { processTurn } from '../lib/mora/engine.js';
 import { readSession } from '../lib/mora/session.js';
 import { createChatHandler } from '../api/chat.js';
 import { createMora } from '../assets/mora-client.js';
-import { canonicalEquipment, mapServiceDraft, preparationState } from '../assets/mora-data.js';
+import { explicitEquipmentCount, canonicalEquipment, mapServiceDraft, preparationState } from '../assets/mora-data.js';
 
 const model=output=>new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>({
  content:[{type:'text',text:JSON.stringify(output)}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
@@ -148,4 +148,34 @@ test('An explicitly retracted device stays unknown in both signed state and the 
  assert.equal(r.state.issue.equipment,null);assert.equal(mapServiceDraft(r.state.issue).equipment,'unknown');
  r=await turn('Es ist rund.',{reply:'Möchten Sie noch etwas ergänzen?',intent:'issue',updates:[{ref:'active',details:'rund'}]},r.state);
  assert.equal(r.state.issue.equipment,null);assert.equal(mapServiceDraft(r.state.issue).equipment,'unknown');
+});
+
+
+test('Future passive transmission and unconfirmed preparation claims are rejected before display',async()=>{
+ for(const reply of ['Die Angaben werden lokal gespeichert und erst nach Ihrem Klick übermittelt.','Ihr Anliegen ist im Servicebereich vorbereitet.']) {
+  await assert.rejects(turn('Bitte vorbereiten',{...output({equipment:'light'}),reply}),{type:'invalid_model_output'});
+ }
+ const r=await turn('Bitte vorbereiten',{...output({equipment:'light'}),reply:'Sie können den Entwurf lokal prüfen. Er wird nicht übermittelt.'});
+ assert.match(r.reply,/nicht übermittelt/);
+});
+
+
+test('Omitted explicit counts are recovered beside the named facility without counting days or guessing singular grammar',async()=>{
+ assert.equal(explicitEquipmentCount('Meine Lampe geht seit einem Tag nicht.','light'),null);
+ assert.equal(explicitEquipmentCount('Eine Lampe im Wohnzimmer geht nicht.','light'),1);
+ assert.equal(explicitEquipmentCount('Vielleicht zwei Lampen, ich bin unsicher.','light'),null);
+ const r=await turn('Eine Lampe geht nicht.',output({equipment:'light'}));assert.equal(r.state.issue.count,1);
+});
+
+test('A model cannot claim that a saved draft was updated before the explicit update click',async()=>{
+ const r=await turn('Eine Lampe im Wohnzimmer geht nicht.',output({equipment:'light',location:'Wohnzimmer'}));
+ r.state.issue.preparation={status:'portal_received',revision:r.state.issue.revision};
+ await assert.rejects(turn('Nein, Schlafzimmer.',{reply:'Ich habe den Ort im Entwurf auf Schlafzimmer aktualisiert.',intent:'issue',updates:[{ref:'active',location:'Schlafzimmer',correction:true}]},r.state),{type:'invalid_model_output'});
+});
+
+
+test('An unknown quantity clears its stale numeric scope and records unknown separately from missing',async()=>{
+ let r=await turn('Drei Lampen im Wohnzimmer gehen nicht.',output({equipment:'light',count:3}));
+ r=await turn('Die Anzahl weiss ich nicht.',{reply:'Sie können das Anliegen vorbereiten.',intent:'issue',updates:[{ref:'active',unknownAnswers:[{field:'count',quote:'Die Anzahl weiss ich nicht'}]}]},r.state);
+ assert.equal(r.state.issue.count,null);assert.equal(r.state.issue.extent,null);assert.equal(r.state.issue.fieldFacts.count.status,'unknown');
 });
