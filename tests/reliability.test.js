@@ -185,3 +185,31 @@ test('Canonical equipment aliases still pass the physical-component provenance g
  const r=await turn('Unter dem Lavabo tropft Wasser.',{reply:'Wo genau tropft es?',intent:'issue',updates:[{ref:'new',equipment:'Rohr',category:'water',location:'unter dem Lavabo',defect:'tropft'}]});
  assert.notEqual(r.state.issue.equipment,'pipe');
 });
+
+
+test('Rejected language cannot discard independently validated facts; recovery is explicitly technical, not a model success',async()=>{
+ let calls=0;const fixture=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>({
+  content:[{type:'text',text:JSON.stringify(++calls===1 ? {reply:'Die Angaben werden nach Ihrem Klick übermittelt.',intent:'issue',updates:[{ref:'new',equipment:'light',location:'Wohnzimmer',defect:'lässt sich nicht einschalten'}]} : {broken:true})}],
+  finishReason:{unified:'stop',raw:'stop'},warnings:[],usage:{inputTokens:{total:100,noCache:100,cacheRead:0,cacheWrite:0},outputTokens:{total:50,text:40,reasoning:10}},
+ })});
+ const result=await generateUnderstandingResult('Eine Lampe im Wohnzimmer geht nicht.',null,fixture,{retainFactsOnReplyFailure:true});
+ assert.equal(result.recoveredFacts,true);assert.equal(result.generationCount,2);assert.equal(result.totalUsage.inputTokens,200);
+ const handler=createChatHandler(async()=>({mode:'recovery',recoveredFacts:true,data:result.data,usage:result.totalUsage,generationCount:2}));
+ const res={statusCode:200,setHeader(){},status(code){this.statusCode=code;return this;},json(body){this.body=body;return this;}};
+ await handler({method:'POST',body:{message:'Eine Lampe im Wohnzimmer geht nicht.'}},res);
+ assert.equal(res.statusCode,200);assert.equal(res.body.responseMode,'recovery');assert.equal(res.body.recoveredFacts,true);assert.equal(res.body.modelCalls,2);
+ assert.match(res.body.reply,/Technischer Hinweis/);assert.doesNotMatch(res.body.reply,/nach Ihrem Klick übermittelt/);
+ const d=mapServiceDraft(res.body.issue);assert.equal(d.equipment,'light');assert.equal(d.location,'Wohnzimmer');assert.equal(d.count,1);assert.equal(d.delivery,'not_sent');
+});
+
+test('Invalid source attribution never becomes a retained fact recovery',async()=>{
+ await assert.rejects(generateUnderstandingResult('Lampe im Wohnzimmer kaputt und Heizung im Bad kalt.',null,model({reply:'Es wird übermittelt.',intent:'issue',updates:[
+ {ref:'new',equipment:'light',location:'Wohnzimmer',sourceQuote:'not customer evidence'},
+ {ref:'new',equipment:'heater',location:'Bad',sourceQuote:'not customer evidence'}]}),{retainFactsOnReplyFailure:true}),{type:'invalid_model_output'});
+});
+
+test('Manual equipment edits use the same category mapping and retain other customer fields',()=>{
+ const source={id:'i',revision:1,equipment:'light',category:'electricity',description:'Lampe geht nicht',location:'Wohnzimmer'};
+ const existing={...mapServiceDraft(source),equipment:'heater',localEdits:{equipment:true}};
+ const d=mapServiceDraft(source,existing);assert.equal(d.equipment,'heater');assert.equal(d.category,'heating');assert.equal(d.location,'Wohnzimmer');assert.ok(d.conflictFields.includes('equipment'));
+});

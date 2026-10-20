@@ -2,7 +2,7 @@ const TYPES = new Set(['select', 'handover', 'attachment', 'add_details', 'navig
 const TABS = new Set(['docs', 'service', 'profile', 'portfolio']);
 const IMAGE_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif']);
 const STORAGE_KEY = 'morada.mora.v2.thread';
-import { categoryLabels as LABELS, equipmentLabels as EQUIPMENT, mapServiceDraft, draftSummary, draftLabel, preparationState } from './mora-data.js';
+import { categoryLabels as LABELS, equipmentLabels as EQUIPMENT, equipmentCategories, mapServiceDraft, draftSummary, draftLabel, preparationState } from './mora-data.js';
 const DRAFT_FIELDS = [['moraDraftDescription','description'], ['moraDraftEquipment','equipment'], ['moraDraftDefect','defect'], ['moraDraftCount','count'], ['moraDraftExtent','extent'], ['moraDraftLocation','location'], ['moraDraftSince','since'], ['moraDraftDetails','details']];
 const FIELD_LABELS = { description:'Beschreibung', equipment:'Einrichtung', defect:'Defekt', count:'Anzahl', extent:'Umfang', location:'Bereich', since:'Beginn', details:'Zusatzangaben' };
 
@@ -252,6 +252,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
         if (activeDraft.delivery === 'sent') activeDraft.unsentChanges = true;
       }
     }
+    activeDraft.category=equipmentCategories[activeDraft.equipment] || activeDraft.category;
     activeDraft.updatedAt = new Date().toISOString(); activeDraft.locallyEdited = Object.keys(activeDraft.localEdits).length > 0;
     activeDraft.summary = draftSummary(activeDraft); document.getElementById('moraDraftSummary').textContent = activeDraft.summary;
     return activeDraft;

@@ -34,7 +34,7 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
         finally { modelMs+=Date.now()-start; }
       });
       const activeDanger=result.state.issue && (result.state.issue.hazard!=='none' || result.state.issue.urgency==='emergency');
-      let responseMode = result.understanding === 'safety' || activeDanger ? 'safety' : result.singleModelReply ? 'model' : 'engine';
+      let responseMode = result.understanding === 'safety' || activeDanger ? 'safety' : result.recoveredFacts ? 'recovery' : result.singleModelReply ? 'model' : 'engine';
       if (!result.singleModelReply && env.MORA_AI_NATURAL_REPLIES === 'true' && canComposeReply(result)) {
         const start=Date.now(); modelCalls++;
         try { result.reply = await compose(result, {env, timeoutMs:deadline - Date.now()}); }
@@ -49,7 +49,7 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
       return res.status(200).json({ version: 2, reply: result.reply, actions: result.state.actions,
         issue: result.state.issue, issues: result.state.issues, session: sealSession(result.state), capabilities: portalCapabilities,
         understanding: result.understanding, responseMode, modelAvailability:result.availability,
-        timingMs,modelCalls,modelUsage:result.modelUsage || null });
+        timingMs,modelCalls,recoveredFacts:Boolean(result.recoveredFacts),modelUsage:result.modelUsage || null });
     } catch (error) {
       if (error.code === 'MODEL_UNAVAILABLE') {
         const failure = modelFailure(error.availability);

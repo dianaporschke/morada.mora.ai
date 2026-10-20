@@ -1,0 +1,1336 @@
+{
+  "url": "https://morada-mora-i73hc06io-dianaporschke-1255s-projects.vercel.app",
+  "sourceCommit": "46d6bb807eda8d2f5dcef158c9882f635ae303d6",
+  "model": "inception/mercury-2.5",
+  "synthetic": true,
+  "dom": "jsdom + real HTTP + IndexedDB",
+  "cases": [
+    {
+      "id": "01",
+      "name": "Lampe vollständig",
+      "checks": [
+        {
+          "check": "genuine_model_response",
+          "pass": false,
+          "status": 503
+        }
+      ],
+      "drafts": [],
+      "issues": []
+    },
+    {
+      "id": "02",
+      "name": "Lampe kurze Antworten",
+      "checks": [
+        {
+          "check": "expected.equipment",
+          "pass": true,
+          "actual": "light",
+          "expected": "light"
+        },
+        {
+          "check": "expected.location",
+          "pass": true,
+          "actual": "Schlafzimmer",
+          "expected": "Schlafzimmer"
+        },
+        {
+          "check": "expected.count",
+          "pass": false,
+          "actual": null,
+          "expected": 1
+        },
+        {
+          "check": "all_mapped_fields_equal",
+          "pass": true
+        },
+        {
+          "check": "one_draft_per_issue",
+          "pass": true
+        },
+        {
+          "check": "not_transmitted",
+          "pass": true
+        }
+      ],
+      "drafts": [
+        {
+          "id": "f6fcdb38-237a-4de5-a291-c181ce497e4d",
+          "category": "electricity",
+          "equipment": "light",
+          "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "defect": {
+              "status": "corrected",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "corrected",
+              "value": "Schlafzimmer",
+              "source": "Nein, ich meinte Schlafzimmer."
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+              "source": "Meine Lampe funktioniert nicht."
+            }
+          },
+          "revision": 4,
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          }
+        }
+      ],
+      "issues": [
+        {
+          "id": "f6fcdb38-237a-4de5-a291-c181ce497e4d",
+          "category": "electricity",
+          "equipment": "light",
+          "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "defect": {
+              "status": "corrected",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "corrected",
+              "value": "Schlafzimmer",
+              "source": "Nein, ich meinte Schlafzimmer."
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+              "source": "Meine Lampe funktioniert nicht."
+            }
+          },
+          "revision": 4,
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          }
+        }
+      ],
+      "dom": {
+        "label": "Lampe / Leuchte · Schlafzimmer · Entwurf",
+        "equipment": "light",
+        "location": "Schlafzimmer",
+        "defect": "Lampe lässt sich nicht einschalten.",
+        "count": "",
+        "notice": "Noch nicht übermittelt. Ihre Angaben und Fotos bleiben lokal auf diesem Gerät. Die direkte Übermittlung an MORADA ist noch nicht angeschlossen."
+      }
+    },
+    {
+      "id": "03",
+      "name": "Gemeldeter Tippfehlerfall",
+      "checks": [
+        {
+          "check": "expected.equipment",
+          "pass": true,
+          "actual": "light",
+          "expected": "light"
+        },
+        {
+          "check": "expected.location",
+          "pass": true,
+          "actual": "Wohnzimmer",
+          "expected": "Wohnzimmer"
+        },
+        {
+          "check": "expected.count",
+          "pass": true,
+          "actual": 1,
+          "expected": 1
+        },
+        {
+          "check": "all_mapped_fields_equal",
+          "pass": true
+        },
+        {
+          "check": "one_draft_per_issue",
+          "pass": true
+        },
+        {
+          "check": "not_transmitted",
+          "pass": true
+        }
+      ],
+      "drafts": [
+        {
+          "id": "4a06900e-350c-4d13-90c5-fd7a843c1294",
+          "category": "electricity",
+          "equipment": "light",
+          "description": "meine lampe nicht gehen",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": 1,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "meine lampe nicht gehen"
+            },
+            "defect": {
+              "status": "corrected",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "meine lampe nicht gehen"
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "wohnzimmer, eine lampe, nein"
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "wohnzimmer, eine lampe, nein"
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "wohnzimmer, eine lampe, nein"
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "meine lampe nicht gehen",
+              "source": "meine lampe nicht gehen"
+            }
+          },
+          "revision": 3,
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          }
+        }
+      ],
+      "issues": [
+        {
+          "id": "4a06900e-350c-4d13-90c5-fd7a843c1294",
+          "category": "electricity",
+          "equipment": "light",
+          "description": "meine lampe nicht gehen",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": 1,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "meine lampe nicht gehen"
+            },
+            "defect": {
+              "status": "corrected",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "meine lampe nicht gehen"
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "wohnzimmer, eine lampe, nein"
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "wohnzimmer, eine lampe, nein"
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "wohnzimmer, eine lampe, nein"
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "meine lampe nicht gehen",
+              "source": "meine lampe nicht gehen"
+            }
+          },
+          "revision": 3,
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          }
+        }
+      ],
+      "dom": {
+        "label": "Lampe / Leuchte · Wohnzimmer · Entwurf",
+        "equipment": "light",
+        "location": "Wohnzimmer",
+        "defect": "Lampe lässt sich nicht einschalten.",
+        "count": "1",
+        "notice": "Noch nicht übermittelt. Ihre Angaben und Fotos bleiben lokal auf diesem Gerät. Die direkte Übermittlung an MORADA ist noch nicht angeschlossen."
+      }
+    }
+  ],
+  "rows": [
+    {
+      "caseId": "01",
+      "kind": "conversation",
+      "message": "Eine Lampe im Wohnzimmer lässt sich seit gestern gar nicht mehr einschalten. Keine weiteren Symptome. Bitte für MORADA vorbereiten.",
+      "status": 503,
+      "seconds": 12.748,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "issues": [],
+      "modelCalls": 2,
+      "timingMs": {
+        "total": 8235,
+        "model": 8230,
+        "application": 5
+      },
+      "modelUsage": {
+        "inputTokens": 4792,
+        "outputTokens": 4094,
+        "reasoningTokens": 3694,
+        "cachedInputTokens": 764
+      },
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      }
+    },
+    {
+      "caseId": "02",
+      "kind": "conversation",
+      "message": "Meine Lampe funktioniert nicht.",
+      "status": 200,
+      "seconds": 12.97,
+      "reply": "Gerne helfe ich Ihnen weiter. In welchem Raum befindet sich die Lampe? Seit wann funktioniert sie nicht?",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "f6fcdb38-237a-4de5-a291-c181ce497e4d",
+          "category": "electricity",
+          "equipment": "light",
+          "description": "Meine Lampe funktioniert nicht.",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "defect": {
+              "status": "corrected",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Meine Lampe funktioniert nicht.",
+              "source": "Meine Lampe funktioniert nicht."
+            }
+          },
+          "revision": 2,
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          }
+        }
+      ],
+      "responseMode": "model",
+      "modelCalls": 2,
+      "timingMs": {
+        "total": 8477,
+        "model": 8473,
+        "application": 4
+      },
+      "modelUsage": {
+        "inputTokens": 4678,
+        "outputTokens": 3913,
+        "reasoningTokens": 3513,
+        "cachedInputTokens": 1484
+      },
+      "modelAvailability": null
+    },
+    {
+      "caseId": "02",
+      "kind": "conversation",
+      "message": "Im Wohnzimmer.",
+      "status": 200,
+      "seconds": 8.134,
+      "reply": "Gerne. Danke für die Angabe. Ab wann besteht das Problem?",
+      "actions": [],
+      "issues": [
+        {
+          "id": "f6fcdb38-237a-4de5-a291-c181ce497e4d",
+          "category": "electricity",
+          "equipment": "light",
+          "description": "Meine Lampe funktioniert nicht.",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "defect": {
+              "status": "corrected",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "Im Wohnzimmer."
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Meine Lampe funktioniert nicht.",
+              "source": "Meine Lampe funktioniert nicht."
+            }
+          },
+          "revision": 3,
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          }
+        }
+      ],
+      "responseMode": "model",
+      "modelCalls": 1,
+      "timingMs": {
+        "total": 3584,
+        "model": 3582,
+        "application": 2
+      },
+      "modelUsage": {
+        "inputTokens": 2598,
+        "outputTokens": 1609,
+        "reasoningTokens": 1462,
+        "cachedInputTokens": 747
+      },
+      "modelAvailability": null
+    },
+    {
+      "caseId": "02",
+      "kind": "conversation",
+      "message": "Eine.",
+      "status": 200,
+      "seconds": 8.98,
+      "reply": "Vielen Dank für die Info. Meinen Sie mit «eine» einen Tag, eine Woche oder etwas anderes? So kann ich den Zeitpunkt genau erfassen.",
+      "actions": [],
+      "issues": [
+        {
+          "id": "f6fcdb38-237a-4de5-a291-c181ce497e4d",
+          "category": "electricity",
+          "equipment": "light",
+          "description": "Meine Lampe funktioniert nicht.",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "defect": {
+              "status": "corrected",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "Im Wohnzimmer."
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Meine Lampe funktioniert nicht.",
+              "source": "Meine Lampe funktioniert nicht."
+            }
+          },
+          "revision": 3,
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          }
+        }
+      ],
+      "responseMode": "model",
+      "modelCalls": 1,
+      "timingMs": {
+        "total": 5404,
+        "model": 5402,
+        "application": 2
+      },
+      "modelUsage": {
+        "inputTokens": 2600,
+        "outputTokens": 2101,
+        "reasoningTokens": 2007,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null
+    },
+    {
+      "caseId": "02",
+      "kind": "conversation",
+      "message": "Nein, ich meinte Schlafzimmer.",
+      "status": 200,
+      "seconds": 9.273,
+      "reply": "Danke für die Korrektur. Das Schlafzimmer ist also der betroffene Raum. Können Sie mir noch sagen, seit wann die Lampe nicht mehr funktioniert?",
+      "actions": [],
+      "issues": [
+        {
+          "id": "f6fcdb38-237a-4de5-a291-c181ce497e4d",
+          "category": "electricity",
+          "equipment": "light",
+          "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "defect": {
+              "status": "corrected",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "corrected",
+              "value": "Schlafzimmer",
+              "source": "Nein, ich meinte Schlafzimmer."
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+              "source": "Meine Lampe funktioniert nicht."
+            }
+          },
+          "revision": 4,
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          }
+        }
+      ],
+      "responseMode": "model",
+      "modelCalls": 1,
+      "timingMs": {
+        "total": 4724,
+        "model": 4723,
+        "application": 1
+      },
+      "modelUsage": {
+        "inputTokens": 2755,
+        "outputTokens": 2230,
+        "reasoningTokens": 2062,
+        "cachedInputTokens": 768
+      },
+      "modelAvailability": null
+    },
+    {
+      "caseId": "02",
+      "kind": "local_receipt",
+      "message": null,
+      "status": 200,
+      "seconds": 4.516,
+      "reply": "Der Entwurf ist im Servicebereich auf diesem Gerät verfügbar. Er wurde noch nicht an MORADA gesendet.",
+      "actions": [],
+      "issues": [
+        {
+          "id": "f6fcdb38-237a-4de5-a291-c181ce497e4d",
+          "category": "electricity",
+          "equipment": "light",
+          "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "defect": {
+              "status": "corrected",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "Meine Lampe funktioniert nicht."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "corrected",
+              "value": "Schlafzimmer",
+              "source": "Nein, ich meinte Schlafzimmer."
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+              "source": "Meine Lampe funktioniert nicht."
+            }
+          },
+          "revision": 4,
+          "preparation": {
+            "status": "portal_received",
+            "revision": 4,
+            "source": "client_local_storage",
+            "at": "2026-10-20T11:10:14.567Z"
+          }
+        }
+      ],
+      "responseMode": "engine",
+      "modelCalls": 0,
+      "timingMs": {
+        "total": 1,
+        "model": 0,
+        "application": 1
+      },
+      "modelUsage": null,
+      "modelAvailability": null
+    },
+    {
+      "caseId": "03",
+      "kind": "conversation",
+      "message": "meine lampe nicht gehen",
+      "status": 200,
+      "seconds": 13.75,
+      "reply": "Gerne helfe ich Ihnen bei der Meldung. Damit wir den Vorgang korrekt erfassen können, wo befindet sich die Lampe? Ich kann das Formular für Sie vorbereiten, damit Sie die Angaben lokal prüfen und speichern können.",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "4a06900e-350c-4d13-90c5-fd7a843c1294",
+          "category": "electricity",
+          "equipment": "light",
+          "description": "meine lampe nicht gehen",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "meine lampe nicht gehen"
+            },
+            "defect": {
+              "status": "corrected",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "meine lampe nicht gehen"
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "meine lampe nicht gehen",
+              "source": "meine lampe nicht gehen"
+            }
+          },
+          "revision": 2,
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          }
+        }
+      ],
+      "responseMode": "model",
+      "modelCalls": 2,
+      "timingMs": {
+        "total": 9166,
+        "model": 9165,
+        "application": 1
+      },
+      "modelUsage": {
+        "inputTokens": 4785,
+        "outputTokens": 3580,
+        "reasoningTokens": 3183,
+        "cachedInputTokens": 1502
+      },
+      "modelAvailability": null
+    },
+    {
+      "caseId": "03",
+      "kind": "conversation",
+      "message": "wohnzimmer, eine lampe, nein",
+      "status": 200,
+      "seconds": 10.367,
+      "reply": "Vielen Dank für die Informationen. Ich habe den Wohnraum und die Anzahl der Lampen notiert. Seit wann funktioniert die Lampe nicht mehr?",
+      "actions": [],
+      "issues": [
+        {
+          "id": "4a06900e-350c-4d13-90c5-fd7a843c1294",
+          "category": "electricity",
+          "equipment": "light",
+          "description": "meine lampe nicht gehen",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": 1,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "meine lampe nicht gehen"
+            },
+            "defect": {
+              "status": "corrected",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "meine lampe nicht gehen"
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "wohnzimmer, eine lampe, nein"
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "wohnzimmer, eine lampe, nein"
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "wohnzimmer, eine lampe, nein"
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "meine lampe nicht gehen",
+              "source": "meine lampe nicht gehen"
+            }
+          },
+          "revision": 3,
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          }
+        }
+      ],
+      "responseMode": "model",
+      "modelCalls": 1,
+      "timingMs": {
+        "total": 5890,
+        "model": 5889,
+        "application": 1
+      },
+      "modelUsage": {
+        "inputTokens": 2571,
+        "outputTokens": 2506,
+        "reasoningTokens": 2332,
+        "cachedInputTokens": 732
+      },
+      "modelAvailability": null
+    },
+    {
+      "caseId": "03",
+      "kind": "local_receipt",
+      "message": null,
+      "status": 200,
+      "seconds": 4.464,
+      "reply": "Der Entwurf ist im Servicebereich auf diesem Gerät verfügbar. Er wurde noch nicht an MORADA gesendet.",
+      "actions": [],
+      "issues": [
+        {
+          "id": "4a06900e-350c-4d13-90c5-fd7a843c1294",
+          "category": "electricity",
+          "equipment": "light",
+          "description": "meine lampe nicht gehen",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": 1,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "meine lampe nicht gehen"
+            },
+            "defect": {
+              "status": "corrected",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "meine lampe nicht gehen"
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "wohnzimmer, eine lampe, nein"
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "wohnzimmer, eine lampe, nein"
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "wohnzimmer, eine lampe, nein"
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "meine lampe nicht gehen",
+              "source": "meine lampe nicht gehen"
+            }
+          },
+          "revision": 3,
+          "preparation": {
+            "status": "portal_received",
+            "revision": 3,
+            "source": "client_local_storage",
+            "at": "2026-10-20T11:11:05.652Z"
+          }
+        }
+      ],
+      "responseMode": "engine",
+      "modelCalls": 0,
+      "timingMs": {
+        "total": 0,
+        "model": 0,
+        "application": 0
+      },
+      "modelUsage": null,
+      "modelAvailability": null
+    },
+    {
+      "caseId": "04",
+      "kind": "conversation",
+      "message": "Zwei Steckdosen im Wohnzimmer funktionieren seit Montag nicht.",
+      "status": 200,
+      "seconds": 10.403,
+      "reply": "Vielen Dank für Ihre Meldung. Ich habe vermerkt, dass zwei Steckdosen im Wohnzimmer seit Montag nicht funktionieren. Möchten Sie, dass ich das Serviceformular vorbereite?",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "6bbdada8-f36b-47f3-8698-f675b80a2b84",
+          "category": "electricity",
+          "equipment": "socket",
+          "description": "Zwei Steckdosen im Wohnzimmer funktionieren seit Montag nicht.",
+          "defect": "funktioniert nicht",
+          "count": 2,
+          "location": "Wohnzimmer",
+          "since": "seit Montag",
+          "extent": "2 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "unknownFields": [],
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "socket",
+              "source": "Zwei Steckdosen im Wohnzimmer funktionieren seit Montag nicht."
+            },
+            "defect": {
+              "status": "known",
+              "value": "funktioniert nicht",
+              "source": "Zwei Steckdosen im Wohnzimmer funktionieren seit Montag nicht."
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "Zwei Steckdosen im Wohnzimmer funktionieren seit Montag nicht."
+            },
+            "since": {
+              "status": "known",
+              "value": "seit Montag",
+              "source": "Zwei Steckdosen im Wohnzimmer funktionieren seit Montag nicht."
+            },
+            "count": {
+              "status": "known",
+              "value": 2,
+              "source": "Zwei Steckdosen im Wohnzimmer funktionieren seit Montag nicht."
+            },
+            "extent": {
+              "status": "known",
+              "value": "2 betroffene Einrichtung(en)",
+              "source": "Zwei Steckdosen im Wohnzimmer funktionieren seit Montag nicht."
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Zwei Steckdosen im Wohnzimmer funktionieren seit Montag nicht.",
+              "source": "Zwei Steckdosen im Wohnzimmer funktionieren seit Montag nicht."
+            }
+          },
+          "revision": 2,
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          }
+        }
+      ],
+      "responseMode": "model",
+      "modelCalls": 1,
+      "timingMs": {
+        "total": 5738,
+        "model": 5736,
+        "application": 2
+      },
+      "modelUsage": {
+        "inputTokens": 2373,
+        "outputTokens": 2725,
+        "reasoningTokens": 2523,
+        "cachedInputTokens": 760
+      },
+      "modelAvailability": null
+    }
+  ]
+}

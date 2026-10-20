@@ -63,6 +63,7 @@ export function mapServiceDraft(issue, existing, {session=null, now=new Date().t
     if ((existing[field] ?? null)!==(draft[field] ?? null)) draft.conflictFields.push(field);
     draft[field]=existing[field];
   }
+  draft.category=equipmentCategories[draft.equipment] || draft.category;
   draft.locallyEdited=Object.keys(draft.localEdits).length>0;
   draft.summary=draftSummary(draft);
   return draft;

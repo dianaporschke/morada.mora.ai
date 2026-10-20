@@ -50,7 +50,7 @@ try {
    const started=Date.now(),reply=await request(path,body);lastStatus=reply.status;
    const row={caseId:c.id,kind:receipt?'local_receipt':'conversation',message:body.message || null,status:reply.status,seconds:(Date.now()-started)/1000,
     reply:reply.body.reply || reply.body.error,actions:reply.body.actions,issues:(reply.body.issues || []).map(safeIssue),
-    responseMode:reply.body.responseMode,modelCalls:reply.body.modelCalls,timingMs:reply.body.timingMs,modelUsage:reply.body.modelUsage,modelAvailability:reply.body.modelAvailability};
+    responseMode:reply.body.responseMode,recoveredFacts:reply.body.recoveredFacts || false,modelCalls:reply.body.modelCalls,timingMs:reply.body.timingMs,modelUsage:reply.body.modelUsage,modelAvailability:reply.body.modelAvailability};
    evidence.rows.push(row);persist();console.log(JSON.stringify({case:c.id,kind:row.kind,status:row.status,reply:row.reply,equipment:row.issues.map(i=>i.equipment)}));
    if(reply.status!==200 && reply.body.modelAvailability?.reason!=='invalid_model_output')throw Object.assign(Error('Access, transport, quota or billing boundary'),{stopRun:true});
    return {ok:reply.status===200,status:reply.status,json:async()=>reply.body};
@@ -65,6 +65,7 @@ try {
    const state=ui.getState();result.issues=state.issues.map(safeIssue);
    if(lastStatus!==200){result.checks.push({check:'genuine_model_response',pass:false,status:lastStatus});}
    else {
+    if(!c.safety)result.checks.push({check:'normal_model_reply',pass:evidence.rows.filter(r=>r.caseId===c.id && r.kind==='conversation').every(r=>r.responseMode==='model')});
     for(const [key,value]of Object.entries(c.expected || {}))result.checks.push({check:`expected.${key}`,pass:state.issue?.[key]===value,actual:state.issue?.[key] ?? null,expected:value});
     if(c.issueCount)result.checks.push({check:'issue_count',pass:state.issues.length===c.issueCount,actual:state.issues.length});
     for(const field of c.unknown || [])result.checks.push({check:`explicit_unknown.${field}`,pass:state.issue?.unknownFields.includes(field)});
