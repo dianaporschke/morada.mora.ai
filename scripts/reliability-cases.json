@@ -1,17 +1,210 @@
 [
- {"id":"01","name":"Lampe vollständig","messages":["Eine Lampe im Wohnzimmer lässt sich seit gestern gar nicht mehr einschalten. Keine weiteren Symptome. Bitte für MORADA vorbereiten."],"expected":{"equipment":"light","category":"electricity","location":"Wohnzimmer","count":1}},
- {"id":"02","name":"Lampe kurze Antworten","messages":["Meine Lampe funktioniert nicht.","Im Wohnzimmer.","Eine.","Nein, ich meinte Schlafzimmer."],"expected":{"equipment":"light","location":"Schlafzimmer","count":1}},
- {"id":"03","name":"Gemeldeter Tippfehlerfall","messages":["meine lampe nicht gehen","wohnzimmer, eine lampe, nein"],"expected":{"equipment":"light","location":"Wohnzimmer","count":1}},
- {"id":"04","name":"Raumkorrektur","messages":["Zwei Steckdosen im Wohnzimmer funktionieren seit Montag nicht.","Nein, ich meinte Schlafzimmer."],"expected":{"equipment":"socket","location":"Schlafzimmer","count":2}},
- {"id":"05","name":"Unbekannter Beginn","messages":["Meine Lampe im Wohnzimmer geht nicht. Seit wann weiss ich nicht."],"expected":{"equipment":"light","location":"Wohnzimmer","since":null},"unknown":["since"]},
- {"id":"06","name":"Mehrere Einrichtungen","messages":["Drei Lampen im Flur gehen nicht. Keine ungewöhnlichen Gerüche oder Geräusche."],"expected":{"equipment":"light","count":3,"location":"Flur"}},
- {"id":"07","name":"Mehrere Anliegen","messages":["Die Lampe im Wohnzimmer geht nicht und die Heizung im Badezimmer bleibt kalt.","Die Lampe seit Montag, die Heizung seit gestern."],"issueCount":2},
- {"id":"08","name":"Themenwechsel","messages":["Meine Lampe im Wohnzimmer geht nicht.","Wo kann ich meinen Mietvertrag finden?","Zurück zur Lampe: Es ist genau eine und sie lässt sich nicht einschalten."],"expected":{"equipment":"light","location":"Wohnzimmer","count":1},"issueCount":1},
- {"id":"09","name":"Widersprüchliche Angaben","messages":["Eine Lampe im Wohnzimmer geht nicht.","Vielleicht sind es doch zwei, ich bin mir nicht sicher."],"expected":{"equipment":"light","location":"Wohnzimmer"}},
- {"id":"10","name":"Wiederholte Vorbereitungsklicks","messages":["Eine Lampe im Wohnzimmer geht seit gestern nicht. Bitte vorbereiten."],"repeatClicks":true,"expected":{"equipment":"light","count":1,"location":"Wohnzimmer"}},
- {"id":"11","name":"Ergänzung nach Entwurf","messages":["Eine Lampe im Wohnzimmer lässt sich nicht einschalten. Bitte vorbereiten.","Korrektur: Die Lampe ist im Schlafzimmer. Bitte den vorhandenen Entwurf aktualisieren."],"prepareAfterTurn":1,"expected":{"equipment":"light","count":1,"location":"Schlafzimmer"}},
- {"id":"12","name":"Fehler der lokalen Portalübergabe","messages":["Eine Lampe im Wohnzimmer geht nicht. Bitte vorbereiten."],"failStorage":true,"expected":{"equipment":"light","location":"Wohnzimmer","count":1}},
- {"id":"13","name":"Unbekannte Kategorie","messages":["Das Wabbelteil an der Zierleiste klemmt. Ich weiss nicht, was das genau ist."],"expected":{"category":"general"}},
- {"id":"14","name":"Akute elektrische Gefahr (lokal)","messages":["Aus der Steckdose kommen Funken und Rauch."],"safety":true},
- {"id":"15","name":"Nicht verfügbare Aktion","messages":["Eine Lampe im Wohnzimmer geht nicht. Senden Sie das jetzt direkt an MORADA und buchen Sie einen Elektriker."],"expected":{"equipment":"light","location":"Wohnzimmer"}}
+  {
+    "id": "01",
+    "name": "Lampe vollständig",
+    "messages": [
+      "Eine Lampe im Wohnzimmer lässt sich seit gestern gar nicht mehr einschalten. Keine weiteren Symptome. Bitte für MORADA vorbereiten."
+    ],
+    "expected": {
+      "equipment": "light",
+      "category": "electricity",
+      "location": "Wohnzimmer",
+      "count": 1
+    },
+    "detailsPattern": "keine.*symptome"
+  },
+  {
+    "id": "02",
+    "name": "Lampe kurze Antworten",
+    "messages": [
+      "Meine Lampe funktioniert nicht.",
+      "Im Wohnzimmer.",
+      "Eine.",
+      "Nein, ich meinte Schlafzimmer."
+    ],
+    "expected": {
+      "equipment": "light",
+      "location": "Schlafzimmer",
+      "count": 1
+    }
+  },
+  {
+    "id": "03",
+    "name": "Gemeldeter Tippfehlerfall",
+    "messages": [
+      "meine lampe nicht gehen",
+      "wohnzimmer, eine lampe, nein"
+    ],
+    "expected": {
+      "equipment": "light",
+      "location": "Wohnzimmer",
+      "count": 1
+    }
+  },
+  {
+    "id": "04",
+    "name": "Raumkorrektur",
+    "messages": [
+      "Zwei Steckdosen im Wohnzimmer funktionieren seit Montag nicht.",
+      "Nein, ich meinte Schlafzimmer."
+    ],
+    "expected": {
+      "equipment": "socket",
+      "location": "Schlafzimmer",
+      "count": 2
+    }
+  },
+  {
+    "id": "05",
+    "name": "Unbekannter Beginn",
+    "messages": [
+      "Meine Lampe im Wohnzimmer geht nicht. Seit wann weiss ich nicht."
+    ],
+    "expected": {
+      "equipment": "light",
+      "location": "Wohnzimmer",
+      "since": null
+    },
+    "unknown": [
+      "since"
+    ]
+  },
+  {
+    "id": "06",
+    "name": "Mehrere Einrichtungen",
+    "messages": [
+      "Drei Lampen im Flur gehen nicht. Keine ungewöhnlichen Gerüche oder Geräusche."
+    ],
+    "expected": {
+      "equipment": "light",
+      "count": 3,
+      "location": "Flur"
+    },
+    "detailsPattern": "keine.*(gerüche|geräusche)"
+  },
+  {
+    "id": "07",
+    "name": "Mehrere Anliegen",
+    "messages": [
+      "Die Lampe im Wohnzimmer geht nicht und die Heizung im Badezimmer bleibt kalt.",
+      "Die Lampe seit Montag, die Heizung seit gestern."
+    ],
+    "issueCount": 2,
+    "expectedIssues": [
+      {
+        "equipment": "light",
+        "location": "Wohnzimmer",
+        "since": "Montag"
+      },
+      {
+        "equipment": "heater",
+        "location": "Badezimmer",
+        "since": "gestern"
+      }
+    ]
+  },
+  {
+    "id": "08",
+    "name": "Themenwechsel",
+    "messages": [
+      "Meine Lampe im Wohnzimmer geht nicht.",
+      "Wo kann ich meinen Mietvertrag finden?",
+      "Zurück zur Lampe: Es ist genau eine und sie lässt sich nicht einschalten."
+    ],
+    "expected": {
+      "equipment": "light",
+      "location": "Wohnzimmer",
+      "count": 1
+    },
+    "issueCount": 1
+  },
+  {
+    "id": "09",
+    "name": "Widersprüchliche Angaben",
+    "messages": [
+      "Eine Lampe im Wohnzimmer geht nicht.",
+      "Vielleicht sind es doch zwei, ich bin mir nicht sicher."
+    ],
+    "expected": {
+      "equipment": "light",
+      "location": "Wohnzimmer",
+      "count": 1
+    },
+    "uncertain": [
+      "count"
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Wiederholte Vorbereitungsklicks",
+    "messages": [
+      "Eine Lampe im Wohnzimmer geht seit gestern nicht. Bitte vorbereiten."
+    ],
+    "repeatClicks": true,
+    "expected": {
+      "equipment": "light",
+      "count": 1,
+      "location": "Wohnzimmer"
+    },
+    "sameDraft": true,
+    "issueCount": 1
+  },
+  {
+    "id": "11",
+    "name": "Ergänzung nach Entwurf",
+    "messages": [
+      "Eine Lampe im Wohnzimmer lässt sich nicht einschalten. Bitte vorbereiten.",
+      "Korrektur: Die Lampe ist im Schlafzimmer. Bitte den vorhandenen Entwurf aktualisieren."
+    ],
+    "prepareAfterTurn": 1,
+    "expected": {
+      "equipment": "light",
+      "count": 1,
+      "location": "Schlafzimmer"
+    },
+    "sameDraft": true,
+    "issueCount": 1
+  },
+  {
+    "id": "12",
+    "name": "Fehler der lokalen Portalübergabe",
+    "messages": [
+      "Eine Lampe im Wohnzimmer geht nicht. Bitte vorbereiten."
+    ],
+    "failStorage": true,
+    "expected": {
+      "equipment": "light",
+      "location": "Wohnzimmer",
+      "count": 1
+    }
+  },
+  {
+    "id": "13",
+    "name": "Unbekannte Kategorie",
+    "messages": [
+      "Das Wabbelteil an der Zierleiste klemmt. Ich weiss nicht, was das genau ist."
+    ],
+    "expected": {
+      "category": "general"
+    }
+  },
+  {
+    "id": "14",
+    "name": "Akute elektrische Gefahr (lokal)",
+    "messages": [
+      "Aus der Steckdose kommen Funken und Rauch."
+    ],
+    "safety": true
+  },
+  {
+    "id": "15",
+    "name": "Nicht verfügbare Aktion",
+    "messages": [
+      "Eine Lampe im Wohnzimmer geht nicht. Senden Sie das jetzt direkt an MORADA und buchen Sie einen Elektriker."
+    ],
+    "expected": {
+      "equipment": "light",
+      "location": "Wohnzimmer"
+    }
+  }
 ]

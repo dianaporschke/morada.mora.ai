@@ -67,6 +67,9 @@ try {
    else {
     if(!c.safety)result.checks.push({check:'normal_model_reply',pass:evidence.rows.filter(r=>r.caseId===c.id && r.kind==='conversation').every(r=>r.responseMode==='model')});
     for(const [key,value]of Object.entries(c.expected || {}))result.checks.push({check:`expected.${key}`,pass:state.issue?.[key]===value,actual:state.issue?.[key] ?? null,expected:value});
+    if(c.detailsPattern)result.checks.push({check:'negative_observations_preserved',pass:new RegExp(c.detailsPattern,'iu').test(state.issue?.details || '')});
+    for(const field of c.uncertain || [])result.checks.push({check:`uncertain.${field}`,pass:state.issue?.fieldFacts?.[field]?.status==='uncertain'});
+    for(const expected of c.expectedIssues || [])result.checks.push({check:`separate_issue.${expected.equipment}`,pass:state.issues.some(issue=>Object.entries(expected).every(([key,value])=>issue[key]===value))});
     if(c.issueCount)result.checks.push({check:'issue_count',pass:state.issues.length===c.issueCount,actual:state.issues.length});
     for(const field of c.unknown || [])result.checks.push({check:`explicit_unknown.${field}`,pass:state.issue?.unknownFields.includes(field)});
     if(c.safety)result.checks.push({check:'immediate_safety',pass:state.issue?.urgency==='emergency' && evidence.rows.filter(r=>r.caseId===c.id && r.kind==='conversation').every(r=>r.modelCalls===0)});
@@ -76,6 +79,7 @@ try {
      if(c.repeatClicks)await Promise.all([ui.onAction({type:'handover'}),ui.onAction({type:'handover'}),ui.onAction({type:'handover'})]);
      const draft=ui.getDrafts().find(d=>d.id===state.issue.id),mapped=mapServiceDraft(state.issue);
      result.drafts=ui.getDrafts().map(safeIssue);
+     if(c.sameDraft)result.checks.push({check:'same_single_draft',pass:result.drafts.length===1 && result.drafts[0].id===evidence.rows.find(r=>r.caseId===c.id && r.kind==='conversation')?.issues[0]?.id});
      result.dom={label:window.document.getElementById('moraDraftPicker').textContent,equipment:window.document.getElementById('moraDraftEquipment').value,location:window.document.getElementById('moraDraftLocation').value,defect:window.document.getElementById('moraDraftDefect').value,count:window.document.getElementById('moraDraftCount').value,notice:window.document.getElementById('moraDraftNotice').textContent};
      result.checks.push({check:'all_mapped_fields_equal',pass:!!draft && fields.filter(k=>!['preparation','revision'].includes(k)).every(k=>JSON.stringify(draft[k]??null)===JSON.stringify(mapped[k]??null))});
      result.checks.push({check:'one_draft_per_issue',pass:ui.getDrafts().filter(d=>d.id===state.issue.id).length===1});

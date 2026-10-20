@@ -11,7 +11,7 @@ import { processTurn } from '../lib/mora/engine.js';
 import { readSession } from '../lib/mora/session.js';
 import { createChatHandler } from '../api/chat.js';
 import { createMora } from '../assets/mora-client.js';
-import { explicitEquipmentCount, canonicalEquipment, mapServiceDraft, preparationState } from '../assets/mora-data.js';
+import { explicitSymptomsEvidence, explicitEquipmentCount, canonicalEquipment, mapServiceDraft, preparationState } from '../assets/mora-data.js';
 
 const model=output=>new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>({
  content:[{type:'text',text:JSON.stringify(output)}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
@@ -212,4 +212,36 @@ test('Manual equipment edits use the same category mapping and retain other cust
  const source={id:'i',revision:1,equipment:'light',category:'electricity',description:'Lampe geht nicht',location:'Wohnzimmer'};
  const existing={...mapServiceDraft(source),equipment:'heater',localEdits:{equipment:true}};
  const d=mapServiceDraft(source,existing);assert.equal(d.equipment,'heater');assert.equal(d.category,'heating');assert.equal(d.location,'Wohnzimmer');assert.ok(d.conflictFields.includes('equipment'));
+});
+
+
+test('Explicit negative observations survive an omitted model details field; a bare no is never guessed',async()=>{
+ const message='Eine Lampe im Wohnzimmer geht nicht. Keine weiteren Symptome.';
+ const r=await turn(message,output({equipment:'light',location:'Wohnzimmer'}));
+ assert.equal(r.state.issue.details,'Keine weiteren Symptome');assert.equal(mapServiceDraft(r.state.issue).details,'Keine weiteren Symptome');
+ assert.equal(r.state.issue.fieldFacts.defect.status,'known');
+ assert.equal(explicitSymptomsEvidence('Ich habe nicht gesagt keine weiteren Symptome.'),null);
+ const withDetails=await turn(message+' Bitte am Vormittag anrufen.',output({equipment:'light',location:'Wohnzimmer',details:'Bitte am Vormittag anrufen.'}));
+ assert.match(withDetails.state.issue.details,/Keine weiteren Symptome/);assert.match(withDetails.state.issue.details,/Vormittag/);
+ const other=await turn('Eine Lampe geht nicht.',output({equipment:'light'}));
+ const next=await turn('nein',{reply:'Möchten Sie noch etwas ergänzen?',intent:'issue'},other.state);assert.equal(next.state.issue.details,null);
+});
+
+test('A model-supplied stale description cannot reintroduce corrected rooms or quantities',async()=>{
+ const r=await turn('Drei Lampen im Wohnzimmer gehen nicht.',output({equipment:'light',count:3,location:'Wohnzimmer'}));
+ const next=await turn('Nein, zwei im Schlafzimmer.',{reply:'Möchten Sie noch etwas ergänzen?',intent:'issue',updates:[{ref:'active',correction:true,count:2,location:'Schlafzimmer',description:'Drei Lampen im Wohnzimmer gehen nicht.'}]},r.state);
+ const d=mapServiceDraft(next.state.issue);assert.doesNotMatch(d.description,/Drei|Wohnzimmer/);assert.match(d.description,/Schlafzimmer/);assert.match(d.description,/Anzahl: 2/);
+});
+
+test('An uncertain quantity does not rewrite the provenance of the last confirmed scope',async()=>{
+ const r=await turn('Eine Lampe geht nicht.',output({equipment:'light',count:1}));
+ const next=await turn('Vielleicht zwei.',{reply:'Ist es eine oder sind es zwei Lampen?',intent:'issue',updates:[{ref:'active',count:2,uncertainAnswers:[{field:'count',quote:'Vielleicht zwei'}]}]},r.state);
+ assert.equal(next.state.issue.fieldFacts.extent.source,r.state.issue.fieldFacts.extent.source);
+});
+
+
+test('Observed inverted preparation and nominal delivery claims are blocked before a local click',async()=>{
+ for(const reply of ['Gerne habe ich das Serviceformular vorbereitet.','Der Versand erfolgt erst nach Ihrem Klick.']) {
+  await assert.rejects(turn('Eine Lampe geht nicht.',{...output({equipment:'light'}),reply}),{type:'invalid_model_output'});
+ }
 });

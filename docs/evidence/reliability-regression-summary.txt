@@ -1,0 +1,33 @@
+MORA Reliability Upgrade — automated contract and integration verification
+Implementation: final code commit recorded in MORA_RELIABILITY_UPGRADE_REPORT.md
+Runtime: Node 24, installed AI SDK 7.0.130
+
+node --test --test-timeout=20000 tests/*.test.js
+  tests 258; pass 258; fail 0; skipped 0
+npm run typecheck — PASS
+npm run lint — PASS
+npm run build — PASS
+
+These tests use mocks for model outputs and fake-indexeddb for deterministic
+storage faults. They prove contract behavior, not actual model intelligence.
+Real Mercury responses are recorded separately in reliability-live-complete.json and reliability-live-final-targeted.json.
+
+New coverage includes:
+- missing/aliased lamp equipment reaches canonical light + electricity
+- explicit counts, missing counts, and unknown/retracted quantities
+- short followups and correction preservation
+- multiple issues, source attribution and topic changes
+- uncertain candidates retain confirmed values
+- complete DOM → HTTP handler → signed session → durable local draft flow
+- repeat/concurrent clicks and same-ID draft updates
+- local storage failure/retry and stale receipts
+- forbidden actions and future/past false delivery or update claims
+- safe fact recovery explicitly flagged as recovery, with no simulated reply
+- invalid source attribution never qualifies for fact recovery
+- local manual edits, conflicts and category reconciliation
+
+Protected branches are verified separately from live GitHub refs.
+
+Final additions: explicit negative observations retained, stale generated descriptions
+cannot override corrected facts, confirmed scope provenance is stable under uncertainty,
+and inverted preparation/nominal delivery claims are blocked.

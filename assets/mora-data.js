@@ -86,3 +86,9 @@ export function explicitEquipmentCount(evidence, equipment) {
   const values=[...text.matchAll(re)].map(match=>words[match[1]] || Number(match[1]));
   return new Set(values).size===1 && values[0]>=1 ? values[0] : null;
 }
+
+/** Preserve explicit negative observations. An isolated “nein” has no guessed meaning. */
+export function explicitSymptomsEvidence(evidence) {
+  const match=evidence.match(/(?:^|[.!?;\n])\s*(keine(?:n)?\s+(?:(?:weiteren?|zusätzlichen?|besonderen?|ungewöhnlichen?)\s+)*(?:Symptome|Auffälligkeiten|Gerüche|Geräusche)(?:\s+(?:oder|und)\s+(?:Gerüche|Geräusche))?)(?=[.!?,;\n]|$)/iu);
+  return match?.[1] || null;
+}

@@ -109,7 +109,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     const previousIssue = state.issue;
     try {
       const local=drafts.find(draft=>draft.id===state.issue?.id);
-      if (local && preparationState(state.issue,local)==='portal_received' && state.issue.preparation?.revision!==state.issue.revision) {try {await acknowledgeDraft(state.issue,'portal_received');} catch {}}
+      if (local && preparationState(state.issue,local)==='portal_received' && (state.issue.preparation?.status!=='portal_received' || state.issue.preparation?.revision!==state.issue.revision)) {try {await acknowledgeDraft(state.issue,'portal_received');} catch {}}
       const response = await fetcher('/api/chat', { method:'POST', headers:{'Content-Type':'application/json'},
         body:JSON.stringify({ ...(!payload.draftReceipt && state.issue ? { attachments:state.files } : {}), ...payload, ...(state.session ? { session:state.session } : {}) }), signal:controller.signal });
       const data = await response.json(); loading.remove();
