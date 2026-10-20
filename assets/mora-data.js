@@ -96,12 +96,14 @@ export function preparationState(issue, draft) {
  */
 export function draftActionState(issue, draft) {
   const status=preparationState(issue,draft);
-  if(!issue)return {status,operation:null,canOffer:false,showControl:false};
-  if(['portal_received','sent'].includes(status))return {status,operation:'open',canOffer:false,showControl:false};
+  const confirmed=['portal_received','sent'].includes(status);
+  const evidence={draftExists:Boolean(draft || issue?.preparation?.status==='portal_received'),chatFactsInDraft:confirmed};
+  if(!issue)return {status,...evidence,operation:null,canOffer:false,showControl:false};
+  if(confirmed)return {status,...evidence,operation:'open',canOffer:false,showControl:false};
   const operation=draft || issue.preparation?.status==='portal_received' ? 'update':'create';
   const offered=issue.draftOffer?.operation===operation && (operation==='create' || issue.draftOffer.content===issueContent(issue)) || operation==='create' && issue.draftOfferShown && !issue.draftOffer;
   const canOffer=Boolean(issue.description || issue.defect) && (!offered || status==='error');
-  return {status:status==='error'?'error':operation==='update'?'changes_pending':offered?'offered':'not_prepared',operation,canOffer,
+  return {status:status==='error'?'error':operation==='update'?'changes_pending':offered?'offered':'not_prepared',...evidence,operation,canOffer,
     showControl:Boolean(offered || operation==='update' || status==='error')};
 }
 

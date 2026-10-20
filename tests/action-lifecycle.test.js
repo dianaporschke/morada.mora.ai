@@ -95,3 +95,13 @@ test('An existing completed action cannot be proposed again on a contact or than
  turn=await processTurn({draftReceipt:{issueId:turn.state.issue.id,revision:turn.state.issue.revision,status:'portal_received'}},turn.state,()=>assert.fail());
  for(const intent of ['contact','general'])await assert.rejects(generateUnderstandingResult('Danke',turn.state,generate({reply:'Ich kann einen Entwurf vorbereiten.',intent,actions:[{kind:'prepare_draft'}]})),{type:'invalid_model_output'});
 });
+
+test('Draft existence and current content are explicit; a pre-click freshness claim is rejected',async()=>{
+ const first=await processTurn({message:'lampe kaputt'},null,understand(lamp));
+ assert.equal(modelContext(first.state).activeIssue.draftAction.draftExists,false);
+ await assert.rejects(generateUnderstandingResult('seit gestern',first.state,generate({reply:'Der Entwurf ist damit aktuell.',intent:'issue',updates:[{ref:'active',since:'gestern'}]})),{type:'invalid_model_output'});
+ const saved=await processTurn({draftReceipt:{issueId:first.state.issue.id,revision:first.state.issue.revision,status:'portal_received'}},first.state,()=>assert.fail());
+ assert.equal(modelContext(saved.state).activeIssue.draftAction.draftExists,true);assert.equal(modelContext(saved.state).activeIssue.draftAction.chatFactsInDraft,true);
+ const changed=await processTurn({message:'Wohnzimmer'},saved.state,understand({reply:'Sie können den bestehenden Entwurf aktualisieren.',intent:'issue',updates:[{ref:'active',location:'Wohnzimmer'}],actions:[{kind:'prepare_draft'}]}));
+ assert.equal(modelContext(changed.state).activeIssue.draftAction.chatFactsInDraft,false);assert.equal(modelContext(changed.state).activeIssue.draftAction.draftExists,true);
+});
