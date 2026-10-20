@@ -1,6 +1,6 @@
 """Synthetic, explicitly authorized Preview comparisons; never store signed sessions or access links.
 
-Config on stdin: url, share, output, cases (optional path), intervalSeconds (default 12).
+Config on stdin: url, share, output, cases (optional path), intervalSeconds (default 25).
 Conversations run sequentially, with at least intervalSeconds between request starts.
 No inference retries. A rate/access/billing failure pauses the run for operator review.
 Invalid generated output is recorded and stops that conversation, not the other independent cases.
@@ -23,7 +23,8 @@ probe=opener()
 ready=json.load(probe.open(url+'/api/ai-readiness',timeout=30))
 assert ready.get('inferenceEnabled') and ready['configuration']['ready'] and ready['configuration']['model']=='inception/mercury-2.5'
 def persist():
-    output.write_text(json.dumps({'url':url,'model':'inception/mercury-2.5','intervalSeconds':interval,
+    output.write_text(json.dumps({'url':url,'model':config.get('evaluationModel','inception/mercury-2.5'),'sourceCommit':config.get('sourceCommit'),
+      'reasoning':config.get('reasoning'),'intervalSeconds':interval,
       'cases':len(cases),'rows':sorted(rows,key=lambda r:(r['caseId'],r['turn']))},ensure_ascii=False,indent=2)+'\n')
 def run(case):
     global next_start
@@ -36,10 +37,11 @@ def run(case):
                 time.sleep(min(5,delay));delay=max(0,next_start-time.monotonic())
             if stopped.is_set():return
             next_start=time.monotonic()+interval
-        payload={'message':message}
+        payload={'model':config['evaluationModel'],'caseId':case['id'],'turn':turn} if config.get('evaluationModel') else {'message':message}
         if session:payload['session']=session
         stamp=datetime.datetime.now(datetime.timezone.utc).isoformat();start=time.perf_counter()
-        req=urllib.request.Request(url+'/api/chat',data=json.dumps(payload).encode(),headers={'Content-Type':'application/json'},method='POST')
+        endpoint='/api/ai-evaluation' if config.get('evaluationModel') else '/api/chat'
+        req=urllib.request.Request(url+endpoint,data=json.dumps(payload).encode(),headers={'Content-Type':'application/json'},method='POST')
         try:
             with op.open(req,timeout=85) as response:status=response.status;data=json.load(response)
         except urllib.error.HTTPError as e:
@@ -54,7 +56,7 @@ def run(case):
           'activeIssueId':(data.get('issue') or {}).get('id'),
           'issues':[{k:i.get(k) for k in ['id','equipment','category','description','defect','count','location','since','extent','details','cause','unknownFields','hazard','urgency','status']} for i in data.get('issues',[])],
           'timingMs':data.get('timingMs'),'modelCalls':data.get('modelCalls'),'modelUsage':data.get('modelUsage'),
-          'modelAvailability':data.get('modelAvailability'),'checks':case['checks']}
+          'modelAvailability':data.get('modelAvailability'),'evaluation':data.get('evaluation'),'checks':case['checks']}
         with lock:
             rows.append(row);persist()
             print(json.dumps({'completedTurns':len(rows),'caseId':case['id'],'turn':turn,'status':status,'seconds':row['seconds'],'reply':row['reply']},ensure_ascii=False),flush=True)
