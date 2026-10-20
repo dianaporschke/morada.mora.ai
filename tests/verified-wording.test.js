@@ -7,6 +7,7 @@ import {createChatHandler} from '../api/chat.js';
 import {readSession} from '../lib/mora/session.js';
 import {acceptPreparationProposal} from '../lib/mora/actions.js';
 import {modelUnavailable} from '../lib/mora/provider.js';
+import {mapServiceDraft} from '../assets/mora-data.js';
 
 const sdk=(generate,tokens=50)=>new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options=>({
  content:[{type:'text',text:JSON.stringify(generate(options))}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
@@ -114,4 +115,20 @@ test('Unsafe planner wording is never reused on wording failure; facts and local
  assert.equal(result.code,200);assert.equal(result.data.responseMode,'recovery');assert.equal(result.data.wordingFallback,'facts_recovery');assert.equal(result.data.degraded,true);assert.equal(result.data.recoveredFacts,true);
  assert.match(result.data.reply,/Technischer Hinweis/);assert.ok(!result.data.reply.includes('bereits vorbereitet'));assert.equal(result.data.issue.equipment,'light');assert.equal(result.data.issue.count,1);assert.equal(result.data.issue.location,'Wohnzimmer');
  assert.equal(result.data.issue.preparation.status,'not_prepared');assert.equal(result.data.actions.length,1);assert.equal(result.data.actions[0].type,'handover');
+});
+
+test('A spontaneous availability note updates the prepared issue and mapped draft without losing negative observations',async()=>{
+ let round=0;
+ const planner=sdk(()=>round++===0?{reply:'Planung.',intent:'issue',updates:[{ref:'new',equipment:'light',location:'Wohnzimmer',count:1,since:'gestern',defect:'lässt sich nicht einschalten',details:'Keine weiteren Symptome'}],actions:[{kind:'prepare_draft'}]}
+  :{reply:'Notiert.',intent:'general',updates:[{ref:'active',details:'Erreichbar morgen ab 16 Uhr'}]});
+ const handler=createChatHandler(service(planner),{env:{},compose:turn=>generateNaturalReply(turn,sdk(()=>({reply:'Sie können die Angaben im Entwurf prüfen.',questionKey:null,requestPreparation:true})))});
+ let result=await invoke(handler,{message:'Eine Lampe im Wohnzimmer lässt sich seit gestern nicht einschalten. Keine weiteren Symptome.'});assert.equal(result.code,200);
+ const original=mapServiceDraft(result.data.issue),id=result.data.issue.id;
+ result=await invoke(handler,{session:result.data.session,draftReceipt:{issueId:id,revision:result.data.issue.revision,status:'portal_received'}});
+ result=await invoke(handler,{session:result.data.session,message:'Ich bin morgen ab 16 Uhr erreichbar.'});
+ assert.equal(result.code,200);assert.equal(result.data.modelCalls,2);assert.equal(result.data.issue.id,id);assert.equal(result.data.actions[0].label,'Entwurf aktualisieren');
+ assert.ok(result.data.issue.revision>result.data.issue.preparation.revision,'not yet saved to the draft');
+ const updated=mapServiceDraft(result.data.issue,original);
+ assert.equal(updated.id,id);assert.equal(updated.equipment,'light');assert.equal(updated.count,1);assert.equal(updated.location,'Wohnzimmer');assert.equal(updated.since,'gestern');
+ assert.match(updated.details,/Keine weiteren Symptome/);assert.match(updated.details,/morgen ab 16 Uhr/);
 });
