@@ -1,0 +1,16 @@
+✔ OIDC-only production config fails explicitly unless stable session secret exists (1.097027ms)
+ℹ tests 231
+ℹ suites 0
+ℹ pass 231
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2615.294564
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> morada-mora-ai@2.0.0 build
+> node scripts/build.mjs
+
+Syntax and portal assets OK (54 files checked). Static portal requires no bundling.
+Public portal built in dist/. Server routes remain in api/.

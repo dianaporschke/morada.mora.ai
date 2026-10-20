@@ -1,0 +1,44 @@
+{
+  "sources": [
+    "premium-before.json",
+    "premium-before-rest.json",
+    "premium-after.json",
+    "premium-final-flood.json",
+    "premium-pilot.json",
+    "premium-luna.json",
+    "premium-sonnet.json",
+    "premium-mercury3-pilot.json",
+    "premium-mercury3-json-pilot.json",
+    "premium-mercury3-json-rest.json",
+    "premium-dialogue-only.json"
+  ],
+  "apiRequestsIncludingSafetyAndRefusals": 117,
+  "requestsWithKnownUsage": 97,
+  "knownUncachedUsd": 0.05933709999999999,
+  "knownCacheAdjustedUsd": 0.054753363999999985,
+  "byModel": {
+    "inception/mercury-2.5": {
+      "requests": 102,
+      "knownUsageRequests": 84,
+      "knownUncachedUsd": 0.039411449999999994,
+      "costMeaning": "Estimate from recorded API usage only; missing usage omitted."
+    },
+    "openai/gpt-6-luna": {
+      "requests": 1,
+      "knownUsageRequests": 0,
+      "knownUncachedUsd": null
+    },
+    "anthropic/claude-sonnet-5.5": {
+      "requests": 1,
+      "knownUsageRequests": 0,
+      "knownUncachedUsd": null
+    },
+    "inception/mercury-3": {
+      "requests": 13,
+      "knownUsageRequests": 13,
+      "knownUncachedUsd": 0.01992565,
+      "costMeaning": "Estimate from recorded API usage only; missing usage omitted."
+    }
+  },
+  "limitations": "Recorded API usage only; unknown failed/model-triggered safety usage and hosting omitted. Local zero-model safety is not billed model inference. Gateway audit samples are not added twice. No invoice or account balance comparison. Reasoning already in SDK outputTokens."
+}

@@ -37,5 +37,22 @@
       "provider": "inception",
       "streamed": false
     }
-  ]
+  ],
+  "after": [
+    {
+      "caseId": "30",
+      "generationId": "gen_01M5CCRN9GC7FE4A18J5S0MMY1",
+      "totalCostUsd": 0.000216042,
+      "latencyMs": 2917,
+      "generationTimeMs": 2917,
+      "inputTokens": 1154,
+      "outputTokens": 86,
+      "reasoningTokens": 1027,
+      "cachedTokens": 733,
+      "model": "inception/mercury-2.5",
+      "provider": "inception",
+      "streamed": false
+    }
+  ],
+  "afterQueriedAt": "2026-10-20T10:27:31Z"
 }

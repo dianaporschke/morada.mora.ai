@@ -1,0 +1,254 @@
+{
+  "url": "https://morada-mora-eulbaozpt-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-2.5",
+  "sourceCommit": "0ff4862fb932fa264ef6f5f93a2487142d49b2b0",
+  "reasoning": "high; plain response, no extraction/action schema",
+  "intervalSeconds": 30.0,
+  "cases": 4,
+  "rows": [
+    {
+      "caseId": "01",
+      "case": "Lampe und kurze Antwort",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:23:18.972540+00:00",
+      "message": "Meine Lampe geht nicht.",
+      "status": 200,
+      "seconds": 10.573,
+      "reply": "\n\nEs tut mir leid, dass Ihre Lampe nicht funktioniert. Handelt es sich um eine fest eingebaute Lampe oder um eine Stehlampe? Falls sie fest installiert ist, kümmern wir uns gerne darum. Möchten Sie, dass ich das Serviceformular für Sie vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4181,
+        "model": 4181,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 455,
+        "outputTokens": 1717,
+        "reasoningTokens": 1660,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "evaluation": {
+        "model": "inception/mercury-2.5",
+        "caseId": "01",
+        "turn": 1,
+        "mode": "dialogue_only",
+        "synthetic": true,
+        "productModelChanged": false
+      },
+      "checks": [
+        "natürliche Rückfrage statt Formular",
+        "Wohnzimmer am selben Anliegen",
+        "kein wiederholtes Entwurfsangebot"
+      ]
+    },
+    {
+      "caseId": "01",
+      "case": "Lampe und kurze Antwort",
+      "turn": 2,
+      "startedAt": "2026-10-20T10:23:48.972709+00:00",
+      "message": "wohnzimmer",
+      "status": 200,
+      "seconds": 11.182,
+      "reply": "\n\nVerstehe. Ist die Lampe fest an der Decke installiert oder ein eigenständiges Gerät mit Stecker? Bei festen Anschlüssen übernehmen wir die Reparatur gerne. Falls wir helfen können, kann ich das Serviceformular für Sie vorbereiten.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4627,
+        "model": 4627,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 521,
+        "outputTokens": 1968,
+        "reasoningTokens": 1917,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "evaluation": {
+        "model": "inception/mercury-2.5",
+        "caseId": "01",
+        "turn": 2,
+        "mode": "dialogue_only",
+        "synthetic": true,
+        "productModelChanged": false
+      },
+      "checks": [
+        "natürliche Rückfrage statt Formular",
+        "Wohnzimmer am selben Anliegen",
+        "kein wiederholtes Entwurfsangebot"
+      ]
+    },
+    {
+      "caseId": "03",
+      "case": "Dialekt und unbekannte Ursache",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:24:18.972837+00:00",
+      "message": "bi mir tropfts unterm lavabo, weiss nöd warum",
+      "status": 200,
+      "seconds": 10.352,
+      "reply": "\n\nDas ist ärgerlich, aber wir können das schnell klären. Damit die Fachleute genau wissen, was zu tun ist, lohnt es sich, die Beobachtungen festzuhalten.\n\nSoll ich Ihnen das Serviceformular vorbereiten? Dann können Sie direkt notieren, wo und wie stark es tropft, oder ein Foto hinzufügen.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 3932,
+        "model": 3932,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 454,
+        "outputTokens": 1618,
+        "reasoningTokens": 1547,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "evaluation": {
+        "model": "inception/mercury-2.5",
+        "caseId": "03",
+        "turn": 1,
+        "mode": "dialogue_only",
+        "synthetic": true,
+        "productModelChanged": false
+      },
+      "checks": [
+        "keine erfundene Rohrdiagnose",
+        "unbekannte Ursache getrennt",
+        "ein Anliegen mit Bad und Beginn"
+      ]
+    },
+    {
+      "caseId": "03",
+      "case": "Dialekt und unbekannte Ursache",
+      "turn": 2,
+      "startedAt": "2026-10-20T10:24:48.972985+00:00",
+      "message": "im bad, sit hütt am morge",
+      "status": 200,
+      "seconds": 11.528,
+      "reply": "\n\nDanke für die Info. Da es seit heute Morgen tropft, ist eine baldige Prüfung sinnvoll.\n\nMöchten Sie das Serviceformular direkt ausfüllen? Ich kann es vorbereiten, damit Sie den Ort und ein Foto ergänzen können.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4978,
+        "model": 4978,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 546,
+        "outputTokens": 1289,
+        "reasoningTokens": 1236,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "evaluation": {
+        "model": "inception/mercury-2.5",
+        "caseId": "03",
+        "turn": 2,
+        "mode": "dialogue_only",
+        "synthetic": true,
+        "productModelChanged": false
+      },
+      "checks": [
+        "keine erfundene Rohrdiagnose",
+        "unbekannte Ursache getrennt",
+        "ein Anliegen mit Bad und Beginn"
+      ]
+    },
+    {
+      "caseId": "19",
+      "case": "Nebenkostenrechnung",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:25:18.973113+00:00",
+      "message": "Meine Akontozahlung war 180 Franken monatlich. Die Jahreskosten sind 2520 Franken. Wie hoch ist die Nachzahlung?",
+      "status": 200,
+      "seconds": 9.668,
+      "reply": "\n\nHier die Berechnung: Bei monatlich 180 Franken zahlen Sie im Jahr 2160 Franken voraus. Da die Jahreskosten 2520 Franken betragen, bleiben 360 Franken als Nachzahlung offen.\n\nMöchten Sie, dass ich das Serviceformular für diese Abrechnung vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 3187,
+        "model": 3187,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 472,
+        "outputTokens": 1322,
+        "reasoningTokens": 1254,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "evaluation": {
+        "model": "inception/mercury-2.5",
+        "caseId": "19",
+        "turn": 1,
+        "mode": "dialogue_only",
+        "synthetic": true,
+        "productModelChanged": false
+      },
+      "checks": [
+        "360 Franken korrekt",
+        "kein unnötiger Zugriffshinweis"
+      ]
+    },
+    {
+      "caseId": "24",
+      "case": "Eigentümer Liegenschaften",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:25:48.973307+00:00",
+      "message": "Zeigen Sie mir meine vermieteten Liegenschaften mit den aktuellen Mietern.",
+      "status": 200,
+      "seconds": 10.439,
+      "reply": "\n\nFür die Übersicht Ihrer vermieteten Liegenschaften und aktuellen Mieter habe ich im aktuellen Gespräch keinen direkten Zugriff. Diese Daten sind hier noch nicht angebunden.\n\nMöchten Sie, dass ich Ihnen die Portalansicht öffne, wo Sie diese Informationen einsehen können? Oder haben Sie eine konkrete Frage zu einer bestimmten Liegenschaft?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 3971,
+        "model": 3971,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 470,
+        "outputTokens": 1989,
+        "reasoningTokens": 1919,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "evaluation": {
+        "model": "inception/mercury-2.5",
+        "caseId": "24",
+        "turn": 1,
+        "mode": "dialogue_only",
+        "synthetic": true,
+        "productModelChanged": false
+      },
+      "checks": [
+        "keine persönlichen Liegenschafts- oder Mieterdaten erfinden",
+        "fehlende Schnittstelle transparent"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "sources": [
+    "docs/evidence/premium-mercury3-json-pilot.json",
+    "docs/evidence/premium-mercury3-json-rest.json"
+  ],
+  "model": "inception/mercury-3",
+  "cases": 9,
+  "turns": 12,
+  "genuineReplies": 11,
+  "failures": [
+    [
+      "27",
+      1,
+      {
+        "provider": "gateway",
+        "model": "inception/mercury-3",
+        "status": null,
+        "reason": "invalid_model_output"
+      }
+    ]
+  ],
+  "medianServerSeconds": 4.486,
+  "medianClientSeconds": 10.756,
+  "knownUncachedUsd": 0.01773675,
+  "pairedSuccessfulTurns": 11,
+  "mercury25": {
+    "medianServerSeconds": 4.341,
+    "medianClientSeconds": 9.756,
+    "knownUncachedUsd": 0.00421022
+  },
+  "mercury3": {
+    "medianServerSeconds": 4.486,
+    "medianClientSeconds": 10.756,
+    "knownUncachedUsd": 0.0152397
+  }
+}

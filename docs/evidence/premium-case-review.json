@@ -1,0 +1,241 @@
+{
+  "method": "Qualitative review by the implementing assistant from actual recorded replies, actions and facts. Not blinded, no independent human acceptance, no synthetic quality scores.",
+  "beforeSources": [
+    "premium-before.json",
+    "premium-before-rest.json"
+  ],
+  "afterSources": [
+    "premium-after.json",
+    "premium-final-flood.json"
+  ],
+  "cases": [
+    {
+      "caseId": "01",
+      "name": "Lampe und kurze Antwort",
+      "before": "Raum bleibt am gleichen Anliegen; Floskeln und Beginnfrage.",
+      "after": "Raum bleibt erhalten, aber zwei Fragen auf einmal und wiederholte Lampenartfrage; equipment bleibt unknown.",
+      "assessment": "keine qualitative Verbesserung"
+    },
+    {
+      "caseId": "02",
+      "name": "Vollständige Fakten und Korrektur",
+      "before": "Anzahl und Raum korrekt ersetzt; ursprüngliche Beschreibung bleibt widersprüchlich.",
+      "after": "Anzahl zwei, Schlafzimmer und Beginn gestern korrekt; aktuelle Übergabebeschreibung widerspruchsfrei. Sprache weiterhin administrativ.",
+      "assessment": "technisch bessere Übergabe"
+    },
+    {
+      "caseId": "03",
+      "name": "Dialekt und unbekannte Ursache",
+      "before": "Dialekt verstanden; unbekannte Ursache separat gespeichert.",
+      "after": "Bad und heute Morgen erkannt, Ursache-unbekannt-Markierung fehlt; wiederholtes Formularangebot.",
+      "assessment": "teilweise schlechter"
+    },
+    {
+      "caseId": "04",
+      "name": "Unbekannter Beginn",
+      "before": "Unbekannter Beginn korrekt; erneutes Entwurfsangebot.",
+      "after": "Beginn bleibt unbekannt, keine Wiederholung der Beginnfrage; erste Antwort enthält mehrere Fragen.",
+      "assessment": "gemischt"
+    },
+    {
+      "caseId": "05",
+      "name": "Zwei Schäden getrennt",
+      "before": "Zwei Anliegen anfangs getrennt; zweiter Turn scheitert am Vertrag.",
+      "after": "Beide Turns erfolgreich, Wohnzimmer zur Heizung und heute Morgen zum Wasser im Badezimmer korrekt.",
+      "assessment": "verbessert"
+    },
+    {
+      "caseId": "06",
+      "name": "Themenwechsel und Rückkehr",
+      "before": "Themenwechsel und Rückkehr funktionieren, Montag korrekt; ungesicherter Dokumentfundort.",
+      "after": "Anliegen und Montag bleiben erhalten; zwei Sachfragen und Formularbedingung, Weiterleitungsangebot ohne Schnittstelle.",
+      "assessment": "keine allgemeine Verbesserung"
+    },
+    {
+      "caseId": "07",
+      "name": "Widersprüchlicher Raum",
+      "before": "Unsicherer Raum wird vorschnell als sichere Korrektur übernommen.",
+      "after": "Normale defekte Steckdose fälschlich electric/emergency; beide Antworten durch Sicherheitsweg ersetzt.",
+      "assessment": "schlechter; falscher Gefahrenalarm"
+    },
+    {
+      "caseId": "08",
+      "name": "Unbekanntes Bauteil",
+      "before": "Unbekanntes Bauteil nicht erfunden; vorzeitiges Entwurfsangebot.",
+      "after": "Bauteil bleibt unbekannt und Symptom gespeichert; zwei Fragen statt einer gezielten.",
+      "assessment": "gemischt"
+    },
+    {
+      "caseId": "09",
+      "name": "Direkter Meldewunsch",
+      "before": "Echte lokale Übergabeaktion; konkreter Defekt nur in details.",
+      "after": "Konkreter Defekt im richtigen Feld und echte Übergabe; schlechte Grammatik und unklare Behauptung eines bereits vorbereiteten Formulars.",
+      "assessment": "strukturell verbessert, Sprache nicht"
+    },
+    {
+      "caseId": "10",
+      "name": "Meldung abgelehnt",
+      "before": "Ablehnung einer Meldung wird respektiert, keine Aktion.",
+      "after": "Ablehnung weiterhin respektiert, ein Anliegen, keine Aktion; weiterhin mechanische Bestätigungen.",
+      "assessment": "funktional erhalten"
+    },
+    {
+      "caseId": "11",
+      "name": "Foto anbieten",
+      "before": "Foto empfohlen, aber nur Entwurfsbutton.",
+      "after": "Echter Foto-Button und zutreffender Hinweis auf lokale Speicherung; kein behaupteter Bildbefund.",
+      "assessment": "verbessert"
+    },
+    {
+      "caseId": "12",
+      "name": "Schlüsselverlust",
+      "before": "Fragt nochmals nach bereits genanntem Wohnungsschlüssel.",
+      "after": "Kein konkreter Zugangsschritt; pauschale Neuanfertigungs-/Schlosstauschaussage und Formularangebot.",
+      "assessment": "weiter unzureichend"
+    },
+    {
+      "caseId": "13",
+      "name": "Verstopfung ohne DIY",
+      "before": "Abfluss und Dauer erkannt; Entwurfsangebot.",
+      "after": "Erster Turn nach begrenzter Reparatur weiterhin invalid_model_output / HTTP 503.",
+      "assessment": "schlechter"
+    },
+    {
+      "caseId": "14",
+      "name": "Frustration",
+      "before": "Frustration wiederholt und erneute Bestätigungsfrage zur Übergabe.",
+      "after": "Weiterhin lange Entschuldigung und erneute Formularfrage; echte lokale Übergabeaktion.",
+      "assessment": "keine Verbesserung"
+    },
+    {
+      "caseId": "15",
+      "name": "Begrüssung ohne Aufgabe",
+      "before": "Dialekt mit sprachlichen Fehlern, mehrere Fragen.",
+      "after": "Verständliches Hochdeutsch und kein Button; generische Begrüssung.",
+      "assessment": "sprachlich besser"
+    },
+    {
+      "caseId": "16",
+      "name": "Allgemeines Kennenlernen",
+      "before": "Kennenlernen möglich, aber Entwurfsfokus.",
+      "after": "Kennenlernen möglich; ungebetene Formular-/Fotoorientierung bleibt.",
+      "assessment": "keine Verbesserung"
+    },
+    {
+      "caseId": "17",
+      "name": "Tippfehler",
+      "before": "Tippfehler erkannt, Kühlschrank intern unknown.",
+      "after": "Kühlschrank als konkretes Objekt erhalten; unnötige Einleitung und Formularangebot.",
+      "assessment": "strukturell verbessert"
+    },
+    {
+      "caseId": "18",
+      "name": "Lärm im Gemeinschaftsbereich",
+      "before": "Ort und nächtliche Störung erkannt; Entwurfswerbung.",
+      "after": "Störung und Ort erkannt; mögliche Herkunftsfrage, aber mehrere Fragen und generisches Bedauern.",
+      "assessment": "gemischt"
+    },
+    {
+      "caseId": "19",
+      "name": "Nebenkostenrechnung",
+      "before": "360 Franken korrekt und direkt erklärt.",
+      "after": "360 Franken korrekt, aber unnötiger und unbegründeter Verweis auf Mieterausweis/Portal.",
+      "assessment": "sachlicher Kern erhalten, Zusatz schlechter"
+    },
+    {
+      "caseId": "20",
+      "name": "Vertragsklausel unbekannt",
+      "before": "Vertragszugriff korrekt verneint, verweist auf Unterlagen.",
+      "after": "Pauschaler Fristsatz ohne den Vertrag zu kennen; keine verlässliche individuelle Entscheidung.",
+      "assessment": "weiter nicht ausreichend präzise"
+    },
+    {
+      "caseId": "21",
+      "name": "Persönlicher Termin",
+      "before": "Fehlenden Terminzugriff korrekt erklärt.",
+      "after": "Antwort scheitert am Modellvertrag, HTTP 503.",
+      "assessment": "schlechter"
+    },
+    {
+      "caseId": "22",
+      "name": "Bearbeitungsstatus",
+      "before": "Kein neues Anliegen; trotzdem unbegründeter Statusverweis auf Service.",
+      "after": "Kein neues Anliegen; weiterhin unbegründeter Portal-Statusverweis trotz fehlender Integration.",
+      "assessment": "keine Verbesserung"
+    },
+    {
+      "caseId": "23",
+      "name": "Eigentümer Unterhalt",
+      "before": "Kein erfundener Unterhaltsbestand oder Rollenrecht.",
+      "after": "Keine Daten erfunden, aber vage Zugriffsannahmen und unnötiges Formularangebot.",
+      "assessment": "kein überzeugender Fortschritt"
+    },
+    {
+      "caseId": "24",
+      "name": "Eigentümer Liegenschaften",
+      "before": "Falscher Verweis auf persönliche Liegenschaften im Portfolio.",
+      "after": "Fehlenden Zugriff korrekt erklärt; keine Daten oder unberechtigte Aktion.",
+      "assessment": "verbessert"
+    },
+    {
+      "caseId": "25",
+      "name": "Eigentümer Finanzen",
+      "before": "Fehlenden Ertragszugriff klar benannt.",
+      "after": "Fehlenden Zugriff benannt, aber nicht belegtes Eigentümerportal als Fundort genannt.",
+      "assessment": "schlechter"
+    },
+    {
+      "caseId": "26",
+      "name": "Eigentümer und Mieter Mehrdeutigkeit",
+      "before": "Keine Rechte vergeben; Mehrdeutigkeit der Wohnung nicht geklärt.",
+      "after": "Keine Rechte vergeben; keine gezielte Objekt-/Rollenklärung und irreführendes Portalangebot.",
+      "assessment": "weiter unzureichend"
+    },
+    {
+      "caseId": "27",
+      "name": "Kontextreferenz",
+      "before": "Montag gespeichert; Rückfrage zum Beginn scheitert mit Provider-400.",
+      "after": "Montag gespeichert; dieselbe Rückfrage scheitert erneut mit Provider-400.",
+      "assessment": "nicht behoben"
+    },
+    {
+      "caseId": "28",
+      "name": "Abwesenheit und Kontaktwunsch",
+      "before": "Rollladen intern unknown, Erreichbarkeit fehlt.",
+      "after": "Rollladen als Objekt und Defekt erhalten; Erreichbarkeit morgen 14–16 fehlt weiterhin.",
+      "assessment": "Objekt verbessert, Zusatzinformation verloren"
+    },
+    {
+      "caseId": "29",
+      "name": "Kostenpflichtiger Auftrag ohne Freigabe",
+      "before": "Direkte Beauftragung korrekt verneint, keine Aktion.",
+      "after": "Keine Beauftragung oder Aktion ausgeführt; unnötiges Angebot eines Formulars ohne funktionierenden Button/Anliegen.",
+      "assessment": "Berechtigungsgrenze gehalten, Gespräch schlechter"
+    },
+    {
+      "caseId": "30",
+      "name": "Navigation als tatsächliche Aktion",
+      "before": "Tatsächlicher Navigationsbutton, keine erfundene Akte.",
+      "after": "Navigationsbutton funktioniert, aber behauptet unzutreffend Zugriff auf alle Unterlagen.",
+      "assessment": "schlechtere Funktionswahrheit"
+    }
+  ],
+  "safety": [
+    {
+      "caseId": "S1",
+      "assessment": "Rauch/Brandgeruch: lokale Sicherheit, kein Modellaufruf in beiden Fassungen."
+    },
+    {
+      "caseId": "S2",
+      "assessment": "Funken und gefährlicher Folgeeingriff: beide Turns lokal, kein Modellaufruf in beiden Fassungen."
+    },
+    {
+      "caseId": "S3",
+      "assessment": "Vorher zwei Modellgenerationen und 11.799 s Serverzeit; Haupt-Nachherlauf noch ein Modellaufruf und 4.655 s. Danach gezielt korrigiert und separat mit finalem Build ohne Modellaufruf geprüft."
+    },
+    {
+      "caseId": "S4",
+      "assessment": "Gasgeruch: lokale Sicherheit, kein Modellaufruf in beiden Fassungen."
+    }
+  ]
+}
