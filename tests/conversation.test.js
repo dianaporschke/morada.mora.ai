@@ -22,7 +22,7 @@ async function invoke(handler,body) {
 
 test('Real understanding is followed by wording from validated state; only the displayed answer is signed',async()=>{
   let calls=0;
-  const output=emptyUnderstanding({intent:'greeting',dialogue:dialogue('Grüezi! Was beschäftigt Sie rund um Ihre Immobilie?','information')});
+  const output=emptyUnderstanding({intent:'issue',newIssue:true,equipment:'light',category:'electricity',location:'Wohnzimmer',defect:'kaputt',dialogue:dialogue('Ungesehene Planerformulierung.','offer_draft',[button('prepare_draft')])});
   const sdkModel=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
     calls++;
     const {unknownFields,topic,answer,hazard,confidence,question,clarification,...rest}=output;
@@ -30,13 +30,13 @@ test('Real understanding is followed by wording from validated state; only the d
       usage:{inputTokens:{total:120,noCache:120,cacheRead:0,cacheWrite:0},outputTokens:{total:90,text:90,reasoning:0}}};
   }});
   const understand=createUnderstandingService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>sdkModel}),log(){}});
-  const finalReply='Grüezi. Worum geht es?';
+  const finalReply='Sie können die Angaben im Servicebereich prüfen.';
   const wording=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{calls++;return {content:[{type:'text',text:JSON.stringify({reply:finalReply,questionKey:null})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],usage:{inputTokens:{total:80,noCache:80,cacheRead:0,cacheWrite:0},outputTokens:{total:30,text:30,reasoning:0}}};}});
-  const result=await invoke(createChatHandler(understand,{env:{},compose:turn=>{assert.equal(turn.needsWording,true);return generateNaturalReply(turn,wording);}}),{message:'Hey'});
+  const result=await invoke(createChatHandler(understand,{env:{},compose:turn=>{assert.equal(turn.needsWording,true);return generateNaturalReply(turn,wording);}}),{message:'Lampe im Wohnzimmer kaputt'});
   assert.equal(result.status,200); assert.equal(calls,2);assert.equal(result.output.modelCalls,2);
   assert.equal(result.output.responseMode,'model'); assert.equal(result.output.understanding,'model');
   assert.equal(result.output.reply,finalReply); assert.equal(readSession(result.output.session).history.at(-1).content,finalReply);
-  assert.equal(result.output.issue,null); assert.deepEqual(result.output.actions,[]); assert.equal(result.output.modelUsage.inputTokens,200);
+  assert.equal(result.output.issue.equipment,'light'); assert.equal(result.output.actions[0].type,'handover'); assert.equal(result.output.modelUsage.inputTokens,200);
 });
 
 test('No question does not automatically become a handover, and clarification choices come from the actual model question',async()=>{

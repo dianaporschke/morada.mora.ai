@@ -43,7 +43,7 @@ try {
    if(saved)dom.window.sessionStorage.setItem('morada.mora.v2.thread',saved);
    ui=createMora(dom.window.document,dom.window,async(path,opts)=>{
     const body=JSON.parse(opts.body),receipt=!!body.draftReceipt;
-    if(!receipt){await new Promise(resolve=>setTimeout(resolve,Math.max(0,nextModelAt-Date.now())));nextModelAt=Date.now()+25000;}
+    if(!receipt){await new Promise(resolve=>setTimeout(resolve,Math.max(0,nextModelAt-Date.now())));nextModelAt=Date.now()+(config.minIntervalMs??25000);}
     const response=await request(path,body);
     const {session,...safe}=response.body;
     result.http.push({message:body.message||null,receipt:receipt?body.draftReceipt:null,status:response.status,...safe});persist();

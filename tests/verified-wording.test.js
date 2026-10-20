@@ -55,3 +55,13 @@ test('Wording knows that a new heater issue has no existing lamp draft; a false 
  assert.equal(result.data.issues.find(issue=>issue.id===lampId).preparation.status,'portal_received');assert.equal(result.data.issue.preparation.status,'not_prepared');
  assert.equal(result.data.actions[0].label,'Für MORADA vorbereiten');
 });
+
+test('A thank-you after the confirmed handover needs only one model generation',async()=>{
+ let round=0,wordings=0;
+ const planner=sdk(()=>round++===0?{reply:'Planung.',intent:'issue',updates:[{ref:'new',equipment:'light',location:'Wohnzimmer',defect:'kaputt'}],actions:[{kind:'prepare_draft'}]}:{reply:'Gerne.',intent:'general'},100);
+ const handler=createChatHandler(service(planner),{env:{},compose:turn=>{wordings++;return generateNaturalReply(turn,sdk(()=>({reply:'Sie können das Anliegen vorbereiten.',questionKey:null})));}});
+ let result=await invoke(handler,{message:'Lampe im Wohnzimmer kaputt'});assert.equal(result.code,200);assert.equal(result.data.modelCalls,2);
+ result=await invoke(handler,{session:result.data.session,draftReceipt:{issueId:result.data.issue.id,revision:result.data.issue.revision,status:'portal_received'}});
+ result=await invoke(handler,{session:result.data.session,message:'danke'});
+ assert.equal(result.code,200);assert.equal(result.data.modelCalls,1);assert.equal(wordings,1);assert.equal(result.data.reply,'Gerne.');assert.equal(result.data.actions.length,0);
+});
