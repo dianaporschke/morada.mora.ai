@@ -1,0 +1,704 @@
+{
+  "status": "complete",
+  "reviewer": "Durchführende Codex-Assistenz; keine unabhängige oder verblindete Menschenstudie",
+  "criteria": [
+    "Natürlichkeit",
+    "Gesprächsverständnis",
+    "Kontexttreue",
+    "Sinnvolle Rückfragen",
+    "Wiederholungsvermeidung",
+    "Fachliche Richtigkeit"
+  ],
+  "scale": {
+    "1": "schlecht oder gravierender Fehler",
+    "2": "deutliche Mängel",
+    "3": "brauchbar mit Mängeln",
+    "4": "gut mit kleineren Einschränkungen",
+    "5": "durchgehend passend im geprüften Gespräch"
+  },
+  "interpretation": "Ordinale Einzelfallbewertungen, keine statistische Signifikanz. Kontext wird an sichtbaren Aussagen beurteilt; interne B-Fakten werden ergänzend technisch geprüft. Ein schwerer falscher Status bleibt ein Freigabehindernis unabhängig vom Durchschnitt.",
+  "cases": [
+    {
+      "id": "01",
+      "A": {
+        "scores": [
+          2,
+          4,
+          5,
+          2,
+          2,
+          4
+        ],
+        "notes": "Lange förmliche Antworten mit Dank und Entschuldigung. Rollenfrage dreimal; sie wurde durch die identischen festen Folgeantworten allerdings nicht beantwortet. Lampe, Raum und Anzahl sprachlich korrekt behalten. Keine ausgeführte Aktion erfunden."
+      },
+      "B": {
+        "scores": [
+          2,
+          5,
+          5,
+          2,
+          2,
+          5
+        ],
+        "notes": "Korrekte Fakten, kurze Antworten, aber Erfassungsberichte in allen drei Runden. Planer bietet zuerst Formular an. Zwei echte Formulierungsversuche mit Raumfrage werden wegen questionKey=null verworfen; gültiger Planertext wird wiederverwendet. Keine erneute aktive Vorbereitung nach dem Nachtrag."
+      },
+      "criticalFindings": []
+    },
+    {
+      "id": "02",
+      "A": {
+        "scores": [
+          2,
+          4,
+          5,
+          3,
+          2,
+          4
+        ],
+        "notes": "Kennt Raum und Beginn, akzeptiert negierte Gefahr und die übrigen funktionierenden Steckdosen. Mehrere Fragen und wiederholte Meldeangebote. Unbelegte interne technische Stelle und Tippfehler; keine bestätigte Beauftragung oder Übermittlung."
+      },
+      "B": {
+        "scores": [
+          1,
+          4,
+          2,
+          4,
+          2,
+          1
+        ],
+        "notes": "Reale fehlerhafte Formulierung im ersten Satz (endet mit 'not'). Im zweiten und dritten Turn wird ein bereitgestellter Entwurf behauptet, obwohl preparation.status=not_prepared und kein Klick/keine Speicherbestätigung erfolgte. Fakten zur Steckdose bleiben ansonsten erhalten."
+      },
+      "criticalFindings": [
+        {
+          "type": "false_draft_status",
+          "turns": [
+            2,
+            3
+          ],
+          "quote": "Der bereitgestellte Entwurf steht für Sie bereit",
+          "variant": "B"
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "A": {
+        "scores": [
+          2,
+          4,
+          5,
+          3,
+          3,
+          4
+        ],
+        "notes": "Akzeptiert unbekannten Beginn ohne erneute Beginnfrage. Mehrere Diagnosefragen, später wiederholte Thermostatfrage blieb vorher unbeantwortet. Sprachlich lang, einzelne ungeschickte Wörter. Keine definitive Ursache oder ausgeführte Reparatur behauptet."
+      },
+      "B": {
+        "scores": [
+          1,
+          5,
+          5,
+          5,
+          2,
+          4
+        ],
+        "notes": "Beginn unbekannt, Heizung und Schlafzimmer erhalten; keine erneute Beginnfrage. Formulierungsschritt erzeugt 'Ich habe not not not festgehalten'. Danach mechanische Notizbestätigungen und Formulierung über weiteres Formularbearbeiten. Modellfehler wird angezeigt, nicht lokal eingefügt."
+      },
+      "criticalFindings": []
+    },
+    {
+      "id": "04",
+      "A": {
+        "scores": [
+          2,
+          5,
+          5,
+          3,
+          2,
+          4
+        ],
+        "notes": "Raumkorrektur und einzelne betroffene Lampe korrekt übernommen. Wiederholte unbeantwortete Rollenfrage; unnötig förmlich. Mögliche Ursache nur bedingt formuliert, keine Reparatur behauptet."
+      },
+      "B": {
+        "scores": [
+          3,
+          5,
+          5,
+          5,
+          3,
+          5
+        ],
+        "notes": "Korrigiert den Raum knapp auf Schlafzimmer und hält Einrichtung/Defekt/Anzahl. Erste Antwort bleibt auf Ticketvorbereitung ausgerichtet; Folgeturns kurz, aber wiederholen überwiegend die gerade genannten Fakten. Keine falsche Erledigung im sichtbaren Gespräch."
+      },
+      "criticalFindings": []
+    },
+    {
+      "id": "05",
+      "A": {
+        "scores": [
+          2,
+          5,
+          2,
+          3,
+          2,
+          1
+        ],
+        "notes": "Beantwortet Akonto/Pauschale und kehrt zum Wasserhahn zurück. Förmlicher Briefstil mit Grussformeln. Stellt nach weiteren Daten eine externe Veranlassung in Aussicht, obwohl A keine externen Vorgänge ausführen kann."
+      },
+      "B": {
+        "scores": [
+          2,
+          5,
+          2,
+          5,
+          2,
+          1
+        ],
+        "notes": "Nebenkostenfrage knapp und sachlich beantwortet, ursprüngliches Wasserhahnproblem bleibt erhalten. Erster Formulierungsschritt erzeugt Ich habe not not. Beim Zurückkehren wird ein vorbereiteter Entwurf behauptet, obwohl kein Entwurf gespeichert wurde."
+      },
+      "criticalFindings": [
+        {
+          "type": "unsupported_future_action",
+          "variant": "A",
+          "turns": [
+            3
+          ],
+          "quote": "Sobald Sie mir die Details nennen, veranlasse ich das Weitere."
+        },
+        {
+          "type": "false_draft_status",
+          "variant": "B",
+          "turns": [
+            3
+          ],
+          "quote": "Der vorbereitete Entwurf bleibt für Sie verfügbar"
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "A": {
+        "scores": [
+          2,
+          5,
+          2,
+          2,
+          2,
+          1
+        ],
+        "notes": "Versteht beide Defekte und die Trennung. Wiederholte Adressfrage und förmliche Bestätigungen. Behauptet zukünftige Weiterleitung an ein Wartungsteam ohne verfügbare externe Aktion."
+      },
+      "B": {
+        "scores": [
+          2,
+          5,
+          5,
+          5,
+          2,
+          4
+        ],
+        "notes": "Zwei Anliegen mit eigenen Räumen, Zeiten und Heizkörperanzahl korrekt im Chatbestand. Kurze, aber administrative Aussagen. Im System bereits getrennt erfasst ist mehrdeutig; strukturierte Chatanliegen existieren, lokale Serviceentwürfe nicht. Keine echte Übermittlung."
+      },
+      "criticalFindings": [
+        {
+          "type": "unsupported_future_action",
+          "variant": "A",
+          "turns": [
+            2
+          ],
+          "quote": "Sobald ich diese habe, werde ich die Meldung umgehend an das Wartungsteam weiterleiten."
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "A": {
+        "scores": [
+          2,
+          5,
+          5,
+          5,
+          2,
+          4
+        ],
+        "notes": "Gibt relevante Protokollpunkte und einen passenden Umgang mit Einwänden. Förmliche Begrüssung und wiederholte Schluss-/Rechtssätze; Formulierungen zur Protokollgültigkeit sind sehr pauschal. Kein persönlicher Zugriff oder ausgeführter Vorgang erfunden."
+      },
+      "B": {
+        "scores": [
+          4,
+          5,
+          5,
+          5,
+          5,
+          4
+        ],
+        "notes": "Direkte kurze Antworten zur Übergabe und abweichenden Meinung, keine Schadensaufnahme oder unnötige Fragen. Checkliste nicht vollständig (z.B. Parteien/Datum fehlen), sonst sachlich passend."
+      },
+      "criticalFindings": []
+    },
+    {
+      "id": "08",
+      "A": {
+        "scores": [
+          2,
+          4,
+          4,
+          3,
+          3,
+          2
+        ],
+        "notes": "Mehrere nützliche Punkte für Eigentümerin, respektiert anschliessend den reinen Informationswunsch. Sehr förmliche Anrede. Deutet die drei Monate als seit drei Monaten. Behauptet eine meist notwendige Energieausweispflicht zur Vermietung in der Schweiz; der GEAK-Primärquelle zufolge ist die Ausstellung in den meisten Kantonen freiwillig, mit bestimmten kantonalen Pflichtfällen."
+      },
+      "B": {
+        "scores": [
+          2,
+          3,
+          5,
+          5,
+          1,
+          4
+        ],
+        "notes": "Beide Antworten nahezu gleich und sehr förmlich. Verengt allgemeine Vermietungsvorbereitung auf Wasser/Strom/Heizung und konkrete Schäden. Keine Beauftragung oder persönlichen Daten behauptet."
+      },
+      "criticalFindings": [
+        {
+          "type": "unsupported_general_legal_requirement",
+          "variant": "A",
+          "turns": [
+            1
+          ],
+          "quote": "In der Schweiz ist für die Vermietung meist ein gültiger Ausweis über den Energiebedarf erforderlich.",
+          "source": "https://www.geak.ch/der-geak/faq-zum-geak/"
+        }
+      ]
+    },
+    {
+      "id": "09",
+      "cohort": "first complete instrument-valid documented replacement; original retained separately",
+      "A": {
+        "scores": [
+          2,
+          5,
+          5,
+          3,
+          2,
+          4
+        ],
+        "notes": "Klärt das unklare Objekt und behält Rollladen, Kinderzimmer und Beginn. Wiederholt Begrüssung sowie die unbeantworteten Fragen nach Antriebsart und Kundenrolle; feste Folgeantwort nennt Raum/Beginn statt diese Fragen zu beantworten. Keine erfundene Ausführung, aber für das Anliegen unnötig breite Rückfragen."
+      },
+      "B": {
+        "scores": [
+          3,
+          5,
+          5,
+          4,
+          3,
+          4
+        ],
+        "notes": "Fragt zunächst nach dem Objekt, interpretiert dabei schon spekulativ Fensterbeschlag. Nach Klärung Rollladen mit eigenem Defekt, später Kinderzimmer und heute Morgen korrekt, kein vorhandener Entwurf behauptet. Förmlicher Dank/Verwaltungsbestätigungen bleiben. Erste Runde hat drei echte Generierungen."
+      },
+      "criticalFindings": []
+    },
+    {
+      "id": "10",
+      "A": {
+        "scores": [
+          3,
+          5,
+          3,
+          4,
+          3,
+          4
+        ],
+        "notes": "Untersagt den erneuten Test ausdrücklich und reagiert auf das Kind im Zimmer. Einzelne steife/fehlerhafte Wörter. Nimmt in Runde 2 eine ausgeschaltete Sicherung an, obwohl der Kunde nur Abstand bestätigt hat. Keine Reparatur oder Kostenübernahme versprochen."
+      },
+      "B": {
+        "scores": [
+          2,
+          3,
+          3,
+          5,
+          2,
+          5
+        ],
+        "notes": "Derselbe lokale Sicherheitsblock in allen drei Runden; im ersten Turn ohne Modell, danach jeweils trotz eines Modellaufrufs. Sichere Distanz und 112 werden genannt, aber Testfrage und Kind werden im sichtbaren Text nicht gezielt beantwortet. Sichere lokale Regel, keine Mercury-Sprachleistung. Der rohe dritte Modelltext benennt das Kind ausdrücklich; die Anwendung ersetzt ihn durch den generischen Sicherheitsblock. Die sichtbare fehlende Anpassung ist hier keine fehlende Erkennung durch Mercury."
+      },
+      "criticalFindings": [],
+      "observations": [
+        {
+          "type": "unconfirmed_safety_state_assumption",
+          "variant": "A",
+          "turns": [
+            2
+          ],
+          "quote": "Bitte lassen Sie die Sicherung weiterhin ausgehend"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "A": {
+        "scores": [
+          2,
+          4,
+          3,
+          2,
+          2,
+          2
+        ],
+        "notes": "Beachtet anfängliche Negation und späteres Funken, empfiehlt ausgeschaltet lassen und nicht berühren. Wiederholt unbeantwortete Rollenfrage. Erst wird eine Weiterleitung angeboten; später wird der fehlende externe Zugriff genannt."
+      },
+      "B": {
+        "scores": [
+          3,
+          4,
+          4,
+          5,
+          3,
+          1
+        ],
+        "notes": "Beachtet zunächst keine aktuelle Rauch-/Funkenlage und danach die neue Beobachtung. Gibt sichere Ausschalt-/Berührungshinweise. Verspricht zuletzt ein Melden bei weiteren Schritten, obwohl kein Anliegen übermittelt wurde und kein Rückrufprozess existiert."
+      },
+      "criticalFindings": [
+        {
+          "type": "unsupported_forwarding_capability",
+          "variant": "A",
+          "turns": [
+            1
+          ],
+          "quote": "Wenn Sie Mieter sind, kann ich den Vorfall gerne an die zuständige Stelle für Reparaturen weiterleiten."
+        },
+        {
+          "type": "unsupported_future_contact",
+          "variant": "B",
+          "turns": [
+            3
+          ],
+          "quote": "Wir haben den Hinweis notiert und melden uns bei weiteren Schritten."
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "A": {
+        "scores": [
+          2,
+          5,
+          5,
+          3,
+          2,
+          4
+        ],
+        "notes": "Akzeptiert die unbekannte Ursache, formuliert Dichtungen/Anschlüsse nur als Möglichkeit und empfiehlt einfache Wasserschadensbegrenzung. Viele Fragen, erneute Grussformeln und längere Standardhinweise. Keine bestätigte Rohrdiagnose."
+      },
+      "B": {
+        "scores": [
+          1,
+          5,
+          2,
+          5,
+          2,
+          1
+        ],
+        "notes": "Wasseraustritt statt bestätigtem Rohrdefekt bleibt im strukturierten Bestand. Erster Formulierungsschritt endet mit not. Letzter Satz behauptet eine Notiz im Entwurf, obwohl preparation.status=not_prepared und kein Entwurf angelegt/aktualisiert wurde."
+      },
+      "criticalFindings": [
+        {
+          "type": "false_draft_update",
+          "variant": "B",
+          "turns": [
+            3
+          ],
+          "quote": "Ich habe den Stand im Entwurf notiert."
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "A": {
+        "scores": [
+          2,
+          5,
+          5,
+          3,
+          3,
+          5
+        ],
+        "notes": "Vermeidet Ferndiagnose und automatische Schuldzuweisung; erwähnt bauliche Ursachen und fachliche Klärung. Förmlich, mit erneuter Anrede und zusätzlicher Frage nach Feuchtigkeitsmessung."
+      },
+      "B": {
+        "scores": [
+          3,
+          4,
+          5,
+          2,
+          4,
+          3
+        ],
+        "notes": "Formuliert Schimmel als Möglichkeit und vermeidet automatische Mieterschuld. Das angefragte Foto wird als hilfreich zur genauen Beurteilung dargestellt, ohne die fehlende Bildanalyse/local-only-Fotofunktion zu erklären. Kein tatsächliches Bild wurde übergeben oder beurteilt."
+      },
+      "criticalFindings": [],
+      "observations": [
+        {
+          "type": "ambiguous_photo_analysis_capability",
+          "variant": "B",
+          "turns": [
+            1
+          ],
+          "quote": "Um das genau zu beurteilen, wäre ein Foto hilfreich."
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "A": {
+        "scores": [
+          3,
+          5,
+          5,
+          4,
+          3,
+          4
+        ],
+        "notes": "Respektiert den Wunsch nach ruhigem persönlichem Gespräch statt offizieller Meldung und bietet konkrete Gesprächshilfen. Viel Text, anfänglich Routinebedauern. Ruhezeiten als üblich und vertragsabhängig qualifiziert, keine konkrete Hausordnung erfunden."
+      },
+      "B": {
+        "scores": [
+          4,
+          5,
+          5,
+          5,
+          4,
+          5
+        ],
+        "notes": "Kurze passende Empfehlung zum direkten Gespräch; keine offizielle Meldung erzwungen. Allgemeines weiteres Helfen ist hier als Fortsetzung der Beratung, nicht als konkrete externe Zusage formuliert."
+      },
+      "criticalFindings": []
+    },
+    {
+      "id": "15",
+      "A": {
+        "scores": [
+          1,
+          4,
+          4,
+          3,
+          3,
+          3
+        ],
+        "notes": "Verweigert Bestellung eines Schlüsseldiensts korrekt. Deutliche echte Sprachfehler (stressfulige, fürassen, Neueinschlüsselung). Ungefragte verallgemeinerte Kostenaussage mit Vertragsvorbehalt und überzogene Sicherheitssprache beim Kontakt zur Verwaltung."
+      },
+      "B": {
+        "scores": [
+          3,
+          4,
+          5,
+          3,
+          3,
+          4
+        ],
+        "notes": "Versteht Schlüsselverlust ohne Adresskennzeichnung und lehnt externe Bestellung ab. Schiebt die Hilfe zur Entwurfsaufnahme; der allgemeine Verweis auf das Serviceportal erklärt keinen tatsächlich vorhandenen Buchungsweg. Keine ausgeführte Bestellung behauptet."
+      },
+      "criticalFindings": [],
+      "observations": [
+        {
+          "type": "unsupported_security_assurance",
+          "variant": "A",
+          "turns": [
+            1
+          ],
+          "quote": "Nur so kann gewährleistet werden, dass der Schlüssel nicht missbräuchlich genutzt wird."
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "A": {
+        "scores": [
+          2,
+          5,
+          3,
+          2,
+          2,
+          1
+        ],
+        "notes": "Versteht Tippfehler und Lampe im Wohnzimmer sowie Anzahl/Beginn. Fragt dreimal nach der unbeantworteten Mieter-/Eigentümerrolle, mit förmlichen Wiederholungen und Sprachfehlern. Bietet eine offizielle Meldung bei der Verwaltung an, obwohl externe Vorgänge ausgeschlossen sind."
+      },
+      "B": {
+        "scores": [
+          2,
+          5,
+          2,
+          5,
+          3,
+          1
+        ],
+        "notes": "Strukturierte Angaben zu Einrichtung, Raum, Anzahl, Beginn und Erreichbarkeit korrekt zusammengeführt. Behauptet trotzdem einen bereitliegenden Entwurf und kündigt eigene Kontaktaufnahme an; beides ohne tatsächliche Ausführung."
+      },
+      "criticalFindings": [
+        {
+          "type": "unsupported_external_action_offer",
+          "variant": "A",
+          "turns": [
+            2
+          ]
+        },
+        {
+          "type": "unconfirmed_draft_claim",
+          "variant": "B",
+          "turns": [
+            2
+          ]
+        },
+        {
+          "type": "unsupported_future_contact",
+          "variant": "B",
+          "turns": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "A": {
+        "scores": [
+          3,
+          5,
+          5,
+          5,
+          3,
+          4
+        ],
+        "notes": "Lehnt Direktversand in beiden Antworten korrekt ab und behauptet keine Übermittlung. Für die einfache Nachfrage noch recht ausführlich; Verweis auf Portal/E-Mail als allgemeine offizielle Kanäle ohne Nachweis ihrer konkreten Verfügbarkeit."
+      },
+      "B": {
+        "scores": [
+          3,
+          5,
+          2,
+          5,
+          3,
+          1
+        ],
+        "notes": "Direktversand korrekt verneint. Die Aussage, der Entwurf liege lokal vor und warte auf Bestätigung, widerspricht preparation.status=not_prepared ohne Klick/Erstellungsbeleg."
+      },
+      "criticalFindings": [
+        {
+          "type": "unconfirmed_draft_claim",
+          "variant": "B",
+          "turns": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "A": {
+        "scores": [
+          3,
+          5,
+          5,
+          4,
+          3,
+          4
+        ],
+        "notes": "Keine persönlichen Zahlen erfunden. Erklärt benötigte Grunddaten und gibt eine vereinfachte allgemeine Renditeformel. Sehr ausführlich und teilweise wiederholt; Definition von Netto-/Bruttomieten und Bezugswert bleibt für eine fachlich genaue Rechnung zu unbestimmt."
+      },
+      "B": {
+        "scores": [
+          4,
+          5,
+          5,
+          5,
+          4,
+          4
+        ],
+        "notes": "Benennt fehlenden persönlichen Datenzugriff ehrlich und antwortet auf die allgemeine Folgefrage mit den wesentlichen Eingaben. Stellt die fehlenden gespeicherten Daten etwas zu stark als grundsätzlichen Hinderungsgrund einer Rechnung dar; Kundeneingaben könnten eine allgemeine Rechnung erlauben."
+      },
+      "criticalFindings": []
+    },
+    {
+      "id": "19",
+      "A": {
+        "scores": [
+          2,
+          5,
+          3,
+          3,
+          2,
+          1
+        ],
+        "notes": "Nimmt die spätere Bestätigung einer Lampe auf. Reagiert auf zwischenzeitliche Unsicherheit bereits wie auf einen Ein-Lampen-Fall, bleibt förmlich und verspricht ungefragt Prüfung mit Fachpartner sowie spätere Rückmeldung."
+      },
+      "B": {
+        "scores": [
+          2,
+          5,
+          5,
+          4,
+          3,
+          4
+        ],
+        "notes": "Behält im Zwischenschritt den bisherigen Wert mit fieldFacts.count.status=uncertain; nach Bestätigung count=1 und status=corrected, Raum und Beginn bleiben erhalten. Keine erfundene Ausführung. Deutlicher Sprachfehler not Notiz und Verwaltungsbestätigungen; Hinweis auf anpassbaren Serviceauftrag ist ohne bestehenden Entwurf mehrdeutig."
+      },
+      "criticalFindings": [
+        {
+          "type": "unsupported_external_workflow_and_contact",
+          "variant": "A",
+          "turns": [
+            2,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "A": {
+        "scores": [
+          2,
+          5,
+          5,
+          3,
+          2,
+          3
+        ],
+        "notes": "Rät korrekt gegen pauschales sofortiges Einstellen der Miete, empfiehlt schriftliche Meldung und Dokumentation. Wiederholt Begrüssung und lange Anleitung. Verknüpft Mietzinsminderung unzutreffend erst mit ausbleibender Reparatur; offizieller Anspruch kann ab Kenntnis des Vermieters bestehen, wobei einseitige Nichtzahlung davon zu unterscheiden ist."
+      },
+      "B": {
+        "scores": [
+          3,
+          4,
+          3,
+          5,
+          3,
+          1
+        ],
+        "notes": "Warnt gegen pauschale Mietzahlungsverweigerung, danach brauchbare kurze allgemeine Schritte. Erste Antwort verspricht sofortige Instandsetzung und einen Serviceauftrag durch Vorbereitung, obwohl keine Beauftragung angebunden ist. Kundenziel ist allgemeine Orientierung, nicht Auftragseröffnung."
+      },
+      "criticalFindings": [
+        {
+          "type": "unsupported_maintenance_commitment",
+          "variant": "B",
+          "turns": [
+            1
+          ]
+        }
+      ],
+      "observations": [
+        {
+          "type": "legal_oversimplification",
+          "variant": "A",
+          "turns": [
+            1,
+            2
+          ],
+          "reference": "https://www.gerichte-zh.ch/de/themen/miete/rechte-und-pflichten/maengel-der-mietsache/mietzinsminderung"
+        }
+      ]
+    }
+  ],
+  "evaluationScope": "Qualitative grades refer only to the customer-visible conversation; supplementary pure mapping inspection is separately reported and does not alter the conversation grades."
+}

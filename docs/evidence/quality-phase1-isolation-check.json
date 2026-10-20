@@ -1,0 +1,83 @@
+{
+  "checkedAt": "2026-10-20T22:35:40.109Z",
+  "sourceCommit": "bcd730adc9b5cd8ae52086c8f9db64be82e2a660",
+  "productFilesChanged": [],
+  "protectedRefs": {
+    "main": "0b86dfc3344df62d3de02d8297959a495cc822d3",
+    "alex-portal": "15bfa257ddbe312f7f4658b342ec4703b869b90e"
+  },
+  "existingPreview": {
+    "id": "dpl_7rh6XJY1DW8LUXC2eKboKtAtmLf4",
+    "url": "morada-mora-hwg0nkuia-dianaporschke-1255s-projects.vercel.app",
+    "sourceCommit": "6ef24cda89f2d4d0cab0fdf9ba28234a387bc336",
+    "state": "READY",
+    "modified": false
+  },
+  "isolatedDeploymentVersions": [
+    {
+      "id": "dpl_K549T8LahJ9D1BLsmh415WtgnEz8",
+      "purpose": "single-response instrumentation pilot",
+      "target": null,
+      "aliases": []
+    },
+    {
+      "id": "dpl_3nVDuzK9HFitFM3HscYXeRVn1RH9",
+      "purpose": "main comparison before read-only credit retry",
+      "target": null,
+      "aliases": []
+    },
+    {
+      "id": "dpl_EV3Ykr5KvWu9QgfK2DsdrYnRUNcj",
+      "url": "morada-mora-pxqtsbnap-dianaporschke-1255s-projects.vercel.app",
+      "purpose": "same frozen application; bounded read-only credit retry and documented replacement",
+      "target": null,
+      "aliases": []
+    }
+  ],
+  "projectConfigurationChecks": [
+    {
+      "field": "id",
+      "unchanged": true
+    },
+    {
+      "field": "name",
+      "unchanged": true
+    },
+    {
+      "field": "framework",
+      "unchanged": true
+    },
+    {
+      "field": "accountId",
+      "unchanged": true
+    },
+    {
+      "field": "nodeVersion",
+      "unchanged": true
+    },
+    {
+      "field": "domains",
+      "unchanged": true
+    },
+    {
+      "field": "passwordProtection",
+      "unchanged": true
+    },
+    {
+      "field": "ssoProtection",
+      "unchanged": true
+    },
+    {
+      "field": "trustedIps",
+      "unchanged": true
+    },
+    {
+      "field": "live",
+      "unchanged": true
+    }
+  ],
+  "credentialsExported": false,
+  "newCredentialsCreated": false,
+  "paidSettingsChanged": false,
+  "productionDeploymentsCreated": 0
+}

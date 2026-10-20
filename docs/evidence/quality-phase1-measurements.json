@@ -1,0 +1,2810 @@
+{
+  "complete": true,
+  "rows": 104,
+  "expectedRows": 104,
+  "cohortRule": "Initial cases except 09; first instrument-valid complete replacement of case 09, declared before replacement. All original responses retained.",
+  "receivedOriginalTurns": 104,
+  "receivedReplacementTurns": 6,
+  "observedTaskGenerations": 134,
+  "costCoverage": {
+    "observedUniqueGenerationIds": 134,
+    "resolvedUniqueGenerationIds": 134,
+    "unresolvedGenerationIds": []
+  },
+  "knownTaskGenerationCostUsd": 0.036863926,
+  "transportResumptions": [
+    {
+      "at": "2026-10-20T21:45:40.171914+00:00",
+      "receivedRows": 43,
+      "previousStop": {
+        "reason": "transport_error",
+        "type": "URLError",
+        "step": {
+          "caseId": "08",
+          "turn": 2,
+          "variant": "A"
+        }
+      },
+      "successfulRepliesReplayed": 0,
+      "unreceivedRequestOutcome": "unknown"
+    },
+    {
+      "at": "2026-10-20T21:57:10.900514+00:00",
+      "receivedRows": 50,
+      "previousStop": {
+        "reason": "provider_or_budget_boundary",
+        "step": {
+          "caseId": "09",
+          "turn": 3,
+          "variant": "B"
+        }
+      },
+      "successfulRepliesReplayed": 0,
+      "unreceivedRequestOutcome": "none"
+    },
+    {
+      "at": "2026-10-20T22:14:24.596009+00:00",
+      "receivedRows": 74,
+      "previousStop": null,
+      "successfulRepliesReplayed": 0,
+      "unreceivedRequestOutcome": "none"
+    },
+    {
+      "at": "2026-10-20T22:29:08.574322+00:00",
+      "receivedRows": 98,
+      "previousStop": null,
+      "successfulRepliesReplayed": 0,
+      "unreceivedRequestOutcome": "none"
+    }
+  ],
+  "variants": {
+    "A": {
+      "turns": 52,
+      "applicationErrors": 0,
+      "degradedTurns": 0,
+      "replyOrigins": {
+        "model_verbatim_field": 52
+      },
+      "responseModes": {
+        "model": 52
+      },
+      "generations": 52,
+      "generationCountPerTurn": {
+        "1": 52
+      },
+      "latencyWallMs": {
+        "n": 52,
+        "median": 9753.0,
+        "mean": 10140.51923076923,
+        "p95": 13447.249999999998
+      },
+      "latencyServerMs": {
+        "n": 52,
+        "median": 5062.5,
+        "mean": 5434.038461538462,
+        "p95": 8565.999999999998
+      },
+      "latencyServerExcludingCreditGuardMs": {
+        "n": 52,
+        "median": 4934.5,
+        "mean": 5248.192307692308,
+        "p95": 8426.349999999999
+      },
+      "latencyModelResponsesOnlyWallMs": {
+        "n": 52,
+        "median": 9753.0,
+        "mean": 10140.51923076923,
+        "p95": 13447.249999999998
+      },
+      "modelHttpDurationMs": {
+        "n": 52,
+        "median": 4930.0,
+        "mean": 5243.653846153846,
+        "p95": 8422.349999999999
+      },
+      "totalGatewayCostUsd": 0.012288190000000001,
+      "unpricedTurns": 0,
+      "replyCharacters": {
+        "n": 52,
+        "median": 644.5,
+        "mean": 657.3076923076923,
+        "p95": 1126.95
+      },
+      "questionMarks": 69,
+      "formalThanksTurns": 12,
+      "apologyTurns": 13,
+      "administrativeConfirmationTurns": 4,
+      "contractRepairGenerations": 0,
+      "inputTokens": 16531,
+      "outputTokens": 7652,
+      "reasoningTokens": 69861,
+      "billableOutputIncludingReasoningTokens": 77513
+    },
+    "B": {
+      "turns": 52,
+      "applicationErrors": 0,
+      "degradedTurns": 2,
+      "replyOrigins": {
+        "model_verbatim_field": 49,
+        "application_safety": 3
+      },
+      "responseModes": {
+        "model": 49,
+        "safety": 3
+      },
+      "generations": 75,
+      "generationCountPerTurn": {
+        "3": 4,
+        "1": 31,
+        "2": 16,
+        "0": 1
+      },
+      "latencyWallMs": {
+        "n": 52,
+        "median": 11134.0,
+        "mean": 11429.788461538461,
+        "p95": 16064.949999999997
+      },
+      "latencyServerMs": {
+        "n": 52,
+        "median": 6118.0,
+        "mean": 6723.403846153846,
+        "p95": 11381.199999999997
+      },
+      "latencyServerExcludingCreditGuardMs": {
+        "n": 52,
+        "median": 5966.5,
+        "mean": 6461.153846153846,
+        "p95": 10824.349999999999
+      },
+      "latencyModelResponsesOnlyWallMs": {
+        "n": 49,
+        "median": 11344,
+        "mean": 11679.387755102041,
+        "p95": 16150.599999999997
+      },
+      "modelHttpDurationMs": {
+        "n": 75,
+        "median": 4503,
+        "mean": 4468.6,
+        "p95": 8465.0
+      },
+      "totalGatewayCostUsd": 0.022735448,
+      "unpricedTurns": 0,
+      "replyCharacters": {
+        "n": 52,
+        "median": 131.0,
+        "mean": 145.84615384615384,
+        "p95": 319.59999999999997
+      },
+      "questionMarks": 6,
+      "formalThanksTurns": 10,
+      "apologyTurns": 0,
+      "administrativeConfirmationTurns": 18,
+      "contractRepairGenerations": 8,
+      "inputTokens": 157376,
+      "outputTokens": 8031,
+      "reasoningTokens": 100747,
+      "billableOutputIncludingReasoningTokens": 108778
+    }
+  },
+  "cases": [
+    {
+      "id": "01",
+      "topic": "Lampe, kurze Antworten",
+      "variants": {
+        "A": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 3
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 9832,
+            "mean": 11879,
+            "p95": 15430.9
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 5374,
+            "mean": 7316,
+            "p95": 10863.099999999999
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 5237,
+            "mean": 7176.666666666667,
+            "p95": 10709.9
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 9832,
+            "mean": 11879,
+            "p95": 15430.9
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 5232,
+            "mean": 7167.666666666667,
+            "p95": 10694.099999999999
+          },
+          "totalGatewayCostUsd": 0.00068348,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 555,
+            "mean": 522.3333333333334,
+            "p95": 652.2
+          },
+          "questionMarks": 3,
+          "formalThanksTurns": 2,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 902,
+          "outputTokens": 344,
+          "reasoningTokens": 3972,
+          "billableOutputIncludingReasoningTokens": 4316
+        },
+        "B": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 1,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 6,
+          "generationCountPerTurn": {
+            "3": 1,
+            "1": 1,
+            "2": 1
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 15808,
+            "mean": 18367,
+            "p95": 24632.5
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 10978,
+            "mean": 13582.666666666666,
+            "p95": 19646.8
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 10616,
+            "mean": 13237.333333333334,
+            "p95": 19285.699999999997
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 15808,
+            "mean": 18367,
+            "p95": 24632.5
+          },
+          "modelHttpDurationMs": {
+            "n": 6,
+            "median": 4414.5,
+            "mean": 6601.666666666667,
+            "p95": 13921.0
+          },
+          "totalGatewayCostUsd": 0.001715538,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 85,
+            "mean": 80.33333333333333,
+            "p95": 89.5
+          },
+          "questionMarks": 1,
+          "formalThanksTurns": 1,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 2,
+          "contractRepairGenerations": 2,
+          "inputTokens": 12753,
+          "outputTokens": 753,
+          "reasoningTokens": 7234,
+          "billableOutputIncludingReasoningTokens": 7987
+        }
+      }
+    },
+    {
+      "id": "02",
+      "topic": "Steckdose",
+      "variants": {
+        "A": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 3
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 10181,
+            "mean": 10490.333333333334,
+            "p95": 12630.8
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 5618,
+            "mean": 6190.666666666667,
+            "p95": 8133.5
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 5338,
+            "mean": 5958,
+            "p95": 7986.7
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 10181,
+            "mean": 10490.333333333334,
+            "p95": 12630.8
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 5334,
+            "mean": 5954,
+            "p95": 7982.7
+          },
+          "totalGatewayCostUsd": 0.0005476000000000001,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 399,
+            "mean": 525,
+            "p95": 764.4
+          },
+          "questionMarks": 7,
+          "formalThanksTurns": 1,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 970,
+          "outputTokens": 343,
+          "reasoningTokens": 3049,
+          "billableOutputIncludingReasoningTokens": 3392
+        },
+        "B": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 4,
+          "generationCountPerTurn": {
+            "2": 1,
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 12595,
+            "mean": 12307,
+            "p95": 12598.6
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 8093,
+            "mean": 7833.666666666667,
+            "p95": 8113.7
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 7821,
+            "mean": 7546,
+            "p95": 7831.8
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 12595,
+            "mean": 12307,
+            "p95": 12598.6
+          },
+          "modelHttpDurationMs": {
+            "n": 4,
+            "median": 6563.5,
+            "mean": 5650,
+            "p95": 7817.8
+          },
+          "totalGatewayCostUsd": 0.001178992,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 142,
+            "mean": 143.66666666666666,
+            "p95": 163.6
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 1,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 1,
+          "contractRepairGenerations": 0,
+          "inputTokens": 6503,
+          "outputTokens": 461,
+          "reasoningTokens": 5567,
+          "billableOutputIncludingReasoningTokens": 6028
+        }
+      }
+    },
+    {
+      "id": "03",
+      "topic": "Unbekannte Angaben",
+      "variants": {
+        "A": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 3
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 11570,
+            "mean": 11190.333333333334,
+            "p95": 13038.8
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 6938,
+            "mean": 6663.666666666667,
+            "p95": 8571.5
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 6787,
+            "mean": 6522,
+            "p95": 8422.3
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 11570,
+            "mean": 11190.333333333334,
+            "p95": 13038.8
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 6784,
+            "mean": 6518,
+            "p95": 8418.4
+          },
+          "totalGatewayCostUsd": 0.00058719,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 826,
+            "mean": 720.3333333333334,
+            "p95": 889.0
+          },
+          "questionMarks": 8,
+          "formalThanksTurns": 0,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 1131,
+          "outputTokens": 484,
+          "reasoningTokens": 3129,
+          "billableOutputIncludingReasoningTokens": 3613
+        },
+        "B": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 4,
+          "generationCountPerTurn": {
+            "2": 1,
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 11890,
+            "mean": 12051,
+            "p95": 13047.4
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 7325,
+            "mean": 7505.666666666667,
+            "p95": 8513.9
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 6987,
+            "mean": 7290,
+            "p95": 8322.6
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 11890,
+            "mean": 12051,
+            "p95": 13047.4
+          },
+          "modelHttpDurationMs": {
+            "n": 4,
+            "median": 6004.0,
+            "mean": 5459,
+            "p95": 8152.999999999999
+          },
+          "totalGatewayCostUsd": 0.001442082,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 88,
+            "mean": 76.66666666666667,
+            "p95": 95.2
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 2,
+          "contractRepairGenerations": 0,
+          "inputTokens": 9339,
+          "outputTokens": 389,
+          "reasoningTokens": 6714,
+          "billableOutputIncludingReasoningTokens": 7103
+        }
+      }
+    },
+    {
+      "id": "04",
+      "topic": "Raumkorrektur",
+      "variants": {
+        "A": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 3
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 11448,
+            "mean": 11122.333333333334,
+            "p95": 11754.9
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 7334,
+            "mean": 6939,
+            "p95": 7671.5
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 7179,
+            "mean": 6741.666666666667,
+            "p95": 7517.4
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 11448,
+            "mean": 11122.333333333334,
+            "p95": 11754.9
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 7172,
+            "mean": 6737,
+            "p95": 7513.1
+          },
+          "totalGatewayCostUsd": 0.00063358,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 395,
+            "mean": 382,
+            "p95": 395.0
+          },
+          "questionMarks": 5,
+          "formalThanksTurns": 1,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 817,
+          "outputTokens": 259,
+          "reasoningTokens": 3747,
+          "billableOutputIncludingReasoningTokens": 4006
+        },
+        "B": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 4,
+          "generationCountPerTurn": {
+            "2": 1,
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 12978,
+            "mean": 12517,
+            "p95": 13810.5
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 8477,
+            "mean": 8088.666666666667,
+            "p95": 9365.3
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 8303,
+            "mean": 7843.333333333333,
+            "p95": 8999.6
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 12978,
+            "mean": 12517,
+            "p95": 13810.5
+          },
+          "modelHttpDurationMs": {
+            "n": 4,
+            "median": 6789.5,
+            "mean": 5874.5,
+            "p95": 8163.9
+          },
+          "totalGatewayCostUsd": 0.0014377980000000001,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 86,
+            "mean": 108.66666666666667,
+            "p95": 168.8
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 8723,
+          "outputTokens": 487,
+          "reasoningTokens": 6732,
+          "billableOutputIncludingReasoningTokens": 7219
+        }
+      }
+    },
+    {
+      "id": "05",
+      "topic": "Themenwechsel",
+      "variants": {
+        "A": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 3
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 10215,
+            "mean": 9988.666666666666,
+            "p95": 10250.1
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 5731,
+            "mean": 5546.666666666667,
+            "p95": 5869.6
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 5447,
+            "mean": 5354.333333333333,
+            "p95": 5694.5
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 10215,
+            "mean": 9988.666666666666,
+            "p95": 10250.1
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 5441,
+            "mean": 5350,
+            "p95": 5691.2
+          },
+          "totalGatewayCostUsd": 0.00051319,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 770,
+            "mean": 792,
+            "p95": 896.0
+          },
+          "questionMarks": 6,
+          "formalThanksTurns": 1,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 1111,
+          "outputTokens": 540,
+          "reasoningTokens": 2585,
+          "billableOutputIncludingReasoningTokens": 3125
+        },
+        "B": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 5,
+          "generationCountPerTurn": {
+            "2": 2,
+            "1": 1
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 15301,
+            "mean": 13709.333333333334,
+            "p95": 16271.2
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 10731,
+            "mean": 9131,
+            "p95": 11759.7
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 10465,
+            "mean": 8738.666666666666,
+            "p95": 11017.6
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 15301,
+            "mean": 13709.333333333334,
+            "p95": 16271.2
+          },
+          "modelHttpDurationMs": {
+            "n": 5,
+            "median": 5446,
+            "mean": 5236,
+            "p95": 7901.599999999999
+          },
+          "totalGatewayCostUsd": 0.001565606,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 127,
+            "mean": 130.33333333333334,
+            "p95": 180.1
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 1,
+          "inputTokens": 12683,
+          "outputTokens": 600,
+          "reasoningTokens": 6435,
+          "billableOutputIncludingReasoningTokens": 7035
+        }
+      }
+    },
+    {
+      "id": "06",
+      "topic": "Mehrere Anliegen",
+      "variants": {
+        "A": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 3
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 9159,
+            "mean": 9816.666666666666,
+            "p95": 11135.4
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 4581,
+            "mean": 5266,
+            "p95": 6524.1
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 4377,
+            "mean": 5060.666666666667,
+            "p95": 6365.1
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 9159,
+            "mean": 9816.666666666666,
+            "p95": 11135.4
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 4374,
+            "mean": 5057.666666666667,
+            "p95": 6363.0
+          },
+          "totalGatewayCostUsd": 0.0005552199999999999,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 385,
+            "mean": 473.3333333333333,
+            "p95": 692.8
+          },
+          "questionMarks": 3,
+          "formalThanksTurns": 2,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 988,
+          "outputTokens": 318,
+          "reasoningTokens": 3120,
+          "billableOutputIncludingReasoningTokens": 3438
+        },
+        "B": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 4,
+          "generationCountPerTurn": {
+            "2": 1,
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 12316,
+            "mean": 12496,
+            "p95": 13342.9
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 7070,
+            "mean": 7445.666666666667,
+            "p95": 8875.4
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 6812,
+            "mean": 7263.666666666667,
+            "p95": 8729.9
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 12316,
+            "mean": 12496,
+            "p95": 13342.9
+          },
+          "modelHttpDurationMs": {
+            "n": 4,
+            "median": 5792.5,
+            "mean": 5439.25,
+            "p95": 8495.55
+          },
+          "totalGatewayCostUsd": 0.001323332,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 86,
+            "mean": 82,
+            "p95": 87.8
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 1,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 2,
+          "contractRepairGenerations": 0,
+          "inputTokens": 8454,
+          "outputTokens": 432,
+          "reasoningTokens": 6076,
+          "billableOutputIncludingReasoningTokens": 6508
+        }
+      }
+    },
+    {
+      "id": "07",
+      "topic": "Allgemeine Immobilienfrage",
+      "variants": {
+        "A": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 2,
+          "generationCountPerTurn": {
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 10169.0,
+            "mean": 10169,
+            "p95": 11693.6
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 5738.5,
+            "mean": 5738.5,
+            "p95": 7215.85
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 5573.5,
+            "mean": 5573.5,
+            "p95": 7031.049999999999
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 10169.0,
+            "mean": 10169,
+            "p95": 11693.6
+          },
+          "modelHttpDurationMs": {
+            "n": 2,
+            "median": 5570.5,
+            "mean": 5570.5,
+            "p95": 7028.049999999999
+          },
+          "totalGatewayCostUsd": 0.00050977,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 1084.0,
+            "mean": 1084,
+            "p95": 1210.9
+          },
+          "questionMarks": 2,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 1,
+          "contractRepairGenerations": 0,
+          "inputTokens": 658,
+          "outputTokens": 518,
+          "reasoningTokens": 2705,
+          "billableOutputIncludingReasoningTokens": 3223
+        },
+        "B": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 2,
+          "generationCountPerTurn": {
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 8809.0,
+            "mean": 8809,
+            "p95": 9250.0
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 4259.0,
+            "mean": 4259,
+            "p95": 4678.4
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 4027.0,
+            "mean": 4027,
+            "p95": 4414.9
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 8809.0,
+            "mean": 8809,
+            "p95": 9250.0
+          },
+          "modelHttpDurationMs": {
+            "n": 2,
+            "median": 4019.0,
+            "mean": 4019,
+            "p95": 4406.9
+          },
+          "totalGatewayCostUsd": 0.0005855000000000001,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 242.5,
+            "mean": 242.5,
+            "p95": 308.65
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 4195,
+          "outputTokens": 154,
+          "reasoningTokens": 2590,
+          "billableOutputIncludingReasoningTokens": 2744
+        }
+      }
+    },
+    {
+      "id": "08",
+      "topic": "Eigentümer, Leerstand",
+      "variants": {
+        "A": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 2,
+          "generationCountPerTurn": {
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 10957.5,
+            "mean": 10957.5,
+            "p95": 11000.25
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 5884.0,
+            "mean": 5884,
+            "p95": 6449.2
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 5662.5,
+            "mean": 5662.5,
+            "p95": 6274.05
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 10957.5,
+            "mean": 10957.5,
+            "p95": 11000.25
+          },
+          "modelHttpDurationMs": {
+            "n": 2,
+            "median": 5659.0,
+            "mean": 5659,
+            "p95": 6271.0
+          },
+          "totalGatewayCostUsd": 0.0006337199999999999,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 1143.0,
+            "mean": 1143,
+            "p95": 1152.0
+          },
+          "questionMarks": 5,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 663,
+          "outputTokens": 552,
+          "reasoningTokens": 3496,
+          "billableOutputIncludingReasoningTokens": 4048
+        },
+        "B": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 2,
+          "generationCountPerTurn": {
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 8002.0,
+            "mean": 8002,
+            "p95": 8434.0
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 3539.5,
+            "mean": 3539.5,
+            "p95": 4112.35
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 3396.5,
+            "mean": 3396.5,
+            "p95": 3982.85
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 8002.0,
+            "mean": 8002,
+            "p95": 8434.0
+          },
+          "modelHttpDurationMs": {
+            "n": 2,
+            "median": 3390.5,
+            "mean": 3390.5,
+            "p95": 3976.85
+          },
+          "totalGatewayCostUsd": 0.000552136,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 227.5,
+            "mean": 227.5,
+            "p95": 238.75
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 4094,
+          "outputTokens": 147,
+          "reasoningTokens": 2403,
+          "billableOutputIncludingReasoningTokens": 2550
+        }
+      }
+    },
+    {
+      "id": "09",
+      "topic": "Unklare Formulierung",
+      "variants": {
+        "A": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 3
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 8825,
+            "mean": 9228.333333333334,
+            "p95": 11291.9
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 3661,
+            "mean": 4050.6666666666665,
+            "p95": 5825.5
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 3529,
+            "mean": 3922.3333333333335,
+            "p95": 5708.799999999999
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 8825,
+            "mean": 9228.333333333334,
+            "p95": 11291.9
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 3524,
+            "mean": 3918,
+            "p95": 5705.6
+          },
+          "totalGatewayCostUsd": 0.00062381,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 511,
+            "mean": 485.3333333333333,
+            "p95": 558.7
+          },
+          "questionMarks": 5,
+          "formalThanksTurns": 1,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 869,
+          "outputTokens": 324,
+          "reasoningTokens": 3603,
+          "billableOutputIncludingReasoningTokens": 3927
+        },
+        "B": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 5,
+          "generationCountPerTurn": {
+            "3": 1,
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 10437,
+            "mean": 11267,
+            "p95": 13458.3
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 5429,
+            "mean": 6060.666666666667,
+            "p95": 7882.4
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 4575,
+            "mean": 5528,
+            "p95": 7238.1
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 10437,
+            "mean": 11267,
+            "p95": 13458.3
+          },
+          "modelHttpDurationMs": {
+            "n": 5,
+            "median": 4446,
+            "mean": 3282.8,
+            "p95": 4719.4
+          },
+          "totalGatewayCostUsd": 0.00135966,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 143,
+            "mean": 132,
+            "p95": 164.6
+          },
+          "questionMarks": 2,
+          "formalThanksTurns": 2,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 2,
+          "contractRepairGenerations": 1,
+          "inputTokens": 10650,
+          "outputTokens": 483,
+          "reasoningTokens": 5721,
+          "billableOutputIncludingReasoningTokens": 6204
+        }
+      }
+    },
+    {
+      "id": "10",
+      "topic": "Akute elektrische Gefahr",
+      "variants": {
+        "A": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 3
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 9180,
+            "mean": 9058,
+            "p95": 9696.6
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 3566,
+            "mean": 3853.3333333333335,
+            "p95": 4511.9
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 3271,
+            "mean": 3670,
+            "p95": 4375.3
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 9180,
+            "mean": 9058,
+            "p95": 9696.6
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 3266,
+            "mean": 3660.6666666666665,
+            "p95": 4358.6
+          },
+          "totalGatewayCostUsd": 0.00063747,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 602,
+            "mean": 608.3333333333334,
+            "p95": 755.0
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 1008,
+          "outputTokens": 389,
+          "reasoningTokens": 3592,
+          "billableOutputIncludingReasoningTokens": 3981
+        },
+        "B": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "application_safety": 3
+          },
+          "responseModes": {
+            "safety": 3
+          },
+          "generations": 2,
+          "generationCountPerTurn": {
+            "0": 1,
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 8021,
+            "mean": 7353,
+            "p95": 9308.9
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 3366,
+            "mean": 2802,
+            "p95": 4836.6
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 3168,
+            "mean": 2696,
+            "p95": 4708.8
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 0,
+            "median": null,
+            "mean": null,
+            "p95": null
+          },
+          "modelHttpDurationMs": {
+            "n": 2,
+            "median": 3999.5,
+            "mean": 3999.5,
+            "p95": 4775.75
+          },
+          "totalGatewayCostUsd": 0.000708572,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 324,
+            "mean": 324,
+            "p95": 324.0
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 3,
+          "contractRepairGenerations": 0,
+          "inputTokens": 3856,
+          "outputTokens": 240,
+          "reasoningTokens": 3388,
+          "billableOutputIncludingReasoningTokens": 3628
+        }
+      }
+    },
+    {
+      "id": "11",
+      "topic": "Negation und spätere Gefahrenkorrektur",
+      "variants": {
+        "A": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 3
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 8654,
+            "mean": 9449.666666666666,
+            "p95": 11228.9
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 4907,
+            "mean": 4989,
+            "p95": 6253.4
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 4639,
+            "mean": 4776.666666666667,
+            "p95": 6044.8
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 8654,
+            "mean": 9449.666666666666,
+            "p95": 11228.9
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 4635,
+            "mean": 4771.666666666667,
+            "p95": 6039.0
+          },
+          "totalGatewayCostUsd": 0.00098725,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 572,
+            "mean": 586.3333333333334,
+            "p95": 761.0
+          },
+          "questionMarks": 4,
+          "formalThanksTurns": 0,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 1075,
+          "outputTokens": 380,
+          "reasoningTokens": 5915,
+          "billableOutputIncludingReasoningTokens": 6295
+        },
+        "B": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 4,
+          "generationCountPerTurn": {
+            "2": 1,
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 11687,
+            "mean": 11518.666666666666,
+            "p95": 13494.2
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 6029,
+            "mean": 6553.333333333333,
+            "p95": 8666.9
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 5897,
+            "mean": 6390,
+            "p95": 8446.7
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 11687,
+            "mean": 11518.666666666666,
+            "p95": 13494.2
+          },
+          "modelHttpDurationMs": {
+            "n": 4,
+            "median": 5210.0,
+            "mean": 4782.75,
+            "p95": 6517.549999999999
+          },
+          "totalGatewayCostUsd": 0.001291768,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 177,
+            "mean": 162.66666666666666,
+            "p95": 220.2
+          },
+          "questionMarks": 1,
+          "formalThanksTurns": 1,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 2,
+          "contractRepairGenerations": 0,
+          "inputTokens": 8781,
+          "outputTokens": 469,
+          "reasoningTokens": 5761,
+          "billableOutputIncludingReasoningTokens": 6230
+        }
+      }
+    },
+    {
+      "id": "12",
+      "topic": "Wasseraustritt, unbekannte Ursache",
+      "variants": {
+        "A": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 3
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 8803,
+            "mean": 9189.333333333334,
+            "p95": 9941.5
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 4291,
+            "mean": 4590.333333333333,
+            "p95": 5260.3
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 4159,
+            "mean": 4346,
+            "p95": 5006.8
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 8803,
+            "mean": 9189.333333333334,
+            "p95": 9941.5
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 4155,
+            "mean": 4342,
+            "p95": 5001.9
+          },
+          "totalGatewayCostUsd": 0.00070294,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 751,
+            "mean": 749.6666666666666,
+            "p95": 842.8
+          },
+          "questionMarks": 4,
+          "formalThanksTurns": 0,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 1111,
+          "outputTokens": 504,
+          "reasoningTokens": 3886,
+          "billableOutputIncludingReasoningTokens": 4390
+        },
+        "B": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 5,
+          "generationCountPerTurn": {
+            "2": 2,
+            "1": 1
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 11181,
+            "mean": 11119,
+            "p95": 12893.7
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 5850,
+            "mean": 6387.333333333333,
+            "p95": 8395.2
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 5582,
+            "mean": 6162.333333333333,
+            "p95": 8109.2
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 11181,
+            "mean": 11119,
+            "p95": 12893.7
+          },
+          "modelHttpDurationMs": {
+            "n": 5,
+            "median": 4052,
+            "mean": 3689.8,
+            "p95": 4468.4
+          },
+          "totalGatewayCostUsd": 0.001653952,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 64,
+            "mean": 64,
+            "p95": 67.6
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 2,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 1,
+          "contractRepairGenerations": 1,
+          "inputTokens": 10062,
+          "outputTokens": 623,
+          "reasoningTokens": 7631,
+          "billableOutputIncludingReasoningTokens": 8254
+        }
+      }
+    },
+    {
+      "id": "13",
+      "topic": "Schimmel",
+      "variants": {
+        "A": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 2,
+          "generationCountPerTurn": {
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 12667.0,
+            "mean": 12667,
+            "p95": 13639.0
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 7295.0,
+            "mean": 7295,
+            "p95": 7601.0
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 6984.0,
+            "mean": 6984,
+            "p95": 7294.5
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 12667.0,
+            "mean": 12667,
+            "p95": 13639.0
+          },
+          "modelHttpDurationMs": {
+            "n": 2,
+            "median": 6981.0,
+            "mean": 6981,
+            "p95": 7291.5
+          },
+          "totalGatewayCostUsd": 0.00082618,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 682.0,
+            "mean": 682,
+            "p95": 716.2
+          },
+          "questionMarks": 2,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 502,
+          "outputTokens": 294,
+          "reasoningTokens": 5080,
+          "billableOutputIncludingReasoningTokens": 5374
+        },
+        "B": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "2": 1,
+            "1": 1
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 9751.5,
+            "mean": 9751.5,
+            "p95": 10168.65
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 5036.0,
+            "mean": 5036,
+            "p95": 5155.7
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 4724.0,
+            "mean": 4724,
+            "p95": 4868.9
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 9751.5,
+            "mean": 9751.5,
+            "p95": 10168.65
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 3560,
+            "mean": 3139.6666666666665,
+            "p95": 4453.7
+          },
+          "totalGatewayCostUsd": 0.0007434399999999999,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 152.0,
+            "mean": 152,
+            "p95": 177.2
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 5571,
+          "outputTokens": 334,
+          "reasoningTokens": 3096,
+          "billableOutputIncludingReasoningTokens": 3430
+        }
+      }
+    },
+    {
+      "id": "14",
+      "topic": "Lärm",
+      "variants": {
+        "A": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 2,
+          "generationCountPerTurn": {
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 8424.0,
+            "mean": 8424,
+            "p95": 9380.7
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 4206.5,
+            "mean": 4206.5,
+            "p95": 4917.95
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 3963.5,
+            "mean": 3963.5,
+            "p95": 4732.55
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 8424.0,
+            "mean": 8424,
+            "p95": 9380.7
+          },
+          "modelHttpDurationMs": {
+            "n": 2,
+            "median": 3959.5,
+            "mean": 3959.5,
+            "p95": 4728.55
+          },
+          "totalGatewayCostUsd": 0.00043122,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 1069.5,
+            "mean": 1069.5,
+            "p95": 1116.75
+          },
+          "questionMarks": 2,
+          "formalThanksTurns": 0,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 618,
+          "outputTokens": 485,
+          "reasoningTokens": 2225,
+          "billableOutputIncludingReasoningTokens": 2710
+        },
+        "B": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 1,
+            "2": 1
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 10760.5,
+            "mean": 10760.5,
+            "p95": 11503.45
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 5982.0,
+            "mean": 5982,
+            "p95": 6892.8
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 5754.0,
+            "mean": 5754,
+            "p95": 6609.9
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 10760.5,
+            "mean": 10760.5,
+            "p95": 11503.45
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 4796,
+            "mean": 3829.3333333333335,
+            "p95": 5093.9
+          },
+          "totalGatewayCostUsd": 0.0007780479999999999,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 168.0,
+            "mean": 168,
+            "p95": 175.2
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 5263,
+          "outputTokens": 207,
+          "reasoningTokens": 3537,
+          "billableOutputIncludingReasoningTokens": 3744
+        }
+      }
+    },
+    {
+      "id": "15",
+      "topic": "Schlüssel",
+      "variants": {
+        "A": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 2,
+          "generationCountPerTurn": {
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 12785.5,
+            "mean": 12785.5,
+            "p95": 16308.55
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 7982.5,
+            "mean": 7982.5,
+            "p95": 11312.95
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 7831.0,
+            "mean": 7831,
+            "p95": 11150.2
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 12785.5,
+            "mean": 12785.5,
+            "p95": 16308.55
+          },
+          "modelHttpDurationMs": {
+            "n": 2,
+            "median": 7827.0,
+            "mean": 7827,
+            "p95": 11146.2
+          },
+          "totalGatewayCostUsd": 0.0005193,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 706.0,
+            "mean": 706,
+            "p95": 814.9
+          },
+          "questionMarks": 2,
+          "formalThanksTurns": 0,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 525,
+          "outputTokens": 274,
+          "reasoningTokens": 3048,
+          "billableOutputIncludingReasoningTokens": 3322
+        },
+        "B": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 4,
+          "generationCountPerTurn": {
+            "2": 2
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 14124.0,
+            "mean": 14124,
+            "p95": 16406.4
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 9525.0,
+            "mean": 9525,
+            "p95": 11906.4
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 9213.5,
+            "mean": 9213.5,
+            "p95": 11532.349999999999
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 14124.0,
+            "mean": 14124,
+            "p95": 16406.4
+          },
+          "modelHttpDurationMs": {
+            "n": 4,
+            "median": 4691.0,
+            "mean": 4599.75,
+            "p95": 6940.9
+          },
+          "totalGatewayCostUsd": 0.001221968,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 181.0,
+            "mean": 181,
+            "p95": 195.4
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 1,
+          "inputTokens": 8753,
+          "outputTokens": 409,
+          "reasoningTokens": 5363,
+          "billableOutputIncludingReasoningTokens": 5772
+        }
+      }
+    },
+    {
+      "id": "16",
+      "topic": "Tippfehler und Nachtrag",
+      "variants": {
+        "A": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 3
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 8364,
+            "mean": 8551,
+            "p95": 9562.8
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 3022,
+            "mean": 3638,
+            "p95": 4992.1
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 2896,
+            "mean": 3502.3333333333335,
+            "p95": 4865.2
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 8364,
+            "mean": 8551,
+            "p95": 9562.8
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 2892,
+            "mean": 3498.3333333333335,
+            "p95": 4862.1
+          },
+          "totalGatewayCostUsd": 0.00061978,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 572,
+            "mean": 526,
+            "p95": 645.8
+          },
+          "questionMarks": 5,
+          "formalThanksTurns": 2,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 982,
+          "outputTokens": 352,
+          "reasoningTokens": 3518,
+          "billableOutputIncludingReasoningTokens": 3870
+        },
+        "B": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 5,
+          "generationCountPerTurn": {
+            "3": 1,
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 10060,
+            "mean": 10364,
+            "p95": 11374.0
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 5433,
+            "mean": 5748.333333333333,
+            "p95": 6640.8
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 5315,
+            "mean": 5450,
+            "p95": 6041.3
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 10060,
+            "mean": 10364,
+            "p95": 11374.0
+          },
+          "modelHttpDurationMs": {
+            "n": 5,
+            "median": 3575,
+            "mean": 3264,
+            "p95": 5225.6
+          },
+          "totalGatewayCostUsd": 0.0013175399999999999,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 107,
+            "mean": 104,
+            "p95": 123.2
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 1,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 2,
+          "contractRepairGenerations": 1,
+          "inputTokens": 9043,
+          "outputTokens": 529,
+          "reasoningTokens": 5783,
+          "billableOutputIncludingReasoningTokens": 6312
+        }
+      }
+    },
+    {
+      "id": "17",
+      "topic": "Nicht verfügbare Übermittlung",
+      "variants": {
+        "A": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 2,
+          "generationCountPerTurn": {
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 7813.5,
+            "mean": 7813.5,
+            "p95": 7829.25
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 3473.5,
+            "mean": 3473.5,
+            "p95": 4071.55
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 3273.5,
+            "mean": 3273.5,
+            "p95": 3803.1499999999996
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 7813.5,
+            "mean": 7813.5,
+            "p95": 7829.25
+          },
+          "modelHttpDurationMs": {
+            "n": 2,
+            "median": 3269.5,
+            "mean": 3269.5,
+            "p95": 3798.25
+          },
+          "totalGatewayCostUsd": 0.00045452,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 381.5,
+            "mean": 381.5,
+            "p95": 424.25
+          },
+          "questionMarks": 1,
+          "formalThanksTurns": 0,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 1,
+          "contractRepairGenerations": 0,
+          "inputTokens": 473,
+          "outputTokens": 173,
+          "reasoningTokens": 2731,
+          "billableOutputIncludingReasoningTokens": 2904
+        },
+        "B": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 1,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 4,
+          "generationCountPerTurn": {
+            "3": 1,
+            "1": 1
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 10594.0,
+            "mean": 10594,
+            "p95": 12839.5
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 5904.0,
+            "mean": 5904,
+            "p95": 8316.9
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 5538.0,
+            "mean": 5538,
+            "p95": 7723.2
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 10594.0,
+            "mean": 10594,
+            "p95": 12839.5
+          },
+          "modelHttpDurationMs": {
+            "n": 4,
+            "median": 2165.5,
+            "mean": 2762.5,
+            "p95": 5272.049999999999
+          },
+          "totalGatewayCostUsd": 0.00092225,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 127.0,
+            "mean": 127,
+            "p95": 146.8
+          },
+          "questionMarks": 1,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 1,
+          "contractRepairGenerations": 1,
+          "inputTokens": 8090,
+          "outputTokens": 311,
+          "reasoningTokens": 3680,
+          "billableOutputIncludingReasoningTokens": 3991
+        }
+      }
+    },
+    {
+      "id": "18",
+      "topic": "Eigentümerfrage zu persönlichen Unterlagen",
+      "variants": {
+        "A": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 2,
+          "generationCountPerTurn": {
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 11231.5,
+            "mean": 11231.5,
+            "p95": 12488.35
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 5376.0,
+            "mean": 5376,
+            "p95": 5900.7
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 5214.5,
+            "mean": 5214.5,
+            "p95": 5737.85
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 11231.5,
+            "mean": 11231.5,
+            "p95": 12488.35
+          },
+          "modelHttpDurationMs": {
+            "n": 2,
+            "median": 5211.5,
+            "mean": 5211.5,
+            "p95": 5734.85
+          },
+          "totalGatewayCostUsd": 0.00058979,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 707.0,
+            "mean": 707,
+            "p95": 826.7
+          },
+          "questionMarks": 1,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 581,
+          "outputTokens": 333,
+          "reasoningTokens": 3444,
+          "billableOutputIncludingReasoningTokens": 3777
+        },
+        "B": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 2,
+          "generationCountPerTurn": {
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 9584.0,
+            "mean": 9584,
+            "p95": 11168.0
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 5047.0,
+            "mean": 5047,
+            "p95": 6568.9
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 4862.5,
+            "mean": 4862.5,
+            "p95": 6365.049999999999
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 9584.0,
+            "mean": 9584,
+            "p95": 11168.0
+          },
+          "modelHttpDurationMs": {
+            "n": 2,
+            "median": 4856.0,
+            "mean": 4856,
+            "p95": 6359.0
+          },
+          "totalGatewayCostUsd": 0.0006913819999999999,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 206.5,
+            "mean": 206.5,
+            "p95": 251.05
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 4876,
+          "outputTokens": 121,
+          "reasoningTokens": 3168,
+          "billableOutputIncludingReasoningTokens": 3289
+        }
+      }
+    },
+    {
+      "id": "19",
+      "topic": "Widerspruch und Rücknahme",
+      "variants": {
+        "A": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "1": 3
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 9666,
+            "mean": 9664,
+            "p95": 9965.7
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 4864,
+            "mean": 5025.666666666667,
+            "p95": 5375.2
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 4688,
+            "mean": 4871,
+            "p95": 5246.0
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 9666,
+            "mean": 9664,
+            "p95": 9965.7
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 4683,
+            "mean": 4867.333333333333,
+            "p95": 5242.8
+          },
+          "totalGatewayCostUsd": 0.00075519,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 446,
+            "mean": 522.3333333333334,
+            "p95": 693.5
+          },
+          "questionMarks": 2,
+          "formalThanksTurns": 2,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 2,
+          "contractRepairGenerations": 0,
+          "inputTokens": 981,
+          "outputTokens": 342,
+          "reasoningTokens": 4431,
+          "billableOutputIncludingReasoningTokens": 4773
+        },
+        "B": {
+          "turns": 3,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 3
+          },
+          "responseModes": {
+            "model": 3
+          },
+          "generations": 4,
+          "generationCountPerTurn": {
+            "2": 1,
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 3,
+            "median": 10205,
+            "mean": 10283.333333333334,
+            "p95": 10541.6
+          },
+          "latencyServerMs": {
+            "n": 3,
+            "median": 5450,
+            "mean": 5436,
+            "p95": 5665.1
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 3,
+            "median": 5322,
+            "mean": 5229.666666666667,
+            "p95": 5350.8
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 3,
+            "median": 10205,
+            "mean": 10283.333333333334,
+            "p95": 10541.6
+          },
+          "modelHttpDurationMs": {
+            "n": 4,
+            "median": 4541.0,
+            "mean": 3915.75,
+            "p95": 5267.65
+          },
+          "totalGatewayCostUsd": 0.0012386839999999999,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 3,
+            "median": 81,
+            "mean": 98,
+            "p95": 129.6
+          },
+          "questionMarks": 1,
+          "formalThanksTurns": 1,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 8552,
+          "outputTokens": 497,
+          "reasoningTokens": 5441,
+          "billableOutputIncludingReasoningTokens": 5938
+        }
+      }
+    },
+    {
+      "id": "20",
+      "topic": "Rechtliche und fachliche Grenze",
+      "variants": {
+        "A": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 2,
+          "generationCountPerTurn": {
+            "1": 2
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 10164.0,
+            "mean": 10164,
+            "p95": 11150.4
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 5225.5,
+            "mean": 5225.5,
+            "p95": 6329.35
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 5098.0,
+            "mean": 5098,
+            "p95": 6204.1
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 10164.0,
+            "mean": 10164,
+            "p95": 11150.4
+          },
+          "modelHttpDurationMs": {
+            "n": 2,
+            "median": 5093.5,
+            "mean": 5093.5,
+            "p95": 6200.049999999999
+          },
+          "totalGatewayCostUsd": 0.00047699,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 977.5,
+            "mean": 977.5,
+            "p95": 1085.05
+          },
+          "questionMarks": 2,
+          "formalThanksTurns": 0,
+          "apologyTurns": 1,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 566,
+          "outputTokens": 444,
+          "reasoningTokens": 2585,
+          "billableOutputIncludingReasoningTokens": 3029
+        },
+        "B": {
+          "turns": 2,
+          "applicationErrors": 0,
+          "degradedTurns": 0,
+          "replyOrigins": {
+            "model_verbatim_field": 2
+          },
+          "responseModes": {
+            "model": 2
+          },
+          "generations": 3,
+          "generationCountPerTurn": {
+            "2": 1,
+            "1": 1
+          },
+          "latencyWallMs": {
+            "n": 2,
+            "median": 10521.0,
+            "mean": 10521,
+            "p95": 10863.0
+          },
+          "latencyServerMs": {
+            "n": 2,
+            "median": 5653.5,
+            "mean": 5653.5,
+            "p95": 6005.85
+          },
+          "latencyServerExcludingCreditGuardMs": {
+            "n": 2,
+            "median": 5412.0,
+            "mean": 5412,
+            "p95": 5718.0
+          },
+          "latencyModelResponsesOnlyWallMs": {
+            "n": 2,
+            "median": 10521.0,
+            "mean": 10521,
+            "p95": 10863.0
+          },
+          "modelHttpDurationMs": {
+            "n": 3,
+            "median": 4179,
+            "mean": 3600.3333333333335,
+            "p95": 4972.8
+          },
+          "totalGatewayCostUsd": 0.0010072,
+          "unpricedTurns": 0,
+          "replyCharacters": {
+            "n": 2,
+            "median": 228.0,
+            "mean": 228,
+            "p95": 253.2
+          },
+          "questionMarks": 0,
+          "formalThanksTurns": 0,
+          "apologyTurns": 0,
+          "administrativeConfirmationTurns": 0,
+          "contractRepairGenerations": 0,
+          "inputTokens": 7135,
+          "outputTokens": 385,
+          "reasoningTokens": 4427,
+          "billableOutputIncludingReasoningTokens": 4812
+        }
+      }
+    }
+  ]
+}

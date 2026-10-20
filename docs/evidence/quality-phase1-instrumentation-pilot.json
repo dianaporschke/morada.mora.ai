@@ -1,0 +1,612 @@
+{
+  "sourceCommit": "bcd730adc9b5cd8ae52086c8f9db64be82e2a660",
+  "model": "inception/mercury-2.5",
+  "price": {
+    "input": 4e-08,
+    "output": 1.5e-07
+  },
+  "credits": {
+    "balanceUsd": 4.731527306,
+    "totalUsedUsd": 0.268472694
+  },
+  "maxCostUsd": 0.5,
+  "caseCount": 20,
+  "turnCount": 104,
+  "promptA": "Sie sind MORA, eine professionelle Immobilienassistenz von MORADA für Mieter und Eigentümer in der Schweiz. Antworten Sie freundlich, klar und natürlich im Schweizer Hochdeutsch und in der Sie-Form. Gehen Sie auf das aktuelle Anliegen ein, behalten Sie den Gesprächskontext und fragen Sie nur nach, wenn es sinnvoll ist. Erfinden Sie keine fehlenden Angaben, Diagnosen oder Zusagen. Sie haben keinen Zugriff auf persönliche Unterlagen und können keine externen Vorgänge ausführen. Bei akuter Gefahr hat die Sicherheit von Personen Vorrang; empfehlen Sie keine gefährlichen Eingriffe. Geben Sie keine verbindlichen individuellen Rechtsentscheide oder Zusagen zur Kostenübernahme.",
+  "promptAHash": "672f82d448f17a4616e20f10649a5694b9060e28f3f6c9222e077995f8ee8e0a",
+  "schedule": [
+    {
+      "caseId": "01",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "01",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "01",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "01",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "01",
+      "turn": 3,
+      "variant": "A"
+    },
+    {
+      "caseId": "01",
+      "turn": 3,
+      "variant": "B"
+    },
+    {
+      "caseId": "02",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "02",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "02",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "02",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "02",
+      "turn": 3,
+      "variant": "B"
+    },
+    {
+      "caseId": "02",
+      "turn": 3,
+      "variant": "A"
+    },
+    {
+      "caseId": "03",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "03",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "03",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "03",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "03",
+      "turn": 3,
+      "variant": "A"
+    },
+    {
+      "caseId": "03",
+      "turn": 3,
+      "variant": "B"
+    },
+    {
+      "caseId": "04",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "04",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "04",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "04",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "04",
+      "turn": 3,
+      "variant": "B"
+    },
+    {
+      "caseId": "04",
+      "turn": 3,
+      "variant": "A"
+    },
+    {
+      "caseId": "05",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "05",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "05",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "05",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "05",
+      "turn": 3,
+      "variant": "A"
+    },
+    {
+      "caseId": "05",
+      "turn": 3,
+      "variant": "B"
+    },
+    {
+      "caseId": "06",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "06",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "06",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "06",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "06",
+      "turn": 3,
+      "variant": "B"
+    },
+    {
+      "caseId": "06",
+      "turn": 3,
+      "variant": "A"
+    },
+    {
+      "caseId": "07",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "07",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "07",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "07",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "08",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "08",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "08",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "08",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "09",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "09",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "09",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "09",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "09",
+      "turn": 3,
+      "variant": "A"
+    },
+    {
+      "caseId": "09",
+      "turn": 3,
+      "variant": "B"
+    },
+    {
+      "caseId": "10",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "10",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "10",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "10",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "10",
+      "turn": 3,
+      "variant": "B"
+    },
+    {
+      "caseId": "10",
+      "turn": 3,
+      "variant": "A"
+    },
+    {
+      "caseId": "11",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "11",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "11",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "11",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "11",
+      "turn": 3,
+      "variant": "A"
+    },
+    {
+      "caseId": "11",
+      "turn": 3,
+      "variant": "B"
+    },
+    {
+      "caseId": "12",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "12",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "12",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "12",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "12",
+      "turn": 3,
+      "variant": "B"
+    },
+    {
+      "caseId": "12",
+      "turn": 3,
+      "variant": "A"
+    },
+    {
+      "caseId": "13",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "13",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "13",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "13",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "14",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "14",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "14",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "14",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "15",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "15",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "15",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "15",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "16",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "16",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "16",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "16",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "16",
+      "turn": 3,
+      "variant": "B"
+    },
+    {
+      "caseId": "16",
+      "turn": 3,
+      "variant": "A"
+    },
+    {
+      "caseId": "17",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "17",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "17",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "17",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "18",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "18",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "18",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "18",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "19",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "19",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "19",
+      "turn": 2,
+      "variant": "A"
+    },
+    {
+      "caseId": "19",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "19",
+      "turn": 3,
+      "variant": "A"
+    },
+    {
+      "caseId": "19",
+      "turn": 3,
+      "variant": "B"
+    },
+    {
+      "caseId": "20",
+      "turn": 1,
+      "variant": "B"
+    },
+    {
+      "caseId": "20",
+      "turn": 1,
+      "variant": "A"
+    },
+    {
+      "caseId": "20",
+      "turn": 2,
+      "variant": "B"
+    },
+    {
+      "caseId": "20",
+      "turn": 2,
+      "variant": "A"
+    }
+  ],
+  "manifestHash": "cde9279992f50a407fe8fd53d66e1841c02afcc15feb86b08082953fd5364fa5",
+  "inferenceStarted": false,
+  "url": "https://morada-mora-lsr2067ka-dianaporschke-1255s-projects.vercel.app",
+  "startedAt": "2026-10-20T21:13:03.654430+00:00",
+  "rows": [
+    {
+      "caseId": "01",
+      "variant": "A",
+      "turn": 1,
+      "message": "lampe kaputt",
+      "applicationStatus": 200,
+      "result": {
+        "reply": "\n\nGrüezi!\n\nEs tut mir leid, dass Sie ein Problem mit einer Lampe haben. Damit ich Ihnen weiterhelfen kann, wäre es gut zu wissen: Sind Sie Mieter oder Eigentümer der Immobilie?\n\nZudem ist wichtig zu erfahren, um Handelt es sich um eine Lampe im Inneren der Wohnung oder im Aussenbereich?\n\nBitte gehen Sie vorsichtig mit der defekten Lampe um, falls Sie beschädigte Kabel oder elektrische Teile sehen. Berühren Sie nichts, bei dem Sie unsicher sind.\n\nIch kann Ihnen zwar keine verbindlichen Zusagen zur Kostenübernahme machen, aber wir können gemeinsam prüfen, wie am besten vorgegangen wird. Wären Sie so nett, mir ein paar Details zur Situation zu geben?",
+        "actions": [],
+        "issues": [],
+        "responseMode": "model",
+        "modelUsage": {
+          "inputTokens": 158,
+          "inputTokenDetails": {
+            "noCacheTokens": 158,
+            "cacheReadTokens": 0
+          },
+          "outputTokens": 1185,
+          "outputTokenDetails": {
+            "textTokens": 145,
+            "reasoningTokens": 1040
+          },
+          "totalTokens": 1343,
+          "raw": {
+            "prompt_tokens": 158,
+            "completion_tokens": 1185,
+            "total_tokens": 1343,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 1040
+            }
+          }
+        }
+      },
+      "trace": [],
+      "logs": [],
+      "elapsedMs": 7571,
+      "replyOrigin": {
+        "type": "application_or_error"
+      },
+      "reservedUsd": 0,
+      "completedRequests": 1,
+      "totalRequests": 104,
+      "fatal": false,
+      "budgetStop": false,
+      "sentAt": "2026-10-20T21:13:03.655191+00:00",
+      "wallMs": 11934
+    }
+  ],
+  "costs": [],
+  "complete": false,
+  "method": {
+    "order": "alternating AB/BA per case, interleaved per customer turn",
+    "fixedCustomerMessages": true,
+    "modelRetries": 0,
+    "externalGenerationRetries": 0,
+    "pacingOutsideMeasuredRequests": true,
+    "minimumRequestIntervalSeconds": 35,
+    "maximumReservedGenerationsPerMinute": 5,
+    "B": "unmodified production createChatHandler + application modules; read-only transport observation",
+    "A": "short system prompt + text output, no application dialogue/action logic"
+  },
+  "pilotOnly": true,
+  "stop": {
+    "reason": "A transport observer bypassed by explicit native fetch; no quality tuning; measurement repaired before main comparison"
+  }
+}

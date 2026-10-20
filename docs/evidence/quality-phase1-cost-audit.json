@@ -1,0 +1,33 @@
+{
+  "inferenceStarted": false,
+  "costs": [
+    {
+      "id": "gen_01M5DM0Q4VDYRPS9P4B7S7Q8QT",
+      "info": {
+        "id": "gen_01M5DM0Q4VDYRPS9P4B7S7Q8QT",
+        "usage": 0.00025014,
+        "model": "inception/mercury-2.5",
+        "streamed": false,
+        "latency": 7148,
+        "totalCost": 0.00025014,
+        "upstreamInferenceCost": 0,
+        "createdAt": "2026-10-20T21:38:27.000Z",
+        "isByok": false,
+        "providerName": "inception",
+        "finishReason": "stop",
+        "generationTime": 7148,
+        "promptTokens": 171,
+        "completionTokens": 297,
+        "reasoningTokens": 1325,
+        "cachedTokens": 0,
+        "cacheCreationTokens": 0,
+        "billableWebSearchCalls": 0
+      }
+    }
+  ],
+  "credits": {
+    "balanceUsd": 4.69514627,
+    "totalUsedUsd": 0.30485373,
+    "readAttempts": 1
+  }
+}

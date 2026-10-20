@@ -1,0 +1,108 @@
+{
+  "status": "complete",
+  "sourceCommit": "bcd730adc9b5cd8ae52086c8f9db64be82e2a660",
+  "assessment": "AI review, source inspection and actual transport provenance; no blind human panel",
+  "findings": [
+    {
+      "id": "F01",
+      "evidence": [
+        "01/A",
+        "15/A",
+        "19/A"
+      ],
+      "observation": "Formal wording, repetition and grammatical errors occur in genuine A outputs without local MORA dialogue. External action promises also occur under the short capability-denying prompt.",
+      "certainty": "observed; individual prompt/model causes not separated"
+    },
+    {
+      "id": "F02",
+      "evidence": [
+        "01/B/1"
+      ],
+      "observation": "Both wording candidates ask the useful location question; questionKey null contract rejects them and restores the first genuine model form offer.",
+      "certainty": "actual generations plus validator logs and source path"
+    },
+    {
+      "id": "F03",
+      "evidence": [
+        "03/B/1",
+        "05/B/1",
+        "12/B/1"
+      ],
+      "observation": "Malformed German not/not not not is already present in generated wording JSON, before frontend display.",
+      "certainty": "actual generated text fields"
+    },
+    {
+      "id": "F04",
+      "evidence": [
+        "02/B/2",
+        "02/B/3",
+        "05/B/3",
+        "12/B/3",
+        "16/B/2",
+        "17/B/2"
+      ],
+      "observation": "Accepted visible replies claim an existing/updated draft without a preparation execution or receipt; status remains not_prepared.",
+      "certainty": "actual text and post-turn state; brittle phrase coverage visible in validator"
+    },
+    {
+      "id": "F05",
+      "evidence": [
+        "10/B/1",
+        "10/B/2",
+        "10/B/3"
+      ],
+      "observation": "Local identical safety reply replaces contextual model answer, including a generated instruction to lead child out of room.",
+      "certainty": "actual model candidates, displayed text and safety source"
+    },
+    {
+      "id": "F06",
+      "evidence": [
+        "11/B/3",
+        "16/B/3",
+        "20/B/1"
+      ],
+      "observation": "Unsolicited future contact or maintenance commitments pass existing capability checks without an execution capability.",
+      "certainty": "actual text, absent capability and receipts"
+    },
+    {
+      "id": "F07",
+      "evidence": [
+        "03/B",
+        "04/B",
+        "06/B",
+        "12/B",
+        "16/B",
+        "19/B"
+      ],
+      "observation": "Several fact-state capabilities work: explicit unknown start, room correction, separated problems, unknown cause, added availability and count uncertainty/correction.",
+      "certainty": "actual structured states; does not establish browser handover"
+    },
+    {
+      "id": "F08",
+      "evidence": [
+        "08/A/1"
+      ],
+      "observation": "General Swiss energy-certificate obligation claim conflicts with official GEAK FAQ.",
+      "reference": "https://www.geak.ch/der-geak/faq-zum-geak/",
+      "certainty": "review against primary source"
+    },
+    {
+      "id": "F09",
+      "evidence": [
+        "20/A/1",
+        "20/A/2"
+      ],
+      "observation": "Warning against blanket nonpayment is useful, but rent reduction is wrongly made conditional on unrepaired defect after waiting rather than distinguishing landlord knowledge from payment procedure.",
+      "reference": "https://www.gerichte-zh.ch/de/themen/miete/rechte-und-pflichten/maengel-der-mietsache/mietzinsminderung",
+      "certainty": "review against primary source"
+    },
+    {
+      "id": "F10",
+      "evidence": [
+        "quality-phase1-mapping-inspection.json"
+      ],
+      "observation": "Pure unchanged mapping of real 19/B/2 preserves uncertain count metadata but summary says Anzahl: 2 without uncertainty. Real 01/B/3 maps correctly to light, Wohnzimmer and one.",
+      "certainty": "offline pure-function output from actual live state; no storage/browser/portal execution"
+    }
+  ]
+}

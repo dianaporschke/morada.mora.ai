@@ -1,0 +1,98 @@
+{
+  "sourceCommit": "bcd730adc9b5cd8ae52086c8f9db64be82e2a660",
+  "inferenceStarted": false,
+  "portalWritePerformed": false,
+  "browserPerformed": false,
+  "method": "Offline invocation of unchanged mapping function with actual live issues, no mocked model response",
+  "inspections": [
+    {
+      "caseId": "01",
+      "variant": "B",
+      "turn": 3,
+      "source": "actual saved live response; unchanged pure mapServiceDraft only",
+      "sourceFields": {
+        "equipment": "light",
+        "location": "Wohnzimmer",
+        "count": 1,
+        "countFact": {
+          "status": "known",
+          "value": 1,
+          "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+        },
+        "extent": "1 betroffene Einrichtung(en)"
+      },
+      "mappedFields": {
+        "equipment": "light",
+        "location": "Wohnzimmer",
+        "count": 1,
+        "countFact": {
+          "status": "known",
+          "value": 1,
+          "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+        },
+        "extent": "1 betroffene Einrichtung(en)",
+        "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+      }
+    },
+    {
+      "caseId": "19",
+      "variant": "B",
+      "turn": 2,
+      "source": "actual saved live response; unchanged pure mapServiceDraft only",
+      "sourceFields": {
+        "equipment": "light",
+        "location": "Wohnzimmer",
+        "count": 2,
+        "countFact": {
+          "status": "uncertain",
+          "value": 2,
+          "candidate": null,
+          "source": "Vielleicht ist es doch nur eine. Ich bin mir bei der zweiten nicht sicher."
+        },
+        "extent": "2 betroffene Einrichtung(en)"
+      },
+      "mappedFields": {
+        "equipment": "light",
+        "location": "Wohnzimmer",
+        "count": 2,
+        "countFact": {
+          "status": "uncertain",
+          "value": 2,
+          "candidate": null,
+          "source": "Vielleicht ist es doch nur eine. Ich bin mir bei der zweiten nicht sicher."
+        },
+        "extent": "2 betroffene Einrichtung(en)",
+        "summary": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 2\nBereich: Wohnzimmer\nSeit wann: Montag\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+      }
+    },
+    {
+      "caseId": "19",
+      "variant": "B",
+      "turn": 3,
+      "source": "actual saved live response; unchanged pure mapServiceDraft only",
+      "sourceFields": {
+        "equipment": "light",
+        "location": "Wohnzimmer",
+        "count": 1,
+        "countFact": {
+          "status": "corrected",
+          "value": 1,
+          "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+        },
+        "extent": "1 betroffene Einrichtung(en)"
+      },
+      "mappedFields": {
+        "equipment": "light",
+        "location": "Wohnzimmer",
+        "count": 1,
+        "countFact": {
+          "status": "corrected",
+          "value": 1,
+          "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+        },
+        "extent": "1 betroffene Einrichtung(en)",
+        "summary": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: Montag\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+      }
+    }
+  ]
+}

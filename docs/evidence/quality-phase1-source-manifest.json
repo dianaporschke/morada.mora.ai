@@ -1,0 +1,286 @@
+{
+  "sourceCommit": "bcd730adc9b5cd8ae52086c8f9db64be82e2a660",
+  "sourceTree": "29716b42f7bfffa06f50c260c5a8078772778727",
+  "protectedRefs": {
+    "main": "0b86dfc3344df62d3de02d8297959a495cc822d3",
+    "alex-portal": "15bfa257ddbe312f7f4658b342ec4703b869b90e"
+  },
+  "existingPreview": {
+    "id": "dpl_7rh6XJY1DW8LUXC2eKboKtAtmLf4",
+    "sourceCommit": "6ef24cda89f2d4d0cab0fdf9ba28234a387bc336",
+    "url": "https://morada-mora-hwg0nkuia-dianaporschke-1255s-projects.vercel.app/",
+    "modified": false
+  },
+  "isolatedDeployment": {
+    "id": "dpl_3nVDuzK9HFitFM3HscYXeRVn1RH9",
+    "url": "https://morada-mora-nib2gglmb-dianaporschke-1255s-projects.vercel.app",
+    "target": null,
+    "aliases": []
+  },
+  "unchangedSourceFiles": [
+    {
+      "path": "api/ai-evaluation.js",
+      "sha": "f0c8f400656a3524805d89d6ffdf9cbab84114fa",
+      "bytes": 5555
+    },
+    {
+      "path": "api/chat.js",
+      "sha": "22b8d03c5510e87055e415d916897138a47b3141",
+      "bytes": 6302
+    },
+    {
+      "path": "api/ai-readiness.js",
+      "sha": "3e61ea16df4bdc07991bde47406f51b499f165b9",
+      "bytes": 5091
+    },
+    {
+      "path": "api/requests.js",
+      "sha": "005b5d00d736b04d7ee4f024c30f837823c73688",
+      "bytes": 2594
+    },
+    {
+      "path": "lib/portal/adapter.js",
+      "sha": "ce63095a96ba207f1fdd2cd0bbf6237f48cde8bb",
+      "bytes": 1410
+    },
+    {
+      "path": "lib/mora/equipment.js",
+      "sha": "821700d0184b86b6a0af9f6ca18b844db7c7828d",
+      "bytes": 1030
+    },
+    {
+      "path": "lib/mora/actions.js",
+      "sha": "110d67592a34cdbc799bff731ff262bd52fcd41b",
+      "bytes": 3393
+    },
+    {
+      "path": "lib/mora/context.js",
+      "sha": "12f8795ca556350190d3d8efcb34cc889a4f6834",
+      "bytes": 2578
+    },
+    {
+      "path": "lib/mora/structured.js",
+      "sha": "a8c8f8e9a8ef1add0b618de97c83afc5e165eead",
+      "bytes": 5018
+    },
+    {
+      "path": "lib/mora/understanding.js",
+      "sha": "f55e86cc7fd95e61aefee28e9ff1bcf86c2a33f1",
+      "bytes": 20208
+    },
+    {
+      "path": "lib/mora/dialogue.js",
+      "sha": "3c877897279685d4bb21f0598bee77e050401df9",
+      "bytes": 13380
+    },
+    {
+      "path": "lib/mora/conversation-contract.js",
+      "sha": "c37dfaff10d4324f23d812dd1cb89b3e36df4e9b",
+      "bytes": 1706
+    },
+    {
+      "path": "lib/mora/portal-context.js",
+      "sha": "510825ded77dcf62f86ae10c6fdde75f978f0b1e",
+      "bytes": 1986
+    },
+    {
+      "path": "lib/mora/availability.js",
+      "sha": "df9c793e5c441920617b1afe3fb0d26fc1653bbe",
+      "bytes": 3085
+    },
+    {
+      "path": "lib/mora/reply.js",
+      "sha": "ffbdc55c5ab6009211bd9f8d052a275a18b911eb",
+      "bytes": 10570
+    },
+    {
+      "path": "lib/mora/engine.js",
+      "sha": "b033a6ce95de8f312d4831166f2c035fac2a5e7e",
+      "bytes": 23888
+    },
+    {
+      "path": "lib/mora/guided.js",
+      "sha": "a8be66a9e099448cae6250aec32d698e26534332",
+      "bytes": 13422
+    },
+    {
+      "path": "lib/mora/safety.js",
+      "sha": "c19d29ba3b43fc54fb8415ace045de521709482c",
+      "bytes": 8273
+    },
+    {
+      "path": "lib/mora/issue-state.js",
+      "sha": "51ad8f64526306b72c642dbdaf1dfebb7ab7d623",
+      "bytes": 6574
+    },
+    {
+      "path": "lib/mora/provider.js",
+      "sha": "b52ce0e12fa323e86ed13914ad11b6c018ba8eb1",
+      "bytes": 5191
+    },
+    {
+      "path": "lib/mora/session.js",
+      "sha": "35cc93784a4243940c5828a27a54c7440bb8932b",
+      "bytes": 2997
+    },
+    {
+      "path": "lib/mora/instructions.js",
+      "sha": "31ec33d16f3fcc861f61bedfbbea8dde8283caae",
+      "bytes": 12769
+    },
+    {
+      "path": "lib/mora/costs.js",
+      "sha": "e8b8a155540d53f20f3967cbf47c99950692774d",
+      "bytes": 1370
+    },
+    {
+      "path": "lib/mora/knowledge.js",
+      "sha": "dc500b4bdfbc8fdd11f4814c6ba0c84d459c0ba8",
+      "bytes": 618
+    },
+    {
+      "path": "lib/mora/schema.js",
+      "sha": "adb36eef55fe207c8f3cbf96ebaf05e96f5b6e63",
+      "bytes": 11479
+    },
+    {
+      "path": "assets/mora-client.js",
+      "sha": "f8f2b7793e9061615986bdfd5771e9612bfb5af2",
+      "bytes": 28556
+    },
+    {
+      "path": "assets/mora.css",
+      "sha": "cb32c2e4e85fbea90fa30693382c77d035a556b9",
+      "bytes": 5526
+    },
+    {
+      "path": "assets/mora-data.js",
+      "sha": "9cf6664a25034bdcf60d232d697944f48f202ae1",
+      "bytes": 10190
+    },
+    {
+      "path": "package.json",
+      "sha": "dd4e5361730949c334ee17f943d1c1c241c838fb",
+      "bytes": 1109
+    },
+    {
+      "path": "package-lock.json",
+      "sha": "9ab9c74d260cdb6b749b5f2005d850f9126f1607",
+      "bytes": 46742
+    },
+    {
+      "path": "index.html",
+      "sha": "aa414dbed6966e682ac61bb624c0a56e5bef476d",
+      "bytes": 29219
+    },
+    {
+      "path": "vercel.json",
+      "sha": "52c4bbd5a2671f977c721ed3adf6bfac7ab78c55",
+      "bytes": 317
+    },
+    {
+      "path": "scripts/build.mjs",
+      "sha": "c91d0b5be448538447888882e86e382436ab70f2",
+      "bytes": 417
+    },
+    {
+      "path": "scripts/check.mjs",
+      "sha": "03fa9e122bc11b66a9a53c95f3ea0e12c7f91864",
+      "bytes": 1321
+    },
+    {
+      "path": "scripts/premium-cases.json",
+      "sha": "3e53bf2210872f39c8edf8f716a8d895acadbdbb",
+      "bytes": 7947
+    }
+  ],
+  "comparisonChanges": {
+    "productSourceFiles": [],
+    "testBundleOnly": [
+      "api/quality-phase1.js (thin import)",
+      "vercel.json (60-second duration for test route)",
+      "scripts/quality-phase1/server.js",
+      "scripts/quality-phase1/cases.json"
+    ]
+  },
+  "costBoundary": {
+    "baselineTeamUsedUsd": 0.268472694,
+    "maxAdditionalUsd": 0.5,
+    "minBalanceReserveUsd": 0.25,
+    "model": "inception/mercury-2.5",
+    "liveInputPriceUsdPerToken": 4e-08,
+    "liveOutputPriceUsdPerToken": 1.5e-07,
+    "creditEvidence": "MORA_MERCURY_LIVE_VERIFICATION.md: historical Free AI Credit proof; current credit audit sum remains 5 USD",
+    "paidSettingsChanged": false,
+    "newCredentialsCreated": false
+  },
+  "observability": "Ordinary per-generation lookup only; no Custom Reporting tags or paid metrics.",
+  "finalIsolationCheck": "docs/evidence/quality-phase1-isolation-check.json",
+  "isolatedDeploymentVersions": [
+    {
+      "id": "dpl_K549T8LahJ9D1BLsmh415WtgnEz8",
+      "purpose": "single-response instrumentation pilot",
+      "target": null,
+      "aliases": []
+    },
+    {
+      "id": "dpl_3nVDuzK9HFitFM3HscYXeRVn1RH9",
+      "purpose": "main comparison before read-only credit retry",
+      "target": null,
+      "aliases": []
+    },
+    {
+      "id": "dpl_EV3Ykr5KvWu9QgfK2DsdrYnRUNcj",
+      "url": "morada-mora-pxqtsbnap-dianaporschke-1255s-projects.vercel.app",
+      "purpose": "same frozen application; bounded read-only credit retry and documented replacement",
+      "target": null,
+      "aliases": []
+    }
+  ],
+  "projectConfigurationChecks": [
+    {
+      "field": "id",
+      "unchanged": true
+    },
+    {
+      "field": "name",
+      "unchanged": true
+    },
+    {
+      "field": "framework",
+      "unchanged": true
+    },
+    {
+      "field": "accountId",
+      "unchanged": true
+    },
+    {
+      "field": "nodeVersion",
+      "unchanged": true
+    },
+    {
+      "field": "domains",
+      "unchanged": true
+    },
+    {
+      "field": "passwordProtection",
+      "unchanged": true
+    },
+    {
+      "field": "ssoProtection",
+      "unchanged": true
+    },
+    {
+      "field": "trustedIps",
+      "unchanged": true
+    },
+    {
+      "field": "live",
+      "unchanged": true
+    }
+  ],
+  "frozenSourceFinalCheck": {
+    "files": 35,
+    "mismatches": []
+  }
+}
