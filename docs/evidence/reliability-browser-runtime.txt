@@ -1,0 +1,28 @@
+## Runtime Logs
+
+**Project:** prj_vI6F07O5rdsXOdFlinN4kHAR1Nvd
+**Deployment:** dpl_4Y4L2Rddv4WyGLzcZrKPrT91GTJj
+**Time range:** 2026-10-20T11:21:13.222Z → 2026-10-20T11:36:13.222Z
+
+### 2026-10-20T11:33:41.640Z POST /api/chat [info/function]
+dep=dpl_4Y4L2Rddv4WyGLzcZrKPrT91GTJj branch=codex/mora-ai-2.0 request=7gdnz-1792496021570-2f6a0cce5fe1 domain=morada-mora-dmj4rphbr-dianaporschke-1255s-projects.vercel.app environment=preview region=cle1 runtime=nodejs24.x stream=stdout
+    MORA turn timing {
+      total: 1,
+      model: 0,
+      application: 1,
+      modelCalls: 0,
+      responseMode: 'engine',
+      architecture: 'legacy_or_safety'
+    }
+
+### 2026-10-20T11:32:49.591Z POST /api/chat [info/function]
+dep=dpl_4Y4L2Rddv4WyGLzcZrKPrT91GTJj branch=codex/mora-ai-2.0 request=5dj8v-1792495961074-eba1d7a042e7 domain=morada-mora-dmj4rphbr-dianaporschke-1255s-projects.vercel.app environment=preview region=cle1 runtime=nodejs24.x stream=stdout
+    MORA turn timing {
+      total: 8455,
+      model: 8446,
+      application: 9,
+      modelCalls: 2,
+      responseMode: 'model',
+      architecture: 'single_generation'
+    }
+

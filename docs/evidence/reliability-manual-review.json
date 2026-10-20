@@ -1,0 +1,31 @@
+{
+  "synthetic": true,
+  "completeRun": "reliability-live-complete.json",
+  "targetedRun": "reliability-live-final-targeted.json",
+  "review": "Automated mapping equality is separate from semantic completeness and truthful wording.",
+  "findings": [
+    {
+      "case": "01",
+      "run": "complete",
+      "finding": "Explicit no further symptoms omitted from details although retained in source audit. Fixed with conservative explicit-observation mapping; targeted case01 confirms field preservation."
+    },
+    {
+      "case": "10",
+      "run": "complete",
+      "finding": "Premature Serviceformular preparation and shipment-after-click claim passed the old wording checks. Added inverted-preparation and nominal-delivery checks; targeted case10 has truthful preparation wording and one stable draft."
+    },
+    {
+      "case": "01",
+      "run": "targeted",
+      "finding": "Model instructs customer to confirm shipment with a click. This is a semantic language failure despite HTTP200 and mapping checks. Final functional commit 8ed88f22d5357ef2439c748e429a2b010e59e3c2 blocks affirmative transaction instructions; regression uses this observed formulation."
+    },
+    {
+      "case": "09",
+      "run": "complete",
+      "finding": "Confirmed count1 retained with status uncertain after maybe two; no unsupported replacement. Other-room and separate-issue time assignments also reviewed."
+    }
+  ],
+  "limitations": "Natural language can still be formulaic or require a technical recovery. No claim of passed premium conversation acceptance. Final browser proof recorded separately.",
+  "finalBrowser": "reliability-browser-proof.json",
+  "finalBrowserResult": "Actual light/room/defect/count/start/negative observations verified; same single draft survives reload; truthful local-only model reply on final functional commit."
+}
