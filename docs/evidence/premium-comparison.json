@@ -1,0 +1,142 @@
+{
+  "beforeSources": [
+    "docs/evidence/premium-before.json",
+    "docs/evidence/premium-before-rest.json"
+  ],
+  "afterSources": [
+    "docs/evidence/premium-after.json",
+    "docs/evidence/premium-final-flood.json"
+  ],
+  "before": {
+    "attemptedCases": 34,
+    "normalCases": 30,
+    "normalTurns": 40,
+    "genuineReplies": 38,
+    "safetyWordedReplies": 5,
+    "localSafetyReplies": 4,
+    "modelTriggeredSafetyReplies": 1,
+    "normalCasesWithSafetyWording": [],
+    "normalFailedCases": [
+      "05",
+      "27"
+    ],
+    "normalFailures": [
+      {
+        "caseId": "05",
+        "turn": 2,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": null,
+          "reason": "invalid_model_output"
+        }
+      },
+      {
+        "caseId": "27",
+        "turn": 2,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": 400,
+          "reason": "unavailable"
+        }
+      }
+    ],
+    "formulaicStartSignals": 22,
+    "draftMentionSignals": 19,
+    "handoverOrFormMentionSignals": 19,
+    "multipleQuestionMarkSignals": 1,
+    "repliesWithActions": 24,
+    "medianServerSeconds": 4.769,
+    "medianTestClientSeconds": 10.9595,
+    "medianInputTokens": 3602.0,
+    "medianOutputTokens": 1956.5,
+    "twoCallReplies": 7
+  },
+  "after": {
+    "attemptedCases": 34,
+    "normalCases": 30,
+    "normalTurns": 40,
+    "genuineReplies": 35,
+    "safetyWordedReplies": 7,
+    "localSafetyReplies": 5,
+    "modelTriggeredSafetyReplies": 2,
+    "normalCasesWithSafetyWording": [
+      "07"
+    ],
+    "normalFailedCases": [
+      "13",
+      "21",
+      "27"
+    ],
+    "normalFailures": [
+      {
+        "caseId": "13",
+        "turn": 1,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": null,
+          "reason": "invalid_model_output"
+        }
+      },
+      {
+        "caseId": "21",
+        "turn": 1,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": null,
+          "reason": "invalid_model_output"
+        }
+      },
+      {
+        "caseId": "27",
+        "turn": 2,
+        "availability": {
+          "provider": "gateway",
+          "model": "inception/mercury-2.5",
+          "status": 400,
+          "reason": "unavailable"
+        }
+      }
+    ],
+    "formulaicStartSignals": 20,
+    "draftMentionSignals": 2,
+    "handoverOrFormMentionSignals": 19,
+    "multipleQuestionMarkSignals": 10,
+    "repliesWithActions": 21,
+    "medianServerSeconds": 5.258,
+    "medianTestClientSeconds": 10.558,
+    "medianInputTokens": 1964,
+    "medianOutputTokens": 1984,
+    "twoCallReplies": 6
+  },
+  "pairedSuccessfulModelTurns": {
+    "before": {
+      "count": 34,
+      "medianServerSeconds": 4.9585,
+      "medianTestClientSeconds": 10.9805,
+      "knownUncachedUsd": 0.01757231,
+      "knownCacheAdjustedUsd": 0.015679033999999998
+    },
+    "after": {
+      "count": 34,
+      "medianServerSeconds": 5.0645,
+      "medianTestClientSeconds": 10.5415,
+      "knownUncachedUsd": 0.014632639999999999,
+      "knownCacheAdjustedUsd": 0.01384784
+    }
+  },
+  "allComparisonRequests": 92,
+  "requestsWithKnownUsage": 75,
+  "knownUncachedComparisonUsd": 0.0362042,
+  "knownCacheAdjustedComparisonUsd": 0.033157376,
+  "limitations": [
+    "One stochastic run per version, not a controlled benchmark or SLA.",
+    "Local safety responses and errors excluded from model speech/paired speed.",
+    "Signals count phrases, not semantic quality; read transcripts and manual review.",
+    "Costs use 2026-10-20 public promotional rates, omit unknown failed usage and hosting, not an invoice.",
+    "Client timing includes the test transport/proxy, not browser display time."
+  ]
+}

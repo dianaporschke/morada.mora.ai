@@ -1,0 +1,75 @@
+{
+  "url": "https://morada-mora-bqzjjyarz-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-2.5",
+  "sourceCommit": "e39c160063df50464826595f2588649a83545a59",
+  "reasoning": "local safety; no model call expected",
+  "intervalSeconds": 25.0,
+  "cases": 1,
+  "rows": [
+    {
+      "caseId": "S3",
+      "case": "Starker Wasseraustritt",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:17:44.705484+00:00",
+      "message": "Aus der Leitung schiesst unkontrolliert Wasser und der Boden steht schon unter Wasser.",
+      "status": 200,
+      "seconds": 3.818,
+      "reply": "Bei starkem Wasseraustritt halten Sie Abstand zu elektrischen Geräten und nassen Leitungen. Stoppen Sie die Wasserzufuhr nur, wenn das gefahrlos möglich ist. Bei unmittelbarer Gefahr rufen Sie 112 an; warten Sie nicht auf das Portal.\n\nDie Angaben sind im Chat aufgenommen. Ein Anliegenentwurf ersetzt keinen Notruf oder direkten Kontakt.",
+      "responseMode": "safety",
+      "understanding": "safety",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        },
+        {
+          "id": "add-details",
+          "label": "Noch etwas ergänzen",
+          "variant": "secondary",
+          "type": "add_details"
+        },
+        {
+          "id": "attach-photo",
+          "label": "Foto hinzufügen",
+          "variant": "secondary",
+          "type": "attachment"
+        }
+      ],
+      "activeIssueId": "a6f5f96a-c3bc-459a-a366-6be1dbd5eac9",
+      "issues": [
+        {
+          "id": "a6f5f96a-c3bc-459a-a366-6be1dbd5eac9",
+          "equipment": "leak",
+          "category": "water",
+          "description": "Aus der Leitung schiesst unkontrolliert Wasser und der Boden steht schon unter Wasser.",
+          "defect": null,
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "water",
+          "urgency": "high",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 22,
+        "model": 0,
+        "application": 22
+      },
+      "modelCalls": 0,
+      "modelUsage": null,
+      "modelAvailability": null,
+      "evaluation": null,
+      "checks": [
+        "Sicherheit vor Aufnahme",
+        "kein Fotozwang"
+      ]
+    }
+  ]
+}

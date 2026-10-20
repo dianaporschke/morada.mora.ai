@@ -45,3 +45,17 @@ test('Synthetic evaluation keeps model selection local and binds every turn to i
   assert.equal(second.statusCode,200);assert.deepEqual(messages,['Meine Lampe geht nicht.','wohnzimmer']);
   assert.deepEqual(models,['openai/gpt-6-luna','openai/gpt-6-luna']);assert.equal(second.body.evaluation.synthetic,true);
 });
+
+test('Plain dialogue control contains no extraction schema or executable actions and cannot cross into structured sessions',async()=>{
+  let calls=0;
+  const handler=createEvaluationHandler({env:{...preview,AI_GATEWAY_API_KEY:'synthetic-test-credential'},generate:async options=>{
+    calls++;assert.equal(options.model.modelId,'inception/mercury-2.5');assert.doesNotMatch(options.instructions,/KLEINE NOTIZEN|"updates"/);
+    assert.equal(options.tools,undefined);assert.equal(options.reasoning,'high');
+    return {text:'Synthetische Antwort für den Vertragscheck.',usage:{inputTokens:100,outputTokens:50},finalStep:{providerMetadata:{}}};
+  }});
+  const first=await call(handler,{model:'inception/mercury-2.5',caseId:'01',turn:1,mode:'dialogue_only'});
+  assert.equal(first.statusCode,200);assert.deepEqual(first.body.actions,[]);assert.equal(first.body.evaluation.mode,'dialogue_only');
+  assert.equal((await call(handler,{model:'inception/mercury-2.5',caseId:'01',turn:2,session:first.body.session})).statusCode,409);
+  const second=await call(handler,{model:'inception/mercury-2.5',caseId:'01',turn:2,mode:'dialogue_only',session:first.body.session});
+  assert.equal(second.statusCode,200);assert.equal(calls,2);assert.equal(preview.AI_GATEWAY_MODEL,'inception/mercury-2.5');
+});

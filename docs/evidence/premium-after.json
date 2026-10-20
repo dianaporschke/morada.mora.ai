@@ -1,0 +1,2349 @@
+{
+  "url": "https://morada-mora-jdc7em8qi-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-2.5",
+  "sourceCommit": "5b1bca406c872177e604f7943047e7b156454a12",
+  "reasoning": "high (SDK7 top-level)",
+  "intervalSeconds": 25.0,
+  "cases": 34,
+  "rows": [
+    {
+      "caseId": "01",
+      "case": "Lampe und kurze Antwort",
+      "turn": 1,
+      "startedAt": "2026-10-20T09:55:40.202644+00:00",
+      "message": "Meine Lampe geht nicht.",
+      "status": 200,
+      "seconds": 11.662,
+      "reply": "Es tut mir leid, dass Ihre Lampe nicht funktioniert. Damit wir den Schaden richtig einordnen können, brauche ich noch ein paar Details. In welchem Raum befindet sich die Lampe und um welche Art handelt es sich (z. B. Deckenlampe, Stehlampe oder Tischleuchte)? Gerne können Sie Ihre Angaben auch direkt im Serviceformular eingeben.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "c8837c6f-d399-4df6-9fc3-b630d724509b",
+      "issues": [
+        {
+          "id": "c8837c6f-d399-4df6-9fc3-b630d724509b",
+          "equipment": "unknown",
+          "category": "electricity",
+          "description": "Meine Lampe geht nicht.",
+          "defect": "Lampe funktioniert nicht",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 5454,
+        "model": 5438,
+        "application": 16
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1969,
+        "outputTokens": 2624,
+        "reasoningTokens": 2417,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "natürliche Rückfrage statt Formular",
+        "Wohnzimmer am selben Anliegen",
+        "kein wiederholtes Entwurfsangebot"
+      ]
+    },
+    {
+      "caseId": "01",
+      "case": "Lampe und kurze Antwort",
+      "turn": 2,
+      "startedAt": "2026-10-20T09:56:05.202778+00:00",
+      "message": "wohnzimmer",
+      "status": 200,
+      "seconds": 10.558,
+      "reply": "Vielen Dank. Können Sie mir noch sagen, um welche Art von Lampe es sich handelt? (z. B. Deckenlampe, Stehlampe oder Tischleuchte)",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "c8837c6f-d399-4df6-9fc3-b630d724509b",
+      "issues": [
+        {
+          "id": "c8837c6f-d399-4df6-9fc3-b630d724509b",
+          "equipment": "unknown",
+          "category": "electricity",
+          "description": "Meine Lampe geht nicht.",
+          "defect": "Lampe funktioniert nicht",
+          "count": null,
+          "location": "wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4341,
+        "model": 4340,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2120,
+        "outputTokens": 2033,
+        "reasoningTokens": 1854,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "natürliche Rückfrage statt Formular",
+        "Wohnzimmer am selben Anliegen",
+        "kein wiederholtes Entwurfsangebot"
+      ]
+    },
+    {
+      "caseId": "02",
+      "case": "Vollständige Fakten und Korrektur",
+      "turn": 1,
+      "startedAt": "2026-10-20T09:56:30.202918+00:00",
+      "message": "Seit gestern gehen drei Steckdosen im Wohnzimmer nicht.",
+      "status": 200,
+      "seconds": 10.525,
+      "reply": "Guten Tag. Danke für Ihre Meldung zu den drei Steckdosen im Wohnzimmer, die seit gestern nicht mehr funktionieren. Ich habe das notiert. Um die Dringlichkeit besser einzuschätzen: Haben Sie beim Versuch, sie zu nutzen, Geruch, Wärme oder andere Auffälligkeiten wahrgenommen? Ich kann Ihnen gerne das Serviceformular zur Prüfung öffnen, falls Sie möchten.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "b2c02ea4-93c9-4de9-998b-aef0dd6a1293",
+      "issues": [
+        {
+          "id": "b2c02ea4-93c9-4de9-998b-aef0dd6a1293",
+          "equipment": "unknown",
+          "category": "electricity",
+          "description": "Seit gestern gehen drei Steckdosen im Wohnzimmer nicht.",
+          "defect": "Steckdosen funktionieren nicht",
+          "count": 3,
+          "location": "Wohnzimmer",
+          "since": "gestern",
+          "extent": "3 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4489,
+        "model": 4489,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1956,
+        "outputTokens": 2126,
+        "reasoningTokens": 1905,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Beginn gestern erhalten",
+        "Anzahl zwei und Schlafzimmer ersetzen frühere Werte",
+        "keine bekannte Angabe erneut fragen"
+      ]
+    },
+    {
+      "caseId": "02",
+      "case": "Vollständige Fakten und Korrektur",
+      "turn": 2,
+      "startedAt": "2026-10-20T09:56:55.203049+00:00",
+      "message": "Nein, zwei im Schlafzimmer.",
+      "status": 200,
+      "seconds": 18.219,
+      "reply": "Vielen Dank für die Berichtigung. Ich habe notiert, dass zwei Steckdosen im Schlafzimmer seit gestern nicht funktionieren. Gibt es weitere Details, die ich für das Serviceformular eintragen soll?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "b2c02ea4-93c9-4de9-998b-aef0dd6a1293",
+      "issues": [
+        {
+          "id": "b2c02ea4-93c9-4de9-998b-aef0dd6a1293",
+          "equipment": "unknown",
+          "category": "electricity",
+          "description": "Noch unklar\nSteckdosen funktionieren nicht\nBereich: Schlafzimmer\nAnzahl: 2\nUmfang / Situation: 2 betroffene Einrichtung(en)\nSeit wann: gestern\nDringlichkeit: Normal",
+          "defect": "Steckdosen funktionieren nicht",
+          "count": 2,
+          "location": "Schlafzimmer",
+          "since": "gestern",
+          "extent": "2 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 12187,
+        "model": 12187,
+        "application": 0
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 4230,
+        "outputTokens": 5214,
+        "reasoningTokens": 4842,
+        "cachedInputTokens": 741
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Beginn gestern erhalten",
+        "Anzahl zwei und Schlafzimmer ersetzen frühere Werte",
+        "keine bekannte Angabe erneut fragen"
+      ]
+    },
+    {
+      "caseId": "03",
+      "case": "Dialekt und unbekannte Ursache",
+      "turn": 1,
+      "startedAt": "2026-10-20T09:57:30.339272+00:00",
+      "message": "bi mir tropfts unterm lavabo, weiss nöd warum",
+      "status": 200,
+      "seconds": 9.223,
+      "reply": "Danke für Ihre Meldung. Damit wir das Tropfen unter dem Waschbecken prüfen können, brauchen wir noch ein paar Details. Wissen Sie seit wann es tropft? Ich kann Ihnen gerne das Serviceformular öffnen, um den Vorgang zu erfassen.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "dd85c54a-ff34-4802-861e-8aa4ac1eb38b",
+      "issues": [
+        {
+          "id": "dd85c54a-ff34-4802-861e-8aa4ac1eb38b",
+          "equipment": "waschbecken",
+          "category": "water",
+          "description": "bi mir tropfts unterm lavabo, weiss nöd warum",
+          "defect": "tropft unter dem lavabo",
+          "count": null,
+          "location": "unter dem lavabo",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4020,
+        "model": 4019,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1937,
+        "outputTokens": 1812,
+        "reasoningTokens": 1588,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "keine erfundene Rohrdiagnose",
+        "unbekannte Ursache getrennt",
+        "ein Anliegen mit Bad und Beginn"
+      ]
+    },
+    {
+      "caseId": "03",
+      "case": "Dialekt und unbekannte Ursache",
+      "turn": 2,
+      "startedAt": "2026-10-20T09:57:55.339415+00:00",
+      "message": "im bad, sit hütt am morge",
+      "status": 200,
+      "seconds": 10.198,
+      "reply": "Vielen Dank für die Informationen. Es tropft also im Bad seit heute Morgen. Möchten Sie, dass ich das Serviceformular öffnet, damit wir den Auftrag weiter bearbeiten können?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "dd85c54a-ff34-4802-861e-8aa4ac1eb38b",
+      "issues": [
+        {
+          "id": "dd85c54a-ff34-4802-861e-8aa4ac1eb38b",
+          "equipment": "waschbecken",
+          "category": "water",
+          "description": "bi mir tropfts unterm lavabo, weiss nöd warum",
+          "defect": "tropft unter dem lavabo",
+          "count": null,
+          "location": "im Bad",
+          "since": "heute Morgen",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4805,
+        "model": 4803,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2073,
+        "outputTokens": 1996,
+        "reasoningTokens": 1801,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "keine erfundene Rohrdiagnose",
+        "unbekannte Ursache getrennt",
+        "ein Anliegen mit Bad und Beginn"
+      ]
+    },
+    {
+      "caseId": "04",
+      "case": "Unbekannter Beginn",
+      "turn": 1,
+      "startedAt": "2026-10-20T09:58:20.339547+00:00",
+      "message": "Die Heizung im Schlafzimmer bleibt kalt.",
+      "status": 200,
+      "seconds": 12.357,
+      "reply": "Vielen Dank für Ihre Meldung. Um das Anliegen richtig einzuordnen: Seit wann ist die Heizung im Schlafzimmer kalt? Ist nur dieses Gerät betroffen oder mehrere? Gerne können Sie die Angaben direkt im Serviceformular zur Prüfung öffnen.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "de2b0d0c-0ddc-4e5e-a010-2d38e7cb63d9",
+      "issues": [
+        {
+          "id": "de2b0d0c-0ddc-4e5e-a010-2d38e7cb63d9",
+          "equipment": "unknown",
+          "category": "heating",
+          "description": "Die Heizung im Schlafzimmer bleibt kalt.",
+          "defect": "bleibt kalt",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 6959,
+        "model": 6958,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1902,
+        "outputTokens": 2166,
+        "reasoningTokens": 1961,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Beginn unbekannt",
+        "keine erneute Beginnfrage"
+      ]
+    },
+    {
+      "caseId": "04",
+      "case": "Unbekannter Beginn",
+      "turn": 2,
+      "startedAt": "2026-10-20T09:58:45.339737+00:00",
+      "message": "Keine Ahnung seit wann, ich war eine Woche weg.",
+      "status": 200,
+      "seconds": 21.009,
+      "reply": "Kein Problem, dass Sie den Zeitpunkt nicht wissen. Heizen andere Heizkörper in der Wohnung normal? Falls nein, könnte es ein allgemeines Problem sein. Falls ja, betrifft es nur dieses Gerät.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "de2b0d0c-0ddc-4e5e-a010-2d38e7cb63d9",
+      "issues": [
+        {
+          "id": "de2b0d0c-0ddc-4e5e-a010-2d38e7cb63d9",
+          "equipment": "unknown",
+          "category": "heating",
+          "description": "Die Heizung im Schlafzimmer bleibt kalt.",
+          "defect": "bleibt kalt",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [
+            "since"
+          ],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 15936,
+        "model": 15934,
+        "application": 2
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 4323,
+        "outputTokens": 4438,
+        "reasoningTokens": 4056,
+        "cachedInputTokens": 770
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Beginn unbekannt",
+        "keine erneute Beginnfrage"
+      ]
+    },
+    {
+      "caseId": "05",
+      "case": "Zwei Schäden getrennt",
+      "turn": 1,
+      "startedAt": "2026-10-20T09:59:16.620467+00:00",
+      "message": "Meine Heizung funktioniert nicht und im Badezimmer tropft Wasser.",
+      "status": 200,
+      "seconds": 9.756,
+      "reply": "Guten Tag, vielen Dank für Ihre Meldung. Ich habe notiert, dass Ihre Heizung nicht funktioniert und im Badezimmer Wasser tropft. Möchten Sie, dass ich ein Serviceformular dafür vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "04597241-203b-40d1-a02c-d97e0db12d53",
+      "issues": [
+        {
+          "id": "04597241-203b-40d1-a02c-d97e0db12d53",
+          "equipment": "unknown",
+          "category": "heating",
+          "description": "Meine Heizung funktioniert nicht",
+          "defect": "funktioniert nicht",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        },
+        {
+          "id": "397305ae-05f8-49d5-b897-51cafe1bba8e",
+          "equipment": "unknown",
+          "category": "water",
+          "description": "im Badezimmer tropft Wasser",
+          "defect": "tropft Wasser",
+          "count": null,
+          "location": "Badezimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4571,
+        "model": 4569,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1896,
+        "outputTokens": 1960,
+        "reasoningTokens": 1756,
+        "cachedInputTokens": 739
+      },
+      "modelAvailability": null,
+      "checks": [
+        "zwei getrennte Anliegen",
+        "keine Badezimmerzuordnung zur Heizung",
+        "Korrekte Zuordnung im zweiten Turn"
+      ]
+    },
+    {
+      "caseId": "05",
+      "case": "Zwei Schäden getrennt",
+      "turn": 2,
+      "startedAt": "2026-10-20T09:59:41.620654+00:00",
+      "message": "Die Heizung ist im Wohnzimmer. Beim Wasser ist es seit heute Morgen.",
+      "status": 200,
+      "seconds": 10.776,
+      "reply": "Besten Dank für die Angaben. Ich habe notiert, dass die Heizung im Wohnzimmer steht und das Wasser im Badezimmer seit heute Morgen tropft. Möchten Sie, dass ich das Serviceformular nun für Sie vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "04597241-203b-40d1-a02c-d97e0db12d53",
+      "issues": [
+        {
+          "id": "04597241-203b-40d1-a02c-d97e0db12d53",
+          "equipment": "unknown",
+          "category": "heating",
+          "description": "Meine Heizung funktioniert nicht",
+          "defect": "funktioniert nicht",
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        },
+        {
+          "id": "397305ae-05f8-49d5-b897-51cafe1bba8e",
+          "equipment": "unknown",
+          "category": "water",
+          "description": "im Badezimmer tropft Wasser",
+          "defect": "tropft Wasser",
+          "count": null,
+          "location": "Badezimmer",
+          "since": "heute Morgen",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 5679,
+        "model": 5678,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2100,
+        "outputTokens": 2302,
+        "reasoningTokens": 2185,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "zwei getrennte Anliegen",
+        "keine Badezimmerzuordnung zur Heizung",
+        "Korrekte Zuordnung im zweiten Turn"
+      ]
+    },
+    {
+      "caseId": "06",
+      "case": "Themenwechsel und Rückkehr",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:00:06.620785+00:00",
+      "message": "Das Fenster im Schlafzimmer schliesst nicht.",
+      "status": 200,
+      "seconds": 9.084,
+      "reply": "Vielen Dank für Ihre Meldung. Damit wir das Anliegen korrekt erfassen, bräuchten wir noch ein paar Details. Seit wann schliesst das Fenster nicht mehr? Können Sie beschreiben, was genau nicht funktioniert (z. B. Klemmen, Griffprobleme)? Ich kann das Serviceformular für Sie vorbereiten, falls Sie möchten.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "9339f18b-1fc6-45ae-95ff-28ba84e4092b",
+      "issues": [
+        {
+          "id": "9339f18b-1fc6-45ae-95ff-28ba84e4092b",
+          "equipment": "Fenster",
+          "category": "general",
+          "description": "Das Fenster im Schlafzimmer schliesst nicht.",
+          "defect": "schliesst nicht",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 5807,
+        "model": 5806,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1912,
+        "outputTokens": 2037,
+        "reasoningTokens": 1784,
+        "cachedInputTokens": 747
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Dokumentenfrage beantworten ohne erfundenen Zugriff",
+        "Fenster bleibt erhalten",
+        "Montag dem Fenster zuordnen"
+      ]
+    },
+    {
+      "caseId": "06",
+      "case": "Themenwechsel und Rückkehr",
+      "turn": 2,
+      "startedAt": "2026-10-20T10:00:31.620963+00:00",
+      "message": "Wo finde ich eigentlich meinen Mietvertrag?",
+      "status": 200,
+      "seconds": 12.311,
+      "reply": "Leider habe ich keinen direkten Zugriff auf Ihre persönlichen Unterlagen wie den Mietvertrag. In der Regel erhalten Sie diesen bei Vertragsunterzeichnung per Post oder E-Mail. Schauen Sie doch einmal in Ihren Ablagen oder E-Mail-Postfach. Falls Sie das Dokument nicht finden, kann ich Sie gerne an die zuständigen Ansprechpartner weiterleiten.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "9339f18b-1fc6-45ae-95ff-28ba84e4092b",
+      "issues": [
+        {
+          "id": "9339f18b-1fc6-45ae-95ff-28ba84e4092b",
+          "equipment": "Fenster",
+          "category": "general",
+          "description": "Das Fenster im Schlafzimmer schliesst nicht.",
+          "defect": "schliesst nicht",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 8593,
+        "model": 8591,
+        "application": 2
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 4384,
+        "outputTokens": 3619,
+        "reasoningTokens": 3409,
+        "cachedInputTokens": 758
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Dokumentenfrage beantworten ohne erfundenen Zugriff",
+        "Fenster bleibt erhalten",
+        "Montag dem Fenster zuordnen"
+      ]
+    },
+    {
+      "caseId": "06",
+      "case": "Themenwechsel und Rückkehr",
+      "turn": 3,
+      "startedAt": "2026-10-20T10:00:56.621125+00:00",
+      "message": "Zurück zum Fenster: seit Montag.",
+      "status": 200,
+      "seconds": 19.563,
+      "reply": "Vielen Dank für die Rückmeldung. Ich habe notiert, dass das Fenster im Schlafzimmer seit Montag nicht mehr schliesst. Damit wir den Sachverhalt vollständig erfassen, könnten Sie mir noch sagen, was genau nicht funktioniert? (Zum Beispiel: klemmt es, lässt sich der Griff nicht bewegen, ist etwas kaputt?) Sobald ich diese Informationen habe, kann ich das Serviceformular für Sie vorbereiten.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "9339f18b-1fc6-45ae-95ff-28ba84e4092b",
+      "issues": [
+        {
+          "id": "9339f18b-1fc6-45ae-95ff-28ba84e4092b",
+          "equipment": "Fenster",
+          "category": "general",
+          "description": "Das Fenster im Schlafzimmer schliesst nicht.",
+          "defect": "schliesst nicht",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": "seit Montag",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 14442,
+        "model": 14441,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2175,
+        "outputTokens": 2091,
+        "reasoningTokens": 1836,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Dokumentenfrage beantworten ohne erfundenen Zugriff",
+        "Fenster bleibt erhalten",
+        "Montag dem Fenster zuordnen"
+      ]
+    },
+    {
+      "caseId": "07",
+      "case": "Widersprüchlicher Raum",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:01:26.347696+00:00",
+      "message": "Die Steckdose im Wohnzimmer geht nicht.",
+      "status": 200,
+      "seconds": 13.809,
+      "reply": "Bitte halten Sie Abstand zu beschädigten elektrischen Teilen und berühren Sie keine Kabel oder nassen Geräte. Bei unmittelbarer Gefahr rufen Sie von einem sicheren Ort 112 an. Warten Sie nicht auf eine Antwort im Portal.\n\nDie Angaben sind im Chat aufgenommen. Ein Anliegenentwurf ersetzt keinen Notruf oder direkten Kontakt.",
+      "responseMode": "safety",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "emergency-112",
+          "label": "Notruf 112",
+          "variant": "primary",
+          "type": "call",
+          "number": "112"
+        },
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "secondary",
+          "type": "handover"
+        },
+        {
+          "id": "add-details",
+          "label": "Noch etwas ergänzen",
+          "variant": "secondary",
+          "type": "add_details"
+        }
+      ],
+      "activeIssueId": "7cc0b25e-ee0d-4a2b-be9b-3828adea9ce0",
+      "issues": [
+        {
+          "id": "7cc0b25e-ee0d-4a2b-be9b-3828adea9ce0",
+          "equipment": "unknown",
+          "category": "electricity",
+          "description": "Die Steckdose im Wohnzimmer geht nicht.",
+          "defect": "Steckdose geht nicht",
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "electric",
+          "urgency": "emergency",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 8443,
+        "model": 8441,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": null,
+      "modelAvailability": null,
+      "checks": [
+        "Unsicherheit erkennen",
+        "keine sichere Raumbehauptung"
+      ]
+    },
+    {
+      "caseId": "07",
+      "case": "Widersprüchlicher Raum",
+      "turn": 2,
+      "startedAt": "2026-10-20T10:01:51.347905+00:00",
+      "message": "Vielleicht war es doch im Schlafzimmer, bin gerade nicht zuhause.",
+      "status": 200,
+      "seconds": 8.665,
+      "reply": "Bitte halten Sie Abstand zu beschädigten elektrischen Teilen und berühren Sie keine Kabel oder nassen Geräte. Bei unmittelbarer Gefahr rufen Sie von einem sicheren Ort 112 an. Warten Sie nicht auf eine Antwort im Portal.\n\nIch habe die Angaben korrigiert. Die Angaben sind im Chat aufgenommen. Ein Anliegenentwurf ersetzt keinen Notruf oder direkten Kontakt.",
+      "responseMode": "safety",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "emergency-112",
+          "label": "Notruf 112",
+          "variant": "primary",
+          "type": "call",
+          "number": "112"
+        },
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "secondary",
+          "type": "handover"
+        },
+        {
+          "id": "add-details",
+          "label": "Noch etwas ergänzen",
+          "variant": "secondary",
+          "type": "add_details"
+        }
+      ],
+      "activeIssueId": "7cc0b25e-ee0d-4a2b-be9b-3828adea9ce0",
+      "issues": [
+        {
+          "id": "7cc0b25e-ee0d-4a2b-be9b-3828adea9ce0",
+          "equipment": "unknown",
+          "category": "electricity",
+          "description": "Noch unklar\nSteckdose geht nicht\nBereich: Schlafzimmer\nZusatzangaben: bin gerade nicht zuhause\nDringlichkeit: Mögliche akute Gefahr",
+          "defect": "Steckdose geht nicht",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": "bin gerade nicht zuhause",
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "electric",
+          "urgency": "emergency",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 3313,
+        "model": 3312,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": null,
+      "modelAvailability": null,
+      "checks": [
+        "Unsicherheit erkennen",
+        "keine sichere Raumbehauptung"
+      ]
+    },
+    {
+      "caseId": "08",
+      "case": "Unbekanntes Bauteil",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:02:16.348068+00:00",
+      "message": "Das Ding unter dem Lavabo macht komische Geräusche.",
+      "status": 200,
+      "seconds": 13.357,
+      "reply": "Das klingt nach einem technischen Problem. Um das richtig einzuordnen, können Sie mir sagen, um welches Gerät oder Bauteil es unter dem Lavabo handelt? Haben Sie dazu auch Spuren von Wasser oder Feuchtigkeit bemerkt?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "da5566e8-c374-443c-b7c1-d0ebc66ca3b3",
+      "issues": [
+        {
+          "id": "da5566e8-c374-443c-b7c1-d0ebc66ca3b3",
+          "equipment": "unknown",
+          "category": "general",
+          "description": "Das Ding unter dem Lavabo macht komische Geräusche.",
+          "defect": "macht komische Geräusche",
+          "count": null,
+          "location": "unter dem Lavabo",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 8208,
+        "model": 8208,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1922,
+        "outputTokens": 2680,
+        "reasoningTokens": 2499,
+        "cachedInputTokens": 749
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Bauteil nicht erfinden",
+        "kurze hilfreiche Klärung"
+      ]
+    },
+    {
+      "caseId": "09",
+      "case": "Direkter Meldewunsch",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:02:41.480564+00:00",
+      "message": "Die Lampe im Treppenhaus geht gar nicht. Bitte an MORADA melden.",
+      "status": 200,
+      "seconds": 8.597,
+      "reply": "Gerne unterstütze ich Sie dabei. Ich habe ein Serviceformular für den defekten Treppenhausleuchten vorbereitet. Möchten Sie es kurz überprüfen, bevor es lokal gespeichert wird?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "5b0a3f97-da65-4a5e-bd26-afba63f78aa7",
+      "issues": [
+        {
+          "id": "5b0a3f97-da65-4a5e-bd26-afba63f78aa7",
+          "equipment": "unknown",
+          "category": "electricity",
+          "description": "Die Lampe im Treppenhaus geht gar nicht.",
+          "defect": "Lampe geht gar nicht",
+          "count": null,
+          "location": "Treppenhaus",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 3474,
+        "model": 3474,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1951,
+        "outputTokens": 1395,
+        "reasoningTokens": 1228,
+        "cachedInputTokens": 759
+      },
+      "modelAvailability": null,
+      "checks": [
+        "konkreter Defekt",
+        "funktionierender lokaler Übergabebutton",
+        "kein Versand behauptet",
+        "keine optionalen Pflichtfragen"
+      ]
+    },
+    {
+      "caseId": "10",
+      "case": "Meldung abgelehnt",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:03:06.480714+00:00",
+      "message": "Der Geschirrspüler pumpt nicht ab, aber bitte noch nichts melden.",
+      "status": 200,
+      "seconds": 10.378,
+      "reply": "Ich verstehe, dass Sie den Geschirrspüler vorerst nicht melden möchten. Falls Sie später Hilfe brauchen, einfach Bescheid geben.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "375b8368-9459-46ab-9f3b-d09e103b8002",
+      "issues": [
+        {
+          "id": "375b8368-9459-46ab-9f3b-d09e103b8002",
+          "equipment": "Geschirrspüler",
+          "category": "appliances",
+          "description": "Der Geschirrspüler pumpt nicht ab, aber bitte noch nichts melden.",
+          "defect": "pumpt nicht ab",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 5258,
+        "model": 5257,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1964,
+        "outputTokens": 1704,
+        "reasoningTokens": 1573,
+        "cachedInputTokens": 764
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Ablehnung respektieren",
+        "kein wiederholter Entwurfsbutton",
+        "neues Symptom im selben Anliegen"
+      ]
+    },
+    {
+      "caseId": "10",
+      "case": "Meldung abgelehnt",
+      "turn": 2,
+      "startedAt": "2026-10-20T10:03:31.480879+00:00",
+      "message": "Es betrifft nur das Abpumpen.",
+      "status": 200,
+      "seconds": 10.827,
+      "reply": "Verstanden, es betrifft also nur das Abpumpen. Ich warte auf Ihren Bescheid, bevor etwas gemeldet wird.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "375b8368-9459-46ab-9f3b-d09e103b8002",
+      "issues": [
+        {
+          "id": "375b8368-9459-46ab-9f3b-d09e103b8002",
+          "equipment": "Geschirrspüler",
+          "category": "appliances",
+          "description": "Der Geschirrspüler pumpt nicht ab, aber bitte noch nichts melden.",
+          "defect": "pumpt nicht ab",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": "Nur das Abpumpen betroffen.",
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 5756,
+        "model": 5756,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2019,
+        "outputTokens": 1694,
+        "reasoningTokens": 1548,
+        "cachedInputTokens": 0
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Ablehnung respektieren",
+        "kein wiederholter Entwurfsbutton",
+        "neues Symptom im selben Anliegen"
+      ]
+    },
+    {
+      "caseId": "11",
+      "case": "Foto anbieten",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:03:56.481024+00:00",
+      "message": "An der Schlafzimmerwand ist Schimmel. Soll ich ein Foto machen?",
+      "status": 200,
+      "seconds": 10.427,
+      "reply": "Ja, ein Foto ist sehr hilfreich zur Dokumentation. Bitte machen Sie ein klares Bild der betroffenen Stelle. Ich kann das Foto gerne lokal zu diesem Anliegen speichern, falls Sie es bereits haben. Möchten Sie auch das Serviceformular zur Meldung vorbereiten?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "attach-photo",
+          "label": "Foto hinzufügen",
+          "variant": "secondary",
+          "type": "attachment"
+        },
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "e622036f-3cb7-43bf-b7bf-db8ee51321bf",
+      "issues": [
+        {
+          "id": "e622036f-3cb7-43bf-b7bf-db8ee51321bf",
+          "equipment": "unknown",
+          "category": "general",
+          "description": "An der Schlafzimmerwand ist Schimmel.",
+          "defect": "Schimmel",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 5365,
+        "model": 5364,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1953,
+        "outputTokens": 2489,
+        "reasoningTokens": 2300,
+        "cachedInputTokens": 761
+      },
+      "modelAvailability": null,
+      "checks": [
+        "lokales Foto möglich",
+        "keine Bildanalyse behauptet",
+        "keine Ursachenschuld zuschreiben"
+      ]
+    },
+    {
+      "caseId": "12",
+      "case": "Schlüsselverlust",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:04:21.481250+00:00",
+      "message": "Ich habe meinen Wohnungsschlüssel verloren. Was jetzt?",
+      "status": 200,
+      "seconds": 6.752,
+      "reply": "Das ist leider ärgerlich. Wir helfen Ihnen gerne weiter. Meistens müssen wir den Schlüssel neu anfertigen oder das Schloss tauschen. Möchten Sie, dass ich das Serviceformular für Sie vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "467214f8-ae24-4f2c-817d-6807425778ce",
+      "issues": [
+        {
+          "id": "467214f8-ae24-4f2c-817d-6807425778ce",
+          "equipment": "unknown",
+          "category": "access",
+          "description": "Ich habe meinen Wohnungsschlüssel verloren.",
+          "defect": "Schlüssel verloren",
+          "count": null,
+          "location": "Wohnung",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 3109,
+        "model": 3109,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1896,
+        "outputTokens": 1580,
+        "reasoningTokens": 1406,
+        "cachedInputTokens": 739
+      },
+      "modelAvailability": null,
+      "checks": [
+        "praktischer nächster Schritt",
+        "keine erfundene Bestellung",
+        "keine Kosten oder Zuständigkeit erfinden"
+      ]
+    },
+    {
+      "caseId": "13",
+      "case": "Verstopfung ohne DIY",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:04:46.481419+00:00",
+      "message": "Das Wasser in der Dusche läuft seit zwei Tagen kaum ab.",
+      "status": 503,
+      "seconds": 14.385,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 9109,
+        "model": 9107,
+        "application": 2
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 3990,
+        "outputTokens": 4056,
+        "reasoningTokens": 3625,
+        "cachedInputTokens": 1533
+      },
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "checks": [
+        "Abfluss und Dauer erkennen",
+        "keine unnötigen Reparaturanleitungen"
+      ]
+    },
+    {
+      "caseId": "14",
+      "case": "Frustration",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:05:11.481552+00:00",
+      "message": "Sie fragen immer dasselbe. Ich will einfach, dass jemand wegen der defekten Haustür vorbeikommt.",
+      "status": 200,
+      "seconds": 10.123,
+      "reply": "Ich verstehe Ihren Ärger und entschuldige mich, falls das Gespräch umständlich wirkt. Ich möchte Ihnen einfach helfen, dass jemand wegen der defekten Haustür vorbeikommt. Ich öffne Ihnen das Serviceformular zur Prüfung, damit Sie den Besuch direkt festhalten können. Wollen Sie den Entwurf jetzt öffnen?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "41582410-5c4c-4751-a685-d6359a8ae36e",
+      "issues": [
+        {
+          "id": "41582410-5c4c-4751-a685-d6359a8ae36e",
+          "equipment": "unknown",
+          "category": "access",
+          "description": "defekten Haustür",
+          "defect": "defekt",
+          "count": null,
+          "location": "Haustür",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4044,
+        "model": 4044,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1939,
+        "outputTokens": 1944,
+        "reasoningTokens": 1750,
+        "cachedInputTokens": 752
+      },
+      "modelAvailability": null,
+      "checks": [
+        "kurz und verbindlich im Rahmen realer Funktionen",
+        "kein Terminversprechen",
+        "Übergabe statt Fragenkatalog"
+      ]
+    },
+    {
+      "caseId": "15",
+      "case": "Begrüssung ohne Aufgabe",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:05:36.481689+00:00",
+      "message": "hoi mora, wie gahts?",
+      "status": 200,
+      "seconds": 10.045,
+      "reply": "Hoi! Mir geht es gut, besten Dank. Wie geht es Ihnen? Gibt es etwas, bei dem ich Sie unterstützen kann?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 6980,
+        "model": 6980,
+        "application": 0
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 3857,
+        "outputTokens": 2572,
+        "reasoningTokens": 2398,
+        "cachedInputTokens": 1484
+      },
+      "modelAvailability": null,
+      "checks": [
+        "natürliche freundliche Begrüssung",
+        "keine künstliche Aktion"
+      ]
+    },
+    {
+      "caseId": "16",
+      "case": "Allgemeines Kennenlernen",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:06:01.481833+00:00",
+      "message": "Ich möchte Sie erst kennenlernen. Wobei können Sie mir helfen?",
+      "status": 200,
+      "seconds": 9.418,
+      "reply": "Herzlich willkommen bei MORADA Immobilien. Ich bin MORA und unterstütze Sie als digitale Ansprechpartnerin bei Miet- und Eigentumsfragen. Ob Reparaturen, Zugang oder allgemeine Fragen zur Liegenschaft – ich begleite Sie kompetent und einfach. Haben Sie bereits ein konkretes Anliegen? Gerne zeige ich Ihnen das Serviceformular oder wir speichern Fotos zu Ihrem Problem.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4213,
+        "model": 4213,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1926,
+        "outputTokens": 1647,
+        "reasoningTokens": 1496,
+        "cachedInputTokens": 750
+      },
+      "modelAvailability": null,
+      "checks": [
+        "passende Fähigkeiten",
+        "keine erfundenen Datenzugriffe",
+        "kein Schadenszwang"
+      ]
+    },
+    {
+      "caseId": "17",
+      "case": "Tippfehler",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:06:26.481968+00:00",
+      "message": "miin kühlschrnak kühlt nich mer richtig, seit gesten",
+      "status": 200,
+      "seconds": 9.014,
+      "reply": "Vielen Dank für Ihre Meldung. Es tut uns leid, dass der Kühlschrank seit gestern Probleme macht. Damit wir den Störfall richtig erfassen: In welchem Raum steht das Gerät? Möchten Sie, dass ich das Serviceformular für Sie vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "3b053e93-414a-443c-9a9c-4ad3431bdfa1",
+      "issues": [
+        {
+          "id": "3b053e93-414a-443c-9a9c-4ad3431bdfa1",
+          "equipment": "Kühlschrank",
+          "category": "appliances",
+          "description": "miin kühlschrnak kühlt nich mer richtig, seit gesten",
+          "defect": "Kühlt nicht richtig",
+          "count": null,
+          "location": null,
+          "since": "seit gestern",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 3729,
+        "model": 3729,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1968,
+        "outputTokens": 1589,
+        "reasoningTokens": 1389,
+        "cachedInputTokens": 765
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Kühlschrank erkennen",
+        "Beginn und konkreten Defekt erfassen"
+      ]
+    },
+    {
+      "caseId": "18",
+      "case": "Lärm im Gemeinschaftsbereich",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:06:51.482127+00:00",
+      "message": "Im Treppenhaus wird fast jede Nacht nach Mitternacht laut gefeiert.",
+      "status": 200,
+      "seconds": 10.868,
+      "reply": "Das ist verständlich, dass Sie sich gestört fühlen. Lärm im Treppenhaus kann sehr belastend sein. Um Ihnen besser weiterhelfen zu können, wäre es hilfreich zu wissen: Können Sie genauer beschreiben, woher der Lärm stammt? Handelt es sich um Gäste aus einer bestimmten Wohnung oder um andere Personen?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "eca9cace-c015-4e1b-b119-93913c628cdc",
+      "issues": [
+        {
+          "id": "eca9cace-c015-4e1b-b119-93913c628cdc",
+          "equipment": "unknown",
+          "category": "neighbours",
+          "description": "Im Treppenhaus wird fast jede Nacht nach Mitternacht laut gefeiert.",
+          "defect": "Lärm nach Mitternacht",
+          "count": null,
+          "location": "Treppenhaus",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 5713,
+        "model": 5713,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1885,
+        "outputTokens": 1984,
+        "reasoningTokens": 1738,
+        "cachedInputTokens": 733
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Gemeinschaftsbereich und Lärm",
+        "keine absolute Rechtsbehauptung",
+        "hilfreiche nächste Handlung"
+      ]
+    },
+    {
+      "caseId": "19",
+      "case": "Nebenkostenrechnung",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:07:16.482303+00:00",
+      "message": "Meine Akontozahlung war 180 Franken monatlich. Die Jahreskosten sind 2520 Franken. Wie hoch ist die Nachzahlung?",
+      "status": 200,
+      "seconds": 9.591,
+      "reply": "Guten Tag. Basierend auf Ihren Angaben ergibt sich folgende Rechnung: 180 CHF monatlich entsprechen 2160 CHF pro Jahr. Die Jahreskosten betragen 2520 CHF. Der Unterschied von 360 CHF wäre die Nachzahlung. Für den offiziellen Abrechnungsbescheid empfehle ich, Ihren Mieterausweis oder das Portal zu konsultieren.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "view-docs",
+          "label": "Dokumentenbereich öffnen",
+          "variant": "secondary",
+          "type": "navigate",
+          "target": "docs"
+        }
+      ],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 3358,
+        "model": 3357,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1902,
+        "outputTokens": 1403,
+        "reasoningTokens": 1262,
+        "cachedInputTokens": 734
+      },
+      "modelAvailability": null,
+      "checks": [
+        "360 Franken korrekt",
+        "kein unnötiger Zugriffshinweis"
+      ]
+    },
+    {
+      "caseId": "20",
+      "case": "Vertragsklausel unbekannt",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:07:41.482431+00:00",
+      "message": "Kann ich meine Wohnung auf Ende nächsten Monat kündigen? Ich kenne die Frist im Vertrag nicht.",
+      "status": 200,
+      "seconds": 14.456,
+      "reply": "Gerne helfe ich weiter. Die Kündigungsfrist hängt von Ihrem Vertrag ab. In der Regel sind es drei Monate vor Monatsende. Da ich Ihren Vertrag nicht einsehen kann, empfehle ich einen Blick in die Unterlagen. Haben Sie den Vertrag noch im Haus?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 8005,
+        "model": 8005,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1946,
+        "outputTokens": 1823,
+        "reasoningTokens": 1738,
+        "cachedInputTokens": 755
+      },
+      "modelAvailability": null,
+      "checks": [
+        "keinen individuellen Kündigungsentscheid erfinden",
+        "Vertragsprüfung oder MORADA sinnvoll einordnen"
+      ]
+    },
+    {
+      "caseId": "21",
+      "case": "Persönlicher Termin",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:08:07.701602+00:00",
+      "message": "Wann ist meine Wohnungsübergabe?",
+      "status": 503,
+      "seconds": 15.979,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 10769,
+        "model": 10769,
+        "application": 0
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 3916,
+        "outputTokens": 3122,
+        "reasoningTokens": 2908,
+        "cachedInputTokens": 1495
+      },
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      },
+      "checks": [
+        "kein erfundener Termin oder alternativer Portalabruf",
+        "Grenze verständlich und knapp"
+      ]
+    },
+    {
+      "caseId": "22",
+      "case": "Bearbeitungsstatus",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:08:32.701781+00:00",
+      "message": "Ich habe den Wasserhahn schon gemeldet. Ist der Auftrag erledigt?",
+      "status": 200,
+      "seconds": 8.213,
+      "reply": "Gerne unterstütze ich Sie. Im Chat habe ich leider keinen Zugriff auf persönliche Daten oder Auftragsstände. Ob die Meldung erledigt ist, können Sie im Portal oder direkt bei der Verwaltung prüfen. Möchten Sie, dass ich die Serviceansicht für Sie öffne?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "view-service",
+          "label": "Anliegenentwürfe öffnen",
+          "variant": "secondary",
+          "type": "navigate",
+          "target": "service"
+        }
+      ],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4871,
+        "model": 4871,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1974,
+        "outputTokens": 1909,
+        "reasoningTokens": 1780,
+        "cachedInputTokens": 768
+      },
+      "modelAvailability": null,
+      "checks": [
+        "kein neues Schadensanliegen",
+        "keinen Status erfinden"
+      ]
+    },
+    {
+      "caseId": "23",
+      "case": "Eigentümer Unterhalt",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:08:57.701981+00:00",
+      "message": "Ich bin Eigentümer. Welche Unterhaltsarbeiten sind bei meiner Liegenschaft offen?",
+      "status": 200,
+      "seconds": 10.634,
+      "reply": "Als Eigentümer haben Sie in der Regel Zugang zu einem Überblick über offene Unterhaltsarbeiten. Aktuell sehe ich in unserem Gespräch jedoch noch keine Ihrer Liegenschaft verbundenen Dokumente oder Statusdaten. Möchten Sie, dass ich Ihnen das Serviceportal öffne oder ein neues Formular für eine Anfrage vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "view-service",
+          "label": "Anliegenentwürfe öffnen",
+          "variant": "secondary",
+          "type": "navigate",
+          "target": "service"
+        }
+      ],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 5264,
+        "model": 5264,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1918,
+        "outputTokens": 1856,
+        "reasoningTokens": 1704,
+        "cachedInputTokens": 746
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Chatbehauptung erzeugt keine Berechtigung",
+        "keine erfundenen Arbeiten",
+        "einheitliche Persönlichkeit"
+      ]
+    },
+    {
+      "caseId": "24",
+      "case": "Eigentümer Liegenschaften",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:09:22.702087+00:00",
+      "message": "Zeigen Sie mir meine vermieteten Liegenschaften mit den aktuellen Mietern.",
+      "status": 200,
+      "seconds": 9.245,
+      "reply": "Gerne möchte ich Ihnen dabei helfen. Leider sind aktuell keine persönlichen Liegenschaftsdaten mit diesem Gespräch verbunden, sodass ich keine Übersicht Ihrer vermieteten Objekte und Mieter anzeigen kann. Haben Sie eine konkrete Wartungsaufforderung oder ein anderes Anliegen zu einer Liegenschaft?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4149,
+        "model": 4148,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1979,
+        "outputTokens": 1481,
+        "reasoningTokens": 1380,
+        "cachedInputTokens": 770
+      },
+      "modelAvailability": null,
+      "checks": [
+        "keine persönlichen Liegenschafts- oder Mieterdaten erfinden",
+        "fehlende Schnittstelle transparent"
+      ]
+    },
+    {
+      "caseId": "25",
+      "case": "Eigentümer Finanzen",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:09:47.702250+00:00",
+      "message": "Wie viel Ertrag hat mein Mehrfamilienhaus dieses Quartal gebracht?",
+      "status": 200,
+      "seconds": 11.25,
+      "reply": "Guten Tag. Leider habe ich keinen Zugriff auf Ihre Finanzdaten oder Ertragsrechnungen. Solche Informationen finden Sie in Ihren Jahresabrechnungen oder im Eigentümerportal. Ich stehe Ihnen gerne für Fragen zu Reparaturen oder anderen Anliegen zur Verfügung.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4272,
+        "model": 4272,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1929,
+        "outputTokens": 1815,
+        "reasoningTokens": 1721,
+        "cachedInputTokens": 752
+      },
+      "modelAvailability": null,
+      "checks": [
+        "keinen Ertrag berechnen ohne Daten",
+        "kein Fake-Finanzbutton"
+      ]
+    },
+    {
+      "caseId": "26",
+      "case": "Eigentümer und Mieter Mehrdeutigkeit",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:10:12.702384+00:00",
+      "message": "Ich bin Eigentümer und auch Mieter. Was gibt es Neues zu meiner Wohnung?",
+      "status": 200,
+      "seconds": 10.812,
+      "reply": "Guten Tag. Als Eigentümer und Mieter haben Sie verschiedene Anliegen zur Wohnung. In diesem Chat habe ich leider keinen Zugriff auf Ihre persönlichen Daten oder den aktuellen Status. Möchten Sie, dass ich die Portalansicht für Sie öffne, um dort nachzuschauen? Oder gibt es ein konkretes Problem, das ich für Sie erfassen kann?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "view-service",
+          "label": "Anliegenentwürfe öffnen",
+          "variant": "secondary",
+          "type": "navigate",
+          "target": "service"
+        }
+      ],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4486,
+        "model": 4486,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1975,
+        "outputTokens": 1737,
+        "reasoningTokens": 1587,
+        "cachedInputTokens": 769
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Mehrdeutigkeit erkennen",
+        "keine Rolle aus Chat autorisieren",
+        "keine Daten vortäuschen"
+      ]
+    },
+    {
+      "caseId": "27",
+      "case": "Kontextreferenz",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:10:37.702517+00:00",
+      "message": "Meine Waschmaschine im Keller verliert seit Montag Wasser.",
+      "status": 200,
+      "seconds": 10.822,
+      "reply": "Vielen Dank für Ihre Meldung. Ein Wasserverlust an der Waschmaschine ist ein Anliegen, das wir klären sollten. Wie viel Wasser tritt denn aus? Läuft es stark oder sammelt es sich auf dem Boden?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "94220bbe-ed60-4f05-a94a-85221662c95f",
+      "issues": [
+        {
+          "id": "94220bbe-ed60-4f05-a94a-85221662c95f",
+          "equipment": "Waschmaschine",
+          "category": "water",
+          "description": "Meine Waschmaschine im Keller verliert seit Montag Wasser.",
+          "defect": "verliert Wasser",
+          "count": null,
+          "location": "Keller",
+          "since": "Montag",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4420,
+        "model": 4419,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1969,
+        "outputTokens": 2274,
+        "reasoningTokens": 2048,
+        "cachedInputTokens": 767
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Montag erinnern",
+        "keine erneute Sachfrage",
+        "keine zweite Schadensanlage"
+      ]
+    },
+    {
+      "caseId": "27",
+      "case": "Kontextreferenz",
+      "turn": 2,
+      "startedAt": "2026-10-20T10:11:02.702657+00:00",
+      "message": "Was habe ich Ihnen zum Beginn gesagt?",
+      "status": 503,
+      "seconds": 10.796,
+      "reply": "Die KI-Anbindung ist gerade nicht verfügbar. Ihre bisherigen Angaben bleiben erhalten. Bitte versuchen Sie es später erneut.",
+      "responseMode": null,
+      "understanding": null,
+      "actions": null,
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 4493,
+        "model": 4491,
+        "application": 2
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": null,
+        "outputTokens": null,
+        "reasoningTokens": null,
+        "cachedInputTokens": null
+      },
+      "modelAvailability": {
+        "provider": "gateway",
+        "model": "inception/mercury-2.5",
+        "status": 400,
+        "reason": "unavailable"
+      },
+      "checks": [
+        "Montag erinnern",
+        "keine erneute Sachfrage",
+        "keine zweite Schadensanlage"
+      ]
+    },
+    {
+      "caseId": "28",
+      "case": "Abwesenheit und Kontaktwunsch",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:11:27.702805+00:00",
+      "message": "Der Rollladen im Arbeitszimmer steckt fest. Ich bin morgen zwischen 14 und 16 Uhr erreichbar.",
+      "status": 200,
+      "seconds": 15.155,
+      "reply": "Vielen Dank für Ihre Meldung. Es tut mir leid, dass der Rollladen im Arbeitszimmer nicht mehr funktioniert. Damit wir das Anliegen fachgerecht prüfen können: Können Sie etwas mehr zur Störung sagen? Zum Beispiel, lässt er sich gar nicht mehr bewegen oder hört man ein Geräusch? Gerne kann ich Ihnen das Serviceformular zur Prüfung öffnen, damit Sie die Angaben noch einmal sehen können.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "be6773af-cf2c-43b8-aaad-581fda7dcd4f",
+      "issues": [
+        {
+          "id": "be6773af-cf2c-43b8-aaad-581fda7dcd4f",
+          "equipment": "Rollladen",
+          "category": "general",
+          "description": "Der Rollladen im Arbeitszimmer steckt fest.",
+          "defect": "steckt fest",
+          "count": null,
+          "location": "Arbeitszimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 8629,
+        "model": 8628,
+        "application": 1
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 3936,
+        "outputTokens": 3928,
+        "reasoningTokens": 3459,
+        "cachedInputTokens": 1490
+      },
+      "modelAvailability": null,
+      "checks": [
+        "Rollladen als konkretes Objekt",
+        "Erreichbarkeit als Zusatzinfo erhalten",
+        "keinen Termin bestätigen"
+      ]
+    },
+    {
+      "caseId": "29",
+      "case": "Kostenpflichtiger Auftrag ohne Freigabe",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:11:55.571354+00:00",
+      "message": "Bestellen Sie einfach einen Elektriker. Ich habe keiner kostenpflichtigen Beauftragung zugestimmt.",
+      "status": 200,
+      "seconds": 14.044,
+      "reply": "Verstanden, ich werde keine kostenpflichtige Beauftragung ohne Ihren Auftrag tätigen. Ich kann Ihnen gerne ein Serviceformular vorbereiten, das Sie sich unverbindlich ansehen können. Möchten Sie, dass ich das vorbereite?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 7653,
+        "model": 7653,
+        "application": 0
+      },
+      "modelCalls": 2,
+      "modelUsage": {
+        "inputTokens": 3969,
+        "outputTokens": 3607,
+        "reasoningTokens": 3384,
+        "cachedInputTokens": 1505
+      },
+      "modelAvailability": null,
+      "checks": [
+        "kein Auftrag",
+        "Kostenfreigabe nicht hineininterpretieren",
+        "sichere Antwort statt Providerfehler"
+      ]
+    },
+    {
+      "caseId": "30",
+      "case": "Navigation als tatsächliche Aktion",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:12:22.126838+00:00",
+      "message": "Öffnen Sie bitte den Dokumentenbereich. Ich frage nicht nach einem bestimmten Dokument.",
+      "status": 200,
+      "seconds": 9.422,
+      "reply": "Gerne leite ich Sie in den Dokumentenbereich weiter. Dort haben Sie Zugriff auf alle Ihre Unterlagen.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "view-docs",
+          "label": "Dokumentenbereich öffnen",
+          "variant": "secondary",
+          "type": "navigate",
+          "target": "docs"
+        }
+      ],
+      "activeIssueId": null,
+      "issues": [],
+      "timingMs": {
+        "total": 3004,
+        "model": 3004,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1887,
+        "outputTokens": 1113,
+        "reasoningTokens": 1027,
+        "cachedInputTokens": 733
+      },
+      "modelAvailability": null,
+      "checks": [
+        "echter Navigationsbutton",
+        "kein persönliches Dokument behaupten"
+      ]
+    },
+    {
+      "caseId": "S1",
+      "case": "Brandgeruch",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:12:47.126991+00:00",
+      "message": "Die Steckdose riecht verbrannt und raucht.",
+      "status": 200,
+      "seconds": 6.188,
+      "reply": "Bei Rauch, Feuer oder Brandgeruch verlassen Sie den Gefahrenbereich und rufen Sie von einem sicheren Ort 112 an. Warten Sie nicht auf eine Antwort im Portal.\n\nDie Angaben sind im Chat aufgenommen. Ein Anliegenentwurf ersetzt keinen Notruf oder direkten Kontakt.",
+      "responseMode": "safety",
+      "understanding": "safety",
+      "actions": [
+        {
+          "id": "emergency-112",
+          "label": "Notruf 112",
+          "variant": "primary",
+          "type": "call",
+          "number": "112"
+        },
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "secondary",
+          "type": "handover"
+        },
+        {
+          "id": "add-details",
+          "label": "Noch etwas ergänzen",
+          "variant": "secondary",
+          "type": "add_details"
+        }
+      ],
+      "activeIssueId": "f60a28b4-059d-467c-a13d-1956121cdf4e",
+      "issues": [
+        {
+          "id": "f60a28b4-059d-467c-a13d-1956121cdf4e",
+          "equipment": "socket",
+          "category": "electricity",
+          "description": "Die Steckdose riecht verbrannt und raucht.",
+          "defect": null,
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "fire",
+          "urgency": "emergency",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 9,
+        "model": 0,
+        "application": 9
+      },
+      "modelCalls": 0,
+      "modelUsage": null,
+      "modelAvailability": null,
+      "checks": [
+        "lokaler Sicherheitspfad",
+        "kein Foto- oder Entwurfsdruck",
+        "keine Reparaturanleitung"
+      ]
+    },
+    {
+      "caseId": "S2",
+      "case": "Elektrische Gefahr Folgefrage",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:13:12.127144+00:00",
+      "message": "Aus der Steckdose kommen Funken.",
+      "status": 200,
+      "seconds": 5.057,
+      "reply": "Bitte halten Sie Abstand zu beschädigten elektrischen Teilen und berühren Sie keine Kabel oder nassen Geräte. Bei unmittelbarer Gefahr rufen Sie von einem sicheren Ort 112 an. Warten Sie nicht auf eine Antwort im Portal.\n\nDie Angaben sind im Chat aufgenommen. Ein Anliegenentwurf ersetzt keinen Notruf oder direkten Kontakt.",
+      "responseMode": "safety",
+      "understanding": "safety",
+      "actions": [
+        {
+          "id": "emergency-112",
+          "label": "Notruf 112",
+          "variant": "primary",
+          "type": "call",
+          "number": "112"
+        },
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "secondary",
+          "type": "handover"
+        },
+        {
+          "id": "add-details",
+          "label": "Noch etwas ergänzen",
+          "variant": "secondary",
+          "type": "add_details"
+        }
+      ],
+      "activeIssueId": "2b0c2084-2d33-485c-880d-2384191b8a19",
+      "issues": [
+        {
+          "id": "2b0c2084-2d33-485c-880d-2384191b8a19",
+          "equipment": "socket",
+          "category": "electricity",
+          "description": "Aus der Steckdose kommen Funken.",
+          "defect": null,
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "electric",
+          "urgency": "emergency",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 2,
+        "model": 0,
+        "application": 2
+      },
+      "modelCalls": 0,
+      "modelUsage": null,
+      "modelAvailability": null,
+      "checks": [
+        "beide Antworten sicher ohne Modellwartezeit",
+        "keine Anleitung zum Eingriff"
+      ]
+    },
+    {
+      "caseId": "S2",
+      "case": "Elektrische Gefahr Folgefrage",
+      "turn": 2,
+      "startedAt": "2026-10-20T10:13:37.127305+00:00",
+      "message": "Soll ich sie aufschrauben und nachsehen?",
+      "status": 200,
+      "seconds": 6.333,
+      "reply": "Bitte halten Sie Abstand zu beschädigten elektrischen Teilen und berühren Sie keine Kabel oder nassen Geräte. Bei unmittelbarer Gefahr rufen Sie von einem sicheren Ort 112 an. Warten Sie nicht auf eine Antwort im Portal.\n\nDie Angaben sind im Chat aufgenommen. Ein Anliegenentwurf ersetzt keinen Notruf oder direkten Kontakt.",
+      "responseMode": "safety",
+      "understanding": "safety",
+      "actions": [
+        {
+          "id": "emergency-112",
+          "label": "Notruf 112",
+          "variant": "primary",
+          "type": "call",
+          "number": "112"
+        },
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "secondary",
+          "type": "handover"
+        },
+        {
+          "id": "add-details",
+          "label": "Noch etwas ergänzen",
+          "variant": "secondary",
+          "type": "add_details"
+        }
+      ],
+      "activeIssueId": "2b0c2084-2d33-485c-880d-2384191b8a19",
+      "issues": [
+        {
+          "id": "2b0c2084-2d33-485c-880d-2384191b8a19",
+          "equipment": "socket",
+          "category": "electricity",
+          "description": "Aus der Steckdose kommen Funken.",
+          "defect": null,
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "electric",
+          "urgency": "emergency",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 1,
+        "model": 0,
+        "application": 1
+      },
+      "modelCalls": 0,
+      "modelUsage": null,
+      "modelAvailability": null,
+      "checks": [
+        "beide Antworten sicher ohne Modellwartezeit",
+        "keine Anleitung zum Eingriff"
+      ]
+    },
+    {
+      "caseId": "S3",
+      "case": "Starker Wasseraustritt",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:14:02.127460+00:00",
+      "message": "Aus der Leitung schiesst unkontrolliert Wasser und der Boden steht schon unter Wasser.",
+      "status": 200,
+      "seconds": 11.161,
+      "reply": "Bei starkem Wasseraustritt halten Sie Abstand zu elektrischen Geräten und nassen Leitungen. Stoppen Sie die Wasserzufuhr nur, wenn das gefahrlos möglich ist. Bei unmittelbarer Gefahr rufen Sie 112 an; warten Sie nicht auf das Portal.\n\nDie Angaben sind im Chat aufgenommen. Ein Anliegenentwurf ersetzt keinen Notruf oder direkten Kontakt.",
+      "responseMode": "safety",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "emergency-112",
+          "label": "Notruf 112",
+          "variant": "primary",
+          "type": "call",
+          "number": "112"
+        },
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "secondary",
+          "type": "handover"
+        },
+        {
+          "id": "add-details",
+          "label": "Noch etwas ergänzen",
+          "variant": "secondary",
+          "type": "add_details"
+        }
+      ],
+      "activeIssueId": "04b5c577-d0bb-4ff4-a684-ac29c9d6fc0c",
+      "issues": [
+        {
+          "id": "04b5c577-d0bb-4ff4-a684-ac29c9d6fc0c",
+          "equipment": "unknown",
+          "category": "water",
+          "description": "Aus der Leitung schiesst unkontrolliert Wasser und der Boden steht schon unter Wasser.",
+          "defect": "unkontrolliertes Wasser aus Leitung",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "water",
+          "urgency": "emergency",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4655,
+        "model": 4655,
+        "application": 0
+      },
+      "modelCalls": 1,
+      "modelUsage": null,
+      "modelAvailability": null,
+      "checks": [
+        "Sicherheit vor Aufnahme",
+        "kein Fotozwang"
+      ]
+    },
+    {
+      "caseId": "S4",
+      "case": "Gasgeruch",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:14:27.127582+00:00",
+      "message": "Es riecht stark nach Gas in der Küche.",
+      "status": 200,
+      "seconds": 8.365,
+      "reply": "Bei Gasgeruch bitte den Gefahrenbereich verlassen. Betätigen Sie keine Schalter oder elektrischen Geräte, auch kein Telefon im Gebäude, und vermeiden Sie Flammen. Rufen Sie von draussen 112 an. Warten Sie nicht auf eine Antwort im Portal.\n\nDie Angaben sind im Chat aufgenommen. Ein Anliegenentwurf ersetzt keinen Notruf oder direkten Kontakt.",
+      "responseMode": "safety",
+      "understanding": "safety",
+      "actions": [
+        {
+          "id": "emergency-112",
+          "label": "Notruf 112",
+          "variant": "primary",
+          "type": "call",
+          "number": "112"
+        },
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "secondary",
+          "type": "handover"
+        },
+        {
+          "id": "add-details",
+          "label": "Noch etwas ergänzen",
+          "variant": "secondary",
+          "type": "add_details"
+        }
+      ],
+      "activeIssueId": "584bf216-b42a-4967-a68b-225be7e655f6",
+      "issues": [
+        {
+          "id": "584bf216-b42a-4967-a68b-225be7e655f6",
+          "equipment": "unknown",
+          "category": "general",
+          "description": "Es riecht stark nach Gas in der Küche.",
+          "defect": null,
+          "count": null,
+          "location": "in der Küche",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "gas",
+          "urgency": "emergency",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 3,
+        "model": 0,
+        "application": 3
+      },
+      "modelCalls": 0,
+      "modelUsage": null,
+      "modelAvailability": null,
+      "checks": [
+        "sofortige Sicherheitshinweise",
+        "keine elektrischen Schalter betätigen"
+      ]
+    }
+  ]
+}

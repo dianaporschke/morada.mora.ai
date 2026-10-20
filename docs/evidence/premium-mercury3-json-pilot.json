@@ -1,0 +1,133 @@
+{
+  "url": "https://morada-mora-ra6ldtdhw-dianaporschke-1255s-projects.vercel.app",
+  "model": "inception/mercury-3",
+  "sourceCommit": "241f60ea4d83b3988ca22951e249421430acda6c",
+  "reasoning": "high (same JSON transport as Mercury 2.5)",
+  "intervalSeconds": 30.0,
+  "cases": 1,
+  "rows": [
+    {
+      "caseId": "01",
+      "case": "Lampe und kurze Antwort",
+      "turn": 1,
+      "startedAt": "2026-10-20T10:12:40.623445+00:00",
+      "message": "Meine Lampe geht nicht.",
+      "status": 200,
+      "seconds": 10.276,
+      "reply": "Guten Tag. Gerne schaue ich mir Ihr Anliegen an, damit Ihre Lampe wieder funktioniert. Damit wir die Meldung richtig aufnehmen können: In welchem Raum befindet sich die Lampe, und funktionieren dort andere Lampen oder Steckdosen noch?",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [],
+      "activeIssueId": "a65f2969-4a88-48ec-aaf6-5382d9324156",
+      "issues": [
+        {
+          "id": "a65f2969-4a88-48ec-aaf6-5382d9324156",
+          "equipment": "Lampe",
+          "category": "appliances",
+          "description": "Meine Lampe geht nicht.",
+          "defect": "geht nicht",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 4348,
+        "model": 4341,
+        "application": 7
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2385,
+        "outputTokens": 1410,
+        "reasoningTokens": 1222,
+        "cachedInputTokens": 1
+      },
+      "modelAvailability": null,
+      "evaluation": {
+        "model": "inception/mercury-3",
+        "caseId": "01",
+        "turn": 1,
+        "synthetic": true,
+        "productModelChanged": false
+      },
+      "checks": [
+        "natürliche Rückfrage statt Formular",
+        "Wohnzimmer am selben Anliegen",
+        "kein wiederholtes Entwurfsangebot"
+      ]
+    },
+    {
+      "caseId": "01",
+      "case": "Lampe und kurze Antwort",
+      "turn": 2,
+      "startedAt": "2026-10-20T10:13:10.623718+00:00",
+      "message": "wohnzimmer",
+      "status": 200,
+      "seconds": 12.225,
+      "reply": "Vielen Dank, dann notieren wir die Lampe im Wohnzimmer. Damit wir besser einschätzen können, ob das Problem nur an der Lampe selbst liegt: Funktionieren im Wohnzimmer noch andere Lampen oder Steckdosen? Wenn Sie möchten, können Sie die bisherigen Angaben auch direkt im Serviceformular zur Prüfung öffnen.",
+      "responseMode": "model",
+      "understanding": "model",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "activeIssueId": "a65f2969-4a88-48ec-aaf6-5382d9324156",
+      "issues": [
+        {
+          "id": "a65f2969-4a88-48ec-aaf6-5382d9324156",
+          "equipment": "Lampe",
+          "category": "appliances",
+          "description": "Meine Lampe geht nicht.",
+          "defect": "geht nicht",
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "timingMs": {
+        "total": 5840,
+        "model": 5837,
+        "application": 3
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2486,
+        "outputTokens": 2233,
+        "reasoningTokens": 2033,
+        "cachedInputTokens": 1868
+      },
+      "modelAvailability": null,
+      "evaluation": {
+        "model": "inception/mercury-3",
+        "caseId": "01",
+        "turn": 2,
+        "synthetic": true,
+        "productModelChanged": false
+      },
+      "checks": [
+        "natürliche Rückfrage statt Formular",
+        "Wohnzimmer am selben Anliegen",
+        "kein wiederholtes Entwurfsangebot"
+      ]
+    }
+  ]
+}

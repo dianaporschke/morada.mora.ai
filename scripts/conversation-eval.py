@@ -38,6 +38,7 @@ def run(case):
             if stopped.is_set():return
             next_start=time.monotonic()+interval
         payload={'model':config['evaluationModel'],'caseId':case['id'],'turn':turn} if config.get('evaluationModel') else {'message':message}
+        if config.get('evaluationMode'):payload['mode']=config['evaluationMode']
         if session:payload['session']=session
         stamp=datetime.datetime.now(datetime.timezone.utc).isoformat();start=time.perf_counter()
         endpoint='/api/ai-evaluation' if config.get('evaluationModel') else '/api/chat'
