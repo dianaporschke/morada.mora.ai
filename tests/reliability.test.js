@@ -176,7 +176,7 @@ test('A model cannot claim that a saved draft was updated before the explicit up
 
 test('An unknown quantity clears its stale numeric scope and records unknown separately from missing',async()=>{
  let r=await turn('Drei Lampen im Wohnzimmer gehen nicht.',output({equipment:'light',count:3}));
- r=await turn('Die Anzahl weiss ich nicht.',{reply:'Sie können das Anliegen vorbereiten.',intent:'issue',updates:[{ref:'active',unknownAnswers:[{field:'count',quote:'Die Anzahl weiss ich nicht'}]}]},r.state);
+ r=await turn('Die Anzahl weiss ich nicht.',{reply:'Die Anzahl kann offenbleiben.',intent:'issue',updates:[{ref:'active',unknownAnswers:[{field:'count',quote:'Die Anzahl weiss ich nicht'}]}]},r.state);
  assert.equal(r.state.issue.count,null);assert.equal(r.state.issue.extent,null);assert.equal(r.state.issue.fieldFacts.count.status,'unknown');
 });
 

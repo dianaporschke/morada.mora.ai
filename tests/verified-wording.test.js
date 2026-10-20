@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {MockLanguageModelV4} from 'ai/test';
-import {createUnderstandingService} from '../lib/mora/understanding.js';
+import {createUnderstandingService,generateUnderstandingResult} from '../lib/mora/understanding.js';
 import {generateNaturalReply} from '../lib/mora/reply.js';
 import {createChatHandler} from '../api/chat.js';
 import {readSession} from '../lib/mora/session.js';
@@ -64,4 +64,12 @@ test('A thank-you after the confirmed handover needs only one model generation',
  result=await invoke(handler,{session:result.data.session,draftReceipt:{issueId:result.data.issue.id,revision:result.data.issue.revision,status:'portal_received'}});
  result=await invoke(handler,{session:result.data.session,message:'danke'});
  assert.equal(result.code,200);assert.equal(result.data.modelCalls,1);assert.equal(wordings,1);assert.equal(result.data.reply,'Gerne.');assert.equal(result.data.actions.length,0);
+});
+
+test('The Sie-form cannot repeat preparation verbally after the existing offer, even without another button',async()=>{
+ const handler=createChatHandler(service(sdk(()=>({reply:'Planung.',intent:'issue',updates:[{ref:'new',equipment:'light',location:'Wohnzimmer',defect:'kaputt'}],actions:[{kind:'prepare_draft'}]}))),{env:{},compose:turn=>generateNaturalReply(turn,sdk(()=>({reply:'Sie können das Anliegen vorbereiten.',questionKey:null})))});
+ const first=await invoke(handler,{message:'Lampe im Wohnzimmer kaputt'});assert.equal(first.code,200);
+ let calls=0;
+ const result=await generateUnderstandingResult('Seit gestern.',readSession(first.data.session),sdk(()=>({reply:++calls===1?'Sie können den Entwurf vorbereiten, falls Sie bereit sind.':'Alles klar.',intent:'issue',updates:[{ref:'active',since:'gestern'}]})),{planOnly:true});
+ assert.equal(calls,2);assert.equal(result.data.since,'gestern');assert.equal(result.data.dialogue.buttons.length,0);assert.equal(result.data.dialogue.reply,'Alles klar.');
 });

@@ -117,7 +117,7 @@ test('A new fixture cannot overwrite a prepared issue; the genuine repair create
  let turn=await processTurn({message:'lampe kaputt'},null,understand(lamp));
  turn=await processTurn({draftReceipt:{issueId:turn.state.issue.id,revision:turn.state.issue.revision,status:'portal_received'}},turn.state,()=>assert.fail());
  const original=structuredClone(turn.state.issue);let calls=0;
- const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>({content:[{type:'text',text:JSON.stringify({reply:'Sie können ein weiteres Anliegen vorbereiten.',intent:'issue',updates:[{ref:++calls===1?'active':'new',equipment:'heater',location:'Bad',defect:'bleibt kalt'}]})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],usage:{inputTokens:{total:100},outputTokens:{total:80}}})});
+ const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>({content:[{type:'text',text:JSON.stringify({reply:'Das ist ein separates Anliegen.',intent:'issue',updates:[{ref:++calls===1?'active':'new',equipment:'heater',location:'Bad',defect:'bleibt kalt'}]})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],usage:{inputTokens:{total:100},outputTokens:{total:80}}})});
  const result=await generateUnderstandingResult('Ausserdem wird die Heizung im Bad nicht warm.',turn.state,sdk);
  assert.equal(calls,2);
  turn=await processTurn({message:'Ausserdem wird die Heizung im Bad nicht warm.'},turn.state,async()=>({mode:'model',data:result.data}));
