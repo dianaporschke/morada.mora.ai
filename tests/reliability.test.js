@@ -245,3 +245,12 @@ test('Observed inverted preparation and nominal delivery claims are blocked befo
   await assert.rejects(turn('Eine Lampe geht nicht.',{...output({equipment:'light'}),reply}),{type:'invalid_model_output'});
  }
 });
+
+
+test('Shipment-confirmation instructions and unrelated reassuring negations never imply an available send action',async()=>{
+ for(const reply of ['Bitte prüfen Sie die Angaben und bestätigen Sie den Versand mit einem Klick.','Keine Sorge, Sie können den Versand mit einem Klick bestätigen.']) {
+  await assert.rejects(turn('Eine Lampe geht nicht.',{...output({equipment:'light'}),reply}),{type:'invalid_model_output'});
+ }
+ const r=await turn('Eine Lampe geht nicht.',{...output({equipment:'light'}),reply:'Die direkte Übermittlung ist noch nicht angeschlossen. Sie können den Entwurf lokal prüfen.'});
+ assert.match(r.reply,/nicht angeschlossen/);
+});

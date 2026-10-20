@@ -3,7 +3,7 @@ Implementation: final code commit recorded in MORA_RELIABILITY_UPGRADE_REPORT.md
 Runtime: Node 24, installed AI SDK 7.0.130
 
 node --test --test-timeout=20000 tests/*.test.js
-  tests 258; pass 258; fail 0; skipped 0
+  tests 259; pass 259; fail 0; skipped 0
 npm run typecheck — PASS
 npm run lint — PASS
 npm run build — PASS
@@ -31,3 +31,7 @@ Protected branches are verified separately from live GitHub refs.
 Final additions: explicit negative observations retained, stale generated descriptions
 cannot override corrected facts, confirmed scope provenance is stable under uncertainty,
 and inverted preparation/nominal delivery claims are blocked.
+
+Transactional sending instructions such as confirming shipment with a click are
+rejected even without a future/passive verb, and reassuring comma clauses do not
+exempt a later affirmative shipment instruction.
