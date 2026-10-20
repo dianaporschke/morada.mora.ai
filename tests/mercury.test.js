@@ -308,7 +308,7 @@ test('A portal draft is not a sending capability, including future wording rathe
   const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
     calls++;return {content:[{type:'text',text:JSON.stringify({intent:'contact',dialogue:{
       reply:calls===1 ? 'Dieses Gespräch wird nicht automatisch übermittelt. Sie können den Entwurf im Portal verwenden, um die Meldung zu versenden.' : 'Ich kann den Entwurf öffnen. Er wird nicht automatisch an MORADA versendet.',
-      buttons:[{kind:'prepare_draft'}]}})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
+      buttons:[{kind:'navigate',target:'service'}]}})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
       usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
   }});
   const result=await generateUnderstandingResult('Kann ich das direkt melden?',null,sdk);

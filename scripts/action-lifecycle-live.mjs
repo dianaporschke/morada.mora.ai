@@ -37,7 +37,7 @@ let nextModelAt=0;
 try {
  for(const c of config.cases){
   const result={id:c.id,http:[],steps:[]};evidence.cases.push(result);const indexedDB=new IDBFactory();
-  let dom,ui;const open=async(saved)=>{
+  let dom,ui,fatal;const open=async(saved)=>{
    dom=new JSDOM(readFileSync('index.html','utf8'),{url:config.url,pretendToBeVisual:true});
    dom.window.indexedDB=indexedDB;dom.window.scrollTo=()=>{};
    if(saved)dom.window.sessionStorage.setItem('morada.mora.v2.thread',saved);
@@ -48,14 +48,16 @@ try {
     const {session,...safe}=response.body;
     result.http.push({message:body.message||null,receipt:receipt?body.draftReceipt:null,status:response.status,...safe});persist();
     console.log(JSON.stringify({case:c.id,message:body.message||'receipt',status:response.status,reply:safe.reply,actions:safe.actions,responseMode:safe.responseMode,modelCalls:safe.modelCalls}));
-    if(response.status!==200)throw Error(`Real request failed: ${response.status}`);
+    if(response.status!==200){fatal=Error(`Real request failed: ${response.status}`);throw fatal;}
     return {ok:true,status:response.status,json:async()=>response.body};
    });await ui.ready;
   };await open();
   try {
    for(const step of c.steps){
     if(step.message)await ui.submit({message:step.message},step.message);
+    if(fatal)throw fatal;
     if(step.prepare)await Promise.all([ui.onAction({type:'handover'}),ui.onAction({type:'handover'})]);
+    if(fatal)throw fatal;
     if(step.reload){const saved=dom.window.sessionStorage.getItem('morada.mora.v2.thread');dom.window.close();await open(saved);}
     const doc=dom.window.document,state=ui.getState();
     result.steps.push({step,issue:safeIssue(state.issue),drafts:ui.getDrafts().map(safeIssue),phase:ui.getPreparationState(),

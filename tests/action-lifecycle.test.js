@@ -105,3 +105,23 @@ test('Draft existence and current content are explicit; a pre-click freshness cl
  const changed=await processTurn({message:'Wohnzimmer'},saved.state,understand({reply:'Sie können den bestehenden Entwurf aktualisieren.',intent:'issue',updates:[{ref:'active',location:'Wohnzimmer'}],actions:[{kind:'prepare_draft'}]}));
  assert.equal(modelContext(changed.state).activeIssue.draftAction.chatFactsInDraft,false);assert.equal(modelContext(changed.state).activeIssue.draftAction.draftExists,true);
 });
+
+test('A targeted factual update classified as general uses the same resulting action state as the engine',async()=>{
+ let turn=await processTurn({message:'lampe kaputt'},null,understand(lamp));
+ turn=await processTurn({draftReceipt:{issueId:turn.state.issue.id,revision:turn.state.issue.revision,status:'portal_received'}},turn.state,()=>assert.fail());
+ turn=await processTurn({message:'Wohnzimmer'},turn.state,understand({reply:'Sie können den bestehenden Entwurf aktualisieren.',intent:'general',updates:[{ref:'active',location:'Wohnzimmer'}],actions:[{kind:'prepare_draft'}]}));
+ assert.equal(turn.state.issue.location,'Wohnzimmer');assert.equal(turn.state.actions[0].label,'Entwurf aktualisieren');
+});
+
+test('A new fixture cannot overwrite a prepared issue; the genuine repair creates a separate issue',async()=>{
+ let turn=await processTurn({message:'lampe kaputt'},null,understand(lamp));
+ turn=await processTurn({draftReceipt:{issueId:turn.state.issue.id,revision:turn.state.issue.revision,status:'portal_received'}},turn.state,()=>assert.fail());
+ const original=structuredClone(turn.state.issue);let calls=0;
+ const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>({content:[{type:'text',text:JSON.stringify({reply:'Sie können ein weiteres Anliegen vorbereiten.',intent:'issue',updates:[{ref:++calls===1?'active':'new',equipment:'heater',location:'Bad',defect:'bleibt kalt'}]})}],finishReason:{unified:'stop',raw:'stop'},warnings:[],usage:{inputTokens:{total:100},outputTokens:{total:80}}})});
+ const result=await generateUnderstandingResult('Ausserdem wird die Heizung im Bad nicht warm.',turn.state,sdk);
+ assert.equal(calls,2);
+ turn=await processTurn({message:'Ausserdem wird die Heizung im Bad nicht warm.'},turn.state,async()=>({mode:'model',data:result.data}));
+ assert.equal(turn.state.issues.length,2);assert.equal(turn.state.issue.equipment,'heater');
+ assert.deepEqual(turn.state.issues.find(issue=>issue.id===original.id).preparation,original.preparation);
+ assert.equal(turn.state.issues.find(issue=>issue.id===original.id).equipment,'light');
+});
