@@ -1,0 +1,94 @@
+{
+  "url": "https://morada-mora-bmajkbb1m-dianaporschke-1255s-projects.vercel.app",
+  "rows": [
+    {
+      "startedAt": "2026-10-20T10:56:36.067307+00:00",
+      "case": "reported-lamp",
+      "message": "meine lampe nicht gehen",
+      "status": 200,
+      "seconds": 9.891,
+      "reply": "Guten Tag, danke für Ihre Meldung. Damit wir den Störungsfall korrekt erfassen, benötigen wir noch ein paar Details. In welchem Raum befindet sich die Lampe? Und seit wann funktioniert sie nicht mehr? Falls Rauch oder ungewöhnliche Gerüche auftreten, kontaktieren Sie bitte sofort die zuständigen Stellen.",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "f16fcc96-2b32-4c55-9dc2-77b373d67d57",
+      "actions": [
+        {
+          "id": "prepare-request",
+          "label": "Für MORADA vorbereiten",
+          "variant": "primary",
+          "type": "handover"
+        }
+      ],
+      "issues": [
+        {
+          "id": "f16fcc96-2b32-4c55-9dc2-77b373d67d57",
+          "equipment": "unknown",
+          "category": "electricity",
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4534,
+        "model": 4515,
+        "application": 19
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 1892,
+        "outputTokens": 1834,
+        "reasoningTokens": 1625,
+        "cachedInputTokens": 0
+      }
+    },
+    {
+      "startedAt": "2026-10-20T10:57:10.960013+00:00",
+      "case": "reported-lamp",
+      "message": "wohnzimmer, eine lampe, nein",
+      "status": 200,
+      "seconds": 9.267,
+      "reply": "Vielen Dank für die Rückmeldung. Ich habe den Ort (Wohnzimmer) und die Anzahl (eine Lampe) erfasst. Wann ist der Defekt zum ersten Mal aufgetreten?",
+      "understanding": "model",
+      "responseMode": "model",
+      "activeIssueId": "f16fcc96-2b32-4c55-9dc2-77b373d67d57",
+      "actions": [],
+      "issues": [
+        {
+          "id": "f16fcc96-2b32-4c55-9dc2-77b373d67d57",
+          "equipment": "Lampe",
+          "category": "electricity",
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "unknownFields": [],
+          "hazard": "none",
+          "urgency": "normal",
+          "status": "draft"
+        }
+      ],
+      "modelAvailability": null,
+      "timingMs": {
+        "total": 4504,
+        "model": 4503,
+        "application": 1
+      },
+      "modelCalls": 1,
+      "modelUsage": {
+        "inputTokens": 2094,
+        "outputTokens": 1944,
+        "reasoningTokens": 1762,
+        "cachedInputTokens": 0
+      }
+    }
+  ]
+}

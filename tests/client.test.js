@@ -194,8 +194,10 @@ test('The issue picker switches through the server and keeps photos and draft da
   await sendForm(f, 'Heizung kaputt');
   await f.ui.addFiles([new f.window.File(['heater'], 'Heizung.png', { type:'image/png' })]);
   const heatingId = f.ui.getState().issue.id;
+  await f.ui.onAction({type:'handover'});
   await sendForm(f, 'Ausserdem geht die Waschmaschine im Keller nicht');
   const applianceId = f.ui.getState().issue.id;
+  await f.ui.onAction({type:'handover'});
   assert.notEqual(applianceId, heatingId);
   assert.equal(f.ui.getState().issues.length, 2);
   assert.equal(f.ui.getState().files.length, 0);
@@ -278,9 +280,13 @@ test('Persistent tools avoid duplicate actions, return on plain replies and hide
   water.window.close();
 });
 
-test('A mocked future submission receipt is displayed consistently and restored with its confirmation', async () => {
+test('A pre-existing confirmed submission is displayed consistently and restored with its confirmation', async () => {
   const f = fixture(1280, { simulatedReceipt:{ accepted:true, requestId:'TEST-RECEIPT-42' } }); await f.ui.ready;
   await sendForm(f, 'Heizung kaputt'); await f.ui.onAction({ type:'handover' });
+  assert.equal(f.requests.some(request=>request.url==='/api/requests'),false, 'preparation must never silently send');
+  const stored=f.ui.getDrafts()[0];stored.delivery='sent';stored.requestId='TEST-RECEIPT-42';
+  await new Promise((resolve,reject)=>{const req=f.window.indexedDB.open('morada-mora-v2',1);req.onsuccess=()=>{const db=req.result,tx=db.transaction('drafts','readwrite');tx.objectStore('drafts').put(stored);tx.oncomplete=()=>{db.close();resolve();};tx.onerror=reject;};});
+  const receiptView=createMora(f.document,f.window,async()=>{throw new Error('No request expected');});await receiptView.ready;
   assert.equal(f.document.getElementById('moraDraftHeading').textContent, 'An MORADA übermittelt.');
   assert.match(f.document.getElementById('moraDraftStatus').textContent, /Übermittlung bestätigt.*TEST-RECEIPT-42/);
   assert.doesNotMatch(f.document.getElementById('moraDraftStatus').textContent, /Noch nicht übermittelt/);
