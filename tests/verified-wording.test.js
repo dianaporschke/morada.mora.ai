@@ -5,6 +5,7 @@ import {createUnderstandingService,generateUnderstandingResult} from '../lib/mor
 import {generateNaturalReply} from '../lib/mora/reply.js';
 import {createChatHandler} from '../api/chat.js';
 import {readSession} from '../lib/mora/session.js';
+import {acceptPreparationProposal} from '../lib/mora/actions.js';
 
 const sdk=(generate,tokens=50)=>new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async options=>({
  content:[{type:'text',text:JSON.stringify(generate(options))}],finishReason:{unified:'stop',raw:'stop'},warnings:[],
@@ -70,6 +71,27 @@ test('The Sie-form cannot repeat preparation verbally after the existing offer, 
  const handler=createChatHandler(service(sdk(()=>({reply:'Planung.',intent:'issue',updates:[{ref:'new',equipment:'light',location:'Wohnzimmer',defect:'kaputt'}],actions:[{kind:'prepare_draft'}]}))),{env:{},compose:turn=>generateNaturalReply(turn,sdk(()=>({reply:'Sie können das Anliegen vorbereiten.',questionKey:null})))});
  const first=await invoke(handler,{message:'Lampe im Wohnzimmer kaputt'});assert.equal(first.code,200);
  let calls=0;
- const result=await generateUnderstandingResult('Seit gestern.',readSession(first.data.session),sdk(()=>({reply:++calls===1?'Sie können den Entwurf vorbereiten, falls Sie bereit sind.':'Alles klar.',intent:'issue',updates:[{ref:'active',since:'gestern'}]})),{planOnly:true});
+ const result=await generateUnderstandingResult('Seit gestern.',readSession(first.data.session),sdk(()=>({reply:++calls===1?'Den Entwurf können Sie vorbereiten, falls Sie bereit sind.':'Alles klar.',intent:'issue',updates:[{ref:'active',since:'gestern'}]})),{planOnly:true});
  assert.equal(calls,2);assert.equal(result.data.since,'gestern');assert.equal(result.data.dialogue.buttons.length,0);assert.equal(result.data.dialogue.reply,'Alles klar.');
+});
+
+test('A typed preparation request from verified-state wording becomes exactly one signed button, not a created draft',async()=>{
+ const planner=sdk(()=>({reply:'Aufgenommen.',intent:'issue',updates:[{ref:'new',equipment:'heater',location:'Bad',count:2,defect:'bleiben kalt'}]}));
+ const handler=createChatHandler(service(planner),{env:{},compose:turn=>generateNaturalReply(turn,sdk(()=>({reply:'Den Entwurf können Sie vorbereiten.',questionKey:null,requestPreparation:true})))});
+ let result=await invoke(handler,{message:'Zwei Heizkörper im Bad bleiben kalt.'});assert.equal(result.code,200);
+ assert.equal(result.data.modelCalls,2);assert.equal(result.data.actions.length,1);assert.equal(result.data.actions[0].label,'Für MORADA vorbereiten');
+ const state=readSession(result.data.session);assert.equal(state.issue.draftOfferShown,true);assert.equal(state.issue.preparation.status,'not_prepared');
+ acceptPreparationProposal(state);assert.equal(state.actions.length,1,'same proposal is idempotent');
+ result=await invoke(handler,{session:result.data.session,draftReceipt:{issueId:state.issue.id,revision:state.issue.revision,status:'portal_received'}});
+ assert.equal(result.code,200);assert.equal(result.data.modelCalls,0);assert.equal(result.data.actions.length,0);
+ assert.throws(()=>acceptPreparationProposal(readSession(result.data.session)),{code:'INVALID_ACTION'});
+});
+
+test('A wording request cannot add preparation to a clarification; the real repair retains only the question',async()=>{
+ const planner=sdk(()=>({reply:'Wo ist die Lampe?',intent:'issue',updates:[{ref:'new',equipment:'light',defect:'kaputt'}],ask:{field:'location',text:'Wo ist die Lampe?'}}));
+ let attempts=0;
+ const handler=createChatHandler(service(planner),{env:{},compose:turn=>generateNaturalReply(turn,sdk(()=>({reply:'In welchem Raum ist die Lampe?',questionKey:'location',requestPreparation:++attempts===1})))});
+ const result=await invoke(handler,{message:'Lampe kaputt'});
+ assert.equal(result.code,200);assert.equal(result.data.modelCalls,3);assert.equal(attempts,2);assert.equal(result.data.actions.length,0);
+ assert.equal(readSession(result.data.session).pendingKey,'location');assert.ok(!result.data.issue.draftOfferShown);
 });

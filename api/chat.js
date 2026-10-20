@@ -7,6 +7,7 @@ import { canComposeReply, composeNaturalReply } from '../lib/mora/reply.js';
 import { modelFailure } from '../lib/mora/availability.js';
 import { readPortalContext } from '../lib/mora/portal-context.js';
 import { safeUsage } from '../lib/mora/provider.js';
+import { acceptPreparationProposal } from '../lib/mora/actions.js';
 
 const sumUsage=(first,second)=>Object.fromEntries(['inputTokens','outputTokens','reasoningTokens','cachedInputTokens'].map(key=>[key,
   Number.isSafeInteger(first?.[key]) && Number.isSafeInteger(second?.[key])?first[key]+second[key]:null]));
@@ -45,6 +46,7 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
           const composed=await compose(result, {env, timeoutMs:deadline - Date.now()});
           result.reply=typeof composed==='string'?composed:composed.reply;
           if(typeof composed!=='string') {
+            if(composed.requestPreparation)acceptPreparationProposal(result.state);
             modelCalls+=Math.max(0,(composed.generationCount || 1)-1);
             const usage=safeUsage(composed.usage);
             result.modelUsage=sumUsage(result.modelUsage,usage);
