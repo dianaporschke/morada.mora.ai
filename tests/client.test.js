@@ -127,6 +127,19 @@ test('Offline and expired session errors preserve the issue and offer recovery',
   assert.ok(f.document.querySelector('[data-action-id="prepare-request"]')); f.window.close();
 });
 
+test('A failed first message can be retried after reload without duplicating the customer bubble',async()=>{
+  const f=fixture();await f.ui.ready;
+  const offline=createMora(f.document,f.window,async()=>{throw new Error('offline');});await offline.ready;
+  await offline.submit({message:'Meine Heizung ist kalt.'},'Meine Heizung ist kalt.');
+  const saved=f.window.sessionStorage.getItem('morada.mora.v2.thread');f.window.close();
+  const reloaded=fixture(390,{thread:saved});await reloaded.ui.ready;
+  assert.ok(reloaded.document.querySelector('[data-action-id="retry"]'));
+  await reloaded.ui.onAction({type:'retry'});
+  assert.equal(reloaded.requests.length,1);assert.equal(reloaded.requests[0].body.message,'Meine Heizung ist kalt.');
+  assert.equal(reloaded.ui.getState().thread.filter(entry=>entry.who==='user').length,1);
+  assert.equal(reloaded.ui.getState().pendingTurn,undefined);reloaded.window.close();
+});
+
 test('A disabled or misconfigured model does not offer useless retries and preserves drafts', async () => {
   const f=fixture(); await f.ui.ready;
   await f.ui.submit({message:'heizung funktioniert nicht'},'heizung funktioniert nicht');

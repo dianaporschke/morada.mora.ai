@@ -30,7 +30,7 @@ test('Mercury uses supported JSON mode with the complete schema in system instru
     assert.equal(options.responseFormat.type, 'json');
     assert.equal(options.responseFormat.schema, undefined);
     assert.equal(options.tools, undefined);
-    assert.equal(options.providerOptions.inception.reasoningEffort,'medium');
+    assert.equal(options.reasoning,'high');
     assert.match(JSON.stringify(options.prompt), /unknownAnswers/);
     assert.match(JSON.stringify(options.prompt), /additionalProperties/);
     assert.match(JSON.stringify(options.prompt), /Steckdose im Schlafzimmer kaputt/);
@@ -43,7 +43,7 @@ test('Mercury uses supported JSON mode with the complete schema in system instru
 test('A sparse genuine greeting needs no unrelated damage facts, placeholder arrays or second model call',async()=>{
   let calls=0;
   const output={intent:'greeting',dialogue:{reply:'Grüezi! Wie kann ich Ihnen helfen?'}};
-  const result=await generateUnderstandingResult('Hey',null,mercury(output,options=>{calls++;assert.equal(options.providerOptions.inception.reasoningEffort,'medium');}));
+  const result=await generateUnderstandingResult('Hey',null,mercury(output,options=>{calls++;assert.equal(options.reasoning,'high');}));
   assert.equal(calls,1);assert.equal(result.data.dialogue.reply,output.dialogue.reply);
   assert.equal(result.data.category,null);assert.equal(result.data.count,null);assert.equal(result.data.hazard,'none');
   assert.deepEqual(result.data.additionalIssues,[]);assert.deepEqual(result.data.unknownFields,[]);assert.deepEqual(result.data.dialogue.buttons,[]);
@@ -315,7 +315,7 @@ test('A portal draft is not a sending capability, including future wording rathe
 });
 
 
-test('A multi-issue follow-up requires an explicit valid issue index before being shown',async()=>{
+test('Missing optional multi-issue question metadata preserves the genuine reply and sourced facts in one call',async()=>{
   const text='Heizung kalt und Wasser im Bad';let calls=0;
   const sdk=new MockLanguageModelV4({modelId:'inception/mercury-2.5',doGenerate:async()=>{
     calls++;const ask={field:'details',text:'Woher tropft das Wasser?',...(calls>1 ? {issueIndex:1} : {})};
@@ -325,7 +325,8 @@ test('A multi-issue follow-up requires an explicit valid issue index before bein
       usage:{inputTokens:{total:200,noCache:200,cacheRead:0,cacheWrite:0},outputTokens:{total:100,text:80,reasoning:20}}};
   }});
   const result=await generateUnderstandingResult(text,null,sdk);
-  assert.equal(calls,2);assert.equal(result.data.dialogue.forIssueIndex,1);
+  assert.equal(calls,1);assert.equal(result.data.dialogue.forIssueIndex,undefined);assert.equal(result.data.question,null);
+  assert.equal(result.data.dialogue.reply,'Woher tropft das Wasser?');
   assert.equal(result.data.description,'Heizung kalt');assert.equal(result.data.additionalIssues[0].description,'Wasser im Bad');
 });
 

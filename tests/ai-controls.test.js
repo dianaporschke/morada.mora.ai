@@ -40,7 +40,7 @@ test('Read-only credit audit caches concurrent requests; balance does not prove 
   let calls=0, clock=100000, logged;
   const handler = createReadinessHandler({env:preview,now:()=>clock,log:(message,data)=>{logged=data;},
     readCredits:async()=>{calls++;return {balance:'5.00',totalUsed:'1.25',secret:'private'};},
-    readModels:async()=>({models:[{id:'openai/gpt-6-luna'}]})});
+    readModels:async()=>({models:[{id:'inception/mercury-2.5'}]})});
   const results = await Promise.all([invoke(handler),invoke(handler)]);
   assert.equal(calls,1); assert.equal(results[0].status,200);
   assert.equal(results[0].body.freeUseVerified,false); assert.equal(results[0].body.inferenceEnabled,false);

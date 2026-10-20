@@ -16,7 +16,7 @@ test('Explicit OpenAI selection bypasses Vercel OIDC and does not switch provide
 
 test('Auto retains existing Gateway preference, and request-scoped OIDC is recognised', async () => {
   const selection = await resolveProvider({OPENAI_API_KEY:'test'}, async () => 'oidc-token');
-  assert.equal(selection.provider, 'gateway'); assert.equal(selection.model, 'openai/gpt-6-luna');
+  assert.equal(selection.provider, 'gateway'); assert.equal(selection.model, 'inception/mercury-2.5');
   assert.equal(selection.ready, true);
   const direct = await resolveProvider({OPENAI_API_KEY:'test'}, async () => {throw new Error('No OIDC');});
   assert.equal(direct.provider, 'openai');

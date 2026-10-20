@@ -347,7 +347,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
   const ready = (async () => {
     try {
       const saved = JSON.parse(window.sessionStorage.getItem(STORAGE_KEY) || 'null');
-      if (saved?.session && Array.isArray(saved.thread)) { state = saved; state.issues ||= state.issue ? [state.issue] : []; state.files ||= state.issue?.attachments || []; messages.replaceChildren();
+      if ((saved?.session || saved?.pendingTurn) && Array.isArray(saved.thread)) { state = saved; state.issues ||= state.issue ? [state.issue] : []; state.files ||= state.issue?.attachments || []; messages.replaceChildren();
         for (const entry of state.thread) addBubble(entry.content, entry.who, entry.actions || [], false);
         if (state.thread.at(-1)?.who !== 'assistant') { disableActions(); latestActions = null; }
         await renderPhotos(); }
