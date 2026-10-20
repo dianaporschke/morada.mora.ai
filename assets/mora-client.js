@@ -125,17 +125,18 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
       state.session = data.session; state.issue = data.issue || null; state.capabilities = data.capabilities;
       state.issues = Array.isArray(data.issues) ? data.issues : (data.issue ? [data.issue] : []);
       state.files = structuredClone(data.issue?.attachments || []);
-      retryPayload = null; addBubble(data.reply, 'assistant', data.actions || []); renderIssueControls(); await renderPhotos(); persist();
+      retryPayload = null; delete state.pendingTurn; addBubble(data.reply, 'assistant', data.actions || []); renderIssueControls(); await renderPhotos(); persist();
       // Measure the actual browser roundtrip, separately from server/model time.
       // No text, signed sessions, photos or personal data are logged.
       window.console.info('MORA response timing',{roundtripMs:Math.round(window.performance.now()-startedAt),
         serverMs:data.timingMs?.total ?? null,modelMs:data.timingMs?.model ?? null,modelCalls:data.modelCalls ?? null});
     } catch (error) {
-      loading.remove(); retryPayload = { payload, displayText };
+      loading.remove(); retryPayload = { payload, displayText }; state.pendingTurn=retryPayload;
       const actions = error.retryable === false || error.code === 'INVALID_SESSION' || error.code === 'INVALID_ACTION' ? [] : [{ id:'retry', label:'Erneut versuchen', type:'retry', variant:'primary' }];
       if (state.issue) actions.push({ id:'prepare-request', label:'Anliegenentwurf öffnen', type:'handover', variant:'secondary' });
       actions.push({ id:'new-request', label:'Neuen Chat starten', type:'reset', variant:'secondary' });
       addBubble(error.code ? error.message : 'MORA ist gerade nicht erreichbar. Ihre Angaben bleiben im Chat erhalten. Sie können es erneut versuchen oder den bisherigen Anliegenentwurf öffnen.', 'assistant', actions);
+      persist();
     } finally { window.clearTimeout(timer); renderIssueControls(); lock(false); scroll(); }
   }
 
@@ -150,7 +151,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     if (action.type === 'call') { if (action.number === '112') window.location.href = 'tel:112'; return; }
     if (action.type === 'attachment') return fileInput.click();
     if (action.type === 'handover') return handover();
-    if (action.type === 'retry') { if (retryPayload) return submit(retryPayload.payload, retryPayload.displayText, true); return; }
+    if (action.type === 'retry') { const pending=retryPayload || state.pendingTurn; if (pending) return submit(pending.payload, pending.displayText, true); return; }
     if (action.type === 'reset') return resetChat();
     if (typeof action.id !== 'string' || action.id.length > 100) return;
     return submit({ actionId:action.id }, action.type === 'select' ? action.label : undefined);

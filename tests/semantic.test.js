@@ -13,11 +13,13 @@ test('SDK structured output contract passes signed context to the model and vali
   const model = new MockLanguageModelV4({ doGenerate:async options => {
     captured = options;
     const {unknownFields,topic,answer,hazard,confidence,question,clarification,...rest}=expected;
-    return { content:[{type:'text',text:JSON.stringify({...rest,dialogue:{reply:expected.dialogue.reply,buttons:expected.dialogue.buttons},risk:hazard,sourceQuote:null,unknownAnswers:[]})}], finishReason:{unified:'stop',raw:'stop'},
+    void rest; void hazard;
+    return { content:[{type:'text',text:JSON.stringify({reply:expected.dialogue.reply,intent:'issue',updates:[{ref:'active',equipment:'heater',category:'heating',since:'seit gestern'}]})}], finishReason:{unified:'stop',raw:'stop'},
       usage:{ inputTokens:{total:100,noCache:100,cacheRead:0,cacheWrite:0}, outputTokens:{total:80,text:80,reasoning:0} }, warnings:[] };
   } });
   const state = { history:[{role:'user',content:'Meine Heizung funktioniert nicht.'},{role:'assistant',content:'Seit wann?'}],
     issue:{id:'issue1',category:'heating',description:'Meine Heizung funktioniert nicht.'}, pendingKey:'since' };
+  state.issues=[state.issue];
   const result = await generateUnderstanding('seit gestern', state, model);
   assert.equal(result.since,'seit gestern'); assert.equal(result.category,'heating');
   assert.match(JSON.stringify(captured.prompt), /Meine Heizung funktioniert nicht/);

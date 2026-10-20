@@ -5,8 +5,9 @@ import { extractUnderstanding } from '../lib/mora/understanding.js';
 import { portalCapabilities } from '../lib/portal/adapter.js';
 import { canComposeReply, composeNaturalReply } from '../lib/mora/reply.js';
 import { modelFailure } from '../lib/mora/availability.js';
+import { readPortalContext } from '../lib/mora/portal-context.js';
 
-export function createChatHandler(understand = extractUnderstanding, { compose = composeNaturalReply, env = process.env } = {}) {
+export function createChatHandler(understand = extractUnderstanding, { compose = composeNaturalReply, env = process.env, loadPortalContext=undefined } = {}) {
   return async function handler(req, res) {
     res.setHeader('Cache-Control', 'no-store');
     if (req.method !== 'POST') {
@@ -15,19 +16,21 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
     }
     const parsed = chatInputSchema.safeParse(req.body);
     if (!parsed.success) return res.status(400).json({ error: 'Bitte geben Sie eine kurze Nachricht oder eine gültige Aktion ein.' });
+    const startedAt=Date.now();
+    let modelMs=0,modelCalls=0;
     try {
-      const startedAt=Date.now();
-      let modelMs=0,modelCalls=0;
       // Extraction and wording share one bounded budget, below the Function limit.
       const deadline = Date.now() + 55000;
       const previous = parsed.data.session ? readSession(parsed.data.session) : null;
+      const portalContext=await readPortalContext(req,loadPortalContext);
       const result = await processTurn(parsed.data, previous, async(message, state) => {
         const start=Date.now(); modelCalls++;
         try {
-          const interpreted=await understand(message,state,{timeoutMs:deadline-Date.now()});
+          const interpreted=await understand(message,state,{timeoutMs:deadline-Date.now(),portalContext});
           if (interpreted.generationCount===2) modelCalls++;
           return interpreted;
         }
+        catch (error) { if (error.modelCalls===2) modelCalls++; throw error; }
         finally { modelMs+=Date.now()-start; }
       });
       const activeDanger=result.state.issue && (result.state.issue.hazard!=='none' || result.state.issue.urgency==='emergency');
@@ -51,7 +54,9 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
       if (error.code === 'MODEL_UNAVAILABLE') {
         const failure = modelFailure(error.availability);
         console.warn('MORA model unavailable', {...failure.modelAvailability,category:failure.category,retryable:failure.retryable,validation:error.validation || null});
-        return res.status(503).json(failure);
+        const total=Date.now()-startedAt;
+        return res.status(503).json({...failure,timingMs:{total,model:modelMs,application:Math.max(0,total-modelMs)},
+          modelCalls,modelUsage:error.modelUsage || null});
       }
       if (error.code === 'ISSUE_LIMIT') return res.status(409).json({ error:'In dieser Unterhaltung sind bereits acht Anliegen aufgenommen. Öffnen Sie die vorhandenen Entwürfe und starten Sie für weitere Probleme einen neuen Chat.', code:'ISSUE_LIMIT' });
       if (error.code === 'INVALID_SESSION' || error.code === 'INVALID_ACTION') {
