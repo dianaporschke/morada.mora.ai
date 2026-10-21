@@ -8,7 +8,7 @@ assert subprocess.check_output(['git','branch','--show-current'],cwd=root,text=T
 proof=json.loads(pathlib.Path(args.credit_proof).read_text())
 assert abs(proof['credits']['balanceUsd']+proof['credits']['totalUsedUsd']-5)<0.00001
 tracked=subprocess.check_output(['git','ls-files'],cwd=root,text=True).splitlines()
-paths=[name for name in tracked if name.startswith(('api/','lib/','assets/','icons/','scripts/quality-phase2/')) or name in ['index.html','package.json','package-lock.json','vercel.json','scripts/build.mjs','scripts/check.mjs','scripts/quality-phase1/cases.json'] or name in ['transparent 1.0.png','transparent 2.0.png']]
+paths=[name for name in tracked if name.startswith(('api/','lib/','assets/','icons/','scripts/quality-phase2/')) or name in ['index.html','package.json','package-lock.json','vercel.json','scripts/build.mjs','scripts/check.mjs','scripts/quality-phase1/cases.json','scripts/premium-cases.json'] or name in ['transparent 1.0.png','transparent 2.0.png']]
 manifest=[]
 for name in paths:
     if name.endswith('.py') or name.endswith('.md'):continue

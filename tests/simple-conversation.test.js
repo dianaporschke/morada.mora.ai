@@ -70,6 +70,13 @@ test('Unknown equipment gets no arbitrary damage category',()=>{
  const state=projectDecision(hydrateSimple(null),'Das Ding beim Fenster klemmt.',plan('Welches Teil meinen Sie?',[patch('new1','Das Ding beim Fenster klemmt.',{defect:'klemmt'})],{ask:{field:'equipment'}}));
  assert.equal(state.issue.equipment,'unknown');assert.equal(state.issue.category,'general');
 });
+test('A multi-issue question must identify its target without forcing its wording',()=>{
+ let state=stateWithOffer();
+ state=projectDecision(state,'Der Heizkörper im Bad bleibt kalt.',plan('Ich halte das separat fest.',[patch('new1','Der Heizkörper im Bad bleibt kalt.',{equipment:'heater',location:'Bad',defect:'bleibt kalt'})]));
+ assert.throws(()=>projectDecision(state,'Eine Frage dazu.',plan('Seit wann ist die Lampe defekt?',[],{ask:{field:'since'}})),/explicit target ref/);
+ const next=projectDecision(state,'Eine Frage dazu.',plan('Seit wann ist die Lampe defekt?',[],{ask:{field:'since',ref:'other1'}}));
+ assert.equal(next.issue.equipment,'light');assert.equal(next.pendingKey,'since');
+});
 test('Write ticket is idempotent; unissued/stale receipts cannot create a draft',()=>{
  const state=stateWithOffer(),ticket=beginPreparation(state);
  assert.deepEqual(beginPreparation(state),ticket);assert.equal(state.issue.preparation.status,'not_prepared');
@@ -135,7 +142,7 @@ test('A mismatching IndexedDB readback cannot produce a successful receipt',asyn
  const f=fixture();await f.ui.ready;await f.ui.submit({message:first},first);
  const original=IDBObjectStore.prototype.get;
  IDBObjectStore.prototype.get=function(...args){const request=original.apply(this,args);
-  if(this.name==='drafts')request.addEventListener('success',()=>{if(request.result)request.result.location='abweichender Wert';});
+  if(this.name==='drafts')request.addEventListener('success',()=>{if(request.result)request.result.cause='unbelegte Ursache';});
   return request;};
  try{await f.ui.onAction({id:'prepare-request',type:'handover'});}finally{IDBObjectStore.prototype.get=original;}
  assert.equal(f.requests.filter(r=>r.body.draftReceipt?.status==='portal_received').length,0);

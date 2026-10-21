@@ -2,7 +2,7 @@ const TYPES = new Set(['select', 'handover', 'attachment', 'add_details', 'navig
 const TABS = new Set(['docs', 'service', 'profile', 'portfolio']);
 const IMAGE_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif']);
 const STORAGE_KEY = 'morada.mora.v2.thread';
-import { categoryLabels as LABELS, equipmentLabels as EQUIPMENT, equipmentCategories, mapServiceDraft, draftSummary, draftLabel, preparationState, draftActionState } from './mora-data.js';
+import { categoryLabels as LABELS, equipmentLabels as EQUIPMENT, equipmentCategories, mapServiceDraft, draftSummary, draftLabel, preparationState, draftActionState, draftFields } from './mora-data.js';
 import {detectHazard,safetyNotice} from './mora-safety.js';
 const DRAFT_FIELDS = [['moraDraftDescription','description'], ['moraDraftEquipment','equipment'], ['moraDraftDefect','defect'], ['moraDraftCount','count'], ['moraDraftExtent','extent'], ['moraDraftLocation','location'], ['moraDraftSince','since'], ['moraDraftDetails','details']];
 const FIELD_LABELS = { description:'Beschreibung', equipment:'Einrichtung', defect:'Defekt', count:'Anzahl', extent:'Umfang', location:'Bereich', since:'Beginn', details:'Zusatzangaben' };
@@ -229,7 +229,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     await storageOperation('drafts', 'readwrite', store => store.put(draft));
     if(simple){
       const saved=await storageOperation('drafts','readonly',store=>store.get(draft.id));
-      if(!saved || saved.sourceContent!==draft.sourceContent || saved.sourceRevision!==draft.sourceRevision || DRAFT_FIELDS.some(([,field])=>JSON.stringify(saved[field]??null)!==JSON.stringify(draft[field]??null)))throw new Error('Draft readback failed');
+      if(!saved || saved.sourceContent!==draft.sourceContent || saved.sourceRevision!==draft.sourceRevision || draftFields.some(field=>JSON.stringify(saved[field]??null)!==JSON.stringify(draft[field]??null)))throw new Error('Draft readback failed');
     }
     drafts = drafts.filter(item => item.id !== draft.id); drafts.unshift(draft);
     if (show || activeDraft?.id === draft.id) { activeDraft = draft; renderDraft(); }
