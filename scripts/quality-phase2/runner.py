@@ -46,7 +46,7 @@ else:
     if status!=200:raise RuntimeError('Preflight stopped: '+json.dumps(start))
     evidence={k:v for k,v in start.items() if k not in ['runToken']}
     evidence.update({'url':cfg['url'],'startedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'rows':[],'costs':[],'complete':False,
-     'method':{'order':'same 20 fixed case conversations; C compared with saved Phase 1 A/B' ,'fixedCustomerMessages':True,'modelRetries':0,'externalGenerationRetries':0,
+     'method':{'order':'fixed suite order; C main compared with saved Phase 1 A/B','fixedCustomerMessages':True,'sdkNetworkRetries':0,'contractRepairLimit':1,'externalGenerationRetries':0,
      'pacingOutsideMeasuredRequests':True,'minimumRequestIntervalSeconds':cfg.get('minIntervalSeconds',35),'maximumReservedGenerationsPerMinute':5,
      'C':'one conversational decision; read-only semantic verification; at most one bounded repair; separate local storage receipts'}})
     run_token=start['runToken'];sessions={}
@@ -61,10 +61,10 @@ def persist():
     checkpoint.chmod(0o600)
 
 persist()
-print(json.dumps({'event':'preflight','cases':start['caseCount'],'requests':start['turnCount'],'price':start['price'],'maxCostUsd':start['maxCostUsd']}),flush=True)
+print(json.dumps({'event':'preflight','suite':start['suite'],'cases':start['conversationCount'],'requests':start['turnCount'],'price':start['price'],'maxCostUsd':start['maxCostUsd']}),flush=True)
 processed=0
 for step in start['schedule'][len(evidence['rows']):]:
-    # Reserve the largest possible genuine B validation/wording path, preserving
+    # Reserve the C decision/verification path with at most one contract repair, preserving
     # the application's own timeout and retry behavior inside each request.
     reservation=1 if step['variant']=='V' else 4
     while True:

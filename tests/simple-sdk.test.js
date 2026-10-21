@@ -34,3 +34,9 @@ test('Unreadable native JSON is repaired once through the actual SDK path',async
  const r=await createSimpleService({resolve:async()=>s})('Lampe kaputt',hydrateSimple(null),5000);
  assert.equal(r.modelCalls,3);assert.equal(r.repaired,true);assert.equal(r.state.issue.equipment,'light');
 });
+test('A topic name cannot masquerade as an issue reference; the SDK repair identifies the exact field and allowed references',async()=>{
+ const s=selection([{...decision('Wo ist die Lampe?'),activeIssueRef:'defect'},decision('Wo ist die Lampe?'),{violations:[]}]);
+ const r=await createSimpleService({resolve:async()=>s})('Lampe kaputt',hydrateSimple(null),5000);
+ assert.equal(r.modelCalls,3);assert.equal(r.state.issue.equipment,'light');
+ assert.match(s.sdk.doGenerateCalls[1].prompt[0].content,/activeIssueRef:invalid_value allowed=new1,new2,new3,new4/);
+});
