@@ -53,11 +53,14 @@ export function draftLabel(draft) {
   return draft.equipment && draft.equipment!=='unknown' ? equipmentLabels[draft.equipment] || draft.equipment : categoryLabels[draft.category] || 'Anliegen';
 }
 export function draftSummary(draft) {
-  return [draftLabel(draft), draft.localEdits?.description ? draft.description : draft.defect || draft.description,
-    draft.count && `Anzahl: ${draft.count}`, draft.location && `Bereich: ${draft.location}`,
-    draft.since ? `Seit wann: ${draft.since}` : draft.unknownFields?.includes('since') ? 'Beginn: unbekannt' : null,
-    draft.extent && `Umfang / Situation: ${draft.extent}`,draft.details && `Zusatzangaben: ${draft.details}`,
-    draft.cause && `Genannte Ursache: ${draft.cause}`,
+  const uncertain=field=>!draft.localEdits?.[field] && draft.fieldFacts?.[field]?.status==='uncertain';
+  const fact=(field,label)=>uncertain(field)?`${label}: unsicher${draft[field]!=null?` (bisherige Angabe: ${draft[field]})`:''}`:draft[field]!=null?`${label}: ${draft[field]}`:null;
+  const countScope=uncertain('count') && !draft.localEdits?.extent && /^\d+ betroffene Einrichtung/.test(draft.extent || '');
+  return [draftLabel(draft)+(uncertain('equipment')?' (Zuordnung unsicher)':''), draft.localEdits?.description ? draft.description : uncertain('defect')?fact('defect','Defekt'):draft.defect || draft.description,
+    fact('count','Anzahl'),fact('location','Bereich'),
+    draft.since || uncertain('since') ? fact('since','Seit wann') : draft.unknownFields?.includes('since') ? 'Beginn: unbekannt' : null,
+    countScope?'Umfang / Situation: Anzahl noch unsicher':fact('extent','Umfang / Situation'),fact('details','Zusatzangaben'),
+    fact('cause','Genannte Ursache'),
     `Dringlichkeit: ${{normal:'Normal',high:'Dringend',emergency:'Mögliche akute Gefahr'}[draft.urgency] || 'Normal'}`,
     draft.attachments?.length && `Fotos: ${draft.attachments.length} (lokal, noch nicht hochgeladen)`,
   ].filter(Boolean).join('\n');

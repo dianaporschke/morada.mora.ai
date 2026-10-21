@@ -3,6 +3,7 @@ const TABS = new Set(['docs', 'service', 'profile', 'portfolio']);
 const IMAGE_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif']);
 const STORAGE_KEY = 'morada.mora.v2.thread';
 import { categoryLabels as LABELS, equipmentLabels as EQUIPMENT, equipmentCategories, mapServiceDraft, draftSummary, draftLabel, preparationState, draftActionState } from './mora-data.js';
+import {detectHazard,safetyNotice} from './mora-safety.js';
 const DRAFT_FIELDS = [['moraDraftDescription','description'], ['moraDraftEquipment','equipment'], ['moraDraftDefect','defect'], ['moraDraftCount','count'], ['moraDraftExtent','extent'], ['moraDraftLocation','location'], ['moraDraftSince','since'], ['moraDraftDetails','details']];
 const FIELD_LABELS = { description:'Beschreibung', equipment:'Einrichtung', defect:'Defekt', count:'Anzahl', extent:'Umfang', location:'Bereich', since:'Beginn', details:'Zusatzangaben' };
 
@@ -18,10 +19,10 @@ export function renderActions(document, actions, onAction) {
   return group;
 }
 
-function database(window) {
+function database(window, name = 'morada-mora-v2') {
   return new Promise((resolve, reject) => {
     if (!window.indexedDB) return reject(new Error('Storage unavailable'));
-    const request = window.indexedDB.open('morada-mora-v2', 1);
+    const request = window.indexedDB.open(name, 1);
     request.onupgradeneeded = () => {
       request.result.createObjectStore('files', { keyPath:'id' });
       request.result.createObjectStore('drafts', { keyPath:'id' });
@@ -29,8 +30,8 @@ function database(window) {
     request.onsuccess = () => resolve(request.result); request.onerror = () => reject(request.error);
   });
 }
-async function dbOperation(window, store, mode, operation) {
-  const db = await database(window);
+async function dbOperation(window, store, mode, operation, name = 'morada-mora-v2') {
+  const db = await database(window,name);
   try {
     return await new Promise((resolve, reject) => {
       const tx = db.transaction(store, mode); const request = operation(tx.objectStore(store));
@@ -39,19 +40,24 @@ async function dbOperation(window, store, mode, operation) {
   } finally { db.close(); }
 }
 
-export function createMora(document, window, fetcher = window.fetch.bind(window)) {
+export function createMora(document, window, fetcher = window.fetch.bind(window), options = {}) {
+  const simple=options.mode==='simple';
+  const endpoint=simple?'/api/chat-simple':'/api/chat';
+  const storageKey=simple?'morada.mora.simple.v1.thread':STORAGE_KEY;
+  const storageOperation=(store,mode,operation)=>dbOperation(window,store,mode,operation,simple?'morada-mora-simple-v1':'morada-mora-v2');
   const form = document.getElementById('moraForm'); const text = document.getElementById('moraText');
   const messages = document.getElementById('moraMessages'); const send = document.getElementById('moraSend');
   const fileInput = document.getElementById('moraFileInput'); const attachments = document.getElementById('moraAttachments');
   const draftSection = document.getElementById('moraDrafts'); const draftPicker = document.getElementById('moraDraftPicker');
   const issueControls = document.getElementById('moraIssueControls'); const issuePicker = document.getElementById('moraIssuePicker');
+  if(simple)document.getElementById('moraStorageNote').textContent='MORA C · Testversion. Entwürfe bleiben auf diesem Gerät.';
   let state = { session:null, issue:null, issues:[], capabilities:{ submitRequest:false }, thread:[], files:[] };
   let busy = false; let preparationPhase='not_prepared'; let latestActions; let retryPayload; let activeDraft; let drafts = [];
   const blobs = new Map(); const urls = new Map();
   const id = () => window.crypto.randomUUID();
   const scroll = () => { messages.scrollTop = messages.scrollHeight; };
   const persist = () => {
-    try { window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    try { window.sessionStorage.setItem(storageKey, JSON.stringify(state)); }
     catch { document.getElementById('moraStorageNote').textContent = 'Der Browser kann den Chat gerade nicht speichern. Bitte laden Sie Ihren Anliegenentwurf herunter.'; }
   };
   const addBubble = (content, who = 'assistant', actions = [], remember = true) => {
@@ -103,6 +109,14 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     if (busy) return;
     disableActions(); lock(true);
     if (displayText && !retry) addBubble(displayText, 'user');
+    if(simple && payload.message){
+      const danger=detectHazard(payload.message);
+      const hazard=danger.hazard!=='none'?danger.hazard:state.safety?.hazard;
+      if(hazard && !(state.safetyNotices || []).includes(hazard)){
+        state.safetyNotices=[...(state.safetyNotices || []),hazard];
+        addBubble(safetyNotice(hazard),'assistant');
+      }
+    }
     if (!retry && payload.message) text.value = '';
     const loading = addBubble('MORA antwortet …', 'assistant', [], false); loading.classList.add('loading');
     const startedAt=window.performance.now();
@@ -114,13 +128,14 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
         try {await acknowledgeDraft(state.issue,'portal_received');}
         catch {throw Object.assign(new Error('Der Entwurf ist lokal gespeichert. Sein Status konnte gerade nicht mit MORA abgeglichen werden. Bitte versuchen Sie es erneut.'),{code:'DRAFT_SYNC',retryable:true});}
       }
-      const response = await fetcher('/api/chat', { method:'POST', headers:{'Content-Type':'application/json'},
+      const response = await fetcher(endpoint, { method:'POST', headers:{'Content-Type':'application/json'},
         body:JSON.stringify({ ...(!payload.draftReceipt && state.issue ? { attachments:state.files } : {}), ...payload, ...(state.session ? { session:state.session } : {}) }), signal:controller.signal });
       const data = await response.json(); loading.remove();
       if (!response.ok) throw Object.assign(new Error(data.error || 'Die Antwort konnte nicht geladen werden.'), { code:data.code, retryable:data.retryable });
       if (typeof data.reply !== 'string' || typeof data.session !== 'string') throw new Error('Die Antwort konnte nicht geladen werden.');
-      if (previousIssue && drafts.some(draft=>draft.id===previousIssue.id) && data.issue?.id !== previousIssue.id) {try {await saveDraft(previousIssue,false);} catch {preparationPhase='error';}}
+      if (!simple && previousIssue && drafts.some(draft=>draft.id===previousIssue.id) && data.issue?.id !== previousIssue.id) {try {await saveDraft(previousIssue,false);} catch {preparationPhase='error';}}
       state.session = data.session; state.issue = data.issue || null; state.capabilities = data.capabilities;
+      if(simple)state.safety=data.safety || null;
       state.issues = Array.isArray(data.issues) ? data.issues : (data.issue ? [data.issue] : []);
       state.files = structuredClone(data.issue?.attachments || []);
       preparationPhase=preparationState(state.issue,drafts.find(draft=>draft.id===state.issue?.id));
@@ -161,8 +176,9 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
   async function resetChat() {
     if (busy) return;
     lock(true);
-    for (const issue of state.issues.filter(issue=>drafts.some(draft=>draft.id===issue.id))) {try {await saveDraft(issue,false);} catch {preparationPhase='error';}}
+    if(!simple)for (const issue of state.issues.filter(issue=>drafts.some(draft=>draft.id===issue.id))) {try {await saveDraft(issue,false);} catch {preparationPhase='error';}}
     state.session = null; state.issue = null; state.issues = []; state.files = []; persist(); renderIssueControls(); await renderPhotos();
+    delete state.safety;delete state.safetyNotices;delete state.preparationOperation;
     lock(false);
     return submit({ actionId:'new-request' });
   }
@@ -171,7 +187,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     attachments.replaceChildren(); attachments.hidden = !state.files.length;
     for (const meta of state.files) {
       let file = blobs.get(meta.id);
-      if (!file) { try { file = (await dbOperation(window, 'files', 'readonly', store => store.get(meta.id)))?.file; if (file) blobs.set(meta.id, file); } catch {} }
+      if (!file) { try { file = (await storageOperation('files', 'readonly', store => store.get(meta.id)))?.file; if (file) blobs.set(meta.id, file); } catch {} }
       const row = document.createElement('div'); row.className = 'mora-photo';
       if (file && window.URL.createObjectURL && !/heic|heif/.test(meta.type)) {
         if (!urls.has(meta.id)) urls.set(meta.id, window.URL.createObjectURL(file));
@@ -196,7 +212,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
       if (!IMAGE_TYPES.has(file.type) || file.size > 10 * 1024 * 1024 || !file.size) { warning = 'Bitte wählen Sie JPG-, PNG-, WebP- oder HEIC-Fotos bis 10 MB.'; continue; }
       const meta = { id:id(), name:file.name.slice(0,180), type:file.type, size:file.size };
       blobs.set(meta.id, file); state.files.push(meta); added++;
-      try { await dbOperation(window, 'files', 'readwrite', store => store.put({ ...meta, file })); }
+      try { await storageOperation('files', 'readwrite', store => store.put({ ...meta, file })); }
       catch { warning = 'Die Fotos sind in diesem Chat verfügbar. Der Browser konnte sie nicht dauerhaft lokal speichern.'; }
     }
     fileInput.value = ''; syncPhotos(); persist(); await renderPhotos();
@@ -209,7 +225,12 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     const existing = drafts.find(item => item.id === issue.id);
     const draft=mapServiceDraft(issue,existing,{session:state.session});
     // Persist first: a failed transaction must not look like a successful handover.
-    await dbOperation(window, 'drafts', 'readwrite', store => store.put(draft));
+    if(simple && state.preparationOperation)draft.writeTicket=structuredClone(state.preparationOperation);
+    await storageOperation('drafts', 'readwrite', store => store.put(draft));
+    if(simple){
+      const saved=await storageOperation('drafts','readonly',store=>store.get(draft.id));
+      if(!saved || saved.sourceContent!==draft.sourceContent || saved.sourceRevision!==draft.sourceRevision || DRAFT_FIELDS.some(([,field])=>JSON.stringify(saved[field]??null)!==JSON.stringify(draft[field]??null)))throw new Error('Draft readback failed');
+    }
     drafts = drafts.filter(item => item.id !== draft.id); drafts.unshift(draft);
     if (show || activeDraft?.id === draft.id) { activeDraft = draft; renderDraft(); }
     return draft;
@@ -265,11 +286,17 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     return activeDraft;
   }
   async function acknowledgeDraft(issue, status) {
-    const response=await fetcher('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({session:state.session,draftReceipt:{issueId:issue.id,revision:issue.revision || 1,status}}),signal:AbortSignal.timeout(25000)});
+    const local=drafts.find(draft=>draft.id===issue.id);
+    const ticket=state.preparationOperation || local?.writeTicket;
+    if(simple && !ticket)throw new Error('Missing write ticket');
+    const draftReceipt=simple?{operationId:ticket.operationId,issueId:issue.id,draftId:issue.id,revision:ticket.revision,contentHash:ticket.contentHash,status,conflictFields:local?.conflictFields || []}:{issueId:issue.id,revision:issue.revision || 1,status};
+    const response=await fetcher(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({session:state.session,draftReceipt}),signal:AbortSignal.timeout(25000)});
     const data=await response.json();
     if (!response.ok || typeof data.session!=='string') throw new Error('Receipt not acknowledged');
-    state.session=data.session;state.issue=data.issue;state.issues=data.issues;persist();
+    state.session=data.session;state.issue=data.issue;state.issues=data.issues;
+    if(simple){delete state.preparationOperation;if(local)delete local.receiptPending;}
+    persist();return data;
   }
   async function handover() {
     if (!state.issue || busy) return;
@@ -277,30 +304,37 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     if (['portal_received','sent'].includes(preparationState(state.issue,current))) {navigate('service');return;}
     lock(true);preparationPhase='preparing';disableActions();
     try {
+      if(simple){
+        const response=await fetcher(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({session:state.session,actionId:'prepare-request'}),signal:AbortSignal.timeout(25000)});
+        const result=await response.json();if(!response.ok || !result.operation || typeof result.session!=='string')throw new Error('Write ticket unavailable');
+        state.session=result.session;state.preparationOperation=result.operation;persist();
+      }
       const draft=await saveDraft({...state.issue,attachments:state.files});
       preparationPhase=current ? 'updated':'created';
       // Existing local Service view is the receiving boundary. No submit operation.
       navigate('service');preparationPhase='portal_received';
-      try { await acknowledgeDraft(state.issue,'portal_received'); }
-      catch { draft.receiptPending=true; await dbOperation(window,'drafts','readwrite',store=>store.put(draft)); }
-      addBubble(current ? 'Der bestehende Entwurf wurde im Servicebereich aktualisiert. Er wurde noch nicht versendet.' : 'Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.');
+      let acknowledged;
+      try { acknowledged=await acknowledgeDraft(state.issue,'portal_received'); }
+      catch { draft.receiptPending=true; await storageOperation('drafts','readwrite',store=>store.put(draft)); }
+      addBubble(simple ? acknowledged?.reply || 'Der Entwurf ist auf diesem Gerät gespeichert. Der Status konnte gerade nicht mit MORA abgeglichen werden. Es wurde nichts an MORADA gesendet.' : current ? 'Der bestehende Entwurf wurde im Servicebereich aktualisiert. Er wurde noch nicht versendet.' : 'Ihr Anliegen ist im Servicebereich auf diesem Gerät vorbereitet. Es wurde noch nicht an MORADA gesendet.');
       persist();
     } catch {
       preparationPhase='error';
-      addBubble('Der Entwurf konnte nicht im Servicebereich gespeichert werden. Ihre Angaben bleiben im Chat erhalten. Bitte versuchen Sie es erneut.', 'assistant', [{id:'prepare-request',type:'handover',label:'Erneut vorbereiten',variant:'primary'}]);
+      if(simple && state.preparationOperation){try{await acknowledgeDraft(state.issue,'error');}catch{/* Keep the unconfirmed write ticket for an explicit retry. */}}
+      addBubble(simple?'Die lokale Speicherung konnte nicht bestätigt werden. Ihre Angaben bleiben im Chat erhalten. Bitte versuchen Sie es erneut.':'Der Entwurf konnte nicht im Servicebereich gespeichert werden. Ihre Angaben bleiben im Chat erhalten. Bitte versuchen Sie es erneut.', 'assistant', [{id:'prepare-request',type:'handover',label:'Erneut vorbereiten',variant:'primary'}]);
     } finally {lock(false);renderIssueControls();}
   }
   async function downloadDraft() {
     if (!activeDraft) return;
     updateDraft();
-    try { await dbOperation(window, 'drafts', 'readwrite', store => store.put(activeDraft)); } catch {}
+    try { await storageOperation('drafts', 'readwrite', store => store.put(activeDraft)); } catch {}
     const { session, chatSnapshot, localEdits, conflictFields, ...exported } = activeDraft;
     const payload = { ...exported, notice:activeDraft.delivery === 'sent' && activeDraft.requestId
       ? `Übermittlung bestätigt. Vorgang: ${activeDraft.requestId}.${activeDraft.unsentChanges ? ' Nachträgliche lokale Änderungen sind noch nicht übermittelt.' : ''} Fotos lokal gespeichert.`
       : 'Anliegenentwurf; noch nicht an MORADA übermittelt.', photos:[] };
     for (const meta of activeDraft.attachments) {
       let file = blobs.get(meta.id);
-      if (!file) { try { file = (await dbOperation(window, 'files', 'readonly', store => store.get(meta.id)))?.file; } catch {} }
+      if (!file) { try { file = (await storageOperation('files', 'readonly', store => store.get(meta.id)))?.file; } catch {} }
       if (file) {
         const dataUrl = await new Promise((resolve, reject) => { const reader = new window.FileReader(); reader.onload = () => resolve(reader.result); reader.onerror = reject; reader.readAsDataURL(file); });
         payload.photos.push({ ...meta, dataUrl });
@@ -325,7 +359,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
   document.getElementById('moraCaptureRequest').addEventListener('click', () => { document.getElementById('mora').checked = true; if (state.issue) return; submit({ message:'Ich möchte ein Anliegen melden.' }, 'Ich möchte ein Anliegen melden.'); });
   document.getElementById('moraContactCard').addEventListener('click', () => { document.getElementById('mora').checked = true; submit({ message:'Wie kann ich MORADA kontaktieren?' }, 'Wie kann ich MORADA kontaktieren?'); });
   document.getElementById('moraSaveDraft').addEventListener('click', async () => { if (!activeDraft) return; updateDraft();
-    try { await dbOperation(window, 'drafts', 'readwrite', store => store.put(activeDraft)); renderDraft();
+    try { await storageOperation('drafts', 'readwrite', store => store.put(activeDraft)); renderDraft();
       document.getElementById('moraDraftStatus').textContent = activeDraft.delivery === 'sent' && activeDraft.requestId
         ? `Lokal gespeichert. Vorgang ${activeDraft.requestId} wurde übermittelt.${activeDraft.unsentChanges ? ' Nachträgliche lokale Änderungen wurden noch nicht übermittelt.' : ''}`
         : 'Entwurf lokal gespeichert. Noch nicht an MORADA übermittelt.';
@@ -347,13 +381,13 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
   window.visualViewport?.addEventListener('resize', resize); window.addEventListener('resize', resize); resize();
   const ready = (async () => {
     try {
-      const saved = JSON.parse(window.sessionStorage.getItem(STORAGE_KEY) || 'null');
+      const saved = JSON.parse(window.sessionStorage.getItem(storageKey) || 'null');
       if ((saved?.session || saved?.pendingTurn) && Array.isArray(saved.thread)) { state = saved; state.issues ||= state.issue ? [state.issue] : []; state.files ||= state.issue?.attachments || []; messages.replaceChildren();
         // Only the last response can own current suggestions. Historical offers
         // remain conversation text; they never become buttons again on reload.
         await renderPhotos(); }
     } catch {}
-    try { drafts = await dbOperation(window, 'drafts', 'readonly', store => store.getAll()); drafts.sort((a,b) => b.updatedAt.localeCompare(a.updatedAt)); activeDraft = drafts[0]; renderDraft(); } catch {}
+    try { drafts = await storageOperation('drafts', 'readonly', store => store.getAll()); drafts.sort((a,b) => b.updatedAt.localeCompare(a.updatedAt)); activeDraft = drafts[0]; renderDraft(); } catch {}
     if(state.thread.length) {
       messages.replaceChildren();
       for(const [index,entry] of state.thread.entries()) addBubble(entry.content,entry.who,index===state.thread.length-1 && entry.who==='assistant'?entry.actions || []:[],false);
@@ -364,4 +398,4 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
   return { ready, submit, onAction, addFiles, getState:() => structuredClone(state), getDrafts:() => structuredClone(drafts), getPreparationState:()=>preparationPhase };
 }
 
-if (typeof document !== 'undefined' && document.getElementById('moraForm')) createMora(document, window);
+if (typeof document !== 'undefined' && document.getElementById('moraForm')) createMora(document, window,undefined,{mode:new URLSearchParams(window.location.search).get('mora')==='c'?'simple':'legacy'});
