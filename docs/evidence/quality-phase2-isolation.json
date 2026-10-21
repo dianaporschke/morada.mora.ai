@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-10-21T23:20:55.659Z",
+  "productSourceCommit": "393db0ba0fc4963a719a42dc171538ddf2784104",
+  "branch": "codex/mora-ai-2.0",
+  "protectedRefs": {
+    "main": {
+      "expected": "0b86dfc3344df62d3de02d8297959a495cc822d3",
+      "observed": "0b86dfc3344df62d3de02d8297959a495cc822d3",
+      "unchanged": true
+    },
+    "alex-portal": {
+      "expected": "15bfa257ddbe312f7f4658b342ec4703b869b90e",
+      "observed": "15bfa257ddbe312f7f4658b342ec4703b869b90e",
+      "unchanged": true
+    }
+  },
+  "cleanPreview": {
+    "id": "dpl_FjcjyGZoRP8YYKsG8MZFLvyWsHmV",
+    "url": "https://morada-mora-ejxjtgk6z-dianaporschke-1255s-projects.vercel.app/?mora=c",
+    "state": "READY",
+    "target": null,
+    "aliases": [],
+    "qualityHarnessIncluded": false,
+    "sourceCommit": "393db0ba0fc4963a719a42dc171538ddf2784104"
+  },
+  "existingCustomerPreview": {
+    "id": "dpl_7rh6XJY1DW8LUXC2eKboKtAtmLf4",
+    "state": "READY",
+    "sourceCommit": "6ef24cda89f2d4d0cab0fdf9ba28234a387bc336",
+    "url": "https://morada-mora-hwg0nkuia-dianaporschke-1255s-projects.vercel.app/",
+    "unchanged": true
+  },
+  "projectSettingsReadOnly": {
+    "id": "prj_vI6F07O5rdsXOdFlinN4kHAR1Nvd",
+    "name": "morada-mora-ai",
+    "framework": null,
+    "nodeVersion": "24.x",
+    "live": false,
+    "passwordProtection": {
+      "enabled": false,
+      "deploymentType": null
+    },
+    "ssoProtection": {
+      "enabled": true,
+      "deploymentType": "all_except_custom_domains"
+    },
+    "trustedIps": {
+      "enabled": false,
+      "deploymentType": null,
+      "addresses": [],
+      "protectionMode": null
+    }
+  },
+  "productionDeploymentCreated": false,
+  "mergePerformed": false,
+  "alexanderPortalConnected": false,
+  "browser": {
+    "scope": "load_only",
+    "observed": "Vercel Authentication login wall",
+    "modelConversationExecuted": false,
+    "storageClickExecuted": false
+  },
+  "liveStatus": {
+    "mainStarted": false,
+    "mainCustomerRounds": 0,
+    "expectedMainRounds": 52,
+    "finalPilotRows": 2,
+    "finalPilotAcceptedReplies": 1,
+    "finalPilotTimeouts": 1,
+    "verificationProbesExecuted": 0,
+    "expectedVerificationProbes": 8,
+    "continuation": "Blocked by automatic approval review after user requested closure; no bypass."
+  }
+}

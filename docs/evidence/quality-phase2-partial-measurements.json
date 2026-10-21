@@ -1,0 +1,1172 @@
+{
+  "complete": false,
+  "mainStarted": false,
+  "sourceCommit": "393db0ba0fc4963a719a42dc171538ddf2784104",
+  "model": "inception/mercury-2.5",
+  "rows": 0,
+  "expectedRows": 52,
+  "manifestHash": "cde9279992f50a407fe8fd53d66e1841c02afcc15feb86b08082953fd5364fa5",
+  "promptHash": "6c7b4b83a4a8d7db7f8fda443b14452df46dbce6775fba0baeacae0983bd68b8",
+  "verificationPromptHash": "c3cdb13ec0d377b0ae46f7824f43d1f8f766d218df9abe115b6537db07873be5",
+  "baselineA": {
+    "turns": 52,
+    "applicationErrors": 0,
+    "degradedTurns": 0,
+    "replyOrigins": {
+      "model_verbatim_field": 52
+    },
+    "responseModes": {
+      "model": 52
+    },
+    "generations": 52,
+    "generationCountPerTurn": {
+      "1": 52
+    },
+    "latencyWallMs": {
+      "n": 52,
+      "median": 9753.0,
+      "mean": 10140.51923076923,
+      "p95": 13447.249999999998
+    },
+    "latencyServerMs": {
+      "n": 52,
+      "median": 5062.5,
+      "mean": 5434.038461538462,
+      "p95": 8565.999999999998
+    },
+    "latencyServerExcludingCreditGuardMs": {
+      "n": 52,
+      "median": 4934.5,
+      "mean": 5248.192307692308,
+      "p95": 8426.349999999999
+    },
+    "latencyModelResponsesOnlyWallMs": {
+      "n": 52,
+      "median": 9753.0,
+      "mean": 10140.51923076923,
+      "p95": 13447.249999999998
+    },
+    "modelHttpDurationMs": {
+      "n": 52,
+      "median": 4930.0,
+      "mean": 5243.653846153846,
+      "p95": 8422.349999999999
+    },
+    "totalGatewayCostUsd": 0.012288190000000001,
+    "unpricedTurns": 0,
+    "replyCharacters": {
+      "n": 52,
+      "median": 644.5,
+      "mean": 657.3076923076923,
+      "p95": 1126.95
+    },
+    "questionMarks": 69,
+    "formalThanksTurns": 12,
+    "apologyTurns": 13,
+    "administrativeConfirmationTurns": 4,
+    "contractRepairGenerations": 0,
+    "inputTokens": 16531,
+    "outputTokens": 7652,
+    "reasoningTokens": 69861,
+    "billableOutputIncludingReasoningTokens": 77513
+  },
+  "baselineB": {
+    "turns": 52,
+    "applicationErrors": 0,
+    "degradedTurns": 2,
+    "replyOrigins": {
+      "model_verbatim_field": 49,
+      "application_safety": 3
+    },
+    "responseModes": {
+      "model": 49,
+      "safety": 3
+    },
+    "generations": 75,
+    "generationCountPerTurn": {
+      "3": 4,
+      "1": 31,
+      "2": 16,
+      "0": 1
+    },
+    "latencyWallMs": {
+      "n": 52,
+      "median": 11134.0,
+      "mean": 11429.788461538461,
+      "p95": 16064.949999999997
+    },
+    "latencyServerMs": {
+      "n": 52,
+      "median": 6118.0,
+      "mean": 6723.403846153846,
+      "p95": 11381.199999999997
+    },
+    "latencyServerExcludingCreditGuardMs": {
+      "n": 52,
+      "median": 5966.5,
+      "mean": 6461.153846153846,
+      "p95": 10824.349999999999
+    },
+    "latencyModelResponsesOnlyWallMs": {
+      "n": 49,
+      "median": 11344,
+      "mean": 11679.387755102041,
+      "p95": 16150.599999999997
+    },
+    "modelHttpDurationMs": {
+      "n": 75,
+      "median": 4503,
+      "mean": 4468.6,
+      "p95": 8465.0
+    },
+    "totalGatewayCostUsd": 0.022735448,
+    "unpricedTurns": 0,
+    "replyCharacters": {
+      "n": 52,
+      "median": 131.0,
+      "mean": 145.84615384615384,
+      "p95": 319.59999999999997
+    },
+    "questionMarks": 6,
+    "formalThanksTurns": 10,
+    "apologyTurns": 0,
+    "administrativeConfirmationTurns": 18,
+    "contractRepairGenerations": 8,
+    "inputTokens": 157376,
+    "outputTokens": 8031,
+    "reasoningTokens": 100747,
+    "billableOutputIncludingReasoningTokens": 108778
+  },
+  "C": {
+    "turns": 0,
+    "applicationErrors": 0,
+    "repairedTurns": 0,
+    "generations": 0,
+    "generationCountPerTurn": {},
+    "stages": {},
+    "replyOrigins": {},
+    "totalGatewayCostUsd": 0,
+    "unpricedTurns": 0,
+    "latencyWallMs": {
+      "n": 0,
+      "median": null,
+      "mean": null,
+      "p95": null
+    },
+    "latencyServerMs": {
+      "n": 0,
+      "median": null,
+      "mean": null,
+      "p95": null
+    },
+    "latencyServerExcludingCreditGuardMs": {
+      "n": 0,
+      "median": null,
+      "mean": null,
+      "p95": null
+    },
+    "replyCharacters": {
+      "n": 0,
+      "median": null,
+      "mean": null,
+      "p95": null
+    },
+    "questionMarks": 0,
+    "formalThanksTurns": 0,
+    "apologyTurns": 0,
+    "administrativeConfirmationTurns": 0,
+    "primaryHandoverProposals": 0,
+    "inputTokens": 0,
+    "visibleOutputTokens": 0,
+    "reasoningTokens": 0
+  },
+  "costCoverage": {
+    "observedUniqueGenerationIds": 6,
+    "resolvedUniqueGenerationIds": 6,
+    "unresolvedGenerationIds": [],
+    "transportAttemptsWithoutReceivedGenerationId": 4
+  },
+  "knownTaskGenerationCostUsd": 0.00201942,
+  "cases": [
+    {
+      "id": "01",
+      "topic": "Lampe, kurze Antworten",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "02",
+      "topic": "Steckdose",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "03",
+      "topic": "Unbekannte Angaben",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "04",
+      "topic": "Raumkorrektur",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "05",
+      "topic": "Themenwechsel",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "06",
+      "topic": "Mehrere Anliegen",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "07",
+      "topic": "Allgemeine Immobilienfrage",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "08",
+      "topic": "Eigentümer, Leerstand",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "09",
+      "topic": "Unklare Formulierung",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "10",
+      "topic": "Akute elektrische Gefahr",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "11",
+      "topic": "Negation und spätere Gefahrenkorrektur",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "12",
+      "topic": "Wasseraustritt, unbekannte Ursache",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "13",
+      "topic": "Schimmel",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "14",
+      "topic": "Lärm",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "15",
+      "topic": "Schlüssel",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "16",
+      "topic": "Tippfehler und Nachtrag",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "17",
+      "topic": "Nicht verfügbare Übermittlung",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "18",
+      "topic": "Eigentümerfrage zu persönlichen Unterlagen",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "19",
+      "topic": "Widerspruch und Rücknahme",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "20",
+      "topic": "Rechtliche und fachliche Grenze",
+      "C": {
+        "turns": 0,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "generations": 0,
+        "generationCountPerTurn": {},
+        "stages": {},
+        "replyOrigins": {},
+        "totalGatewayCostUsd": 0,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "replyCharacters": {
+          "n": 0,
+          "median": null,
+          "mean": null,
+          "p95": null
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 0,
+        "visibleOutputTokens": 0,
+        "reasoningTokens": 0
+      },
+      "finalIssues": [],
+      "finalActions": []
+    }
+  ]
+}

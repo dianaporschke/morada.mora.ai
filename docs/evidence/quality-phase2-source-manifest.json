@@ -1,0 +1,265 @@
+{
+  "commit": "393db0ba0fc4963a719a42dc171538ddf2784104",
+  "baselineUsedUsd": 0.30594161,
+  "files": [
+    {
+      "path": "api/ai-evaluation.js",
+      "sha256": "9bfb38825e701863b79e13cc814b871f6d790d9e4ce414ec924c6056cdbb9533"
+    },
+    {
+      "path": "api/ai-readiness.js",
+      "sha256": "1cad91e2412c7f52e270358676f5463cb7869563cb232ce0e0fb2935c7175b98"
+    },
+    {
+      "path": "api/chat-simple.js",
+      "sha256": "b522a1c06ba94aaf4fc3d50b66c189bf70bfb43c233e2261f358fb1f83e0b75e"
+    },
+    {
+      "path": "api/chat.js",
+      "sha256": "a50667615bfd011ad9b02db0dc8fbae1e651cf51f7e03e4861181a610ebccf07"
+    },
+    {
+      "path": "api/requests.js",
+      "sha256": "682156be2571f75f996fe8966a2b066b2a1f6e4b8c5304aaeb3b920e78a71f6f"
+    },
+    {
+      "path": "assets/mora-client.js",
+      "sha256": "58966f82109242e95e620b710caa50a7a9cc2305a7aa8364ef0f78b6bd054e33"
+    },
+    {
+      "path": "assets/mora-data.js",
+      "sha256": "f14c9655b8d24a48113c733150f86a0b467b107af947f4fcd01a0e4d094578d8"
+    },
+    {
+      "path": "assets/mora-safety.js",
+      "sha256": "87ba4f2916d4bc3b76497befff507d73754f55e79916ebbedf4d36608224abc6"
+    },
+    {
+      "path": "assets/mora.css",
+      "sha256": "def598641acc1cd875204e9e5dd6865a2b435858930e47e800c1d7ea69d6affd"
+    },
+    {
+      "path": "icons/documents.svg",
+      "sha256": "802851577661523fe6cf4b457dfa45d713e3f0705532ec91f498658787dae3e6"
+    },
+    {
+      "path": "icons/home-neutral.svg",
+      "sha256": "2a82def8dba56399a1abadad25fabc635e2d8df2c99d3b0a19f4326f17c93c61"
+    },
+    {
+      "path": "icons/home.svg",
+      "sha256": "ded55b4d941a9172173c0f057862d5e9ff5a395583c9c8fedc62172a35e8e1ef"
+    },
+    {
+      "path": "icons/morada-app-icon-v2-180.png",
+      "sha256": "962197f587df22d966ef1ef571f7ae3baa522cb8fd5ce2fd32875bb29620cce6"
+    },
+    {
+      "path": "icons/morada-app-icon-v2-192.png",
+      "sha256": "361b760944f6a7c1cb1ee31f4845bb2d60b9fea3d91a656edd411989eefd24d6"
+    },
+    {
+      "path": "icons/morada-app-icon-v2-32.png",
+      "sha256": "2e1470f494f90ff348c779c643a16ae92b1a329eba23bcc5f3626797c9a0a44b"
+    },
+    {
+      "path": "icons/morada-app-icon-v2-512.png",
+      "sha256": "47b94bb656a195a7067c7202d39701d2e52f708b417b3a36409ddbcde0f3be83"
+    },
+    {
+      "path": "icons/morada-app-icon-v3-180.png",
+      "sha256": "f25fe5e7fb542f30cdb2f43719891fe80a6036e99f5607d42c04e6210ffbbf6f"
+    },
+    {
+      "path": "icons/morada-app-icon-v3-192.png",
+      "sha256": "cafc8591f30bc6db31c2433b4c9a321236eb41efc75af541cae3d775a56ec65c"
+    },
+    {
+      "path": "icons/morada-app-icon-v3-32.png",
+      "sha256": "b97d5b6ce23f596451dbad96b80835f364829076b67b42aa6e245491a9279026"
+    },
+    {
+      "path": "icons/morada-app-icon-v3-512.png",
+      "sha256": "bd243b4f55946a9272d06eba61fe467ea40c992bb61cf35ab203f76ebbe640a0"
+    },
+    {
+      "path": "icons/morada-m-symbol-v3-source.png",
+      "sha256": "3be6698e6554cf8c02d42e21ff2db8387ae87585d6d1e0b7abb8fc9ff498d922"
+    },
+    {
+      "path": "icons/portfolio.svg",
+      "sha256": "2a6c0733c0d099c3f746b9f12bf1618cfd6d151687ac64f9e5cc0722304adc2b"
+    },
+    {
+      "path": "icons/profile.svg",
+      "sha256": "8690603e8bb5c99ee197c81f71c393a1488d91ce7e71ff9cd6f6e759214fc2d0"
+    },
+    {
+      "path": "icons/property.svg",
+      "sha256": "a4b748f9a33485216795a0e4649ba4f860bd9095ddbe26464b34fdb9967edf24"
+    },
+    {
+      "path": "icons/service.svg",
+      "sha256": "755ee641211340b823a3807e56190f904c12f58c3e68d9f9b58984fe695be88d"
+    },
+    {
+      "path": "index.html",
+      "sha256": "5ef3376f1700f7b1b7a2d028551a0525f6027e463ad6c5095c82616e76509e43"
+    },
+    {
+      "path": "lib/mora/actions.js",
+      "sha256": "866db91b65c4e0c373aa0f4fe5c3a298dc5e5ab43205f19df500a83ebf3c7647"
+    },
+    {
+      "path": "lib/mora/availability.js",
+      "sha256": "1929942452b17582e60734c40e9be393596de07a69289c32be905cc67def2455"
+    },
+    {
+      "path": "lib/mora/context.js",
+      "sha256": "ba21bf58602861d85cabd5e010b4895e33655e9406ca1dbf15b7a3741226ce94"
+    },
+    {
+      "path": "lib/mora/conversation-contract.js",
+      "sha256": "6d0a9efeabb92b3e429b3223a5ec0823369fa4837c8d24bacb29f70a8f51b2a3"
+    },
+    {
+      "path": "lib/mora/costs.js",
+      "sha256": "46e56441c2036fd0e4b353bd3f0abfa301cfc54ee2ddab2c9017ceff4c0d992f"
+    },
+    {
+      "path": "lib/mora/dialogue.js",
+      "sha256": "510e4df6aa06fbe0d02174ee6b0ac123f87d1c0ef83f051c4d760067cb2c1d9c"
+    },
+    {
+      "path": "lib/mora/engine.js",
+      "sha256": "481651596d02e41c8a385ea5069ca4be42ce4e3292873437425c7d06c1579562"
+    },
+    {
+      "path": "lib/mora/equipment.js",
+      "sha256": "45119d417f68df5e4b5c68081c99009561e86d2ad09106dd85a02633ccfc7f1e"
+    },
+    {
+      "path": "lib/mora/guided.js",
+      "sha256": "79daf1b20cbd1c2d2c5cc0d21b6377f1ec12d4965461e745d42c76df5fd7ef77"
+    },
+    {
+      "path": "lib/mora/instructions.js",
+      "sha256": "2d2e6b129e3598311de8d9457201cd725641bde87b3edbfd60a625277bd8049b"
+    },
+    {
+      "path": "lib/mora/issue-state.js",
+      "sha256": "48694671a35b5fa1c7dc3d7b1440824f1134aec403dc467d7e56b3f12e848ed8"
+    },
+    {
+      "path": "lib/mora/knowledge.js",
+      "sha256": "92cfe0ee86006d2b736fda943246f5175230e4daf12d6057c975fb538027b8c9"
+    },
+    {
+      "path": "lib/mora/portal-context.js",
+      "sha256": "7c0458d91c7e8ba2f732877ec7c0a90aa1940dc2cbda3b98ccba946e63ed5aef"
+    },
+    {
+      "path": "lib/mora/provider.js",
+      "sha256": "39aefa2258fd5912559d4311beda7c3b1418f14e1e7366485a5705ad9d7214d5"
+    },
+    {
+      "path": "lib/mora/reply.js",
+      "sha256": "77e9eff3dc37a61142bf486dfd60df1861923d499d1c2b1ff12fc191c05ab9f7"
+    },
+    {
+      "path": "lib/mora/safety.js",
+      "sha256": "7dd3f6912491f9a7e69d6b7b151473bd589b8040195336dc060bf9ede278d8d2"
+    },
+    {
+      "path": "lib/mora/schema.js",
+      "sha256": "870aeeecb15a189aef5d42725d97eb3b79b5977f857b6925163d7119800262d3"
+    },
+    {
+      "path": "lib/mora/session.js",
+      "sha256": "03ea8bd9f570b0f8ec83025d395b948354a608fe0d1d3863ca6b93d9d2589b86"
+    },
+    {
+      "path": "lib/mora/simple/model.js",
+      "sha256": "9e3fe855a7063272cce284dc6a9249215a15db592579efce8bb42cf1fceeaa47"
+    },
+    {
+      "path": "lib/mora/simple/service.js",
+      "sha256": "6df839967b9c3699661681f6379e430ba2583b0ab187fe30e63243ca766dd6ec"
+    },
+    {
+      "path": "lib/mora/simple/state.js",
+      "sha256": "02be3a51594239966656bf305bb25bdd06b8bd0afd5817003eaf29aedd3a47ac"
+    },
+    {
+      "path": "lib/mora/structured.js",
+      "sha256": "928749d498a4ee2751c2f4a783a441309e073f3bc7b37176ca9b336150494f8a"
+    },
+    {
+      "path": "lib/mora/understanding.js",
+      "sha256": "0991b3b6cee85fdec2d2e1e46125c90e83538d74e99beec5e9e1335431485c8f"
+    },
+    {
+      "path": "lib/portal/adapter.js",
+      "sha256": "c8be89310842a4dd203d7cc6bffb9d9bdf6ace31ea9a3dd75bf7a3d18bab1192"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "a34bc9a3bdcc911f98e274d6dc5fd3200e00c4b6b5cc41616a6dc18e9846cc04"
+    },
+    {
+      "path": "package.json",
+      "sha256": "a8e8cdaf5fbe14ef5a9127f8437db3dff157d057102dd3e8356ba52015c56869"
+    },
+    {
+      "path": "scripts/build.mjs",
+      "sha256": "0206c20a6c8de11624585860bd073ea3218463388cdbb4eb6b70f40cec3ca516"
+    },
+    {
+      "path": "scripts/check.mjs",
+      "sha256": "8a1182dbf240aec9f1b774112942d2bcb0b9239826fa61e2e8277e6361235874"
+    },
+    {
+      "path": "scripts/quality-phase1/cases.json",
+      "sha256": "da4705b2805da222c527ddb6f930ec9ff099f8967975a35526d72f047a015529"
+    },
+    {
+      "path": "scripts/quality-phase2/audit-cases.json",
+      "sha256": "264ca940c2e076200eb8361386745ae1b5f6e7569ae1b870ec97666164460f62"
+    },
+    {
+      "path": "scripts/quality-phase2/server.js",
+      "sha256": "f5b3d3835a3fd9ea2004b5db88254e9bfce0257249113987cd7bf7fcbc6d8a0f"
+    },
+    {
+      "path": "transparent 1.0.png",
+      "sha256": "e5c72a3fe11becaec02aa22f39c52cde860aa9fed43901a056e00c2604cebd70"
+    },
+    {
+      "path": "transparent 2.0.png",
+      "sha256": "710d1ce6d09710b93ef9d3ed533de3173bc1f3d27e0b55f5b07cba13fa5bfc81"
+    },
+    {
+      "path": "vercel.json",
+      "sha256": "536bf8866d3b55f05833528db8ccf3437142e76d4cb322eec7e6c9f6d19f789f"
+    },
+    {
+      "path": "scripts/premium-cases.json",
+      "sha256": "e0b98e4bf0c98950fe66e8fa124f065dee18213077c54f716fcdd7224792098e"
+    }
+  ],
+  "maxAdditionalCostUsd": 0.5,
+  "creditProof": {
+    "credits": {
+      "balanceUsd": 4.69405839,
+      "totalUsedUsd": 0.30594161,
+      "readAttempts": 1
+    },
+    "model": "inception/mercury-2.5",
+    "price": {
+      "input": 4e-8,
+      "output": 1.5e-7
+    },
+    "sourceCommit": "bcd730adc9b5cd8ae52086c8f9db64be82e2a660",
+    "inferenceStarted": false
+  }
+}
