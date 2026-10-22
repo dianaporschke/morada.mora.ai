@@ -63,7 +63,7 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
     const hazard=detectHazard(text.trim());if(hazard.hazard!=='none')message('error','Sicherheitshinweis: '+safetyNotice(hazard.hazard));
     input.value='';setBusy(true,'MORA antwortet …');
     const start=window.performance.now();
-    try{const data=await request({message:text.trim(),messageId:window.crypto.randomUUID()});if(data.reply)message('assistant',data.reply);if(data.requestedAction)await prepareIssue(data.requestedAction==='photo',true);window.console.info('MORA portal visible response',{answerDomMs:window.performance.now()-start});}
+    try{if(thread.pendingClose){await request({action:'draft-closed',issueId:thread.pendingClose});thread.pendingClose=null;persist();}const data=await request({message:text.trim(),messageId:window.crypto.randomUUID()});if(data.reply)message('assistant',data.reply);if(data.requestedAction)await prepareIssue(data.requestedAction==='photo',true);window.console.info('MORA portal visible response',{answerDomMs:window.performance.now()-start});}
     catch(e){message('error',e.message);}
     finally{setBusy(false);if(!panel.hidden)input.focus();}
   }
@@ -95,8 +95,9 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
         async onError(error){message('error',error.message);try{await request({action:'draft-error',issueId});}catch{thread.data=null;}finally{setBusy(false);}},
         async onClosed(){
           if(thread.pendingReceipt)return;
+          thread.pendingClose=issueId;persist();
           setBusy(true,'Formularstatus wird abgeglichen …');
-          try{await request({action:'draft-closed',issueId});}catch(e){thread.data=null;message('error',e.message);}finally{setBusy(false);}
+          try{await request({action:'draft-closed',issueId});thread.pendingClose=null;persist();}catch(e){thread.data=null;message('error',e.message);}finally{setBusy(false);}
         },
       },photo);
       close();

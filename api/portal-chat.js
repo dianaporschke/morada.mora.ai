@@ -3,7 +3,7 @@ import {readSession,sealSession} from '../lib/mora/session.js';
 import {hydrateSimple,beginPreparation,acceptReceipt,safetyContext,contentHash} from '../lib/mora/simple/state.js';
 import {createPortalService,targets} from '../lib/mora/portal/service.js';
 import {createFreeCreditGuard} from '../lib/mora/portal/budget.js';
-import {portalCaseFields,portalCaseEvidence} from '../assets/mora-portal-map.js';
+import {portalCaseFields,portalCaseEvidence,portalIssueReadiness} from '../assets/mora-portal-map.js';
 
 const receipt=z.object({operationId:z.string().uuid(),issueId:z.string().uuid(),draftId:z.string().uuid(),revision:z.number().int().positive(),contentHash:z.string().regex(/^[a-f0-9]{64}$/),status:z.enum(['portal_received','error']),attachmentCount:z.number().int().min(0).max(3).optional(),conflictFields:z.array(z.enum(['title','description','unit','category'])).max(4).optional()}).strict();
 const schema=z.object({session:z.string().max(180000).optional(),message:z.string().trim().min(1).max(2000).optional(),messageId:z.string().uuid().optional(),action:z.enum(['save-issue','review-issue','switch-issue','draft-opened','draft-closed','draft-error','new-conversation']).optional(),issueId:z.string().uuid().optional(),receipt:receipt.optional(),navigation:z.array(z.enum(targets)).max(targets.length).default([])}).strict()
@@ -11,12 +11,12 @@ const schema=z.object({session:z.string().max(180000).optional(),message:z.strin
   .refine(v=>!v.message||Boolean(v.messageId));
 export function controls(state,navigation=[]) {
   const i=state.issue,current=Boolean(i?.preparation?.receipt?.contentHash=== (i?contentHash(i):''));
-  const ready=i&&i.equipment&&i.equipment!=='unknown'&&i.defect&&i.location&& !['equipment','defect','location'].some(k=>['unknown','uncertain'].includes(i.fieldFacts?.[k]?.status));
+  const ready=portalIssueReadiness(i).ready;
   const open=Boolean(i&&state.portalDraftOpen?.issueId===i.id&&state.portalDraftOpen?.revision===i.revision);
-  const save=ready&&!current&&!open&&!state.safety&&!state.pendingKey&&!state.portalPending?.length&&state.conversationTopic==='issue';
+  const save=ready&&!current&&!open&&!state.safety&&!state.portalPending?.length&&state.conversationTopic==='issue';
   return {save:save?{operation:i.preparation?.receipt?'update':'create',issueId:i.id}:null,
     prepared:open?{issueId:i.id,saved:false}:null,
-    review:ready&&!state.safety&&!state.portalPending?.length&&!state.pendingKey&&state.conversationTopic==='issue'?{issueId:i.id}:null,
+    review:ready&&!state.safety&&!state.portalPending?.length&&state.conversationTopic==='issue'?{issueId:i.id}:null,
     stored:current&&state.conversationTopic==='issue'?{id:i.id,scope:'this_device',transmitted:false}:null,
     navigation:state.pendingKey||save||state.safety?[]:navigation};
 }

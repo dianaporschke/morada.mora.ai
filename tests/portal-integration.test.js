@@ -159,3 +159,16 @@ test('native review keeps manual form edits and existing photos',async()=>{
  const d=dom(async(_u,o)=>{const r=await call(handler,JSON.parse(o.body));return {ok:r.status===200,json:async()=>r.body};}),w=d.window;
  try{w.document.getElementById('moraFab').click();await w.MORAPortal.send('Lampe im Wohnzimmer');await prepare(w);w.document.querySelector('[name="description"]').value+='\nEigener Zusatz.';await saveForm(w);w.MORAPortal.open();await prepare(w,'Foto hinzufügen');assert.match(w.document.querySelector('[name="description"]').value,/Eigener Zusatz/);await saveForm(w);const rows=JSON.parse(w.localStorage.getItem('morada-portal-clean-20261011-v1')).cases;assert.equal(rows.length,1);assert.match(rows[0].description,/Eigener Zusatz/);}finally{w.close();}
 });
+test('empty unused action quote is absence, while empty fact evidence remains invalid',async()=>{
+ let calls=0;const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async()=>{calls++;return {output:plan([],{reply:'Wie kann ich helfen?',intent:'general',requestQuote:''}),usage:{},finalStep:{providerMetadata:{}}};}});
+ const r=await service('Hallo',hydrateSimple(null),['cases']);assert.equal(calls,1);assert.equal(r.reply,'Wie kann ich helfen?');
+});
+test('a lost cancellation acknowledgment is reconciled before the next model turn',async()=>{
+ const handler=createPortalChatHandler({converse:async(m,s)=>({state:s.issue?update(s,m,{details:'Zusatz'}):lamp(),reply:'Sie können die Angaben prüfen.',navigation:[],modelCalls:1})});let closes=0;
+ const d=dom(async(_u,o)=>{const input=JSON.parse(o.body);if(input.action==='draft-closed'&&closes++===0)throw Error('network');const r=await call(handler,input);return {ok:r.status===200,json:async()=>r.body};}),w=d.window;
+ try{w.document.getElementById('moraFab').click();await w.MORAPortal.send('Lampe im Wohnzimmer');await prepare(w);w.eval('portalCloseDialog()');await settle();assert.ok(w.MORAPortal.getState().pendingClose);w.MORAPortal.open();await w.MORAPortal.send('Zusatz');assert.equal(w.MORAPortal.getState().pendingClose,null);assert.ok(w.MORAPortal.getState().data.controls.save);assert.equal(w.localStorage.getItem('morada-portal-clean-20261011-v1'),null);}finally{w.close();}
+});
+test('native readiness permits unknown fixtures/explicitly unknown rooms and optional questions',()=>{
+ let s=update(hydrateSimple(null),'Wasserfleck im Schlafzimmer',{equipment:'unknown',category:'water',defect:'Trockener Wasserfleck',location:'Schlafzimmer'},{ask:{field:'since',ref:'new1'}});assert.ok(controls(s).save);assert.equal(portalCaseFields(s.issue).category,'Schaden / Reparatur');
+ s=update(hydrateSimple(null),'Das Teil ist lose. Der Bereich ist mir unbekannt.',{equipment:'Spezialteil',defect:'lose',unknown:[{field:'location',quote:'Der Bereich ist mir unbekannt.'}]});assert.ok(controls(s).save);assert.equal(portalCaseFields(s.issue).unit,'');
+});

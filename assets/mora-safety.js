@@ -45,6 +45,9 @@ function negated(text, match) {
   const notUncertain = value => value.replace(/\bnicht (?:sicher|auszuschliessen|ausgeschlossen|gut|normal)\b/g, '')
     .replace(/\bnicht ausschliessen\b/g, '');
   if (/\b(kein\w*|ohne|nicht|nie)\b/.test(notUncertain(evidence))) return true;
+  // Bounded coordinated observations: "weder Funken noch Rauch" negates
+  // each listed symptom, never a later independent hazard statement.
+  if (/\bweder\s+(?:(?:rauch|feuer|flammen|brandgeruch|gasgeruch|funken|funkenflug|stromschlag|geruch|warme|hitze)\s+(?:noch|oder|und)\s+)*$/.test(before)) return true;
   if (/\b(?:kein\w*|ohne|nicht|nie)\s+(?:(?:mehr|wirklich|sichtbar\w*|stark\w*|erkennbar\w*|nach|ein\w*)\s+){0,3}$/.test(before)) return true;
   if (/^\s+(?:(?:ist|sind|gibt es|sehe ich|rieche ich)\s+)?(?:hier\s+)?(?:nicht|kein\w*)(?:\s+(?:mehr|vorhanden|da|sichtbar|wahrnehmbar|zu sehen|zu riechen))*(?:$|\s+(?:und|sondern|aber)\b)/.test(after)) return true;
   return false;

@@ -31,6 +31,14 @@ export function portalCaseFields(issue) {
 }
 export const managedCaseFields=record=>({title:record.title,description:record.description,unit:record.unit || '',category:record.caseInfo?.category || 'Allgemein'});
 export const sameCaseFields=(a,b)=>['title','description','unit','category'].every(k=>a?.[k]===b?.[k]);
+/** Native form requirements, not the legacy app's equipment wizard. An unknown
+ * fixture/category is valid; optional start/count questions never block review. */
+export function portalIssueReadiness(issue){
+  const missing=[];
+  if(!issue?.defect||['unknown','uncertain'].includes(issue.fieldFacts?.defect?.status))missing.push('defect');
+  if(!issue?.location&&issue?.fieldFacts?.location?.status!=='unknown'||issue?.fieldFacts?.location?.status==='uncertain')missing.push('location');
+  return {ready:Boolean(issue&&missing.length===0),missing};
+}
 /** Keep exact customer evidence in the existing case history. It is an audit
  * record, not a second diagnosis or an obsolete value in the current fields. */
 export const portalCaseEvidence=issue=>(issue.answers || []).slice(-6).map(a=>a.answer).join('\n').slice(-2800);

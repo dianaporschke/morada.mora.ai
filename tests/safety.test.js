@@ -112,3 +112,11 @@ test('Hazard denial never clears uncertainty, a new danger, unrelated details or
     ['gas', 'Was wäre wenn ich keinen Gasgeruch bemerke?'],
   ]) assert.equal(explicitHazardDenial(message, hazard), false, message);
 });
+
+test('coordinated negative observations are not emergencies; independent and uncertain hazards remain',()=>{
+ assert.equal(detectHazard('Die Steckdose funktioniert nicht. Es gibt weder Funken noch Geruch oder Wärme.').hazard,'none');
+ assert.equal(detectHazard('Weder Rauch noch Funken.').hazard,'none');
+ assert.equal(detectHazard('Weder Geruch noch Wärme, aber die Steckdose funkt.').hazard,'electric');
+ assert.equal(detectHazard('Weder Geruch noch Wärme. Die Steckdose funkt.').hazard,'electric');
+ assert.equal(detectHazard('Ich bin nicht sicher, ob es Funken gibt.').hazard,'electric');
+});
