@@ -1,0 +1,43 @@
+{
+  "inputName": "22.10.26_MORADA_Portal_Alexander(1).html",
+  "inputSizeBytes": 4491282,
+  "providedLibraryFileId": "libfile_c31439acfc90819183aec8f4d2dd40ca",
+  "originalFunctionDeclarations": 1073,
+  "originalStyleBlocks": 34,
+  "originalScriptBlocks": 1,
+  "originalFetchCalls": 0,
+  "originalTextPreservedApartFromBlankLines": true,
+  "integrationBlocks": 1,
+  "portalSha256": "5dddebc40e10d341eb4585044d9e2091edfbebd4cfa08921512eb77aadff8442",
+  "originalDesignAndBusinessScriptChange": "Additive integration; original showMora entry replaced at runtime only. No existing style or business function body edited.",
+  "scope": "Independent supplied portal; existing branch codex/mora-ai-2.0 only",
+  "initialCreditProof": {
+    "credits": {
+      "balanceUsd": 4.640074064,
+      "totalUsedUsd": 0.359925936,
+      "readAttempts": 1
+    },
+    "model": "inception/mercury-2.5",
+    "price": {
+      "input": 4e-08,
+      "output": 1.5e-07
+    },
+    "sourceCommit": "bcd730adc9b5cd8ae52086c8f9db64be82e2a660",
+    "inferenceStarted": false
+  },
+  "browserVerification": {
+    "status": "blocked_by_automatic_approval_review",
+    "origin": "https://vercel.com",
+    "reason": "Private account origin broader than authorized Preview UI test",
+    "desktop": false,
+    "mobile": false
+  },
+  "testEvidence": {
+    "automatedTests": 312,
+    "coreRealModelDomFlow": true,
+    "coreModelMessages": 4,
+    "seriesTurns": 18,
+    "seriesAccepted": 7,
+    "seriesStopped": "Gateway rate_limit_exceeded confirmed in Vercel runtime logs; interrupted without paid changes"
+  }
+}

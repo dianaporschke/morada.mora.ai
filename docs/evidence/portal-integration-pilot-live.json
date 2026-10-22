@@ -1,0 +1,116 @@
+{
+  "scope": "Real portal_v1 backend responses. Browser rendering and local saving are separate checks.",
+  "url": "https://morada-mora-cdsr1hudc-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "model": "inception/mercury-2.5",
+  "before": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.640074064,
+    "totalUsedUsd": 0.359925936,
+    "maxUsedUsd": 0.659925936,
+    "model": "inception/mercury-2.5",
+    "pricing": {
+      "input": 4e-08,
+      "output": 1.5e-07
+    }
+  },
+  "conversations": [
+    {
+      "id": "01",
+      "title": null,
+      "turns": [
+        {
+          "customer": "lampe kaputt",
+          "status": 503,
+          "httpMs": 9421.64,
+          "response": {
+            "architecture": "portal_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5JJWNX59PSDEYA1WNP6Q6QC",
+              "gen_01M5JJWRS6ND06BPCMRC691NX3"
+            ],
+            "issue": null,
+            "issues": [],
+            "controls": {
+              "save": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 4738
+            }
+          }
+        },
+        {
+          "customer": "wohnzimmer",
+          "status": 503,
+          "httpMs": 9311.68,
+          "response": {
+            "architecture": "portal_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5JJWZMD29AC5GDR2EVNFJER",
+              "gen_01M5JJX1H6F92J2HD3RPXK3H20"
+            ],
+            "issue": null,
+            "issues": [],
+            "controls": {
+              "save": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 4061
+            }
+          }
+        },
+        {
+          "customer": "Nur eine Lampe ist betroffen, sonst ist alles normal.",
+          "status": 503,
+          "httpMs": 8890.32,
+          "response": {
+            "architecture": "portal_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5JJX6G4FC69DCQX1K0W17QQ",
+              "gen_01M5JJX9Z13EC35M5HRQ8FDS8R"
+            ],
+            "issue": null,
+            "issues": [],
+            "controls": {
+              "save": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 5823
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.639286284,
+    "totalUsedUsd": 0.360713716,
+    "maxUsedUsd": 0.659925936,
+    "model": "inception/mercury-2.5",
+    "pricing": {
+      "input": 4e-08,
+      "output": 1.5e-07
+    }
+  },
+  "actualAccountDeltaUsd": 0.0007877800000000157
+}

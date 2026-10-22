@@ -1,0 +1,2314 @@
+{
+  "scope": "Local full HTML DOM → real protected HTTPS API → Mercury 2.5 → actual portal save/readback. Not a rendered-browser/device test.",
+  "url": "https://morada-mora-8vi4246cr-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "errors": [],
+  "transports": [
+    {
+      "request": {
+        "message": "lampe kaputt",
+        "messageId": "5682d31e-aeaa-43bd-a89b-54f3f5e20a73",
+        "navigation": [
+          "cases",
+          "calendar",
+          "documents",
+          "properties",
+          "units",
+          "tasks",
+          "team",
+          "support",
+          "new-task",
+          "new-appointment",
+          "new-document"
+        ]
+      },
+      "status": 200,
+      "data": {
+        "architecture": "portal_v1",
+        "mode": "model",
+        "reply": "Ich habe Ihre Meldung zur kaputten Lampe erfasst. Bitte teilen Sie mir mit, in welchem Raum sich die Lampe befindet und ob es sich um eine einzelne oder mehrere Lampen handelt.",
+        "navigation": [],
+        "modelCalls": 1,
+        "generationIds": [
+          "gen_01M5JKRHAV6DPWAG3GR3S4MHGA"
+        ],
+        "usage": [
+          {
+            "inputTokens": 1431,
+            "outputTokens": 447,
+            "reasoningTokens": 277,
+            "cachedInputTokens": 0
+          }
+        ],
+        "repaired": false,
+        "timingMs": {
+          "model": 1577,
+          "creditGuard": 230,
+          "total": 1840
+        },
+        "issue": {
+          "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "lampe kaputt",
+          "defect": "kaputt",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "lampe kaputt"
+            }
+          ],
+          "corrections": [],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nkaputt\nDringlichkeit: Normal",
+          "pendingKey": "location",
+          "clarification": "Ich habe Ihre Meldung zur kaputten Lampe erfasst. Bitte teilen Sie mir mit, in welchem Raum sich die Lampe befindet und ob es sich um eine einzelne oder mehrere Lampen handelt.",
+          "attempts": {},
+          "revision": 2,
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "lampe kaputt"
+            },
+            "defect": {
+              "status": "known",
+              "value": "kaputt",
+              "source": "lampe kaputt"
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "lampe kaputt",
+              "source": "lampe kaputt"
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T20:10:12.713Z",
+          "updatedAt": "2026-10-22T20:10:12.725Z",
+          "shortLabel": "Lampe / Leuchte"
+        },
+        "issues": [
+          {
+            "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "lampe kaputt",
+            "defect": "kaputt",
+            "count": null,
+            "location": null,
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nkaputt\nDringlichkeit: Normal",
+            "pendingKey": "location",
+            "clarification": "Ich habe Ihre Meldung zur kaputten Lampe erfasst. Bitte teilen Sie mir mit, in welchem Raum sich die Lampe befindet und ob es sich um eine einzelne oder mehrere Lampen handelt.",
+            "attempts": {},
+            "revision": 2,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "kaputt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "lampe kaputt",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-22T20:10:12.713Z",
+            "updatedAt": "2026-10-22T20:10:12.725Z",
+            "shortLabel": "Lampe / Leuchte"
+          }
+        ],
+        "controls": {
+          "save": null,
+          "stored": null,
+          "navigation": []
+        },
+        "safety": null
+      },
+      "httpMs": 7603.41
+    },
+    {
+      "request": {
+        "session": "[signed session omitted]",
+        "message": "wohnzimmer",
+        "messageId": "ac15c934-5f83-4be2-a5a0-32b73b3497db",
+        "navigation": [
+          "cases",
+          "calendar",
+          "documents",
+          "properties",
+          "units",
+          "tasks",
+          "team",
+          "support",
+          "new-task",
+          "new-appointment",
+          "new-document"
+        ]
+      },
+      "status": 200,
+      "data": {
+        "architecture": "portal_v1",
+        "mode": "model",
+        "reply": "Ich habe den Ort als Wohnzimmer notiert. Wie viele Lampen sind betroffen – eine oder mehrere?",
+        "navigation": [],
+        "modelCalls": 1,
+        "generationIds": [
+          "gen_01M5JKSBMWQ9MSR64N8C5G39NE"
+        ],
+        "usage": [
+          {
+            "inputTokens": 1735,
+            "outputTokens": 428,
+            "reasoningTokens": 270,
+            "cachedInputTokens": 0
+          }
+        ],
+        "repaired": false,
+        "timingMs": {
+          "model": 1742,
+          "creditGuard": 312,
+          "total": 2063
+        },
+        "issue": {
+          "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "lampe kaputt",
+          "defect": "kaputt",
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "lampe kaputt"
+            },
+            {
+              "question": "location",
+              "answer": "wohnzimmer"
+            }
+          ],
+          "corrections": [],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nkaputt\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+          "pendingKey": "count",
+          "clarification": "Ich habe den Ort als Wohnzimmer notiert. Wie viele Lampen sind betroffen – eine oder mehrere?",
+          "attempts": {},
+          "revision": 3,
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "lampe kaputt"
+            },
+            "defect": {
+              "status": "known",
+              "value": "kaputt",
+              "source": "lampe kaputt"
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "wohnzimmer"
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "lampe kaputt",
+              "source": "lampe kaputt"
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T20:10:12.713Z",
+          "updatedAt": "2026-10-22T20:10:39.806Z",
+          "shortLabel": "Lampe / Leuchte"
+        },
+        "issues": [
+          {
+            "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "lampe kaputt",
+            "defect": "kaputt",
+            "count": null,
+            "location": "Wohnzimmer",
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nkaputt\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+            "pendingKey": "count",
+            "clarification": "Ich habe den Ort als Wohnzimmer notiert. Wie viele Lampen sind betroffen – eine oder mehrere?",
+            "attempts": {},
+            "revision": 3,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "kaputt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "wohnzimmer"
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "lampe kaputt",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-22T20:10:12.713Z",
+            "updatedAt": "2026-10-22T20:10:39.806Z",
+            "shortLabel": "Lampe / Leuchte"
+          }
+        ],
+        "controls": {
+          "save": null,
+          "stored": null,
+          "navigation": []
+        },
+        "safety": null
+      },
+      "httpMs": 6878.2
+    },
+    {
+      "request": {
+        "session": "[signed session omitted]",
+        "message": "Nur eine Lampe ist betroffen, sonst ist alles normal.",
+        "messageId": "59cecd9f-284e-479c-9d08-ff4038a91a30",
+        "navigation": [
+          "cases",
+          "calendar",
+          "documents",
+          "properties",
+          "units",
+          "tasks",
+          "team",
+          "support",
+          "new-task",
+          "new-appointment",
+          "new-document"
+        ]
+      },
+      "status": 200,
+      "data": {
+        "architecture": "portal_v1",
+        "mode": "model",
+        "reply": "Ich habe verstanden, dass nur eine Lampe im Wohnzimmer betroffen ist. Möchten Sie das Anliegen nun im Portal speichern, damit wir es weiterbearbeiten können?",
+        "navigation": [
+          "new-task"
+        ],
+        "modelCalls": 1,
+        "generationIds": [
+          "gen_01M5JKT5ST3VECSW9V8YX85ZN0"
+        ],
+        "usage": [
+          {
+            "inputTokens": 1813,
+            "outputTokens": 478,
+            "reasoningTokens": 288,
+            "cachedInputTokens": 0
+          }
+        ],
+        "repaired": false,
+        "timingMs": {
+          "model": 2304,
+          "creditGuard": 131,
+          "total": 2441
+        },
+        "issue": {
+          "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "lampe kaputt",
+          "defect": "kaputt",
+          "count": 1,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "lampe kaputt"
+            },
+            {
+              "question": "location",
+              "answer": "wohnzimmer"
+            },
+            {
+              "question": "count",
+              "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            }
+          ],
+          "corrections": [],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 4,
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "lampe kaputt"
+            },
+            "defect": {
+              "status": "known",
+              "value": "kaputt",
+              "source": "lampe kaputt"
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "wohnzimmer"
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "lampe kaputt",
+              "source": "lampe kaputt"
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T20:10:12.713Z",
+          "updatedAt": "2026-10-22T20:11:07.182Z",
+          "shortLabel": "Lampe / Leuchte"
+        },
+        "issues": [
+          {
+            "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "lampe kaputt",
+            "defect": "kaputt",
+            "count": 1,
+            "location": "Wohnzimmer",
+            "since": null,
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              },
+              {
+                "question": "count",
+                "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 4,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "kaputt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "wohnzimmer"
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "lampe kaputt",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-22T20:10:12.713Z",
+            "updatedAt": "2026-10-22T20:11:07.182Z",
+            "shortLabel": "Lampe / Leuchte"
+          }
+        ],
+        "controls": {
+          "save": {
+            "operation": "create",
+            "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667"
+          },
+          "stored": null,
+          "navigation": [
+            "new-task"
+          ]
+        },
+        "safety": null
+      },
+      "httpMs": 7295.08
+    },
+    {
+      "request": {
+        "session": "[signed session omitted]",
+        "action": "save-issue",
+        "navigation": [
+          "cases",
+          "calendar",
+          "documents",
+          "properties",
+          "units",
+          "tasks",
+          "team",
+          "support",
+          "new-task",
+          "new-appointment",
+          "new-document"
+        ]
+      },
+      "status": 200,
+      "data": {
+        "architecture": "portal_v1",
+        "mode": "write_ticket",
+        "operation": {
+          "operationId": "4c321568-acb6-517c-a1e6-2282523433eb",
+          "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "draftId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "revision": 4,
+          "contentHash": "cb408f6f501250194dffd2215e9ef7a98a9aa6aaa509980dded00e4a5b82b9a4",
+          "scope": "this_device_test_app"
+        },
+        "fields": {
+          "title": "Lampe / Leuchte · Wohnzimmer",
+          "category": "Schaden / Reparatur",
+          "unit": "Wohnzimmer",
+          "description": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+        },
+        "modelCalls": 0,
+        "issue": {
+          "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "lampe kaputt",
+          "defect": "kaputt",
+          "count": 1,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "lampe kaputt"
+            },
+            {
+              "question": "location",
+              "answer": "wohnzimmer"
+            },
+            {
+              "question": "count",
+              "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            }
+          ],
+          "corrections": [],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 4,
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "lampe kaputt"
+            },
+            "defect": {
+              "status": "known",
+              "value": "kaputt",
+              "source": "lampe kaputt"
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "wohnzimmer"
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "lampe kaputt",
+              "source": "lampe kaputt"
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T20:10:12.713Z",
+          "updatedAt": "2026-10-22T20:11:07.182Z",
+          "shortLabel": "Lampe / Leuchte"
+        },
+        "issues": [
+          {
+            "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "lampe kaputt",
+            "defect": "kaputt",
+            "count": 1,
+            "location": "Wohnzimmer",
+            "since": null,
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              },
+              {
+                "question": "count",
+                "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 4,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "kaputt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "wohnzimmer"
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "lampe kaputt",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-22T20:10:12.713Z",
+            "updatedAt": "2026-10-22T20:11:07.182Z",
+            "shortLabel": "Lampe / Leuchte"
+          }
+        ],
+        "controls": {
+          "save": {
+            "operation": "create",
+            "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667"
+          },
+          "stored": null,
+          "navigation": []
+        },
+        "safety": null,
+        "timingMs": {
+          "total": 1
+        }
+      },
+      "httpMs": 6010.48
+    },
+    {
+      "request": {
+        "session": "[signed session omitted]",
+        "receipt": {
+          "operationId": "4c321568-acb6-517c-a1e6-2282523433eb",
+          "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "draftId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "revision": 4,
+          "contentHash": "cb408f6f501250194dffd2215e9ef7a98a9aa6aaa509980dded00e4a5b82b9a4",
+          "status": "portal_received"
+        },
+        "navigation": [
+          "cases",
+          "calendar",
+          "documents",
+          "properties",
+          "units",
+          "tasks",
+          "team",
+          "support",
+          "new-task",
+          "new-appointment",
+          "new-document"
+        ]
+      },
+      "status": 200,
+      "data": {
+        "architecture": "portal_v1",
+        "mode": "receipt",
+        "modelCalls": 0,
+        "receiptAccepted": true,
+        "issue": {
+          "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "lampe kaputt",
+          "defect": "kaputt",
+          "count": 1,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "lampe kaputt"
+            },
+            {
+              "question": "location",
+              "answer": "wohnzimmer"
+            },
+            {
+              "question": "count",
+              "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            }
+          ],
+          "corrections": [],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 4,
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "lampe kaputt"
+            },
+            "defect": {
+              "status": "known",
+              "value": "kaputt",
+              "source": "lampe kaputt"
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "wohnzimmer"
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "lampe kaputt",
+              "source": "lampe kaputt"
+            }
+          },
+          "preparation": {
+            "status": "portal_received",
+            "revision": 4,
+            "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+            "source": "client_write_readback",
+            "receipt": {
+              "operationId": "4c321568-acb6-517c-a1e6-2282523433eb",
+              "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+              "draftId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+              "revision": 4,
+              "contentHash": "cb408f6f501250194dffd2215e9ef7a98a9aa6aaa509980dded00e4a5b82b9a4",
+              "at": "2026-10-22T20:11:18.190Z"
+            }
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T20:10:12.713Z",
+          "updatedAt": "2026-10-22T20:11:07.182Z",
+          "shortLabel": "Lampe / Leuchte"
+        },
+        "issues": [
+          {
+            "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "lampe kaputt",
+            "defect": "kaputt",
+            "count": 1,
+            "location": "Wohnzimmer",
+            "since": null,
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              },
+              {
+                "question": "count",
+                "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              }
+            ],
+            "corrections": [],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 4,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "kaputt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "wohnzimmer"
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "lampe kaputt",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 4,
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "source": "client_write_readback",
+              "receipt": {
+                "operationId": "4c321568-acb6-517c-a1e6-2282523433eb",
+                "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+                "draftId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+                "revision": 4,
+                "contentHash": "cb408f6f501250194dffd2215e9ef7a98a9aa6aaa509980dded00e4a5b82b9a4",
+                "at": "2026-10-22T20:11:18.190Z"
+              }
+            },
+            "status": "draft",
+            "createdAt": "2026-10-22T20:10:12.713Z",
+            "updatedAt": "2026-10-22T20:11:07.182Z",
+            "shortLabel": "Lampe / Leuchte"
+          }
+        ],
+        "controls": {
+          "save": null,
+          "stored": {
+            "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+            "scope": "this_device",
+            "transmitted": false
+          },
+          "navigation": []
+        },
+        "safety": null,
+        "timingMs": {
+          "total": 1
+        }
+      },
+      "httpMs": 4865.06
+    },
+    {
+      "request": {
+        "session": "[signed session omitted]",
+        "message": "Nein, ich meinte Schlafzimmer.",
+        "messageId": "acb49821-43eb-4c08-b13f-0ca28667d790",
+        "navigation": [
+          "cases",
+          "calendar",
+          "documents",
+          "properties",
+          "units",
+          "tasks",
+          "team",
+          "support",
+          "new-task",
+          "new-appointment",
+          "new-document"
+        ]
+      },
+      "status": 200,
+      "data": {
+        "architecture": "portal_v1",
+        "mode": "model",
+        "reply": "Ich habe die Korrektur notiert. Das Gerät befindet sich also im Schlafzimmer. Möchten Sie das Anliegen nun im Portal speichern?",
+        "navigation": [],
+        "modelCalls": 1,
+        "generationIds": [
+          "gen_01M5JKVBGA8M6AHTHY9EW35HFG"
+        ],
+        "usage": [
+          {
+            "inputTokens": 1874,
+            "outputTokens": 441,
+            "reasoningTokens": 268,
+            "cachedInputTokens": 0
+          }
+        ],
+        "repaired": false,
+        "timingMs": {
+          "model": 5238,
+          "creditGuard": 192,
+          "total": 5434
+        },
+        "issue": {
+          "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "defect": "kaputt",
+          "count": 1,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "lampe kaputt"
+            },
+            {
+              "question": "location",
+              "answer": "wohnzimmer"
+            },
+            {
+              "question": "count",
+              "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            {
+              "question": "description",
+              "answer": "Nein, ich meinte Schlafzimmer."
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "location": {
+                  "from": null,
+                  "to": "Schlafzimmer"
+                }
+              },
+              "source": "Nein, ich meinte Schlafzimmer.",
+              "at": "2026-10-22T20:11:48.718Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 5,
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "lampe kaputt"
+            },
+            "defect": {
+              "status": "known",
+              "value": "kaputt",
+              "source": "lampe kaputt"
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            "location": {
+              "status": "corrected",
+              "value": "Schlafzimmer",
+              "source": "Nein, ich meinte Schlafzimmer."
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "source": "lampe kaputt"
+            }
+          },
+          "preparation": {
+            "status": "portal_received",
+            "revision": 4,
+            "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+            "source": "client_write_readback",
+            "receipt": {
+              "operationId": "4c321568-acb6-517c-a1e6-2282523433eb",
+              "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+              "draftId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+              "revision": 4,
+              "contentHash": "cb408f6f501250194dffd2215e9ef7a98a9aa6aaa509980dded00e4a5b82b9a4",
+              "at": "2026-10-22T20:11:18.190Z"
+            }
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T20:10:12.713Z",
+          "updatedAt": "2026-10-22T20:11:48.718Z",
+          "shortLabel": "Lampe / Leuchte"
+        },
+        "issues": [
+          {
+            "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "defect": "kaputt",
+            "count": 1,
+            "location": "Schlafzimmer",
+            "since": null,
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              },
+              {
+                "question": "count",
+                "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              {
+                "question": "description",
+                "answer": "Nein, ich meinte Schlafzimmer."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "location": {
+                    "from": null,
+                    "to": "Schlafzimmer"
+                  }
+                },
+                "source": "Nein, ich meinte Schlafzimmer.",
+                "at": "2026-10-22T20:11:48.718Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 5,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "kaputt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              "location": {
+                "status": "corrected",
+                "value": "Schlafzimmer",
+                "source": "Nein, ich meinte Schlafzimmer."
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 4,
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "source": "client_write_readback",
+              "receipt": {
+                "operationId": "4c321568-acb6-517c-a1e6-2282523433eb",
+                "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+                "draftId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+                "revision": 4,
+                "contentHash": "cb408f6f501250194dffd2215e9ef7a98a9aa6aaa509980dded00e4a5b82b9a4",
+                "at": "2026-10-22T20:11:18.190Z"
+              }
+            },
+            "status": "draft",
+            "createdAt": "2026-10-22T20:10:12.713Z",
+            "updatedAt": "2026-10-22T20:11:48.718Z",
+            "shortLabel": "Lampe / Leuchte"
+          }
+        ],
+        "controls": {
+          "save": {
+            "operation": "update",
+            "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667"
+          },
+          "stored": null,
+          "navigation": []
+        },
+        "safety": null
+      },
+      "httpMs": 10443.89
+    },
+    {
+      "request": {
+        "session": "[signed session omitted]",
+        "action": "save-issue",
+        "navigation": [
+          "cases",
+          "calendar",
+          "documents",
+          "properties",
+          "units",
+          "tasks",
+          "team",
+          "support",
+          "new-task",
+          "new-appointment",
+          "new-document"
+        ]
+      },
+      "status": 200,
+      "data": {
+        "architecture": "portal_v1",
+        "mode": "write_ticket",
+        "operation": {
+          "operationId": "8bd1bf05-dc24-5ee6-a06a-34f78e8f4a1d",
+          "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "draftId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "revision": 5,
+          "contentHash": "d5eb6e179049e0c312302220bbbaca1bbb15cbe084dba030cd444fbaac07be9e",
+          "scope": "this_device_test_app"
+        },
+        "fields": {
+          "title": "Lampe / Leuchte · Schlafzimmer",
+          "category": "Schaden / Reparatur",
+          "unit": "Schlafzimmer",
+          "description": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+        },
+        "modelCalls": 0,
+        "issue": {
+          "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "defect": "kaputt",
+          "count": 1,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "lampe kaputt"
+            },
+            {
+              "question": "location",
+              "answer": "wohnzimmer"
+            },
+            {
+              "question": "count",
+              "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            {
+              "question": "description",
+              "answer": "Nein, ich meinte Schlafzimmer."
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "location": {
+                  "from": null,
+                  "to": "Schlafzimmer"
+                }
+              },
+              "source": "Nein, ich meinte Schlafzimmer.",
+              "at": "2026-10-22T20:11:48.718Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 5,
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "lampe kaputt"
+            },
+            "defect": {
+              "status": "known",
+              "value": "kaputt",
+              "source": "lampe kaputt"
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            "location": {
+              "status": "corrected",
+              "value": "Schlafzimmer",
+              "source": "Nein, ich meinte Schlafzimmer."
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "source": "lampe kaputt"
+            }
+          },
+          "preparation": {
+            "status": "portal_received",
+            "revision": 4,
+            "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+            "source": "client_write_readback",
+            "receipt": {
+              "operationId": "4c321568-acb6-517c-a1e6-2282523433eb",
+              "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+              "draftId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+              "revision": 4,
+              "contentHash": "cb408f6f501250194dffd2215e9ef7a98a9aa6aaa509980dded00e4a5b82b9a4",
+              "at": "2026-10-22T20:11:18.190Z"
+            }
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T20:10:12.713Z",
+          "updatedAt": "2026-10-22T20:11:48.718Z",
+          "shortLabel": "Lampe / Leuchte"
+        },
+        "issues": [
+          {
+            "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "defect": "kaputt",
+            "count": 1,
+            "location": "Schlafzimmer",
+            "since": null,
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              },
+              {
+                "question": "count",
+                "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              {
+                "question": "description",
+                "answer": "Nein, ich meinte Schlafzimmer."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "location": {
+                    "from": null,
+                    "to": "Schlafzimmer"
+                  }
+                },
+                "source": "Nein, ich meinte Schlafzimmer.",
+                "at": "2026-10-22T20:11:48.718Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 5,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "kaputt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              "location": {
+                "status": "corrected",
+                "value": "Schlafzimmer",
+                "source": "Nein, ich meinte Schlafzimmer."
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 4,
+              "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "source": "client_write_readback",
+              "receipt": {
+                "operationId": "4c321568-acb6-517c-a1e6-2282523433eb",
+                "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+                "draftId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+                "revision": 4,
+                "contentHash": "cb408f6f501250194dffd2215e9ef7a98a9aa6aaa509980dded00e4a5b82b9a4",
+                "at": "2026-10-22T20:11:18.190Z"
+              }
+            },
+            "status": "draft",
+            "createdAt": "2026-10-22T20:10:12.713Z",
+            "updatedAt": "2026-10-22T20:11:48.718Z",
+            "shortLabel": "Lampe / Leuchte"
+          }
+        ],
+        "controls": {
+          "save": {
+            "operation": "update",
+            "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667"
+          },
+          "stored": null,
+          "navigation": []
+        },
+        "safety": null,
+        "timingMs": {
+          "total": 1
+        }
+      },
+      "httpMs": 4920.92
+    },
+    {
+      "request": {
+        "session": "[signed session omitted]",
+        "receipt": {
+          "operationId": "8bd1bf05-dc24-5ee6-a06a-34f78e8f4a1d",
+          "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "draftId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "revision": 5,
+          "contentHash": "d5eb6e179049e0c312302220bbbaca1bbb15cbe084dba030cd444fbaac07be9e",
+          "status": "portal_received"
+        },
+        "navigation": [
+          "cases",
+          "calendar",
+          "documents",
+          "properties",
+          "units",
+          "tasks",
+          "team",
+          "support",
+          "new-task",
+          "new-appointment",
+          "new-document"
+        ]
+      },
+      "status": 200,
+      "data": {
+        "architecture": "portal_v1",
+        "mode": "receipt",
+        "modelCalls": 0,
+        "receiptAccepted": true,
+        "issue": {
+          "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "defect": "kaputt",
+          "count": 1,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "lampe kaputt"
+            },
+            {
+              "question": "location",
+              "answer": "wohnzimmer"
+            },
+            {
+              "question": "count",
+              "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            {
+              "question": "description",
+              "answer": "Nein, ich meinte Schlafzimmer."
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "location": {
+                  "from": null,
+                  "to": "Schlafzimmer"
+                }
+              },
+              "source": "Nein, ich meinte Schlafzimmer.",
+              "at": "2026-10-22T20:11:48.718Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 5,
+          "fieldFacts": {
+            "equipment": {
+              "status": "known",
+              "value": "light",
+              "source": "lampe kaputt"
+            },
+            "defect": {
+              "status": "known",
+              "value": "kaputt",
+              "source": "lampe kaputt"
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            "location": {
+              "status": "corrected",
+              "value": "Schlafzimmer",
+              "source": "Nein, ich meinte Schlafzimmer."
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "source": "lampe kaputt"
+            }
+          },
+          "preparation": {
+            "status": "portal_received",
+            "revision": 5,
+            "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nkaputt\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"kaputt\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nkaputt\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+            "source": "client_write_readback",
+            "receipt": {
+              "operationId": "8bd1bf05-dc24-5ee6-a06a-34f78e8f4a1d",
+              "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+              "draftId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+              "revision": 5,
+              "contentHash": "d5eb6e179049e0c312302220bbbaca1bbb15cbe084dba030cd444fbaac07be9e",
+              "at": "2026-10-22T20:11:59.337Z"
+            }
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T20:10:12.713Z",
+          "updatedAt": "2026-10-22T20:11:48.718Z",
+          "shortLabel": "Lampe / Leuchte"
+        },
+        "issues": [
+          {
+            "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "defect": "kaputt",
+            "count": 1,
+            "location": "Schlafzimmer",
+            "since": null,
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "lampe kaputt"
+              },
+              {
+                "question": "location",
+                "answer": "wohnzimmer"
+              },
+              {
+                "question": "count",
+                "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              {
+                "question": "description",
+                "answer": "Nein, ich meinte Schlafzimmer."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "location": {
+                    "from": null,
+                    "to": "Schlafzimmer"
+                  }
+                },
+                "source": "Nein, ich meinte Schlafzimmer.",
+                "at": "2026-10-22T20:11:48.718Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 5,
+            "fieldFacts": {
+              "equipment": {
+                "status": "known",
+                "value": "light",
+                "source": "lampe kaputt"
+              },
+              "defect": {
+                "status": "known",
+                "value": "kaputt",
+                "source": "lampe kaputt"
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              "location": {
+                "status": "corrected",
+                "value": "Schlafzimmer",
+                "source": "Nein, ich meinte Schlafzimmer."
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "source": "lampe kaputt"
+              }
+            },
+            "preparation": {
+              "status": "portal_received",
+              "revision": 5,
+              "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nkaputt\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"kaputt\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nkaputt\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "source": "client_write_readback",
+              "receipt": {
+                "operationId": "8bd1bf05-dc24-5ee6-a06a-34f78e8f4a1d",
+                "issueId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+                "draftId": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+                "revision": 5,
+                "contentHash": "d5eb6e179049e0c312302220bbbaca1bbb15cbe084dba030cd444fbaac07be9e",
+                "at": "2026-10-22T20:11:59.337Z"
+              }
+            },
+            "status": "draft",
+            "createdAt": "2026-10-22T20:10:12.713Z",
+            "updatedAt": "2026-10-22T20:11:48.718Z",
+            "shortLabel": "Lampe / Leuchte"
+          }
+        ],
+        "controls": {
+          "save": null,
+          "stored": {
+            "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+            "scope": "this_device",
+            "transmitted": false
+          },
+          "navigation": []
+        },
+        "safety": null,
+        "timingMs": {
+          "total": 1
+        }
+      },
+      "httpMs": 5572.06
+    }
+  ],
+  "savedBeforeCorrection": {
+    "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+    "title": "Lampe / Leuchte · Wohnzimmer",
+    "description": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+    "unit": "Wohnzimmer",
+    "propertyId": "",
+    "unitId": "",
+    "assetId": "",
+    "property": "",
+    "owner": "Alexander",
+    "priority": "Normal",
+    "status": "Neu",
+    "person": "",
+    "date": "2026-10-22",
+    "attachments": [],
+    "createdAt": "2026-10-22T20:11:13.316Z",
+    "createdBy": "Alexander",
+    "caseInfo": {
+      "reference": "A00001",
+      "category": "Schaden / Reparatur",
+      "receivedDate": "2026-10-22",
+      "channel": "Portal",
+      "reporterId": "",
+      "nextStep": "",
+      "waitingFor": "",
+      "resolution": "",
+      "closedAt": ""
+    },
+    "updatedAt": "2026-10-22T20:11:13.319Z",
+    "updatedBy": "Alexander",
+    "history": [
+      {
+        "id": "HISTORY-6827fb1c-0436-4f6b-b18a-a6aa0648ad2e",
+        "at": "2026-10-22T20:11:13.319Z",
+        "by": "Alexander",
+        "type": "created",
+        "note": "Über MORA lokal gespeichert",
+        "changes": []
+      }
+    ]
+  },
+  "savedAfterCorrection": {
+    "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+    "title": "Lampe / Leuchte · Schlafzimmer",
+    "description": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+    "unit": "Schlafzimmer",
+    "propertyId": "",
+    "unitId": "",
+    "assetId": "",
+    "property": "",
+    "owner": "Alexander",
+    "priority": "Normal",
+    "status": "Neu",
+    "person": "",
+    "date": "2026-10-22",
+    "attachments": [],
+    "createdAt": "2026-10-22T20:11:13.316Z",
+    "createdBy": "Alexander",
+    "caseInfo": {
+      "reference": "A00001",
+      "category": "Schaden / Reparatur",
+      "receivedDate": "2026-10-22",
+      "channel": "Portal",
+      "reporterId": "",
+      "nextStep": "",
+      "waitingFor": "",
+      "resolution": "",
+      "closedAt": ""
+    },
+    "updatedAt": "2026-10-22T20:11:53.774Z",
+    "updatedBy": "Alexander",
+    "history": [
+      {
+        "id": "HISTORY-6827fb1c-0436-4f6b-b18a-a6aa0648ad2e",
+        "at": "2026-10-22T20:11:13.319Z",
+        "by": "Alexander",
+        "type": "created",
+        "note": "Über MORA lokal gespeichert",
+        "changes": []
+      },
+      {
+        "id": "HISTORY-c44bbf7d-5f97-46ab-8d54-931a54cfe126",
+        "at": "2026-10-22T20:11:53.774Z",
+        "by": "Alexander",
+        "type": "edited",
+        "note": "Über MORA lokal gespeichert",
+        "changes": [
+          {
+            "field": "Titel",
+            "before": "Lampe / Leuchte · Wohnzimmer",
+            "after": "Lampe / Leuchte · Schlafzimmer"
+          },
+          {
+            "field": "Ort / Zusatzangabe",
+            "before": "Wohnzimmer",
+            "after": "Schlafzimmer"
+          },
+          {
+            "field": "Beschreibung",
+            "before": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "after": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+          }
+        ]
+      }
+    ]
+  },
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?"
+    },
+    {
+      "role": "user",
+      "content": "lampe kaputt"
+    },
+    {
+      "role": "assistant",
+      "content": "Ich habe Ihre Meldung zur kaputten Lampe erfasst. Bitte teilen Sie mir mit, in welchem Raum sich die Lampe befindet und ob es sich um eine einzelne oder mehrere Lampen handelt."
+    },
+    {
+      "role": "user",
+      "content": "wohnzimmer"
+    },
+    {
+      "role": "assistant",
+      "content": "Ich habe den Ort als Wohnzimmer notiert. Wie viele Lampen sind betroffen – eine oder mehrere?"
+    },
+    {
+      "role": "user",
+      "content": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+    },
+    {
+      "role": "assistant",
+      "content": "Ich habe verstanden, dass nur eine Lampe im Wohnzimmer betroffen ist. Möchten Sie das Anliegen nun im Portal speichern, damit wir es weiterbearbeiten können?"
+    },
+    {
+      "role": "receipt",
+      "content": "Das Anliegen wurde in diesem Portal auf diesem Gerät gespeichert."
+    },
+    {
+      "role": "user",
+      "content": "Nein, ich meinte Schlafzimmer."
+    },
+    {
+      "role": "assistant",
+      "content": "Ich habe die Korrektur notiert. Das Gerät befindet sich also im Schlafzimmer. Möchten Sie das Anliegen nun im Portal speichern?"
+    },
+    {
+      "role": "receipt",
+      "content": "Das Anliegen wurde in diesem Portal auf diesem Gerät aktualisiert."
+    }
+  ],
+  "controls": {
+    "save": null,
+    "stored": {
+      "id": "0b928bd7-3ce6-4bb8-a4dc-226a33a12667",
+      "scope": "this_device",
+      "transmitted": false
+    },
+    "navigation": []
+  },
+  "success": true
+}
