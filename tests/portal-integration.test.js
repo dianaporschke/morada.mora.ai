@@ -202,5 +202,5 @@ test('action intent uses the actual current request rather than a brittle copied
 // A stale deployment default cannot undo the owner's portal-only model switch.
 test('portal model switch uses the same Gateway credentials and approved model',async()=>{
  let selected;const service=createPortalService({env:{AI_GATEWAY_MODEL:'inception/mercury-2.5',MORA_AI_PROVIDER:'auto',AI_GATEWAY_API_KEY:'test-placeholder'},resolve:async env=>{selected=env;return {ready:true,provider:'gateway',model:env.AI_GATEWAY_MODEL,createModel:()=>({})};},guard:async()=>{},generate:async()=>({output:plan([],{intent:'general',reply:'Guten Tag.'}),usage:{},finalStep:{providerMetadata:{}}})});
- await service('Hallo',hydrateSimple(null),[]);assert.equal(selected.AI_GATEWAY_MODEL,'anthropic/claude-sonnet-5.5');assert.equal(selected.MORA_AI_PROVIDER,'gateway');assert.equal(selected.AI_GATEWAY_API_KEY,'test-placeholder');
+ await service('Hallo',hydrateSimple(null),[]);assert.equal(selected.AI_GATEWAY_MODEL,'google/gemini-3.8-flash');assert.equal(selected.MORA_AI_PROVIDER,'gateway');assert.equal(selected.AI_GATEWAY_API_KEY,'test-placeholder');
 });
