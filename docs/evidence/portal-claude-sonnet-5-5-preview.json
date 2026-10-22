@@ -1,0 +1,31 @@
+{
+  "url": "https://morada-mora-5snylk6o9-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "deploymentId": "dpl_8hf59gXPrhYKA91EhJ1stNTXYirn",
+  "commit": "15856f0ff4d3e1a3ca5109008bf73ea6844ac0ca",
+  "target": null,
+  "portalSha256": "2103ce97bc2ee0f4265e2254f4af925742bbf4299ddfe1de94ba2ec1709311fa",
+  "htmlMatchesReviewedSource": true,
+  "credentialsInHtml": false,
+  "control": {
+    "status": 200,
+    "architecture": "portal_v1",
+    "modelCalls": 0
+  },
+  "unavailableActionStatus": 400,
+  "diagnosticRouteStatus": 404,
+  "credits": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.625845368,
+    "totalUsedUsd": 0.374154632,
+    "maxUsedUsd": 0.659925936,
+    "model": "anthropic/claude-sonnet-5.5",
+    "pricing": {
+      "input": 2e-06,
+      "output": 1e-05
+    }
+  },
+  "browserRenderingVerified": false,
+  "taskBaselineTotalUsedUsd": 0.374154632,
+  "taskObservedAccountDeltaUsd": 0.0
+}

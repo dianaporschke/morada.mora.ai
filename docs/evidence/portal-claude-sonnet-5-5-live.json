@@ -1,0 +1,173 @@
+{
+  "portalSha256": "2103ce97bc2ee0f4265e2254f4af925742bbf4299ddfe1de94ba2ec1709311fa",
+  "scope": "Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.",
+  "url": "https://morada-mora-5snylk6o9-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "conversations": [
+    {
+      "id": "lamp",
+      "transports": [
+        {
+          "request": {
+            "message": "lampe kaputt",
+            "messageId": "f8b63dfa-a03f-49bf-a8dc-d6f5a20af4b3",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 503,
+          "data": {
+            "architecture": "portal_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "availability": {
+              "provider": "gateway",
+              "model": "anthropic/claude-sonnet-5.5",
+              "status": 403,
+              "reason": "no_providers_available"
+            },
+            "modelCalls": 1,
+            "generationIds": [],
+            "issue": null,
+            "issues": [],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 773
+            }
+          },
+          "httpMs": 6965.04
+        }
+      ],
+      "snapshots": [],
+      "success": false,
+      "failure": "Real model turn failed\n\n503 !== 200\n",
+      "messages": [
+        {
+          "role": "assistant",
+          "content": "Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?"
+        },
+        {
+          "role": "user",
+          "content": "lampe kaputt"
+        },
+        {
+          "role": "error",
+          "content": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten."
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "socket",
+      "transports": [
+        {
+          "request": {
+            "message": "Die Steckdose im Büro funktioniert nicht. Es gibt weder Funken noch Geruch oder Wärme.",
+            "messageId": "b713e65d-3c04-4687-8af4-17899c4bdd63",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 503,
+          "data": {
+            "architecture": "portal_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "availability": {
+              "provider": "gateway",
+              "model": "anthropic/claude-sonnet-5.5",
+              "status": 403,
+              "reason": "no_providers_available"
+            },
+            "modelCalls": 1,
+            "generationIds": [],
+            "issue": null,
+            "issues": [],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 336
+            }
+          },
+          "httpMs": 4700.73
+        }
+      ],
+      "snapshots": [],
+      "success": false,
+      "failure": "Real model turn failed\n\n503 !== 200\n",
+      "messages": [
+        {
+          "role": "assistant",
+          "content": "Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?"
+        },
+        {
+          "role": "user",
+          "content": "Die Steckdose im Büro funktioniert nicht. Es gibt weder Funken noch Geruch oder Wärme."
+        },
+        {
+          "role": "error",
+          "content": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten."
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "before": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.625845368,
+    "totalUsedUsd": 0.374154632,
+    "maxUsedUsd": 0.659925936,
+    "model": "anthropic/claude-sonnet-5.5",
+    "pricing": {
+      "input": 0.000002,
+      "output": 0.00001
+    }
+  },
+  "model": "anthropic/claude-sonnet-5.5",
+  "after": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.625845368,
+    "totalUsedUsd": 0.374154632,
+    "maxUsedUsd": 0.659925936,
+    "model": "anthropic/claude-sonnet-5.5",
+    "pricing": {
+      "input": 0.000002,
+      "output": 0.00001
+    }
+  },
+  "actualAccountDeltaUsd": 0
+}

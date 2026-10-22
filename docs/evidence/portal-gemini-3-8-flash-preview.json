@@ -1,0 +1,31 @@
+{
+  "url": "https://morada-mora-fgsqb4yje-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "deploymentId": "dpl_6zgNvsD6XmdPf2CFUa56ZirrK8cJ",
+  "commit": "2bc149e48e2e8472881164e8b11f75da0a6c07bc",
+  "target": null,
+  "portalSha256": "2103ce97bc2ee0f4265e2254f4af925742bbf4299ddfe1de94ba2ec1709311fa",
+  "htmlMatchesReviewedSource": true,
+  "credentialsInHtml": false,
+  "control": {
+    "status": 200,
+    "architecture": "portal_v1",
+    "modelCalls": 0
+  },
+  "unavailableActionStatus": 400,
+  "diagnosticRouteStatus": 404,
+  "credits": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.625845368,
+    "totalUsedUsd": 0.374154632,
+    "maxUsedUsd": 0.659925936,
+    "model": "google/gemini-3.8-flash",
+    "pricing": {
+      "input": 7.5e-07,
+      "output": 3.75e-06
+    }
+  },
+  "browserRenderingVerified": false,
+  "taskBaselineTotalUsedUsd": 0.374154632,
+  "taskObservedAccountDeltaUsd": 0.0
+}
