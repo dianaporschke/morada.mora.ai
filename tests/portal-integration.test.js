@@ -47,6 +47,9 @@ test('safety and topic changes suppress save; uncertainty cannot silently overwr
 test('free-credit guard rejects paid top-ups, reserve shortfall and cap',()=>{
  assert.ok(checkFreeCredits({balance:4.64,totalUsed:.36}));for(const c of [{balance:9.64,totalUsed:.36},{balance:.1,totalUsed:4.9},{balance:4.3,totalUsed:.7}])assert.throws(()=>checkFreeCredits(c));
 });
+test('pending unverified customer corrections block server-side save tickets',()=>{
+ const state=lamp();assert.ok(controls(state).save);state.portalPending=[{content:'Nein, doch anders.'}];assert.equal(controls(state).save,null);
+});
 test('real service boundaries use a test transport: one decision, lower reasoning, no verifier',async()=>{
  let request,calls=0;const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async options=>{request=options;calls++;return {output:plan([],{reply:'Wie kann ich Ihnen helfen?',intent:'general',activeIssueRef:null}),usage:{},finalStep:{providerMetadata:{}}};}});
  const result=await service('Guten Tag',hydrateSimple(null),['support']);assert.equal(calls,1);assert.equal(request.reasoning,'low');assert.equal(result.modelCalls,1);assert.equal(result.reply,'Wie kann ich Ihnen helfen?');

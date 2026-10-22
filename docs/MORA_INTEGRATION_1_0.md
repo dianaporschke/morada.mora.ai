@@ -51,9 +51,9 @@ Die Erfolgsmeldung entsteht im Frontend ausschliesslich nach erfolgreichem Schre
 
 ## Nachgewiesene Tests
 
-Automatisiert: **312 Tests bestanden**, davon 14 neue Integrationstests. Zusätzlich TypeScript-Prüfung und Build bestanden. Die neuen Tests führen die vollständige HTML-Anwendung in JSDOM aus und prüfen den tatsächlichen Portal-Speichercode. Web Locks und Dialog-APIs werden dort wegen fehlender Browserunterstützung durch Testadapter bereitgestellt; das ist keine Messung eines realen Browsers.
+Automatisiert: **313 Tests bestanden**, davon 15 neue Integrationstests. Zusätzlich TypeScript-Prüfung und Build bestanden. Die neuen Tests führen die vollständige HTML-Anwendung in JSDOM aus und prüfen den tatsächlichen Portal-Speichercode. Web Locks und Dialog-APIs werden dort wegen fehlender Browserunterstützung durch Testadapter bereitgestellt; das ist keine Messung eines realen Browsers.
 
-Abgedeckt sind unter anderem Lampe mit vollständigen Angaben, kurze Antworten und Umgangssprache, unbekannter Beginn, Raumkorrektur, mehrere Einrichtungen und getrennte Anliegen, unsichere Angaben, Themenwechsel, unbekannte Kategorie, Gefahrensperre, nicht verfügbare Aktionen, ungültige Sitzungen und Belege, Doppelklick, Aktualisierung, Speicherfehler, manuelle Änderungen und verlorene Empfangsbestätigungen.
+Abgedeckt sind unter anderem Lampe mit vollständigen Angaben, kurze Antworten und Umgangssprache, unbekannter Beginn, Raumkorrektur, mehrere Einrichtungen und getrennte Anliegen, unsichere Angaben, Themenwechsel, unbekannte Kategorie, Gefahrensperre, nicht verfügbare Aktionen, ungültige Sitzungen und Belege, Doppelklick, Aktualisierung, Speicherfehler, manuelle Änderungen, verlorene Empfangsbestätigungen und die serverseitige Sperre von Schreibtickets bei noch ungeprüften Kundennachrichten.
 
 **Echter kompletter KI-/Speicherablauf bestanden:**
 
@@ -78,7 +78,7 @@ Die neue Oberfläche protokolliert getrennte HTTP-, JSON- und DOM-Einfügezeiten
 
 Es wurde nur vorhandenes kostenloses Guthaben verwendet. Ausgang: 4,640074064 USD bei 0,359925936 USD bisheriger Nutzung. Jede Generierung prüft das Guthaben samt konservativer Reserve. Die Anwendung stoppt bei nicht bestätigter Herkunft, zu kleiner Reserve oder spätestens 0,659925936 USD gesamter gemeldeter Nutzung. Das ist eine konservative Anwendungssperre, keine Änderung einer Vercel-Zahlungseinstellung und keine neue kostenpflichtige Buchung. Ein vorübergehend widersprüchlicher Guthabenstand wird nur durch erneutes Lesen geprüft; keine abgelehnte Generierung wird dadurch automatisch neu ausgeführt.
 
-**Nicht gelöst:** Das Modell formuliert weiterhin «erfasst/notiert», stellt teilweise mehrere oder optionale Rückfragen und kann ungültige Ausgaben liefern. Im Serienlauf wurde eine unbelegte Entwarnung beobachtet; die neue Validierung verwirft diese konkrete Klasse absoluter Sicherheitsbehauptungen. Dieser begrenzte Schutz ist keine vollständige semantische Sicherheitsprüfung. Sprachliche und fachliche Zuverlässigkeit sind damit noch nicht freigegeben. Der sichere Portaladapter macht aus einem unzuverlässigen Modell keine nachgewiesen fehlerfreie Assistenz.
+**Nicht gelöst:** Das Modell formuliert weiterhin «erfasst/notiert», stellt teilweise mehrere oder optionale Rückfragen und kann ungültige Ausgaben liefern. Im Serienlauf wurde eine unbelegte Entwarnung beobachtet; die neue Validierung verwirft diese konkrete Klasse absoluter Sicherheitsbehauptungen. Dieser begrenzte Schutz ist keine vollständige semantische Sicherheitsprüfung. In der endgültigen Preview schlug das Modell bei «lampe kaputt» zunächst das Aufgabenformular vor, obwohl es um ein Anliegen ging. Auch die Wahl sinnvoller vorgeschlagener Aktionen ist deshalb noch nicht vollständig zuverlässig. Sprachliche und fachliche Zuverlässigkeit sind damit noch nicht freigegeben. Der sichere Portaladapter macht aus einem unzuverlässigen Modell keine nachgewiesen fehlerfreie Assistenz.
 
 ## Noch offene Browserprüfung
 
@@ -101,3 +101,11 @@ Der ausführlichere bestehende Schnittstellenvertrag in `MORA_SIMPLE_INTEGRATION
 ## Empfehlung
 
 Diese Version eignet sich zur Prüfung der konkreten Portalübergabe und der Aktionszustände. Vor einer fachlichen Freigabe zuerst die offene Browserprüfung abschliessen und dann die 20 Gespräche unter dem verfügbaren kostenlosen Anfragelimit vollständig wiederholen. Die verbliebenen Sprach- und Sicherheitsprobleme anhand der unveränderten Rohantworten bewerten; keine weitere pauschale Promptverbesserung oder einen Modellwechsel als bereits erfolgreich ausgeben.
+
+## Abschlussnachweis
+
+Der vollständige reale Ablauf wurde zusätzlich auf dem bereitgestellten Programmstand `8057493c384b2f424befb60c8c7eb2ff9e77a07c` wiederholt und bestand erneut: vier Kundenrunden, acht erfolgreiche HTTPS-Operationen einschliesslich Ticket und lokalem Readback, genau ein Anliegen und die Raumkorrektur auf derselben ID. Der aktuelle genaue Fachbereich und die Originalbelege stehen nun ebenfalls im gespeicherten Eintrag. Beleg: `docs/evidence/portal-integration-release-live-dom.json`. Die nachfolgende kleine API-Ergänzung sperrt lediglich neue Schreibtickets bei noch nicht geprüften Kundennachrichten; dieser Fehlerpfad ist automatisiert geprüft.
+
+Die gemeldete kontoweite Verbrauchsdifferenz zwischen Vor- und Nachkontrolle beträgt **0,003436660 USD**; danach verbleiben **4,636637404 USD** Guthaben. Das ist eine Kontobeobachtung, keine Rechnung und keine Messung ausschliesslich einer Gesprächsvariante. Es wurden keine Zahlungen oder kostenpflichtigen Einstellungen verändert.
+
+Die neue Preview-Adresse, der bereitgestellte Commit, der HTML-Hash, der echte Kontrollaufruf ohne Modellnutzung und die Bestätigung, dass die Diagnose-Route fehlt, stehen in `docs/evidence/portal-integration-preview.json`. Der Preview-Link wird zusätzlich im Abschluss direkt verlinkt.

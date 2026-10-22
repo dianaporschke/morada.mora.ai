@@ -33,11 +33,17 @@
     "mobile": false
   },
   "testEvidence": {
-    "automatedTests": 312,
+    "automatedTests": 313,
     "coreRealModelDomFlow": true,
     "coreModelMessages": 4,
     "seriesTurns": 18,
     "seriesAccepted": 7,
-    "seriesStopped": "Gateway rate_limit_exceeded confirmed in Vercel runtime logs; interrupted without paid changes"
+    "seriesStopped": "Gateway rate_limit_exceeded confirmed in Vercel runtime logs; interrupted without paid changes",
+    "releaseCoreRealModelDomFlow": true
+  },
+  "finalObservedCredits": {
+    "balanceUsd": 4.636637404,
+    "totalUsedUsd": 0.363362596,
+    "accountDeltaSinceTaskPreflightUsd": 0.00343666
   }
 }

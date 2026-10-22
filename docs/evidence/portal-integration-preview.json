@@ -1,0 +1,30 @@
+{
+  "url": "https://morada-mora-4zho123od-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "deploymentId": "dpl_443e6baPPtsRtdZj8Y6AXCstjizr",
+  "commit": "8057493c384b2f424befb60c8c7eb2ff9e77a07c",
+  "target": null,
+  "portalSha256": "5dddebc40e10d341eb4585044d9e2091edfbebd4cfa08921512eb77aadff8442",
+  "htmlMatchesReviewedSource": true,
+  "credentialsInHtml": false,
+  "control": {
+    "status": 200,
+    "architecture": "portal_v1",
+    "modelCalls": 0
+  },
+  "unavailableActionStatus": 400,
+  "diagnosticRouteStatus": 404,
+  "credits": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.637229584,
+    "totalUsedUsd": 0.362770416,
+    "maxUsedUsd": 0.659925936,
+    "model": "inception/mercury-2.5",
+    "pricing": {
+      "input": 4e-08,
+      "output": 1.5e-07
+    }
+  },
+  "costSinceTaskPreflightUsd": 0.0028444799999999826,
+  "browserRenderingVerified": false
+}

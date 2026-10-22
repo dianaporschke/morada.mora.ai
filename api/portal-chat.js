@@ -12,7 +12,7 @@ const schema=z.object({session:z.string().max(180000).optional(),message:z.strin
 export function controls(state,navigation=[]) {
   const i=state.issue,current=Boolean(i?.preparation?.receipt?.contentHash=== (i?contentHash(i):''));
   const ready=i&&i.equipment&&i.equipment!=='unknown'&&i.defect&&i.location&& !['equipment','defect','location'].some(k=>['unknown','uncertain'].includes(i.fieldFacts?.[k]?.status));
-  const save=ready&&!current&&!state.safety&&!state.pendingKey&&state.conversationTopic==='issue';
+  const save=ready&&!current&&!state.safety&&!state.pendingKey&&!state.portalPending?.length&&state.conversationTopic==='issue';
   return {save:save?{operation:i.preparation?.receipt?'update':'create',issueId:i.id}:null,
     stored:current&&state.conversationTopic==='issue'?{id:i.id,scope:'this_device',transmitted:false}:null,
     navigation:state.pendingKey||save||state.safety?[]:navigation};
