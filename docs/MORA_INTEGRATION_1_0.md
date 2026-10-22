@@ -1,5 +1,7 @@
 # MORA Integration 1.0 · Prüfbericht vom 22. Oktober 2026
 
+[Geschützte Portal-Preview öffnen](https://morada-mora-4aj9787rs-dianaporschke-1255s-projects.vercel.app/portal.html) · Bereitgestellter Programmstand: `1e059cbef38f4e6a36814f8a6c25334aba113006`.
+
 Die Integration arbeitet direkt auf der bereitgestellten eigenständigen HTML-Datei. Der Kernablauf mit echten Mercury-Antworten und tatsächlicher lokaler Portalspeicherung ist nachgewiesen. Die Gesprächsqualität hat weiterhin deutliche Schwächen. Eine abgeschlossene Qualitätsfreigabe oder eine erfolgreiche Prüfung auf echten Desktop- und Mobilbrowsern wird nicht behauptet.
 
 ## Ausgangslage und Grenzen
