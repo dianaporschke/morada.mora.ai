@@ -193,3 +193,8 @@ test('invalid verifier format repairs verification without regenerating a valid 
  const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async o=>{instructions.push(o.instructions);return {output:outputs[calls++],usage:{},finalStep:{providerMetadata:{}}};}});
  const r=await service('Das Spezialteil im Bad ist lose. Beginn unbekannt.',hydrateSimple(null),['cases']);assert.equal(calls,3);assert.equal(r.repaired,true);assert.equal(instructions.filter(i=>i.startsWith('Sie sind MORA')).length,1);assert.equal(r.state.issue.location,'Bad');assert.equal(r.state.issue.fieldFacts.since.status,'unknown');
 });
+test('action intent uses the actual current request rather than a brittle copied quote',async()=>{
+ let n=0;const seen=[];const outputs=[plan([],{reply:'Bitte prüfen Sie die Angaben.',requestedAction:'prepare',requestQuote:'Bitte bereiten Sie den Fall vor.'}),{violations:[]}];
+ const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async o=>{seen.push(o);return {output:outputs[n++],usage:{},finalStep:{providerMetadata:{}}};}});
+ const r=await service('Bitte als Anliegen vorbereiten.',lamp(),['cases']);assert.equal(r.requestedAction,'prepare');assert.equal(n,2);assert.match(seen[1].messages[0].content,/Bitte als Anliegen vorbereiten/);assert.ok(!seen[1].messages[0].content.includes('Bitte bereiten Sie den Fall vor.'));
+});
