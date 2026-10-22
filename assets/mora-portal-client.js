@@ -1,4 +1,5 @@
 import {detectHazard,safetyNotice} from './mora-safety.js';
+import {draftLabel} from './mora-data.js';
 import {portalNavigation} from './mora-portal-map.js';
 /** No provider credentials, model calls or portal business rules in this UI. */
 export function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(window)}={}) {
@@ -20,9 +21,18 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
     actions.replaceChildren();
     if(thread.pendingReceipt){button('Speicherbestätigung erneut abgleichen',()=>syncReceipt());return;}
     const data=thread.data;if(!data)return;
-    if(data.controls?.save&&bridge.available().includes('cases'))button(data.controls.save.operation==='update'?'Gespeichertes Anliegen aktualisieren':'Anliegen lokal speichern',()=>saveIssue());
-    if(data.controls?.stored)button('Gespeichertes Anliegen öffnen',()=>navigate(()=>bridge.view(data.controls.stored.id)));
+    if(data.issues?.length>1){
+      const select=document.createElement('select');select.setAttribute('aria-label','Anliegen auswählen');select.disabled=busy||Boolean(bridge.currentDraft());
+      for(const issue of data.issues){const o=document.createElement('option');o.value=issue.id;o.textContent=[draftLabel(issue),issue.location].filter(Boolean).join(' · ');o.selected=issue.id===data.issue?.id;select.append(o);}
+      select.addEventListener('change',async()=>{if(busy)return;setBusy(true,'Anliegen wird gewechselt …');try{await request({action:'switch-issue',issueId:select.value});}catch(e){message('error',e.message);}finally{setBusy(false);}});actions.append(select);
+    }
+    const connected=bridge.available().includes('cases');
+    if(data.controls?.save&&connected)button(data.controls.save.operation==='update'?'Anliegen aktualisieren':'Anliegen vorbereiten',()=>prepareIssue());
+    else if(data.controls?.prepared&&connected)button('Angaben überprüfen',()=>prepareIssue());
+    else if(data.controls?.stored)button('Gespeichertes Anliegen öffnen',()=>navigate(()=>bridge.view(data.controls.stored.id)));
+    if(data.controls?.review&&connected)button('Foto hinzufügen',()=>prepareIssue(true));
     for(const target of data.controls?.navigation || [])if(bridge.available().includes(target)&&names[target])button(names[target],()=>navigate(()=>bridge.navigate(target)));
+
   }
   function setBusy(value,label=''){busy=value;form.querySelector('button').disabled=value;input.disabled=value;panel.querySelector('[data-mp="clear"]').disabled=value;panel.setAttribute('aria-busy',String(value));status.textContent=label||storageWarning;showControls();}
   function close(){panel.hidden=true;document.getElementById('moraFab')?.setAttribute('aria-expanded','false');lastFocus?.focus?.();}
@@ -53,7 +63,7 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
     const hazard=detectHazard(text.trim());if(hazard.hazard!=='none')message('error','Sicherheitshinweis: '+safetyNotice(hazard.hazard));
     input.value='';setBusy(true,'MORA antwortet …');
     const start=window.performance.now();
-    try{const data=await request({message:text.trim(),messageId:window.crypto.randomUUID()});if(data.reply)message('assistant',data.reply);window.console.info('MORA portal visible response',{answerDomMs:window.performance.now()-start});}
+    try{const data=await request({message:text.trim(),messageId:window.crypto.randomUUID()});if(data.reply)message('assistant',data.reply);if(data.requestedAction)await prepareIssue(data.requestedAction==='photo',true);window.console.info('MORA portal visible response',{answerDomMs:window.performance.now()-start});}
     catch(e){message('error',e.message);}
     finally{setBusy(false);if(!panel.hidden)input.focus();}
   }
@@ -64,29 +74,48 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
     thread.saved[pending.receipt.issueId]=pending.fields;thread.pendingReceipt=null;persist();
   }
   async function syncReceipt(){if(busy)return;setBusy(true,'Speicherbestätigung wird abgeglichen …');try{await acknowledge();status.textContent='Der lokale Speicherstand ist bestätigt.';}catch(e){message('error',e.message);}finally{setBusy(false);}}
-  async function saveIssue(){
-    if(busy)return;setBusy(true,'Anliegen wird im Portal gespeichert …');
-    let ticket,written=false;
+  const receiptFor=(ticket,extra)=>({...Object.fromEntries(['operationId','issueId','draftId','revision','contentHash'].map(k=>[k,ticket.operation[k]])),...extra});
+  async function prepareIssue(photo=false,insideSend=false){
+    if(busy&&!insideSend)return;setBusy(true,'Angaben werden ins Anliegenformular übernommen …');
     try{
-      ticket=await request({action:'save-issue'});
-      const proof=await bridge.save(ticket.operation,ticket.fields,thread.saved[ticket.operation.issueId],ticket.sourceEvidence);written=true;
-      thread.pendingReceipt={receipt:{...Object.fromEntries(['operationId','issueId','draftId','revision','contentHash'].map(k=>[k,ticket.operation[k]])),status:'portal_received'},fields:proof.fields};persist();
-      message('receipt',proof.unchanged?'Das Anliegen ist bereits in diesem Portal auf diesem Gerät gespeichert.':proof.updated?'Das Anliegen wurde in diesem Portal auf diesem Gerät aktualisiert.':'Das Anliegen wurde in diesem Portal auf diesem Gerät gespeichert.');
-      await acknowledge();
-    }catch(e){
-      if(ticket&&!written){try{await request({receipt:{...Object.fromEntries(['operationId','issueId','draftId','revision','contentHash'].map(k=>[k,ticket.operation[k]])),status:'error'}});}catch{thread.data=null;}}
-      message('error',written?'Das Anliegen ist lokal gespeichert. Der Abgleich mit dem Chat ist noch offen. Nutzen Sie «Speicherbestätigung erneut abgleichen».':e.message);
-    }finally{setBusy(false);}
+      const wasCurrent=Boolean(thread.data?.controls?.stored);
+      const ticket=await request({action:thread.data?.controls?.save?'save-issue':'review-issue'});
+      const issueId=ticket.operation.issueId;
+      bridge.prepare(ticket,thread.saved[issueId],{
+        current:wasCurrent,
+        onSaving(){setBusy(true,'Anliegen wird lokal gespeichert …');},
+        async onSaved(proof){
+          // Keep the generated mapping separately from form edits, so a later
+          // chat update can detect and preserve manual portal changes.
+          thread.pendingReceipt={receipt:receiptFor(ticket,{status:'portal_received',attachmentCount:proof.attachmentCount,conflictFields:proof.conflictFields}),fields:proof.mappedFields};persist();
+          message('receipt',proof.unchanged?'Der lokale Speicherstand ist bestätigt.':proof.updated?'Das Anliegen wurde auf diesem Gerät aktualisiert.':'Das Anliegen wurde auf diesem Gerät gespeichert.');
+          try{await acknowledge();}catch{message('error','Das Anliegen ist lokal gespeichert. Der Abgleich mit dem Chat ist noch offen. Nutzen Sie «Speicherbestätigung erneut abgleichen».');}
+          finally{setBusy(false);}
+        },
+        async onError(error){message('error',error.message);try{await request({action:'draft-error',issueId});}catch{thread.data=null;}finally{setBusy(false);}},
+        async onClosed(){
+          if(thread.pendingReceipt)return;
+          setBusy(true,'Formularstatus wird abgeglichen …');
+          try{await request({action:'draft-closed',issueId});}catch(e){thread.data=null;message('error',e.message);}finally{setBusy(false);}
+        },
+      },photo);
+      close();
+      await request({action:'draft-opened',issueId});
+      status.textContent='Die Angaben stehen im Anliegenformular zur Kontrolle bereit. Noch nicht gespeichert.';
+    }catch(e){message('error',e.message);}
+    finally{if(!insideSend)setBusy(false);}
   }
+
   function open(){
     if(!bridge.open())return;
     if(activeRole!==bridge.role()){load();log.replaceChildren();thread.messages.forEach(m=>bubble(m.role,m.content));}
     lastFocus=document.activeElement;panel.hidden=false;document.getElementById('moraFab')?.setAttribute('aria-expanded','true');showControls();input.focus();log.scrollTop=log.scrollHeight;
+    if(thread.data?.controls?.prepared&&!bridge.currentDraft()&&!busy){setBusy(true);request({action:'draft-closed',issueId:thread.data.controls.prepared.issueId}).catch(e=>message('error',e.message)).finally(()=>setBusy(false));}
   }
   form.addEventListener('submit',e=>{e.preventDefault();send(input.value);});
   input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();send(input.value);}});
   panel.querySelector('[data-mp="close"]').addEventListener('click',close);
-  panel.querySelector('[data-mp="clear"]').addEventListener('click',()=>{if(busy)return;thread=blank();persist();log.replaceChildren();bubble('assistant',greeting);setBusy(false);input.focus();});
+  panel.querySelector('[data-mp="clear"]').addEventListener('click',()=>{if(busy||thread.pendingReceipt||bridge.currentDraft())return;thread=blank();persist();log.replaceChildren();bubble('assistant',greeting);setBusy(false);input.focus();});
   panel.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();close();}});
   new window.MutationObserver(()=>{if(!bridge.open())panel.hidden=true;}).observe(document.getElementById('portalPreview'),{attributes:true,attributeFilter:['hidden']});
   return {open,close,send,getState:()=>structuredClone(thread),element:panel};

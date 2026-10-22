@@ -5,15 +5,18 @@ import {createPortalService,targets} from '../lib/mora/portal/service.js';
 import {createFreeCreditGuard} from '../lib/mora/portal/budget.js';
 import {portalCaseFields,portalCaseEvidence} from '../assets/mora-portal-map.js';
 
-const receipt=z.object({operationId:z.string().uuid(),issueId:z.string().uuid(),draftId:z.string().uuid(),revision:z.number().int().positive(),contentHash:z.string().regex(/^[a-f0-9]{64}$/),status:z.enum(['portal_received','error'])}).strict();
-const schema=z.object({session:z.string().max(180000).optional(),message:z.string().trim().min(1).max(2000).optional(),messageId:z.string().uuid().optional(),action:z.enum(['save-issue','new-conversation']).optional(),receipt:receipt.optional(),navigation:z.array(z.enum(targets)).max(targets.length).default([])}).strict()
+const receipt=z.object({operationId:z.string().uuid(),issueId:z.string().uuid(),draftId:z.string().uuid(),revision:z.number().int().positive(),contentHash:z.string().regex(/^[a-f0-9]{64}$/),status:z.enum(['portal_received','error']),attachmentCount:z.number().int().min(0).max(3).optional(),conflictFields:z.array(z.enum(['title','description','unit','category'])).max(4).optional()}).strict();
+const schema=z.object({session:z.string().max(180000).optional(),message:z.string().trim().min(1).max(2000).optional(),messageId:z.string().uuid().optional(),action:z.enum(['save-issue','review-issue','switch-issue','draft-opened','draft-closed','draft-error','new-conversation']).optional(),issueId:z.string().uuid().optional(),receipt:receipt.optional(),navigation:z.array(z.enum(targets)).max(targets.length).default([])}).strict()
   .refine(v=>[v.message,v.action,v.receipt].filter(Boolean).length===1)
   .refine(v=>!v.message||Boolean(v.messageId));
 export function controls(state,navigation=[]) {
   const i=state.issue,current=Boolean(i?.preparation?.receipt?.contentHash=== (i?contentHash(i):''));
   const ready=i&&i.equipment&&i.equipment!=='unknown'&&i.defect&&i.location&& !['equipment','defect','location'].some(k=>['unknown','uncertain'].includes(i.fieldFacts?.[k]?.status));
-  const save=ready&&!current&&!state.safety&&!state.pendingKey&&!state.portalPending?.length&&state.conversationTopic==='issue';
+  const open=Boolean(i&&state.portalDraftOpen?.issueId===i.id&&state.portalDraftOpen?.revision===i.revision);
+  const save=ready&&!current&&!open&&!state.safety&&!state.pendingKey&&!state.portalPending?.length&&state.conversationTopic==='issue';
   return {save:save?{operation:i.preparation?.receipt?'update':'create',issueId:i.id}:null,
+    prepared:open?{issueId:i.id,saved:false}:null,
+    review:ready&&!state.safety&&!state.portalPending?.length&&!state.pendingKey&&state.conversationTopic==='issue'?{issueId:i.id}:null,
     stored:current&&state.conversationTopic==='issue'?{id:i.id,scope:'this_device',transmitted:false}:null,
     navigation:state.pendingKey||save||state.safety?[]:navigation};
 }
@@ -37,11 +40,29 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
     if(input.action==='new-conversation'){state=hydrateSimple(null);state.integration='portal_v1';state.portalJournal=[];state.portalPending=[];return reply(200,{mode:'control',modelCalls:0});}
     if(input.receipt){
       acceptReceipt(state,input.receipt);
+      if(input.receipt.status==='portal_received'){const i=state.issues.find(i=>i.id===input.receipt.issueId);i.portalAttachmentCount=input.receipt.attachmentCount ?? i.portalAttachmentCount ?? 0;}
+      state.portalDraftOpen=null;
       return reply(200,{mode:'receipt',modelCalls:0,receiptAccepted:input.receipt.status==='portal_received'});
     }
-    if(input.action==='save-issue'){
-      if(!controls(state).save)throw Object.assign(Error('Action unavailable'),{code:'INVALID_ACTION'});
-      const operation=beginPreparation(state);
+    if(input.action==='switch-issue'){
+      const issue=state.issues.find(i=>i.id===input.issueId);if(!issue||state.portalDraftOpen)throw Object.assign(Error('Unknown issue or open form'),{code:'INVALID_ACTION'});
+      state.issue=issue;state.pendingKey=issue.pendingKey || null;state.conversationTopic='issue';
+      return reply(200,{mode:'control',modelCalls:0});
+    }
+    if(['draft-opened','draft-closed','draft-error'].includes(input.action)){
+      if(input.action==='draft-opened'||input.action==='draft-error'){
+        if(state.pendingPreparation?.issueId!==input.issueId)throw Object.assign(Error('Missing ticket'),{code:'INVALID_ACTION'});
+        state.portalDraftOpen={issueId:input.issueId,revision:state.pendingPreparation.revision,status:input.action==='draft-error'?'error':'prepared'};
+      }else if(state.portalDraftOpen?.issueId===input.issueId)state.portalDraftOpen=null;
+      return reply(200,{mode:'control',modelCalls:0});
+    }
+    if(input.action==='save-issue'||input.action==='review-issue'){
+      if(!input.navigation.includes('cases')||!(input.action==='save-issue'?controls(state).save:controls(state).review))throw Object.assign(Error('Action unavailable'),{code:'INVALID_ACTION'});
+      // A current saved case may be reopened for review/photos without changing
+      // its chat revision. A ticket remains permission, never storage evidence.
+      const current=state.issue.preparation?.receipt;
+      const operation=current?.contentHash===contentHash(state.issue)?Object.fromEntries(['operationId','issueId','draftId','revision','contentHash'].map(k=>[k,current[k]])):beginPreparation(state);
+      state.pendingPreparation=operation;
       return reply(200,{mode:'write_ticket',operation,fields:portalCaseFields(state.issue),sourceEvidence:portalCaseEvidence(state.issue),modelCalls:0});
     }
     if(state.portalJournal.some(m=>m.id===input.messageId))return reply(409,{code:'ALREADY_PROCESSED',error:'Diese Nachricht ist bereits im Gespräch enthalten.'});
@@ -55,7 +76,8 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
     const result=await converse(message,before,input.navigation,45000);
     const journal=state.portalJournal;state=result.state;state.integration='portal_v1';
     state.portalJournal=[...journal,{role:'assistant',content:result.reply}].slice(-48);state.portalPending=[];
-    return reply(200,{mode:'model',reply:result.reply,navigation:result.navigation,modelCalls:result.modelCalls,generationIds:result.generationIds,usage:result.usage,repaired:result.repaired,timingMs:{model:result.modelMs,creditGuard:result.guardMs}});
+    const actionable=controls(state).save||controls(state).review;
+    return reply(200,{mode:'model',reply:result.reply,navigation:result.navigation,requestedAction:actionable?result.requestedAction:null,modelCalls:result.modelCalls,generationIds:result.generationIds,usage:result.usage,repaired:result.repaired,timingMs:{model:result.modelMs,creditGuard:result.guardMs}});
   }catch(error){
     const conflict=['INVALID_ACTION','INVALID_SESSION','ISSUE_LIMIT'].includes(error.code);
     const code=conflict?error.code:error.code==='FREE_CREDIT_BOUNDARY'?'FREE_CREDIT_BOUNDARY':'MODEL_UNAVAILABLE';

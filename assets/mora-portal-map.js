@@ -24,7 +24,7 @@ export function portalCaseFields(issue) {
   const category=['water','electricity','heating','appliances'].includes(draft.category)
     ? 'Schaden / Reparatur':draft.category==='access'?'Schlüssel / Zutritt'
     :draft.category==='neighbours'?'Beschwerde':'Allgemein';
-  const description='Fachbereich: '+(draft.category==='general'?'Noch nicht zugeordnet':categoryLabels[draft.category])+'\n'+draftSummary(draft);
+  const description='Fachbereich: '+(draft.category==='general'?'Noch nicht zugeordnet':categoryLabels[draft.category])+'\n'+draftSummary(draft)+(!draft.since&&!draft.unknownFields?.includes('since')&&draft.fieldFacts?.since?.status!=='uncertain'?'\nBeginn: Nicht angegeben':'');
   if(description.length>3000)throw Error('Die Beschreibung ist zu lang für das Anliegenformular. Bitte im Chat kürzen.');
   return {title:[draftLabel(draft),draft.location].filter(Boolean).join(' · ').slice(0,180),
     category,unit:draft.location || '',description};

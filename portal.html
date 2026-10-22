@@ -5147,7 +5147,7 @@ function opsWithEvent(record,type,note='',changes=[]){
  if((record.history||[]).length>=1000)throw Error('Der Verlauf hat 1000 Einträge erreicht. Bitte eine Folgeaufgabe anlegen; der bisherige Verlauf bleibt erhalten.');
  return {...record,updatedAt:at,updatedBy:by,history:[...(record.history||[]),{id:uid('HISTORY'),at,by,type,note,changes}]};
 }
-async function opsSaveRecord(kind,data,id='',attachments=[],source=state){
+async function opsSaveRecord(kind,data,id='',attachments=[],source=state,moraIdentity=null){
  if(!crmWritable())return {error:'Kein Zugriff auf diese Einträge.'};
  if(source!==state)return {error:'Der Portalstand hat sich geändert. Bitte den Eintrag erneut öffnen; eure Eingaben wurden nicht gespeichert.'};
  const key=opsKey(kind);if(!key)return {error:'Unbekannter Vorgang.'};const old=state[key].find(r=>r.id===id);
@@ -5158,7 +5158,7 @@ async function opsSaveRecord(kind,data,id='',attachments=[],source=state){
   const value=(name,fallback='')=>String(data[name]??old?.[name]??fallback).trim(),propertyId=value('propertyId'),unitId=value('unitId'),p=portfolioProperty(propertyId),u=portfolioUnit(unitId);
   if(propertyId&&(!p||p.archivedAt&&old?.propertyId!==propertyId))throw Error('Bitte eine Liegenschaft im Bestand auswählen.');
   if(unitId&&(!u||u.propertyId!==propertyId||u.archivedAt&&old?.unitId!==unitId))throw Error('Bitte eine aktive Einheit dieser Liegenschaft auswählen.');
-  let record={...old,id:old?.id||uid(kind.toUpperCase()),title:value('title'),propertyId,unitId,property:p?portfolioLabel(p):'',unit:value('unit'),attachments:[...attachments],date:value('date',crmToday())};
+  let record={...old,id:old?.id||(kind==='case'&&moraIdentity?.id)||uid(kind.toUpperCase()),title:value('title'),propertyId,unitId,property:p?portfolioLabel(p):'',unit:value('unit'),attachments:[...attachments],date:value('date',crmToday())};
   if(!old?.propertyId&&old?.property&&!propertyId&&!data.clearLegacyProperty)record.property=old.property;
   if(kind==='document'){record.category=value('category','Allgemein');record.body=value('body');record.archivedAt=old?.archivedAt||null;if(!record.body&&!record.attachments.length)throw Error('Bitte einen Inhalt erfassen oder mindestens eine Datei anhängen.');}
   else{
@@ -5184,8 +5184,8 @@ async function opsSaveRecord(kind,data,id='',attachments=[],source=state){
   }
   if(kind==='appointment')record=calendarPrepare(record,data,old);
   if(record.title.length>Math.max(180,old?.title?.length||0))throw Error('Bitte einen Titel mit höchstens 180 Zeichen eingeben.');
-  if(!old){record.createdAt=new Date().toISOString();record.createdBy=profiles[role].name;record=opsWithEvent(record,'created');}
-  else{const changes=opsChanges(old,record);if(!changes.length)return {persisted:true,unchanged:true,record:old};record=opsWithEvent(record,'edited','',changes);}
+  if(!old){record.createdAt=new Date().toISOString();record.createdBy=profiles[role].name;record=opsWithEvent(record,'created',moraIdentity?.note||'');}
+  else{const changes=opsChanges(old,record);if(!changes.length)return {persisted:true,unchanged:true,record:old};record=opsWithEvent(record,'edited',moraIdentity?.note||'',changes);}
   const rows=old?state[key].map(r=>r.id===id?record:r):[record,...state[key]];applicantValidateState(opsValidateState({...state,[key]:rows}));
   return {...await companyCommit({[key]:rows},opsLabel(kind)+(old?' bearbeitet: ':' erfasst: ')+record.title),record};
  }catch(error){return {error:error.message||'Bitte die Angaben prüfen.'};}
@@ -8163,7 +8163,7 @@ function portalCaseFields(issue) {
   const category=['water','electricity','heating','appliances'].includes(draft.category)
     ? 'Schaden / Reparatur':draft.category==='access'?'Schlüssel / Zutritt'
     :draft.category==='neighbours'?'Beschwerde':'Allgemein';
-  const description='Fachbereich: '+(draft.category==='general'?'Noch nicht zugeordnet':categoryLabels[draft.category])+'\n'+draftSummary(draft);
+  const description='Fachbereich: '+(draft.category==='general'?'Noch nicht zugeordnet':categoryLabels[draft.category])+'\n'+draftSummary(draft)+(!draft.since&&!draft.unknownFields?.includes('since')&&draft.fieldFacts?.since?.status!=='uncertain'?'\nBeginn: Nicht angegeben':'');
   if(description.length>3000)throw Error('Die Beschreibung ist zu lang für das Anliegenformular. Bitte im Chat kürzen.');
   return {title:[draftLabel(draft),draft.location].filter(Boolean).join(' · ').slice(0,180),
     category,unit:draft.location || '',description};
@@ -8174,52 +8174,77 @@ const sameCaseFields=(a,b)=>['title','description','unit','category'].every(k=>a
  * record, not a second diagnosis or an obsolete value in the current fields. */
 const portalCaseEvidence=issue=>(issue.answers || []).slice(-6).map(a=>a.answer).join('\n').slice(-2800);
 
-/** Executed inside the supplied HTML, after its existing classic script.
- * Only this boundary touches its lexical state and existing portal functions. */
+/** MORA boundary to the supplied portal. No parallel case/file storage. */
 function createPortalBridge(mapping) {
   const {managedCaseFields,sameCaseFields}=mapping;
-  return {
+  let review=null;
+  const ensure=()=>{
+    if(!crmWritable())throw Error('Anliegen sind in dieser Ansicht noch nicht zum Speichern angebunden.');
+    if(portalLoading||portalSaving||portalReadBlocked)throw Error('Bitte zuerst den Portalstand laden oder die laufende Speicherung abwarten.');
+  };
+  const api={
     available(){return (crmWritable()?['cases','calendar','documents','properties','units','tasks','team','support','new-task','new-appointment','new-document']:[role+'Home',role+'Contact',role==='owner'?'ownerCases':'tenantSupport',role+'Documents']).filter(t=>allowed(t.startsWith('new-')?({task:'tasks',appointment:'calendar',document:'documents'})[t.slice(4)]:t));},
-    role(){return role;},
-    open(){return previewOpen;},
+    role(){return role;},open(){return previewOpen;},
     navigate(target){
       if(!this.available().includes(target))throw Error('Diese Funktion ist in dieser Ansicht nicht verfügbar.');
       if(target.startsWith('new-')){if(!portalCloseDialog())return false;newEntry(target.slice(4));return true;}
       go(target);return current===target;
     },
-    view(id){if(!crmWritable()||!state.cases.some(c=>c.id===id))throw Error('Das gespeicherte Anliegen ist in diesem Portalstand nicht vorhanden.');caseDetail(id);},
-    async save(operation,fields,previousFields,sourceEvidence=''){
-      if(!crmWritable())throw Error('Speichern ist in dieser Ansicht nicht angebunden.');
-      if(portalLoading||portalSaving||portalReadBlocked)throw Error('Bitte zuerst den Portalstand laden oder die laufende Speicherung abwarten.');
-      if(!portalCanLeaveDialog())throw Error('Bitte zuerst die offenen Formulareingaben sichern.');
-      const id=operation.issueId,source=state,old=state.cases.find(c=>c.id===id);
-      const updated=Boolean(old);
-      if(old){
-        if(opsClosed(old)||old.archivedAt)throw Error('Dieses Anliegen ist abgeschlossen. Bitte im Anliegenregister prüfen.');
-        if(sameCaseFields(managedCaseFields(old),fields)){
-          const read=await portalReadStored(),saved=read.next.cases.find(c=>c.id===id);
-          if(!saved||!sameCaseFields(managedCaseFields(saved),fields))throw Error('Der aktuelle Speicherstand weicht ab. Bitte den Portalstand neu laden.');
-          return {id,fields,updated,unchanged:true};
-        }
-        if(!previousFields||!sameCaseFields(managedCaseFields(old),previousFields))throw Error('Das Anliegen wurde im Portal bearbeitet. Bitte diese Änderungen im Anliegenregister prüfen; MORA überschreibt sie nicht.');
-      }else if(previousFields)throw Error('Das zuvor gespeicherte Anliegen fehlt. Bitte den aktuellen Portalstand laden.');
-      const today=crmToday();
-      let record=old?{...old,title:fields.title,description:fields.description,unit:fields.unit}
-        :{id,title:fields.title,description:fields.description,unit:fields.unit,propertyId:'',unitId:'',assetId:'',property:'',owner:profiles[role].name,priority:'Normal',status:'Neu',person:'',date:today,attachments:[],createdAt:new Date().toISOString(),createdBy:profiles[role].name};
-      record=casePrepare(record,{category:fields.category,...(!old?{channel:'Portal',receivedDate:today}:{})},old);
-      record=opsWithEvent(record,old?'edited':'created','Über MORA lokal gespeichert. Gesprächsbelege (frühere Angaben können korrigiert sein):\n'+String(sourceEvidence).slice(-2800),old?opsChanges(old,record):[]);
-      const rows=old?state.cases.map(c=>c.id===id?record:c):[record,...state.cases];
-      applicantValidateState(opsValidateState({...state,cases:rows}));
-      if(source!==state)throw Error('Der Portalstand hat sich geändert. Bitte erneut prüfen.');
-      const result=await companyCommit({cases:rows},'MORA · Anliegen '+(old?'aktualisiert: ':'erfasst: ')+record.title);
-      if(result.error||!result.persisted)throw Error(result.error||'Die Speicherung wurde nicht bestätigt.');
-      // Read the actual durable portal snapshot, including its IndexedDB path.
-      const persisted=await portalReadStored(),saved=persisted.next.cases.find(c=>c.id===id);
-      if(!saved||!sameCaseFields(managedCaseFields(saved),fields))throw Error('Der gespeicherte Portalstand stimmt nicht mit den Chatangaben überein. Bitte das Anliegen im Register prüfen.');
-      if(previewOpen)render();
-      return {id,fields:managedCaseFields(saved),updated,unchanged:false};
+    view(id){ensure();if(!state.cases.some(c=>c.id===id))throw Error('Das Anliegen ist in diesem Portalstand nicht vorhanden.');caseDetail(id);},
+    currentDraft(){return review&&dialog.open&&review.form.isConnected?{issueId:review.ticket.operation.issueId}:null;},
+    prepare(ticket,previousFields,callbacks={},photo=false){
+      ensure();
+      if(review&&dialog.open&&review.form.isConnected){
+        if(review.ticket.operation.operationId!==ticket.operation.operationId)throw Error('Bitte das offene Anliegen zuerst speichern oder schliessen.');
+        if(photo)api.photo();return {alreadyOpen:true};
+      }
+      if(!portalCloseDialog())throw Error('Bitte zuerst die offenen Formulareingaben sichern.');
+      const {operation,fields}=ticket,id=operation.issueId,old=state.cases.find(c=>c.id===id);
+      if(old&&(opsClosed(old)||old.archivedAt))throw Error('Dieses Anliegen ist abgeschlossen. Bitte im Anliegenregister prüfen.');
+      const same=old&&sameCaseFields(managedCaseFields(old),fields);
+      // A photo/review of the current chat revision preserves customer edits.
+      const current=old&&callbacks.current;
+      if(old&&!same&&!current&&(!previousFields||!sameCaseFields(managedCaseFields(old),previousFields)))throw Error('Das Anliegen enthält eigene Formularänderungen. Bitte im Anliegenregister prüfen; MORA überschreibt sie nicht.');
+      if(!old&&previousFields)throw Error('Das zuvor gespeicherte Anliegen fehlt. Bitte den aktuellen Portalstand laden.');
+      if(!caseOpenForm(old?id:'','','',{...fields,caseInfo:{category:fields.category,channel:'Portal'}}))throw Error('Das Anliegenformular konnte nicht geöffnet werden.');
+      const form=document.getElementById('opsEntryForm');
+      if(!current)for(const [key,value]of Object.entries(fields))form.elements.namedItem(key).value=value;
+      if(!current&&!sameCaseFields(Object.fromEntries(Object.keys(fields).map(k=>[k,form.elements.namedItem(k).value])),fields))throw Error('Die Formularübernahme konnte nicht bestätigt werden.');
+      const ctx={ticket,form,callbacks,role,source:state,saving:false,complete:false,old:Boolean(old)};review=ctx;
+      form.dataset.moraIssue=id;
+      const notice=document.createElement('p');notice.className='crm-form-note';notice.textContent='Von MORA vorausgefüllt. Bitte prüfen und speichern. Dateien und Anliegen werden auf diesem Gerät gespeichert; kein Versand an MORADA.';form.prepend(notice);
+      form.addEventListener('submit',async event=>{
+        event.preventDefault();event.stopImmediatePropagation();
+        if(ctx.saving||!form.reportValidity())return;
+        const draft=opsDraft;
+        if(review!==ctx||role!==ctx.role||!previewOpen||!draft||draft.source!==ctx.source||draft.reading){opsFormError('Bitte den aktuellen Portalstand prüfen und warten, bis die Dateien eingelesen sind.');return;}
+        ctx.saving=true;form.querySelector('[type="submit"]').disabled=true;callbacks.onSaving?.();
+        try{
+          ensure();
+          const data=Object.fromEntries(new FormData(form));
+          const result=await opsSaveRecord('case',data,form.dataset.id,draft.items,draft.source,{id,note:'MORA · Gesprächsbelege (spätere Korrekturen gelten):\n'+String(ticket.sourceEvidence||'').slice(-2800)});
+          if(result.error||!result.persisted)throw Error(result.error||'Die Speicherung wurde nicht bestätigt.');
+          form.dataset.id=id;opsDraft.id=id;opsDraft.source=state;ctx.source=state;
+          const persisted=await portalReadStored(),saved=persisted.next.cases.find(c=>c.id===id);
+          if(!saved||!sameCaseFields(managedCaseFields(saved),managedCaseFields(result.record))||JSON.stringify(saved.attachments)!==JSON.stringify(result.record.attachments))throw Error('Der gespeicherte Portalstand konnte nicht vollständig bestätigt werden. Bitte erneut speichern oder im Anliegenregister prüfen.');
+          ctx.complete=true;review=null;
+          opsAfterSave('case',saved,form.dataset.returnTo,!ctx.old);caseDetail(id);
+          await callbacks.onSaved?.({id,fields:managedCaseFields(saved),mappedFields:fields,attachmentCount:saved.attachments.length,conflictFields:Object.keys(fields).filter(k=>fields[k]!==managedCaseFields(saved)[k]),updated:ctx.old,unchanged:Boolean(result.unchanged)});
+        }catch(error){opsFormError(error.message);await callbacks.onError?.(error);}
+        finally{ctx.saving=false;if(form.isConnected)form.querySelector('[type="submit"]').disabled=false;}
+      });
+      dialog.addEventListener('close',()=>{if(review===ctx){review=null;if(!ctx.complete)callbacks.onClosed?.();}},{once:true});
+      portalMarkDialogClean();
+      if(photo)api.photo();
+      return {alreadyOpen:false};
+    },
+    photo(){
+      if(!api.currentDraft()||opsDraft?.reading)throw Error('Bitte zuerst das Anliegenformular öffnen.');
+      const input=document.getElementById('opsFileInput');if(!input)throw Error('Der Fotoanhang ist nicht verfügbar.');
+      input.closest('details').open=true;input.click();
     },
   };
+  return api;
 }
 
 /** No provider credentials, model calls or portal business rules in this UI. */
@@ -8242,9 +8267,18 @@ function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(w
     actions.replaceChildren();
     if(thread.pendingReceipt){button('Speicherbestätigung erneut abgleichen',()=>syncReceipt());return;}
     const data=thread.data;if(!data)return;
-    if(data.controls?.save&&bridge.available().includes('cases'))button(data.controls.save.operation==='update'?'Gespeichertes Anliegen aktualisieren':'Anliegen lokal speichern',()=>saveIssue());
-    if(data.controls?.stored)button('Gespeichertes Anliegen öffnen',()=>navigate(()=>bridge.view(data.controls.stored.id)));
+    if(data.issues?.length>1){
+      const select=document.createElement('select');select.setAttribute('aria-label','Anliegen auswählen');select.disabled=busy||Boolean(bridge.currentDraft());
+      for(const issue of data.issues){const o=document.createElement('option');o.value=issue.id;o.textContent=[draftLabel(issue),issue.location].filter(Boolean).join(' · ');o.selected=issue.id===data.issue?.id;select.append(o);}
+      select.addEventListener('change',async()=>{if(busy)return;setBusy(true,'Anliegen wird gewechselt …');try{await request({action:'switch-issue',issueId:select.value});}catch(e){message('error',e.message);}finally{setBusy(false);}});actions.append(select);
+    }
+    const connected=bridge.available().includes('cases');
+    if(data.controls?.save&&connected)button(data.controls.save.operation==='update'?'Anliegen aktualisieren':'Anliegen vorbereiten',()=>prepareIssue());
+    else if(data.controls?.prepared&&connected)button('Angaben überprüfen',()=>prepareIssue());
+    else if(data.controls?.stored)button('Gespeichertes Anliegen öffnen',()=>navigate(()=>bridge.view(data.controls.stored.id)));
+    if(data.controls?.review&&connected)button('Foto hinzufügen',()=>prepareIssue(true));
     for(const target of data.controls?.navigation || [])if(bridge.available().includes(target)&&names[target])button(names[target],()=>navigate(()=>bridge.navigate(target)));
+
   }
   function setBusy(value,label=''){busy=value;form.querySelector('button').disabled=value;input.disabled=value;panel.querySelector('[data-mp="clear"]').disabled=value;panel.setAttribute('aria-busy',String(value));status.textContent=label||storageWarning;showControls();}
   function close(){panel.hidden=true;document.getElementById('moraFab')?.setAttribute('aria-expanded','false');lastFocus?.focus?.();}
@@ -8275,7 +8309,7 @@ function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(w
     const hazard=detectHazard(text.trim());if(hazard.hazard!=='none')message('error','Sicherheitshinweis: '+safetyNotice(hazard.hazard));
     input.value='';setBusy(true,'MORA antwortet …');
     const start=window.performance.now();
-    try{const data=await request({message:text.trim(),messageId:window.crypto.randomUUID()});if(data.reply)message('assistant',data.reply);window.console.info('MORA portal visible response',{answerDomMs:window.performance.now()-start});}
+    try{const data=await request({message:text.trim(),messageId:window.crypto.randomUUID()});if(data.reply)message('assistant',data.reply);if(data.requestedAction)await prepareIssue(data.requestedAction==='photo',true);window.console.info('MORA portal visible response',{answerDomMs:window.performance.now()-start});}
     catch(e){message('error',e.message);}
     finally{setBusy(false);if(!panel.hidden)input.focus();}
   }
@@ -8286,29 +8320,48 @@ function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(w
     thread.saved[pending.receipt.issueId]=pending.fields;thread.pendingReceipt=null;persist();
   }
   async function syncReceipt(){if(busy)return;setBusy(true,'Speicherbestätigung wird abgeglichen …');try{await acknowledge();status.textContent='Der lokale Speicherstand ist bestätigt.';}catch(e){message('error',e.message);}finally{setBusy(false);}}
-  async function saveIssue(){
-    if(busy)return;setBusy(true,'Anliegen wird im Portal gespeichert …');
-    let ticket,written=false;
+  const receiptFor=(ticket,extra)=>({...Object.fromEntries(['operationId','issueId','draftId','revision','contentHash'].map(k=>[k,ticket.operation[k]])),...extra});
+  async function prepareIssue(photo=false,insideSend=false){
+    if(busy&&!insideSend)return;setBusy(true,'Angaben werden ins Anliegenformular übernommen …');
     try{
-      ticket=await request({action:'save-issue'});
-      const proof=await bridge.save(ticket.operation,ticket.fields,thread.saved[ticket.operation.issueId],ticket.sourceEvidence);written=true;
-      thread.pendingReceipt={receipt:{...Object.fromEntries(['operationId','issueId','draftId','revision','contentHash'].map(k=>[k,ticket.operation[k]])),status:'portal_received'},fields:proof.fields};persist();
-      message('receipt',proof.unchanged?'Das Anliegen ist bereits in diesem Portal auf diesem Gerät gespeichert.':proof.updated?'Das Anliegen wurde in diesem Portal auf diesem Gerät aktualisiert.':'Das Anliegen wurde in diesem Portal auf diesem Gerät gespeichert.');
-      await acknowledge();
-    }catch(e){
-      if(ticket&&!written){try{await request({receipt:{...Object.fromEntries(['operationId','issueId','draftId','revision','contentHash'].map(k=>[k,ticket.operation[k]])),status:'error'}});}catch{thread.data=null;}}
-      message('error',written?'Das Anliegen ist lokal gespeichert. Der Abgleich mit dem Chat ist noch offen. Nutzen Sie «Speicherbestätigung erneut abgleichen».':e.message);
-    }finally{setBusy(false);}
+      const wasCurrent=Boolean(thread.data?.controls?.stored);
+      const ticket=await request({action:thread.data?.controls?.save?'save-issue':'review-issue'});
+      const issueId=ticket.operation.issueId;
+      bridge.prepare(ticket,thread.saved[issueId],{
+        current:wasCurrent,
+        onSaving(){setBusy(true,'Anliegen wird lokal gespeichert …');},
+        async onSaved(proof){
+          // Keep the generated mapping separately from form edits, so a later
+          // chat update can detect and preserve manual portal changes.
+          thread.pendingReceipt={receipt:receiptFor(ticket,{status:'portal_received',attachmentCount:proof.attachmentCount,conflictFields:proof.conflictFields}),fields:proof.mappedFields};persist();
+          message('receipt',proof.unchanged?'Der lokale Speicherstand ist bestätigt.':proof.updated?'Das Anliegen wurde auf diesem Gerät aktualisiert.':'Das Anliegen wurde auf diesem Gerät gespeichert.');
+          try{await acknowledge();}catch{message('error','Das Anliegen ist lokal gespeichert. Der Abgleich mit dem Chat ist noch offen. Nutzen Sie «Speicherbestätigung erneut abgleichen».');}
+          finally{setBusy(false);}
+        },
+        async onError(error){message('error',error.message);try{await request({action:'draft-error',issueId});}catch{thread.data=null;}finally{setBusy(false);}},
+        async onClosed(){
+          if(thread.pendingReceipt)return;
+          setBusy(true,'Formularstatus wird abgeglichen …');
+          try{await request({action:'draft-closed',issueId});}catch(e){thread.data=null;message('error',e.message);}finally{setBusy(false);}
+        },
+      },photo);
+      close();
+      await request({action:'draft-opened',issueId});
+      status.textContent='Die Angaben stehen im Anliegenformular zur Kontrolle bereit. Noch nicht gespeichert.';
+    }catch(e){message('error',e.message);}
+    finally{if(!insideSend)setBusy(false);}
   }
+
   function open(){
     if(!bridge.open())return;
     if(activeRole!==bridge.role()){load();log.replaceChildren();thread.messages.forEach(m=>bubble(m.role,m.content));}
     lastFocus=document.activeElement;panel.hidden=false;document.getElementById('moraFab')?.setAttribute('aria-expanded','true');showControls();input.focus();log.scrollTop=log.scrollHeight;
+    if(thread.data?.controls?.prepared&&!bridge.currentDraft()&&!busy){setBusy(true);request({action:'draft-closed',issueId:thread.data.controls.prepared.issueId}).catch(e=>message('error',e.message)).finally(()=>setBusy(false));}
   }
   form.addEventListener('submit',e=>{e.preventDefault();send(input.value);});
   input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();send(input.value);}});
   panel.querySelector('[data-mp="close"]').addEventListener('click',close);
-  panel.querySelector('[data-mp="clear"]').addEventListener('click',()=>{if(busy)return;thread=blank();persist();log.replaceChildren();bubble('assistant',greeting);setBusy(false);input.focus();});
+  panel.querySelector('[data-mp="clear"]').addEventListener('click',()=>{if(busy||thread.pendingReceipt||bridge.currentDraft())return;thread=blank();persist();log.replaceChildren();bubble('assistant',greeting);setBusy(false);input.focus();});
   panel.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();close();}});
   new window.MutationObserver(()=>{if(!bridge.open())panel.hidden=true;}).observe(document.getElementById('portalPreview'),{attributes:true,attributeFilter:['hidden']});
   return {open,close,send,getState:()=>structuredClone(thread),element:panel};
