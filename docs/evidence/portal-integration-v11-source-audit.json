@@ -1,0 +1,25 @@
+{
+  "baseCommit": "e02c9c05aa43b420681aba020c69bd78a096747c",
+  "nativeFunctionCount": 1073,
+  "nativeStylesUnchanged": true,
+  "nativeChangesOnly": [
+    [
+      "async function opsSaveRecord(kind,data,id='',attachments=[],source=state){",
+      "async function opsSaveRecord(kind,data,id='',attachments=[],source=state,moraIdentity=null){"
+    ],
+    [
+      "id:old?.id||uid(kind.toUpperCase())",
+      "id:old?.id||(kind==='case'&&moraIdentity?.id)||uid(kind.toUpperCase())"
+    ],
+    [
+      "record=opsWithEvent(record,'created');",
+      "record=opsWithEvent(record,'created',moraIdentity?.note||'');"
+    ],
+    [
+      "record=opsWithEvent(record,'edited','',changes);",
+      "record=opsWithEvent(record,'edited',moraIdentity?.note||'',changes);"
+    ]
+  ],
+  "portalSha256": "2103ce97bc2ee0f4265e2254f4af925742bbf4299ddfe1de94ba2ec1709311fa",
+  "workingHtmlEqualsPreviewSource": true
+}

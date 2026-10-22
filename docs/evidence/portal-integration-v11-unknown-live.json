@@ -1,0 +1,107 @@
+{
+  "portalSha256": "2103ce97bc2ee0f4265e2254f4af925742bbf4299ddfe1de94ba2ec1709311fa",
+  "model": "inception/mercury-2.5",
+  "scope": "Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.",
+  "url": "https://morada-mora-mmvyvfobi-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "conversations": [
+    {
+      "id": "unknown",
+      "transports": [
+        {
+          "request": {
+            "message": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+            "messageId": "a58d920f-84c2-4d87-b86d-431bd822c1b1",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 503,
+          "data": {
+            "architecture": "portal_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "availability": {
+              "provider": "gateway",
+              "model": "inception/mercury-2.5",
+              "status": null,
+              "reason": "unavailable"
+            },
+            "modelCalls": 3,
+            "generationIds": [
+              "gen_01M5JT2YAZ3YFCW5KB17GDAQWM",
+              "gen_01M5JT307DEHMWBY71Y37EQCWJ",
+              "gen_01M5JT31S07SYPWQNACRVC3AW2"
+            ],
+            "issue": null,
+            "issues": [],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 5781
+            }
+          },
+          "httpMs": 9877.84
+        }
+      ],
+      "snapshots": [],
+      "success": false,
+      "failure": "Real model turn failed\n\n503 !== 200\n",
+      "messages": [
+        {
+          "role": "assistant",
+          "content": "Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?"
+        },
+        {
+          "role": "user",
+          "content": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+        },
+        {
+          "role": "error",
+          "content": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten."
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "before": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.630826426,
+    "totalUsedUsd": 0.369173574,
+    "maxUsedUsd": 0.659925936,
+    "model": "inception/mercury-2.5",
+    "pricing": {
+      "input": 4e-8,
+      "output": 1.5e-7
+    }
+  },
+  "after": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.630425116,
+    "totalUsedUsd": 0.369574884,
+    "maxUsedUsd": 0.659925936,
+    "model": "inception/mercury-2.5",
+    "pricing": {
+      "input": 4e-8,
+      "output": 1.5e-7
+    }
+  },
+  "actualAccountDeltaUsd": 0.00040130999999998807
+}

@@ -1,0 +1,15 @@
+{
+  "testCommand": "npm test",
+  "tests": 328,
+  "passed": 328,
+  "failed": 0,
+  "typecheck": "passed",
+  "build": "passed",
+  "verification": "Native full HTML in JSDOM with actual portal persistence. Model fixture tests are not live model evidence.",
+  "sourceCommit": "b66bbfbfc7c40e95365dd6788ed5de54f32c433d",
+  "node": "v24.19.0",
+  "portalSha256": "2103ce97bc2ee0f4265e2254f4af925742bbf4299ddfe1de94ba2ec1709311fa",
+  "testSummary": "328\nℹ suites 0\nℹ pass 328\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 15662.384026",
+  "typecheckOutput": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> morada-mora-ai@2.0.0 typecheck\n> tsc --noEmit\n\n",
+  "buildOutput": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n\n> morada-mora-ai@2.0.0 build\n> node scripts/build.mjs\n\nSyntax and portal assets OK (113 files checked). Static portal requires no bundling.\nPublic portal built in dist/. Server routes remain in api/.\n"
+}

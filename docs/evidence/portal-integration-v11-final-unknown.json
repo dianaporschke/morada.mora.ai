@@ -1,0 +1,1040 @@
+{
+  "portalSha256": "2103ce97bc2ee0f4265e2254f4af925742bbf4299ddfe1de94ba2ec1709311fa",
+  "model": "inception/mercury-2.5",
+  "scope": "Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.",
+  "url": "https://morada-mora-drw1bkjkl-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "conversations": [
+    {
+      "id": "unknown",
+      "transports": [
+        {
+          "request": {
+            "message": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+            "messageId": "55898b62-a0e0-454c-8f61-fdf0a92323b4",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Ich habe das Anliegen für das Bad für Sie vorbereitet. Wollen Sie es direkt eintragen oder noch Angaben ergänzen?",
+            "navigation": [],
+            "requestedAction": "prepare",
+            "modelCalls": 4,
+            "generationIds": [
+              "gen_01M5JT9PBGJF1Q4W9JBAAG56BD",
+              "gen_01M5JT9RSFKNHDTAEGETSJRBQ9",
+              "gen_01M5JT9W570PGSQ2R7WY99T4H7",
+              "gen_01M5JT9Y0R2GHWM1DH2S548CXB"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2256,
+                "outputTokens": 494,
+                "reasoningTokens": 288,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 1264,
+                "outputTokens": 977,
+                "reasoningTokens": 901,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2336,
+                "outputTokens": 484,
+                "reasoningTokens": 271,
+                "cachedInputTokens": 766
+              },
+              {
+                "inputTokens": 1260,
+                "outputTokens": 367,
+                "reasoningTokens": 355,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": true,
+            "timingMs": {
+              "model": 9972,
+              "creditGuard": 589,
+              "total": 10613
+            },
+            "issue": {
+              "id": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+              "category": "general",
+              "equipment": "Spezialteil",
+              "subcategory": null,
+              "description": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+              "defect": "sitzt lose",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [
+                "since"
+              ],
+              "summary": "Spezialteil\nsitzt lose\nBereich: Bad\nBeginn: unbekannt\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Spezialteil",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "sitzt lose",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "since": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "not_provided",
+                  "value": "general",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-22T22:04:32.520Z",
+              "updatedAt": "2026-10-22T22:04:32.520Z",
+              "shortLabel": "Spezialteil"
+            },
+            "issues": [
+              {
+                "id": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+                "category": "general",
+                "equipment": "Spezialteil",
+                "subcategory": null,
+                "description": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+                "defect": "sitzt lose",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [
+                  "since"
+                ],
+                "summary": "Spezialteil\nsitzt lose\nBereich: Bad\nBeginn: unbekannt\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Spezialteil",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "sitzt lose",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "since": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "not_provided",
+                    "value": "general",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-22T22:04:32.520Z",
+                "updatedAt": "2026-10-22T22:04:32.520Z",
+                "shortLabel": "Spezialteil"
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "978be686-a792-4482-95a4-81c1d3bdc5fe"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "978be686-a792-4482-95a4-81c1d3bdc5fe"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          },
+          "httpMs": 14832.59
+        },
+        {
+          "request": {
+            "session": "[signed session omitted]",
+            "action": "save-issue",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_v1",
+            "mode": "write_ticket",
+            "operation": {
+              "operationId": "e42f8ec2-45a1-5116-ad8a-e12ae0b2d126",
+              "issueId": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+              "draftId": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+              "revision": 2,
+              "contentHash": "08c2916c765942ad854bc01b38f3694238a3abf3494a9b1e0f14ff9c164c324c",
+              "scope": "this_device_test_app"
+            },
+            "fields": {
+              "title": "Spezialteil · Bad",
+              "category": "Allgemein",
+              "unit": "Bad",
+              "description": "Fachbereich: Noch nicht zugeordnet\nSpezialteil\nsitzt lose\nBereich: Bad\nBeginn: unbekannt\nDringlichkeit: Normal"
+            },
+            "sourceEvidence": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+            "modelCalls": 0,
+            "issue": {
+              "id": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+              "category": "general",
+              "equipment": "Spezialteil",
+              "subcategory": null,
+              "description": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+              "defect": "sitzt lose",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [
+                "since"
+              ],
+              "summary": "Spezialteil\nsitzt lose\nBereich: Bad\nBeginn: unbekannt\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Spezialteil",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "sitzt lose",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "since": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "not_provided",
+                  "value": "general",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-22T22:04:32.520Z",
+              "updatedAt": "2026-10-22T22:04:32.520Z",
+              "shortLabel": "Spezialteil"
+            },
+            "issues": [
+              {
+                "id": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+                "category": "general",
+                "equipment": "Spezialteil",
+                "subcategory": null,
+                "description": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+                "defect": "sitzt lose",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [
+                  "since"
+                ],
+                "summary": "Spezialteil\nsitzt lose\nBereich: Bad\nBeginn: unbekannt\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Spezialteil",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "sitzt lose",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "since": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "not_provided",
+                    "value": "general",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-22T22:04:32.520Z",
+                "updatedAt": "2026-10-22T22:04:32.520Z",
+                "shortLabel": "Spezialteil"
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "978be686-a792-4482-95a4-81c1d3bdc5fe"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "978be686-a792-4482-95a4-81c1d3bdc5fe"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 3
+            }
+          },
+          "httpMs": 4042.92
+        },
+        {
+          "request": {
+            "session": "[signed session omitted]",
+            "action": "draft-opened",
+            "issueId": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_v1",
+            "mode": "control",
+            "modelCalls": 0,
+            "issue": {
+              "id": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+              "category": "general",
+              "equipment": "Spezialteil",
+              "subcategory": null,
+              "description": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+              "defect": "sitzt lose",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [
+                "since"
+              ],
+              "summary": "Spezialteil\nsitzt lose\nBereich: Bad\nBeginn: unbekannt\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Spezialteil",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "sitzt lose",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "since": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "not_provided",
+                  "value": "general",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-22T22:04:32.520Z",
+              "updatedAt": "2026-10-22T22:04:32.520Z",
+              "shortLabel": "Spezialteil"
+            },
+            "issues": [
+              {
+                "id": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+                "category": "general",
+                "equipment": "Spezialteil",
+                "subcategory": null,
+                "description": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+                "defect": "sitzt lose",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [
+                  "since"
+                ],
+                "summary": "Spezialteil\nsitzt lose\nBereich: Bad\nBeginn: unbekannt\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Spezialteil",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "sitzt lose",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "since": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "not_provided",
+                    "value": "general",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-22T22:04:32.520Z",
+                "updatedAt": "2026-10-22T22:04:32.520Z",
+                "shortLabel": "Spezialteil"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": {
+                "issueId": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+                "saved": false
+              },
+              "review": {
+                "issueId": "978be686-a792-4482-95a4-81c1d3bdc5fe"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 1
+            }
+          },
+          "httpMs": 5210.66
+        },
+        {
+          "request": {
+            "session": "[signed session omitted]",
+            "message": "Bitte als Anliegen vorbereiten.",
+            "messageId": "e10c6b01-0b6f-4450-9488-680e4267d744",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 503,
+          "data": {
+            "architecture": "portal_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "availability": {
+              "provider": "gateway",
+              "model": "inception/mercury-2.5",
+              "status": null,
+              "reason": "unavailable"
+            },
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5JTBP2WHN2HY00J8AQKVF32",
+              "gen_01M5JTBQQV74RGCRJZEBVW8GMB"
+            ],
+            "issue": {
+              "id": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+              "category": "general",
+              "equipment": "Spezialteil",
+              "subcategory": null,
+              "description": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+              "defect": "sitzt lose",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [
+                "since"
+              ],
+              "summary": "Spezialteil\nsitzt lose\nBereich: Bad\nBeginn: unbekannt\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Spezialteil",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "sitzt lose",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "since": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "not_provided",
+                  "value": "general",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+                  "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-22T22:04:32.520Z",
+              "updatedAt": "2026-10-22T22:04:32.520Z",
+              "shortLabel": "Spezialteil"
+            },
+            "issues": [
+              {
+                "id": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+                "category": "general",
+                "equipment": "Spezialteil",
+                "subcategory": null,
+                "description": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+                "defect": "sitzt lose",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [
+                  "since"
+                ],
+                "summary": "Spezialteil\nsitzt lose\nBereich: Bad\nBeginn: unbekannt\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Spezialteil",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "sitzt lose",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "since": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "not_provided",
+                    "value": "general",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.",
+                    "source": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-22T22:04:32.520Z",
+                "updatedAt": "2026-10-22T22:04:32.520Z",
+                "shortLabel": "Spezialteil"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": {
+                "issueId": "978be686-a792-4482-95a4-81c1d3bdc5fe",
+                "saved": false
+              },
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 3323
+            }
+          },
+          "httpMs": 7789.97
+        }
+      ],
+      "snapshots": [],
+      "success": false,
+      "failure": "Real model turn failed\n\n503 !== 200\n",
+      "messages": [
+        {
+          "role": "assistant",
+          "content": "Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?"
+        },
+        {
+          "role": "user",
+          "content": "Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht."
+        },
+        {
+          "role": "assistant",
+          "content": "Ich habe das Anliegen für das Bad für Sie vorbereitet. Wollen Sie es direkt eintragen oder noch Angaben ergänzen?"
+        },
+        {
+          "role": "user",
+          "content": "Bitte als Anliegen vorbereiten."
+        },
+        {
+          "role": "error",
+          "content": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten."
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "before": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.630425116,
+    "totalUsedUsd": 0.369574884,
+    "maxUsedUsd": 0.659925936,
+    "model": "inception/mercury-2.5",
+    "pricing": {
+      "input": 4e-8,
+      "output": 1.5e-7
+    }
+  },
+  "after": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.62950038,
+    "totalUsedUsd": 0.37049962,
+    "maxUsedUsd": 0.659925936,
+    "model": "inception/mercury-2.5",
+    "pricing": {
+      "input": 4e-8,
+      "output": 1.5e-7
+    }
+  },
+  "actualAccountDeltaUsd": 0.0009247359999999816
+}

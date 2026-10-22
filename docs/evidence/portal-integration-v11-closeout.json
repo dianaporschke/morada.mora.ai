@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-22T22:23:14.696831+00:00",
+  "codeCommit": "b66bbfbfc7c40e95365dd6788ed5de54f32c433d",
+  "preview": "https://morada-mora-nz9fyrxxf-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "deployment": "dpl_6LpHKyLQbnPfeAAQt9Voj8m7zTHH",
+  "deploymentState": "READY",
+  "deploymentTarget": null,
+  "productionAliases": [],
+  "mainUnchanged": "0b86dfc3344df62d3de02d8297959a495cc822d3",
+  "alexPortalUnchanged": "15bfa257ddbe312f7f4658b342ec4703b869b90e",
+  "regressionTestsPassed": 328,
+  "liveFinalCompleteCasesPassed": 0,
+  "liveFinalCasesStarted": 3,
+  "liveFinalCasesPlanned": 5,
+  "liveStopped": "MODEL_RATE_LIMIT",
+  "qualityReleaseApproved": false,
+  "testSeriesAccountDeltaUsd": 0.009848142,
+  "remainingCreditUsd": 4.626517112,
+  "renderedDeviceTesting": false
+}
