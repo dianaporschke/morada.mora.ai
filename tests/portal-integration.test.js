@@ -187,3 +187,9 @@ test('repeated semantic rejection never commits invented facts or an operational
  const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async()=>({output:n++%2===0?bad:{violations:[{kind:'unsupported_fact',quote:'Erfundener Raum',reason:'Kein belegter Raum.'}]},usage:{},finalStep:{providerMetadata:{}}})});
  await assert.rejects(()=>service('Bitte ergänzen.',prior,['cases']));assert.deepEqual(prior,snapshot);
 });
+test('invalid verifier format repairs verification without regenerating a valid conversation decision',async()=>{
+ const p=plan([{ref:'new1',quote:'Das Spezialteil im Bad ist lose. Beginn unbekannt.',equipment:'Spezialteil',defect:'lose',location:'Bad',unknown:[{field:'since',quote:'Beginn unbekannt.'}]}],{reply:'Sie können das Anliegen vorbereiten.'});
+ let calls=0;const outputs=[p,{type:'object',properties:{violations:{type:'array'}}},{violations:[]}];const instructions=[];
+ const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async o=>{instructions.push(o.instructions);return {output:outputs[calls++],usage:{},finalStep:{providerMetadata:{}}};}});
+ const r=await service('Das Spezialteil im Bad ist lose. Beginn unbekannt.',hydrateSimple(null),['cases']);assert.equal(calls,3);assert.equal(r.repaired,true);assert.equal(instructions.filter(i=>i.startsWith('Sie sind MORA')).length,1);assert.equal(r.state.issue.location,'Bad');assert.equal(r.state.issue.fieldFacts.since.status,'unknown');
+});
