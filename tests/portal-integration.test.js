@@ -57,7 +57,7 @@ test('free-credit guard rejects paid top-ups, reserve shortfall and cap',()=>{
 test('pending unverified customer corrections block server-side save tickets',()=>{
  const state=lamp();assert.ok(controls(state).save);state.portalPending=[{content:'Nein, doch anders.'}];assert.equal(controls(state).save,null);
 });
-test('real service boundaries use a test transport: one decision, lower reasoning, no verifier',async()=>{
+test('general-message service boundary uses a test transport: one decision and lower reasoning',async()=>{
  let request,calls=0;const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async options=>{request=options;calls++;return {output:plan([],{reply:'Wie kann ich Ihnen helfen?',intent:'general',activeIssueRef:null}),usage:{},finalStep:{providerMetadata:{}}};}});
  const result=await service('Guten Tag',hydrateSimple(null),['support']);assert.equal(calls,1);assert.equal(request.reasoning,'low');assert.equal(result.modelCalls,1);assert.equal(result.reply,'Wie kann ich Ihnen helfen?');
 });
@@ -176,4 +176,14 @@ test('a model preparation announcement is displayed only after actual native for
  const handler=createPortalChatHandler({converse:async()=>({state:lamp(),reply:'Das vorausgefüllte Formular ist vorbereitet.',requestedAction:'prepare',navigation:[],modelCalls:1})});
  const d=dom(async(_u,o)=>{const input=JSON.parse(o.body);if(input.action==='save-issue')throw Error('Verbindung unterbrochen');const r=await call(handler,input);return {ok:r.status===200,json:async()=>r.body};}),w=d.window;
  try{w.document.getElementById('moraFab').click();await w.MORAPortal.send('Bitte vorbereiten.');assert.equal(w.document.querySelector('#opsEntryForm[data-mora-issue]'),null);assert.ok(!w.MORAPortal.getState().messages.some(m=>m.content==='Das vorausgefüllte Formular ist vorbereitet.'));assert.ok(w.MORAPortal.getState().messages.some(m=>m.role==='error'));assert.equal(w.localStorage.getItem('morada-portal-clean-20261011-v1'),null);}finally{w.close();}
+});
+test('semantic verification repairs unsupported submission and missing room before committing',async()=>{
+ let calls=0;const outputs=[plan([{ref:'new1',quote:'Die Lampe im Wohnzimmer geht nicht.',equipment:'light',defect:'geht nicht'}],{reply:'Zwei Einträge sind vorbereitet. Sie können sie absenden.'}),{violations:[{kind:'unsupported_effect',quote:'Zwei Einträge sind vorbereitet. Sie können sie absenden.',reason:'Kein Formular geöffnet und Versand nicht verfügbar.'},{kind:'missing_fact',quote:'Wohnzimmer',reason:'Raum in location übernehmen.'}]},plan([{ref:'new1',quote:'Die Lampe im Wohnzimmer geht nicht.',equipment:'light',defect:'geht nicht',location:'Wohnzimmer'}],{reply:'Sie können die Angaben noch ergänzen.'}),{violations:[]}];
+ const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async()=>({output:outputs[calls++],usage:{},finalStep:{providerMetadata:{}}})});
+ const r=await service('Die Lampe im Wohnzimmer geht nicht.',hydrateSimple(null),['cases']);assert.equal(calls,4);assert.equal(r.repaired,true);assert.equal(r.state.issue.location,'Wohnzimmer');assert.equal(r.state.issues.length,1);assert.equal(r.reply,'Sie können die Angaben noch ergänzen.');assert.ok(!r.state.history.some(m=>m.content.includes('absenden')));
+});
+test('repeated semantic rejection never commits invented facts or an operational claim',async()=>{
+ const prior=lamp(),snapshot=structuredClone(prior);let n=0;const bad=plan([{ref:'active',quote:'Bitte ergänzen.',location:'Erfundener Raum'}],{reply:'Das Anliegen ist eingereicht.'});
+ const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async()=>({output:n++%2===0?bad:{violations:[{kind:'unsupported_fact',quote:'Erfundener Raum',reason:'Kein belegter Raum.'}]},usage:{},finalStep:{providerMetadata:{}}})});
+ await assert.rejects(()=>service('Bitte ergänzen.',prior,['cases']));assert.deepEqual(prior,snapshot);
 });
