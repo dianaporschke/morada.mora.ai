@@ -8320,7 +8320,7 @@ function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(w
     const hazard=detectHazard(text.trim());if(hazard.hazard!=='none')message('error','Sicherheitshinweis: '+safetyNotice(hazard.hazard));
     input.value='';setBusy(true,'MORA antwortet …');
     const start=window.performance.now();
-    try{if(thread.pendingClose){await request({action:'draft-closed',issueId:thread.pendingClose});thread.pendingClose=null;persist();}const data=await request({message:text.trim(),messageId:window.crypto.randomUUID()});if(data.reply)message('assistant',data.reply);if(data.requestedAction)await prepareIssue(data.requestedAction==='photo',true);window.console.info('MORA portal visible response',{answerDomMs:window.performance.now()-start});}
+    try{if(thread.pendingClose){await request({action:'draft-closed',issueId:thread.pendingClose});thread.pendingClose=null;persist();}const data=await request({message:text.trim(),messageId:window.crypto.randomUUID()});const performed=data.requestedAction?await prepareIssue(data.requestedAction==='photo',true):true;if(performed&&data.reply)message('assistant',data.reply);window.console.info('MORA portal visible response',{answerDomMs:window.performance.now()-start});}
     catch(e){message('error',e.message);}
     finally{setBusy(false);if(!panel.hidden)input.focus();}
   }
@@ -8360,7 +8360,8 @@ function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(w
       close();
       await request({action:'draft-opened',issueId});
       status.textContent='Die Angaben stehen im Anliegenformular zur Kontrolle bereit. Noch nicht gespeichert.';
-    }catch(e){message('error',e.message);}
+      return true;
+    }catch(e){message('error',e.message);return false;}
     finally{if(!insideSend)setBusy(false);}
   }
 

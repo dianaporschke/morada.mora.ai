@@ -172,3 +172,8 @@ test('native readiness permits unknown fixtures/explicitly unknown rooms and opt
  let s=update(hydrateSimple(null),'Wasserfleck im Schlafzimmer',{equipment:'unknown',category:'water',defect:'Trockener Wasserfleck',location:'Schlafzimmer'},{ask:{field:'since',ref:'new1'}});assert.ok(controls(s).save);assert.equal(portalCaseFields(s.issue).category,'Schaden / Reparatur');
  s=update(hydrateSimple(null),'Das Teil ist lose. Der Bereich ist mir unbekannt.',{equipment:'Spezialteil',defect:'lose',unknown:[{field:'location',quote:'Der Bereich ist mir unbekannt.'}]});assert.ok(controls(s).save);assert.equal(portalCaseFields(s.issue).unit,'');
 });
+test('a model preparation announcement is displayed only after actual native form transfer',async()=>{
+ const handler=createPortalChatHandler({converse:async()=>({state:lamp(),reply:'Das vorausgefüllte Formular ist vorbereitet.',requestedAction:'prepare',navigation:[],modelCalls:1})});
+ const d=dom(async(_u,o)=>{const input=JSON.parse(o.body);if(input.action==='save-issue')throw Error('Verbindung unterbrochen');const r=await call(handler,input);return {ok:r.status===200,json:async()=>r.body};}),w=d.window;
+ try{w.document.getElementById('moraFab').click();await w.MORAPortal.send('Bitte vorbereiten.');assert.equal(w.document.querySelector('#opsEntryForm[data-mora-issue]'),null);assert.ok(!w.MORAPortal.getState().messages.some(m=>m.content==='Das vorausgefüllte Formular ist vorbereitet.'));assert.ok(w.MORAPortal.getState().messages.some(m=>m.role==='error'));assert.equal(w.localStorage.getItem('morada-portal-clean-20261011-v1'),null);}finally{w.close();}
+});
