@@ -48,6 +48,7 @@ else:
     evidence.update({'url':cfg['url'],'startedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'rows':[],'costs':[],'complete':False,
      'method':{'order':'fixed suite order; C main compared with saved Phase 1 A/B','fixedCustomerMessages':True,'sdkNetworkRetries':0,'contractRepairLimit':1,'externalGenerationRetries':0,
      'pacingOutsideMeasuredRequests':True,'minimumRequestIntervalSeconds':cfg.get('minIntervalSeconds',35),'maximumReservedGenerationsPerMinute':5,
+     'continueAfterRecordedProviderTimeout':bool(cfg.get('continueProviderTimeouts')),
      'C':'one conversational decision; read-only semantic verification; at most one bounded repair; separate local storage receipts'}})
     run_token=start['runToken'];sessions={}
 assert start['sourceCommit']==cfg['sourceCommit'] and start['caseCount']>=20
@@ -97,6 +98,16 @@ for step in start['schedule'][len(evidence['rows']):]:
       'applicationStatus':data['applicationStatus'],'responseMode':data['result'].get('responseMode'),'reply':data['result'].get('reply'),
       'generations':len(data['trace']),'wallMs':wall_ms,'reservedUsd':data['reservedUsd'],'fatal':data['fatal']},ensure_ascii=False),flush=True)
     if data['fatal']:
+        # A received timeout is a failed fixed customer round, never replayed.
+        # With explicit evaluation authorization, continue to the NEXT scheduled
+        # message after normal pacing and the server's fresh balance guard.
+        # Billing, rate-limit, authentication and missing-ID measurement failures
+        # remain hard stops. This changes the driver, not MORA's behavior.
+        timeout=(data['result'].get('modelAvailability') or {}).get('reason')=='model_timeout'
+        if cfg.get('continueProviderTimeouts') and timeout and not data.get('budgetStop') and not data.get('measurementError') and all(t.get('httpStatus') in [None,200] for t in data['trace']):
+            evidence.setdefault('recordedTimeoutContinuations',[]).append({'caseId':step['caseId'],'turn':step['turn'],'successfulRepliesReplayed':0})
+            persist()
+            continue
         evidence['stop']={'reason':'provider_or_budget_boundary','step':step};persist();break
     if cfg.get('maxRequests') and processed>=cfg['maxRequests'] and data['completedRequests']<data['totalRequests']:
         evidence['pausedForCheckpoint']=True;persist();break

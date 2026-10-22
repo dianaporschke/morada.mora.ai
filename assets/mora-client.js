@@ -107,6 +107,9 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
 
   async function submit(payload, displayText = undefined, retry = false) {
     if (busy) return;
+    const clientStarted=window.performance.now();
+    const clientTiming={endpoint,streamed:false,documentVisibility:document.visibilityState};
+    const mark=name=>{clientTiming[name]=Math.round((window.performance.now()-clientStarted)*100)/100;};
     disableActions(); lock(true);
     if (displayText && !retry) addBubble(displayText, 'user');
     if(simple && payload.message){
@@ -119,6 +122,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
     }
     if (!retry && payload.message) text.value = '';
     const loading = addBubble('MORA antwortet …', 'assistant', [], false); loading.classList.add('loading');
+    mark('loadingDomInsertedMs');
     const startedAt=window.performance.now();
     const controller = new AbortController(); const timer = window.setTimeout(() => controller.abort(), 65000);
     const previousIssue = state.issue;
@@ -128,9 +132,13 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
         try {await acknowledgeDraft(state.issue,'portal_received');}
         catch {throw Object.assign(new Error('Der Entwurf ist lokal gespeichert. Sein Status konnte gerade nicht mit MORA abgeglichen werden. Bitte versuchen Sie es erneut.'),{code:'DRAFT_SYNC',retryable:true});}
       }
+      mark('requestStartedMs');
       const response = await fetcher(endpoint, { method:'POST', headers:{'Content-Type':'application/json'},
         body:JSON.stringify({ ...(!payload.draftReceipt && state.issue ? { attachments:state.files } : {}), ...payload, ...(state.session ? { session:state.session } : {}) }), signal:controller.signal });
-      const data = await response.json(); loading.remove();
+      mark('responseHeadersMs');
+      const data = await response.json(); mark('jsonReadyMs'); loading.remove();
+      clientTiming.serverMs=data.timingMs?.total ?? null;
+      clientTiming.modelCalls=data.modelCalls ?? null;
       if (!response.ok) throw Object.assign(new Error(data.error || 'Die Antwort konnte nicht geladen werden.'), { code:data.code, retryable:data.retryable });
       if (typeof data.reply !== 'string' || typeof data.session !== 'string') throw new Error('Die Antwort konnte nicht geladen werden.');
       if (!simple && previousIssue && drafts.some(draft=>draft.id===previousIssue.id) && data.issue?.id !== previousIssue.id) {try {await saveDraft(previousIssue,false);} catch {preparationPhase='error';}}
@@ -139,7 +147,7 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
       state.issues = Array.isArray(data.issues) ? data.issues : (data.issue ? [data.issue] : []);
       state.files = structuredClone(data.issue?.attachments || []);
       preparationPhase=preparationState(state.issue,drafts.find(draft=>draft.id===state.issue?.id));
-      retryPayload = null; delete state.pendingTurn; addBubble(data.reply, 'assistant', data.actions || []); renderIssueControls(); await renderPhotos(); persist();
+      retryPayload = null; delete state.pendingTurn; addBubble(data.reply, 'assistant', data.actions || []); mark('answerDomInsertedMs'); renderIssueControls(); await renderPhotos(); persist();
       // Measure the actual browser roundtrip, separately from server/model time.
       // No text, signed sessions, photos or personal data are logged.
       window.console.info('MORA response timing',{roundtripMs:Math.round(window.performance.now()-startedAt),
@@ -152,8 +160,20 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
         : { id:'prepare-request', label:'Anliegenentwurf öffnen', type:'handover', variant:'secondary' });
       actions.push({ id:'new-request', label:'Neuen Chat starten', type:'reset', variant:'secondary' });
       addBubble(error.code ? error.message : 'MORA ist gerade nicht erreichbar. Ihre Angaben bleiben im Chat erhalten. Sie können es erneut versuchen oder den bisherigen Anliegenentwurf öffnen.', 'assistant', actions);
+      mark('errorDomInsertedMs');
       persist();
-    } finally { window.clearTimeout(timer); renderIssueControls(); lock(false); scroll(); }
+    } finally {
+      window.clearTimeout(timer); renderIssueControls(); lock(false); scroll();mark('localUiCompleteMs');
+      const report=()=>{
+        clientTiming.frontendDomAfterJsonMs=Number.isFinite(clientTiming.answerDomInsertedMs)?Math.round((clientTiming.answerDomInsertedMs-clientTiming.jsonReadyMs)*100)/100:null;
+        // A frame callback is a visibility proxy, not proof of exact pixel paint.
+        // No chat text, signed session, account details or files are logged.
+        window.console.info('MORA client milestones',clientTiming);
+      };
+      if(document.visibilityState==='visible' && typeof window.requestAnimationFrame==='function'){
+        window.requestAnimationFrame(()=>window.requestAnimationFrame(()=>{mark('twoAnimationFramesAfterUiMs');report();}));
+      }else report();
+    }
   }
 
   function navigate(target) {
