@@ -49,11 +49,13 @@ else:
      'method':{'order':'fixed suite order; C main compared with saved Phase 1 A/B','fixedCustomerMessages':True,'sdkNetworkRetries':0,'contractRepairLimit':1,'externalGenerationRetries':0,
      'pacingOutsideMeasuredRequests':True,'minimumRequestIntervalSeconds':cfg.get('minIntervalSeconds',35),'maximumReservedGenerationsPerMinute':5,
      'continueAfterRecordedProviderTimeout':bool(cfg.get('continueProviderTimeouts')),
+     'continueAfterRecordedUnobservedStage500':bool(cfg.get('continueUnobservedResponseErrors')),
      'C':'one conversational decision; read-only semantic verification; at most one bounded repair; separate local storage receipts'}})
     run_token=start['runToken'];sessions={}
 assert start['sourceCommit']==cfg['sourceCommit'] and start['caseCount']>=20
 assert start['model']=='inception/mercury-2.5' and start['maxCostUsd']<=0.50
 recent=[datetime.datetime.fromisoformat(t['startedAt'].replace('Z','+00:00')).timestamp() for row in evidence['rows'][-6:] for t in row['trace']]
+recent+=list({datetime.datetime.fromisoformat(t.replace('Z','+00:00')).timestamp() for t in cfg.get('initialGenerationStarts',[])})
 last_start=datetime.datetime.fromisoformat(evidence['rows'][-1]['sentAt']).timestamp() if evidence['rows'] else 0
 
 def persist():
@@ -108,6 +110,11 @@ for step in start['schedule'][len(evidence['rows']):]:
             evidence.setdefault('recordedTimeoutContinuations',[]).append({'caseId':step['caseId'],'turn':step['turn'],'successfulRepliesReplayed':0})
             persist()
             continue
+        availability=data['result'].get('modelAvailability') or {}
+        unobserved_stage_error=availability.get('reason')=='response_error' and (availability.get('status') or 0)>=500 and data['trace'] and all(t.get('httpStatus')==200 for t in data['trace']) and data['result'].get('modelCalls',0)>len(data['trace'])
+        if cfg.get('continueUnobservedResponseErrors') and unobserved_stage_error and not data.get('budgetStop') and not data.get('measurementError'):
+            evidence.setdefault('recordedUnobservedStage500Continuations',[]).append({'caseId':step['caseId'],'turn':step['turn'],'successfulRepliesReplayed':0,'attribution':'No failing model transport observed; extra metadata/guard request may have failed. Not attributed conclusively to model quality.'})
+            persist();continue
         evidence['stop']={'reason':'provider_or_budget_boundary','step':step};persist();break
     if cfg.get('maxRequests') and processed>=cfg['maxRequests'] and data['completedRequests']<data['totalRequests']:
         evidence['pausedForCheckpoint']=True;persist();break

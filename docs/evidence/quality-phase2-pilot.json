@@ -936,11 +936,33 @@
     "maximumReservedGenerationsPerMinute": 5,
     "C": "one conversational decision; read-only semantic verification; at most one bounded repair; separate local storage receipts"
   },
+  "resumptions": [
+    {
+      "at": "2026-10-22T13:26:09.217325+00:00",
+      "receivedRows": 2,
+      "previousStop": {
+        "reason": "provider_or_budget_boundary",
+        "step": {
+          "caseId": "P01",
+          "turn": 2,
+          "variant": "C"
+        }
+      },
+      "successfulRepliesReplayed": 0,
+      "unreceivedRequestOutcome": "none"
+    }
+  ],
   "stop": {
-    "reason": "provider_or_budget_boundary",
+    "reason": "evaluation_boundary",
+    "status": 409,
+    "response": {
+      "code": "INVALID_EVALUATION",
+      "reason": "Invalid session",
+      "inferenceStarted": false
+    },
     "step": {
       "caseId": "P01",
-      "turn": 2,
+      "turn": 3,
       "variant": "C"
     }
   }

@@ -1,0 +1,56 @@
+{
+  "inferenceStarted": false,
+  "costs": [
+    {
+      "id": "gen_01M5HY18SPPBFQATEK02TS45GJ",
+      "info": {
+        "id": "gen_01M5HY18SPPBFQATEK02TS45GJ",
+        "usage": 0.00036462,
+        "model": "inception/mercury-2.5",
+        "streamed": false,
+        "latency": 4672,
+        "totalCost": 0.00036462,
+        "upstreamInferenceCost": 0,
+        "createdAt": "2026-10-22T13:50:28.000Z",
+        "isByok": false,
+        "providerName": "inception",
+        "finishReason": "stop",
+        "generationTime": 4672,
+        "promptTokens": 753,
+        "completionTokens": 77,
+        "reasoningTokens": 2153,
+        "cachedTokens": 0,
+        "cacheCreationTokens": 0,
+        "billableWebSearchCalls": 0
+      }
+    },
+    {
+      "id": "gen_01M5HY1KF7FVVWR5ZTRJ0R1KWY",
+      "info": {
+        "id": "gen_01M5HY1KF7FVVWR5ZTRJ0R1KWY",
+        "usage": 0.00027333,
+        "model": "inception/mercury-2.5",
+        "streamed": false,
+        "latency": 3284,
+        "totalCost": 0.00027333,
+        "upstreamInferenceCost": 0,
+        "createdAt": "2026-10-22T13:50:39.000Z",
+        "isByok": false,
+        "providerName": "inception",
+        "finishReason": "stop",
+        "generationTime": 3284,
+        "promptTokens": 762,
+        "completionTokens": 14,
+        "reasoningTokens": 1605,
+        "cachedTokens": 0,
+        "cacheCreationTokens": 0,
+        "billableWebSearchCalls": 0
+      }
+    }
+  ],
+  "credits": {
+    "balanceUsd": 4.670066142,
+    "totalUsedUsd": 0.329933858,
+    "readAttempts": 1
+  }
+}

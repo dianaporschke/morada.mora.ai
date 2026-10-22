@@ -1,0 +1,19 @@
+{
+  "url": "https://morada-mora-edsq9k8rb-dianaporschke-1255s-projects.vercel.app/?mora=c",
+  "deploymentId": "dpl_3GcUzCwJvgY9CKJfK1kqnxVwpJNj",
+  "sourceCommit": "58f569d4f57127efe220ce866965c06d63dec9e2",
+  "htmlStatus": 200,
+  "greeting": "Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?",
+  "clientAssetStatus": 200,
+  "clientSha256": "50e7c0f8b20030fec12ff1aa671e4cccf7fded901497df1734a423bbe4661e05",
+  "clientMatchesSource": true,
+  "controlStatus": 200,
+  "architecture": "simple_v1",
+  "controlResponseMode": "control",
+  "modelCalls": 0,
+  "alexanderPortalConnected": false,
+  "diagnosticRouteStatus": 404,
+  "browserUsed": false,
+  "browserPaintMeasured": false,
+  "scope": "HTTP-delivered source and real non-generative control route. No model conversation, draft persistence or browser rendering success is claimed."
+}

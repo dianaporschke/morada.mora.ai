@@ -1,0 +1,2834 @@
+{
+  "sourceCommit": "393db0ba0fc4963a719a42dc171538ddf2784104",
+  "mainComplete": true,
+  "modelCallsPerformed": 0,
+  "storageWritesPerformed": 0,
+  "portalCallsPerformed": 0,
+  "scope": "Pure mapping of actual accepted C facts. Failed turns cannot project new customer facts; no persisted service draft is claimed.",
+  "projections": [
+    {
+      "caseId": "01",
+      "turn": 1,
+      "issueId": "9b823b1d-5659-4ef8-8311-de8fb74ecd1e",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "lampe kaputt",
+        "defect": "kaputte Lampe",
+        "count": null,
+        "location": null,
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "lampe kaputt"
+        },
+        "defect": {
+          "status": "known",
+          "value": "kaputte Lampe",
+          "source": "lampe kaputt"
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "location": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "lampe kaputt",
+          "source": "lampe kaputt"
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\nkaputte Lampe\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "01",
+      "turn": 2,
+      "issueId": "9b823b1d-5659-4ef8-8311-de8fb74ecd1e",
+      "sourceRevision": 3,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "Lampe / Leuchte\nkaputte Lampe\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+        "defect": "kaputte Lampe",
+        "count": null,
+        "location": "Wohnzimmer",
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "lampe kaputt"
+        },
+        "defect": {
+          "status": "known",
+          "value": "kaputte Lampe",
+          "source": "lampe kaputt"
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "location": {
+          "status": "corrected",
+          "value": "Wohnzimmer",
+          "source": "wohnzimmer"
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Lampe / Leuchte\nkaputte Lampe\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+          "source": "lampe kaputt"
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\nkaputte Lampe\nBereich: Wohnzimmer\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "02",
+      "turn": 1,
+      "issueId": "d02b6102-6597-46fc-be7c-2988334262f2",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "electricity",
+        "equipment": "socket",
+        "description": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+        "defect": "funktioniert nicht",
+        "count": 1,
+        "location": "Küche",
+        "since": "heute",
+        "extent": "1 betroffene Einrichtung(en)",
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "socket",
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        },
+        "defect": {
+          "status": "known",
+          "value": "funktioniert nicht",
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        },
+        "location": {
+          "status": "known",
+          "value": "Küche",
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        },
+        "since": {
+          "status": "known",
+          "value": "heute",
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        },
+        "count": {
+          "status": "known",
+          "value": 1,
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        },
+        "extent": {
+          "status": "known",
+          "value": "1 betroffene Einrichtung(en)",
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "02",
+      "turn": 2,
+      "issueId": "d02b6102-6597-46fc-be7c-2988334262f2",
+      "sourceRevision": 3,
+      "fields": {
+        "category": "electricity",
+        "equipment": "socket",
+        "description": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+        "defect": "funktioniert nicht",
+        "count": 1,
+        "location": "Küche",
+        "since": "heute",
+        "extent": "1 betroffene Einrichtung(en)",
+        "details": "Kein Rauch, keine Funken und kein Brandgeruch.",
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "socket",
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        },
+        "defect": {
+          "status": "known",
+          "value": "funktioniert nicht",
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        },
+        "location": {
+          "status": "known",
+          "value": "Küche",
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        },
+        "since": {
+          "status": "known",
+          "value": "heute",
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        },
+        "count": {
+          "status": "known",
+          "value": 1,
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        },
+        "extent": {
+          "status": "known",
+          "value": "1 betroffene Einrichtung(en)",
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        },
+        "details": {
+          "status": "known",
+          "value": "Kein Rauch, keine Funken und kein Brandgeruch.",
+          "source": "Kein Rauch, keine Funken und kein Brandgeruch."
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Kein Rauch, keine Funken und kein Brandgeruch.\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "03",
+      "turn": 2,
+      "issueId": "2c548a1e-1417-4041-9f9c-ef84f593a3b6",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "general",
+        "equipment": "unknown",
+        "description": "Seit wann weiss ich nicht, ich war ein paar Tage weg.",
+        "defect": null,
+        "count": null,
+        "location": null,
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "not_provided",
+          "value": "unknown",
+          "source": null
+        },
+        "defect": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "location": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "not_provided",
+          "value": "general",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Seit wann weiss ich nicht, ich war ein paar Tage weg.",
+          "source": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Allgemeines Anliegen\nSeit wann weiss ich nicht, ich war ein paar Tage weg.\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "03",
+      "turn": 3,
+      "issueId": "2c548a1e-1417-4041-9f9c-ef84f593a3b6",
+      "sourceRevision": 3,
+      "fields": {
+        "category": "general",
+        "equipment": "unknown",
+        "description": "Seit wann weiss ich nicht, ich war ein paar Tage weg.",
+        "defect": null,
+        "count": null,
+        "location": null,
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "not_provided",
+          "value": "unknown",
+          "source": null
+        },
+        "defect": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "location": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "unknown",
+          "value": null,
+          "source": "Den Beginn kann ich wirklich nicht genauer sagen."
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "not_provided",
+          "value": "general",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Seit wann weiss ich nicht, ich war ein paar Tage weg.",
+          "source": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Allgemeines Anliegen\nSeit wann weiss ich nicht, ich war ein paar Tage weg.\nBeginn: unbekannt\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "04",
+      "turn": 1,
+      "issueId": "e03ff4e2-1b36-4381-896d-34ae07f7f6ce",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+        "defect": "lässt sich nicht einschalten",
+        "count": 1,
+        "location": "Wohnzimmer",
+        "since": null,
+        "extent": "1 betroffene Einrichtung(en)",
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+        },
+        "defect": {
+          "status": "known",
+          "value": "lässt sich nicht einschalten",
+          "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+        },
+        "location": {
+          "status": "known",
+          "value": "Wohnzimmer",
+          "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+        },
+        "count": {
+          "status": "known",
+          "value": 1,
+          "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "known",
+          "value": "1 betroffene Einrichtung(en)",
+          "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "04",
+      "turn": 2,
+      "issueId": "e03ff4e2-1b36-4381-896d-34ae07f7f6ce",
+      "sourceRevision": 3,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+        "defect": "lässt sich nicht einschalten",
+        "count": 1,
+        "location": "Schlafzimmer",
+        "since": null,
+        "extent": "1 betroffene Einrichtung(en)",
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+        },
+        "defect": {
+          "status": "known",
+          "value": "lässt sich nicht einschalten",
+          "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+        },
+        "location": {
+          "status": "corrected",
+          "value": "Schlafzimmer",
+          "source": "Nein, ich meinte das Schlafzimmer."
+        },
+        "count": {
+          "status": "known",
+          "value": 1,
+          "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "known",
+          "value": "1 betroffene Einrichtung(en)",
+          "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "05",
+      "turn": 1,
+      "issueId": "b699bad8-fae5-47a9-9a82-7e837ea7f499",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "water",
+        "equipment": "tap",
+        "description": "Wasserhahn\ntropft\nBereich: Bad\nSeit wann: gestern\nDringlichkeit: Normal",
+        "defect": "tropft",
+        "count": null,
+        "location": "Bad",
+        "since": "gestern",
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "tap",
+          "source": "Der Wasserhahn im Bad tropft seit gestern."
+        },
+        "defect": {
+          "status": "known",
+          "value": "tropft",
+          "source": "Der Wasserhahn im Bad tropft seit gestern."
+        },
+        "location": {
+          "status": "known",
+          "value": "Bad",
+          "source": "Der Wasserhahn im Bad tropft seit gestern."
+        },
+        "since": {
+          "status": "known",
+          "value": "gestern",
+          "source": "Der Wasserhahn im Bad tropft seit gestern."
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "water",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Wasserhahn\ntropft\nBereich: Bad\nSeit wann: gestern\nDringlichkeit: Normal",
+          "source": "Der Wasserhahn im Bad tropft seit gestern."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Wasserhahn\ntropft\nBereich: Bad\nSeit wann: gestern\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "05",
+      "turn": 2,
+      "issueId": "b699bad8-fae5-47a9-9a82-7e837ea7f499",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "water",
+        "equipment": "tap",
+        "description": "Wasserhahn\ntropft\nBereich: Bad\nSeit wann: gestern\nDringlichkeit: Normal",
+        "defect": "tropft",
+        "count": null,
+        "location": "Bad",
+        "since": "gestern",
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "tap",
+          "source": "Der Wasserhahn im Bad tropft seit gestern."
+        },
+        "defect": {
+          "status": "known",
+          "value": "tropft",
+          "source": "Der Wasserhahn im Bad tropft seit gestern."
+        },
+        "location": {
+          "status": "known",
+          "value": "Bad",
+          "source": "Der Wasserhahn im Bad tropft seit gestern."
+        },
+        "since": {
+          "status": "known",
+          "value": "gestern",
+          "source": "Der Wasserhahn im Bad tropft seit gestern."
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "water",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Wasserhahn\ntropft\nBereich: Bad\nSeit wann: gestern\nDringlichkeit: Normal",
+          "source": "Der Wasserhahn im Bad tropft seit gestern."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Wasserhahn\ntropft\nBereich: Bad\nSeit wann: gestern\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "06",
+      "turn": 1,
+      "issueId": "9415583d-8d2e-4b23-96bf-929479b69b90",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nDringlichkeit: Normal",
+        "defect": "Lampe lässt sich nicht einschalten.",
+        "count": null,
+        "location": "Flur",
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "Die Lampe im Flur geht nicht."
+        },
+        "defect": {
+          "status": "known",
+          "value": "Lampe lässt sich nicht einschalten.",
+          "source": "Die Lampe im Flur geht nicht."
+        },
+        "location": {
+          "status": "known",
+          "value": "Flur",
+          "source": "Die Lampe im Flur geht nicht."
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nDringlichkeit: Normal",
+          "source": "Die Lampe im Flur geht nicht."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "06",
+      "turn": 1,
+      "issueId": "de558e35-3015-4dde-a9a1-824c7a19169e",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "heating",
+        "equipment": "heater",
+        "description": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+        "defect": "kalt",
+        "count": 2,
+        "location": "Bad",
+        "since": null,
+        "extent": "2 betroffene Einrichtung(en)",
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "heater",
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "defect": {
+          "status": "known",
+          "value": "kalt",
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "location": {
+          "status": "known",
+          "value": "Bad",
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "count": {
+          "status": "known",
+          "value": 2,
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "known",
+          "value": "2 betroffene Einrichtung(en)",
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "heating",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "source": "zwei Heizkörper im Bad kalt"
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "06",
+      "turn": 2,
+      "issueId": "9415583d-8d2e-4b23-96bf-929479b69b90",
+      "sourceRevision": 3,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nDringlichkeit: Normal",
+        "defect": "Lampe lässt sich nicht einschalten.",
+        "count": null,
+        "location": "Flur",
+        "since": "heute",
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "Die Lampe im Flur geht nicht."
+        },
+        "defect": {
+          "status": "known",
+          "value": "Lampe lässt sich nicht einschalten.",
+          "source": "Die Lampe im Flur geht nicht."
+        },
+        "location": {
+          "status": "known",
+          "value": "Flur",
+          "source": "Die Lampe im Flur geht nicht."
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "known",
+          "value": "heute",
+          "source": "Die Lampe ist seit heute kaputt"
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nDringlichkeit: Normal",
+          "source": "Die Lampe im Flur geht nicht."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nSeit wann: heute\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "06",
+      "turn": 2,
+      "issueId": "de558e35-3015-4dde-a9a1-824c7a19169e",
+      "sourceRevision": 3,
+      "fields": {
+        "category": "heating",
+        "equipment": "heater",
+        "description": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+        "defect": "kalt",
+        "count": 2,
+        "location": "Bad",
+        "since": "gestern",
+        "extent": "2 betroffene Einrichtung(en)",
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "heater",
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "defect": {
+          "status": "known",
+          "value": "kalt",
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "location": {
+          "status": "known",
+          "value": "Bad",
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "count": {
+          "status": "known",
+          "value": 2,
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "since": {
+          "status": "known",
+          "value": "gestern",
+          "source": "die Heizkörper seit gestern"
+        },
+        "extent": {
+          "status": "known",
+          "value": "2 betroffene Einrichtung(en)",
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "heating",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "source": "zwei Heizkörper im Bad kalt"
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nSeit wann: gestern\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "06",
+      "turn": 3,
+      "issueId": "9415583d-8d2e-4b23-96bf-929479b69b90",
+      "sourceRevision": 3,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nDringlichkeit: Normal",
+        "defect": "Lampe lässt sich nicht einschalten.",
+        "count": null,
+        "location": "Flur",
+        "since": "heute",
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "Die Lampe im Flur geht nicht."
+        },
+        "defect": {
+          "status": "known",
+          "value": "Lampe lässt sich nicht einschalten.",
+          "source": "Die Lampe im Flur geht nicht."
+        },
+        "location": {
+          "status": "known",
+          "value": "Flur",
+          "source": "Die Lampe im Flur geht nicht."
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "known",
+          "value": "heute",
+          "source": "Die Lampe ist seit heute kaputt"
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nDringlichkeit: Normal",
+          "source": "Die Lampe im Flur geht nicht."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nSeit wann: heute\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "06",
+      "turn": 3,
+      "issueId": "de558e35-3015-4dde-a9a1-824c7a19169e",
+      "sourceRevision": 3,
+      "fields": {
+        "category": "heating",
+        "equipment": "heater",
+        "description": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+        "defect": "kalt",
+        "count": 2,
+        "location": "Bad",
+        "since": "gestern",
+        "extent": "2 betroffene Einrichtung(en)",
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "heater",
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "defect": {
+          "status": "known",
+          "value": "kalt",
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "location": {
+          "status": "known",
+          "value": "Bad",
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "count": {
+          "status": "known",
+          "value": 2,
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "since": {
+          "status": "known",
+          "value": "gestern",
+          "source": "die Heizkörper seit gestern"
+        },
+        "extent": {
+          "status": "known",
+          "value": "2 betroffene Einrichtung(en)",
+          "source": "zwei Heizkörper im Bad kalt"
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "heating",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "source": "zwei Heizkörper im Bad kalt"
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nSeit wann: gestern\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "09",
+      "turn": 1,
+      "issueId": "cc8b18fa-9eb8-4c96-a266-0db393eb6b54",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "general",
+        "equipment": "unknown",
+        "description": "das ding da beim fenster spinnt",
+        "defect": "spinnt",
+        "count": null,
+        "location": "beim fenster",
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "defect": {
+          "status": "known",
+          "value": "spinnt",
+          "source": "das ding da beim fenster spinnt"
+        },
+        "location": {
+          "status": "known",
+          "value": "beim fenster",
+          "source": "das ding da beim fenster spinnt"
+        },
+        "equipment": {
+          "status": "not_provided",
+          "value": "unknown",
+          "source": null
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "not_provided",
+          "value": "general",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "das ding da beim fenster spinnt",
+          "source": "das ding da beim fenster spinnt"
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Allgemeines Anliegen\nspinnt\nBereich: beim fenster\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "09",
+      "turn": 3,
+      "issueId": "cc8b18fa-9eb8-4c96-a266-0db393eb6b54",
+      "sourceRevision": 3,
+      "fields": {
+        "category": "general",
+        "equipment": "unknown",
+        "description": "Allgemeines Anliegen\nspinnt\nBereich: Kinderzimmer\nSeit wann: heute Morgen\nDringlichkeit: Normal",
+        "defect": "spinnt",
+        "count": null,
+        "location": "Kinderzimmer",
+        "since": "heute Morgen",
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "defect": {
+          "status": "known",
+          "value": "spinnt",
+          "source": "das ding da beim fenster spinnt"
+        },
+        "location": {
+          "status": "corrected",
+          "value": "Kinderzimmer",
+          "source": "Im Kinderzimmer, seit heute Morgen."
+        },
+        "equipment": {
+          "status": "not_provided",
+          "value": "unknown",
+          "source": null
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "known",
+          "value": "heute Morgen",
+          "source": "Im Kinderzimmer, seit heute Morgen."
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "not_provided",
+          "value": "general",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Allgemeines Anliegen\nspinnt\nBereich: Kinderzimmer\nSeit wann: heute Morgen\nDringlichkeit: Normal",
+          "source": "das ding da beim fenster spinnt"
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Allgemeines Anliegen\nspinnt\nBereich: Kinderzimmer\nSeit wann: heute Morgen\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "10",
+      "turn": 1,
+      "issueId": "f7adbb25-b12e-4134-a1e8-3b1f3f330e79",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "electricity",
+        "equipment": "socket",
+        "description": "Steckdose\nFunken und verbrannter Geruch\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+        "defect": "Funken und verbrannter Geruch",
+        "count": null,
+        "location": "Wohnzimmer",
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "socket",
+          "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+        },
+        "defect": {
+          "status": "known",
+          "value": "Funken und verbrannter Geruch",
+          "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+        },
+        "location": {
+          "status": "known",
+          "value": "Wohnzimmer",
+          "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Steckdose\nFunken und verbrannter Geruch\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+          "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Steckdose\nFunken und verbrannter Geruch\nBereich: Wohnzimmer\nDringlichkeit: Mögliche akute Gefahr"
+    },
+    {
+      "caseId": "10",
+      "turn": 2,
+      "issueId": "f7adbb25-b12e-4134-a1e8-3b1f3f330e79",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "electricity",
+        "equipment": "socket",
+        "description": "Steckdose\nFunken und verbrannter Geruch\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+        "defect": "Funken und verbrannter Geruch",
+        "count": null,
+        "location": "Wohnzimmer",
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "socket",
+          "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+        },
+        "defect": {
+          "status": "known",
+          "value": "Funken und verbrannter Geruch",
+          "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+        },
+        "location": {
+          "status": "known",
+          "value": "Wohnzimmer",
+          "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Steckdose\nFunken und verbrannter Geruch\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+          "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Steckdose\nFunken und verbrannter Geruch\nBereich: Wohnzimmer\nDringlichkeit: Mögliche akute Gefahr"
+    },
+    {
+      "caseId": "11",
+      "turn": 3,
+      "issueId": "3133e752-1359-438f-ba59-910999f711b5",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "general",
+        "equipment": "unknown",
+        "description": "Ich lasse sie ausgeschaltet und fasse nichts an.",
+        "defect": null,
+        "count": null,
+        "location": null,
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "not_provided",
+          "value": "unknown",
+          "source": null
+        },
+        "defect": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "location": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "not_provided",
+          "value": "general",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Ich lasse sie ausgeschaltet und fasse nichts an.",
+          "source": "Ich lasse sie ausgeschaltet und fasse nichts an."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Allgemeines Anliegen\nIch lasse sie ausgeschaltet und fasse nichts an.\nDringlichkeit: Mögliche akute Gefahr"
+    },
+    {
+      "caseId": "12",
+      "turn": 2,
+      "issueId": "d54cdda1-a561-4dda-bad0-421d9e2187ba",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "water",
+        "equipment": "unknown",
+        "description": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam.",
+        "defect": "tropft nur langsam",
+        "count": null,
+        "location": null,
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "defect": {
+          "status": "known",
+          "value": "tropft nur langsam",
+          "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+        },
+        "location": {
+          "status": "unknown",
+          "value": null,
+          "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+        },
+        "equipment": {
+          "status": "not_provided",
+          "value": "unknown",
+          "source": null
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "water",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam.",
+          "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Wasser / Feuchtigkeit\ntropft nur langsam\nDringlichkeit: Dringend"
+    },
+    {
+      "caseId": "13",
+      "turn": 1,
+      "issueId": "b0718dfc-eb74-4a92-806b-5940cb376d74",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "general",
+        "equipment": "Wand",
+        "description": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?",
+        "defect": "dunkle Flecken",
+        "count": null,
+        "location": "Schlafzimmer",
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "cause": {
+          "status": "uncertain",
+          "value": null,
+          "candidate": null,
+          "source": "Könnte das Schimmel sein?"
+        },
+        "equipment": {
+          "status": "known",
+          "value": "Wand",
+          "source": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+        },
+        "defect": {
+          "status": "known",
+          "value": "dunkle Flecken",
+          "source": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+        },
+        "location": {
+          "status": "known",
+          "value": "Schlafzimmer",
+          "source": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "not_provided",
+          "value": "general",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?",
+          "source": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Wand\ndunkle Flecken\nBereich: Schlafzimmer\nGenannte Ursache: unsicher\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "13",
+      "turn": 2,
+      "issueId": "b0718dfc-eb74-4a92-806b-5940cb376d74",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "general",
+        "equipment": "Wand",
+        "description": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?",
+        "defect": "dunkle Flecken",
+        "count": null,
+        "location": "Schlafzimmer",
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "cause": {
+          "status": "uncertain",
+          "value": null,
+          "candidate": null,
+          "source": "weil ich zu wenig gelüftet habe"
+        },
+        "equipment": {
+          "status": "known",
+          "value": "Wand",
+          "source": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+        },
+        "defect": {
+          "status": "known",
+          "value": "dunkle Flecken",
+          "source": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+        },
+        "location": {
+          "status": "known",
+          "value": "Schlafzimmer",
+          "source": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "not_provided",
+          "value": "general",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?",
+          "source": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Wand\ndunkle Flecken\nBereich: Schlafzimmer\nGenannte Ursache: unsicher\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "14",
+      "turn": 1,
+      "issueId": "6ce6a95c-11fe-4699-b094-ce7e771272f4",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "neighbours",
+        "equipment": "unknown",
+        "description": "Der Nachbar über mir ist abends oft laut.",
+        "defect": null,
+        "count": null,
+        "location": null,
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "not_provided",
+          "value": "unknown",
+          "source": null
+        },
+        "defect": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "location": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "neighbours",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Der Nachbar über mir ist abends oft laut.",
+          "source": "Der Nachbar über mir ist abends oft laut."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Nachbarschaft / Lärm\nDer Nachbar über mir ist abends oft laut.\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "14",
+      "turn": 2,
+      "issueId": "6ce6a95c-11fe-4699-b094-ce7e771272f4",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "neighbours",
+        "equipment": "unknown",
+        "description": "Der Nachbar über mir ist abends oft laut.",
+        "defect": null,
+        "count": null,
+        "location": null,
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "not_provided",
+          "value": "unknown",
+          "source": null
+        },
+        "defect": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "location": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "neighbours",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Der Nachbar über mir ist abends oft laut.",
+          "source": "Der Nachbar über mir ist abends oft laut."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Nachbarschaft / Lärm\nDer Nachbar über mir ist abends oft laut.\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "15",
+      "turn": 1,
+      "issueId": "a69d1c17-df11-495f-931a-2736b1ffe044",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "access",
+        "equipment": "key",
+        "description": "Schlüssel / Zugang\nverloren\nDringlichkeit: Normal",
+        "defect": "verloren",
+        "count": null,
+        "location": null,
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "key",
+          "source": "Ich habe meinen Wohnungsschlüssel verloren. Die Adresse steht nicht daran."
+        },
+        "defect": {
+          "status": "known",
+          "value": "verloren",
+          "source": "Ich habe meinen Wohnungsschlüssel verloren. Die Adresse steht nicht daran."
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "location": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "access",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Schlüssel / Zugang\nverloren\nDringlichkeit: Normal",
+          "source": "Ich habe meinen Wohnungsschlüssel verloren. Die Adresse steht nicht daran."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Schlüssel / Zugang\nverloren\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "16",
+      "turn": 1,
+      "issueId": "365f323a-0e61-49ff-8f57-479ec6df5864",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "Lampe / Leuchte\ngeht nicht mehr\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+        "defect": "geht nicht mehr",
+        "count": null,
+        "location": "Wohnzimmer",
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "im wohnzimer gehd die lampe nimmer"
+        },
+        "defect": {
+          "status": "known",
+          "value": "geht nicht mehr",
+          "source": "im wohnzimer gehd die lampe nimmer"
+        },
+        "location": {
+          "status": "known",
+          "value": "Wohnzimmer",
+          "source": "im wohnzimer gehd die lampe nimmer"
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Lampe / Leuchte\ngeht nicht mehr\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+          "source": "im wohnzimer gehd die lampe nimmer"
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\ngeht nicht mehr\nBereich: Wohnzimmer\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "16",
+      "turn": 2,
+      "issueId": "365f323a-0e61-49ff-8f57-479ec6df5864",
+      "sourceRevision": 3,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "Lampe / Leuchte\ngeht nicht mehr\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+        "defect": "geht nicht mehr",
+        "count": 1,
+        "location": "Wohnzimmer",
+        "since": "gestern",
+        "extent": "1 betroffene Einrichtung(en)",
+        "details": "Sonst keine Auffälligkeiten.",
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "im wohnzimer gehd die lampe nimmer"
+        },
+        "defect": {
+          "status": "known",
+          "value": "geht nicht mehr",
+          "source": "im wohnzimer gehd die lampe nimmer"
+        },
+        "location": {
+          "status": "known",
+          "value": "Wohnzimmer",
+          "source": "im wohnzimer gehd die lampe nimmer"
+        },
+        "count": {
+          "status": "known",
+          "value": 1,
+          "source": "Nur die eine Deckenlampe, seit gestern. Sonst keine Auffälligkeiten."
+        },
+        "since": {
+          "status": "known",
+          "value": "gestern",
+          "source": "Nur die eine Deckenlampe, seit gestern. Sonst keine Auffälligkeiten."
+        },
+        "extent": {
+          "status": "known",
+          "value": "1 betroffene Einrichtung(en)",
+          "source": "Nur die eine Deckenlampe, seit gestern. Sonst keine Auffälligkeiten."
+        },
+        "details": {
+          "status": "known",
+          "value": "Sonst keine Auffälligkeiten.",
+          "source": "Nur die eine Deckenlampe, seit gestern. Sonst keine Auffälligkeiten."
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Lampe / Leuchte\ngeht nicht mehr\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+          "source": "im wohnzimer gehd die lampe nimmer"
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\ngeht nicht mehr\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Sonst keine Auffälligkeiten.\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "16",
+      "turn": 3,
+      "issueId": "365f323a-0e61-49ff-8f57-479ec6df5864",
+      "sourceRevision": 4,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "Lampe / Leuchte\ngeht nicht mehr\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Sonst keine Auffälligkeiten.\nErreichbarkeit morgen ab 16 Uhr\nDringlichkeit: Normal",
+        "defect": "geht nicht mehr",
+        "count": 1,
+        "location": "Wohnzimmer",
+        "since": "gestern",
+        "extent": "1 betroffene Einrichtung(en)",
+        "details": "Sonst keine Auffälligkeiten.\nErreichbarkeit morgen ab 16 Uhr",
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "im wohnzimer gehd die lampe nimmer"
+        },
+        "defect": {
+          "status": "known",
+          "value": "geht nicht mehr",
+          "source": "im wohnzimer gehd die lampe nimmer"
+        },
+        "location": {
+          "status": "known",
+          "value": "Wohnzimmer",
+          "source": "im wohnzimer gehd die lampe nimmer"
+        },
+        "count": {
+          "status": "known",
+          "value": 1,
+          "source": "Nur die eine Deckenlampe, seit gestern. Sonst keine Auffälligkeiten."
+        },
+        "since": {
+          "status": "known",
+          "value": "gestern",
+          "source": "Nur die eine Deckenlampe, seit gestern. Sonst keine Auffälligkeiten."
+        },
+        "extent": {
+          "status": "known",
+          "value": "1 betroffene Einrichtung(en)",
+          "source": "Nur die eine Deckenlampe, seit gestern. Sonst keine Auffälligkeiten."
+        },
+        "details": {
+          "status": "corrected",
+          "value": "Sonst keine Auffälligkeiten.\nErreichbarkeit morgen ab 16 Uhr",
+          "source": "Ich bin morgen ab 16 Uhr erreichbar."
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Lampe / Leuchte\ngeht nicht mehr\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Sonst keine Auffälligkeiten.\nErreichbarkeit morgen ab 16 Uhr\nDringlichkeit: Normal",
+          "source": "im wohnzimer gehd die lampe nimmer"
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\ngeht nicht mehr\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Sonst keine Auffälligkeiten.\nErreichbarkeit morgen ab 16 Uhr\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "17",
+      "turn": 1,
+      "issueId": "7b6a9220-fe6d-4e80-b34c-4e1801966b94",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "Lampe / Leuchte\nist kaputt\nBereich: Küche\nDringlichkeit: Normal",
+        "defect": "ist kaputt",
+        "count": null,
+        "location": "Küche",
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "Meine Lampe in der Küche ist kaputt."
+        },
+        "defect": {
+          "status": "known",
+          "value": "ist kaputt",
+          "source": "Meine Lampe in der Küche ist kaputt."
+        },
+        "location": {
+          "status": "known",
+          "value": "Küche",
+          "source": "Meine Lampe in der Küche ist kaputt."
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Lampe / Leuchte\nist kaputt\nBereich: Küche\nDringlichkeit: Normal",
+          "source": "Meine Lampe in der Küche ist kaputt."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\nist kaputt\nBereich: Küche\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "19",
+      "turn": 1,
+      "issueId": "cd93e9c2-3ee4-48a4-a406-82dbc1074c31",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 2\nBereich: Wohnzimmer\nSeit wann: Montag\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+        "defect": "funktionieren nicht",
+        "count": 2,
+        "location": "Wohnzimmer",
+        "since": "Montag",
+        "extent": "2 betroffene Einrichtung(en)",
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+        },
+        "defect": {
+          "status": "known",
+          "value": "funktionieren nicht",
+          "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+        },
+        "location": {
+          "status": "known",
+          "value": "Wohnzimmer",
+          "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+        },
+        "since": {
+          "status": "known",
+          "value": "Montag",
+          "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+        },
+        "count": {
+          "status": "known",
+          "value": 2,
+          "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+        },
+        "extent": {
+          "status": "known",
+          "value": "2 betroffene Einrichtung(en)",
+          "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 2\nBereich: Wohnzimmer\nSeit wann: Montag\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 2\nBereich: Wohnzimmer\nSeit wann: Montag\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "19",
+      "turn": 3,
+      "issueId": "cd93e9c2-3ee4-48a4-a406-82dbc1074c31",
+      "sourceRevision": 3,
+      "fields": {
+        "category": "electricity",
+        "equipment": "light",
+        "description": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: Montag\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+        "defect": "funktionieren nicht",
+        "count": 1,
+        "location": "Wohnzimmer",
+        "since": "Montag",
+        "extent": "1 betroffene Einrichtung(en)",
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "light",
+          "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+        },
+        "defect": {
+          "status": "known",
+          "value": "funktionieren nicht",
+          "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+        },
+        "location": {
+          "status": "known",
+          "value": "Wohnzimmer",
+          "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+        },
+        "since": {
+          "status": "known",
+          "value": "Montag",
+          "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+        },
+        "count": {
+          "status": "corrected",
+          "value": 1,
+          "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+        },
+        "extent": {
+          "status": "known",
+          "value": "1 betroffene Einrichtung(en)",
+          "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "electricity",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: Montag\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: Montag\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal"
+    },
+    {
+      "caseId": "20",
+      "turn": 1,
+      "issueId": "73462d06-3e6b-4323-9487-8a0401524c7d",
+      "sourceRevision": 2,
+      "fields": {
+        "category": "heating",
+        "equipment": "heater",
+        "description": "Die Heizung ist kalt.",
+        "defect": "kalt",
+        "count": null,
+        "location": null,
+        "since": null,
+        "extent": null,
+        "details": null,
+        "cause": null
+      },
+      "fieldFacts": {
+        "equipment": {
+          "status": "corrected",
+          "value": "heater",
+          "source": "Die Heizung ist kalt."
+        },
+        "defect": {
+          "status": "known",
+          "value": "kalt",
+          "source": "Die Heizung ist kalt."
+        },
+        "count": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "location": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "since": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "extent": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "details": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "cause": {
+          "status": "not_provided",
+          "value": null,
+          "source": null
+        },
+        "category": {
+          "status": "known",
+          "value": "heating",
+          "source": null
+        },
+        "description": {
+          "status": "known",
+          "value": "Die Heizung ist kalt.",
+          "source": "Die Heizung ist kalt."
+        }
+      },
+      "matches": {
+        "category": true,
+        "equipment": true,
+        "description": true,
+        "defect": true,
+        "count": true,
+        "location": true,
+        "since": true,
+        "extent": true,
+        "details": true,
+        "cause": true
+      },
+      "summary": "Heizkörper\nkalt\nDringlichkeit: Normal"
+    }
+  ]
+}

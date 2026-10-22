@@ -1,0 +1,27 @@
+{
+  "trigger": {
+    "caseId": "11",
+    "turn": 1,
+    "observedBudgetStop": true,
+    "failingSubrequestReasonNotFullyObserved": true
+  },
+  "freshRead": {
+    "credits": {
+      "balanceUsd": 4.662754642,
+      "totalUsedUsd": 0.337245358,
+      "readAttempts": 1
+    },
+    "model": "inception/mercury-2.5",
+    "price": {
+      "input": 4e-08,
+      "output": 1.5e-07
+    },
+    "sourceCommit": "bcd730adc9b5cd8ae52086c8f9db64be82e2a660",
+    "inferenceStarted": false
+  },
+  "checkedAt": "2026-10-22T14:12:43.817410+00:00",
+  "settingsChanged": false,
+  "newPaymentApprovedOrMade": false,
+  "guardRelaxed": false,
+  "nextAction": "Proceed only to the next fixed customer message under the unchanged per-generation fresh-credit guard; do not replay failed round."
+}

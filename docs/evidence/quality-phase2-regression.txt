@@ -1,7 +1,8 @@
-MORA C / product source 393db0ba0fc4963a719a42dc171538ddf2784104
-Local automated checks; fixture/SDK transport tests are not live Mercury conversations.
+MORA C final checks / runtime product 58f569d4f57127efe220ce866965c06d63dec9e2
+Frozen AI and mapping source remains 393db0ba0fc4963a719a42dc171538ddf2784104.
+Fixture/SDK transport tests are not live-model evidence.
 
-Command: npm test
+npm test
 ℹ tests 298
 ℹ suites 0
 ℹ pass 298
@@ -9,20 +10,23 @@ Command: npm test
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 6515.294207
+ℹ duration_ms 9034.02751
 
-Command: npm run typecheck
+npm run typecheck
 npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
 
 > morada-mora-ai@2.0.0 typecheck
 > tsc --noEmit
 
 
-Command: npm run build
+npm run build
 npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
 
 > morada-mora-ai@2.0.0 build
 > node scripts/build.mjs
 
-Syntax and portal assets OK (88 files checked). Static portal requires no bundling.
+Syntax and portal assets OK (101 files checked). Static portal requires no bundling.
 Public portal built in dist/. Server routes remain in api/.
+
+Additional isolated latency SDK typecheck passed (installed SDK 7.0.130).
+All Python evaluation scripts compiled. Offline evidence and mapping assertions passed.

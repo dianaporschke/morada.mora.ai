@@ -1,0 +1,3749 @@
+{
+  "complete": true,
+  "mainStarted": true,
+  "sourceCommit": "393db0ba0fc4963a719a42dc171538ddf2784104",
+  "model": "inception/mercury-2.5",
+  "rows": 52,
+  "expectedRows": 52,
+  "manifestHash": "cde9279992f50a407fe8fd53d66e1841c02afcc15feb86b08082953fd5364fa5",
+  "promptHash": "6c7b4b83a4a8d7db7f8fda443b14452df46dbce6775fba0baeacae0983bd68b8",
+  "verificationPromptHash": "c3cdb13ec0d377b0ae46f7824f43d1f8f766d218df9abe115b6537db07873be5",
+  "baselineA": {
+    "turns": 52,
+    "applicationErrors": 0,
+    "degradedTurns": 0,
+    "replyOrigins": {
+      "model_verbatim_field": 52
+    },
+    "responseModes": {
+      "model": 52
+    },
+    "generations": 52,
+    "generationCountPerTurn": {
+      "1": 52
+    },
+    "latencyWallMs": {
+      "n": 52,
+      "median": 9753.0,
+      "mean": 10140.51923076923,
+      "p95": 13447.249999999998
+    },
+    "latencyServerMs": {
+      "n": 52,
+      "median": 5062.5,
+      "mean": 5434.038461538462,
+      "p95": 8565.999999999998
+    },
+    "latencyServerExcludingCreditGuardMs": {
+      "n": 52,
+      "median": 4934.5,
+      "mean": 5248.192307692308,
+      "p95": 8426.349999999999
+    },
+    "latencyModelResponsesOnlyWallMs": {
+      "n": 52,
+      "median": 9753.0,
+      "mean": 10140.51923076923,
+      "p95": 13447.249999999998
+    },
+    "modelHttpDurationMs": {
+      "n": 52,
+      "median": 4930.0,
+      "mean": 5243.653846153846,
+      "p95": 8422.349999999999
+    },
+    "totalGatewayCostUsd": 0.012288190000000001,
+    "unpricedTurns": 0,
+    "replyCharacters": {
+      "n": 52,
+      "median": 644.5,
+      "mean": 657.3076923076923,
+      "p95": 1126.95
+    },
+    "questionMarks": 69,
+    "formalThanksTurns": 12,
+    "apologyTurns": 13,
+    "administrativeConfirmationTurns": 4,
+    "contractRepairGenerations": 0,
+    "inputTokens": 16531,
+    "outputTokens": 7652,
+    "reasoningTokens": 69861,
+    "billableOutputIncludingReasoningTokens": 77513
+  },
+  "baselineB": {
+    "turns": 52,
+    "applicationErrors": 0,
+    "degradedTurns": 2,
+    "replyOrigins": {
+      "model_verbatim_field": 49,
+      "application_safety": 3
+    },
+    "responseModes": {
+      "model": 49,
+      "safety": 3
+    },
+    "generations": 75,
+    "generationCountPerTurn": {
+      "3": 4,
+      "1": 31,
+      "2": 16,
+      "0": 1
+    },
+    "latencyWallMs": {
+      "n": 52,
+      "median": 11134.0,
+      "mean": 11429.788461538461,
+      "p95": 16064.949999999997
+    },
+    "latencyServerMs": {
+      "n": 52,
+      "median": 6118.0,
+      "mean": 6723.403846153846,
+      "p95": 11381.199999999997
+    },
+    "latencyServerExcludingCreditGuardMs": {
+      "n": 52,
+      "median": 5966.5,
+      "mean": 6461.153846153846,
+      "p95": 10824.349999999999
+    },
+    "latencyModelResponsesOnlyWallMs": {
+      "n": 49,
+      "median": 11344,
+      "mean": 11679.387755102041,
+      "p95": 16150.599999999997
+    },
+    "modelHttpDurationMs": {
+      "n": 75,
+      "median": 4503,
+      "mean": 4468.6,
+      "p95": 8465.0
+    },
+    "totalGatewayCostUsd": 0.022735448,
+    "unpricedTurns": 0,
+    "replyCharacters": {
+      "n": 52,
+      "median": 131.0,
+      "mean": 145.84615384615384,
+      "p95": 319.59999999999997
+    },
+    "questionMarks": 6,
+    "formalThanksTurns": 10,
+    "apologyTurns": 0,
+    "administrativeConfirmationTurns": 18,
+    "contractRepairGenerations": 8,
+    "inputTokens": 157376,
+    "outputTokens": 8031,
+    "reasoningTokens": 100747,
+    "billableOutputIncludingReasoningTokens": 108778
+  },
+  "C": {
+    "turns": 52,
+    "applicationErrors": 16,
+    "repairedTurns": 14,
+    "acceptedModelReplies": 36,
+    "errorReasons": {
+      "invalid_model_output": 13,
+      "response_error": 3
+    },
+    "loggedCandidateRejections": 29,
+    "observedBilledCostUsd": 0.046551016,
+    "generations": 131,
+    "generationCountPerTurn": {
+      "3": 17,
+      "2": 27,
+      "4": 6,
+      "1": 2
+    },
+    "sdkStageAttempts": 134,
+    "stages": {
+      "decision": 78,
+      "verification": 39,
+      "invalid_output": 14
+    },
+    "finishReasons": {
+      "stop": 115,
+      "length": 16
+    },
+    "replyOrigins": {
+      "model_verbatim_field": 36,
+      "application_or_error": 16
+    },
+    "totalGatewayCostUsd": 0.046551016,
+    "unpricedTurns": 0,
+    "latencyWallMs": {
+      "n": 52,
+      "median": 19264.5,
+      "mean": 20288.53846153846,
+      "p95": 29741.249999999996
+    },
+    "latencyServerMs": {
+      "n": 52,
+      "median": 13794.5,
+      "mean": 14755.48076923077,
+      "p95": 24075.7
+    },
+    "latencyServerExcludingCreditGuardMs": {
+      "n": 52,
+      "median": 13306.0,
+      "mean": 14337.326923076924,
+      "p95": 23623.1
+    },
+    "replyCharacters": {
+      "n": 36,
+      "median": 148.0,
+      "mean": 156.77777777777777,
+      "p95": 257.0
+    },
+    "questionMarks": 18,
+    "formalThanksTurns": 5,
+    "apologyTurns": 0,
+    "administrativeConfirmationTurns": 9,
+    "primaryHandoverProposals": 12,
+    "inputTokens": 197484,
+    "visibleOutputTokens": 12722,
+    "reasoningTokens": 244916
+  },
+  "costCoverage": {
+    "observedUniqueGenerationIds": 149,
+    "resolvedUniqueGenerationIds": 149,
+    "unresolvedGenerationIds": [],
+    "scope": "Main C run, semantic probes, streaming probes and preserved historical technical pilots/diagnostics; no duplicate IDs",
+    "transportAttemptsWithoutReceivedGenerationId": 4
+  },
+  "knownTaskGenerationCostUsd": 0.052288246,
+  "cases": [
+    {
+      "id": "01",
+      "topic": "Lampe, kurze Antworten",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 3,
+        "applicationErrors": 1,
+        "repairedTurns": 1,
+        "acceptedModelReplies": 2,
+        "errorReasons": {
+          "invalid_model_output": 1
+        },
+        "loggedCandidateRejections": 2,
+        "observedBilledCostUsd": 0.0025871,
+        "generations": 8,
+        "generationCountPerTurn": {
+          "3": 2,
+          "2": 1
+        },
+        "sdkStageAttempts": 8,
+        "stages": {
+          "decision": 5,
+          "verification": 3
+        },
+        "finishReasons": {
+          "stop": 8
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 2,
+          "application_or_error": 1
+        },
+        "totalGatewayCostUsd": 0.0025871,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 3,
+          "median": 18910,
+          "mean": 17921.666666666668,
+          "p95": 19600.3
+        },
+        "latencyServerMs": {
+          "n": 3,
+          "median": 13837,
+          "mean": 12895.333333333334,
+          "p95": 14527.3
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 3,
+          "median": 13492,
+          "mean": 12539.666666666666,
+          "p95": 14101.3
+        },
+        "replyCharacters": {
+          "n": 2,
+          "median": 110.0,
+          "mean": 110,
+          "p95": 136.1
+        },
+        "questionMarks": 2,
+        "formalThanksTurns": 1,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 1,
+        "primaryHandoverProposals": 1,
+        "inputTokens": 11990,
+        "visibleOutputTokens": 895,
+        "reasoningTokens": 13155
+      },
+      "finalIssues": [
+        {
+          "id": "9b823b1d-5659-4ef8-8311-de8fb74ecd1e",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "Lampe / Leuchte\nkaputte Lampe\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+          "defect": "kaputte Lampe",
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "lampe kaputt"
+            },
+            {
+              "question": "location",
+              "answer": "wohnzimmer"
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "location": {
+                  "from": null,
+                  "to": "Wohnzimmer"
+                }
+              },
+              "source": "wohnzimmer",
+              "at": "2026-10-22T13:28:24.675Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nkaputte Lampe\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 3,
+          "fieldFacts": {
+            "equipment": {
+              "status": "corrected",
+              "value": "light",
+              "source": "lampe kaputt"
+            },
+            "defect": {
+              "status": "known",
+              "value": "kaputte Lampe",
+              "source": "lampe kaputt"
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "corrected",
+              "value": "Wohnzimmer",
+              "source": "wohnzimmer"
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\nkaputte Lampe\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "source": "lampe kaputt"
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T13:27:17.481Z",
+          "updatedAt": "2026-10-22T13:28:24.675Z",
+          "shortLabel": "Lampe / Leuchte",
+          "draftOfferShown": true,
+          "draftOffer": {
+            "operation": "create",
+            "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nkaputte Lampe\\nBereich: Wohnzimmer\\nDringlichkeit: Normal\",\"kaputte Lampe\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputte Lampe\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nkaputte Lampe\\nBereich: Wohnzimmer\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+            "revision": 3
+          }
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "02",
+      "topic": "Steckdose",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 3,
+        "applicationErrors": 1,
+        "repairedTurns": 1,
+        "acceptedModelReplies": 2,
+        "errorReasons": {
+          "response_error": 1
+        },
+        "loggedCandidateRejections": 2,
+        "observedBilledCostUsd": 0.0025543099999999997,
+        "generations": 7,
+        "generationCountPerTurn": {
+          "4": 1,
+          "2": 1,
+          "1": 1
+        },
+        "sdkStageAttempts": 8,
+        "stages": {
+          "decision": 4,
+          "invalid_output": 1,
+          "verification": 2
+        },
+        "finishReasons": {
+          "stop": 6,
+          "length": 1
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 2,
+          "application_or_error": 1
+        },
+        "totalGatewayCostUsd": 0.00255431,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 3,
+          "median": 22680,
+          "mean": 20199.666666666668,
+          "p95": 28067.4
+        },
+        "latencyServerMs": {
+          "n": 3,
+          "median": 12506,
+          "mean": 13784.666666666666,
+          "p95": 22961.3
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 3,
+          "median": 12215,
+          "mean": 13471,
+          "p95": 22458.8
+        },
+        "replyCharacters": {
+          "n": 2,
+          "median": 135.5,
+          "mean": 135.5,
+          "p95": 137.75
+        },
+        "questionMarks": 2,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 1,
+        "primaryHandoverProposals": 1,
+        "inputTokens": 10709,
+        "visibleOutputTokens": 750,
+        "reasoningTokens": 13423
+      },
+      "finalIssues": [
+        {
+          "id": "d02b6102-6597-46fc-be7c-2988334262f2",
+          "category": "electricity",
+          "equipment": "socket",
+          "subcategory": null,
+          "description": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "defect": "funktioniert nicht",
+          "count": 1,
+          "location": "Küche",
+          "since": "heute",
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": "Kein Rauch, keine Funken und kein Brandgeruch.",
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+            },
+            {
+              "question": "cause",
+              "answer": "Kein Rauch, keine Funken und kein Brandgeruch."
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "equipment": {
+                  "from": "Steckdose",
+                  "to": "socket"
+                },
+                "defect": {
+                  "from": null,
+                  "to": "funktioniert nicht"
+                },
+                "location": {
+                  "from": null,
+                  "to": "Küche"
+                },
+                "since": {
+                  "from": null,
+                  "to": "heute"
+                },
+                "count": {
+                  "from": null,
+                  "to": 1
+                }
+              },
+              "source": "Eine Steckdose in der Küche funktioniert seit heute nicht.",
+              "at": "2026-10-22T13:30:59.086Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Kein Rauch, keine Funken und kein Brandgeruch.\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 3,
+          "fieldFacts": {
+            "equipment": {
+              "status": "corrected",
+              "value": "socket",
+              "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+            },
+            "defect": {
+              "status": "known",
+              "value": "funktioniert nicht",
+              "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+            },
+            "location": {
+              "status": "known",
+              "value": "Küche",
+              "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+            },
+            "since": {
+              "status": "known",
+              "value": "heute",
+              "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+            },
+            "details": {
+              "status": "known",
+              "value": "Kein Rauch, keine Funken und kein Brandgeruch.",
+              "source": "Kein Rauch, keine Funken und kein Brandgeruch."
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T13:30:59.086Z",
+          "updatedAt": "2026-10-22T13:32:13.200Z",
+          "shortLabel": "Steckdose",
+          "draftOfferShown": true,
+          "draftOffer": {
+            "operation": "create",
+            "content": "[\"electricity\",\"socket\",\"Steckdose\\nfunktioniert nicht\\nAnzahl: 1\\nBereich: Küche\\nSeit wann: heute\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"funktioniert nicht\",1,\"Küche\",\"heute\",\"1 betroffene Einrichtung(en)\",\"Kein Rauch, keine Funken und kein Brandgeruch.\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"funktioniert nicht\",null],[\"description\",\"known\",\"Steckdose\\nfunktioniert nicht\\nAnzahl: 1\\nBereich: Küche\\nSeit wann: heute\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"known\",\"Kein Rauch, keine Funken und kein Brandgeruch.\",null],[\"equipment\",\"corrected\",\"socket\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Küche\",null],[\"since\",\"known\",\"heute\",null]]]",
+            "revision": 3
+          }
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "03",
+      "topic": "Unbekannte Angaben",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 3,
+        "applicationErrors": 1,
+        "repairedTurns": 0,
+        "acceptedModelReplies": 2,
+        "errorReasons": {
+          "invalid_model_output": 1
+        },
+        "loggedCandidateRejections": 1,
+        "observedBilledCostUsd": 0.0023658,
+        "generations": 7,
+        "generationCountPerTurn": {
+          "3": 1,
+          "2": 2
+        },
+        "sdkStageAttempts": 7,
+        "stages": {
+          "decision": 4,
+          "invalid_output": 1,
+          "verification": 2
+        },
+        "finishReasons": {
+          "stop": 6,
+          "length": 1
+        },
+        "replyOrigins": {
+          "application_or_error": 1,
+          "model_verbatim_field": 2
+        },
+        "totalGatewayCostUsd": 0.0023658,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 3,
+          "median": 16084,
+          "mean": 17489.666666666668,
+          "p95": 20805.4
+        },
+        "latencyServerMs": {
+          "n": 3,
+          "median": 11824,
+          "mean": 13009,
+          "p95": 15981.099999999999
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 3,
+          "median": 11462,
+          "mean": 12632,
+          "p95": 15476.0
+        },
+        "replyCharacters": {
+          "n": 2,
+          "median": 118.5,
+          "mean": 118.5,
+          "p95": 125.25
+        },
+        "questionMarks": 2,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 9495,
+        "visibleOutputTokens": 685,
+        "reasoningTokens": 12555
+      },
+      "finalIssues": [
+        {
+          "id": "2c548a1e-1417-4041-9f9c-ef84f593a3b6",
+          "category": "general",
+          "equipment": "unknown",
+          "subcategory": null,
+          "description": "Seit wann weiss ich nicht, ich war ein paar Tage weg.",
+          "defect": null,
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+            },
+            {
+              "question": "defect",
+              "answer": "Den Beginn kann ich wirklich nicht genauer sagen."
+            }
+          ],
+          "corrections": [],
+          "unknownFields": [
+            "since"
+          ],
+          "summary": "Allgemeines Anliegen\nSeit wann weiss ich nicht, ich war ein paar Tage weg.\nBeginn: unbekannt\nDringlichkeit: Normal",
+          "pendingKey": "defect",
+          "clarification": "Das ist verständlich. Wichtig ist vor allem, was genau bei Ihnen defekt oder gestört ist. Können Sie mir das kurz beschreiben?",
+          "attempts": {},
+          "revision": 3,
+          "fieldFacts": {
+            "equipment": {
+              "status": "not_provided",
+              "value": "unknown",
+              "source": null
+            },
+            "defect": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "unknown",
+              "value": null,
+              "source": "Den Beginn kann ich wirklich nicht genauer sagen."
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "not_provided",
+              "value": "general",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Seit wann weiss ich nicht, ich war ein paar Tage weg.",
+              "source": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T13:36:00.341Z",
+          "updatedAt": "2026-10-22T13:37:07.270Z",
+          "shortLabel": "Noch unklar"
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "04",
+      "topic": "Raumkorrektur",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 3,
+        "applicationErrors": 1,
+        "repairedTurns": 1,
+        "acceptedModelReplies": 2,
+        "errorReasons": {
+          "invalid_model_output": 1
+        },
+        "loggedCandidateRejections": 2,
+        "observedBilledCostUsd": 0.00270711,
+        "generations": 7,
+        "generationCountPerTurn": {
+          "2": 2,
+          "3": 1
+        },
+        "sdkStageAttempts": 7,
+        "stages": {
+          "decision": 4,
+          "verification": 2,
+          "invalid_output": 1
+        },
+        "finishReasons": {
+          "stop": 7
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 2,
+          "application_or_error": 1
+        },
+        "totalGatewayCostUsd": 0.00270711,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 3,
+          "median": 24444,
+          "mean": 22910.666666666668,
+          "p95": 26317.8
+        },
+        "latencyServerMs": {
+          "n": 3,
+          "median": 19028,
+          "mean": 16505.666666666668,
+          "p95": 19514.0
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 3,
+          "median": 18646,
+          "mean": 16184,
+          "p95": 19229.2
+        },
+        "replyCharacters": {
+          "n": 2,
+          "median": 130.0,
+          "mean": 130,
+          "p95": 150.7
+        },
+        "questionMarks": 1,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 1,
+        "primaryHandoverProposals": 1,
+        "inputTokens": 11604,
+        "visibleOutputTokens": 769,
+        "reasoningTokens": 14184
+      },
+      "finalIssues": [
+        {
+          "id": "e03ff4e2-1b36-4381-896d-34ae07f7f6ce",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "defect": "lässt sich nicht einschalten",
+          "count": 1,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+            },
+            {
+              "question": "description",
+              "answer": "Nein, ich meinte das Schlafzimmer."
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "equipment": {
+                  "from": "Lampe",
+                  "to": "light"
+                },
+                "defect": {
+                  "from": null,
+                  "to": "lässt sich nicht einschalten"
+                },
+                "location": {
+                  "from": null,
+                  "to": "Wohnzimmer"
+                },
+                "count": {
+                  "from": null,
+                  "to": 1
+                }
+              },
+              "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten.",
+              "at": "2026-10-22T13:38:18.015Z"
+            },
+            {
+              "changes": {
+                "location": {
+                  "from": "Wohnzimmer",
+                  "to": "Schlafzimmer"
+                }
+              },
+              "source": "Nein, ich meinte das Schlafzimmer.",
+              "at": "2026-10-22T13:39:34.225Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 3,
+          "fieldFacts": {
+            "equipment": {
+              "status": "corrected",
+              "value": "light",
+              "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+            },
+            "defect": {
+              "status": "known",
+              "value": "lässt sich nicht einschalten",
+              "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+            },
+            "location": {
+              "status": "corrected",
+              "value": "Schlafzimmer",
+              "source": "Nein, ich meinte das Schlafzimmer."
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T13:38:18.015Z",
+          "updatedAt": "2026-10-22T13:39:34.225Z",
+          "shortLabel": "Lampe / Leuchte",
+          "draftOfferShown": true,
+          "draftOffer": {
+            "operation": "create",
+            "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Wohnzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+            "revision": 2
+          }
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "05",
+      "topic": "Themenwechsel",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 3,
+        "applicationErrors": 1,
+        "repairedTurns": 0,
+        "acceptedModelReplies": 2,
+        "errorReasons": {
+          "invalid_model_output": 1
+        },
+        "loggedCandidateRejections": 1,
+        "observedBilledCostUsd": 0.00248756,
+        "generations": 7,
+        "generationCountPerTurn": {
+          "2": 2,
+          "3": 1
+        },
+        "sdkStageAttempts": 7,
+        "stages": {
+          "decision": 4,
+          "verification": 2,
+          "invalid_output": 1
+        },
+        "finishReasons": {
+          "stop": 5,
+          "length": 2
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 2,
+          "application_or_error": 1
+        },
+        "totalGatewayCostUsd": 0.0024875599999999998,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 3,
+          "median": 17066,
+          "mean": 16678.666666666668,
+          "p95": 19223.3
+        },
+        "latencyServerMs": {
+          "n": 3,
+          "median": 12560,
+          "mean": 12240.333333333334,
+          "p95": 14591.3
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 3,
+          "median": 12284,
+          "mean": 11660,
+          "p95": 13627.7
+        },
+        "replyCharacters": {
+          "n": 2,
+          "median": 145.5,
+          "mean": 145.5,
+          "p95": 195.45
+        },
+        "questionMarks": 2,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 1,
+        "primaryHandoverProposals": 1,
+        "inputTokens": 11144,
+        "visibleOutputTokens": 575,
+        "reasoningTokens": 13037
+      },
+      "finalIssues": [
+        {
+          "id": "b699bad8-fae5-47a9-9a82-7e837ea7f499",
+          "category": "water",
+          "equipment": "tap",
+          "subcategory": null,
+          "description": "Wasserhahn\ntropft\nBereich: Bad\nSeit wann: gestern\nDringlichkeit: Normal",
+          "defect": "tropft",
+          "count": null,
+          "location": "Bad",
+          "since": "gestern",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Der Wasserhahn im Bad tropft seit gestern."
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "equipment": {
+                  "from": "Wasserhahn",
+                  "to": "tap"
+                },
+                "defect": {
+                  "from": null,
+                  "to": "tropft"
+                },
+                "location": {
+                  "from": null,
+                  "to": "Bad"
+                },
+                "since": {
+                  "from": null,
+                  "to": "gestern"
+                }
+              },
+              "source": "Der Wasserhahn im Bad tropft seit gestern.",
+              "at": "2026-10-22T13:41:50.377Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Wasserhahn\ntropft\nBereich: Bad\nSeit wann: gestern\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 2,
+          "fieldFacts": {
+            "equipment": {
+              "status": "corrected",
+              "value": "tap",
+              "source": "Der Wasserhahn im Bad tropft seit gestern."
+            },
+            "defect": {
+              "status": "known",
+              "value": "tropft",
+              "source": "Der Wasserhahn im Bad tropft seit gestern."
+            },
+            "location": {
+              "status": "known",
+              "value": "Bad",
+              "source": "Der Wasserhahn im Bad tropft seit gestern."
+            },
+            "since": {
+              "status": "known",
+              "value": "gestern",
+              "source": "Der Wasserhahn im Bad tropft seit gestern."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "water",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Wasserhahn\ntropft\nBereich: Bad\nSeit wann: gestern\nDringlichkeit: Normal",
+              "source": "Der Wasserhahn im Bad tropft seit gestern."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T13:41:50.376Z",
+          "updatedAt": "2026-10-22T13:41:50.377Z",
+          "shortLabel": "Wasserhahn",
+          "draftOfferShown": true,
+          "draftOffer": {
+            "operation": "create",
+            "content": "[\"water\",\"tap\",\"Wasserhahn\\ntropft\\nBereich: Bad\\nSeit wann: gestern\\nDringlichkeit: Normal\",\"tropft\",null,\"Bad\",\"gestern\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"water\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"tropft\",null],[\"description\",\"known\",\"Wasserhahn\\ntropft\\nBereich: Bad\\nSeit wann: gestern\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"tap\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Bad\",null],[\"since\",\"known\",\"gestern\",null]]]",
+            "revision": 2
+          }
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "06",
+      "topic": "Mehrere Anliegen",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": true,
+      "C": {
+        "turns": 3,
+        "applicationErrors": 0,
+        "repairedTurns": 1,
+        "acceptedModelReplies": 3,
+        "errorReasons": {},
+        "loggedCandidateRejections": 1,
+        "observedBilledCostUsd": 0.002714278,
+        "generations": 7,
+        "generationCountPerTurn": {
+          "2": 2,
+          "3": 1
+        },
+        "sdkStageAttempts": 7,
+        "stages": {
+          "decision": 4,
+          "verification": 3
+        },
+        "finishReasons": {
+          "stop": 7
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 3
+        },
+        "totalGatewayCostUsd": 0.002714278,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 3,
+          "median": 15020,
+          "mean": 22851.333333333332,
+          "p95": 36680.3
+        },
+        "latencyServerMs": {
+          "n": 3,
+          "median": 9982,
+          "mean": 17626.666666666668,
+          "p95": 32340.699999999997
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 3,
+          "median": 9754,
+          "mean": 17336,
+          "p95": 32005.6
+        },
+        "replyCharacters": {
+          "n": 3,
+          "median": 89,
+          "mean": 88,
+          "p95": 107.0
+        },
+        "questionMarks": 1,
+        "formalThanksTurns": 1,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 2,
+        "primaryHandoverProposals": 1,
+        "inputTokens": 12826,
+        "visibleOutputTokens": 742,
+        "reasoningTokens": 13913
+      },
+      "finalIssues": [
+        {
+          "id": "9415583d-8d2e-4b23-96bf-929479b69b90",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nDringlichkeit: Normal",
+          "defect": "Lampe lässt sich nicht einschalten.",
+          "count": null,
+          "location": "Flur",
+          "since": "heute",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Die Lampe im Flur geht nicht."
+            },
+            {
+              "question": "description",
+              "answer": "Die Lampe ist seit heute kaputt"
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "equipment": {
+                  "from": "Lampe",
+                  "to": "light"
+                },
+                "defect": {
+                  "from": null,
+                  "to": "Lampe lässt sich nicht einschalten."
+                },
+                "location": {
+                  "from": null,
+                  "to": "Flur"
+                }
+              },
+              "source": "Die Lampe im Flur geht nicht.",
+              "at": "2026-10-22T13:45:20.034Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nSeit wann: heute\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 3,
+          "fieldFacts": {
+            "equipment": {
+              "status": "corrected",
+              "value": "light",
+              "source": "Die Lampe im Flur geht nicht."
+            },
+            "defect": {
+              "status": "known",
+              "value": "Lampe lässt sich nicht einschalten.",
+              "source": "Die Lampe im Flur geht nicht."
+            },
+            "location": {
+              "status": "known",
+              "value": "Flur",
+              "source": "Die Lampe im Flur geht nicht."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "known",
+              "value": "heute",
+              "source": "Die Lampe ist seit heute kaputt"
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nDringlichkeit: Normal",
+              "source": "Die Lampe im Flur geht nicht."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T13:45:20.034Z",
+          "updatedAt": "2026-10-22T13:46:48.391Z",
+          "shortLabel": "Lampe / Leuchte",
+          "draftOfferShown": true,
+          "draftOffer": {
+            "operation": "create",
+            "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nLampe lässt sich nicht einschalten.\\nBereich: Flur\\nDringlichkeit: Normal\",\"Lampe lässt sich nicht einschalten.\",null,\"Flur\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nLampe lässt sich nicht einschalten.\\nBereich: Flur\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Flur\",null],[\"since\",\"not_provided\",null,null]]]",
+            "revision": 2
+          }
+        },
+        {
+          "id": "de558e35-3015-4dde-a9a1-824c7a19169e",
+          "category": "heating",
+          "equipment": "heater",
+          "subcategory": null,
+          "description": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "defect": "kalt",
+          "count": 2,
+          "location": "Bad",
+          "since": "gestern",
+          "extent": "2 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "zwei Heizkörper im Bad kalt"
+            },
+            {
+              "question": "description",
+              "answer": "die Heizkörper seit gestern"
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "equipment": {
+                  "from": "Heizkörper",
+                  "to": "heater"
+                },
+                "defect": {
+                  "from": null,
+                  "to": "kalt"
+                },
+                "location": {
+                  "from": null,
+                  "to": "Bad"
+                },
+                "count": {
+                  "from": null,
+                  "to": 2
+                }
+              },
+              "source": "zwei Heizkörper im Bad kalt",
+              "at": "2026-10-22T13:45:20.035Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nSeit wann: gestern\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 3,
+          "fieldFacts": {
+            "equipment": {
+              "status": "corrected",
+              "value": "heater",
+              "source": "zwei Heizkörper im Bad kalt"
+            },
+            "defect": {
+              "status": "known",
+              "value": "kalt",
+              "source": "zwei Heizkörper im Bad kalt"
+            },
+            "location": {
+              "status": "known",
+              "value": "Bad",
+              "source": "zwei Heizkörper im Bad kalt"
+            },
+            "count": {
+              "status": "known",
+              "value": 2,
+              "source": "zwei Heizkörper im Bad kalt"
+            },
+            "since": {
+              "status": "known",
+              "value": "gestern",
+              "source": "die Heizkörper seit gestern"
+            },
+            "extent": {
+              "status": "known",
+              "value": "2 betroffene Einrichtung(en)",
+              "source": "zwei Heizkörper im Bad kalt"
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "heating",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "source": "zwei Heizkörper im Bad kalt"
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T13:45:20.035Z",
+          "updatedAt": "2026-10-22T13:46:48.391Z",
+          "shortLabel": "Heizkörper"
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "07",
+      "topic": "Allgemeine Immobilienfrage",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": true,
+      "C": {
+        "turns": 2,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "acceptedModelReplies": 2,
+        "errorReasons": {},
+        "loggedCandidateRejections": 0,
+        "observedBilledCostUsd": 0.00114278,
+        "generations": 4,
+        "generationCountPerTurn": {
+          "2": 2
+        },
+        "sdkStageAttempts": 4,
+        "stages": {
+          "decision": 2,
+          "verification": 2
+        },
+        "finishReasons": {
+          "stop": 4
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 2
+        },
+        "totalGatewayCostUsd": 0.00114278,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 2,
+          "median": 12919.0,
+          "mean": 12919,
+          "p95": 14029.6
+        },
+        "latencyServerMs": {
+          "n": 2,
+          "median": 8012.0,
+          "mean": 8012,
+          "p95": 9548.3
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 2,
+          "median": 7628.0,
+          "mean": 7628,
+          "p95": 9251.6
+        },
+        "replyCharacters": {
+          "n": 2,
+          "median": 250.5,
+          "mean": 250.5,
+          "p95": 252.75
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 4517,
+        "visibleOutputTokens": 206,
+        "reasoningTokens": 6208
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "08",
+      "topic": "Eigentümer, Leerstand",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 2,
+        "applicationErrors": 1,
+        "repairedTurns": 0,
+        "acceptedModelReplies": 1,
+        "errorReasons": {
+          "invalid_model_output": 1
+        },
+        "loggedCandidateRejections": 1,
+        "observedBilledCostUsd": 0.0012409,
+        "generations": 4,
+        "generationCountPerTurn": {
+          "2": 2
+        },
+        "sdkStageAttempts": 4,
+        "stages": {
+          "decision": 3,
+          "verification": 1
+        },
+        "finishReasons": {
+          "stop": 4
+        },
+        "replyOrigins": {
+          "application_or_error": 1,
+          "model_verbatim_field": 1
+        },
+        "totalGatewayCostUsd": 0.0012409,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 2,
+          "median": 14364.5,
+          "mean": 14364.5,
+          "p95": 15281.15
+        },
+        "latencyServerMs": {
+          "n": 2,
+          "median": 9887.0,
+          "mean": 9887,
+          "p95": 10701.5
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 2,
+          "median": 9600.0,
+          "mean": 9600,
+          "p95": 10428.9
+        },
+        "replyCharacters": {
+          "n": 1,
+          "median": 234,
+          "mean": 234,
+          "p95": 234.0
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 5125,
+        "visibleOutputTokens": 302,
+        "reasoningTokens": 6604
+      },
+      "finalIssues": [],
+      "finalActions": [
+        {
+          "id": "view-docs",
+          "label": "Dokumentenansicht öffnen",
+          "variant": "secondary",
+          "type": "navigate",
+          "target": "docs"
+        }
+      ]
+    },
+    {
+      "id": "09",
+      "topic": "Unklare Formulierung",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 3,
+        "applicationErrors": 1,
+        "repairedTurns": 1,
+        "acceptedModelReplies": 2,
+        "errorReasons": {
+          "response_error": 1
+        },
+        "loggedCandidateRejections": 1,
+        "observedBilledCostUsd": 0.0023544,
+        "generations": 7,
+        "generationCountPerTurn": {
+          "2": 1,
+          "1": 1,
+          "4": 1
+        },
+        "sdkStageAttempts": 8,
+        "stages": {
+          "decision": 4,
+          "verification": 2,
+          "invalid_output": 1
+        },
+        "finishReasons": {
+          "stop": 6,
+          "length": 1
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 2,
+          "application_or_error": 1
+        },
+        "totalGatewayCostUsd": 0.0023544,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 3,
+          "median": 22383,
+          "mean": 21096.333333333332,
+          "p95": 28064.7
+        },
+        "latencyServerMs": {
+          "n": 3,
+          "median": 15541,
+          "mean": 14650.666666666666,
+          "p95": 20576.5
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 3,
+          "median": 15260,
+          "mean": 14248.666666666666,
+          "p95": 19962.5
+        },
+        "replyCharacters": {
+          "n": 2,
+          "median": 154.5,
+          "mean": 154.5,
+          "p95": 154.95
+        },
+        "questionMarks": 1,
+        "formalThanksTurns": 1,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 10620,
+        "visibleOutputTokens": 684,
+        "reasoningTokens": 12180
+      },
+      "finalIssues": [
+        {
+          "id": "cc8b18fa-9eb8-4c96-a266-0db393eb6b54",
+          "category": "general",
+          "equipment": "unknown",
+          "subcategory": null,
+          "description": "Allgemeines Anliegen\nspinnt\nBereich: Kinderzimmer\nSeit wann: heute Morgen\nDringlichkeit: Normal",
+          "defect": "spinnt",
+          "count": null,
+          "location": "Kinderzimmer",
+          "since": "heute Morgen",
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "das ding da beim fenster spinnt"
+            },
+            {
+              "question": "equipment",
+              "answer": "Im Kinderzimmer, seit heute Morgen."
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "location": {
+                  "from": "beim fenster",
+                  "to": "Kinderzimmer"
+                },
+                "since": {
+                  "from": null,
+                  "to": "heute Morgen"
+                }
+              },
+              "source": "Im Kinderzimmer, seit heute Morgen.",
+              "at": "2026-10-22T14:04:17.530Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Allgemeines Anliegen\nspinnt\nBereich: Kinderzimmer\nSeit wann: heute Morgen\nDringlichkeit: Normal",
+          "pendingKey": "equipment",
+          "clarification": "Vielen Dank für den Standort im Kinderzimmer und die Uhrzeit. Damit ich den Defekt richtig einordnen kann, fehlt mir noch der Name des Geräts beim Fenster.",
+          "attempts": {},
+          "revision": 3,
+          "fieldFacts": {
+            "defect": {
+              "status": "known",
+              "value": "spinnt",
+              "source": "das ding da beim fenster spinnt"
+            },
+            "location": {
+              "status": "corrected",
+              "value": "Kinderzimmer",
+              "source": "Im Kinderzimmer, seit heute Morgen."
+            },
+            "equipment": {
+              "status": "not_provided",
+              "value": "unknown",
+              "source": null
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "known",
+              "value": "heute Morgen",
+              "source": "Im Kinderzimmer, seit heute Morgen."
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "not_provided",
+              "value": "general",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Allgemeines Anliegen\nspinnt\nBereich: Kinderzimmer\nSeit wann: heute Morgen\nDringlichkeit: Normal",
+              "source": "das ding da beim fenster spinnt"
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T14:01:00.497Z",
+          "updatedAt": "2026-10-22T14:04:17.530Z",
+          "shortLabel": "Noch unklar"
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "10",
+      "topic": "Akute elektrische Gefahr",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 3,
+        "applicationErrors": 1,
+        "repairedTurns": 2,
+        "acceptedModelReplies": 2,
+        "errorReasons": {
+          "invalid_model_output": 1
+        },
+        "loggedCandidateRejections": 3,
+        "observedBilledCostUsd": 0.00302939,
+        "generations": 8,
+        "generationCountPerTurn": {
+          "3": 2,
+          "2": 1
+        },
+        "sdkStageAttempts": 8,
+        "stages": {
+          "decision": 6,
+          "verification": 2
+        },
+        "finishReasons": {
+          "stop": 8
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 2,
+          "application_or_error": 1
+        },
+        "totalGatewayCostUsd": 0.00302939,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 3,
+          "median": 26330,
+          "mean": 25146.666666666668,
+          "p95": 29788.7
+        },
+        "latencyServerMs": {
+          "n": 3,
+          "median": 21589,
+          "mean": 20114,
+          "p95": 23792.2
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 3,
+          "median": 21079,
+          "mean": 19650,
+          "p95": 23397.4
+        },
+        "replyCharacters": {
+          "n": 2,
+          "median": 197.0,
+          "mean": 197,
+          "p95": 224.9
+        },
+        "questionMarks": 2,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 13586,
+        "visibleOutputTokens": 1062,
+        "reasoningTokens": 15511
+      },
+      "finalIssues": [
+        {
+          "id": "f7adbb25-b12e-4134-a1e8-3b1f3f330e79",
+          "category": "electricity",
+          "equipment": "socket",
+          "subcategory": null,
+          "description": "Steckdose\nFunken und verbrannter Geruch\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+          "defect": "Funken und verbrannter Geruch",
+          "count": null,
+          "location": "Wohnzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "emergency",
+          "hazard": "electric",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+            },
+            {
+              "question": "description",
+              "answer": "Ich habe Abstand genommen."
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "equipment": {
+                  "from": "Steckdose",
+                  "to": "socket"
+                },
+                "defect": {
+                  "from": null,
+                  "to": "Funken und verbrannter Geruch"
+                },
+                "location": {
+                  "from": null,
+                  "to": "Wohnzimmer"
+                }
+              },
+              "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt.",
+              "at": "2026-10-22T14:05:29.276Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Steckdose\nFunken und verbrannter Geruch\nBereich: Wohnzimmer\nDringlichkeit: Mögliche akute Gefahr",
+          "pendingKey": "details",
+          "clarification": "Bitte verwenden Sie die Steckdose keinesfalls mehr, da akute Brandgefahr besteht. Schalten Sie den zugehörigen Sicherungskreis aus, sobald Sie dies sicher tun können?",
+          "attempts": {},
+          "revision": 2,
+          "fieldFacts": {
+            "equipment": {
+              "status": "corrected",
+              "value": "socket",
+              "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+            },
+            "defect": {
+              "status": "known",
+              "value": "Funken und verbrannter Geruch",
+              "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Steckdose\nFunken und verbrannter Geruch\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T14:05:29.276Z",
+          "updatedAt": "2026-10-22T14:06:50.389Z",
+          "shortLabel": "Steckdose"
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "11",
+      "topic": "Negation und spätere Gefahrenkorrektur",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 3,
+        "applicationErrors": 2,
+        "repairedTurns": 1,
+        "acceptedModelReplies": 1,
+        "errorReasons": {
+          "response_error": 1,
+          "invalid_model_output": 1
+        },
+        "loggedCandidateRejections": 3,
+        "observedBilledCostUsd": 0.00294085,
+        "generations": 8,
+        "generationCountPerTurn": {
+          "2": 1,
+          "3": 2
+        },
+        "sdkStageAttempts": 9,
+        "stages": {
+          "decision": 5,
+          "invalid_output": 2,
+          "verification": 1
+        },
+        "finishReasons": {
+          "stop": 6,
+          "length": 2
+        },
+        "replyOrigins": {
+          "application_or_error": 2,
+          "model_verbatim_field": 1
+        },
+        "totalGatewayCostUsd": 0.00294085,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 3,
+          "median": 20620,
+          "mean": 20669.333333333332,
+          "p95": 22151.8
+        },
+        "latencyServerMs": {
+          "n": 3,
+          "median": 14786,
+          "mean": 15017.666666666666,
+          "p95": 16259.3
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 3,
+          "median": 14424,
+          "mean": 14599.333333333334,
+          "p95": 15651.6
+        },
+        "replyCharacters": {
+          "n": 1,
+          "median": 108,
+          "mean": 108,
+          "p95": 108.0
+        },
+        "questionMarks": 1,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 10525,
+        "visibleOutputTokens": 882,
+        "reasoningTokens": 15917
+      },
+      "finalIssues": [
+        {
+          "id": "3133e752-1359-438f-ba59-910999f711b5",
+          "category": "general",
+          "equipment": "unknown",
+          "subcategory": null,
+          "description": "Ich lasse sie ausgeschaltet und fasse nichts an.",
+          "defect": null,
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "emergency",
+          "hazard": "electric",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Ich lasse sie ausgeschaltet und fasse nichts an."
+            }
+          ],
+          "corrections": [],
+          "unknownFields": [],
+          "summary": "Allgemeines Anliegen\nIch lasse sie ausgeschaltet und fasse nichts an.\nDringlichkeit: Mögliche akute Gefahr",
+          "pendingKey": "equipment",
+          "clarification": "Das ist richtig so. Um genau zu helfen, können Sie mir sagen, um welches Gerät oder in welchem Raum das ist?",
+          "attempts": {},
+          "revision": 2,
+          "fieldFacts": {
+            "equipment": {
+              "status": "not_provided",
+              "value": "unknown",
+              "source": null
+            },
+            "defect": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "not_provided",
+              "value": "general",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Ich lasse sie ausgeschaltet und fasse nichts an.",
+              "source": "Ich lasse sie ausgeschaltet und fasse nichts an."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T14:14:29.261Z",
+          "updatedAt": "2026-10-22T14:14:29.262Z",
+          "shortLabel": "Noch unklar"
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "12",
+      "topic": "Wasseraustritt, unbekannte Ursache",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 3,
+        "applicationErrors": 2,
+        "repairedTurns": 1,
+        "acceptedModelReplies": 1,
+        "errorReasons": {
+          "invalid_model_output": 2
+        },
+        "loggedCandidateRejections": 3,
+        "observedBilledCostUsd": 0.0029349,
+        "generations": 8,
+        "generationCountPerTurn": {
+          "3": 2,
+          "2": 1
+        },
+        "sdkStageAttempts": 8,
+        "stages": {
+          "decision": 6,
+          "invalid_output": 1,
+          "verification": 1
+        },
+        "finishReasons": {
+          "stop": 7,
+          "length": 1
+        },
+        "replyOrigins": {
+          "application_or_error": 2,
+          "model_verbatim_field": 1
+        },
+        "totalGatewayCostUsd": 0.0029349,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 3,
+          "median": 20760,
+          "mean": 20593.333333333332,
+          "p95": 22767.9
+        },
+        "latencyServerMs": {
+          "n": 3,
+          "median": 13587,
+          "mean": 14579.333333333334,
+          "p95": 17192.4
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 3,
+          "median": 13006,
+          "mean": 14075.666666666666,
+          "p95": 16723.9
+        },
+        "replyCharacters": {
+          "n": 1,
+          "median": 110,
+          "mean": 110,
+          "p95": 110.0
+        },
+        "questionMarks": 1,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 11655,
+        "visibleOutputTokens": 1203,
+        "reasoningTokens": 15255
+      },
+      "finalIssues": [
+        {
+          "id": "d54cdda1-a561-4dda-bad0-421d9e2187ba",
+          "category": "water",
+          "equipment": "unknown",
+          "subcategory": null,
+          "description": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam.",
+          "defect": "tropft nur langsam",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "high",
+          "hazard": "water",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+            }
+          ],
+          "corrections": [],
+          "unknownFields": [
+            "location"
+          ],
+          "summary": "Wasser / Feuchtigkeit\ntropft nur langsam\nDringlichkeit: Dringend",
+          "pendingKey": "location",
+          "clarification": "Verstanden, dass es tropft. Können Sie mir sagen, in welchem Raum oder an welcher Stelle das Wasser erscheint?",
+          "attempts": {},
+          "revision": 2,
+          "fieldFacts": {
+            "defect": {
+              "status": "known",
+              "value": "tropft nur langsam",
+              "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+            },
+            "location": {
+              "status": "unknown",
+              "value": null,
+              "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+            },
+            "equipment": {
+              "status": "not_provided",
+              "value": "unknown",
+              "source": null
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "water",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam.",
+              "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T14:16:57.563Z",
+          "updatedAt": "2026-10-22T14:16:57.563Z",
+          "shortLabel": "Noch unklar"
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "13",
+      "topic": "Schimmel",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": true,
+      "C": {
+        "turns": 2,
+        "applicationErrors": 0,
+        "repairedTurns": 1,
+        "acceptedModelReplies": 2,
+        "errorReasons": {},
+        "loggedCandidateRejections": 1,
+        "observedBilledCostUsd": 0.0022745400000000002,
+        "generations": 6,
+        "generationCountPerTurn": {
+          "2": 1,
+          "4": 1
+        },
+        "sdkStageAttempts": 6,
+        "stages": {
+          "decision": 3,
+          "verification": 3
+        },
+        "finishReasons": {
+          "stop": 5,
+          "length": 1
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 2
+        },
+        "totalGatewayCostUsd": 0.0022745400000000002,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 2,
+          "median": 23512.5,
+          "mean": 23512.5,
+          "p95": 28800.449999999997
+        },
+        "latencyServerMs": {
+          "n": 2,
+          "median": 18003.5,
+          "mean": 18003.5,
+          "p95": 23241.949999999997
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 2,
+          "median": 17484.5,
+          "mean": 17484.5,
+          "p95": 22469.15
+        },
+        "replyCharacters": {
+          "n": 2,
+          "median": 170.0,
+          "mean": 170,
+          "p95": 199.7
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 1,
+        "inputTokens": 9441,
+        "visibleOutputTokens": 507,
+        "reasoningTokens": 12139
+      },
+      "finalIssues": [
+        {
+          "id": "b0718dfc-eb74-4a92-806b-5940cb376d74",
+          "category": "general",
+          "equipment": "Wand",
+          "subcategory": null,
+          "description": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?",
+          "defect": "dunkle Flecken",
+          "count": null,
+          "location": "Schlafzimmer",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+            },
+            {
+              "question": "description",
+              "answer": "weil ich zu wenig gelüftet habe"
+            }
+          ],
+          "corrections": [],
+          "unknownFields": [],
+          "summary": "Wand\ndunkle Flecken\nBereich: Schlafzimmer\nGenannte Ursache: unsicher\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 2,
+          "fieldFacts": {
+            "cause": {
+              "status": "uncertain",
+              "value": null,
+              "candidate": null,
+              "source": "weil ich zu wenig gelüftet habe"
+            },
+            "equipment": {
+              "status": "known",
+              "value": "Wand",
+              "source": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+            },
+            "defect": {
+              "status": "known",
+              "value": "dunkle Flecken",
+              "source": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+            },
+            "location": {
+              "status": "known",
+              "value": "Schlafzimmer",
+              "source": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "not_provided",
+              "value": "general",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?",
+              "source": "An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?"
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T14:19:15.540Z",
+          "updatedAt": "2026-10-22T14:20:37.851Z",
+          "shortLabel": "Wand",
+          "draftOfferShown": true,
+          "draftOffer": {
+            "operation": "create",
+            "content": "[\"general\",\"Wand\",\"An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?\",\"dunkle Flecken\",null,\"Schlafzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"not_provided\",\"general\",null],[\"cause\",\"uncertain\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"dunkle Flecken\",null],[\"description\",\"known\",\"An der Schlafzimmerwand sind dunkle Flecken. Könnte das Schimmel sein?\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"Wand\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+            "revision": 2
+          }
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "14",
+      "topic": "Lärm",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": true,
+      "C": {
+        "turns": 2,
+        "applicationErrors": 0,
+        "repairedTurns": 0,
+        "acceptedModelReplies": 2,
+        "errorReasons": {},
+        "loggedCandidateRejections": 0,
+        "observedBilledCostUsd": 0.00120206,
+        "generations": 4,
+        "generationCountPerTurn": {
+          "2": 2
+        },
+        "sdkStageAttempts": 4,
+        "stages": {
+          "decision": 2,
+          "verification": 2
+        },
+        "finishReasons": {
+          "stop": 4
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 2
+        },
+        "totalGatewayCostUsd": 0.00120206,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 2,
+          "median": 14419.0,
+          "mean": 14419,
+          "p95": 15231.7
+        },
+        "latencyServerMs": {
+          "n": 2,
+          "median": 8598.0,
+          "mean": 8598,
+          "p95": 9631.2
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 2,
+          "median": 8245.0,
+          "mean": 8245,
+          "p95": 9369.1
+        },
+        "replyCharacters": {
+          "n": 2,
+          "median": 218.5,
+          "mean": 218.5,
+          "p95": 269.35
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 1,
+        "inputTokens": 5684,
+        "visibleOutputTokens": 286,
+        "reasoningTokens": 6212
+      },
+      "finalIssues": [
+        {
+          "id": "6ce6a95c-11fe-4699-b094-ce7e771272f4",
+          "category": "neighbours",
+          "equipment": "unknown",
+          "subcategory": null,
+          "description": "Der Nachbar über mir ist abends oft laut.",
+          "defect": null,
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Der Nachbar über mir ist abends oft laut."
+            }
+          ],
+          "corrections": [],
+          "unknownFields": [],
+          "summary": "Nachbarschaft / Lärm\nDer Nachbar über mir ist abends oft laut.\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 2,
+          "fieldFacts": {
+            "equipment": {
+              "status": "not_provided",
+              "value": "unknown",
+              "source": null
+            },
+            "defect": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "neighbours",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Der Nachbar über mir ist abends oft laut.",
+              "source": "Der Nachbar über mir ist abends oft laut."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T14:21:44.310Z",
+          "updatedAt": "2026-10-22T14:21:44.310Z",
+          "shortLabel": "Noch unklar",
+          "draftOfferShown": true,
+          "draftOffer": {
+            "operation": "create",
+            "content": "[\"neighbours\",\"unknown\",\"Der Nachbar über mir ist abends oft laut.\",null,null,null,null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"neighbours\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"not_provided\",null,null],[\"description\",\"known\",\"Der Nachbar über mir ist abends oft laut.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"not_provided\",\"unknown\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"not_provided\",null,null],[\"since\",\"not_provided\",null,null]]]",
+            "revision": 2
+          }
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "15",
+      "topic": "Schlüssel",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 2,
+        "applicationErrors": 1,
+        "repairedTurns": 0,
+        "acceptedModelReplies": 1,
+        "errorReasons": {
+          "invalid_model_output": 1
+        },
+        "loggedCandidateRejections": 1,
+        "observedBilledCostUsd": 0.0017502099999999999,
+        "generations": 5,
+        "generationCountPerTurn": {
+          "2": 1,
+          "3": 1
+        },
+        "sdkStageAttempts": 5,
+        "stages": {
+          "decision": 3,
+          "verification": 1,
+          "invalid_output": 1
+        },
+        "finishReasons": {
+          "stop": 4,
+          "length": 1
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 1,
+          "application_or_error": 1
+        },
+        "totalGatewayCostUsd": 0.00175021,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 2,
+          "median": 19439.0,
+          "mean": 19439,
+          "p95": 23264.0
+        },
+        "latencyServerMs": {
+          "n": 2,
+          "median": 13874.0,
+          "mean": 13874,
+          "p95": 17939.3
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 2,
+          "median": 13454.0,
+          "mean": 13454,
+          "p95": 17519.3
+        },
+        "replyCharacters": {
+          "n": 1,
+          "median": 171,
+          "mean": 171,
+          "p95": 171.0
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 1,
+        "inputTokens": 7594,
+        "visibleOutputTokens": 394,
+        "reasoningTokens": 9249
+      },
+      "finalIssues": [
+        {
+          "id": "a69d1c17-df11-495f-931a-2736b1ffe044",
+          "category": "access",
+          "equipment": "key",
+          "subcategory": null,
+          "description": "Schlüssel / Zugang\nverloren\nDringlichkeit: Normal",
+          "defect": "verloren",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Ich habe meinen Wohnungsschlüssel verloren. Die Adresse steht nicht daran."
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "equipment": {
+                  "from": "Schlüssel",
+                  "to": "key"
+                },
+                "defect": {
+                  "from": null,
+                  "to": "verloren"
+                }
+              },
+              "source": "Ich habe meinen Wohnungsschlüssel verloren. Die Adresse steht nicht daran.",
+              "at": "2026-10-22T14:24:03.612Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Schlüssel / Zugang\nverloren\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 2,
+          "fieldFacts": {
+            "equipment": {
+              "status": "corrected",
+              "value": "key",
+              "source": "Ich habe meinen Wohnungsschlüssel verloren. Die Adresse steht nicht daran."
+            },
+            "defect": {
+              "status": "known",
+              "value": "verloren",
+              "source": "Ich habe meinen Wohnungsschlüssel verloren. Die Adresse steht nicht daran."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "access",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Schlüssel / Zugang\nverloren\nDringlichkeit: Normal",
+              "source": "Ich habe meinen Wohnungsschlüssel verloren. Die Adresse steht nicht daran."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T14:24:03.611Z",
+          "updatedAt": "2026-10-22T14:24:03.612Z",
+          "shortLabel": "Schlüssel / Zugang",
+          "draftOfferShown": true,
+          "draftOffer": {
+            "operation": "create",
+            "content": "[\"access\",\"key\",\"Schlüssel / Zugang\\nverloren\\nDringlichkeit: Normal\",\"verloren\",null,null,null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"access\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"verloren\",null],[\"description\",\"known\",\"Schlüssel / Zugang\\nverloren\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"key\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"not_provided\",null,null],[\"since\",\"not_provided\",null,null]]]",
+            "revision": 2
+          }
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "16",
+      "topic": "Tippfehler und Nachtrag",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": true,
+      "C": {
+        "turns": 3,
+        "applicationErrors": 0,
+        "repairedTurns": 2,
+        "acceptedModelReplies": 3,
+        "errorReasons": {},
+        "loggedCandidateRejections": 2,
+        "observedBilledCostUsd": 0.0029276099999999998,
+        "generations": 8,
+        "generationCountPerTurn": {
+          "2": 1,
+          "3": 2
+        },
+        "sdkStageAttempts": 8,
+        "stages": {
+          "decision": 5,
+          "verification": 3
+        },
+        "finishReasons": {
+          "stop": 8
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 3
+        },
+        "totalGatewayCostUsd": 0.0029276099999999998,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 3,
+          "median": 22242,
+          "mean": 21975.333333333332,
+          "p95": 23519.1
+        },
+        "latencyServerMs": {
+          "n": 3,
+          "median": 16811,
+          "mean": 16098.333333333334,
+          "p95": 17639.9
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 3,
+          "median": 16221,
+          "mean": 15548,
+          "p95": 17194.8
+        },
+        "replyCharacters": {
+          "n": 3,
+          "median": 142,
+          "mean": 156.66666666666666,
+          "p95": 206.8
+        },
+        "questionMarks": 2,
+        "formalThanksTurns": 1,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 2,
+        "primaryHandoverProposals": 1,
+        "inputTokens": 13554,
+        "visibleOutputTokens": 896,
+        "reasoningTokens": 15007
+      },
+      "finalIssues": [
+        {
+          "id": "365f323a-0e61-49ff-8f57-479ec6df5864",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "Lampe / Leuchte\ngeht nicht mehr\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Sonst keine Auffälligkeiten.\nErreichbarkeit morgen ab 16 Uhr\nDringlichkeit: Normal",
+          "defect": "geht nicht mehr",
+          "count": 1,
+          "location": "Wohnzimmer",
+          "since": "gestern",
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": "Sonst keine Auffälligkeiten.\nErreichbarkeit morgen ab 16 Uhr",
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "im wohnzimer gehd die lampe nimmer"
+            },
+            {
+              "question": "description",
+              "answer": "Nur die eine Deckenlampe, seit gestern. Sonst keine Auffälligkeiten."
+            },
+            {
+              "question": "description",
+              "answer": "Ich bin morgen ab 16 Uhr erreichbar."
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "equipment": {
+                  "from": "Lampe",
+                  "to": "light"
+                },
+                "defect": {
+                  "from": null,
+                  "to": "geht nicht mehr"
+                },
+                "location": {
+                  "from": null,
+                  "to": "Wohnzimmer"
+                }
+              },
+              "source": "im wohnzimer gehd die lampe nimmer",
+              "at": "2026-10-22T14:26:31.097Z"
+            },
+            {
+              "changes": {
+                "details": {
+                  "from": "Sonst keine Auffälligkeiten.",
+                  "to": "Sonst keine Auffälligkeiten.\nErreichbarkeit morgen ab 16 Uhr"
+                }
+              },
+              "source": "Ich bin morgen ab 16 Uhr erreichbar.",
+              "at": "2026-10-22T14:29:47.085Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\ngeht nicht mehr\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Sonst keine Auffälligkeiten.\nErreichbarkeit morgen ab 16 Uhr\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 4,
+          "fieldFacts": {
+            "equipment": {
+              "status": "corrected",
+              "value": "light",
+              "source": "im wohnzimer gehd die lampe nimmer"
+            },
+            "defect": {
+              "status": "known",
+              "value": "geht nicht mehr",
+              "source": "im wohnzimer gehd die lampe nimmer"
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "im wohnzimer gehd die lampe nimmer"
+            },
+            "count": {
+              "status": "known",
+              "value": 1,
+              "source": "Nur die eine Deckenlampe, seit gestern. Sonst keine Auffälligkeiten."
+            },
+            "since": {
+              "status": "known",
+              "value": "gestern",
+              "source": "Nur die eine Deckenlampe, seit gestern. Sonst keine Auffälligkeiten."
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "Nur die eine Deckenlampe, seit gestern. Sonst keine Auffälligkeiten."
+            },
+            "details": {
+              "status": "corrected",
+              "value": "Sonst keine Auffälligkeiten.\nErreichbarkeit morgen ab 16 Uhr",
+              "source": "Ich bin morgen ab 16 Uhr erreichbar."
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\ngeht nicht mehr\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Sonst keine Auffälligkeiten.\nErreichbarkeit morgen ab 16 Uhr\nDringlichkeit: Normal",
+              "source": "im wohnzimer gehd die lampe nimmer"
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T14:26:31.097Z",
+          "updatedAt": "2026-10-22T14:29:47.085Z",
+          "shortLabel": "Lampe / Leuchte",
+          "draftOfferShown": true,
+          "draftOffer": {
+            "operation": "create",
+            "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\ngeht nicht mehr\\nBereich: Wohnzimmer\\nDringlichkeit: Normal\",\"geht nicht mehr\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"geht nicht mehr\",null],[\"description\",\"known\",\"Lampe / Leuchte\\ngeht nicht mehr\\nBereich: Wohnzimmer\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+            "revision": 2
+          }
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "17",
+      "topic": "Nicht verfügbare Übermittlung",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 2,
+        "applicationErrors": 1,
+        "repairedTurns": 0,
+        "acceptedModelReplies": 1,
+        "errorReasons": {
+          "invalid_model_output": 1
+        },
+        "loggedCandidateRejections": 1,
+        "observedBilledCostUsd": 0.00204672,
+        "generations": 6,
+        "generationCountPerTurn": {
+          "2": 1,
+          "4": 1
+        },
+        "sdkStageAttempts": 6,
+        "stages": {
+          "decision": 3,
+          "verification": 2,
+          "invalid_output": 1
+        },
+        "finishReasons": {
+          "stop": 4,
+          "length": 2
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 1,
+          "application_or_error": 1
+        },
+        "totalGatewayCostUsd": 0.00204672,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 2,
+          "median": 25869.5,
+          "mean": 25869.5,
+          "p95": 34762.85
+        },
+        "latencyServerMs": {
+          "n": 2,
+          "median": 20452.5,
+          "mean": 20452.5,
+          "p95": 29456.55
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 2,
+          "median": 19995.0,
+          "mean": 19995,
+          "p95": 28821.3
+        },
+        "replyCharacters": {
+          "n": 1,
+          "median": 170,
+          "mean": 170,
+          "p95": 170.0
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 1,
+        "inputTokens": 8958,
+        "visibleOutputTokens": 331,
+        "reasoningTokens": 10925
+      },
+      "finalIssues": [
+        {
+          "id": "7b6a9220-fe6d-4e80-b34c-4e1801966b94",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "Lampe / Leuchte\nist kaputt\nBereich: Küche\nDringlichkeit: Normal",
+          "defect": "ist kaputt",
+          "count": null,
+          "location": "Küche",
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Meine Lampe in der Küche ist kaputt."
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "equipment": {
+                  "from": "Lampe",
+                  "to": "light"
+                },
+                "defect": {
+                  "from": null,
+                  "to": "ist kaputt"
+                },
+                "location": {
+                  "from": null,
+                  "to": "Küche"
+                }
+              },
+              "source": "Meine Lampe in der Küche ist kaputt.",
+              "at": "2026-10-22T14:30:54.259Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nist kaputt\nBereich: Küche\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 2,
+          "fieldFacts": {
+            "equipment": {
+              "status": "corrected",
+              "value": "light",
+              "source": "Meine Lampe in der Küche ist kaputt."
+            },
+            "defect": {
+              "status": "known",
+              "value": "ist kaputt",
+              "source": "Meine Lampe in der Küche ist kaputt."
+            },
+            "location": {
+              "status": "known",
+              "value": "Küche",
+              "source": "Meine Lampe in der Küche ist kaputt."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\nist kaputt\nBereich: Küche\nDringlichkeit: Normal",
+              "source": "Meine Lampe in der Küche ist kaputt."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T14:30:54.259Z",
+          "updatedAt": "2026-10-22T14:30:54.259Z",
+          "shortLabel": "Lampe / Leuchte",
+          "draftOfferShown": true,
+          "draftOffer": {
+            "operation": "create",
+            "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nist kaputt\\nBereich: Küche\\nDringlichkeit: Normal\",\"ist kaputt\",null,\"Küche\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"ist kaputt\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nist kaputt\\nBereich: Küche\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Küche\",null],[\"since\",\"not_provided\",null,null]]]",
+            "revision": 2
+          }
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "18",
+      "topic": "Eigentümerfrage zu persönlichen Unterlagen",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": true,
+      "C": {
+        "turns": 2,
+        "applicationErrors": 0,
+        "repairedTurns": 1,
+        "acceptedModelReplies": 2,
+        "errorReasons": {},
+        "loggedCandidateRejections": 1,
+        "observedBilledCostUsd": 0.0017284099999999999,
+        "generations": 6,
+        "generationCountPerTurn": {
+          "2": 1,
+          "4": 1
+        },
+        "sdkStageAttempts": 6,
+        "stages": {
+          "decision": 3,
+          "verification": 2,
+          "invalid_output": 1
+        },
+        "finishReasons": {
+          "stop": 5,
+          "length": 1
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 2
+        },
+        "totalGatewayCostUsd": 0.00172841,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 2,
+          "median": 20868.5,
+          "mean": 20868.5,
+          "p95": 26296.85
+        },
+        "latencyServerMs": {
+          "n": 2,
+          "median": 15428.5,
+          "mean": 15428.5,
+          "p95": 21008.05
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 2,
+          "median": 15018.5,
+          "mean": 15018.5,
+          "p95": 20470.25
+        },
+        "replyCharacters": {
+          "n": 2,
+          "median": 174.5,
+          "mean": 174.5,
+          "p95": 202.85
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 0,
+        "inputTokens": 6809,
+        "visibleOutputTokens": 256,
+        "reasoningTokens": 9451
+      },
+      "finalIssues": [],
+      "finalActions": []
+    },
+    {
+      "id": "19",
+      "topic": "Widerspruch und Rücknahme",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 3,
+        "applicationErrors": 1,
+        "repairedTurns": 1,
+        "acceptedModelReplies": 2,
+        "errorReasons": {
+          "invalid_model_output": 1
+        },
+        "loggedCandidateRejections": 2,
+        "observedBilledCostUsd": 0.003707968,
+        "generations": 9,
+        "generationCountPerTurn": {
+          "2": 1,
+          "4": 1,
+          "3": 1
+        },
+        "sdkStageAttempts": 9,
+        "stages": {
+          "decision": 5,
+          "verification": 2,
+          "invalid_output": 2
+        },
+        "finishReasons": {
+          "stop": 7,
+          "length": 2
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 2,
+          "application_or_error": 1
+        },
+        "totalGatewayCostUsd": 0.0037079680000000003,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 3,
+          "median": 26389,
+          "mean": 23582.333333333332,
+          "p95": 26910.1
+        },
+        "latencyServerMs": {
+          "n": 3,
+          "median": 19064,
+          "mean": 17128.666666666668,
+          "p95": 20841.5
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 3,
+          "median": 18565,
+          "mean": 16622.333333333332,
+          "p95": 20254.3
+        },
+        "replyCharacters": {
+          "n": 2,
+          "median": 119.5,
+          "mean": 119.5,
+          "p95": 151.45
+        },
+        "questionMarks": 1,
+        "formalThanksTurns": 1,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 1,
+        "primaryHandoverProposals": 1,
+        "inputTokens": 14145,
+        "visibleOutputTokens": 870,
+        "reasoningTokens": 20058
+      },
+      "finalIssues": [
+        {
+          "id": "cd93e9c2-3ee4-48a4-a406-82dbc1074c31",
+          "category": "electricity",
+          "equipment": "light",
+          "subcategory": null,
+          "description": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: Montag\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "defect": "funktionieren nicht",
+          "count": 1,
+          "location": "Wohnzimmer",
+          "since": "Montag",
+          "extent": "1 betroffene Einrichtung(en)",
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+            },
+            {
+              "question": "description",
+              "answer": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+            }
+          ],
+          "corrections": [
+            {
+              "changes": {
+                "equipment": {
+                  "from": "Lampen",
+                  "to": "light"
+                },
+                "defect": {
+                  "from": null,
+                  "to": "funktionieren nicht"
+                },
+                "location": {
+                  "from": null,
+                  "to": "Wohnzimmer"
+                },
+                "since": {
+                  "from": null,
+                  "to": "Montag"
+                },
+                "count": {
+                  "from": null,
+                  "to": 2
+                }
+              },
+              "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.",
+              "at": "2026-10-22T14:35:58.635Z"
+            },
+            {
+              "changes": {
+                "count": {
+                  "from": 2,
+                  "to": 1
+                }
+              },
+              "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen.",
+              "at": "2026-10-22T14:38:34.309Z"
+            }
+          ],
+          "unknownFields": [],
+          "summary": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: Montag\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 3,
+          "fieldFacts": {
+            "equipment": {
+              "status": "corrected",
+              "value": "light",
+              "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+            },
+            "defect": {
+              "status": "known",
+              "value": "funktionieren nicht",
+              "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+            },
+            "location": {
+              "status": "known",
+              "value": "Wohnzimmer",
+              "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+            },
+            "since": {
+              "status": "known",
+              "value": "Montag",
+              "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+            },
+            "count": {
+              "status": "corrected",
+              "value": 1,
+              "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+            },
+            "extent": {
+              "status": "known",
+              "value": "1 betroffene Einrichtung(en)",
+              "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "electricity",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: Montag\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T14:35:58.635Z",
+          "updatedAt": "2026-10-22T14:38:34.310Z",
+          "shortLabel": "Lampe / Leuchte",
+          "draftOfferShown": true,
+          "draftOffer": {
+            "operation": "create",
+            "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nfunktionieren nicht\\nAnzahl: 2\\nBereich: Wohnzimmer\\nSeit wann: Montag\\nUmfang / Situation: 2 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"funktionieren nicht\",2,\"Wohnzimmer\",\"Montag\",\"2 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",2,null],[\"defect\",\"known\",\"funktionieren nicht\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nfunktionieren nicht\\nAnzahl: 2\\nBereich: Wohnzimmer\\nSeit wann: Montag\\nUmfang / Situation: 2 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"light\",null],[\"extent\",\"known\",\"2 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"Montag\",null]]]",
+            "revision": 2
+          }
+        }
+      ],
+      "finalActions": []
+    },
+    {
+      "id": "20",
+      "topic": "Rechtliche und fachliche Grenze",
+      "allFixedRoundsAttempted": true,
+      "fullyAnswered": false,
+      "C": {
+        "turns": 2,
+        "applicationErrors": 1,
+        "repairedTurns": 0,
+        "acceptedModelReplies": 1,
+        "errorReasons": {
+          "invalid_model_output": 1
+        },
+        "loggedCandidateRejections": 1,
+        "observedBilledCostUsd": 0.00185412,
+        "generations": 5,
+        "generationCountPerTurn": {
+          "2": 1,
+          "3": 1
+        },
+        "sdkStageAttempts": 5,
+        "stages": {
+          "decision": 3,
+          "verification": 1,
+          "invalid_output": 1
+        },
+        "finishReasons": {
+          "stop": 4,
+          "length": 1
+        },
+        "replyOrigins": {
+          "model_verbatim_field": 1,
+          "application_or_error": 1
+        },
+        "totalGatewayCostUsd": 0.00185412,
+        "unpricedTurns": 0,
+        "latencyWallMs": {
+          "n": 2,
+          "median": 19437.5,
+          "mean": 19437.5,
+          "p95": 22533.05
+        },
+        "latencyServerMs": {
+          "n": 2,
+          "median": 13911.5,
+          "mean": 13911.5,
+          "p95": 16783.85
+        },
+        "latencyServerExcludingCreditGuardMs": {
+          "n": 2,
+          "median": 13495.5,
+          "mean": 13495.5,
+          "p95": 16421.85
+        },
+        "replyCharacters": {
+          "n": 1,
+          "median": 269,
+          "mean": 269,
+          "p95": 269.0
+        },
+        "questionMarks": 0,
+        "formalThanksTurns": 0,
+        "apologyTurns": 0,
+        "administrativeConfirmationTurns": 0,
+        "primaryHandoverProposals": 1,
+        "inputTokens": 7503,
+        "visibleOutputTokens": 427,
+        "reasoningTokens": 9933
+      },
+      "finalIssues": [
+        {
+          "id": "73462d06-3e6b-4323-9487-8a0401524c7d",
+          "category": "heating",
+          "equipment": "heater",
+          "subcategory": null,
+          "description": "Die Heizung ist kalt.",
+          "defect": "kalt",
+          "count": null,
+          "location": null,
+          "since": null,
+          "extent": null,
+          "details": null,
+          "cause": null,
+          "urgency": "normal",
+          "hazard": "none",
+          "attachments": [],
+          "answers": [
+            {
+              "question": "description",
+              "answer": "Die Heizung ist kalt."
+            }
+          ],
+          "corrections": [],
+          "unknownFields": [],
+          "summary": "Heizkörper\nkalt\nDringlichkeit: Normal",
+          "pendingKey": null,
+          "clarification": null,
+          "attempts": {},
+          "revision": 2,
+          "fieldFacts": {
+            "equipment": {
+              "status": "corrected",
+              "value": "heater",
+              "source": "Die Heizung ist kalt."
+            },
+            "defect": {
+              "status": "known",
+              "value": "kalt",
+              "source": "Die Heizung ist kalt."
+            },
+            "count": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "location": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "since": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "extent": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "details": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "cause": {
+              "status": "not_provided",
+              "value": null,
+              "source": null
+            },
+            "category": {
+              "status": "known",
+              "value": "heating",
+              "source": null
+            },
+            "description": {
+              "status": "known",
+              "value": "Die Heizung ist kalt.",
+              "source": "Die Heizung ist kalt."
+            }
+          },
+          "preparation": {
+            "status": "not_prepared",
+            "revision": 1
+          },
+          "status": "draft",
+          "createdAt": "2026-10-22T14:39:41.122Z",
+          "updatedAt": "2026-10-22T14:39:41.123Z",
+          "shortLabel": "Heizkörper",
+          "draftOfferShown": true,
+          "draftOffer": {
+            "operation": "create",
+            "content": "[\"heating\",\"heater\",\"Die Heizung ist kalt.\",\"kalt\",null,null,null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kalt\",null],[\"description\",\"known\",\"Die Heizung ist kalt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"not_provided\",null,null],[\"since\",\"not_provided\",null,null]]]",
+            "revision": 2
+          }
+        }
+      ],
+      "finalActions": []
+    }
+  ],
+  "fullyAnsweredConversations": 6,
+  "verification": {
+    "complete": true,
+    "checks": 8,
+    "correct": 4,
+    "details": [
+      {
+        "id": "V01",
+        "expectedViolation": true,
+        "applicationStatus": 200,
+        "violations": [
+          {
+            "kind": "unsupported_capability",
+            "quote": "Der bereitgestellte Entwurf steht für Sie bereit",
+            "reason": "Der Systemstatus zeigt keinen bestehenden Entwurf (draft.exists: false) und keine Aktion zum Vorbereiten. Die Behauptung eines bereitgestellten Entwurfs ist nicht belegt."
+          }
+        ]
+      },
+      {
+        "id": "V02",
+        "expectedViolation": true,
+        "applicationStatus": 503,
+        "violations": null
+      },
+      {
+        "id": "V03",
+        "expectedViolation": true,
+        "applicationStatus": 200,
+        "violations": [
+          {
+            "kind": "unsupported_capability",
+            "quote": "Ich melde mich morgen ab 16 Uhr bei Ihnen",
+            "reason": "Verspricht eine spätere Rückmeldung oder Kontaktaufnahme, obwohl die Fähigkeit futureContact als nicht verfügbar markiert ist."
+          }
+        ]
+      },
+      {
+        "id": "V04",
+        "expectedViolation": true,
+        "applicationStatus": 200,
+        "violations": [
+          {
+            "kind": "unsupported_capability",
+            "quote": "Wir setzen uns sofort für die Instandsetzung ein.",
+            "reason": "Die Capability 'repairs' ist false, aber der Text verspricht Instandsetzung."
+          },
+          {
+            "kind": "unsupported_capability",
+            "quote": "damit wir einen Serviceauftrag starten können.",
+            "reason": "Die Capability 'repairs' ist false, aber der Text verspricht Serviceauftrag."
+          }
+        ]
+      },
+      {
+        "id": "V05",
+        "expectedViolation": true,
+        "applicationStatus": 503,
+        "violations": null
+      },
+      {
+        "id": "V06",
+        "expectedViolation": true,
+        "applicationStatus": 503,
+        "violations": null
+      },
+      {
+        "id": "V07",
+        "expectedViolation": false,
+        "applicationStatus": 200,
+        "violations": [
+          {
+            "kind": "unsupported_capability",
+            "quote": "kontaktieren Sie uns",
+            "reason": "Die Aussage suggeriert, dass eine spätere Kontaktaufnahme möglich ist, was der Capability-Konfiguration futureContact=false widerspricht."
+          }
+        ]
+      },
+      {
+        "id": "V08",
+        "expectedViolation": false,
+        "applicationStatus": 200,
+        "violations": []
+      }
+    ]
+  }
+}

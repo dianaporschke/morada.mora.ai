@@ -1,112 +1,205 @@
-# MORA C – vereinfachte Testversion und belegter Abschlussstand
+# MORA AI 2.0 – serverseitiger A/B/C-Qualitätsvergleich
 
-Stand: 22. Oktober 2026, Europe/Zurich. Repository `dianaporschke/morada.mora.ai`, ausschliesslich `codex/mora-ai-2.0`. Produktquelle und neue Preview: `393db0ba0fc4963a719a42dc171538ddf2784104`. Die spätere Abschlussdokumentation ändert diesen Produktcode nicht.
+Stand: 22. Oktober 2026, Europe/Zurich. Ausschliesslich `codex/mora-ai-2.0`.
 
-**Die vereinfachte Testversion ist implementiert und als Preview gebaut. 298 automatisierte Tests, Typprüfung und Build bestehen. Der vollständige echte Vergleich ist nicht abgeschlossen.** Im letzten technischen Pilot gibt es eine akzeptierte echte Modellantwort und einen anschliessenden Modell-Timeout. Daraus folgt weder eine Freigabe der Gesprächsqualität noch der Nachweis, dass Mercury für den späteren Portaleinsatz genügt.
+**Ergebnis: Die jetzige C-Konfiguration erhält keine Qualitätsfreigabe.** Alle 20 vorab festgelegten Fälle mit 52 Kundennachrichten wurden abgearbeitet. C lieferte 36 akzeptierte echte Modellantworten; 16 Runden endeten mit einem Fehler. Nur 6 von 20 Gesprächen wurden vollständig beantwortet. Zusätzlich wurden acht echte Prüfer-Gegenproben und vier echte Streaming-Probeaufrufe durchgeführt. Keine Mock-Antworten werden als Live-Erfolge ausgegeben.
 
-[Neue isolierte MORA-C-Preview](https://morada-mora-ejxjtgk6z-dianaporschke-1255s-projects.vercel.app/?mora=c). Vercel meldet `READY`, Deployment `dpl_FjcjyGZoRP8YYKsG8MZFLvyWsHmV`, `target=null`, keine Aliase. Der bestehende Vercel-Zugangsschutz bleibt aktiv; ohne autorisierte Sitzung erscheint die Vercel-Anmeldung. Es gibt kein Produktionsdeployment.
+Die ursprünglichen A/B-Läufe sind bereits abgeschlossen: 20 identische Gesprächspaare, 104 Kundenrunden. C verwendet jetzt denselben unveränderten Korpus. A/B und C wurden zu unterschiedlichen Zeitpunkten gemessen; dies ist keine zeitgleich randomisierte Dreiwege-Studie. Die beobachteten Unterschiede gelten für diese konkreten Konfigurationen und Zeitpunkte.
 
-Die App ist Dianas bisherige, separate Test-App. Alexanders tatsächliches responsives Portal mit seinen Integrationen und seiner HTML-Datei ist nicht verbunden und wurde nicht bearbeitet. Der alte Kundenvorschaulink bleibt unverändert.
+## Was A, B und „MORA C“ bedeuten
 
-## Nachgewiesene Ursachen und gezielte Änderungen
+**Alle drei Varianten verwenden dasselbe Modell `inception/mercury-2.5` über denselben vorhandenen Vercel AI Gateway. C ist eine Architekturvariante, kein anderes Modell.**
 
-Die Ausgangsbelege stehen im [Phase-1-Bericht](MORA_PHASE1_COMPARISON.md), einschliesslich der unveränderten echten A/B-Gespräche. Dort widersprechen sich die erste Gesprächsentscheidung und die nachgelagerte Formulierung: Eine hilfreiche Raumfrage wird wegen des vorher festgelegten Fragenvertrags abgewiesen, danach erscheint wieder das Formularangebot. Ein Angebot wird teilweise schon vor der endgültigen Formulierung im Zustand gespeichert. Semantisch falsche Aussagen wie ein bereits bereitliegender Entwurf passieren trotz vorhandener Statusinformationen die begrenzte Wortmusterprüfung. Ein kurzer Prompt allein verhindert diese Fehler ebenfalls nicht.
+| Variante | Gesprächssteuerung | Aktionen und Daten |
+| --- | --- | --- |
+| A | Kurzer professioneller Systemprompt; eine freie Modellantwort | Keine Schadensdialoge, Entwürfe oder Aktionsbuttons |
+| B | Vollständige vorherige MORA; Gesprächsplan, Validierung und bedingt zusätzliche Formulierung/Reparatur | Vorhandener Faktenreducer und Aktionslogik |
+| C | Eine gemeinsame Entscheidung für Antwort, neue Fakten, Frage und Vorschläge; danach ein ausschliesslich prüfender Modellaufruf; maximal eine Vertragsreparatur | Bestehender Faktenreducer, getrennte Anliegen und geprüfte lokale Speicherbelege |
 
-C entfernt diese zweite Entscheidungsinstanz. Antwort, Faktenänderungen, tatsächliche Rückfrage und optionale Aktionsvorschläge kommen aus einer gemeinsamen strukturierten Entscheidung. Erst die vollständig akzeptierte Entscheidung wird übernommen. Die Anwendung schreibt den Modelltext danach nicht um. Es gibt im C-Pfad keinen lokalen Schadensdialog und keinen Rückfall auf eine frühere Formularantwort.
+C benötigt regulär zwei, mit Reparatur bis zu vier Aufrufe. **Eine Gesprächsentscheidung bedeutet nicht einen einzelnen Modellaufruf.** Bei C sind sowohl Entscheidung als auch Prüfung mit `reasoning=high` konfiguriert; Bs optionale Nachformulierung verwendet eine andere Konfiguration. Der Vergleich isoliert Architektur, Prompt und Reasoning nicht als einzelne Faktoren.
 
-Ein separater semantischer Prüfer darf ausschliesslich Verstösse melden. Er darf weder den nächsten Gesprächsschritt wählen noch einen Ersatztext formulieren. Regulär entstehen deshalb **zwei Modellaufrufe**, bei einer einzigen zulässigen Vertragsreparatur höchstens vier. „Eine Gesprächsentscheidung“ bedeutet ausdrücklich nicht einen einzigen Modellaufruf insgesamt. Dieses Verfahren bringt zusätzliche Latenz und Modellabhängigkeit mit sich; sein Nutzen ist noch vollständig live zu prüfen.
+Quellen: A/B `bcd730adc9b5cd8ae52086c8f9db64be82e2a660`; C `393db0ba0fc4963a719a42dc171538ddf2784104`. Die neue Begrüssungs-/Messpreview `58f569d4f57127efe220ce866965c06d63dec9e2` hat dieselben nachweislich unveränderten C-KI- und Mappingmodule. Während des Hauptlaufs wurden keine Modellprompts, Kundenwörter oder produktiven Entscheidungsregeln optimiert. Fortsetzungen gingen stets zur nächsten festen Nachricht; fehlerhafte Runden wurden nicht für schönere Antworten wiederholt.
 
-Im technischen Vorpilot wurden ausserdem zwei konkrete Implementierungsfehler gefunden und vor dem Hauptlauf korrigiert:
+## Vergleich nach den acht Kriterien
 
-- SDK 7 akzeptiert keine zusätzlichen Systemnachrichten in `messages`. Der Kontext und die Reparaturhinweise stehen nun im dokumentierten `instructions`-Feld. Drei vorherige Anfragen scheiterten ohne Modelltransport; diese sind erhalten.
-- Das mehrdeutige Feld `focus` wurde vom Modell als Thema `defect` interpretiert. `activeIssueRef` ist jetzt eine ausdrücklich typisierte, anfragebezogene Anliegenreferenz. Genaue Schemafehler und erlaubte Werte werden für die begrenzte Reparatur übergeben. Auch verworfene echte Vorschläge bleiben im Nachweis erhalten.
+Die ersten sechs A/B-Noten stammen aus der ursprünglichen begründeten KI-Bewertung auf 1–5, nicht aus einer unabhängigen Menschenstudie. Für C wird angesichts der fehlgeschlagenen Gesprächsrunden kein scheinbar gleichwertiger Mittelwert aus 20 vollständig beantworteten Gesprächen erfunden. Alle 20 Einzelfallbeobachtungen stehen unten.
 
-## Komponenten und Datenfluss
+| Kriterium | A | B | Belegter C-Befund |
+| --- | --- | --- | --- |
+| Natürlichkeit | 2,1/5 | 2,5/5 | Wiederholt förmliche Erfassungsberichte; kein belegter Gesamtgewinn |
+| Gesprächsverständnis | 4,7/5 | 4,5/5 | Unter anderem Raumkorrektur, getrennte Anliegen und Kind-Hinweis tatsächlich verstanden; Antworten können danach verworfen werden |
+| Kontexttreue | 4,2/5 | 4,0/5 | Erfolgreich bestätigte Fakten bleiben erhalten; neue Kundennachrichten aus Fehlrunden fehlen beim Fortsetzen im Serverkontext |
+| Sinnvolle Rückfragen | 3,1/5 | 4,5/5 | Wiederholte Geräte-/Raumfragen nach solchen Ausfällen; einzelne sinnvolle Klärungsfragen |
+| Wiederholungen | 2,4/5 | 2,8/5 | 5 akzeptierte Modelltexte mit förmlichem Dank; 9 mit Erfassungswörtern; Entwurfsangebote bleiben häufig |
+| Fachliche Richtigkeit | 3,1/5 | 3,1/5 | Einige brauchbare Antworten zu Protokoll, Schimmel und Lärm; zu absolute Entwarnung bei Steckdose und sicherheitsrelevante Antwortausfälle verhindern eine Freigabe |
+| Antwortdauer, Median Server ohne zusätzliche Mess-Guthabenabfrage | 4,93 s | 5,97 s | 13,31 s |
+| Tatsächliche Gateway-Kosten je getestetem Fall, inklusive verworfener Generierungen | 0,00061441 USD | 0,00113677 USD | 0,00232755 USD |
 
-| Komponente | Aufgabe |
-| --- | --- |
-| `api/chat-simple.js` | Isolierte C-API, signierte Sitzung, operative Aktionen und eindeutige Fehlerantworten |
-| `lib/mora/simple/model.js` | Gemeinsame Entscheidung, anfragebezogene Referenzschemas und ausschliesslich prüfende semantische Kontrolle |
-| `lib/mora/simple/service.js` | Prüfung auf einer Zustandskopie, maximal eine Vertragsreparatur, keine simulierte Antwort bei Modellfehlern |
-| `lib/mora/simple/state.js` | Getrennte Anliegen, belegte Faktenänderungen, Angebotshistorie, Schreibaufträge und passende Speicherbelege |
-| `assets/mora-client.js` | Eigene C-Sitzung/Ablage, aktuelle Aktionen, Klicksperre, Speicherung und vollständiges Zurücklesen |
-| `assets/mora-data.js` | Bestehendes zentrales Mapping; Unsicherheit wird jetzt auch in der Zusammenfassung sichtbar |
-| `assets/mora-safety.js`, `lib/mora/safety.js` | Geteilte bisherige Gefahrenerkennung; sofortiger Anwendungshinweis und anschliessende kontextbezogene Modellantwort |
-| `tests/simple-conversation.test.js`, `tests/simple-sdk.test.js` | Neue Zustands-, Speicher-, Oberflächenmodul- und echte SDK-Vertragstests mit gekennzeichneten Fixtures |
+C: 131 beobachtete Modelltransporte für 52 Kundenrunden, 134 SDK-Stufenversuche, 29 protokollierte Kandidatenabweisungen. Ein SDK-Versuch kann vor dem eigentlichen Modelltransport an einer zusätzlichen Metadatenabfrage scheitern; diese Zähler sind deshalb verschieden. Fehlergründe der Anwendung: `{"invalid_model_output": 13, "response_error": 3}`. Fehler und deren Latenz bleiben in der Auswertung; sie werden nicht als erfolgreiche Gespräche gezählt.
 
-Der vorhandene Faktenreducer und `mapServiceDraft` bleiben zentral. Einrichtung und zugehörige Kategorie werden normalisiert; ein Lampenwert führt zu `light`, `electricity` und der Anzeige „Lampe / Leuchte“. Defekt, Anzahl, Bereich, Beginn, Umfang und weitere Angaben werden aus demselben Anliegendatensatz gemappt. Fakten tragen ihre Quelle und den Status bekannt, unbekannt, nicht angegeben, korrigiert oder unsicher. Neue belegte Werte werden feldweise zusammengeführt; fehlende Angaben löschen keine vorhandenen Werte. Unterschiedliche Anliegen haben getrennte Referenzen und IDs. Unbekannte Kategorien werden nicht durch eine willkürlich gewählte Kategorie ersetzt.
+## Woher die mechanischen Formulierungen kommen
 
-## Aktionen und tatsächlicher Speichererfolg
+In C lautet die echte akzeptierte Antwort auf „wohnzimmer“ unter anderem:
 
-Ein Angebot ist kein Entwurf. Die aktuelle Chatansicht entfernt frühere Aktionsgruppen; beim Wiederherstellen erhält nur die letzte passende Nachricht ihre Aktionen. Bereits gespeicherter unveränderter Inhalt wird nicht als neue Erstellung angeboten. Zusätzliche Informationen erlauben eine gezielte Aktualisierung derselben Entwurfs-ID.
+> Vielen Dank. Ich habe es vermerkt, dass die Lampe im Wohnzimmer kaputt ist. Möchten Sie, dass ich einen Entwurf für die Meldung vorbereite?
 
-Beim Klick vergibt der Server einen Schreibauftrag mit `operationId`, Anliegen-/Entwurfs-ID, Revision und Inhaltshash. Gleiche Inhalte erhalten eine stabile Operation. Die Oberfläche sperrt parallele Klicks, schreibt mit IndexedDB `put` und liest den Datensatz erneut. Schlüssel, Quellrevision, Quellinhalt und sämtliche gemappten Formularfelder müssen übereinstimmen. Erst danach darf sie eine lokale Speicherbestätigung anzeigen und den passenden Beleg in den Gesprächszustand übernehmen.
+Dieser Text stammt unverändert aus dem Modellfeld `reply`. Die Oberfläche setzt ihn mit `textContent` ein; sie fügt diesen Dank oder Erfassungsbericht nicht hinzu. C enthält für normale Kundenbeiträge keinen lokalen Schadensdialog und keinen zweiten Formulierungsauftrag. Der C-Prompt verlangt bereits kurze natürliche Antworten und untersagt routinemässigen Dank beziehungsweise Formularfokus. Auch A erzeugt mit kurzem Prompt und ohne MORA-Dialoglogik solche Muster. Damit ist „nur ein lokaler Standardsatz“ als Erklärung widerlegt.
 
-Fehlgeschlagenes Schreiben oder Zurücklesen erzeugt keine Erfolgsmeldung. Bei verlorener Statusbestätigung bleibt ein tatsächlich gespeicherter lokaler Datensatz erhalten; die Antwort benennt den fehlenden Abgleich. Eine fehlgeschlagene Aktualisierung löscht keinen früher bestätigten Speicherstatus. Operative Bestätigungstexte sind feste Anwendungstexte mit realem Speicherbeleg, keine behaupteten Modellantworten.
+In B sind hingegen die mehrstufige Gesprächsentscheidung und lokale Sicherheits-/Steuertexte beteiligt. Der Phase-1-Beleg zeigt, dass eine tatsächlich generierte Raumfrage durch den zuvor eingefrorenen Fragenvertrag verworfen wird. Quelle und Wirkung sind im [ursprünglichen Vergleich](MORA_PHASE1_COMPARISON.md) getrennt dokumentiert.
 
-**Vertrauensgrenze:** IndexedDB und ihr Schreib-/Lesebeleg belegen nur den Speicher auf diesem Gerät. Historische interne Werte wie `portal_received` beziehen sich hier ausschliesslich auf die lokale Serviceansicht der Test-App. Im Modellkontext heisst dies ausdrücklich `local_saved`. Das ist weder Alexanders Portal noch eine serverseitige Übermittlung an MORADA. Eine solche Übermittlung existiert in dieser Testversion nicht.
+Plausibler, aber nicht einzeln isolierter Einfluss: C enthält trotz natürlicher Sprachvorgaben viel Entwurfs-, Schema- und Zustandskontext. Das kann den Modellfokus beeinflussen. Diese Hypothese ist kein Nachweis, dass eine weitere Promptumformulierung das Problem löst.
 
-## Tatsächlich durchgeführte Live-Prüfungen
+Feste Anwendungstexte bleiben bewusst bei Begrüssung, Ladehinweis, technischen Fehlern, Sicherheitshinweisen und tatsächlich belegten Speicherbestätigungen. Das sind keine simulierten Modellantworten.
 
-Alle erhaltenen Texte stammen vom vorhandenen Gateway-Modell `inception/mercury-2.5`. Rohdaten enthalten Herkunft, Generierungs-IDs, Modellrequests, verworfene Kandidaten und Prüferantworten. Schlüssel, signierte Sitzungen und Authentifizierungslinks sind ausgeschlossen. Testfixtures werden nicht als Live-Erfolge gezählt.
+## Nachgewiesene Fehlerursachen
 
-Im letzten Pilot, Quelle `393db0b`:
+**1. Gute Gesprächsinhalte werden mit unzulässigen Aktionen verworfen.** Im Kind-Fall erzeugt das Modell tatsächlich „Holen Sie das Kind bitte sofort aus dem Zimmer“. Es hängt jedoch eine in diesem Gefahrenzustand verbotene Entwurfsaktion an. Die Anwendung verwirft deshalb den gesamten Kandidaten. Nach dem konkreten Reparaturhinweis wiederholt das Modell die Entwurfsaktion; die API endet mit 503. Ein allgemeiner Anwendungshinweis bleibt vorhanden, die kontextbezogene Kind-Antwort erreicht den Kunden nicht. Das ist ein beobachtetes Zusammenspiel von Modellvertrag und Anwendungslogik, kein Beweis fehlenden Kind-Verständnisses.
 
-> Kunde: Eine Lampe im Arbeitszimmer funktioniert nicht.
->
-> Echte Modellantwort: Grüezi. Das ist ärgerlich. Wir können einen Reparaturantrag für die Lampe im Arbeitszimmer vorbereiten. Wollen Sie das tun?
+**2. Fehlgeschlagene Eingaben fehlen beim Fortsetzen im Serververlauf.** Der Browser behält die Nachricht sichtbar beziehungsweise als ausstehenden Versuch. Der Server übernimmt aber ausschliesslich erfolgreich akzeptierte Runden in seine signierte Historie. Wenn der Kunde nach einer Fehlrunde mit der nächsten Nachricht fortfährt, erhält das Modell den ursprünglichen Text nicht erneut. Belegt unter anderem bei Heizung, Leerstand, Rollladen und Pfütze: anschliessende Fragen wiederholen bereits genannte Angaben. Zuvor bestätigte Fakten werden dabei nicht pauschal gelöscht; es fehlen die neuen, fehlgeschlagenen Eingaben.
 
-Die gemeinsame Entscheidung wurde nach der semantischen Prüfung akzeptiert. Im resultierenden Zustand stehen `equipment=light`, `category=electricity`, `location=Arbeitszimmer`, `count=1`, unbekannter/nicht genannter Beginn und `preparation.status=not_prepared`. Der Modellkandidat selbst hatte noch `category=appliances` und `equipment=Lampe` vorgeschlagen; die vorhandene zentrale Normalisierung führte zur korrekten kanonischen Zuordnung. Die sichtbare Antwort blieb unverändert der Modelltext. Es wurde kein Entwurf gespeichert und kein Portalvorgang behauptet.
+**3. Der Ausgabe- und Fragenvertrag ist fehleranfällig.** Das Modell liefert nach Reparaturen unter anderem ein Schemaobjekt statt eines Datenobjekts, `activeIssueRef:null` statt des erlaubten Weglassens oder ein falsches Prüferformat. Auch erneute Vorbereitungsangebote nach einem früheren Angebot lösen die Abweisung einer ganzen Runde aus. Unbekannte Werte dürfen weiterhin nicht erfunden werden; harmlose optionale Leerwerte und tatsächlich unzulässige Aktionen brauchen jedoch eine präzise getrennte Behandlung.
 
-Die Antwort benötigte 19,102 Sekunden Testtreiber-Gesamtzeit für Entscheidung und Prüfung. Tatsächliche Kosten beider Generierungen: 0,00074017 USD. Der Prüfer lieferte gültiges `{"violations":[]}`; der Gateway-Abschlussgrund war allerdings `length`. Auch deshalb ist seine Zuverlässigkeit mit diesem einzelnen Fall nicht nachgewiesen.
+**4. Die semantische Prüfung ist selbst unzuverlässig.** Acht feste Gegenproben mit echten früheren Modelltexten: 4/8 korrekt behandelt. Drei liefern kein gültiges Prüferobjekt. Eine erlaubte Aufforderung, MORADA zu kontaktieren, wird fälschlich als nicht verfügbare spätere Kontaktaufnahme abgewiesen. Hier verwechselt der Prüfer eine Handlung des Kunden mit einer von MORA ausgelösten Rückmeldung. Diese kleine gezielte Stichprobe ist keine allgemeine Genauigkeitsquote, widerlegt aber eine behauptete Prüfergarantie. Die ungültigen Prüfausgaben enden am Tokenlimit; hohes Reasoning beansprucht einen grossen Teil des Ausgabebudgets.
 
-> Kunde: Nur eine, seit gestern.
->
-> Ergebnis: Modell-Timeout, HTTP 503 / `MODEL_UNAVAILABLE`, keine empfangene Modellantwort, 55,983 Sekunden Testtreiber-Gesamtzeit.
+Auch eine nicht ausreichend belegte Aussage passiert den Prüfer: In 02/2 sagt C „Gut zu wissen, dass keine akute Gefahr besteht.“ Der Kunde hatte nur Rauch, Funken und Brandgeruch verneint. Das ist eine zu weitgehende Entwarnung. Der Prüfer liefert dort eine leere Verstossliste. Korrekte Ablehnungen einzelner falscher Versand-/Kontaktzusagen belegen deshalb keine durchgehende semantische Sicherheit.
 
-Der vorherige Zustand wurde nicht durch erfundene Angaben ersetzt. Die geplante dritte Raumkorrektur wurde nicht ausgeführt. Es liegt somit **kein vollständiges erfolgreiches mehrteiliges C-Gespräch** vor.
+**5. Einzelne technische Fehler sind nicht eindeutig dem Modell zuzuordnen.** Zusätzliche beobachtende Guthaben-/Metadatenabfragen können vor einem weiteren Modelltransport scheitern. Solche HTTP-500-Fälle und ein zusätzlicher Guard-Stopp bleiben erhalten. Vor der Fortsetzung nach diesem Stopp wurde das vorhandene Gratisguthaben erneut erfolgreich gelesen; weder Grenze noch Einstellungen wurden gelockert. Die genaue fehlschlagende Teilanfrage ist nicht in jedem Fall beobachtet. Diese Fälle werden als Einschränkung der Messinfrastruktur gekennzeichnet.
 
-Zusätzlich dokumentiert: der SDK-Vorpilot ohne Modelltransport; ein vorheriger Transport-Timeout; echte, aber wegen ungültiger Referenz abgewiesene Modellkandidaten vor der Schemaänderung; zwei einzelne diagnostische A/B-Aufrufe gegen die unveränderte Phase-1-Architektur. A antwortete dort; Bs zusätzliche Formulierungsstufe lief ebenfalls ins Zeitlimit. Das belegt beobachtete Ausreisser auch im unveränderten Basispfad, aber keinen allgemeinen Providerausfall und keinen kontrollierten neuen A/B-Vergleich.
+Weitere Quellbefunde: Der Frontend-Fehlerpfad kann selbst einen Vorbereitungsbutton erzeugen, obwohl die gemeinsame Backend-Policy ihn im aktuellen Zustand ablehnt. Das ist ein prüfbarer Quellpfad, keine behauptete ausgeführte Portalübergabe dieses Tests. Ausserdem kann die Normalisierung von `Lampe` zu `light` intern als `corrected` erscheinen, obwohl der Kunde nichts korrigiert hat; semantische Kundenkorrektur und Kanonisierung sollten dort getrennt werden.
 
-## Offener Vergleich und Qualitätsbewertung
+## Antwortgeschwindigkeit und Streaming
 
-Der unveränderte Korpus mit 20 Gesprächen und 52 Kundennachrichten sowie acht feste semantische Gegenproben ist vorbereitet. **Der Hauptlauf wurde nicht begonnen.** Die frühere vollständige Phase-1-Auswertung bleibt eine historische A/B-Basis, kein neuer C-Nachweis.
+| Ebene | Was tatsächlich gemessen wurde | Grenze |
+| --- | --- | --- |
+| Gateway | Beobachteter HTTP-Aufruf bis zu den Antwortheaders je Modelltransport | Enthält Gateway, Provider/Modell und Netzwerk; reine Gateway-Innenzeit nicht getrennt messbar |
+| Modell-/Generierungszeit | Tatsächlich gelieferte Generation-Lookup-Felder `generationTime` und `latency` je Generierungs-ID | Berichtete Servicezeiten, kein direktes GPU-Profil |
+| Backend | Gesamte Handlerzeit; zusätzliche Guthabenabfragen separat; Restzeit ausserhalb vollständig protokollierter SDK-Stufen | Start vor dem Handler, Coldstarts, Netzwerk und Auth-Vorlauf bleiben im unaufgelösten Anteil |
+| Frontend | Neue lokale Messpunkte für Requeststart, Headers, JSON-Bereitschaft, Antwort-DOM und Abschluss der lokalen UI | Keine reale Browsermessung freigegeben; keine erfundenen Renderzeiten |
+| Erste sichtbare Antwort | Bestehender Chat rendert den Antworttext erst nach vollständigem JSON und Validierung | Ladehinweis ist keine inhaltliche Antwort; tatsächliche Bildschirmzeit offen |
+| Vollständige sichtbare Antwort | Kein Textstreaming im Kundenchat; vollständiger Text wird gemeinsam eingesetzt | DOM-/Frame-Messpunkte sind eine Näherung, keine Pixel-Paint-Garantie |
 
-| Kriterium | Belegter C-Stand |
-| --- | --- |
-| Natürlichkeit | Nur ein akzeptierter Text; keine belastbare Gesprächsnote |
-| Gesprächsverständnis | Lampe und Raum im ersten Pilot korrekt im normalisierten Zustand |
-| Kontexttreue | Automatisiert geprüft; vollständige Live-Folge fehlt |
-| Sinnvolle Rückfragen | Kein vollständiger Live-Vergleich |
-| Wiederholungen | Aktionslogik automatisiert geprüft; Gesprächsverhalten nicht vollständig live geprüft |
-| Fachliche Richtigkeit | Keine Freigabe anhand eines Lampenfalls |
-| Reaktionsgeschwindigkeit | Ein akzeptierter Aufruf: 19,102 s; ein Timeout: 55,983 s; keine repräsentative Verteilung |
-| Kosten pro Gespräch | Nicht bestimmbar, weil kein C-Gespräch vollständig ist |
+Der C-HTTP-Testtreiber benötigt im Median 19,26 s bis zum vollständigen Ergebnis. Auf dem Server sind es inklusive Zusatzbeobachtung 13,79 s, ohne deren Guthabenabfragen 13,31 s; das 95. Perzentil der bereinigten Serverzeit liegt bei 23,62 s. Der zusätzliche Vorlauf des Cloud-HTTP-Treibers wird ausdrücklich nicht als Frontend-Verarbeitung oder Browserwartezeit etikettiert. Gratislimit-Pausen zwischen Anfragen zählen nicht zu diesen Dauern.
 
-Nach dem Nutzerauftrag „beende“ blockierte die automatische Freigabeprüfung die Fortsetzung des Live-Piloten wegen möglicher Kosten und externer Datenübertragung. Es folgten keine weiteren Modelltests. Eine Wiederaufnahme erfordert eine neue Freigabe. Diese Grenze wurde nicht umgangen.
+Die beiden ausdrücklich gewünschten einfachen Nachrichten:
 
-## Regressionen, Kosten und Isolation
+| Nachricht | Modelltransporte | Summe Gateway-HTTP bis Headers | Summe berichteter Generierungszeiten | Server ohne Zusatz-Guthabenabfrage | Vollständiger HTTP-Testaufruf |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| lampe kaputt | 3 | 13,42 s | 13,36 s | 13,49 s | 18,91 s |
+| wohnzimmer | 2 | 9,94 s | 9,88 s | 9,96 s | 15,18 s |
 
-Der abschliessende lokale Lauf umfasst **298 bestandene Tests, null Fehler, null übersprungene Tests**. `npm run typecheck` und `npm run build` bestehen; der Build prüft 88 Dateien. Nachweis: [Regressionszusammenfassung](evidence/quality-phase2-regression.txt). Die neuen Tests decken Korrekturen, unbekannte/unsichere Angaben, mehrere Anliegen, idempotente Schreibaufträge, wiederholte Klicks, falsche/veraltete Belege, Aktualisierung derselben ID, Speicherfehler, beschädigte Rücklesewerte, verlorene Bestätigungen und unmittelbare Sicherheitshinweise ab. SDK-Tests prüfen den tatsächlichen installierten SDK-Aufrufvertrag einschliesslich begrenzter Reparatur; ihre Transportantworten sind Fixtures.
+Diese Spannen überlappen sich und dürfen nicht addiert werden. Bei 49 Runden sind alle SDK-Stufen zeitlich protokolliert; der Rest innerhalb des Handlers ausserhalb dieser Stufen beträgt im Median 4,0 ms. Das ist keine Messung des Coldstarts vor Handlerbeginn. Die langen Antwortzeiten entstehen in diesen beobachteten Runden vor allem während der SDK-/Gateway-/Modellstufen. Insgesamt wurden für C 244916 Reasoningtokens und 12722 vom Provider als Text klassifizierte Ausgabetokens gemeldet, einschliesslich Prüfertexten und abgewiesenen Kandidaten. Das sind nicht ausschliesslich die angezeigten Kundensätze. Hohes Reasoning ist auch bei einfachen Nachträgen aktiv. Ein niedrigerer Wert ist als kontrollierte Folgevariante zu prüfen.
 
-Die neue Preview ist gebaut. Ein Browseraufruf erreichte den bestehenden Vercel-Anmeldeschutz. **Eine vollständige echte Browserkette Modellgespräch → Speicherklick → Reload → Aktualisierung wurde nicht ausgeführt.** Die automatisierte IndexedDB-/Oberflächenmodulprüfung ist ausdrücklich kein Ersatz für diesen Live-Nachweis.
+Das vorhandene C-API-Feld `timingMs.model` bezeichnet bei Modellrunden bislang die gesamte Handlerzeit. Es ist keine saubere reine Modelllatenz und wurde hier nicht dafür verwendet. Die vollständige Trennung der beobachtbaren Spannen steht im [Latenznachweis](evidence/quality-phase2-latency-analysis.json).
 
-Sechs empfangene Generierungs-IDs aus allen technischen Piloten und diagnostischen A/B-Aufrufen wurden rein lesend abgerechnet: **0,00201942 USD**. Die gelesene Kontobilanz stieg von 0,30594161 auf 0,30796103 USD Verbrauch; verbleibendes vorhandenes Gratisguthaben: **4,69203897 USD**. Das entspricht derselben Differenz. Vier weitere Transportversuche haben keine empfangene Generierungs-ID; ihr Ausgang bleibt unbekannt. Zuletzt war keine zusätzliche Belastung für diese Versuche erkennbar, spätere Buchungen werden damit nicht ausgeschlossen. Es wurden keine Schlüssel ergänzt und keine Zahlungs-, Auflade- oder Tarifeinstellungen geändert. Der definierte Rahmen von 0,50 USD wurde nicht ausgeschöpft.
+Vier isolierte echte Probeaufrufe vergleichen gepufferte und gestreamte Ausgabe mit demselben kurzen A-Prompt, `reasoning=high` und denselben beiden Kundennachrichten. In den zwei gestreamten Antworten erscheint der erste Text serverseitig erst ungefähr 3–6 ms vor Ende der Generierung, jeweils in zwei Blöcken. **Ein deutlich früherer Textbeginn ist in diesen beiden Proben nicht nachgewiesen.** Die Stichprobe erlaubt keine allgemeine Aussage, dass Streaming grundsätzlich nichts bringt; verschiedene echte Antworten und unterschiedlicher Reasoningaufwand verhindern einen kausalen Vergleich ihrer Gesamtdauern.
 
-`main` bleibt `0b86dfc3344df62d3de02d8297959a495cc822d3`; `alex-portal` bleibt `15bfa257ddbe312f7f4658b342ec4703b869b90e`. Die bisherige Kunden-Preview `dpl_7rh6XJY1DW8LUXC2eKboKtAtmLf4` ist weiter `READY` mit derselben Quelle `6ef24cd`. Kein Merge, keine Änderung an Alexanders Portal, keine Produktionsveröffentlichung.
+Der erste SSE-Clientparser verarbeitete Ereignistrenner falsch. Seine First-Text-/Chunk-Zähler sind deshalb explizit ungültig; unabhängige Serverzeiten, SDK-Metadaten, vollständige Modelltexte, IDs und Gesamtdauern bleiben erhalten. Der Treiber wurde korrigiert, ohne neue schönere Antworten zu erzeugen. Ungeprüfte C-Kandidaten vor Ende der Wahrheitsprüfung an Kunden zu streamen würde zudem die bisherige Validierungsgrenze verändern. Im Kundenchat wurde deshalb kein Streaming-Umbau durchgeführt.
 
-## Empfehlung und spätere HTML-Schnittstelle
+## Begrüssung und neue Preview
 
-C ist eine reviewbare Testversion, keine freigegebene Produktionslösung. Als nächster fachlicher Entscheidungsnachweis fehlen die unveränderten 20 Gespräche, die acht Gegenproben und die echte Browser-Speicherkette. Die bisherigen Ergebnisse reichen weder für „Mercury genügt“ noch für „ein anderes Modell ist zwingend besser“. Der Timeout und der zusätzliche Prüfer bleiben konkrete Zuverlässigkeits-/Latenzrisiken. Keine weiteren Promptvarianten oder Modellwechsel ohne diesen klar abgegrenzten Nachweis.
+Die Begrüssung lautet jetzt:
 
-Für Alexanders HTML-Portal sind später ein authentifizierter Chatadapter und eine echte Speicher-/Aktualisierungsschnittstelle nötig: stabile Anliegen-ID, Idempotenzschlüssel, Quellrevision/-hash, gespeicherte Version, Zurücklesen der tatsächlichen Felder und vertrauenswürdiger serverseitiger Speicherbeleg. Wirkliches Einreichen braucht einen getrennten bestätigten Vorgang mit `requestId` und Zustellbeleg. Die genaue technische Spezifikation steht in [MORA_SIMPLE_INTEGRATION.md](MORA_SIMPLE_INTEGRATION.md).
+> Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?
 
-## Nachweise und Reproduktion
+Sie ist rollenunabhängig und per tatsächlich ausgelieferter HTTP-Seite geprüft. Eine echte nicht generierende Kontrollaktion antwortet erfolgreich mit `simple_v1` und null Modellaufrufen. Keine eigenen Kundenrollen, Berechtigungsmodelle oder Portalansichten wurden eingeführt. Die Begrüssung allein verändert nicht die später vom Modell erzeugten Dankesformulierungen.
 
-- [Vorab festgelegter Prüfplan](../scripts/quality-phase2/PROTOCOL.md).
-- [Letzter echter Pilot](evidence/quality-phase2-pilot.json); frühere technische Fehlläufe stehen separat unter `quality-phase2-pilot-*.json`.
-- [Teilstand und vollständige Kennzeichnung des fehlenden Hauptlaufs](evidence/quality-phase2-partial-measurements.json), offline reproduzierbar mit `python scripts/quality-phase2/analyze.py --partial`.
-- Reine Kostenabfragen: `quality-phase2-pilot-cost-audit.json`, `quality-phase2-reference-cost-audit.json`, `quality-phase2-connectivity-cost-audit.json` im Nachweisordner.
-- [Isolations-/Deploymentnachweis](evidence/quality-phase2-isolation.json).
+[Neue MORA-C-Preview mit neutraler Begrüssung und lokalen Messpunkten](https://morada-mora-edsq9k8rb-dianaporschke-1255s-projects.vercel.app/?mora=c) — Vercel `READY`, reine Preview, keine Aliase, Produktquelle `58f569d`.
 
-Der letzte Commit enthält Abschlussdokumentation und Nachweise zusätzlich zur unveränderten Produktquelle. Keine nicht durchgeführten Tests werden als bestanden ausgewiesen.
+Die automatische Freigabeprüfung blockierte den Browserzugriff, weil die geschützte Preview zur privaten Vercel-Kontooberfläche weiterleitet. Diese Grenze wurde nicht umgangen. Die sicherere HTTP-Quell-/Kontrollprüfung ist kein Browser-Paint- oder Speicher-Ende-zu-Ende-Nachweis. Für diese noch offenen Browsermessungen ist eine gesonderte Freigabe des betreffenden Vercel-Zugriffs nötig.
+
+## Alle 20 C-Fälle
+
+Kosten in USD einschliesslich abgewiesener Generierungen. Dauer: Median der Serverrunden ohne zusätzliche Mess-Guthabenabfrage. Eine vollständig abgearbeitete Testfolge bedeutet nicht vollständig erfolgreiche Antworten.
+
+| Fall | Akzeptierte echte Modellantworten | Median | Tatsächliche Fallkosten |
+| --- | ---: | ---: | ---: |
+| 01 Lampe, kurze Antworten | 2/3 | 13,49 s | 0,00258710 |
+| 02 Steckdose | 2/3 | 12,21 s | 0,00255431 |
+| 03 Unbekannte Angaben | 2/3 | 11,46 s | 0,00236580 |
+| 04 Raumkorrektur | 2/3 | 18,65 s | 0,00270711 |
+| 05 Themenwechsel | 2/3 | 12,28 s | 0,00248756 |
+| 06 Mehrere Anliegen | 3/3 | 9,75 s | 0,00271428 |
+| 07 Allgemeine Immobilienfrage | 2/2 | 7,63 s | 0,00114278 |
+| 08 Eigentümer, Leerstand | 1/2 | 9,60 s | 0,00124090 |
+| 09 Unklare Formulierung | 2/3 | 15,26 s | 0,00235440 |
+| 10 Akute elektrische Gefahr | 2/3 | 21,08 s | 0,00302939 |
+| 11 Negation und spätere Gefahrenkorrektur | 1/3 | 14,42 s | 0,00294085 |
+| 12 Wasseraustritt, unbekannte Ursache | 1/3 | 13,01 s | 0,00293490 |
+| 13 Schimmel | 2/2 | 17,48 s | 0,00227454 |
+| 14 Lärm | 2/2 | 8,24 s | 0,00120206 |
+| 15 Schlüssel | 1/2 | 13,45 s | 0,00175021 |
+| 16 Tippfehler und Nachtrag | 3/3 | 16,22 s | 0,00292761 |
+| 17 Nicht verfügbare Übermittlung | 1/2 | 20,00 s | 0,00204672 |
+| 18 Eigentümerfrage zu persönlichen Unterlagen | 2/2 | 15,02 s | 0,00172841 |
+| 19 Widerspruch und Rücknahme | 2/3 | 18,57 s | 0,00370797 |
+| 20 Rechtliche und fachliche Grenze | 1/2 | 13,50 s | 0,00185412 |
+
+**01 · Lampe, kurze Antworten:** Nützliche Raumfrage, danach förmlicher Dank und Erfassungsbericht. In Runde 3 wird ein erneutes Entwurfsangebot abgewiesen; die reparierte Antwort fragt nach weiteren Mängeln trotz sonst alles normal. Die ganze Runde scheitert, die ausdrücklich genannte Anzahl erreicht den bestätigten Zustand nicht.
+
+**02 · Steckdose:** Steckdose, Küche und Beginn bleiben erkannt. Unnötiger Erfassungsbericht und Formularangebot. Kritisch: Die akzeptierte Entwarnung keine akute Gefahr besteht geht über die gemeldete Abwesenheit von Rauch, Funken und Brandgeruch hinaus; eine gesicherte Gefahrlosigkeit ist nicht belegt. Runde 3 scheitert mit HTTP 500 ohne beobachteten fehlgeschlagenen Modelltransport; diese technische Zuordnung bleibt offen und wird nicht als bewiesener Modellfehler ausgegeben.
+
+**03 · Unbekannte Angaben:** Die erste Heizungsrunde wird verworfen. Die Folgeprompts enthalten die ursprüngliche Heizungsnachricht nicht; MORA fragt erneut, was defekt sei. Dies belegt die Lücke zwischen sichtbarem Kundenchat und ausschliesslich erfolgreich bestätigtem Serververlauf, nicht fehlende Modellgedächtnisfähigkeit bei vollständig vorhandenem Kontext.
+
+**04 · Raumkorrektur:** Wohnzimmer wird korrekt durch Schlafzimmer ersetzt, die Lampe bleibt erhalten. Die dritte Runde scheitert an erneut unzulässigem Entwurfsangebot und anschliessender Ausgabe eines JSON-Schemaobjekts statt des erwarteten Datenobjekts.
+
+**05 · Themenwechsel:** Die allgemeine Nebenkostenfrage wird kurz beantwortet, der Wasserhahn bleibt als eigenes Anliegen vorhanden. Akonto wird zu eng als Abrechnung nach Verbrauch beschrieben; entscheidend sind tatsächliche vereinbarte Nebenkosten. Die Rückkehr zum tropfenden Hahn scheitert, neue Einzelheiten werden nicht bestätigt übernommen.
+
+**06 · Mehrere Anliegen:** Zwei getrennte Anliegen mit richtigen Räumen, Anzahl der Heizkörper und unterschiedlichen Beginnangaben bleiben erhalten. Das sind positive Verständnis- und Zustandsbefunde. Die Sprache bleibt formal. Das erste Angebot spricht von einem lokalen Entwurf aus beiden Mängeln, während die konkrete Aktion am aktiven Anliegen hängt; es wurde kein Speicherklick ausgeführt und damit keine tatsächlich falsche Zusammenlegung behauptet.
+
+**07 · Allgemeine Immobilienfrage:** Beide Antworten sind direkt, verständlich und zum Protokoll beziehungsweise dokumentierten Dissens passend. Kein Schadensformular wird erzwungen. Keine beobachtete individuelle Rechtsentscheidung oder ausgeführte Portalaktion.
+
+**08 · Eigentümer, Leerstand:** Die erste Eigentümerfrage wird wegen unzulässiger Vorbereitung und danach activeIssueRef:null verworfen. Der Reparaturkandidat enthält grundsätzlich passende Vermietungsvorbereitung, aber auch eine unbelegte Vorlagen-Verfügbarkeit. Ohne ursprüngliche Kundennachricht im Folgekontext verengt die zweite Antwort das Ziel auf Defekte; das Informationsziel Leerstand/Vermietung wird verfehlt.
+
+**09 · Unklare Formulierung:** Die erste Rückfrage klärt das unbekannte Objekt grundsätzlich sinnvoll, enthält aber die unnatürliche Formulierung weiss ich gerne. Die Rollladenrunde endet mit einem nicht abschliessend zugeordneten HTTP-500-Fehler. Danach fragt MORA wieder nach dem Gerätenamen, obwohl der Kunde ihn schon genannt hat.
+
+**10 · Akute elektrische Gefahr:** Die ersten Antworten lehnen eine erneute Benutzung der Steckdose ab und priorisieren Abstand. In der Kind-Runde versteht das Modell den neuen Hinweis und formuliert tatsächlich den Schutz des Kindes; beide Kandidaten enthalten jedoch eine in diesem Zustand unzulässige Entwurfsaktion. Die Anwendung verwirft den ganzen Beitrag. Der generische Anwendungshinweis bleibt erhalten, eine kontextbezogene akzeptierte Kind-Antwort fehlt.
+
+**11 · Negation und spätere Gefahrenkorrektur:** Die ersten beiden Runden scheitern. In Runde 1 zeigt der Prüfer ein falsches Ausgabeformat, danach greift die zusätzliche Guthabenbeobachtung ein. Eine frische lesende Prüfung bestätigt unveränderte Gratisfinanzierung und ausreichenden Rahmen. Die fehlgeschlagenen Runden werden nicht wiederholt. Die dritte Antwort fragt ohne deren Rohtext erneut nach Gerät/Raum; die ursprünglich genannte Lampe im Büro ist im bestätigten Zustand nicht vorhanden.
+
+**12 · Wasseraustritt, unbekannte Ursache:** Die ursprüngliche Pfütze unter dem Lavabo im Bad wird nicht als erfolgreiche Runde übernommen. Die zweite Antwort fragt daher erneut nach dem Ort. Auch die Klarstellung zum nicht festgestellten Rohrdefekt scheitert. Es gibt keinen belastbaren vollständigen Live-Nachweis für korrekte Ursachenabgrenzung in diesem C-Fall.
+
+**13 · Schimmel:** Die Antworten vermeiden eine sichere Schimmeldiagnose und automatische Schuldzuweisung. Der Hinweis auf mögliche bauliche Ursachen ist angemessen. Das Gespräch bleibt beantwortet, die zweite kurze Frage benötigt jedoch vier Modellgenerierungen; das ist ein positiver Inhaltsbefund bei deutlicher zusätzlicher Latenz.
+
+**14 · Lärm:** Das Ziel eines ruhigen Nachbargesprächs wird respektiert. Die erste Antwort bietet trotzdem zusätzlich einen Nachrichtenentwurf an. Die zweite bleibt kurz und passend; keine tatsächliche Eskalation wird behauptet. Dass ein Kontaktaufruf hier akzeptiert wird, ist mit dem Fehlalarm der separaten V07-Gegenprobe zu vergleichen, nicht als stabile Prüfergarantie zu verstehen.
+
+**15 · Schlüssel:** Die erste Antwort schlägt eine Meldung vor und bietet wieder einen Entwurf an. In der zweiten Runde erzeugt das Modell eine grundsätzlich ehrliche Ablehnung der nicht verfügbaren Schlüsseldienst-Bestellung. Eine ungültige Prüferausgabe und danach erneute Entwurfsaktion verhindern aber eine akzeptierte Antwort. Keine Bestellung wurde ausgeführt.
+
+**16 · Tippfehler und Nachtrag:** Tippfehler und Umgangssprache werden als Lampe im Wohnzimmer verstanden. Deckenlampe, Beginn und Erreichbarkeit werden ergänzt, ohne einen tatsächlichen Rückruf zu versprechen. Der Antwortstil bleibt förmlich und wiederholend; die beiden Folgeantworten benötigen jeweils drei Generierungen.
+
+**17 · Nicht verfügbare Übermittlung:** Die erste Antwort erklärt zutreffend, dass kein direkter Versand verfügbar ist, und bietet einen lokalen Entwurf an. Auf die klare Nachfrage, ob schon gesendet wurde, folgt jedoch nach vier Generierungen ein technischer Fehler. Keine erfolgreiche Übermittlung wurde ausgeführt oder durch einen Backendbeleg bestätigt.
+
+**18 · Eigentümerfrage zu persönlichen Unterlagen:** Kein Zugriff auf persönliche Finanzdaten und keine erfundenen Zahlen. Der grundsätzliche Zahlenbedarf wird genannt. Kapitalwert/Kaufpreis sowie Kosten werden knapp und ohne präzise Abgrenzung des Renditebegriffs aufgeführt; eine konkrete Rendite wird nicht berechnet. Die zweite Informationsantwort benötigt vier Generierungen.
+
+**19 · Widerspruch und Rücknahme:** Zwei Lampen, Wohnzimmer und Montag werden zunächst übernommen. Die ausdrückliche Unsicherheit in der zweiten Runde endet trotz vier Generierungen mit Fehler; es liegt deshalb keine erfolgreich übernommene Unsicherheitsänderung dieses Kundenschritts vor. Die letzte definitive Angabe wird als eine Lampe übernommen; Raum und Beginn bleiben erhalten. Dies heilt den fehlgeschlagenen Unsicherheitsschritt nicht.
+
+**20 · Rechtliche und fachliche Grenze:** Die erste Antwort gibt keine pauschale Erlaubnis zur vollständigen Mietzahlungsverweigerung, beantwortet die konkrete Frage aber nur ausweichend als Mietreduktion abhängig von Vertrag/Umständen und bietet wieder einen Entwurf an. Die Nachfrage nach vernünftigem praktischem Vorgehen scheitert. Die Unterscheidung zwischen eigenmächtigem Nichtzahlen und dem geregelten Verfahren einer Mietzinshinterlegung wird so nicht hilfreich vermittelt; der Massstab wurde anhand der Informationen der Zürcher Gerichte geprüft.
+
+## Mapping, Speicherumfang und technische Empfehlung
+
+Die rein lesende Projektion der tatsächlich akzeptierten C-Fakten durch `mapServiceDraft` stimmt für Einrichtung, Kategorie, Defekt, Anzahl, Bereich, Beginn, Umfang und weitere Felder überein. Sie bewahrt getrennte Anliegen-IDs und Unsicherheitsmetadaten. Das behebt keine vorgelagert verworfenen Kundeneingaben. Der Nachweis behauptet weder einen geschriebenen Entwurf noch eine Portalübernahme.
+
+Die App bleibt Dianas bisherige separate Test-App. Alexanders echtes responsives HTML-Portal und seine Integrationen wurden nicht bearbeitet und sind nicht angebunden. Eine lokale IndexedDB-Bestätigung bedeutet ausschliesslich Speicherung auf diesem Gerät und dieser Test-App-Origin. Sie ist weder eine Übernahme in Alexanders Portal noch eine Übermittlung an MORADA. Die spätere authentifizierte Speicher-/Übermittlungsschnittstelle ist in [MORA_SIMPLE_INTEGRATION.md](MORA_SIMPLE_INTEGRATION.md) spezifiziert.
+
+**Empfehlung zur Freigabe: zuerst eine begrenzte Korrektur der Eingabe- und Validierungsgrenzen, danach ein gezielter Konfigurations-/Modellvergleich.**
+
+1. Jede eingegangene Kundenäusserung in einem getrennten, signierten Rohtextjournal behalten, auch wenn Fakten/Antwort scheitern. Abgelehnte Fakten bleiben unbestätigt; das Modell erhält beim Fortsetzen trotzdem die ursprünglichen Kundenwörter. API und Frontend müssen diesen Fehlerstatus gemeinsam übernehmen, ohne Erfolg zu behaupten.
+2. Verfügbare Aktionen aus einer gemeinsamen Policy beziehen, einschliesslich Frontend-Fehlerpfad. Eine nicht ausgeführte unzulässige Aktion soll unabhängig behandelt werden können, wenn Antwort und Fakten sonst nachweislich gültig sind. Aussagen über Speicherung/Versand bleiben strikt an echte Belege gebunden. Das darf keine ungeprüfte Ausgabe oder zusätzliche starre Dialogvorlage einführen.
+3. Den Ausgabeauftrag vereinfachen, optionale Leerwerte semantisch eindeutig normalisieren und native Schemaunterstützung über den vorhandenen Gateway ausdrücklich verifizieren. Für den Prüfer Akteur und Richtung einer Aktion eindeutig benennen. Ein Kundenkontakt ist keine von MORA versprochene Rückmeldung. Ein ungültiges Prüferformat darf weiterhin nicht als bestandene Prüfung gelten.
+4. Im nächsten isolierten Test `reasoning=low` gegen die jetzige hohe Einstellung prüfen und ein verifiziert verfügbares weiteres Modell unter demselben Vertrag vergleichen. Der aktuelle Lauf belegt keinen Vorteil eines noch nicht getesteten Modells. Weniger Reasoning oder andere Modelle sind zu prüfende Hypothesen, keine versprochenen Qualitätsgewinne. Die belegte Rohtextlücke muss unabhängig von der Modellwahl geschlossen werden.
+5. Streaming erst nach einer validen Trennung zwischen freigabefähigem Text und bestätigten Effekten beurteilen. Vorher die noch fehlende reale Browsermessung mit den bereitgestellten Zeitmarken abschliessen. Die beobachteten 2–4 seriellen Aufrufe und Reparaturen sind der deutlichere aktuelle Ansatzpunkt.
+
+Dieser Folgeumbau ist in diesem Auftrag **nicht implementiert**. Geändert wurden die ausdrücklich gewünschte MORA-Begrüssung, lokale beobachtende Zeitmarken und isolierte Test-/Auswertungsskripte.
+
+## Kosten, Prüfungen und Grenzen
+
+Der C-Hauptlauf kostet für die beobachteten Generierungen 0,04655102 USD. Alle neuen eigenen empfangenen IDs aus Hauptlauf, acht Gegenproben und vier Streaming-Proben zusammen: **0,05026883 USD**. Die letzte gelesene Bilanz des Hauptlaufs weist 4,64007406 USD vorhandenes Restguthaben aus. Spätere oder fremde Kontonutzung ist mit der Summe eigener IDs nicht gleichzusetzen. Der unveränderte Höchstrahmen beträgt 0,50 USD seit dem dokumentierten früheren Startverbrauch; keine neue Zahlung, kein neuer Schlüssel und keine Tarif-/Aufladeänderung.
+
+298 automatisierte Tests bestehen, ebenso Typprüfung und Build. SDK-/IndexedDB-/Oberflächenmodultests verwenden gekennzeichnete Fixtures; sie sind keine echten Mercury-Gespräche. Der Liveplan ist komplett abgearbeitet, sein Qualitätsziel mit 52 akzeptierten Antworten jedoch verfehlt. Echte Browser-Paint-Zeiten und eine vollständige Browserkette bis zum gespeicherten/aktualisierten Entwurf bleiben offen. Ein serverseitiger Versand und Alexanders Portal sind nicht Bestandteil der Testversion.
+
+`main` bleibt `0b86dfc3344df62d3de02d8297959a495cc822d3`, `alex-portal` bleibt `15bfa257ddbe312f7f4658b342ec4703b869b90e`. Kein Merge und kein Produktionsdeployment. Die frühere Kunden-Preview bleibt unverändert.
+
+Quellen/Nachweise: [Rohdaten](evidence/quality-phase2-live.json), [vollständige tatsächliche C-Protokolle](MORA_PHASE2_TRANSCRIPTS.md), [Messwerte](evidence/quality-phase2-measurements.json), [Prüfergegenproben](evidence/quality-phase2-verification.json), [Streaming-Proben mit expliziter Messgrenze](evidence/quality-phase2-streaming-probe.json), [Mappingkontrolle](evidence/quality-phase2-mapping-inspection.json), [Qualitative Fallnotizen](evidence/quality-phase2-qualitative-review.json), [HTTP-Previewprüfung](evidence/quality-phase2-preview-check.json), [Prüfplan](../scripts/quality-phase2/PROTOCOL.md).
+
+Primärdokumentation: [AI SDK Text/Streaming](https://ai-sdk.dev/docs/ai-sdk-core/generating-text), [Vercel Generation Lookup](https://vercel.com/docs/ai-gateway/observability-and-spend/usage), [Inception Reasoning-Einstellungen](https://docs.inceptionlabs.ai/capabilities/reasoning-efforts). Die aktuelle [Inception-Modellübersicht](https://www.inceptionlabs.ai/models) kündigt für bestimmte bestehende Mercury-2.5-Zugänge Zugang bis 15. November 2026 an, mit gesonderten Enterprise-Regeln. Ein konkretes Ende für diesen Gateway-Zugang wurde nicht separat bestätigt; im Test war 2.5 weiterhin verfügbar. Langfristige Modellwahl braucht deshalb auch eine Verfügbarkeitsprüfung. Es wurde kein automatischer Modellwechsel vorgenommen.
+
+Die fachlichen Fallnotizen berücksichtigen unter anderem die offiziellen Informationen des [BAG zu Feuchtigkeit und Schimmel](https://www.bag.admin.ch/de/feuchtigkeitsprobleme-und-schimmel) und der [Zürcher Gerichte zur Mietzinshinterlegung](https://www.gerichte-zh.ch/de/themen/miete/rechte-und-pflichten/maengel-der-mietsache/hinterlegung). Dies sind Prüfmassstäbe für die synthetischen Fälle, keine individuelle Rechts- oder Finanzberatung.

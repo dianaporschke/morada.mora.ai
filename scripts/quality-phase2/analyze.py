@@ -20,8 +20,12 @@ for name in ['quality-phase2-live.json','quality-phase2-pilot.json','quality-pha
  if p.exists():
   d=json.loads(p.read_text());costs+=d.get('costs',[]);sources.append(d)
 for p in evidence.glob('quality-phase2-*cost-audit.json'):costs+=json.loads(p.read_text()).get('costs',[])
+stream_path=evidence/'quality-phase2-streaming-probe.json'
+stream=json.loads(stream_path.read_text()) if stream_path.exists() else {'rows':[],'audits':[]}
+for audit in stream.get('audits',[]):costs+=audit.get('costs',[])
 by_id={c['id']:c['info'] for c in costs if 'info' in c}
 ids={t['generationId'] for d in sources for r in d['rows'] for t in r['trace'] if t.get('generationId')}
+ids|={r['generationId'] for r in stream['rows'] if r.get('generationId')}
 assert all(v['model']=='inception/mercury-2.5' for v in by_id.values())
 
 def stat(values):
@@ -41,10 +45,16 @@ def stage(trace):
   return 'verification' if 'violations' in d else 'decision' if 'reply' in d else 'invalid_output'
  except Exception:return 'invalid_output'
 def summary(rows):
- texts=[reply(r) for r in rows];row_costs=[cost(r) for r in rows]
+ texts=[r['result']['reply'] for r in rows if r['applicationStatus']==200 and r['replyOrigin']['type']=='model_verbatim_field'];row_costs=[cost(r) for r in rows]
  return {'turns':len(rows),'applicationErrors':sum(r['applicationStatus']!=200 for r in rows),'repairedTurns':sum(bool(r['result'].get('repaired')) for r in rows),
+ 'acceptedModelReplies':sum(r['applicationStatus']==200 and r['replyOrigin']['type']=='model_verbatim_field' for r in rows),
+ 'errorReasons':dict(collections.Counter(r['result'].get('modelAvailability',{}).get('reason',r['result'].get('code','unknown')) for r in rows if r['applicationStatus']!=200)),
+ 'loggedCandidateRejections':sum(log.get('args',[None])[0]=='MORA simple candidate rejected' for r in rows for log in r.get('logs',[])),
+ 'observedBilledCostUsd':sum(by_id[t['generationId']]['totalCost'] for r in rows for t in r['trace'] if t.get('generationId') in by_id),
  'generations':sum(len(r['trace']) for r in rows),'generationCountPerTurn':dict(collections.Counter(len(r['trace']) for r in rows)),
+ 'sdkStageAttempts':sum(r['result'].get('modelCalls',0) for r in rows),
  'stages':dict(collections.Counter(stage(t) for r in rows for t in r['trace'])),
+ 'finishReasons':dict(collections.Counter((t.get('finishReason') or {}).get('unified','unreceived') for r in rows for t in r['trace'])),
  'replyOrigins':dict(collections.Counter(r['replyOrigin']['type'] for r in rows)),
  'totalGatewayCostUsd':sum(row_costs) if all(c is not None for c in row_costs) else None,'unpricedTurns':sum(c is None for c in row_costs),
  'latencyWallMs':stat([r['wallMs'] for r in rows]),'latencyServerMs':stat([r['elapsedMs'] for r in rows]),
@@ -64,14 +74,20 @@ measurements={'complete':data['complete'],'mainStarted':main_started,'sourceComm
  'manifestHash':data['manifestHash'],'promptHash':data['promptHash'],'verificationPromptHash':data['verificationPromptHash'],
  'baselineA':baseline['variants']['A'],'baselineB':baseline['variants']['B'],'C':summary(rows),
  'costCoverage':{'observedUniqueGenerationIds':len(ids),'resolvedUniqueGenerationIds':len(ids & by_id.keys()),'unresolvedGenerationIds':sorted(ids-by_id.keys()),
+ 'scope':'Main C run, semantic probes, streaming probes and preserved historical technical pilots/diagnostics; no duplicate IDs',
  'transportAttemptsWithoutReceivedGenerationId':sum(not t.get('generationId') for d in sources for r in d['rows'] for t in r['trace'])},
  'knownTaskGenerationCostUsd':sum(by_id[i]['totalCost'] for i in ids if i in by_id),'cases':[]}
 for c in cases:
  r=[x for x in rows if x['caseId']==c['id']];last=r[-1]['result'] if r else {}
- measurements['cases'].append({'id':c['id'],'topic':c['topic'],'C':summary(r),'finalIssues':last.get('issues',[]),'finalActions':last.get('actions',[])})
+ successful=next((x['result'] for x in reversed(r) if x['applicationStatus']==200),{})
+ measurements['cases'].append({'id':c['id'],'topic':c['topic'],'allFixedRoundsAttempted':len(r)==len(c['messages']),
+ 'fullyAnswered':len(r)==len(c['messages']) and all(x['applicationStatus']==200 and x['replyOrigin']['type']=='model_verbatim_field' for x in r),
+ 'C':summary(r),'finalIssues':successful.get('issues',[]),'finalActions':last.get('actions',[])})
+measurements['fullyAnsweredConversations']=sum(c['fullyAnswered'] for c in measurements['cases'])
 v=next((s for s in sources if s.get('suite')=='verification'),None)
+audit_expect={item['id']:item['expectedViolation'] for item in json.loads((root/'scripts/quality-phase2/audit-cases.json').read_text())}
 if v:measurements['verification']={'complete':v['complete'],'checks':len(v['rows']),'correct':sum(r['applicationStatus']==200 and bool(r['result']['verification']['violations'])==r['result']['expectedViolation'] for r in v['rows']),
- 'details':[{'id':r['caseId'],'expectedViolation':r['result'].get('expectedViolation'),'applicationStatus':r['applicationStatus'],'violations':r['result'].get('verification',{}).get('violations')} for r in v['rows']]}
+ 'details':[{'id':r['caseId'],'expectedViolation':audit_expect[r['caseId']],'applicationStatus':r['applicationStatus'],'violations':r['result'].get('verification',{}).get('violations')} for r in v['rows']]}
 if '--partial' in sys.argv:
  (evidence/'quality-phase2-partial-measurements.json').write_text(json.dumps(measurements,ensure_ascii=False,indent=2)+'\n')
  print(json.dumps({k:v for k,v in measurements.items() if k!='cases'},ensure_ascii=False,indent=2));raise SystemExit
@@ -79,7 +95,7 @@ assert data['complete'] and len(rows)==52 and not measurements['costCoverage']['
 assert all(r['replyOrigin']['type']=='model_verbatim_field' for r in rows if r['applicationStatus']==200 and r['result'].get('responseMode')=='model')
 assert v and v['complete'] and len(v['rows'])==8,'Verification probes incomplete'
 (evidence/'quality-phase2-measurements.json').write_text(json.dumps(measurements,ensure_ascii=False,indent=2)+'\n')
-lines=['# MORA C – vollständige echte Gesprächsprotokolle','',f"Quellcommit: `{data['sourceCommit']}`; Modell: `{data['model']}`. 20 vorab festgelegte Gespräche mit 52 Kundennachrichten. Kein Aktionsklick im Vergleich; lokale Speicherung wird separat geprüft. Alle erzeugten Kandidaten und Prüferantworten einschliesslich verworfener Ausgaben stehen in `evidence/quality-phase2-live.json`. Keine Mock-Antworten in diesem Korpus. Frühere A/B-Gespräche stehen in `MORA_PHASE1_TRANSCRIPTS.md`.",'']
+lines=['# MORA C – tatsächliche Protokolle aller festgelegten Kundenrunden','',f"Quellcommit: `{data['sourceCommit']}`; Modell: `{data['model']}`. 20 vorab festgelegte Fälle mit 52 Kundennachrichten. Der abgeschlossene Prüfplan bedeutet nicht, dass alle Runden eine erfolgreiche Modellantwort erhalten haben. Fehler bleiben unten sichtbar. Kein Aktionsklick im Vergleich. Alle erzeugten Kandidaten und Prüferantworten einschliesslich verworfener Ausgaben stehen in `evidence/quality-phase2-live.json`. Keine Mock-Antworten in diesem Korpus. Frühere A/B-Gespräche stehen in `MORA_PHASE1_TRANSCRIPTS.md`. Sicherheitshinweise sind von der API gelieferte Anwendungstexte; ihre sichtbare Browserdarstellung ist in diesem Lauf nicht beobachtet.",'']
 for c in cases:
  lines += [f"## {c['id']}: {c['topic']}",''];notices=set()
  for r in [x for x in rows if x['caseId']==c['id']]:

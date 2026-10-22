@@ -1,35 +1,27 @@
 {
-  "checkedAt": "2026-10-21T23:20:55.659Z",
-  "productSourceCommit": "393db0ba0fc4963a719a42dc171538ddf2784104",
+  "checkedAt": "2026-10-22T14:53:08.437Z",
   "branch": "codex/mora-ai-2.0",
+  "testedAiSourceCommit": "393db0ba0fc4963a719a42dc171538ddf2784104",
+  "previewSourceCommit": "58f569d4f57127efe220ce866965c06d63dec9e2",
   "protectedRefs": {
-    "main": {
-      "expected": "0b86dfc3344df62d3de02d8297959a495cc822d3",
-      "observed": "0b86dfc3344df62d3de02d8297959a495cc822d3",
-      "unchanged": true
-    },
-    "alex-portal": {
-      "expected": "15bfa257ddbe312f7f4658b342ec4703b869b90e",
-      "observed": "15bfa257ddbe312f7f4658b342ec4703b869b90e",
-      "unchanged": true
-    }
+    "main": "0b86dfc3344df62d3de02d8297959a495cc822d3",
+    "alex-portal": "15bfa257ddbe312f7f4658b342ec4703b869b90e"
   },
   "cleanPreview": {
-    "id": "dpl_FjcjyGZoRP8YYKsG8MZFLvyWsHmV",
-    "url": "https://morada-mora-ejxjtgk6z-dianaporschke-1255s-projects.vercel.app/?mora=c",
+    "id": "dpl_3GcUzCwJvgY9CKJfK1kqnxVwpJNj",
+    "url": "https://morada-mora-edsq9k8rb-dianaporschke-1255s-projects.vercel.app/?mora=c",
     "state": "READY",
     "target": null,
     "aliases": [],
-    "qualityHarnessIncluded": false,
-    "sourceCommit": "393db0ba0fc4963a719a42dc171538ddf2784104"
+    "diagnosticRouteIncluded": false
   },
-  "existingCustomerPreview": {
+  "previousCustomerPreview": {
     "id": "dpl_7rh6XJY1DW8LUXC2eKboKtAtmLf4",
     "state": "READY",
     "sourceCommit": "6ef24cda89f2d4d0cab0fdf9ba28234a387bc336",
-    "url": "https://morada-mora-hwg0nkuia-dianaporschke-1255s-projects.vercel.app/",
     "unchanged": true
   },
+  "projectSettingsUnchanged": true,
   "projectSettingsReadOnly": {
     "id": "prj_vI6F07O5rdsXOdFlinN4kHAR1Nvd",
     "name": "morada-mora-ai",
@@ -51,24 +43,57 @@
       "protectionMode": null
     }
   },
+  "mainEvaluation": {
+    "allFixedCasesAttempted": 20,
+    "customerRounds": 52,
+    "acceptedModelReplies": 36,
+    "failedRounds": 16,
+    "fullyAnsweredConversations": 6,
+    "semanticProbes": 8,
+    "streamingProbes": 4,
+    "model": "inception/mercury-2.5",
+    "promptsChangedDuringMain": false
+  },
+  "browser": {
+    "blockedByAutomaticOriginReview": true,
+    "blockedOrigin": "https://vercel.com",
+    "realBrowserPaintMeasured": false,
+    "realBrowserDraftPersistenceMeasured": false,
+    "httpSourceAndNonGenerativeControlChecked": true
+  },
+  "alexanderPortalConnected": false,
+  "portalAreasChanged": false,
+  "newRolesCreated": false,
   "productionDeploymentCreated": false,
   "mergePerformed": false,
-  "alexanderPortalConnected": false,
-  "browser": {
-    "scope": "load_only",
-    "observed": "Vercel Authentication login wall",
-    "modelConversationExecuted": false,
-    "storageClickExecuted": false
-  },
-  "liveStatus": {
-    "mainStarted": false,
-    "mainCustomerRounds": 0,
-    "expectedMainRounds": 52,
-    "finalPilotRows": 2,
-    "finalPilotAcceptedReplies": 1,
-    "finalPilotTimeouts": 1,
-    "verificationProbesExecuted": 0,
-    "expectedVerificationProbes": 8,
-    "continuation": "Blocked by automatic approval review after user requested closure; no bypass."
-  }
+  "newApiKeysCreated": false,
+  "paidSettingsChanged": false,
+  "actualDeliveryAvailable": false,
+  "unchangedAiAndMappingModules": [
+    {
+      "path": "api/chat-simple.js",
+      "sha256": "b522a1c06ba94aaf4fc3d50b66c189bf70bfb43c233e2261f358fb1f83e0b75e",
+      "matchesFrozenAiSource": true
+    },
+    {
+      "path": "lib/mora/simple/model.js",
+      "sha256": "9e3fe855a7063272cce284dc6a9249215a15db592579efce8bb42cf1fceeaa47",
+      "matchesFrozenAiSource": true
+    },
+    {
+      "path": "lib/mora/simple/service.js",
+      "sha256": "6df839967b9c3699661681f6379e430ba2583b0ab187fe30e63243ca766dd6ec",
+      "matchesFrozenAiSource": true
+    },
+    {
+      "path": "lib/mora/simple/state.js",
+      "sha256": "02be3a51594239966656bf305bb25bdd06b8bd0afd5817003eaf29aedd3a47ac",
+      "matchesFrozenAiSource": true
+    },
+    {
+      "path": "assets/mora-data.js",
+      "sha256": "f14c9655b8d24a48113c733150f86a0b467b107af947f4fcd01a0e4d094578d8",
+      "matchesFrozenAiSource": true
+    }
+  ]
 }
