@@ -8,7 +8,7 @@ import {portalCaseFields} from '../assets/mora-portal-map.js';
 import {hydrateSimple,projectDecision,commitDecision} from '../lib/mora/simple/state.js';
 import {createPortalChatHandler,controls} from '../api/portal-chat.js';
 import {createPortalService} from '../lib/mora/portal/service.js';
-import {checkFreeCredits} from '../lib/mora/portal/budget.js';
+import {checkFreeCredits,MODEL} from '../lib/mora/portal/budget.js';
 import {readSession} from '../lib/mora/session.js';
 
 const plan=(updates=[],more={})=>({reply:'Wo befindet sich die Lampe?',intent:'issue',updates,actions:[],...more});
@@ -58,7 +58,7 @@ test('pending unverified customer corrections block server-side save tickets',()
  const state=lamp();assert.ok(controls(state).save);state.portalPending=[{content:'Nein, doch anders.'}];assert.equal(controls(state).save,null);
 });
 test('general-message service boundary uses a test transport: one decision and lower reasoning',async()=>{
- let request,calls=0;const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async options=>{request=options;calls++;return {output:plan([],{reply:'Wie kann ich Ihnen helfen?',intent:'general',activeIssueRef:null}),usage:{},finalStep:{providerMetadata:{}}};}});
+ let request,calls=0;const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:MODEL,createModel:()=>({})}),guard:async()=>{},generate:async options=>{request=options;calls++;return {output:plan([],{reply:'Wie kann ich Ihnen helfen?',intent:'general',activeIssueRef:null}),usage:{},finalStep:{providerMetadata:{}}};}});
  const result=await service('Guten Tag',hydrateSimple(null),['support']);assert.equal(calls,1);assert.equal(request.reasoning,'low');assert.equal(result.modelCalls,1);assert.equal(result.reply,'Wie kann ich Ihnen helfen?');
 });
 test('failed customer input is signed and passed to next turn as raw evidence',async()=>{
@@ -160,7 +160,7 @@ test('native review keeps manual form edits and existing photos',async()=>{
  try{w.document.getElementById('moraFab').click();await w.MORAPortal.send('Lampe im Wohnzimmer');await prepare(w);w.document.querySelector('[name="description"]').value+='\nEigener Zusatz.';await saveForm(w);w.MORAPortal.open();await prepare(w,'Foto hinzufügen');assert.match(w.document.querySelector('[name="description"]').value,/Eigener Zusatz/);await saveForm(w);const rows=JSON.parse(w.localStorage.getItem('morada-portal-clean-20261011-v1')).cases;assert.equal(rows.length,1);assert.match(rows[0].description,/Eigener Zusatz/);}finally{w.close();}
 });
 test('empty unused action quote is absence, while empty fact evidence remains invalid',async()=>{
- let calls=0;const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async()=>{calls++;return {output:plan([],{reply:'Wie kann ich helfen?',intent:'general',requestQuote:''}),usage:{},finalStep:{providerMetadata:{}}};}});
+ let calls=0;const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:MODEL,createModel:()=>({})}),guard:async()=>{},generate:async()=>{calls++;return {output:plan([],{reply:'Wie kann ich helfen?',intent:'general',requestQuote:''}),usage:{},finalStep:{providerMetadata:{}}};}});
  const r=await service('Hallo',hydrateSimple(null),['cases']);assert.equal(calls,1);assert.equal(r.reply,'Wie kann ich helfen?');
 });
 test('a lost cancellation acknowledgment is reconciled before the next model turn',async()=>{
@@ -179,22 +179,28 @@ test('a model preparation announcement is displayed only after actual native for
 });
 test('semantic verification repairs unsupported submission and missing room before committing',async()=>{
  let calls=0;const outputs=[plan([{ref:'new1',quote:'Die Lampe im Wohnzimmer geht nicht.',equipment:'light',defect:'geht nicht'}],{reply:'Zwei Einträge sind vorbereitet. Sie können sie absenden.'}),{violations:[{kind:'unsupported_effect',quote:'Zwei Einträge sind vorbereitet. Sie können sie absenden.',reason:'Kein Formular geöffnet und Versand nicht verfügbar.'},{kind:'missing_fact',quote:'Wohnzimmer',reason:'Raum in location übernehmen.'}]},plan([{ref:'new1',quote:'Die Lampe im Wohnzimmer geht nicht.',equipment:'light',defect:'geht nicht',location:'Wohnzimmer'}],{reply:'Sie können die Angaben noch ergänzen.'}),{violations:[]}];
- const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async()=>({output:outputs[calls++],usage:{},finalStep:{providerMetadata:{}}})});
+ const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:MODEL,createModel:()=>({})}),guard:async()=>{},generate:async()=>({output:outputs[calls++],usage:{},finalStep:{providerMetadata:{}}})});
  const r=await service('Die Lampe im Wohnzimmer geht nicht.',hydrateSimple(null),['cases']);assert.equal(calls,4);assert.equal(r.repaired,true);assert.equal(r.state.issue.location,'Wohnzimmer');assert.equal(r.state.issues.length,1);assert.equal(r.reply,'Sie können die Angaben noch ergänzen.');assert.ok(!r.state.history.some(m=>m.content.includes('absenden')));
 });
 test('repeated semantic rejection never commits invented facts or an operational claim',async()=>{
  const prior=lamp(),snapshot=structuredClone(prior);let n=0;const bad=plan([{ref:'active',quote:'Bitte ergänzen.',location:'Erfundener Raum'}],{reply:'Das Anliegen ist eingereicht.'});
- const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async()=>({output:n++%2===0?bad:{violations:[{kind:'unsupported_fact',quote:'Erfundener Raum',reason:'Kein belegter Raum.'}]},usage:{},finalStep:{providerMetadata:{}}})});
+ const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:MODEL,createModel:()=>({})}),guard:async()=>{},generate:async()=>({output:n++%2===0?bad:{violations:[{kind:'unsupported_fact',quote:'Erfundener Raum',reason:'Kein belegter Raum.'}]},usage:{},finalStep:{providerMetadata:{}}})});
  await assert.rejects(()=>service('Bitte ergänzen.',prior,['cases']));assert.deepEqual(prior,snapshot);
 });
 test('invalid verifier format repairs verification without regenerating a valid conversation decision',async()=>{
  const p=plan([{ref:'new1',quote:'Das Spezialteil im Bad ist lose. Beginn unbekannt.',equipment:'Spezialteil',defect:'lose',location:'Bad',unknown:[{field:'since',quote:'Beginn unbekannt.'}]}],{reply:'Sie können das Anliegen vorbereiten.'});
  let calls=0;const outputs=[p,{type:'object',properties:{violations:{type:'array'}}},{violations:[]}];const instructions=[];
- const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async o=>{instructions.push(o.instructions);return {output:outputs[calls++],usage:{},finalStep:{providerMetadata:{}}};}});
+ const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:MODEL,createModel:()=>({})}),guard:async()=>{},generate:async o=>{instructions.push(o.instructions);return {output:outputs[calls++],usage:{},finalStep:{providerMetadata:{}}};}});
  const r=await service('Das Spezialteil im Bad ist lose. Beginn unbekannt.',hydrateSimple(null),['cases']);assert.equal(calls,3);assert.equal(r.repaired,true);assert.equal(instructions.filter(i=>i.startsWith('Sie sind MORA')).length,1);assert.equal(r.state.issue.location,'Bad');assert.equal(r.state.issue.fieldFacts.since.status,'unknown');
 });
 test('action intent uses the actual current request rather than a brittle copied quote',async()=>{
  let n=0;const seen=[];const outputs=[plan([],{reply:'Bitte prüfen Sie die Angaben.',requestedAction:'prepare',requestQuote:'Bitte bereiten Sie den Fall vor.'}),{violations:[]}];
- const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:'inception/mercury-2.5',createModel:()=>({})}),guard:async()=>{},generate:async o=>{seen.push(o);return {output:outputs[n++],usage:{},finalStep:{providerMetadata:{}}};}});
+ const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:MODEL,createModel:()=>({})}),guard:async()=>{},generate:async o=>{seen.push(o);return {output:outputs[n++],usage:{},finalStep:{providerMetadata:{}}};}});
  const r=await service('Bitte als Anliegen vorbereiten.',lamp(),['cases']);assert.equal(r.requestedAction,'prepare');assert.equal(n,2);assert.match(seen[1].messages[0].content,/Bitte als Anliegen vorbereiten/);assert.ok(!seen[1].messages[0].content.includes('Bitte bereiten Sie den Fall vor.'));
+});
+
+// A stale deployment default cannot undo the owner's portal-only model switch.
+test('portal model switch uses the same Gateway credentials and approved model',async()=>{
+ let selected;const service=createPortalService({env:{AI_GATEWAY_MODEL:'inception/mercury-2.5',MORA_AI_PROVIDER:'auto',AI_GATEWAY_API_KEY:'test-placeholder'},resolve:async env=>{selected=env;return {ready:true,provider:'gateway',model:env.AI_GATEWAY_MODEL,createModel:()=>({})};},guard:async()=>{},generate:async()=>({output:plan([],{intent:'general',reply:'Guten Tag.'}),usage:{},finalStep:{providerMetadata:{}}})});
+ await service('Hallo',hydrateSimple(null),[]);assert.equal(selected.AI_GATEWAY_MODEL,'anthropic/claude-sonnet-5.5');assert.equal(selected.MORA_AI_PROVIDER,'gateway');assert.equal(selected.AI_GATEWAY_API_KEY,'test-placeholder');
 });

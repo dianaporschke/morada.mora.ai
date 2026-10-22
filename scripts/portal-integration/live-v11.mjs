@@ -1,4 +1,4 @@
-/** Real Mercury/HTTPS responses + supplied native portal code and durable data.
+/** Real model/HTTPS responses + supplied native portal code and durable data.
  * JSDOM dialog/Web Locks/File APIs are shims, not rendered-device evidence. */
 import {spawn,execFileSync} from 'node:child_process';
 import {createInterface} from 'node:readline';
@@ -14,8 +14,8 @@ const responses=createInterface({input:child.stdout}),pending=[];responses.on('l
 const transport=body=>{const p=new Promise(r=>pending.push(r));child.stdin.write(JSON.stringify(body)+'\n');return p;};
 const delay=ms=>new Promise(r=>setTimeout(r,ms));let lastModelAt=0;
 const html=readFileSync('portal.html','utf8');
-const evidence={portalSha256:createHash('sha256').update(html).digest('hex'),model:'inception/mercury-2.5',scope:'Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.',url:cfg.url+'/portal.html',conversations:[]};
-const before=await transport(null);assert.equal(before.status,200);assert.equal(before.data.inferenceStarted,false);evidence.before=before.data;
+const evidence={portalSha256:createHash('sha256').update(html).digest('hex'),scope:'Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.',url:cfg.url+'/portal.html',conversations:[]};
+const before=await transport(null);assert.equal(before.status,200);assert.equal(before.data.inferenceStarted,false);evidence.before=before.data;evidence.model=before.data.model;if(cfg.expectedModel)assert.equal(evidence.model,cfg.expectedModel);
 const cases=[
  {id:'lamp',messages:['lampe kaputt','wohnzimmer','Bitte bereiten Sie das Anliegen jetzt vor.'],room:'Wohnzimmer',label:/Lampe \/ Leuchte/,correction:'Nein, ich meinte Schlafzimmer.',correctedRoom:'Schlafzimmer'},
  {id:'socket',messages:['Die Steckdose im Büro funktioniert nicht. Es gibt weder Funken noch Geruch oder Wärme.','Bitte das Anliegen vorbereiten.'],room:'Büro',label:/Steckdose/},
