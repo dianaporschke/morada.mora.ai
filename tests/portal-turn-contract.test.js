@@ -49,7 +49,9 @@ test('injected data in a reply-only repair is rejected without committing it',as
 test('missing facts still require a data repair, including the whole customer observation',async()=>{
  const s=state(),message='Seit gestern. Die andere Lampe funktioniert.',p={intent:'issue',reply:'Sie können die Angaben prüfen.',actions:[],updates:[{ref:'active',quote:'Seit gestern.',since:'gestern'}]};
  const fixed={...p,updates:[{ref:'active',quote:message,since:'gestern',details:'Die andere Lampe funktioniert.'}]};
- const r=await fixture([p,{violations:[{kind:'missing_fact',quote:'Die andere Lampe funktioniert.',reason:'Die ergänzende Beobachtung fehlt.'}]},fixed,{violations:[]}])(message,s,['cases']);
+ const requests=[];
+ const r=await fixture([p,{violations:[{kind:'missing_fact',quote:'Die andere Lampe funktioniert.',reason:'Die ergänzende Beobachtung fehlt.'}]},fixed,{violations:[]}],requests)(message,s,['cases']);
+ assert.equal(requests[0].reasoning,'low');assert.equal(requests[2].reasoning,'high');
  assert.equal(r.repairScope,'decision');assert.match(r.state.issue.details,/Sonst ist alles normal/);assert.match(r.state.issue.details,/andere Lampe funktioniert/);assert.equal(r.state.issue.since,'gestern');
 });
 
