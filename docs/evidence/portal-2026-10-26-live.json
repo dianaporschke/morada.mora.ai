@@ -1,0 +1,103 @@
+{
+  "portalSha256": "09a2a977582e7ca68369453bbe54770b8a937df0bedb66630ad16b71e6de37bb",
+  "scope": "Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.",
+  "url": "https://morada-mora-2e3144c37-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "conversations": [
+    {
+      "id": "lamp",
+      "transports": [
+        {
+          "request": {
+            "message": "lampe kaputt",
+            "messageId": "fcc8af58-b73d-4e3e-87eb-b2ebb0bbd559",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 503,
+          "data": {
+            "architecture": "portal_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "availability": {
+              "provider": "gateway",
+              "model": "google/gemini-3.8-flash",
+              "status": 403,
+              "reason": "no_providers_available"
+            },
+            "modelCalls": 1,
+            "generationIds": [],
+            "issue": null,
+            "issues": [],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 742
+            }
+          },
+          "httpMs": 6945.39
+        }
+      ],
+      "snapshots": [],
+      "success": false,
+      "failure": "Real model turn failed\n\n503 !== 200\n",
+      "messages": [
+        {
+          "role": "assistant",
+          "content": "Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?"
+        },
+        {
+          "role": "user",
+          "content": "lampe kaputt"
+        },
+        {
+          "role": "error",
+          "content": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten."
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "before": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.625845368,
+    "totalUsedUsd": 0.374154632,
+    "maxUsedUsd": 0.659925936,
+    "model": "google/gemini-3.8-flash",
+    "pricing": {
+      "input": 7.5e-7,
+      "output": 0.00000375
+    }
+  },
+  "model": "google/gemini-3.8-flash",
+  "after": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 4.625845368,
+    "totalUsedUsd": 0.374154632,
+    "maxUsedUsd": 0.659925936,
+    "model": "google/gemini-3.8-flash",
+    "pricing": {
+      "input": 7.5e-7,
+      "output": 0.00000375
+    }
+  },
+  "actualAccountDeltaUsd": 0
+}
