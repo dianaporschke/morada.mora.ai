@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import {hydrateSimple,projectDecision,commitDecision,contentHash} from '../lib/mora/simple/state.js';
 import {rememberPreparationOffer} from '../lib/mora/actions.js';
 import {portalActionState} from '../lib/mora/portal/action-state.js';
-import {createPortalService} from '../lib/mora/portal/service.js';
+import {createPortalService,validatePortalPlan} from '../lib/mora/portal/service.js';
+import {hasUnconfirmedSuccess} from '../lib/mora/portal/reply-validation.js';
 import {MODEL} from '../lib/mora/portal/budget.js';
 import {controls} from '../api/portal-chat.js';
 
@@ -50,4 +51,20 @@ test('missing facts still require a data repair, including the whole customer ob
  const fixed={...p,updates:[{ref:'active',quote:message,since:'gestern',details:'Die andere Lampe funktioniert.'}]};
  const r=await fixture([p,{violations:[{kind:'missing_fact',quote:'Die andere Lampe funktioniert.',reason:'Die ergänzende Beobachtung fehlt.'}]},fixed,{violations:[]}])(message,s,['cases']);
  assert.equal(r.repairScope,'decision');assert.match(r.state.issue.details,/Sonst ist alles normal/);assert.match(r.state.issue.details,/andere Lampe funktioniert/);assert.equal(r.state.issue.since,'gestern');
+});
+
+test('truthful negative delivery statements are not mistaken for a success',()=>{
+ for(const reply of ['Es wurde noch nichts gesendet.','Nein, ich habe nichts an MORADA gesendet.','Die Meldung wurde nicht an MORADA gesendet.','Wir haben keinen Auftrag beauftragt.'])assert.equal(hasUnconfirmedSuccess(reply),false,reply);
+ for(const reply of ['Ich habe das Anliegen gesendet.','Es wurde bereits gespeichert.','Ich habe nicht nur gespeichert, sondern auch versendet.','Es wurde noch nichts gesendet; ich habe aber einen Auftrag beauftragt.'])assert.equal(hasUnconfirmedSuccess(reply),true,reply);
+});
+test('an independent detail question is not blocked by an existing unrelated detail',()=>{
+ const s=state(),p={intent:'issue',reply:'Kommen Sie noch in die Wohnung?',ask:{field:'details',ref:'active'},updates:[],actions:[]};
+ assert.doesNotThrow(()=>validatePortalPlan(p,s,s,['cases']));
+ assert.throws(()=>validatePortalPlan({...p,ask:{field:'location',ref:'active'}},s,s,['cases']),/repeats answered field/);
+});
+test('outstanding messages are sent once as current evidence, not duplicated in history',async()=>{
+ const s=hydrateSimple(null);s.portalJournal=[{role:'user',content:'Die Lampe geht nicht.',id:'pending-1'}];s.portalPending=[{content:'Die Lampe geht nicht.',id:'pending-1'}];
+ const requests=[],message='Die Lampe geht nicht.\nIm Wohnzimmer.',p={intent:'issue',reply:'Sie können die Angaben prüfen.',updates:[{ref:'new1',quote:message,equipment:'light',defect:'geht nicht',location:'Wohnzimmer'}],actions:[]};
+ const r=await fixture([p,{violations:[]}],requests)(message,s,['cases']);
+ assert.equal(requests[0].messages.length,1);assert.equal(requests[0].messages[0].content,message);assert.equal(r.state.issues.length,1);assert.equal(r.state.issue.location,'Wohnzimmer');
 });

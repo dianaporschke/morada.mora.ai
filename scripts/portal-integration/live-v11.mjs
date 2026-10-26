@@ -47,7 +47,13 @@ try{
     const data=w.MORAPortal.getState().data;assert.equal(data.issues.length,2);const ids=data.issues.map(i=>i.id);await prepare();await save();w.MORAPortal.open();const sel=w.document.querySelector('select[aria-label="Anliegen auswählen"]');sel.value=ids.find(id=>id!==data.issue.id);sel.dispatchEvent(new w.Event('change'));await settle();await prepare();await save();assert.equal(snapshot().length,2);assert.deepEqual(new Set(snapshot().map(r=>r.unit.toLowerCase())),new Set(['wohnzimmer','flur']));
    }else{
     await prepare();assert.equal(snapshot().length,0,'Preparation must not claim persistence');assert.equal(w.document.querySelector('[name="unit"]').value.toLowerCase(),c.room.toLowerCase());await save();let rows=snapshot();assert.equal(rows.length,1);assert.match(rows[0].title,c.label);assert.equal(rows[0].unit.toLowerCase(),c.room.toLowerCase());const id=rows[0].id;
-    if(c.correction){w.MORAPortal.open();await w.MORAPortal.send(c.correction);await prepare('Anliegen aktualisieren');await save();rows=snapshot();assert.equal(rows.length,1);assert.equal(rows[0].id,id);assert.equal(rows[0].unit.toLowerCase(),c.correctedRoom.toLowerCase());}
+    if(c.id==='lamp'){
+     const captured=w.MORAPortal.getState().data.issue;
+     assert.equal(captured.count,1);assert.ok(captured.details?.trim(),'The explicit additional observation must survive extraction');
+     assert.ok(rows[0].description.includes(captured.details),'The captured additional observation must reach native storage');
+     entry.capturedLampDetails=captured.details;
+    }
+    if(c.correction){w.MORAPortal.open();await w.MORAPortal.send(c.correction);await prepare('Anliegen aktualisieren');await save();rows=snapshot();assert.equal(rows.length,1);assert.equal(rows[0].id,id);assert.equal(rows[0].unit.toLowerCase(),c.correctedRoom.toLowerCase());if(c.id==='lamp'){assert.equal(w.MORAPortal.getState().data.issue.count,1);assert.ok(rows[0].description.includes(entry.capturedLampDetails),'Room correction must retain the additional observation');}}
     if(c.id==='lamp'){
      w.MORAPortal.open();await prepare('Foto hinzufügen');
      const input=w.document.getElementById('opsFileInput'),bytes=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aN1kAAAAASUVORK5CYII=','base64');
