@@ -24,11 +24,16 @@ if cfg.get('broker'):
 cases=json.loads(pathlib.Path('scripts/quality-phase1/cases.json').read_text())
 if cfg.get('caseIds'):cases=[c for c in cases if c['id'] in cfg['caseIds']]
 status,credit,_=request();assert status==200 and credit['inferenceStarted'] is False
+if cfg.get('expectedModel'):assert credit['model']==cfg['expectedModel']
 evidence={'scope':'Real portal_v1 backend responses. Browser rendering and local saving are separate checks.','url':cfg['url']+'/portal.html','model':credit['model'],'before':credit,'conversations':[]}
 output=pathlib.Path(cfg['output']);output.parent.mkdir(parents=True,exist_ok=True)
 for case in cases:
  session=None;turns=[]
  for n,message in enumerate(case['messages'],1):
+  if cfg.get('maxAdditionalUsd'):
+   check_status,check,_=request()
+   if check_status!=200 or check['totalUsedUsd']-credit['totalUsedUsd']>=cfg['maxAdditionalUsd']:
+    evidence['stopped']='RUN_COST_BOUNDARY';break
   if n>1 and cfg.get('delaySeconds'):time.sleep(min(45,cfg['delaySeconds']))
   body={'message':message,'messageId':str(uuid.uuid4()),'navigation':['cases','calendar','documents','properties','units','tasks','team','support','new-task','new-appointment','new-document']}
   if session:body['session']=session

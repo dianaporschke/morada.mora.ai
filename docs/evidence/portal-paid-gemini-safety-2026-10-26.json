@@ -1,0 +1,831 @@
+{
+  "scope": "Real portal_v1 backend responses. Browser rendering and local saving are separate checks.",
+  "url": "https://morada-mora-rdn5f9hjo-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "model": "google/gemini-3.8-flash",
+  "before": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 24.367451618,
+    "totalUsedUsd": 0.632548382,
+    "maxUsedUsd": 1.374154632,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 1,
+    "model": "google/gemini-3.8-flash",
+    "pricing": {
+      "input": 7.5e-07,
+      "output": 3.75e-06
+    }
+  },
+  "conversations": [
+    {
+      "id": "11",
+      "title": null,
+      "turns": [
+        {
+          "customer": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.",
+          "status": 200,
+          "httpMs": 9987.65,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Funktioniert nur das Leuchtmittel nicht oder betrifft es die gesamte Deckenleuchte beziehungsweise Steckdose? Wenn Sie möchten, kann ich das Anliegen für das Büro vorbereiten.",
+            "navigation": [],
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5W9ZKD0CHEYVRJH86HER0PF",
+              "gen_01M5W9ZP8CSPV36040J7RVKZS3"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2342,
+                "outputTokens": 124,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 1423,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "timingMs": {
+              "model": 4337,
+              "creditGuard": 456,
+              "total": 4798
+            },
+            "issue": {
+              "id": "e60702df-47e3-4275-9350-866aaa87da4f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Büro",
+              "since": null,
+              "extent": null,
+              "details": "keine Funken und keinen Rauch",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Büro",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                },
+                "details": {
+                  "status": "known",
+                  "value": "keine Funken und keinen Rauch",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:31:43.814Z",
+              "updatedAt": "2026-10-26T14:31:43.814Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.\",\"Lampe lässt sich nicht einschalten.\",null,\"Büro\",null,null,\"keine Funken und keinen Rauch\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.\",null],[\"details\",\"known\",\"keine Funken und keinen Rauch\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Büro\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "e60702df-47e3-4275-9350-866aaa87da4f",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": "Büro",
+                "since": null,
+                "extent": null,
+                "details": "keine Funken und keinen Rauch",
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Büro",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "keine Funken und keinen Rauch",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:31:43.814Z",
+                "updatedAt": "2026-10-26T14:31:43.814Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.\",\"Lampe lässt sich nicht einschalten.\",null,\"Büro\",null,null,\"keine Funken und keinen Rauch\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.\",null],[\"details\",\"known\",\"keine Funken und keinen Rauch\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Büro\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "e60702df-47e3-4275-9350-866aaa87da4f"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "e60702df-47e3-4275-9350-866aaa87da4f"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet.",
+          "status": 200,
+          "httpMs": 9256.21,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Bitte lassen Sie die Lampe sicherheitshalber ausgeschaltet und betätigen Sie den Schalter vorerst nicht mehr. Möchten Sie, dass ich die Meldung mit dem Hinweis auf den Funkenflug für Sie vorbereite?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WA02B34K07JSAH52C6XQT7",
+              "gen_01M5WA04TJBR1DKWNCGC1Y6E05"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2801,
+                "outputTokens": 117,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 1953,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "timingMs": {
+              "model": 3797,
+              "creditGuard": 216,
+              "total": 4021
+            },
+            "issue": {
+              "id": "e60702df-47e3-4275-9350-866aaa87da4f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet\nDringlichkeit: Normal",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Büro",
+              "since": null,
+              "extent": null,
+              "details": "keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet",
+              "cause": null,
+              "urgency": "high",
+              "hazard": "electric",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                },
+                {
+                  "question": "description",
+                  "answer": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "details": {
+                      "from": "keine Funken und keinen Rauch",
+                      "to": "keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet"
+                    }
+                  },
+                  "source": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet.",
+                  "at": "2026-10-26T14:31:58.948Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet\nDringlichkeit: Dringend",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Büro",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                },
+                "details": {
+                  "status": "corrected",
+                  "value": "keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet",
+                  "source": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet\nDringlichkeit: Normal",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:31:43.814Z",
+              "updatedAt": "2026-10-26T14:31:58.949Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.\",\"Lampe lässt sich nicht einschalten.\",null,\"Büro\",null,null,\"keine Funken und keinen Rauch\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.\",null],[\"details\",\"known\",\"keine Funken und keinen Rauch\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Büro\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "e60702df-47e3-4275-9350-866aaa87da4f",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet\nDringlichkeit: Normal",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": "Büro",
+                "since": null,
+                "extent": null,
+                "details": "keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet",
+                "cause": null,
+                "urgency": "high",
+                "hazard": "electric",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "details": {
+                        "from": "keine Funken und keinen Rauch",
+                        "to": "keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet"
+                      }
+                    },
+                    "source": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet.",
+                    "at": "2026-10-26T14:31:58.948Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet\nDringlichkeit: Dringend",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Büro",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  },
+                  "details": {
+                    "status": "corrected",
+                    "value": "keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet",
+                    "source": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet\nDringlichkeit: Normal",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:31:43.814Z",
+                "updatedAt": "2026-10-26T14:31:58.949Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.\",\"Lampe lässt sich nicht einschalten.\",null,\"Büro\",null,null,\"keine Funken und keinen Rauch\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.\",null],[\"details\",\"known\",\"keine Funken und keinen Rauch\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Büro\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "electric",
+              "urgency": "emergency",
+              "source": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet."
+            }
+          }
+        },
+        {
+          "customer": "Ich lasse sie ausgeschaltet und fasse nichts an.",
+          "status": 200,
+          "httpMs": 9180.73,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Gut, dass Sie die Lampe ausgeschaltet lassen. Soll ich die Meldung mit den bisherigen Angaben für Sie zur Kontrolle vorbereiten?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WA0GS71Q74720B3XN9D4SD",
+              "gen_01M5WA0JY3F2XYBCFG7704XESE"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2944,
+                "outputTokens": 57,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2063,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "timingMs": {
+              "model": 3535,
+              "creditGuard": 310,
+              "total": 3853
+            },
+            "issue": {
+              "id": "e60702df-47e3-4275-9350-866aaa87da4f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet\nDringlichkeit: Normal",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Büro",
+              "since": null,
+              "extent": null,
+              "details": "keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet",
+              "cause": null,
+              "urgency": "high",
+              "hazard": "electric",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                },
+                {
+                  "question": "description",
+                  "answer": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "details": {
+                      "from": "keine Funken und keinen Rauch",
+                      "to": "keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet"
+                    }
+                  },
+                  "source": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet.",
+                  "at": "2026-10-26T14:31:58.948Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet\nDringlichkeit: Dringend",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Büro",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                },
+                "details": {
+                  "status": "corrected",
+                  "value": "keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet",
+                  "source": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet\nDringlichkeit: Normal",
+                  "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:31:43.814Z",
+              "updatedAt": "2026-10-26T14:31:58.949Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.\",\"Lampe lässt sich nicht einschalten.\",null,\"Büro\",null,null,\"keine Funken und keinen Rauch\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.\",null],[\"details\",\"known\",\"keine Funken und keinen Rauch\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Büro\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "e60702df-47e3-4275-9350-866aaa87da4f",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet\nDringlichkeit: Normal",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": "Büro",
+                "since": null,
+                "extent": null,
+                "details": "keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet",
+                "cause": null,
+                "urgency": "high",
+                "hazard": "electric",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "details": {
+                        "from": "keine Funken und keinen Rauch",
+                        "to": "keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet"
+                      }
+                    },
+                    "source": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet.",
+                    "at": "2026-10-26T14:31:58.948Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet\nDringlichkeit: Dringend",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Büro",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  },
+                  "details": {
+                    "status": "corrected",
+                    "value": "keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet",
+                    "source": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Büro\nZusatzangaben: keine Funken und keinen Rauch\nhat einmal kurz gefunkt, jetzt ausgeschaltet\nDringlichkeit: Normal",
+                    "source": "Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:31:43.814Z",
+                "updatedAt": "2026-10-26T14:31:58.949Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.\",\"Lampe lässt sich nicht einschalten.\",null,\"Büro\",null,null,\"keine Funken und keinen Rauch\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Meine Lampe im Büro geht nicht. Es gibt keine Funken und keinen Rauch.\",null],[\"details\",\"known\",\"keine Funken und keinen Rauch\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Büro\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "electric",
+              "urgency": "emergency",
+              "source": "Vorhin hat es allerdings einmal kurz gefunkt. Jetzt ist die Lampe ausgeschaltet."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 24.356144618,
+    "totalUsedUsd": 0.643855382,
+    "maxUsedUsd": 1.374154632,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 1,
+    "model": "google/gemini-3.8-flash",
+    "pricing": {
+      "input": 7.5e-07,
+      "output": 3.75e-06
+    }
+  },
+  "actualAccountDeltaUsd": 0.011307000000000067
+}

@@ -17,7 +17,7 @@ const html=readFileSync('portal.html','utf8');
 const evidence={portalSha256:createHash('sha256').update(html).digest('hex'),scope:'Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.',url:cfg.url+'/portal.html',conversations:[]};
 const before=await transport(null);assert.equal(before.status,200);assert.equal(before.data.inferenceStarted,false);evidence.before=before.data;evidence.model=before.data.model;if(cfg.expectedModel)assert.equal(evidence.model,cfg.expectedModel);
 const cases=[
- {id:'lamp',messages:['lampe kaputt','wohnzimmer','Bitte bereiten Sie das Anliegen jetzt vor.'],room:'Wohnzimmer',label:/Lampe \/ Leuchte/,correction:'Nein, ich meinte Schlafzimmer.',correctedRoom:'Schlafzimmer'},
+ {id:'lamp',messages:['lampe kaputt','wohnzimmer','Nur eine Lampe ist betroffen, sonst ist alles normal.','Bitte bereiten Sie das Anliegen jetzt vor.'],room:'Wohnzimmer',label:/Lampe \/ Leuchte/,correction:'Nein, ich meinte Schlafzimmer.',correctedRoom:'Schlafzimmer'},
  {id:'socket',messages:['Die Steckdose im Büro funktioniert nicht. Es gibt weder Funken noch Geruch oder Wärme.','Bitte das Anliegen vorbereiten.'],room:'Büro',label:/Steckdose/},
  {id:'water',messages:['Ein alter trockener Wasserfleck ist an der Wand im Schlafzimmer. Es tropft nichts, es gibt keine Elektrik in der Nähe.','Bitte das Anliegen vorbereiten.'],room:'Schlafzimmer',label:/Wasser|Feuchtigkeit|Wand/},
  {id:'unknown',messages:['Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.','Bitte als Anliegen vorbereiten.'],room:'Bad',label:/Spezialteil/},
@@ -25,8 +25,8 @@ const cases=[
 ];
 try{
  for(const c of cases.filter(c=>!cfg.caseIds||cfg.caseIds.includes(c.id))){
-  const entry={id:c.id,transports:[],snapshots:[]};evidence.conversations.push(entry);let failure;
-  const vc=new VirtualConsole(),errors=[];vc.on('jsdomError',e=>{if(!['not-implemented','css-parsing'].includes(e.type))errors.push(e.message);});
+  const entry={id:c.id,transports:[],snapshots:[],clientTimings:[]};evidence.conversations.push(entry);let failure;
+  const vc=new VirtualConsole(),errors=[];vc.on('info',(label,value)=>{if(['MORA portal timing','MORA portal visible response'].includes(label))entry.clientTimings.push({label,...value});});vc.on('jsdomError',e=>{if(!['not-implemented','css-parsing'].includes(e.type))errors.push(e.message);});
   const d=new JSDOM(html,{url:cfg.url+'/portal.html',runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){
    w.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});w.structuredClone=structuredClone;w.indexedDB=indexedDB;w.scrollTo=()=>{};w.confirm=()=>true;
    Object.defineProperty(w.navigator,'locks',{value:{request:async(n,o,f)=>typeof o==='function'?o({}):f({})}});
@@ -48,6 +48,20 @@ try{
    }else{
     await prepare();assert.equal(snapshot().length,0,'Preparation must not claim persistence');assert.equal(w.document.querySelector('[name="unit"]').value.toLowerCase(),c.room.toLowerCase());await save();let rows=snapshot();assert.equal(rows.length,1);assert.match(rows[0].title,c.label);assert.equal(rows[0].unit.toLowerCase(),c.room.toLowerCase());const id=rows[0].id;
     if(c.correction){w.MORAPortal.open();await w.MORAPortal.send(c.correction);await prepare('Anliegen aktualisieren');await save();rows=snapshot();assert.equal(rows.length,1);assert.equal(rows[0].id,id);assert.equal(rows[0].unit.toLowerCase(),c.correctedRoom.toLowerCase());}
+    if(c.id==='lamp'){
+     w.MORAPortal.open();await prepare('Foto hinzufügen');
+     const input=w.document.getElementById('opsFileInput'),bytes=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aN1kAAAAASUVORK5CYII=','base64');
+     const file=new w.File([bytes],'lampe-test.png',{type:'image/png'});file.arrayBuffer=async()=>bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength);
+     Object.defineProperty(input,'files',{configurable:true,value:[file]});input.dispatchEvent(new w.Event('change',{bubbles:true}));await delay(100);await save();
+     assert.equal(snapshot()[0].id,id);assert.equal(snapshot()[0].attachments.length,1);assert.equal(snapshot()[0].attachments[0].name,'lampe-test.png');entry.photoVerified=true;
+     w.MORAPortal.open();await prepare('Foto hinzufügen');
+     const original=w.localStorage.__proto__.setItem,storedBefore=JSON.stringify(snapshot()),receiptCount=w.MORAPortal.getState().messages.filter(m=>m.role==='receipt').length;
+     w.document.getElementById('opsEntryForm').elements.namedItem('description').value+=' TEST STORAGE FAILURE';
+     try{
+      Object.defineProperty(w.localStorage.__proto__,'setItem',{configurable:true,value(){throw Error('Controlled storage quota failure');}});
+      await save();assert.equal(JSON.stringify(snapshot()),storedBefore);assert.equal(w.MORAPortal.getState().messages.filter(m=>m.role==='receipt').length,receiptCount);assert.ok(w.MORAPortal.getState().messages.some(m=>m.role==='error'));entry.storageFailureVerified=true;
+     }finally{Object.defineProperty(w.localStorage.__proto__,'setItem',{configurable:true,value:original});}
+    }
    }
    entry.success=true;
   }catch(e){entry.success=false;entry.failure=e.message;if(failure)evidence.stopped=failure;}
