@@ -2,7 +2,7 @@ import {z} from 'zod';
 import {readSession,sealSession} from '../lib/mora/session.js';
 import {hydrateSimple,beginPreparation,acceptReceipt,safetyContext,contentHash} from '../lib/mora/simple/state.js';
 import {createPortalService,targets} from '../lib/mora/portal/service.js';
-import {createFreeCreditGuard} from '../lib/mora/portal/budget.js';
+import {createPreviewCreditGuard} from '../lib/mora/portal/budget.js';
 import {portalCaseFields,portalCaseEvidence,portalIssueReadiness} from '../assets/mora-portal-map.js';
 
 const receipt=z.object({operationId:z.string().uuid(),issueId:z.string().uuid(),draftId:z.string().uuid(),revision:z.number().int().positive(),contentHash:z.string().regex(/^[a-f0-9]{64}$/),status:z.enum(['portal_received','error']),attachmentCount:z.number().int().min(0).max(3).optional(),conflictFields:z.array(z.enum(['title','description','unit','category'])).max(4).optional()}).strict();
@@ -20,14 +20,14 @@ export function controls(state,navigation=[]) {
     stored:current&&state.conversationTopic==='issue'?{id:i.id,scope:'this_device',transmitted:false}:null,
     navigation:state.pendingKey||save||state.safety?[]:navigation};
 }
-export function createPortalChatHandler({converse=createPortalService(),preflight=createFreeCreditGuard()}={}) {
+export function createPortalChatHandler({converse=createPortalService(),preflight=createPreviewCreditGuard()}={}) {
  return async function handler(req,res){
   res.setHeader('Cache-Control','private, no-store');
   // An isolated Preview route; never activate this integration on production.
   if(process.env.VERCEL_ENV==='production')return res.status(404).json({code:'NOT_FOUND'});
   if(req.method==='GET'){
     try{return res.status(200).json({architecture:'portal_v1',inferenceStarted:false,...await preflight()});}
-    catch{return res.status(503).json({code:'FREE_CREDIT_BOUNDARY',error:'Das verfügbare kostenlose KI-Guthaben konnte nicht bestätigt werden.'});}
+    catch{return res.status(503).json({code:'PREVIEW_CREDIT_BOUNDARY',error:'Das freigegebene KI-Testbudget konnte nicht bestätigt werden.'});}
   }
   if(req.method!=='POST')return res.status(405).json({code:'METHOD_NOT_ALLOWED'});
   const parsed=schema.safeParse(req.body);if(!parsed.success)return res.status(400).json({code:'INVALID_INPUT',error:'Bitte prüfen Sie die Nachricht.'});
@@ -80,9 +80,9 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
     return reply(200,{mode:'model',reply:result.reply,navigation:result.navigation,requestedAction:actionable?result.requestedAction:null,modelCalls:result.modelCalls,generationIds:result.generationIds,usage:result.usage,repaired:result.repaired,timingMs:{model:result.modelMs,creditGuard:result.guardMs}});
   }catch(error){
     const conflict=['INVALID_ACTION','INVALID_SESSION','ISSUE_LIMIT'].includes(error.code);
-    const code=conflict?error.code:error.code==='FREE_CREDIT_BOUNDARY'?'FREE_CREDIT_BOUNDARY':'MODEL_UNAVAILABLE';
+    const code=conflict?error.code:error.code==='PREVIEW_CREDIT_BOUNDARY'?'PREVIEW_CREDIT_BOUNDARY':'MODEL_UNAVAILABLE';
     const limited=error.availability?.reason==='rate_limit_exceeded'||error.availability?.status===429;
-    return reply(conflict?409:limited?429:503,{code:limited?'MODEL_RATE_LIMIT':code,error:conflict?'Diese Aktion ist nicht mehr verfügbar. Ihre gespeicherten Angaben bleiben erhalten.':code==='FREE_CREDIT_BOUNDARY'?'Die Prüfung des kostenlosen KI-Guthabens erlaubt gerade keine weitere Modellanfrage.':limited?'Die KI-Anbindung hat gerade ihr Anfragelimit erreicht. Bitte versuchen Sie es später erneut. Ihre Nachricht bleibt erhalten.':'MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.',availability:error.availability || null,modelCalls:error.modelCalls||0,generationIds:error.generationIds || []});
+    return reply(conflict?409:limited?429:503,{code:limited?'MODEL_RATE_LIMIT':code,error:conflict?'Diese Aktion ist nicht mehr verfügbar. Ihre gespeicherten Angaben bleiben erhalten.':code==='PREVIEW_CREDIT_BOUNDARY'?'Das freigegebene KI-Testbudget erlaubt gerade keine weitere Modellanfrage. Ihre Angaben bleiben erhalten.':limited?'Die KI-Anbindung hat gerade ihr Anfragelimit erreicht. Bitte versuchen Sie es später erneut. Ihre Nachricht bleibt erhalten.':'MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.',availability:error.availability || null,modelCalls:error.modelCalls||0,generationIds:error.generationIds || []});
   }
  };
 }

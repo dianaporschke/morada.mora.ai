@@ -8,7 +8,7 @@ import {portalCaseFields} from '../assets/mora-portal-map.js';
 import {hydrateSimple,projectDecision,commitDecision} from '../lib/mora/simple/state.js';
 import {createPortalChatHandler,controls} from '../api/portal-chat.js';
 import {createPortalService} from '../lib/mora/portal/service.js';
-import {checkFreeCredits,MODEL} from '../lib/mora/portal/budget.js';
+import {checkPreviewCredits,MODEL} from '../lib/mora/portal/budget.js';
 import {readSession} from '../lib/mora/session.js';
 
 const plan=(updates=[],more={})=>({reply:'Wo befindet sich die Lampe?',intent:'issue',updates,actions:[],...more});
@@ -51,8 +51,8 @@ test('safety and topic changes suppress save; uncertainty cannot silently overwr
  let s=lamp();assert.ok(controls(s).save);s=update(s,'Vielleicht doch im Flur',{location:'Flur',uncertain:[{field:'location',quote:'Vielleicht doch im Flur'}]});assert.equal(s.issue.location,'Wohnzimmer');assert.equal(controls(s).save,null);
  s=lamp();s.safety={hazard:'electric'};assert.equal(controls(s).save,null);s.safety=null;s.conversationTopic='information';assert.equal(controls(s).save,null);
 });
-test('free-credit guard rejects paid top-ups, reserve shortfall and cap',()=>{
- assert.ok(checkFreeCredits({balance:4.64,totalUsed:.36}));for(const c of [{balance:9.64,totalUsed:.36},{balance:.1,totalUsed:4.9},{balance:4.3,totalUsed:.7}])assert.throws(()=>checkFreeCredits(c));
+test('preview-credit guard accepts approved top-up and rejects other grants or excess usage',()=>{
+ assert.ok(checkPreviewCredits({balance:24.6,totalUsed:.4}));for(const c of [{balance:4.6,totalUsed:.4},{balance:44.6,totalUsed:.4},{balance:23.5,totalUsed:1.5}])assert.throws(()=>checkPreviewCredits(c));
 });
 test('pending unverified customer corrections block server-side save tickets',()=>{
  const state=lamp();assert.ok(controls(state).save);state.portalPending=[{content:'Nein, doch anders.'}];assert.equal(controls(state).save,null);

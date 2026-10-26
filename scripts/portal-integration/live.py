@@ -37,7 +37,7 @@ for case in cases:
   session=data.pop('session',session)
   turns.append({'customer':message,'status':status,'httpMs':ms,'response':data})
   print(json.dumps({'case':case['id'],'turn':n,'status':status,'ms':ms,'reply':data.get('reply'),'calls':data.get('modelCalls'),'code':data.get('code')},ensure_ascii=False),flush=True)
-  if data.get('code') in ['FREE_CREDIT_BOUNDARY','MODEL_RATE_LIMIT']:evidence['stopped']=data.get('code');break
+  if data.get('code') in ['PREVIEW_CREDIT_BOUNDARY','MODEL_RATE_LIMIT']:evidence['stopped']=data.get('code');break
  evidence['conversations'].append({'id':case['id'],'title':case.get('title'),'turns':turns});output.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
  if evidence.get('stopped'):break
 status,after,_=request();evidence['after']=after;evidence['actualAccountDeltaUsd']=after.get('totalUsedUsd',0)-credit['totalUsedUsd'];output.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
