@@ -19,7 +19,7 @@ test('an unrequested technical question without ask is rejected before display a
   const requests=[],previous=lamp(),snapshot=structuredClone(previous);
   const result=await fixture([
     roomPlan(bad),{violations:[{kind:'unrequested_troubleshooting',quote:bad,reason:'Kunde möchte einen Defekt melden, keine Bauteile prüfen.'}]},
-    roomPlan(good),{violations:[]},
+    {reply:good},{violations:[]},
   ],requests)('wohnzimmer',previous,['cases']);
   assert.equal(result.reply,good);assert.equal(result.modelCalls,4);assert.equal(result.repaired,true);
   assert.equal(result.state.issue.location,'Wohnzimmer');assert.equal(result.state.issue.equipment,'light');assert.deepEqual(previous,snapshot);
@@ -31,7 +31,7 @@ test('an unrequested technical question without ask is rejected before display a
 test('a repeated policy violation exhausts one repair without publishing the rejected response or facts',async()=>{
   const previous=lamp(),before=structuredClone(previous),bad=roomPlan('Welche Bauart ist es, und haben Sie das Bauteil geprüft?');
   const violation={violations:[{kind:'unnecessary_question',quote:bad.reply,reason:'Zwei technische Fragen statt einer ausreichenden Defektmeldung.'}]};
-  await assert.rejects(fixture([bad,violation,bad,violation])('wohnzimmer',previous,['cases']),e=>e.modelCalls===4);
+  await assert.rejects(fixture([bad,violation,{reply:bad.reply},violation])('wohnzimmer',previous,['cases']),e=>e.modelCalls===4);
   assert.deepEqual(previous,before);
 });
 

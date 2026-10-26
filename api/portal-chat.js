@@ -4,23 +4,14 @@ import {hydrateSimple,beginPreparation,acceptReceipt,safetyContext,contentHash} 
 import {createPortalService,targets} from '../lib/mora/portal/service.js';
 import {createPreviewCreditGuard} from '../lib/mora/portal/budget.js';
 import {rememberPreparationOffer} from '../lib/mora/actions.js';
-import {portalCaseFields,portalCaseEvidence,portalIssueReadiness} from '../assets/mora-portal-map.js';
+import {portalCaseFields,portalCaseEvidence} from '../assets/mora-portal-map.js';
+import {portalControls} from '../lib/mora/portal/action-state.js';
 
 const receipt=z.object({operationId:z.string().uuid(),issueId:z.string().uuid(),draftId:z.string().uuid(),revision:z.number().int().positive(),contentHash:z.string().regex(/^[a-f0-9]{64}$/),status:z.enum(['portal_received','error']),attachmentCount:z.number().int().min(0).max(3).optional(),conflictFields:z.array(z.enum(['title','description','unit','category'])).max(4).optional()}).strict();
 const schema=z.object({session:z.string().max(180000).optional(),message:z.string().trim().min(1).max(2000).optional(),messageId:z.string().uuid().optional(),action:z.enum(['save-issue','review-issue','switch-issue','draft-opened','draft-closed','draft-error','new-conversation']).optional(),issueId:z.string().uuid().optional(),receipt:receipt.optional(),navigation:z.array(z.enum(targets)).max(targets.length).default([])}).strict()
   .refine(v=>[v.message,v.action,v.receipt].filter(Boolean).length===1)
   .refine(v=>!v.message||Boolean(v.messageId));
-export function controls(state,navigation=[]) {
-  const i=state.issue,current=Boolean(i?.preparation?.receipt?.contentHash=== (i?contentHash(i):''));
-  const ready=portalIssueReadiness(i).ready;
-  const open=Boolean(i&&state.portalDraftOpen?.issueId===i.id&&state.portalDraftOpen?.revision===i.revision);
-  const save=ready&&!current&&!open&&!state.safety&&!state.portalPending?.length&&state.conversationTopic==='issue';
-  return {save:save?{operation:i.preparation?.receipt?'update':'create',issueId:i.id}:null,
-    prepared:open?{issueId:i.id,saved:false}:null,
-    review:ready&&!state.safety&&!state.portalPending?.length&&state.conversationTopic==='issue'?{issueId:i.id}:null,
-    stored:current&&state.conversationTopic==='issue'?{id:i.id,scope:'this_device',transmitted:false}:null,
-    navigation:state.pendingKey||save||state.safety?[]:navigation};
-}
+export const controls=portalControls;
 export function createPortalChatHandler({converse=createPortalService(),preflight=createPreviewCreditGuard()}={}) {
  return async function handler(req,res){
   res.setHeader('Cache-Control','private, no-store');
@@ -33,7 +24,7 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
   if(req.method!=='POST')return res.status(405).json({code:'METHOD_NOT_ALLOWED'});
   const parsed=schema.safeParse(req.body);if(!parsed.success)return res.status(400).json({code:'INVALID_INPUT',error:'Bitte prüfen Sie die Nachricht.'});
   const input=parsed.data,start=Date.now();let state;
-  const reply=(status,data)=>res.status(status).json({architecture:'portal_v1',...data,...(state?{session:sealSession(state),issue:state.issue,issues:state.issues,controls:controls(state,data.navigation || []),safety:state.safety || null}:{}),timingMs:{...(data.timingMs||{}),total:Date.now()-start}});
+  const reply=(status,data)=>res.status(status).json({architecture:'portal_v1',...data,...(state?{session:sealSession(state),issue:state.issue,issues:state.issues,controls:controls(state,data.navigation || [],input.navigation.includes('cases')),safety:state.safety || null}:{}),timingMs:{...(data.timingMs||{}),total:Date.now()-start}});
   try{
     const previous=input.session?readSession(input.session):null;
     if(previous&&previous.integration!=='portal_v1')throw Object.assign(Error('Wrong integration'),{code:'INVALID_SESSION'});
@@ -82,7 +73,7 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
     // A visible offer is neither an opened form nor a successful save.
     if(input.navigation.includes('cases')&&controls(state).save)rememberPreparationOffer(state);
     const actionable=controls(state).save||controls(state).review;
-    return reply(200,{mode:'model',reply:result.reply,navigation:result.navigation,requestedAction:actionable?result.requestedAction:null,modelCalls:result.modelCalls,generationIds:result.generationIds,usage:result.usage,repaired:result.repaired,timingMs:{model:result.modelMs,creditGuard:result.guardMs}});
+    return reply(200,{mode:'model',reply:result.reply,navigation:result.navigation,requestedAction:actionable?result.requestedAction:null,modelCalls:result.modelCalls,generationIds:result.generationIds,usage:result.usage,repaired:result.repaired,repairScope:result.repairScope || null,timingMs:{model:result.modelMs,creditGuard:result.guardMs}});
   }catch(error){
     const conflict=['INVALID_ACTION','INVALID_SESSION','ISSUE_LIMIT'].includes(error.code);
     const code=conflict?error.code:error.code==='PREVIEW_CREDIT_BOUNDARY'?'PREVIEW_CREDIT_BOUNDARY':'MODEL_UNAVAILABLE';
