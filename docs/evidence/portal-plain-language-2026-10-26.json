@@ -1,0 +1,2951 @@
+{
+  "scope": "Real portal_v1 backend responses. Browser rendering and local saving are separate checks.",
+  "url": "https://morada-mora-8omq0dtpp-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "model": "google/gemini-3.8-flash",
+  "before": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 24.347200118,
+    "totalUsedUsd": 0.652799882,
+    "maxUsedUsd": 1.374154632,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 1,
+    "model": "google/gemini-3.8-flash",
+    "pricing": {
+      "input": 7.5e-07,
+      "output": 3.75e-06
+    }
+  },
+  "conversations": [
+    {
+      "id": "lamp",
+      "title": null,
+      "turns": [
+        {
+          "customer": "meine lampe geht nicht",
+          "status": 200,
+          "httpMs": 8128.73,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "In welchem Raum befindet sich die Lampe?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WB6QC856R91CB7SQCPG5F3",
+              "gen_01M5WB6SGC1YF3Q61FT0SE0T3S"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2614,
+                "outputTokens": 68,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 1733,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "timingMs": {
+              "model": 3359,
+              "creditGuard": 344,
+              "total": 3742
+            },
+            "issue": {
+              "id": "1db59000-dce2-4933-80d4-c4901ef7535f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "meine lampe geht nicht",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": null,
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "meine lampe geht nicht"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nDringlichkeit: Normal",
+              "pendingKey": "location",
+              "clarification": "In welchem Raum befindet sich die Lampe?",
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "meine lampe geht nicht"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "meine lampe geht nicht"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "meine lampe geht nicht",
+                  "source": "meine lampe geht nicht"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:53:05.262Z",
+              "updatedAt": "2026-10-26T14:53:05.279Z",
+              "shortLabel": "Lampe / Leuchte"
+            },
+            "issues": [
+              {
+                "id": "1db59000-dce2-4933-80d4-c4901ef7535f",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "meine lampe geht nicht",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": null,
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "meine lampe geht nicht"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nDringlichkeit: Normal",
+                "pendingKey": "location",
+                "clarification": "In welchem Raum befindet sich die Lampe?",
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "meine lampe geht nicht"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "meine lampe geht nicht"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "meine lampe geht nicht",
+                    "source": "meine lampe geht nicht"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:53:05.262Z",
+                "updatedAt": "2026-10-26T14:53:05.279Z",
+                "shortLabel": "Lampe / Leuchte"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "wohnzimmer",
+          "status": 200,
+          "httpMs": 8809.17,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Ich habe das Wohnzimmer für Ihre Meldung vermerkt. Möchten Sie das Anliegenformular zur Kontrolle vorbereiten lassen?",
+            "navigation": [],
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WB77AZ0X2TE4MKBG9S33NW",
+              "gen_01M5WB7934Y9C9WEW57VV3VWJ4"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2939,
+                "outputTokens": 65,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2074,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "timingMs": {
+              "model": 3940,
+              "creditGuard": 253,
+              "total": 4204
+            },
+            "issue": {
+              "id": "1db59000-dce2-4933-80d4-c4901ef7535f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "meine lampe geht nicht",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "meine lampe geht nicht"
+                },
+                {
+                  "question": "location",
+                  "answer": "wohnzimmer"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "meine lampe geht nicht"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "meine lampe geht nicht"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "wohnzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "meine lampe geht nicht",
+                  "source": "meine lampe geht nicht"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:53:05.262Z",
+              "updatedAt": "2026-10-26T14:53:21.232Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"meine lampe geht nicht\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"meine lampe geht nicht\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "1db59000-dce2-4933-80d4-c4901ef7535f",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "meine lampe geht nicht",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "meine lampe geht nicht"
+                  },
+                  {
+                    "question": "location",
+                    "answer": "wohnzimmer"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "meine lampe geht nicht"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "meine lampe geht nicht"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "wohnzimmer"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "meine lampe geht nicht",
+                    "source": "meine lampe geht nicht"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:53:05.262Z",
+                "updatedAt": "2026-10-26T14:53:21.232Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"meine lampe geht nicht\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"meine lampe geht nicht\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "1db59000-dce2-4933-80d4-c4901ef7535f"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "1db59000-dce2-4933-80d4-c4901ef7535f"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Es ist nur eine Lampe, sonst ist alles normal.",
+          "status": 503,
+          "httpMs": 16010.72,
+          "response": {
+            "architecture": "portal_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "availability": {
+              "provider": "gateway",
+              "model": "google/gemini-3.8-flash",
+              "status": null,
+              "reason": "invalid_model_output"
+            },
+            "modelCalls": 4,
+            "generationIds": [
+              "gen_01M5WB7R57G7XRDDHMHK9M7SMD",
+              "gen_01M5WB7SZBZT5Q2X84GJSZC78P",
+              "gen_01M5WB7VQR2PJBNJTCSAFW906M",
+              "gen_01M5WB7XY5F43YS4T18F0P7RGF"
+            ],
+            "issue": {
+              "id": "1db59000-dce2-4933-80d4-c4901ef7535f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "meine lampe geht nicht",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "meine lampe geht nicht"
+                },
+                {
+                  "question": "location",
+                  "answer": "wohnzimmer"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "meine lampe geht nicht"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "meine lampe geht nicht"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "wohnzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "meine lampe geht nicht",
+                  "source": "meine lampe geht nicht"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:53:05.262Z",
+              "updatedAt": "2026-10-26T14:53:21.232Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"meine lampe geht nicht\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"meine lampe geht nicht\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "1db59000-dce2-4933-80d4-c4901ef7535f",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "meine lampe geht nicht",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "meine lampe geht nicht"
+                  },
+                  {
+                    "question": "location",
+                    "answer": "wohnzimmer"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "meine lampe geht nicht"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "meine lampe geht nicht"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "wohnzimmer"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "meine lampe geht nicht",
+                    "source": "meine lampe geht nicht"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:53:05.262Z",
+                "updatedAt": "2026-10-26T14:53:21.232Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"meine lampe geht nicht\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"meine lampe geht nicht\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 11242
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "heater",
+      "title": null,
+      "turns": [
+        {
+          "customer": "Meine Heizung bleibt kalt.",
+          "status": 200,
+          "httpMs": 9372.92,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "In welchem Raum oder Bereich bleibt die Heizung kalt?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WB89966HM2NATKK4H7J0SE",
+              "gen_01M5WB8BDY5XPV09T2XEN7Y8TJ"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2615,
+                "outputTokens": 135,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 1727,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "timingMs": {
+              "model": 3599,
+              "creditGuard": 395,
+              "total": 4001
+            },
+            "issue": {
+              "id": "2d1d8052-a438-471f-92ea-ac9276e5ce59",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Meine Heizung bleibt kalt.",
+              "defect": "bleibt kalt",
+              "count": null,
+              "location": null,
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Heizung bleibt kalt."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Heizkörper\nbleibt kalt\nDringlichkeit: Normal",
+              "pendingKey": "location",
+              "clarification": "In welchem Raum oder Bereich bleibt die Heizung kalt?",
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "heater",
+                  "source": "Meine Heizung bleibt kalt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "bleibt kalt",
+                  "source": "Meine Heizung bleibt kalt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Heizung bleibt kalt.",
+                  "source": "Meine Heizung bleibt kalt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:53:56.324Z",
+              "updatedAt": "2026-10-26T14:53:56.324Z",
+              "shortLabel": "Heizkörper"
+            },
+            "issues": [
+              {
+                "id": "2d1d8052-a438-471f-92ea-ac9276e5ce59",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Meine Heizung bleibt kalt.",
+                "defect": "bleibt kalt",
+                "count": null,
+                "location": null,
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Meine Heizung bleibt kalt."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Heizkörper\nbleibt kalt\nDringlichkeit: Normal",
+                "pendingKey": "location",
+                "clarification": "In welchem Raum oder Bereich bleibt die Heizung kalt?",
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "heater",
+                    "source": "Meine Heizung bleibt kalt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "bleibt kalt",
+                    "source": "Meine Heizung bleibt kalt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Meine Heizung bleibt kalt.",
+                    "source": "Meine Heizung bleibt kalt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:53:56.324Z",
+                "updatedAt": "2026-10-26T14:53:56.324Z",
+                "shortLabel": "Heizkörper"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Im Schlafzimmer. Seit wann weiss ich nicht.",
+          "status": 200,
+          "httpMs": 7666.43,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Möchten Sie das Anliegen zur kalten Heizung im Schlafzimmer so vorbereiten lassen?",
+            "navigation": [],
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WB8PJE8F1EBCPD7J9MDA24",
+              "gen_01M5WB8RH1F5YV7SDAFH7FXC54"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2942,
+                "outputTokens": 84,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2078,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "timingMs": {
+              "model": 3242,
+              "creditGuard": 250,
+              "total": 3499
+            },
+            "issue": {
+              "id": "2d1d8052-a438-471f-92ea-ac9276e5ce59",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Meine Heizung bleibt kalt.",
+              "defect": "bleibt kalt",
+              "count": null,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Heizung bleibt kalt."
+                },
+                {
+                  "question": "location",
+                  "answer": "Im Schlafzimmer. Seit wann weiss ich nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [
+                "since"
+              ],
+              "summary": "Heizkörper\nbleibt kalt\nBereich: Schlafzimmer\nBeginn: unbekannt\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "heater",
+                  "source": "Meine Heizung bleibt kalt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "bleibt kalt",
+                  "source": "Meine Heizung bleibt kalt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Schlafzimmer",
+                  "source": "Im Schlafzimmer. Seit wann weiss ich nicht."
+                },
+                "since": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Im Schlafzimmer. Seit wann weiss ich nicht."
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Heizung bleibt kalt.",
+                  "source": "Meine Heizung bleibt kalt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:53:56.324Z",
+              "updatedAt": "2026-10-26T14:54:09.811Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"heating\",\"heater\",\"Meine Heizung bleibt kalt.\",\"bleibt kalt\",null,\"Schlafzimmer\",null,null,null,null,\"normal\",\"none\",[],[\"since\"],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"bleibt kalt\",null],[\"description\",\"known\",\"Meine Heizung bleibt kalt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"heater\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Schlafzimmer\",null],[\"since\",\"unknown\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "2d1d8052-a438-471f-92ea-ac9276e5ce59",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Meine Heizung bleibt kalt.",
+                "defect": "bleibt kalt",
+                "count": null,
+                "location": "Schlafzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Meine Heizung bleibt kalt."
+                  },
+                  {
+                    "question": "location",
+                    "answer": "Im Schlafzimmer. Seit wann weiss ich nicht."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [
+                  "since"
+                ],
+                "summary": "Heizkörper\nbleibt kalt\nBereich: Schlafzimmer\nBeginn: unbekannt\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "heater",
+                    "source": "Meine Heizung bleibt kalt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "bleibt kalt",
+                    "source": "Meine Heizung bleibt kalt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Schlafzimmer",
+                    "source": "Im Schlafzimmer. Seit wann weiss ich nicht."
+                  },
+                  "since": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Im Schlafzimmer. Seit wann weiss ich nicht."
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Meine Heizung bleibt kalt.",
+                    "source": "Meine Heizung bleibt kalt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:53:56.324Z",
+                "updatedAt": "2026-10-26T14:54:09.811Z",
+                "shortLabel": "Heizkörper",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"heating\",\"heater\",\"Meine Heizung bleibt kalt.\",\"bleibt kalt\",null,\"Schlafzimmer\",null,null,null,null,\"normal\",\"none\",[],[\"since\"],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"bleibt kalt\",null],[\"description\",\"known\",\"Meine Heizung bleibt kalt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"heater\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Schlafzimmer\",null],[\"since\",\"unknown\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "2d1d8052-a438-471f-92ea-ac9276e5ce59"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "2d1d8052-a438-471f-92ea-ac9276e5ce59"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "explanation",
+      "title": null,
+      "turns": [
+        {
+          "customer": "Was bedeutet Leuchtmittel?",
+          "status": 200,
+          "httpMs": 13294.6,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Ein Leuchtmittel ist der austauschbare Teil einer Lampe, der das Licht erzeugt – im Alltag meist als Glühbirne, LED-Lampe oder Leuchtstoffröhre bezeichnet. Die Lampe oder Leuchte selbst ist die Halterung oder das Gehäuse drumherum.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M5WB97A8RS2GP1EF8RXAZ6Q5"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2615,
+                "outputTokens": 75,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "timingMs": {
+              "model": 8685,
+              "creditGuard": 156,
+              "total": 8844
+            },
+            "issue": null,
+            "issues": [],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Muss ich das überprüfen, damit ich eine defekte Lampe melden kann?",
+          "status": 503,
+          "httpMs": 9128.92,
+          "response": {
+            "architecture": "portal_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "availability": {
+              "provider": "gateway",
+              "model": "google/gemini-3.8-flash",
+              "status": null,
+              "reason": "model_timeout"
+            },
+            "modelCalls": 0,
+            "generationIds": [],
+            "issue": null,
+            "issues": [],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 5007
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "unclear",
+      "title": null,
+      "turns": [
+        {
+          "customer": "Das Ding am Fenster geht nicht.",
+          "status": 200,
+          "httpMs": 12784.52,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "In welchem Raum befindet sich das Fenster?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 4,
+            "generationIds": [
+              "gen_01M5WBA0YGDJN9845VSH322QT1",
+              "gen_01M5WBA35R34TK2HSCAX2T1JHX",
+              "gen_01M5WBA5TWC8HHJ0BNQVY51700",
+              "gen_01M5WBA7VGRRJR144HMSK6SEZJ"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2616,
+                "outputTokens": 88,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 1750,
+                "outputTokens": 74,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2697,
+                "outputTokens": 80,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 1733,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": true,
+            "timingMs": {
+              "model": 7754,
+              "creditGuard": 967,
+              "total": 8729
+            },
+            "issue": {
+              "id": "982512ff-786e-4b59-a155-2a993a0e8573",
+              "category": "general",
+              "equipment": "Ding am Fenster",
+              "subcategory": null,
+              "description": "Das Ding am Fenster geht nicht.",
+              "defect": "geht nicht",
+              "count": null,
+              "location": null,
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Das Ding am Fenster geht nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Ding am Fenster\ngeht nicht\nDringlichkeit: Normal",
+              "pendingKey": "location",
+              "clarification": "In welchem Raum befindet sich das Fenster?",
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Ding am Fenster",
+                  "source": "Das Ding am Fenster geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "Das Ding am Fenster geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "not_provided",
+                  "value": "general",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Das Ding am Fenster geht nicht.",
+                  "source": "Das Ding am Fenster geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:54:58.270Z",
+              "updatedAt": "2026-10-26T14:54:58.270Z",
+              "shortLabel": "Ding am Fenster"
+            },
+            "issues": [
+              {
+                "id": "982512ff-786e-4b59-a155-2a993a0e8573",
+                "category": "general",
+                "equipment": "Ding am Fenster",
+                "subcategory": null,
+                "description": "Das Ding am Fenster geht nicht.",
+                "defect": "geht nicht",
+                "count": null,
+                "location": null,
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Das Ding am Fenster geht nicht."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Ding am Fenster\ngeht nicht\nDringlichkeit: Normal",
+                "pendingKey": "location",
+                "clarification": "In welchem Raum befindet sich das Fenster?",
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Ding am Fenster",
+                    "source": "Das Ding am Fenster geht nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "geht nicht",
+                    "source": "Das Ding am Fenster geht nicht."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "not_provided",
+                    "value": "general",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Das Ding am Fenster geht nicht.",
+                    "source": "Das Ding am Fenster geht nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:54:58.270Z",
+                "updatedAt": "2026-10-26T14:54:58.270Z",
+                "shortLabel": "Ding am Fenster"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Ich meine den Rollladen im Kinderzimmer.",
+          "status": 200,
+          "httpMs": 11911.88,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Ich habe den Rollladen im Kinderzimmer notiert. Möchten Sie das Anliegen so erfassen lassen?",
+            "navigation": [],
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WBAJQRCF96YXR233AQ9KNE",
+              "gen_01M5WBAQGXH30G57B0HZAXYBE9"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2947,
+                "outputTokens": 71,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2093,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "timingMs": {
+              "model": 6499,
+              "creditGuard": 233,
+              "total": 6738
+            },
+            "issue": {
+              "id": "982512ff-786e-4b59-a155-2a993a0e8573",
+              "category": "general",
+              "equipment": "Rollladen",
+              "subcategory": null,
+              "description": "Rollladen\ngeht nicht\nBereich: Kinderzimmer\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": null,
+              "location": "Kinderzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Das Ding am Fenster geht nicht."
+                },
+                {
+                  "question": "location",
+                  "answer": "Rollladen im Kinderzimmer"
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Ding am Fenster",
+                      "to": "Rollladen"
+                    },
+                    "location": {
+                      "from": null,
+                      "to": "Kinderzimmer"
+                    }
+                  },
+                  "source": "Rollladen im Kinderzimmer",
+                  "at": "2026-10-26T14:55:14.330Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Rollladen\ngeht nicht\nBereich: Kinderzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "Rollladen",
+                  "source": "Rollladen im Kinderzimmer"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "Das Ding am Fenster geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Kinderzimmer",
+                  "source": "Rollladen im Kinderzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "not_provided",
+                  "value": "general",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Rollladen\ngeht nicht\nBereich: Kinderzimmer\nDringlichkeit: Normal",
+                  "source": "Das Ding am Fenster geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:54:58.270Z",
+              "updatedAt": "2026-10-26T14:55:14.330Z",
+              "shortLabel": "Rollladen",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"general\",\"Rollladen\",\"Rollladen\\ngeht nicht\\nBereich: Kinderzimmer\\nDringlichkeit: Normal\",\"geht nicht\",null,\"Kinderzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"not_provided\",\"general\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Rollladen\\ngeht nicht\\nBereich: Kinderzimmer\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"Rollladen\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Kinderzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "982512ff-786e-4b59-a155-2a993a0e8573",
+                "category": "general",
+                "equipment": "Rollladen",
+                "subcategory": null,
+                "description": "Rollladen\ngeht nicht\nBereich: Kinderzimmer\nDringlichkeit: Normal",
+                "defect": "geht nicht",
+                "count": null,
+                "location": "Kinderzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Das Ding am Fenster geht nicht."
+                  },
+                  {
+                    "question": "location",
+                    "answer": "Rollladen im Kinderzimmer"
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "Ding am Fenster",
+                        "to": "Rollladen"
+                      },
+                      "location": {
+                        "from": null,
+                        "to": "Kinderzimmer"
+                      }
+                    },
+                    "source": "Rollladen im Kinderzimmer",
+                    "at": "2026-10-26T14:55:14.330Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Rollladen\ngeht nicht\nBereich: Kinderzimmer\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "Rollladen",
+                    "source": "Rollladen im Kinderzimmer"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "geht nicht",
+                    "source": "Das Ding am Fenster geht nicht."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "corrected",
+                    "value": "Kinderzimmer",
+                    "source": "Rollladen im Kinderzimmer"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "not_provided",
+                    "value": "general",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Rollladen\ngeht nicht\nBereich: Kinderzimmer\nDringlichkeit: Normal",
+                    "source": "Das Ding am Fenster geht nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:54:58.270Z",
+                "updatedAt": "2026-10-26T14:55:14.330Z",
+                "shortLabel": "Rollladen",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"general\",\"Rollladen\",\"Rollladen\\ngeht nicht\\nBereich: Kinderzimmer\\nDringlichkeit: Normal\",\"geht nicht\",null,\"Kinderzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"not_provided\",\"general\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Rollladen\\ngeht nicht\\nBereich: Kinderzimmer\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"Rollladen\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Kinderzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "982512ff-786e-4b59-a155-2a993a0e8573"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "982512ff-786e-4b59-a155-2a993a0e8573"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Er bleibt auf halber Höhe stehen.",
+          "status": 200,
+          "httpMs": 18917.36,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Dass der Rollladen auf halber Höhe stehen bleibt, ist für die Meldung notiert. Geben Sie einfach Bescheid, wenn Sie das Formular prüfen möchten.",
+            "navigation": [],
+            "modelCalls": 4,
+            "generationIds": [
+              "gen_01M5WBB33ZSMRSK9V1PNXAPKAJ",
+              "gen_01M5WBB4T5J6XJBTREZGAH7F1D",
+              "gen_01M5WBBCHTFZJCR0MREAV77B33",
+              "gen_01M5WBBF68ZXR2P1NH77MB018M"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2995,
+                "outputTokens": 66,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2169,
+                "outputTokens": 80,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 3082,
+                "outputTokens": 127,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2183,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": true,
+            "timingMs": {
+              "model": 13156,
+              "creditGuard": 657,
+              "total": 13820
+            },
+            "issue": {
+              "id": "982512ff-786e-4b59-a155-2a993a0e8573",
+              "category": "general",
+              "equipment": "Rollladen",
+              "subcategory": null,
+              "description": "Rollladen\nbleibt auf halber Höhe stehen\nBereich: Kinderzimmer\nDringlichkeit: Normal",
+              "defect": "bleibt auf halber Höhe stehen",
+              "count": null,
+              "location": "Kinderzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Das Ding am Fenster geht nicht."
+                },
+                {
+                  "question": "location",
+                  "answer": "Rollladen im Kinderzimmer"
+                },
+                {
+                  "question": "description",
+                  "answer": "Er bleibt auf halber Höhe stehen."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Ding am Fenster",
+                      "to": "Rollladen"
+                    },
+                    "location": {
+                      "from": null,
+                      "to": "Kinderzimmer"
+                    }
+                  },
+                  "source": "Rollladen im Kinderzimmer",
+                  "at": "2026-10-26T14:55:14.330Z"
+                },
+                {
+                  "changes": {
+                    "defect": {
+                      "from": "geht nicht",
+                      "to": "bleibt auf halber Höhe stehen"
+                    }
+                  },
+                  "source": "Er bleibt auf halber Höhe stehen.",
+                  "at": "2026-10-26T14:55:38.565Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Rollladen\nbleibt auf halber Höhe stehen\nBereich: Kinderzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "Rollladen",
+                  "source": "Rollladen im Kinderzimmer"
+                },
+                "defect": {
+                  "status": "corrected",
+                  "value": "bleibt auf halber Höhe stehen",
+                  "source": "Er bleibt auf halber Höhe stehen."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Kinderzimmer",
+                  "source": "Rollladen im Kinderzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "not_provided",
+                  "value": "general",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Rollladen\nbleibt auf halber Höhe stehen\nBereich: Kinderzimmer\nDringlichkeit: Normal",
+                  "source": "Das Ding am Fenster geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:54:58.270Z",
+              "updatedAt": "2026-10-26T14:55:38.565Z",
+              "shortLabel": "Rollladen",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"general\",\"Rollladen\",\"Rollladen\\nbleibt auf halber Höhe stehen\\nBereich: Kinderzimmer\\nDringlichkeit: Normal\",\"bleibt auf halber Höhe stehen\",null,\"Kinderzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"not_provided\",\"general\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"corrected\",\"bleibt auf halber Höhe stehen\",null],[\"description\",\"known\",\"Rollladen\\nbleibt auf halber Höhe stehen\\nBereich: Kinderzimmer\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"Rollladen\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Kinderzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 4
+              }
+            },
+            "issues": [
+              {
+                "id": "982512ff-786e-4b59-a155-2a993a0e8573",
+                "category": "general",
+                "equipment": "Rollladen",
+                "subcategory": null,
+                "description": "Rollladen\nbleibt auf halber Höhe stehen\nBereich: Kinderzimmer\nDringlichkeit: Normal",
+                "defect": "bleibt auf halber Höhe stehen",
+                "count": null,
+                "location": "Kinderzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Das Ding am Fenster geht nicht."
+                  },
+                  {
+                    "question": "location",
+                    "answer": "Rollladen im Kinderzimmer"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Er bleibt auf halber Höhe stehen."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "Ding am Fenster",
+                        "to": "Rollladen"
+                      },
+                      "location": {
+                        "from": null,
+                        "to": "Kinderzimmer"
+                      }
+                    },
+                    "source": "Rollladen im Kinderzimmer",
+                    "at": "2026-10-26T14:55:14.330Z"
+                  },
+                  {
+                    "changes": {
+                      "defect": {
+                        "from": "geht nicht",
+                        "to": "bleibt auf halber Höhe stehen"
+                      }
+                    },
+                    "source": "Er bleibt auf halber Höhe stehen.",
+                    "at": "2026-10-26T14:55:38.565Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Rollladen\nbleibt auf halber Höhe stehen\nBereich: Kinderzimmer\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "Rollladen",
+                    "source": "Rollladen im Kinderzimmer"
+                  },
+                  "defect": {
+                    "status": "corrected",
+                    "value": "bleibt auf halber Höhe stehen",
+                    "source": "Er bleibt auf halber Höhe stehen."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "corrected",
+                    "value": "Kinderzimmer",
+                    "source": "Rollladen im Kinderzimmer"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "not_provided",
+                    "value": "general",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Rollladen\nbleibt auf halber Höhe stehen\nBereich: Kinderzimmer\nDringlichkeit: Normal",
+                    "source": "Das Ding am Fenster geht nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:54:58.270Z",
+                "updatedAt": "2026-10-26T14:55:38.565Z",
+                "shortLabel": "Rollladen",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"general\",\"Rollladen\",\"Rollladen\\nbleibt auf halber Höhe stehen\\nBereich: Kinderzimmer\\nDringlichkeit: Normal\",\"bleibt auf halber Höhe stehen\",null,\"Kinderzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"not_provided\",\"general\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"corrected\",\"bleibt auf halber Höhe stehen\",null],[\"description\",\"known\",\"Rollladen\\nbleibt auf halber Höhe stehen\\nBereich: Kinderzimmer\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"Rollladen\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Kinderzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 4
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "982512ff-786e-4b59-a155-2a993a0e8573"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "982512ff-786e-4b59-a155-2a993a0e8573"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "safety",
+      "title": null,
+      "turns": [
+        {
+          "customer": "Meine Lampe im Büro ist kaputt.",
+          "status": 200,
+          "httpMs": 9105.01,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Ich kann das Anliegen gerne für Sie vorbereiten. Möchten Sie, dass ich das Formular zur Kontrolle öffne?",
+            "navigation": [],
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WBBTRY8KKPSBPTXXX1Q10D",
+              "gen_01M5WBBXARPTXSDXY19PFP1D3W"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2618,
+                "outputTokens": 95,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 1751,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "timingMs": {
+              "model": 3551,
+              "creditGuard": 367,
+              "total": 3924
+            },
+            "issue": {
+              "id": "63f292a5-5176-430f-a4f2-8450fc790544",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Meine Lampe im Büro ist kaputt.",
+              "defect": "kaputt",
+              "count": null,
+              "location": "Büro",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe im Büro ist kaputt."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nBereich: Büro\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe im Büro ist kaputt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "Meine Lampe im Büro ist kaputt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Büro",
+                  "source": "Meine Lampe im Büro ist kaputt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Lampe im Büro ist kaputt.",
+                  "source": "Meine Lampe im Büro ist kaputt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:55:52.966Z",
+              "updatedAt": "2026-10-26T14:55:52.967Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Büro ist kaputt.\",\"kaputt\",null,\"Büro\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Meine Lampe im Büro ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Büro\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "63f292a5-5176-430f-a4f2-8450fc790544",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Meine Lampe im Büro ist kaputt.",
+                "defect": "kaputt",
+                "count": null,
+                "location": "Büro",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Meine Lampe im Büro ist kaputt."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nBereich: Büro\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Meine Lampe im Büro ist kaputt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "Meine Lampe im Büro ist kaputt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Büro",
+                    "source": "Meine Lampe im Büro ist kaputt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Meine Lampe im Büro ist kaputt.",
+                    "source": "Meine Lampe im Büro ist kaputt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:55:52.966Z",
+                "updatedAt": "2026-10-26T14:55:52.967Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Meine Lampe im Büro ist kaputt.\",\"kaputt\",null,\"Büro\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Meine Lampe im Büro ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Büro\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "63f292a5-5176-430f-a4f2-8450fc790544"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "63f292a5-5176-430f-a4f2-8450fc790544"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Vorhin hat sie kurz gefunkt.",
+          "status": 200,
+          "httpMs": 12652.41,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Bitte schalten Sie die Lampe zu Ihrer Sicherheit vorerst nicht mehr ein und berühren Sie sie nicht. Ich habe notiert, dass sie kurz gefunkt hat.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 4,
+            "generationIds": [
+              "gen_01M5WBC7MBZVXSXH8Z6GZBBKW0",
+              "gen_01M5WBCA3JE0GCEBCR67Z43XDX",
+              "gen_01M5WBCBTDSKZ1TJ5K2N5ASQC9",
+              "gen_01M5WBCE9BBB74F2CGJ899AB77"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2974,
+                "outputTokens": 147,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2160,
+                "outputTokens": 79,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 3060,
+                "outputTokens": 79,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2159,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": true,
+            "timingMs": {
+              "model": 7709,
+              "creditGuard": 672,
+              "total": 8391
+            },
+            "issue": {
+              "id": "63f292a5-5176-430f-a4f2-8450fc790544",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Meine Lampe im Büro ist kaputt.",
+              "defect": "kaputt",
+              "count": null,
+              "location": "Büro",
+              "since": "Vorhin",
+              "extent": null,
+              "details": "kurz gefunkt",
+              "cause": null,
+              "urgency": "emergency",
+              "hazard": "electric",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe im Büro ist kaputt."
+                },
+                {
+                  "question": "description",
+                  "answer": "Vorhin hat sie kurz gefunkt."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nBereich: Büro\nSeit wann: Vorhin\nZusatzangaben: kurz gefunkt\nDringlichkeit: Mögliche akute Gefahr",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe im Büro ist kaputt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "Meine Lampe im Büro ist kaputt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Büro",
+                  "source": "Meine Lampe im Büro ist kaputt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "known",
+                  "value": "Vorhin",
+                  "source": "Vorhin hat sie kurz gefunkt."
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "known",
+                  "value": "kurz gefunkt",
+                  "source": "Vorhin hat sie kurz gefunkt."
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Lampe im Büro ist kaputt.",
+                  "source": "Meine Lampe im Büro ist kaputt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:55:52.966Z",
+              "updatedAt": "2026-10-26T14:56:10.381Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Büro ist kaputt.\",\"kaputt\",null,\"Büro\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Meine Lampe im Büro ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Büro\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "63f292a5-5176-430f-a4f2-8450fc790544",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Meine Lampe im Büro ist kaputt.",
+                "defect": "kaputt",
+                "count": null,
+                "location": "Büro",
+                "since": "Vorhin",
+                "extent": null,
+                "details": "kurz gefunkt",
+                "cause": null,
+                "urgency": "emergency",
+                "hazard": "electric",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Meine Lampe im Büro ist kaputt."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Vorhin hat sie kurz gefunkt."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nBereich: Büro\nSeit wann: Vorhin\nZusatzangaben: kurz gefunkt\nDringlichkeit: Mögliche akute Gefahr",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Meine Lampe im Büro ist kaputt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "Meine Lampe im Büro ist kaputt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Büro",
+                    "source": "Meine Lampe im Büro ist kaputt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "known",
+                    "value": "Vorhin",
+                    "source": "Vorhin hat sie kurz gefunkt."
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "kurz gefunkt",
+                    "source": "Vorhin hat sie kurz gefunkt."
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Meine Lampe im Büro ist kaputt.",
+                    "source": "Meine Lampe im Büro ist kaputt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:55:52.966Z",
+                "updatedAt": "2026-10-26T14:56:10.381Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Meine Lampe im Büro ist kaputt.\",\"kaputt\",null,\"Büro\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Meine Lampe im Büro ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Büro\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "electric",
+              "urgency": "emergency",
+              "source": "Vorhin hat sie kurz gefunkt."
+            }
+          }
+        },
+        {
+          "customer": "Ich lasse sie ausgeschaltet.",
+          "status": 200,
+          "httpMs": 12456.34,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Das ist der sicherste Weg. Geben Sie mir einfach Bescheid, wenn Sie das Anliegen weiterbearbeiten oder noch etwas ergänzen möchten.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 4,
+            "generationIds": [
+              "gen_01M5WBCR611T1R3ARJ9BDYKNZF",
+              "gen_01M5WBCTK5C1ZM4XH566X4SW0B",
+              "gen_01M5WBCX8TRCJANHNHP0B3ZFQ0",
+              "gen_01M5WBCYS6PVWD4Q71FNDFW8Y0"
+            ],
+            "usage": [
+              {
+                "inputTokens": 3051,
+                "outputTokens": 42,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2226,
+                "outputTokens": 92,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 3150,
+                "outputTokens": 44,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2228,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": true,
+            "timingMs": {
+              "model": 7877,
+              "creditGuard": 469,
+              "total": 8355
+            },
+            "issue": {
+              "id": "63f292a5-5176-430f-a4f2-8450fc790544",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Meine Lampe im Büro ist kaputt.",
+              "defect": "kaputt",
+              "count": null,
+              "location": "Büro",
+              "since": "Vorhin",
+              "extent": null,
+              "details": "kurz gefunkt",
+              "cause": null,
+              "urgency": "emergency",
+              "hazard": "electric",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe im Büro ist kaputt."
+                },
+                {
+                  "question": "description",
+                  "answer": "Vorhin hat sie kurz gefunkt."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nBereich: Büro\nSeit wann: Vorhin\nZusatzangaben: kurz gefunkt\nDringlichkeit: Mögliche akute Gefahr",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe im Büro ist kaputt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "Meine Lampe im Büro ist kaputt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Büro",
+                  "source": "Meine Lampe im Büro ist kaputt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "known",
+                  "value": "Vorhin",
+                  "source": "Vorhin hat sie kurz gefunkt."
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "known",
+                  "value": "kurz gefunkt",
+                  "source": "Vorhin hat sie kurz gefunkt."
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Lampe im Büro ist kaputt.",
+                  "source": "Meine Lampe im Büro ist kaputt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T14:55:52.966Z",
+              "updatedAt": "2026-10-26T14:56:10.381Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe im Büro ist kaputt.\",\"kaputt\",null,\"Büro\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Meine Lampe im Büro ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Büro\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "63f292a5-5176-430f-a4f2-8450fc790544",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Meine Lampe im Büro ist kaputt.",
+                "defect": "kaputt",
+                "count": null,
+                "location": "Büro",
+                "since": "Vorhin",
+                "extent": null,
+                "details": "kurz gefunkt",
+                "cause": null,
+                "urgency": "emergency",
+                "hazard": "electric",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Meine Lampe im Büro ist kaputt."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Vorhin hat sie kurz gefunkt."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nBereich: Büro\nSeit wann: Vorhin\nZusatzangaben: kurz gefunkt\nDringlichkeit: Mögliche akute Gefahr",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Meine Lampe im Büro ist kaputt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "Meine Lampe im Büro ist kaputt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Büro",
+                    "source": "Meine Lampe im Büro ist kaputt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "known",
+                    "value": "Vorhin",
+                    "source": "Vorhin hat sie kurz gefunkt."
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "kurz gefunkt",
+                    "source": "Vorhin hat sie kurz gefunkt."
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Meine Lampe im Büro ist kaputt.",
+                    "source": "Meine Lampe im Büro ist kaputt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T14:55:52.966Z",
+                "updatedAt": "2026-10-26T14:56:10.381Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Meine Lampe im Büro ist kaputt.\",\"kaputt\",null,\"Büro\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Meine Lampe im Büro ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Büro\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "electric",
+              "urgency": "emergency",
+              "source": "Vorhin hat sie kurz gefunkt."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 24.278831618,
+    "totalUsedUsd": 0.721168382,
+    "maxUsedUsd": 1.374154632,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 1,
+    "model": "google/gemini-3.8-flash",
+    "pricing": {
+      "input": 7.5e-07,
+      "output": 3.75e-06
+    }
+  },
+  "actualAccountDeltaUsd": 0.06836849999999994
+}
