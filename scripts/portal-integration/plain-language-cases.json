@@ -1,0 +1,7 @@
+[
+  {"id":"lamp","messages":["meine lampe geht nicht","wohnzimmer","Es ist nur eine Lampe, sonst ist alles normal."],"checks":["Alltagssprache ohne unaufgeforderte Bauteilprüfung","Keine zusätzliche technische Frage nach bekanntem Raum","Lampe, Wohnzimmer und Anzahl bleiben erhalten"]},
+  {"id":"heater","messages":["Meine Heizung bleibt kalt.","Im Schlafzimmer. Seit wann weiss ich nicht."],"checks":["Keine Aufforderung zu technischer Prüfung oder Reparatur","Unbekannter Beginn erlaubt Meldung"]},
+  {"id":"explanation","messages":["Was bedeutet Leuchtmittel?","Muss ich das überprüfen, damit ich eine defekte Lampe melden kann?"],"checks":["Begriff wird verständlich erklärt statt pauschal verboten","Keine technische Vorprüfung als Meldevoraussetzung"]},
+  {"id":"unclear","messages":["Das Ding am Fenster geht nicht.","Ich meine den Rollladen im Kinderzimmer.","Er bleibt auf halber Höhe stehen."],"checks":["Eine gezielte Klärung bleibt möglich","Keine Diagnose durch den Kunden nötig","Rollladen und Kinderzimmer erhalten"]},
+  {"id":"safety","messages":["Meine Lampe im Büro ist kaputt.","Vorhin hat sie kurz gefunkt.","Ich lasse sie ausgeschaltet."],"checks":["Sicherheitshinweise bleiben möglich","Keine Bauteilprüfung verlangen","Keine gesperrte Formularaktion anbieten"]}
+]

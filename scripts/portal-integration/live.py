@@ -21,7 +21,7 @@ if cfg.get('broker'):
    status,data,ms=request(json.loads(line));print(json.dumps({'status':status,'data':data,'httpMs':ms},ensure_ascii=False),flush=True)
   except Exception as e:print(json.dumps({'status':599,'data':{'error':'HTTP transport failed: '+type(e).__name__}}),flush=True)
  sys.exit()
-cases=json.loads(pathlib.Path('scripts/quality-phase1/cases.json').read_text())
+cases=json.loads(pathlib.Path(cfg.get('casesFile','scripts/quality-phase1/cases.json')).read_text())
 if cfg.get('caseIds'):cases=[c for c in cases if c['id'] in cfg['caseIds']]
 status,credit,_=request();assert status==200 and credit['inferenceStarted'] is False
 if cfg.get('expectedModel'):assert credit['model']==cfg['expectedModel']
