@@ -3,6 +3,7 @@ import {readSession,sealSession} from '../lib/mora/session.js';
 import {hydrateSimple,beginPreparation,acceptReceipt,safetyContext,contentHash} from '../lib/mora/simple/state.js';
 import {createPortalService,targets} from '../lib/mora/portal/service.js';
 import {createPreviewCreditGuard} from '../lib/mora/portal/budget.js';
+import {rememberPreparationOffer} from '../lib/mora/actions.js';
 import {portalCaseFields,portalCaseEvidence,portalIssueReadiness} from '../assets/mora-portal-map.js';
 
 const receipt=z.object({operationId:z.string().uuid(),issueId:z.string().uuid(),draftId:z.string().uuid(),revision:z.number().int().positive(),contentHash:z.string().regex(/^[a-f0-9]{64}$/),status:z.enum(['portal_received','error']),attachmentCount:z.number().int().min(0).max(3).optional(),conflictFields:z.array(z.enum(['title','description','unit','category'])).max(4).optional()}).strict();
@@ -76,6 +77,10 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
     const result=await converse(message,before,input.navigation,45000);
     const journal=state.portalJournal;state=result.state;state.integration='portal_v1';
     state.portalJournal=[...journal,{role:'assistant',content:result.reply}].slice(-48);state.portalPending=[];
+    // Portal controls are derived separately from plan.actions. Record the
+    // actual offer returned to this client, so the next model turn sees it.
+    // A visible offer is neither an opened form nor a successful save.
+    if(input.navigation.includes('cases')&&controls(state).save)rememberPreparationOffer(state);
     const actionable=controls(state).save||controls(state).review;
     return reply(200,{mode:'model',reply:result.reply,navigation:result.navigation,requestedAction:actionable?result.requestedAction:null,modelCalls:result.modelCalls,generationIds:result.generationIds,usage:result.usage,repaired:result.repaired,timingMs:{model:result.modelMs,creditGuard:result.guardMs}});
   }catch(error){
