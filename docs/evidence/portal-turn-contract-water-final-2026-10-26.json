@@ -1,0 +1,764 @@
+{
+  "scope": "Real portal_v1 backend responses. Browser rendering and local saving are separate checks.",
+  "url": "https://morada-mora-eq3t07wi7-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "model": "google/gemini-3.8-flash",
+  "before": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 23.909343368,
+    "totalUsedUsd": 1.090656632,
+    "maxUsedUsd": 1.374154632,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 1,
+    "model": "google/gemini-3.8-flash",
+    "pricing": {
+      "input": 7.5e-07,
+      "output": 3.75e-06
+    }
+  },
+  "conversations": [
+    {
+      "id": "12",
+      "title": null,
+      "turns": [
+        {
+          "customer": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+          "status": 200,
+          "httpMs": 11646.9,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Tritt das Wasser dauerhaft aus oder nur, wenn der Wasserhahn läuft? Bitte stellen Sie vorsorglich ein Gefäss unter die Stelle.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WZX44QX8AQM67SGQHRE6G4",
+              "gen_01M5WZXA1K1GFRXSNPNH6FX35C"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2799,
+                "outputTokens": 113,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2139,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "timingMs": {
+              "model": 7201,
+              "creditGuard": 314,
+              "total": 7556
+            },
+            "issue": {
+              "id": "7ccd2457-f702-4bf4-9c77-a2e4312426ae",
+              "category": "water",
+              "equipment": "Lavabo",
+              "subcategory": null,
+              "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+              "defect": "kleine Pfütze / Wasser tritt aus",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": null,
+              "details": "unter dem Lavabo",
+              "cause": null,
+              "urgency": "high",
+              "hazard": "water",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lavabo\nkleine Pfütze / Wasser tritt aus\nBereich: Bad\nZusatzangaben: unter dem Lavabo\nDringlichkeit: Dringend",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kleine Pfütze / Wasser tritt aus",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "details": {
+                  "status": "known",
+                  "value": "unter dem Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "water",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T20:54:54.603Z",
+              "updatedAt": "2026-10-26T20:54:54.619Z",
+              "shortLabel": "Lavabo"
+            },
+            "issues": [
+              {
+                "id": "7ccd2457-f702-4bf4-9c77-a2e4312426ae",
+                "category": "water",
+                "equipment": "Lavabo",
+                "subcategory": null,
+                "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                "defect": "kleine Pfütze / Wasser tritt aus",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": null,
+                "details": "unter dem Lavabo",
+                "cause": null,
+                "urgency": "high",
+                "hazard": "water",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lavabo\nkleine Pfütze / Wasser tritt aus\nBereich: Bad\nZusatzangaben: unter dem Lavabo\nDringlichkeit: Dringend",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kleine Pfütze / Wasser tritt aus",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "unter dem Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "water",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T20:54:54.603Z",
+                "updatedAt": "2026-10-26T20:54:54.619Z",
+                "shortLabel": "Lavabo"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "water",
+              "urgency": "high",
+              "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+            }
+          }
+        },
+        {
+          "customer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam.",
+          "status": 200,
+          "httpMs": 14133.43,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Bitte stellen oder lassen Sie weiterhin ein Gefäss darunter, damit kein Schaden am Boden entsteht. Falls die Absperrventile unter dem Lavabo gut erreichbar sind, können Sie diese zudrehen, um das Tropfen zu stoppen.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 4,
+            "generationIds": [
+              "gen_01M5WZXGBB4W8SSNXY60DDHJG7",
+              "gen_01M5WZXJHST1BCV0EF28AT71YF",
+              "gen_01M5WZXMMRFGVS8HKR4FYMZH32",
+              "gen_01M5WZXQM5BFZKVZ4X345F3AQD"
+            ],
+            "usage": [
+              {
+                "inputTokens": 3254,
+                "outputTokens": 155,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2597,
+                "outputTokens": 64,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2133,
+                "outputTokens": 59,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2625,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": true,
+            "repairScope": "reply",
+            "timingMs": {
+              "model": 8677,
+              "creditGuard": 593,
+              "total": 9285
+            },
+            "issue": {
+              "id": "7ccd2457-f702-4bf4-9c77-a2e4312426ae",
+              "category": "water",
+              "equipment": "Lavabo",
+              "subcategory": null,
+              "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+              "defect": "kleine Pfütze / Wasser tritt aus",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": "tropft nur langsam",
+              "details": "unter dem Lavabo",
+              "cause": null,
+              "urgency": "high",
+              "hazard": "water",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                {
+                  "question": "description",
+                  "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [
+                "cause"
+              ],
+              "summary": "Lavabo\nkleine Pfütze / Wasser tritt aus\nBereich: Bad\nUmfang / Situation: tropft nur langsam\nZusatzangaben: unter dem Lavabo\nDringlichkeit: Dringend",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kleine Pfütze / Wasser tritt aus",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "details": {
+                  "status": "known",
+                  "value": "unter dem Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "tropft nur langsam",
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                "cause": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                "category": {
+                  "status": "known",
+                  "value": "water",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T20:54:54.603Z",
+              "updatedAt": "2026-10-26T20:55:08.532Z",
+              "shortLabel": "Lavabo"
+            },
+            "issues": [
+              {
+                "id": "7ccd2457-f702-4bf4-9c77-a2e4312426ae",
+                "category": "water",
+                "equipment": "Lavabo",
+                "subcategory": null,
+                "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                "defect": "kleine Pfütze / Wasser tritt aus",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": "tropft nur langsam",
+                "details": "unter dem Lavabo",
+                "cause": null,
+                "urgency": "high",
+                "hazard": "water",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [
+                  "cause"
+                ],
+                "summary": "Lavabo\nkleine Pfütze / Wasser tritt aus\nBereich: Bad\nUmfang / Situation: tropft nur langsam\nZusatzangaben: unter dem Lavabo\nDringlichkeit: Dringend",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kleine Pfütze / Wasser tritt aus",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "unter dem Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "tropft nur langsam",
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  "cause": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "water",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T20:54:54.603Z",
+                "updatedAt": "2026-10-26T20:55:08.532Z",
+                "shortLabel": "Lavabo"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "water",
+              "urgency": "high",
+              "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+            }
+          }
+        },
+        {
+          "customer": "Nein, ich habe kein undichtes Rohr festgestellt, nur das Wasser gesehen.",
+          "status": 503,
+          "httpMs": 33020.55,
+          "response": {
+            "architecture": "portal_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "availability": {
+              "provider": "gateway",
+              "model": "google/gemini-3.8-flash",
+              "status": null,
+              "reason": "invalid_model_output"
+            },
+            "modelCalls": 4,
+            "generationIds": [
+              "gen_01M5WZXX83QDEPNGXTQ8EK0EVP",
+              "gen_01M5WZXZB2XRRP41YSZYBGF8X7",
+              "gen_01M5WZY0SVMEZ1ZE01EDS5PHRF",
+              "gen_01M5WZYQ8DYBKJJRDWGK45G9GV"
+            ],
+            "issue": {
+              "id": "7ccd2457-f702-4bf4-9c77-a2e4312426ae",
+              "category": "water",
+              "equipment": "Lavabo",
+              "subcategory": null,
+              "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+              "defect": "kleine Pfütze / Wasser tritt aus",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": "tropft nur langsam",
+              "details": "unter dem Lavabo",
+              "cause": null,
+              "urgency": "high",
+              "hazard": "water",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                {
+                  "question": "description",
+                  "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [
+                "cause"
+              ],
+              "summary": "Lavabo\nkleine Pfütze / Wasser tritt aus\nBereich: Bad\nUmfang / Situation: tropft nur langsam\nZusatzangaben: unter dem Lavabo\nDringlichkeit: Dringend",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kleine Pfütze / Wasser tritt aus",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "details": {
+                  "status": "known",
+                  "value": "unter dem Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "tropft nur langsam",
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                "cause": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                "category": {
+                  "status": "known",
+                  "value": "water",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T20:54:54.603Z",
+              "updatedAt": "2026-10-26T20:55:08.532Z",
+              "shortLabel": "Lavabo"
+            },
+            "issues": [
+              {
+                "id": "7ccd2457-f702-4bf4-9c77-a2e4312426ae",
+                "category": "water",
+                "equipment": "Lavabo",
+                "subcategory": null,
+                "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                "defect": "kleine Pfütze / Wasser tritt aus",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": "tropft nur langsam",
+                "details": "unter dem Lavabo",
+                "cause": null,
+                "urgency": "high",
+                "hazard": "water",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [
+                  "cause"
+                ],
+                "summary": "Lavabo\nkleine Pfütze / Wasser tritt aus\nBereich: Bad\nUmfang / Situation: tropft nur langsam\nZusatzangaben: unter dem Lavabo\nDringlichkeit: Dringend",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kleine Pfütze / Wasser tritt aus",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "unter dem Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "tropft nur langsam",
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  "cause": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "water",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T20:54:54.603Z",
+                "updatedAt": "2026-10-26T20:55:08.532Z",
+                "shortLabel": "Lavabo"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "water",
+              "urgency": "high",
+              "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+            },
+            "timingMs": {
+              "total": 29196
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 23.874766118,
+    "totalUsedUsd": 1.125233882,
+    "maxUsedUsd": 1.374154632,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 1,
+    "model": "google/gemini-3.8-flash",
+    "pricing": {
+      "input": 7.5e-07,
+      "output": 3.75e-06
+    }
+  },
+  "actualAccountDeltaUsd": 0.034577250000000115
+}

@@ -1,0 +1,2081 @@
+{
+  "scope": "Real portal_v1 backend responses. Browser rendering and local saving are separate checks.",
+  "url": "https://morada-mora-dds4srk1w-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "model": "google/gemini-3.8-flash",
+  "before": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 23.952739868,
+    "totalUsedUsd": 1.047260132,
+    "maxUsedUsd": 1.374154632,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 1,
+    "model": "google/gemini-3.8-flash",
+    "pricing": {
+      "input": 7.5e-07,
+      "output": 3.75e-06
+    }
+  },
+  "conversations": [
+    {
+      "id": "09",
+      "title": null,
+      "turns": [
+        {
+          "customer": "das ding da beim fenster spinnt",
+          "status": 200,
+          "httpMs": 12134.65,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Um was für ein Teil oder Gerät beim Fenster handelt es sich dabei?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 4,
+            "generationIds": [
+              "gen_01M5WZN1Y4WWYMY4552P28CQ63",
+              "gen_01M5WZN4RWPVC2P3BD2MYXFTY2",
+              "gen_01M5WZN6TC1HGXN79JAX0K4VNS",
+              "gen_01M5WZN8H97R5CMC3YFYBB5GQ7"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2794,
+                "outputTokens": 96,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2046,
+                "outputTokens": 66,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 1598,
+                "outputTokens": 29,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2038,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": true,
+            "repairScope": "reply",
+            "timingMs": {
+              "model": 7628,
+              "creditGuard": 566,
+              "total": 8238
+            },
+            "issue": {
+              "id": "fda11f61-dd7b-4f80-b485-d5276cc484e4",
+              "category": "general",
+              "equipment": "unknown",
+              "subcategory": null,
+              "description": "das ding da beim fenster spinnt",
+              "defect": "spinnt",
+              "count": null,
+              "location": null,
+              "since": null,
+              "extent": null,
+              "details": "beim fenster",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "das ding da beim fenster spinnt"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Allgemeines Anliegen\nspinnt\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+              "pendingKey": "equipment",
+              "clarification": "Um was für ein Teil oder Gerät beim Fenster handelt es sich dabei?",
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "defect": {
+                  "status": "known",
+                  "value": "spinnt",
+                  "source": "das ding da beim fenster spinnt"
+                },
+                "details": {
+                  "status": "known",
+                  "value": "beim fenster",
+                  "source": "das ding da beim fenster spinnt"
+                },
+                "equipment": {
+                  "status": "not_provided",
+                  "value": "unknown",
+                  "source": null
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "not_provided",
+                  "value": "general",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "das ding da beim fenster spinnt",
+                  "source": "das ding da beim fenster spinnt"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T20:50:30.871Z",
+              "updatedAt": "2026-10-26T20:50:30.871Z",
+              "shortLabel": "Noch unklar"
+            },
+            "issues": [
+              {
+                "id": "fda11f61-dd7b-4f80-b485-d5276cc484e4",
+                "category": "general",
+                "equipment": "unknown",
+                "subcategory": null,
+                "description": "das ding da beim fenster spinnt",
+                "defect": "spinnt",
+                "count": null,
+                "location": null,
+                "since": null,
+                "extent": null,
+                "details": "beim fenster",
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "das ding da beim fenster spinnt"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Allgemeines Anliegen\nspinnt\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+                "pendingKey": "equipment",
+                "clarification": "Um was für ein Teil oder Gerät beim Fenster handelt es sich dabei?",
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "defect": {
+                    "status": "known",
+                    "value": "spinnt",
+                    "source": "das ding da beim fenster spinnt"
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "beim fenster",
+                    "source": "das ding da beim fenster spinnt"
+                  },
+                  "equipment": {
+                    "status": "not_provided",
+                    "value": "unknown",
+                    "source": null
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "not_provided",
+                    "value": "general",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "das ding da beim fenster spinnt",
+                    "source": "das ding da beim fenster spinnt"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T20:50:30.871Z",
+                "updatedAt": "2026-10-26T20:50:30.871Z",
+                "shortLabel": "Noch unklar"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen.",
+          "status": 200,
+          "httpMs": 7640.17,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "In welchem Raum befindet sich dieser Rollladen?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WZNDZ585MMVHAJTZXC4SZF",
+              "gen_01M5WZNG5FPHCYYHA1BRT7XKBV"
+            ],
+            "usage": [
+              {
+                "inputTokens": 3163,
+                "outputTokens": 79,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2460,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "timingMs": {
+              "model": 3265,
+              "creditGuard": 417,
+              "total": 3693
+            },
+            "issue": {
+              "id": "fda11f61-dd7b-4f80-b485-d5276cc484e4",
+              "category": "general",
+              "equipment": "Rollladen",
+              "subcategory": null,
+              "description": "Rollladen\nbleibt auf halber Höhe stehen\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+              "defect": "bleibt auf halber Höhe stehen",
+              "count": null,
+              "location": null,
+              "since": null,
+              "extent": null,
+              "details": "beim fenster",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "das ding da beim fenster spinnt"
+                },
+                {
+                  "question": "equipment",
+                  "answer": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "unknown",
+                      "to": "Rollladen"
+                    },
+                    "defect": {
+                      "from": "spinnt",
+                      "to": "bleibt auf halber Höhe stehen"
+                    }
+                  },
+                  "source": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen.",
+                  "at": "2026-10-26T20:50:38.645Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Rollladen\nbleibt auf halber Höhe stehen\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+              "pendingKey": "location",
+              "clarification": "In welchem Raum befindet sich dieser Rollladen?",
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "defect": {
+                  "status": "corrected",
+                  "value": "bleibt auf halber Höhe stehen",
+                  "source": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen."
+                },
+                "details": {
+                  "status": "known",
+                  "value": "beim fenster",
+                  "source": "das ding da beim fenster spinnt"
+                },
+                "equipment": {
+                  "status": "corrected",
+                  "value": "Rollladen",
+                  "source": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "not_provided",
+                  "value": "general",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Rollladen\nbleibt auf halber Höhe stehen\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+                  "source": "das ding da beim fenster spinnt"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T20:50:30.871Z",
+              "updatedAt": "2026-10-26T20:50:38.645Z",
+              "shortLabel": "Rollladen"
+            },
+            "issues": [
+              {
+                "id": "fda11f61-dd7b-4f80-b485-d5276cc484e4",
+                "category": "general",
+                "equipment": "Rollladen",
+                "subcategory": null,
+                "description": "Rollladen\nbleibt auf halber Höhe stehen\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+                "defect": "bleibt auf halber Höhe stehen",
+                "count": null,
+                "location": null,
+                "since": null,
+                "extent": null,
+                "details": "beim fenster",
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "das ding da beim fenster spinnt"
+                  },
+                  {
+                    "question": "equipment",
+                    "answer": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "unknown",
+                        "to": "Rollladen"
+                      },
+                      "defect": {
+                        "from": "spinnt",
+                        "to": "bleibt auf halber Höhe stehen"
+                      }
+                    },
+                    "source": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen.",
+                    "at": "2026-10-26T20:50:38.645Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Rollladen\nbleibt auf halber Höhe stehen\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+                "pendingKey": "location",
+                "clarification": "In welchem Raum befindet sich dieser Rollladen?",
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "defect": {
+                    "status": "corrected",
+                    "value": "bleibt auf halber Höhe stehen",
+                    "source": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen."
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "beim fenster",
+                    "source": "das ding da beim fenster spinnt"
+                  },
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "Rollladen",
+                    "source": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "not_provided",
+                    "value": "general",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Rollladen\nbleibt auf halber Höhe stehen\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+                    "source": "das ding da beim fenster spinnt"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T20:50:30.871Z",
+                "updatedAt": "2026-10-26T20:50:38.645Z",
+                "shortLabel": "Rollladen"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Im Kinderzimmer, seit heute Morgen.",
+          "status": 200,
+          "httpMs": 8564.65,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Die Angaben zum klemmenden Rollladen im Kinderzimmer sind vollständig erfasst. Möchten Sie das Anliegen zur Kontrolle vorbereiten lassen?",
+            "navigation": [],
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WZNPAJ3S02F08GFSX0RY2A",
+              "gen_01M5WZNRJVDYWCVXK3E3JNCYWV"
+            ],
+            "usage": [
+              {
+                "inputTokens": 3234,
+                "outputTokens": 118,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2628,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "timingMs": {
+              "model": 3337,
+              "creditGuard": 403,
+              "total": 3755
+            },
+            "issue": {
+              "id": "fda11f61-dd7b-4f80-b485-d5276cc484e4",
+              "category": "general",
+              "equipment": "Rollladen",
+              "subcategory": null,
+              "description": "Rollladen\nbleibt auf halber Höhe stehen\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+              "defect": "bleibt auf halber Höhe stehen",
+              "count": null,
+              "location": "Kinderzimmer",
+              "since": "heute Morgen",
+              "extent": null,
+              "details": "beim fenster",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "das ding da beim fenster spinnt"
+                },
+                {
+                  "question": "equipment",
+                  "answer": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen."
+                },
+                {
+                  "question": "location",
+                  "answer": "Im Kinderzimmer, seit heute Morgen."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "unknown",
+                      "to": "Rollladen"
+                    },
+                    "defect": {
+                      "from": "spinnt",
+                      "to": "bleibt auf halber Höhe stehen"
+                    }
+                  },
+                  "source": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen.",
+                  "at": "2026-10-26T20:50:38.645Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Rollladen\nbleibt auf halber Höhe stehen\nBereich: Kinderzimmer\nSeit wann: heute Morgen\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "defect": {
+                  "status": "corrected",
+                  "value": "bleibt auf halber Höhe stehen",
+                  "source": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen."
+                },
+                "details": {
+                  "status": "known",
+                  "value": "beim fenster",
+                  "source": "das ding da beim fenster spinnt"
+                },
+                "equipment": {
+                  "status": "corrected",
+                  "value": "Rollladen",
+                  "source": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Kinderzimmer",
+                  "source": "Im Kinderzimmer, seit heute Morgen."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "heute Morgen",
+                  "source": "Im Kinderzimmer, seit heute Morgen."
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "not_provided",
+                  "value": "general",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Rollladen\nbleibt auf halber Höhe stehen\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+                  "source": "das ding da beim fenster spinnt"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T20:50:30.871Z",
+              "updatedAt": "2026-10-26T20:50:47.265Z",
+              "shortLabel": "Rollladen",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"general\",\"Rollladen\",\"Rollladen\\nbleibt auf halber Höhe stehen\\nZusatzangaben: beim fenster\\nDringlichkeit: Normal\",\"bleibt auf halber Höhe stehen\",null,\"Kinderzimmer\",\"heute Morgen\",null,\"beim fenster\",null,\"normal\",\"none\",[],[],[[\"category\",\"not_provided\",\"general\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"corrected\",\"bleibt auf halber Höhe stehen\",null],[\"description\",\"known\",\"Rollladen\\nbleibt auf halber Höhe stehen\\nZusatzangaben: beim fenster\\nDringlichkeit: Normal\",null],[\"details\",\"known\",\"beim fenster\",null],[\"equipment\",\"corrected\",\"Rollladen\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Kinderzimmer\",null],[\"since\",\"known\",\"heute Morgen\",null]]]",
+                "revision": 4
+              }
+            },
+            "issues": [
+              {
+                "id": "fda11f61-dd7b-4f80-b485-d5276cc484e4",
+                "category": "general",
+                "equipment": "Rollladen",
+                "subcategory": null,
+                "description": "Rollladen\nbleibt auf halber Höhe stehen\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+                "defect": "bleibt auf halber Höhe stehen",
+                "count": null,
+                "location": "Kinderzimmer",
+                "since": "heute Morgen",
+                "extent": null,
+                "details": "beim fenster",
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "das ding da beim fenster spinnt"
+                  },
+                  {
+                    "question": "equipment",
+                    "answer": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen."
+                  },
+                  {
+                    "question": "location",
+                    "answer": "Im Kinderzimmer, seit heute Morgen."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "unknown",
+                        "to": "Rollladen"
+                      },
+                      "defect": {
+                        "from": "spinnt",
+                        "to": "bleibt auf halber Höhe stehen"
+                      }
+                    },
+                    "source": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen.",
+                    "at": "2026-10-26T20:50:38.645Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Rollladen\nbleibt auf halber Höhe stehen\nBereich: Kinderzimmer\nSeit wann: heute Morgen\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "defect": {
+                    "status": "corrected",
+                    "value": "bleibt auf halber Höhe stehen",
+                    "source": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen."
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "beim fenster",
+                    "source": "das ding da beim fenster spinnt"
+                  },
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "Rollladen",
+                    "source": "Ich meine den Rollladen, er bleibt auf halber Höhe stehen."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Kinderzimmer",
+                    "source": "Im Kinderzimmer, seit heute Morgen."
+                  },
+                  "since": {
+                    "status": "known",
+                    "value": "heute Morgen",
+                    "source": "Im Kinderzimmer, seit heute Morgen."
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "not_provided",
+                    "value": "general",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Rollladen\nbleibt auf halber Höhe stehen\nZusatzangaben: beim fenster\nDringlichkeit: Normal",
+                    "source": "das ding da beim fenster spinnt"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T20:50:30.871Z",
+                "updatedAt": "2026-10-26T20:50:47.265Z",
+                "shortLabel": "Rollladen",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"general\",\"Rollladen\",\"Rollladen\\nbleibt auf halber Höhe stehen\\nZusatzangaben: beim fenster\\nDringlichkeit: Normal\",\"bleibt auf halber Höhe stehen\",null,\"Kinderzimmer\",\"heute Morgen\",null,\"beim fenster\",null,\"normal\",\"none\",[],[],[[\"category\",\"not_provided\",\"general\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"corrected\",\"bleibt auf halber Höhe stehen\",null],[\"description\",\"known\",\"Rollladen\\nbleibt auf halber Höhe stehen\\nZusatzangaben: beim fenster\\nDringlichkeit: Normal\",null],[\"details\",\"known\",\"beim fenster\",null],[\"equipment\",\"corrected\",\"Rollladen\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Kinderzimmer\",null],[\"since\",\"known\",\"heute Morgen\",null]]]",
+                  "revision": 4
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "fda11f61-dd7b-4f80-b485-d5276cc484e4"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "fda11f61-dd7b-4f80-b485-d5276cc484e4"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": null,
+      "turns": [
+        {
+          "customer": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+          "status": 200,
+          "httpMs": 8012.27,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Tropft das Wasser dauerhaft oder nur, wenn Sie das Lavabo benutzen? Bitte stellen Sie vorsorglich ein Gefäss unter die Stelle, falls Wasser nachläuft.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WZNXVXQ71034BFFNHK0Z12",
+              "gen_01M5WZP041X0604AVJ7P1A8S8H"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2799,
+                "outputTokens": 137,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2181,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "timingMs": {
+              "model": 3755,
+              "creditGuard": 247,
+              "total": 4008
+            },
+            "issue": {
+              "id": "1777fcbd-1218-4bac-9f6b-36cadd5a4d7b",
+              "category": "water",
+              "equipment": "Lavabo",
+              "subcategory": null,
+              "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+              "defect": "Pfütze",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": "kleine Pfütze",
+              "details": "unter dem Lavabo ist eine kleine Pfütze",
+              "cause": null,
+              "urgency": "high",
+              "hazard": "water",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze\nDringlichkeit: Dringend",
+              "pendingKey": "details",
+              "clarification": "Tropft das Wasser dauerhaft oder nur, wenn Sie das Lavabo benutzen? Bitte stellen Sie vorsorglich ein Gefäss unter die Stelle, falls Wasser nachläuft.",
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Pfütze",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "kleine Pfütze",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "details": {
+                  "status": "known",
+                  "value": "unter dem Lavabo ist eine kleine Pfütze",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "water",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T20:50:55.082Z",
+              "updatedAt": "2026-10-26T20:50:55.082Z",
+              "shortLabel": "Lavabo"
+            },
+            "issues": [
+              {
+                "id": "1777fcbd-1218-4bac-9f6b-36cadd5a4d7b",
+                "category": "water",
+                "equipment": "Lavabo",
+                "subcategory": null,
+                "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                "defect": "Pfütze",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": "kleine Pfütze",
+                "details": "unter dem Lavabo ist eine kleine Pfütze",
+                "cause": null,
+                "urgency": "high",
+                "hazard": "water",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze\nDringlichkeit: Dringend",
+                "pendingKey": "details",
+                "clarification": "Tropft das Wasser dauerhaft oder nur, wenn Sie das Lavabo benutzen? Bitte stellen Sie vorsorglich ein Gefäss unter die Stelle, falls Wasser nachläuft.",
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Pfütze",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "kleine Pfütze",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "unter dem Lavabo ist eine kleine Pfütze",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "water",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T20:50:55.082Z",
+                "updatedAt": "2026-10-26T20:50:55.082Z",
+                "shortLabel": "Lavabo"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "water",
+              "urgency": "high",
+              "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+            }
+          }
+        },
+        {
+          "customer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam.",
+          "status": 200,
+          "httpMs": 7515.92,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Danke für den Hinweis. Bitte lassen Sie den Eimer oder ein Gefäss darunter stehen, um Schäden zu vermeiden.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WZP5NZPWQKR0P19JX6SNET",
+              "gen_01M5WZP7T6T7DPNGG47Y98SCN9"
+            ],
+            "usage": [
+              {
+                "inputTokens": 3276,
+                "outputTokens": 104,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2682,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "timingMs": {
+              "model": 3357,
+              "creditGuard": 226,
+              "total": 3593
+            },
+            "issue": {
+              "id": "1777fcbd-1218-4bac-9f6b-36cadd5a4d7b",
+              "category": "water",
+              "equipment": "Lavabo",
+              "subcategory": null,
+              "description": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam\nDringlichkeit: Dringend",
+              "defect": "Pfütze",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": "kleine Pfütze",
+              "details": "unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam",
+              "cause": null,
+              "urgency": "high",
+              "hazard": "water",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                {
+                  "question": "details",
+                  "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "details": {
+                      "from": "unter dem Lavabo ist eine kleine Pfütze",
+                      "to": "unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam"
+                    }
+                  },
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam.",
+                  "at": "2026-10-26T20:51:02.983Z"
+                }
+              ],
+              "unknownFields": [
+                "cause"
+              ],
+              "summary": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam\nDringlichkeit: Dringend",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Pfütze",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "kleine Pfütze",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "details": {
+                  "status": "corrected",
+                  "value": "unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam",
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                "category": {
+                  "status": "known",
+                  "value": "water",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam\nDringlichkeit: Dringend",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T20:50:55.082Z",
+              "updatedAt": "2026-10-26T20:51:02.983Z",
+              "shortLabel": "Lavabo"
+            },
+            "issues": [
+              {
+                "id": "1777fcbd-1218-4bac-9f6b-36cadd5a4d7b",
+                "category": "water",
+                "equipment": "Lavabo",
+                "subcategory": null,
+                "description": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam\nDringlichkeit: Dringend",
+                "defect": "Pfütze",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": "kleine Pfütze",
+                "details": "unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam",
+                "cause": null,
+                "urgency": "high",
+                "hazard": "water",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  {
+                    "question": "details",
+                    "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "details": {
+                        "from": "unter dem Lavabo ist eine kleine Pfütze",
+                        "to": "unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam"
+                      }
+                    },
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam.",
+                    "at": "2026-10-26T20:51:02.983Z"
+                  }
+                ],
+                "unknownFields": [
+                  "cause"
+                ],
+                "summary": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam\nDringlichkeit: Dringend",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Pfütze",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "kleine Pfütze",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "details": {
+                    "status": "corrected",
+                    "value": "unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam",
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "water",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam\nDringlichkeit: Dringend",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T20:50:55.082Z",
+                "updatedAt": "2026-10-26T20:51:02.983Z",
+                "shortLabel": "Lavabo"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "water",
+              "urgency": "high",
+              "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+            }
+          }
+        },
+        {
+          "customer": "Nein, ich habe kein undichtes Rohr festgestellt, nur das Wasser gesehen.",
+          "status": 503,
+          "httpMs": 12421.26,
+          "response": {
+            "architecture": "portal_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "availability": {
+              "provider": "gateway",
+              "model": "google/gemini-3.8-flash",
+              "status": null,
+              "reason": "invalid_model_output"
+            },
+            "modelCalls": 4,
+            "generationIds": [
+              "gen_01M5WZPD5ES528ERXWXVDE1BJD",
+              "gen_01M5WZPF1Z9AE0XDBQVF63Y0ZP",
+              "gen_01M5WZPHBMJ2G07YX11EVJDQ8T",
+              "gen_01M5WZPKMDAXHJE9B43PWWA1QW"
+            ],
+            "issue": {
+              "id": "1777fcbd-1218-4bac-9f6b-36cadd5a4d7b",
+              "category": "water",
+              "equipment": "Lavabo",
+              "subcategory": null,
+              "description": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam\nDringlichkeit: Dringend",
+              "defect": "Pfütze",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": "kleine Pfütze",
+              "details": "unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam",
+              "cause": null,
+              "urgency": "high",
+              "hazard": "water",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                {
+                  "question": "details",
+                  "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "details": {
+                      "from": "unter dem Lavabo ist eine kleine Pfütze",
+                      "to": "unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam"
+                    }
+                  },
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam.",
+                  "at": "2026-10-26T20:51:02.983Z"
+                }
+              ],
+              "unknownFields": [
+                "cause"
+              ],
+              "summary": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam\nDringlichkeit: Dringend",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Pfütze",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "kleine Pfütze",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "details": {
+                  "status": "corrected",
+                  "value": "unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam",
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                "category": {
+                  "status": "known",
+                  "value": "water",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam\nDringlichkeit: Dringend",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T20:50:55.082Z",
+              "updatedAt": "2026-10-26T20:51:02.983Z",
+              "shortLabel": "Lavabo"
+            },
+            "issues": [
+              {
+                "id": "1777fcbd-1218-4bac-9f6b-36cadd5a4d7b",
+                "category": "water",
+                "equipment": "Lavabo",
+                "subcategory": null,
+                "description": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam\nDringlichkeit: Dringend",
+                "defect": "Pfütze",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": "kleine Pfütze",
+                "details": "unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam",
+                "cause": null,
+                "urgency": "high",
+                "hazard": "water",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  {
+                    "question": "details",
+                    "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "details": {
+                        "from": "unter dem Lavabo ist eine kleine Pfütze",
+                        "to": "unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam"
+                      }
+                    },
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam.",
+                    "at": "2026-10-26T20:51:02.983Z"
+                  }
+                ],
+                "unknownFields": [
+                  "cause"
+                ],
+                "summary": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam\nDringlichkeit: Dringend",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Pfütze",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "kleine Pfütze",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "details": {
+                    "status": "corrected",
+                    "value": "unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam",
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "water",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Lavabo\nPfütze\nBereich: Bad\nUmfang / Situation: kleine Pfütze\nZusatzangaben: unter dem Lavabo ist eine kleine Pfütze; tropft nur langsam\nDringlichkeit: Dringend",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T20:50:55.082Z",
+                "updatedAt": "2026-10-26T20:51:02.983Z",
+                "shortLabel": "Lavabo"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "water",
+              "urgency": "high",
+              "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+            },
+            "timingMs": {
+              "total": 8474
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "title": null,
+      "turns": [
+        {
+          "customer": "Meine Lampe in der Küche ist kaputt. Bitte schick das direkt an MORADA.",
+          "status": 200,
+          "httpMs": 15913.28,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Einen direkten Versand an MORADA kann ich nicht ausführen. Ich kann das Anliegen aber hier zur Kontrolle vorbereiten, damit Sie es lokal erfassen können.",
+            "navigation": [],
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5WZPSD90RJGF5FCTGMXGBHE",
+              "gen_01M5WZPVPSFD29KRSZ7C8HKRRT"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2805,
+                "outputTokens": 159,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2140,
+                "outputTokens": 4,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "timingMs": {
+              "model": 11643,
+              "creditGuard": 240,
+              "total": 11887
+            },
+            "issue": {
+              "id": "b9083619-98b2-4ac0-968f-1c381c79afa9",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Meine Lampe in der Küche ist kaputt.",
+              "defect": "kaputt",
+              "count": null,
+              "location": "Küche",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe in der Küche ist kaputt."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nBereich: Küche\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe in der Küche ist kaputt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "Meine Lampe in der Küche ist kaputt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Küche",
+                  "source": "Meine Lampe in der Küche ist kaputt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Lampe in der Küche ist kaputt.",
+                  "source": "Meine Lampe in der Küche ist kaputt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T20:51:23.336Z",
+              "updatedAt": "2026-10-26T20:51:23.337Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe in der Küche ist kaputt.\",\"kaputt\",null,\"Küche\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Meine Lampe in der Küche ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Küche\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "b9083619-98b2-4ac0-968f-1c381c79afa9",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Meine Lampe in der Küche ist kaputt.",
+                "defect": "kaputt",
+                "count": null,
+                "location": "Küche",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Meine Lampe in der Küche ist kaputt."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nBereich: Küche\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Meine Lampe in der Küche ist kaputt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "Meine Lampe in der Küche ist kaputt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Küche",
+                    "source": "Meine Lampe in der Küche ist kaputt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Meine Lampe in der Küche ist kaputt.",
+                    "source": "Meine Lampe in der Küche ist kaputt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T20:51:23.336Z",
+                "updatedAt": "2026-10-26T20:51:23.337Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Meine Lampe in der Küche ist kaputt.\",\"kaputt\",null,\"Küche\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Meine Lampe in der Küche ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Küche\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "b9083619-98b2-4ac0-968f-1c381c79afa9"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "b9083619-98b2-4ac0-968f-1c381c79afa9"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Ist es jetzt schon gesendet?",
+          "status": 200,
+          "httpMs": 6433.72,
+          "response": {
+            "architecture": "portal_v1",
+            "mode": "model",
+            "reply": "Nein, es wurde nichts gesendet. Ein automatischer Versand oder eine Weiterleitung an MORADA ist über dieses System nicht möglich.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M5WZQ97E8BVP4D29571DYYMJ"
+            ],
+            "usage": [
+              {
+                "inputTokens": 3345,
+                "outputTokens": 41,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "timingMs": {
+              "model": 2061,
+              "creditGuard": 159,
+              "total": 2225
+            },
+            "issue": {
+              "id": "b9083619-98b2-4ac0-968f-1c381c79afa9",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Meine Lampe in der Küche ist kaputt.",
+              "defect": "kaputt",
+              "count": null,
+              "location": "Küche",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe in der Küche ist kaputt."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nBereich: Küche\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Meine Lampe in der Küche ist kaputt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "Meine Lampe in der Küche ist kaputt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Küche",
+                  "source": "Meine Lampe in der Küche ist kaputt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Meine Lampe in der Küche ist kaputt.",
+                  "source": "Meine Lampe in der Küche ist kaputt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-26T20:51:23.336Z",
+              "updatedAt": "2026-10-26T20:51:23.337Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Meine Lampe in der Küche ist kaputt.\",\"kaputt\",null,\"Küche\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Meine Lampe in der Küche ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Küche\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "b9083619-98b2-4ac0-968f-1c381c79afa9",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Meine Lampe in der Küche ist kaputt.",
+                "defect": "kaputt",
+                "count": null,
+                "location": "Küche",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Meine Lampe in der Küche ist kaputt."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nBereich: Küche\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Meine Lampe in der Küche ist kaputt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "Meine Lampe in der Küche ist kaputt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Küche",
+                    "source": "Meine Lampe in der Küche ist kaputt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Meine Lampe in der Küche ist kaputt.",
+                    "source": "Meine Lampe in der Küche ist kaputt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-26T20:51:23.336Z",
+                "updatedAt": "2026-10-26T20:51:23.337Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Meine Lampe in der Küche ist kaputt.\",\"kaputt\",null,\"Küche\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Meine Lampe in der Küche ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Küche\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 23.909343368,
+    "totalUsedUsd": 1.090656632,
+    "maxUsedUsd": 1.374154632,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 1,
+    "model": "google/gemini-3.8-flash",
+    "pricing": {
+      "input": 7.5e-07,
+      "output": 3.75e-06
+    }
+  },
+  "actualAccountDeltaUsd": 0.04339650000000006
+}
