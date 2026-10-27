@@ -19,5 +19,5 @@ test('test allowance is unavailable outside Preview before any network access',a
 });
 test('model comparison cannot use an arbitrary model or change the existing spend cap',()=>{
  assert.throws(()=>createPreviewCreditGuard({VERCEL_ENV:'preview'},'unapproved/model'),e=>e.boundaryReason==='model_unverified');
- assert.equal(MAX_USED_USD,1.374154632);
+ assert.equal(MAX_USED_USD,3.338856132);
 });

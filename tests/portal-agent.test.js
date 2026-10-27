@@ -38,6 +38,18 @@ test('unknown start, uncertain count and corrections remain distinct',async()=>{
  assert.equal(s.issue.fieldFacts.count.status,'uncertain');assert.equal(s.issue.count,1);assert.equal(s.issue.fieldFacts.since.status,'unknown');
  s=await patch(s,'Es ist sicher eine.',{count:1,correction:true});assert.equal(s.issue.fieldFacts.count.status,'corrected');assert.match(portalCaseFields(s.issue).description,/Beginn: unbekannt/);
 });
+test('model context retains uncertainty and saved status without empty fields or duplicate tool snapshots',async()=>{
+ let s=await lamp();s=await patch(s,'Beginn unbekannt.',{unknown:[{field:'since',quote:'unbekannt'}]});
+ s=await patch(s,'Vielleicht zwei.',{count:2,uncertain:[{field:'count',quote:'Vielleicht zwei.'}]});
+ const t=createAgentTurn(s,'Nein, Schlafzimmer.',['cases']);
+ const result=await invoke(t,'record_issues',{updates:[{ref:'active',quote:'Nein, Schlafzimmer.',location:'Schlafzimmer',correction:true}]});
+ assert.equal(result.ok,true);assert.equal(result.context,undefined);
+ const c=t.snapshot().issues[0];assert.equal(c.count.status,'uncertain');assert.equal(c.count.candidate,2);assert.equal(c.since.status,'unknown');assert.equal(c.location,'Schlafzimmer');assert.ok(c.correctedFields.includes('location'));
+ assert.equal(c.cause,undefined);assert.equal(c.fieldFacts,undefined);assert.equal(c.action.controls,undefined);assert.doesNotMatch(JSON.stringify(c),/not_provided|operationId|contentHash/);
+ const saved=t.getState(),op=beginPreparation(saved);acceptReceipt(saved,{...op,status:'portal_received'});
+ const a=createAgentTurn(saved,'Ist das gespeichert?',['cases']).snapshot().issues[0].action;
+ assert.equal(a.phase,'saved');assert.equal(a.formSaved,true);assert.equal(a.mayOffer,false);
+});
 test('separate issues, failed quoted update and retry do not contaminate facts',async()=>{
  const message='Zwei Lampen im Flur sind kaputt. Die Heizung im Bad bleibt kalt.',t=createAgentTurn(empty(),message,['cases']);
  const updates=[{ref:'new1',quote:'Zwei Lampen im Flur sind kaputt.',equipment:'light',defect:'kaputt',count:2,location:'Flur'},{ref:'new2',quote:'Die Heizung im Bad bleibt kalt.',equipment:'heater',defect:'bleibt kalt',location:'Bad'}];

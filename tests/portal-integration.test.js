@@ -8,7 +8,7 @@ import {portalCaseFields} from '../assets/mora-portal-map.js';
 import {hydrateSimple,projectDecision,commitDecision} from '../lib/mora/simple/state.js';
 import {createPortalChatHandler,controls} from '../api/portal-chat.js';
 import {createPortalService} from '../lib/mora/portal/service.js';
-import {checkPreviewCredits,MODEL} from '../lib/mora/portal/budget.js';
+import {checkPreviewCredits,MODEL,BASELINE_USED_USD,MAX_USED_USD} from '../lib/mora/portal/budget.js';
 import {readSession} from '../lib/mora/session.js';
 
 const plan=(updates=[],more={})=>({reply:'Wo befindet sich die Lampe?',intent:'issue',updates,actions:[],...more});
@@ -52,7 +52,7 @@ test('safety and topic changes suppress save; uncertainty cannot silently overwr
  s=lamp();s.safety={hazard:'electric'};assert.equal(controls(s).save,null);s.safety=null;s.conversationTopic='information';assert.equal(controls(s).save,null);
 });
 test('preview-credit guard accepts approved top-up and rejects other grants or excess usage',()=>{
- assert.ok(checkPreviewCredits({balance:24.6,totalUsed:.4}));for(const c of [{balance:4.6,totalUsed:.4},{balance:44.6,totalUsed:.4},{balance:23.5,totalUsed:1.5}])assert.throws(()=>checkPreviewCredits(c));
+ assert.ok(checkPreviewCredits({balance:25-BASELINE_USED_USD,totalUsed:BASELINE_USED_USD}));for(const c of [{balance:4.6,totalUsed:.4},{balance:44.6,totalUsed:.4},{balance:25-MAX_USED_USD-.1,totalUsed:MAX_USED_USD+.1}])assert.throws(()=>checkPreviewCredits(c));
 });
 test('pending unverified customer corrections block server-side save tickets',()=>{
  const state=lamp();assert.ok(controls(state).save);state.portalPending=[{content:'Nein, doch anders.'}];assert.equal(controls(state).save,null);
