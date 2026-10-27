@@ -83,7 +83,10 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
     const conflict=['INVALID_ACTION','INVALID_SESSION','ISSUE_LIMIT'].includes(error.code);
     const code=conflict?error.code:error.code==='PREVIEW_CREDIT_BOUNDARY'?'PREVIEW_CREDIT_BOUNDARY':'MODEL_UNAVAILABLE';
     const limited=error.availability?.reason==='rate_limit_exceeded'||error.availability?.status===429;
-    return reply(conflict?409:limited?429:503,{code:limited?'MODEL_RATE_LIMIT':code,error:conflict?'Diese Aktion ist nicht mehr verfügbar. Ihre gespeicherten Angaben bleiben erhalten.':code==='PREVIEW_CREDIT_BOUNDARY'?'Das freigegebene KI-Testbudget erlaubt gerade keine weitere Modellanfrage. Ihre Angaben bleiben erhalten.':limited?'Die KI-Anbindung hat gerade ihr Anfragelimit erreicht. Bitte versuchen Sie es später erneut. Ihre Nachricht bleibt erhalten.':'MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.',availability:error.availability || null,modelCalls:error.modelCalls||0,generationIds:error.generationIds || []});
+    // Isolated Preview diagnostics return only to this conversation's caller;
+    // never log customer text or display rejected model text as an answer.
+    const diagnostic=integration==='portal_agent_v1'?{toolEvents:error.toolEvents || [],...(error.diagnostic?{diagnostic:error.diagnostic}:{})}:{};
+    return reply(conflict?409:limited?429:503,{code:limited?'MODEL_RATE_LIMIT':code,error:conflict?'Diese Aktion ist nicht mehr verfügbar. Ihre gespeicherten Angaben bleiben erhalten.':code==='PREVIEW_CREDIT_BOUNDARY'?'Das freigegebene KI-Testbudget erlaubt gerade keine weitere Modellanfrage. Ihre Angaben bleiben erhalten.':limited?'Die KI-Anbindung hat gerade ihr Anfragelimit erreicht. Bitte versuchen Sie es später erneut. Ihre Nachricht bleibt erhalten.':'MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.',...diagnostic,availability:error.availability || null,modelCalls:error.modelCalls||0,generationIds:error.generationIds || []});
   }
  };
 }
