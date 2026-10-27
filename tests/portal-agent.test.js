@@ -60,6 +60,10 @@ test('model context retains uncertainty and saved status without empty fields or
  const saved=t.getState(),op=beginPreparation(saved);acceptReceipt(saved,{...op,status:'portal_received'});
  const a=createAgentTurn(saved,'Ist das gespeichert?',['cases']).snapshot().issues[0].action;
  assert.equal(a.phase,'saved');assert.equal(a.formSaved,true);assert.equal(a.mayOffer,false);
+ const corrected=await patch(saved,'Nein, Küche.',{location:'Küche',correction:true});
+ const pending=createAgentTurn(corrected,'Was ist gespeichert?',['cases']).snapshot().issues[0].action;
+ assert.equal(pending.phase,'changes_pending');assert.equal(pending.hasStoredDraft,true);
+ assert.equal(pending.formSaved,false);assert.equal(pending.savedFactsMatch,false);
 });
 test('separate issues, failed quoted update and retry do not contaminate facts',async()=>{
  const message='Zwei Lampen im Flur sind kaputt. Die Heizung im Bad bleibt kalt.',t=createAgentTurn(empty(),message,['cases']);
