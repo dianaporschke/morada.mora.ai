@@ -1,0 +1,598 @@
+{
+  "portalSha256": "33a5e75024fefbb88b4fcdcde4cc79f548c2b69fe0f54d33ac2501088077e776",
+  "scope": "Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.",
+  "url": "https://morada-mora-e6cbs47tn-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "conversations": [
+    {
+      "id": "lamp",
+      "transports": [
+        {
+          "request": {
+            "message": "Eine Lampe im Wohnzimmer ist kaputt. Sonst ist alles normal.",
+            "messageId": "797b610a-a0a6-4e86-abde-9853e629b474",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Das tut mir leid, dass die Lampe im Wohnzimmer ausgefallen ist. Damit Ihr Anliegen erfasst werden kann, halte ich fest: Eine Lampe im Wohnzimmer funktioniert nicht. Wenn Sie möchten, kann ich das Anliegen für Sie vorbereiten und Ihnen anschliessend zur Prüfung zeigen.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M5ZDTJJA4SM52663QFFQFADE"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4125,
+                "outputTokens": 474,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              },
+              {
+                "tool": "use_issue",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 1998,
+              "creditGuard": 132,
+              "total": 2138
+            },
+            "issue": {
+              "id": "3504d54e-b31d-4cdd-b493-82d906c3560f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Eine Lampe im Wohnzimmer ist kaputt.",
+              "defect": "kaputt",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Eine Lampe im Wohnzimmer ist kaputt."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Eine Lampe im Wohnzimmer ist kaputt.",
+                  "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T19:36:36.096Z",
+              "updatedAt": "2026-10-27T19:36:36.096Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer ist kaputt.\",\"kaputt\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "3504d54e-b31d-4cdd-b493-82d906c3560f",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Eine Lampe im Wohnzimmer ist kaputt.",
+                "defect": "kaputt",
+                "count": 1,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Eine Lampe im Wohnzimmer ist kaputt."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Eine Lampe im Wohnzimmer ist kaputt.",
+                    "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T19:36:36.096Z",
+                "updatedAt": "2026-10-27T19:36:36.096Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer ist kaputt.\",\"kaputt\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "3504d54e-b31d-4cdd-b493-82d906c3560f"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "3504d54e-b31d-4cdd-b493-82d906c3560f"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          },
+          "httpMs": 6429.09
+        },
+        {
+          "request": {
+            "session": "[signed session omitted]",
+            "message": "Bitte bereiten Sie das Anliegen jetzt vor.",
+            "messageId": "3151485b-34af-4589-94c4-f8315a990dc7",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 503,
+          "data": {
+            "architecture": "portal_agent_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "toolEvents": [],
+            "diagnostic": {
+              "reason": "inconsistent_changes",
+              "detail": "field_quote_not_in_message",
+              "field": "equipment"
+            },
+            "availability": {
+              "provider": "gateway",
+              "model": "anthropic/claude-haiku-5.5",
+              "status": null,
+              "reason": "invalid_model_output"
+            },
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M5ZDTS6T93XSFDX5XYJAZ754"
+            ],
+            "issue": {
+              "id": "3504d54e-b31d-4cdd-b493-82d906c3560f",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Eine Lampe im Wohnzimmer ist kaputt.",
+              "defect": "kaputt",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Eine Lampe im Wohnzimmer ist kaputt."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Eine Lampe im Wohnzimmer ist kaputt.",
+                  "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T19:36:36.096Z",
+              "updatedAt": "2026-10-27T19:36:36.096Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer ist kaputt.\",\"kaputt\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "3504d54e-b31d-4cdd-b493-82d906c3560f",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Eine Lampe im Wohnzimmer ist kaputt.",
+                "defect": "kaputt",
+                "count": 1,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Eine Lampe im Wohnzimmer ist kaputt."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Eine Lampe im Wohnzimmer ist kaputt.",
+                    "source": "Eine Lampe im Wohnzimmer ist kaputt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T19:36:36.096Z",
+                "updatedAt": "2026-10-27T19:36:36.096Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer ist kaputt.\",\"kaputt\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer ist kaputt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 2122
+            }
+          },
+          "httpMs": 6663.53
+        }
+      ],
+      "snapshots": [],
+      "clientTimings": [
+        {
+          "label": "MORA portal timing",
+          "httpMs": 6432.512787,
+          "responseHeadersMs": 6432.434830000006,
+          "jsonMs": 0.0779569999940577,
+          "backend": {
+            "model": 1998,
+            "creditGuard": 132,
+            "total": 2138
+          }
+        },
+        {
+          "label": "MORA portal visible response",
+          "answerDomMs": 6433.372838999996
+        }
+      ],
+      "dataFailures": [],
+      "success": false,
+      "failure": "Real model turn failed\n\n503 !== 200\n",
+      "messages": [
+        {
+          "role": "assistant",
+          "content": "Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?"
+        },
+        {
+          "role": "user",
+          "content": "Eine Lampe im Wohnzimmer ist kaputt. Sonst ist alles normal."
+        },
+        {
+          "role": "assistant",
+          "content": "Das tut mir leid, dass die Lampe im Wohnzimmer ausgefallen ist. Damit Ihr Anliegen erfasst werden kann, halte ich fest: Eine Lampe im Wohnzimmer funktioniert nicht. Wenn Sie möchten, kann ich das Anliegen für Sie vorbereiten und Ihnen anschliessend zur Prüfung zeigen."
+        },
+        {
+          "role": "user",
+          "content": "Bitte bereiten Sie das Anliegen jetzt vor."
+        },
+        {
+          "role": "error",
+          "content": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten."
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.722583068,
+    "totalUsedUsd": 3.277416932,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-7,
+      "output": 5e-7
+    }
+  },
+  "model": "anthropic/claude-haiku-5.5",
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.721271568,
+    "totalUsedUsd": 3.278728432,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-7,
+      "output": 5e-7
+    }
+  },
+  "actualAccountDeltaUsd": 0.00131149999999991
+}
