@@ -25,10 +25,11 @@ cases=json.loads(pathlib.Path(cfg.get('casesFile','scripts/quality-phase1/cases.
 if cfg.get('caseIds'):cases=[c for c in cases if c['id'] in cfg['caseIds']]
 status,credit,_=request();assert status==200 and credit['inferenceStarted'] is False
 if cfg.get('expectedModel'):assert credit['model']==cfg['expectedModel']
-evidence={'scope':'Real portal_v1 backend responses. Browser rendering and local saving are separate checks.','url':cfg['url']+'/portal.html','model':credit['model'],'before':credit,'conversations':[]}
+evidence={'scope':'Real '+credit['architecture']+' backend responses. Browser rendering and local saving are separate checks.','url':cfg['url']+'/portal.html'+('?mora=agent' if cfg.get('path')=='/api/portal-agent' else ''),'model':credit['model'],'before':credit,'conversations':[]}
 output=pathlib.Path(cfg['output']);output.parent.mkdir(parents=True,exist_ok=True)
 for case in cases:
  session=None;turns=[]
+ evidence['conversations'].append({'id':case['id'],'title':case.get('title',case.get('topic')),'turns':turns})
  for n,message in enumerate(case['messages'],1):
   if cfg.get('maxAdditionalUsd'):
    check_status,check,_=request()
@@ -41,9 +42,10 @@ for case in cases:
   except Exception as e:status,data,ms=599,{'error':type(e).__name__},None
   session=data.pop('session',session)
   turns.append({'customer':message,'status':status,'httpMs':ms,'response':data})
+  output.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
   print(json.dumps({'case':case['id'],'turn':n,'status':status,'ms':ms,'reply':data.get('reply'),'calls':data.get('modelCalls'),'code':data.get('code')},ensure_ascii=False),flush=True)
   if data.get('code') in ['PREVIEW_CREDIT_BOUNDARY','MODEL_RATE_LIMIT']:evidence['stopped']=data.get('code');break
- evidence['conversations'].append({'id':case['id'],'title':case.get('title'),'turns':turns});output.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
+ output.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
  if evidence.get('stopped'):break
 status,after,_=request();evidence['after']=after;evidence['actualAccountDeltaUsd']=after.get('totalUsedUsd',0)-credit['totalUsedUsd'];output.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({'finished':True,'conversations':len(evidence['conversations']),'turns':sum(len(c['turns'])for c in evidence['conversations']),'accountDeltaUsd':evidence['actualAccountDeltaUsd']},ensure_ascii=False),flush=True)

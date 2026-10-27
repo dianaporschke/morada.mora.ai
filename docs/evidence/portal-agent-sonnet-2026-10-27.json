@@ -1,0 +1,1613 @@
+{
+  "scope": "Real portal_agent_v1 backend responses. Browser rendering and local saving are separate checks.",
+  "url": "https://morada-mora-1wefcaidn-dianaporschke-1255s-projects.vercel.app/portal.html?mora=agent",
+  "model": "anthropic/claude-sonnet-5.5",
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 23.789623868,
+    "totalUsedUsd": 1.210376132,
+    "maxUsedUsd": 1.374154632,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 1,
+    "model": "anthropic/claude-sonnet-5.5",
+    "pricing": {
+      "input": 2e-06,
+      "output": 1e-05
+    }
+  },
+  "conversations": [
+    {
+      "id": "01",
+      "title": "Lampe, kurze Antworten",
+      "turns": [
+        {
+          "customer": "lampe kaputt",
+          "status": 200,
+          "httpMs": 15886.94,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "In welchem Raum ist die Lampe kaputt?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YAPXS015TPHVPAPJ8S7WBF",
+              "gen_01M5YAPZGDZASZEE5K206Y7T32"
+            ],
+            "usage": [
+              {
+                "inputTokens": 3685,
+                "outputTokens": 137,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 4942,
+                "outputTokens": 21,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 9619,
+              "creditGuard": 356,
+              "total": 9998
+            },
+            "issue": {
+              "id": "effc23e7-be9a-4ec3-abe9-76e5874abed3",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe kaputt",
+              "defect": "kaputt",
+              "count": null,
+              "location": null,
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe kaputt",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T09:22:55.970Z",
+              "updatedAt": "2026-10-27T09:22:55.987Z",
+              "shortLabel": "Lampe / Leuchte"
+            },
+            "issues": [
+              {
+                "id": "effc23e7-be9a-4ec3-abe9-76e5874abed3",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "lampe kaputt",
+                "defect": "kaputt",
+                "count": null,
+                "location": null,
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "lampe kaputt"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "lampe kaputt"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "lampe kaputt"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "lampe kaputt",
+                    "source": "lampe kaputt"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T09:22:55.970Z",
+                "updatedAt": "2026-10-27T09:22:55.987Z",
+                "shortLabel": "Lampe / Leuchte"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "wohnzimmer",
+          "status": 200,
+          "httpMs": 8651.0,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Die defekte Lampe im Wohnzimmer habe ich notiert. Damit kann die Meldung vorbereitet werden.\n\nGeht die Lampe gar nicht mehr an, oder flackert sie? Falls Sie das wissen, schreiben Sie es mir kurz dazu.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YAQD76SXMYKBKGJT794P15",
+              "gen_01M5YAQEKMRAPB4M4RJE4SG0ZT"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4159,
+                "outputTokens": 83,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 5236,
+                "outputTokens": 102,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2453,
+              "creditGuard": 313,
+              "total": 2776
+            },
+            "issue": {
+              "id": "effc23e7-be9a-4ec3-abe9-76e5874abed3",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe kaputt",
+              "defect": "kaputt",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                },
+                {
+                  "question": "description",
+                  "answer": "wohnzimmer"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "wohnzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe kaputt",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T09:22:55.970Z",
+              "updatedAt": "2026-10-27T09:23:11.403Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "effc23e7-be9a-4ec3-abe9-76e5874abed3",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "lampe kaputt",
+                "defect": "kaputt",
+                "count": null,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "lampe kaputt"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "wohnzimmer"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "lampe kaputt"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "lampe kaputt"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "wohnzimmer"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "lampe kaputt",
+                    "source": "lampe kaputt"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T09:22:55.970Z",
+                "updatedAt": "2026-10-27T09:23:11.403Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "effc23e7-be9a-4ec3-abe9-76e5874abed3"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "effc23e7-be9a-4ec3-abe9-76e5874abed3"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Nur eine Lampe ist betroffen, sonst ist alles normal.",
+          "status": 200,
+          "httpMs": 8587.05,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Verstanden: Es ist nur die eine Lampe im Wohnzimmer betroffen, alles andere funktioniert normal. Mehr brauche ich für die Meldung nicht.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YAQNRVYY801Y0M06GMP3FW",
+              "gen_01M5YAQQ41JZRJ6VMM1W6RBGN5"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4380,
+                "outputTokens": 124,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 5723,
+                "outputTokens": 66,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2444,
+              "creditGuard": 310,
+              "total": 2761
+            },
+            "issue": {
+              "id": "effc23e7-be9a-4ec3-abe9-76e5874abed3",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe kaputt",
+              "defect": "kaputt",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": "Sonst ist alles normal, keine weiteren Geräte betroffen.",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                },
+                {
+                  "question": "description",
+                  "answer": "wohnzimmer"
+                },
+                {
+                  "question": "description",
+                  "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Sonst ist alles normal, keine weiteren Geräte betroffen.\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "wohnzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                },
+                "details": {
+                  "status": "known",
+                  "value": "Sonst ist alles normal, keine weiteren Geräte betroffen.",
+                  "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe kaputt",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T09:22:55.970Z",
+              "updatedAt": "2026-10-27T09:23:20.178Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",\"Sonst ist alles normal, keine weiteren Geräte betroffen.\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"known\",\"Sonst ist alles normal, keine weiteren Geräte betroffen.\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 4
+              }
+            },
+            "issues": [
+              {
+                "id": "effc23e7-be9a-4ec3-abe9-76e5874abed3",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "lampe kaputt",
+                "defect": "kaputt",
+                "count": 1,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": "Sonst ist alles normal, keine weiteren Geräte betroffen.",
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "lampe kaputt"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "wohnzimmer"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Sonst ist alles normal, keine weiteren Geräte betroffen.\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "lampe kaputt"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "lampe kaputt"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "wohnzimmer"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "Sonst ist alles normal, keine weiteren Geräte betroffen.",
+                    "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "lampe kaputt",
+                    "source": "lampe kaputt"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T09:22:55.970Z",
+                "updatedAt": "2026-10-27T09:23:20.178Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",\"Sonst ist alles normal, keine weiteren Geräte betroffen.\",null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"known\",\"Sonst ist alles normal, keine weiteren Geräte betroffen.\",null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 4
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "effc23e7-be9a-4ec3-abe9-76e5874abed3"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "effc23e7-be9a-4ec3-abe9-76e5874abed3"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "title": "Raumkorrektur",
+      "turns": [
+        {
+          "customer": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten.",
+          "status": 200,
+          "httpMs": 9877.51,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Ich habe notiert: Im Wohnzimmer lässt sich eine Lampe nicht einschalten. Die Meldung ist bereit.\n\nWissen Sie, seit wann das so ist? Und gehen andere Lampen im Raum noch? Beides ist optional, aber es hilft bei der Einschätzung.\n\nFalls Sie Rauch, Brandgeruch oder Funken bemerken, lassen Sie die Lampe aus und fassen Sie sie nicht an.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YAQY9H47Q8FR5Q2E8HTJQW",
+              "gen_01M5YAR023XCDVM8YT06027XXC"
+            ],
+            "usage": [
+              {
+                "inputTokens": 3707,
+                "outputTokens": 203,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 6828,
+                "outputTokens": 168,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              },
+              {
+                "tool": "use_issue",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 3396,
+              "creditGuard": 448,
+              "total": 3850
+            },
+            "issue": {
+              "id": "b9428b5c-5800-4e13-903d-cb4ce4d73671",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten.",
+              "defect": "lässt sich nicht einschalten",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "lässt sich nicht einschalten",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten.",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T09:23:29.126Z",
+              "updatedAt": "2026-10-27T09:23:29.126Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich nicht einschalten.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "b9428b5c-5800-4e13-903d-cb4ce4d73671",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten.",
+                "defect": "lässt sich nicht einschalten",
+                "count": 1,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "lässt sich nicht einschalten",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten.",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T09:23:29.126Z",
+                "updatedAt": "2026-10-27T09:23:29.126Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Eine Lampe im Wohnzimmer lässt sich nicht einschalten.\",\"lässt sich nicht einschalten\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Eine Lampe im Wohnzimmer lässt sich nicht einschalten.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "b9428b5c-5800-4e13-903d-cb4ce4d73671"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "b9428b5c-5800-4e13-903d-cb4ce4d73671"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Nein, ich meinte das Schlafzimmer.",
+          "status": 200,
+          "httpMs": 7918.85,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Verstanden, die Lampe ist im Schlafzimmer, nicht im Wohnzimmer. Das habe ich geändert.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YAR775W4G1C359NDKYDS66",
+              "gen_01M5YAR8CAZKY7DV9VR3TRVPRA"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4633,
+                "outputTokens": 99,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 5956,
+                "outputTokens": 48,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2484,
+              "creditGuard": 475,
+              "total": 2967
+            },
+            "issue": {
+              "id": "b9428b5c-5800-4e13-903d-cb4ce4d73671",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "defect": "lässt sich nicht einschalten",
+              "count": 1,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                {
+                  "question": "description",
+                  "answer": "Nein, ich meinte das Schlafzimmer."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "location": {
+                      "from": "Wohnzimmer",
+                      "to": "Schlafzimmer"
+                    }
+                  },
+                  "source": "Nein, ich meinte das Schlafzimmer.",
+                  "at": "2026-10-27T09:23:37.847Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "lässt sich nicht einschalten",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Schlafzimmer",
+                  "source": "Nein, ich meinte das Schlafzimmer."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T09:23:29.126Z",
+              "updatedAt": "2026-10-27T09:23:37.847Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"lässt sich nicht einschalten\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "b9428b5c-5800-4e13-903d-cb4ce4d73671",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "defect": "lässt sich nicht einschalten",
+                "count": 1,
+                "location": "Schlafzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Nein, ich meinte das Schlafzimmer."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "location": {
+                        "from": "Wohnzimmer",
+                        "to": "Schlafzimmer"
+                      }
+                    },
+                    "source": "Nein, ich meinte das Schlafzimmer.",
+                    "at": "2026-10-27T09:23:37.847Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "lässt sich nicht einschalten",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "location": {
+                    "status": "corrected",
+                    "value": "Schlafzimmer",
+                    "source": "Nein, ich meinte das Schlafzimmer."
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T09:23:29.126Z",
+                "updatedAt": "2026-10-27T09:23:37.847Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"lässt sich nicht einschalten\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "b9428b5c-5800-4e13-903d-cb4ce4d73671"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "b9428b5c-5800-4e13-903d-cb4ce4d73671"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Genau, eine Lampe. Alles andere funktioniert.",
+          "status": 503,
+          "httpMs": 7423.5,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "code": "PREVIEW_CREDIT_BOUNDARY",
+            "error": "Das freigegebene KI-Testbudget erlaubt gerade keine weitere Modellanfrage. Ihre Angaben bleiben erhalten.",
+            "availability": {
+              "provider": "gateway",
+              "model": "anthropic/claude-sonnet-5.5",
+              "status": null,
+              "reason": "unavailable"
+            },
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M5YARG063RHRWQSMPYCSEXES"
+            ],
+            "issue": {
+              "id": "b9428b5c-5800-4e13-903d-cb4ce4d73671",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "defect": "lässt sich nicht einschalten",
+              "count": 1,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": "Alles andere funktioniert.",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                {
+                  "question": "description",
+                  "answer": "Nein, ich meinte das Schlafzimmer."
+                },
+                {
+                  "question": "description",
+                  "answer": "Genau, eine Lampe. Alles andere funktioniert."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "location": {
+                      "from": "Wohnzimmer",
+                      "to": "Schlafzimmer"
+                    }
+                  },
+                  "source": "Nein, ich meinte das Schlafzimmer.",
+                  "at": "2026-10-27T09:23:37.847Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Alles andere funktioniert.\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "lässt sich nicht einschalten",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Schlafzimmer",
+                  "source": "Nein, ich meinte das Schlafzimmer."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                },
+                "details": {
+                  "status": "known",
+                  "value": "Alles andere funktioniert.",
+                  "source": "Genau, eine Lampe. Alles andere funktioniert."
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                  "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T09:23:29.126Z",
+              "updatedAt": "2026-10-27T09:23:46.799Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"lässt sich nicht einschalten\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "b9428b5c-5800-4e13-903d-cb4ce4d73671",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "defect": "lässt sich nicht einschalten",
+                "count": 1,
+                "location": "Schlafzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": "Alles andere funktioniert.",
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Nein, ich meinte das Schlafzimmer."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Genau, eine Lampe. Alles andere funktioniert."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "location": {
+                        "from": "Wohnzimmer",
+                        "to": "Schlafzimmer"
+                      }
+                    },
+                    "source": "Nein, ich meinte das Schlafzimmer.",
+                    "at": "2026-10-27T09:23:37.847Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Alles andere funktioniert.\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "lässt sich nicht einschalten",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "location": {
+                    "status": "corrected",
+                    "value": "Schlafzimmer",
+                    "source": "Nein, ich meinte das Schlafzimmer."
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "Alles andere funktioniert.",
+                    "source": "Genau, eine Lampe. Alles andere funktioniert."
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Lampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                    "source": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T09:23:29.126Z",
+                "updatedAt": "2026-10-27T09:23:46.799Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"lässt sich nicht einschalten\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"lässt sich nicht einschalten\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nlässt sich nicht einschalten\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "b9428b5c-5800-4e13-903d-cb4ce4d73671"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "b9428b5c-5800-4e13-903d-cb4ce4d73671"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 1593
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "stopped": "PREVIEW_CREDIT_BOUNDARY",
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 23.670053868,
+    "totalUsedUsd": 1.329946132,
+    "maxUsedUsd": 1.374154632,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 1,
+    "model": "anthropic/claude-sonnet-5.5",
+    "pricing": {
+      "input": 2e-06,
+      "output": 1e-05
+    }
+  },
+  "actualAccountDeltaUsd": 0.11956999999999995
+}

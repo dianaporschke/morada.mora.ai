@@ -1,0 +1,345 @@
+{
+  "scope": "OFFLINE REPLAY: real previously recorded Sonnet facts, local API handler and actual native HTML saves in JSDOM. Not a fresh model conversation, HTTPS test or rendered device test.",
+  "input": "docs/evidence/portal-agent-sonnet-2026-10-27.json",
+  "portalSha256": "34de68753f31ea4282684ac29fcf9bbcf6d540ba9b10f726a51e17b6889163e4",
+  "snapshots": [
+    [
+      {
+        "id": "b9428b5c-5800-4e13-903d-cb4ce4d73671",
+        "title": "Lampe / Leuchte · Wohnzimmer",
+        "propertyId": "",
+        "unitId": "",
+        "property": "",
+        "unit": "Wohnzimmer",
+        "attachments": [],
+        "date": "2026-10-27",
+        "owner": "Alexander",
+        "description": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+        "status": "Neu",
+        "priority": "Normal",
+        "person": "",
+        "applicantId": "",
+        "relettingId": "",
+        "assetId": "",
+        "caseInfo": {
+          "reference": "A00001",
+          "category": "Schaden / Reparatur",
+          "receivedDate": "2026-10-27",
+          "channel": "Portal",
+          "reporterId": "",
+          "nextStep": "",
+          "waitingFor": "",
+          "resolution": "",
+          "closedAt": ""
+        },
+        "createdAt": "2026-10-27T09:28:00.073Z",
+        "createdBy": "Alexander",
+        "updatedAt": "2026-10-27T09:28:00.073Z",
+        "updatedBy": "Alexander",
+        "history": [
+          {
+            "id": "HISTORY-5d0ebe5d-dd9d-40d5-8c55-cc520b944b0d",
+            "at": "2026-10-27T09:28:00.073Z",
+            "by": "Alexander",
+            "type": "created",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nEine Lampe im Wohnzimmer lässt sich nicht einschalten.",
+            "changes": []
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "b9428b5c-5800-4e13-903d-cb4ce4d73671",
+        "title": "Lampe / Leuchte · Schlafzimmer",
+        "propertyId": "",
+        "unitId": "",
+        "property": "",
+        "unit": "Schlafzimmer",
+        "attachments": [],
+        "date": "2026-10-27",
+        "owner": "Alexander",
+        "description": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+        "status": "Neu",
+        "priority": "Normal",
+        "person": "",
+        "applicantId": "",
+        "relettingId": "",
+        "assetId": "",
+        "caseInfo": {
+          "reference": "A00001",
+          "category": "Schaden / Reparatur",
+          "receivedDate": "2026-10-27",
+          "channel": "Portal",
+          "reporterId": "",
+          "nextStep": "",
+          "waitingFor": "",
+          "resolution": "",
+          "closedAt": ""
+        },
+        "createdAt": "2026-10-27T09:28:00.073Z",
+        "createdBy": "Alexander",
+        "updatedAt": "2026-10-27T09:28:00.212Z",
+        "updatedBy": "Alexander",
+        "history": [
+          {
+            "id": "HISTORY-5d0ebe5d-dd9d-40d5-8c55-cc520b944b0d",
+            "at": "2026-10-27T09:28:00.073Z",
+            "by": "Alexander",
+            "type": "created",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nEine Lampe im Wohnzimmer lässt sich nicht einschalten.",
+            "changes": []
+          },
+          {
+            "id": "HISTORY-173dc4bf-b667-4ddc-9890-4c19373990d6",
+            "at": "2026-10-27T09:28:00.212Z",
+            "by": "Alexander",
+            "type": "edited",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nEine Lampe im Wohnzimmer lässt sich nicht einschalten.\nNein, ich meinte das Schlafzimmer.",
+            "changes": [
+              {
+                "field": "Titel",
+                "before": "Lampe / Leuchte · Wohnzimmer",
+                "after": "Lampe / Leuchte · Schlafzimmer"
+              },
+              {
+                "field": "Ort / Zusatzangabe",
+                "before": "Wohnzimmer",
+                "after": "Schlafzimmer"
+              },
+              {
+                "field": "Beschreibung",
+                "before": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+                "after": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "b9428b5c-5800-4e13-903d-cb4ce4d73671",
+        "title": "Lampe / Leuchte · Schlafzimmer",
+        "propertyId": "",
+        "unitId": "",
+        "property": "",
+        "unit": "Schlafzimmer",
+        "attachments": [
+          {
+            "id": "BELEG-cd7ec42b-5789-490e-a17e-6fa6d91129ee",
+            "name": "lampe-test.png",
+            "type": "image/png",
+            "size": 68,
+            "dataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aN1kAAAAASUVORK5CYII="
+          }
+        ],
+        "date": "2026-10-27",
+        "owner": "Alexander",
+        "description": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+        "status": "Neu",
+        "priority": "Normal",
+        "person": "",
+        "applicantId": "",
+        "relettingId": "",
+        "assetId": "",
+        "caseInfo": {
+          "reference": "A00001",
+          "category": "Schaden / Reparatur",
+          "receivedDate": "2026-10-27",
+          "channel": "Portal",
+          "reporterId": "",
+          "nextStep": "",
+          "waitingFor": "",
+          "resolution": "",
+          "closedAt": ""
+        },
+        "createdAt": "2026-10-27T09:28:00.073Z",
+        "createdBy": "Alexander",
+        "updatedAt": "2026-10-27T09:28:00.407Z",
+        "updatedBy": "Alexander",
+        "history": [
+          {
+            "id": "HISTORY-5d0ebe5d-dd9d-40d5-8c55-cc520b944b0d",
+            "at": "2026-10-27T09:28:00.073Z",
+            "by": "Alexander",
+            "type": "created",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nEine Lampe im Wohnzimmer lässt sich nicht einschalten.",
+            "changes": []
+          },
+          {
+            "id": "HISTORY-173dc4bf-b667-4ddc-9890-4c19373990d6",
+            "at": "2026-10-27T09:28:00.212Z",
+            "by": "Alexander",
+            "type": "edited",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nEine Lampe im Wohnzimmer lässt sich nicht einschalten.\nNein, ich meinte das Schlafzimmer.",
+            "changes": [
+              {
+                "field": "Titel",
+                "before": "Lampe / Leuchte · Wohnzimmer",
+                "after": "Lampe / Leuchte · Schlafzimmer"
+              },
+              {
+                "field": "Ort / Zusatzangabe",
+                "before": "Wohnzimmer",
+                "after": "Schlafzimmer"
+              },
+              {
+                "field": "Beschreibung",
+                "before": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+                "after": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben"
+              }
+            ]
+          },
+          {
+            "id": "HISTORY-82748839-e95c-411f-ad6b-fde8f01fb8cf",
+            "at": "2026-10-27T09:28:00.407Z",
+            "by": "Alexander",
+            "type": "edited",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nEine Lampe im Wohnzimmer lässt sich nicht einschalten.\nNein, ich meinte das Schlafzimmer.",
+            "changes": [
+              {
+                "field": "Dateien",
+                "before": "",
+                "after": "lampe-test.png (68 Bytes)"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "id": "b9428b5c-5800-4e13-903d-cb4ce4d73671",
+        "title": "Lampe / Leuchte · Schlafzimmer",
+        "propertyId": "",
+        "unitId": "",
+        "property": "",
+        "unit": "Schlafzimmer",
+        "attachments": [
+          {
+            "id": "BELEG-cd7ec42b-5789-490e-a17e-6fa6d91129ee",
+            "name": "lampe-test.png",
+            "type": "image/png",
+            "size": 68,
+            "dataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aN1kAAAAASUVORK5CYII="
+          }
+        ],
+        "date": "2026-10-27",
+        "owner": "Alexander",
+        "description": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+        "status": "Neu",
+        "priority": "Normal",
+        "person": "",
+        "applicantId": "",
+        "relettingId": "",
+        "assetId": "",
+        "caseInfo": {
+          "reference": "A00001",
+          "category": "Schaden / Reparatur",
+          "receivedDate": "2026-10-27",
+          "channel": "Portal",
+          "reporterId": "",
+          "nextStep": "",
+          "waitingFor": "",
+          "resolution": "",
+          "closedAt": ""
+        },
+        "createdAt": "2026-10-27T09:28:00.073Z",
+        "createdBy": "Alexander",
+        "updatedAt": "2026-10-27T09:28:00.407Z",
+        "updatedBy": "Alexander",
+        "history": [
+          {
+            "id": "HISTORY-5d0ebe5d-dd9d-40d5-8c55-cc520b944b0d",
+            "at": "2026-10-27T09:28:00.073Z",
+            "by": "Alexander",
+            "type": "created",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nEine Lampe im Wohnzimmer lässt sich nicht einschalten.",
+            "changes": []
+          },
+          {
+            "id": "HISTORY-173dc4bf-b667-4ddc-9890-4c19373990d6",
+            "at": "2026-10-27T09:28:00.212Z",
+            "by": "Alexander",
+            "type": "edited",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nEine Lampe im Wohnzimmer lässt sich nicht einschalten.\nNein, ich meinte das Schlafzimmer.",
+            "changes": [
+              {
+                "field": "Titel",
+                "before": "Lampe / Leuchte · Wohnzimmer",
+                "after": "Lampe / Leuchte · Schlafzimmer"
+              },
+              {
+                "field": "Ort / Zusatzangabe",
+                "before": "Wohnzimmer",
+                "after": "Schlafzimmer"
+              },
+              {
+                "field": "Beschreibung",
+                "before": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+                "after": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nlässt sich nicht einschalten\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben"
+              }
+            ]
+          },
+          {
+            "id": "HISTORY-82748839-e95c-411f-ad6b-fde8f01fb8cf",
+            "at": "2026-10-27T09:28:00.407Z",
+            "by": "Alexander",
+            "type": "edited",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nEine Lampe im Wohnzimmer lässt sich nicht einschalten.\nNein, ich meinte das Schlafzimmer.",
+            "changes": [
+              {
+                "field": "Dateien",
+                "before": "",
+                "after": "lampe-test.png (68 Bytes)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  ],
+  "messages": [
+    {
+      "role": "assistant",
+      "content": "Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?"
+    },
+    {
+      "role": "user",
+      "content": "Eine Lampe im Wohnzimmer lässt sich nicht einschalten."
+    },
+    {
+      "role": "assistant",
+      "content": "Ich habe notiert: Im Wohnzimmer lässt sich eine Lampe nicht einschalten. Die Meldung ist bereit.\n\nWissen Sie, seit wann das so ist? Und gehen andere Lampen im Raum noch? Beides ist optional, aber es hilft bei der Einschätzung.\n\nFalls Sie Rauch, Brandgeruch oder Funken bemerken, lassen Sie die Lampe aus und fassen Sie sie nicht an."
+    },
+    {
+      "role": "receipt",
+      "content": "Das Anliegen wurde auf diesem Gerät gespeichert."
+    },
+    {
+      "role": "user",
+      "content": "Nein, ich meinte das Schlafzimmer."
+    },
+    {
+      "role": "assistant",
+      "content": "Verstanden, die Lampe ist im Schlafzimmer, nicht im Wohnzimmer. Das habe ich geändert."
+    },
+    {
+      "role": "receipt",
+      "content": "Das Anliegen wurde auf diesem Gerät aktualisiert."
+    },
+    {
+      "role": "receipt",
+      "content": "Das Anliegen wurde auf diesem Gerät aktualisiert."
+    },
+    {
+      "role": "error",
+      "content": "Die Änderung wurde nicht gespeichert. Der Gerätespeicher ist voll oder gesperrt. Eure bisherigen Einträge und die Eingaben im Formular bleiben erhalten."
+    }
+  ],
+  "photoVerified": true,
+  "storageFailureVerified": true,
+  "success": true,
+  "errors": []
+}

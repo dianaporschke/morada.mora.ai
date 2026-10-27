@@ -88,6 +88,14 @@ test('agent and established signed sessions cannot cross; raw walkthrough IDs ar
  const old=createPortalChatHandler();assert.equal((await call(old,{session:r.data.session,action:'new-conversation'})).status,409);
  assert.equal((await call(a,{message:'Heizung',messageId:randomUUID(),walkthrough:selection})).status,400);
 });
+test('isolated agent route stays unavailable in production before any model or credit call',async()=>{
+ const old=process.env.VERCEL_ENV;process.env.VERCEL_ENV='production';let calls=0;
+ try{const h=createPortalChatHandler({integration:'portal_agent_v1',converse:async()=>{calls++;throw Error('must not run');},preflight:async()=>{calls++;throw Error('must not run');}});assert.equal((await call(h,{message:'Hallo',messageId:randomUUID()})).status,404);assert.equal(calls,0);}finally{if(old===undefined)delete process.env.VERCEL_ENV;else process.env.VERCEL_ENV=old;}
+});
+test('positive hazard from tools blocks actions and cannot be cleared by the next model patch',async()=>{
+ let s=await lamp();s=await patch(s,'Es hat kurz gefunkt.',{risk:'electric',details:'Es hat kurz gefunkt.'});assert.equal(s.safety.hazard,'electric');assert.equal(controls(s).save,null);
+ s=await patch(s,'Jetzt ist die Lampe ausgeschaltet.',{risk:'none',details:'Jetzt ist die Lampe ausgeschaltet.'});assert.equal(s.safety.hazard,'electric');assert.equal(controls(s).review,null);
+});
 test('walkthrough linkage requires an authorized resolver and preserves all identifiers',async()=>{
  let s=await patch(empty(),'Heizung bleibt kalt.',{equipment:'heater',defect:'bleibt kalt'}),id=s.issue.id;
  await assert.rejects(attachWalkthroughSelection(s,{issueId:id,selectionToken:'selection'},null,async()=>selection));

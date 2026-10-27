@@ -17,3 +17,7 @@ test('test allowance is unavailable outside Preview before any network access',a
   for(const VERCEL_ENV of [undefined,'development','production'])await assert.rejects(createPreviewCreditGuard({VERCEL_ENV})(),e=>e.boundaryReason==='preview_only');
   for(const args of [[-1,1],[1,-1],[NaN,1],[1,Infinity],[.5,1]])await assert.rejects(createPreviewCreditGuard({VERCEL_ENV:'preview'})(...args),e=>e.boundaryReason==='invalid_reserve');
 });
+test('model comparison cannot use an arbitrary model or change the existing spend cap',()=>{
+ assert.throws(()=>createPreviewCreditGuard({VERCEL_ENV:'preview'},'unapproved/model'),e=>e.boundaryReason==='model_unverified');
+ assert.equal(MAX_USED_USD,1.374154632);
+});
