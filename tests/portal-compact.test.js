@@ -19,7 +19,7 @@ const wirePlan=p=>p?.updates?{...p,updates:p.updates.map(u=>{
  for(const status of ['unknown','uncertain'])for(const x of u[status]||[])changes.set(x.field,{field:x.field,status,value:status==='uncertain'&&u[x.field]!=null?String(u[x.field]):null,quote:x.quote});
  for(const field of u.clearFields||[])changes.set(field,{field,status:'clear',value:null,quote:u.quote});
  return {ref:u.ref,quote:u.quote,correction:u.correction||false,risk:u.risk||'none',changes:[...changes.values()]};
-}),next:{action:null,ref:null,target:null,requestQuote:null,...p.next}}:p;
+}),next:p.next.type==='form'?{type:p.next.action,ref:p.next.ref||null,requestQuote:p.next.requestQuote}:p.next}:p;
 function sdk(outputs,guard=async()=>{}) {
   let n=0;
   const model=new MockLanguageModelV4({modelId:AGENT_MODEL,doGenerate:async()=>{
@@ -103,7 +103,7 @@ test('wire decoder rejects duplicate fields, unsupported values and fabricated f
  assert.equal(decodeCompactPlan(good).updates[0].count,1);
  const duplicate=structuredClone(good);duplicate.updates[0].changes.push(duplicate.updates[0].changes[0]);assert.throws(()=>decodeCompactPlan(duplicate));
  const unsupported=structuredClone(good);unsupported.updates[0].changes[0].quote='not said';assert.throws(()=>decodeCompactPlan(unsupported));
- const inconsistent=structuredClone(good);inconsistent.next.type='form';assert.throws(()=>decodeCompactPlan(inconsistent),e=>e.diagnostic.detail==='incomplete_form_action');
+ const inconsistent=structuredClone(good);inconsistent.next.type='prepare';assert.throws(()=>decodeCompactPlan(inconsistent),e=>e.diagnostic.detail==='incomplete_form_action');
 });
 test('future forwarding promises also trigger the bounded effect check',async()=>{
  const a=sdk([plan('Prüfen Sie das Formular, damit wir den Fall weiterleiten können.'),{allowed:false}]);
@@ -113,8 +113,8 @@ test('future forwarding promises also trigger the bounded effect check',async()=
 test('inactive action metadata cannot run an operation or discard valid facts',async()=>{
  const w=wirePlan(plan('Alles klar.',[{ref:'new1',quote:'Eine Lampe ist kaputt.',equipment:'light',count:1}]));
  w.next={type:'none',action:'prepare',ref:'active',target:'cases',requestQuote:'unused'};
- const r=await sdk([JSON.stringify(w)]).converse('Eine Lampe ist kaputt.',empty(),['cases']);
- assert.equal(r.requestedAction,null);assert.equal(r.state.issue.count,1);assert.deepEqual(r.navigation,[]);
+ assert.equal(compactSchema().safeParse(w).success,false,'Conflicting action metadata is not part of the provider contract');
+ assert.deepEqual(decodeCompactPlan(w).next,{type:'none'});
 });
 
 test('danger classification is separate from unknown and corrected customer fields',async()=>{
@@ -128,4 +128,54 @@ test('danger classification is separate from unknown and corrected customer fiel
  const preserved=await sdk([JSON.stringify(w)]).converse(message,previouslyDangerous,['cases']);
  assert.equal(preserved.state.safety.hazard,'electric');
  assert.equal(compactSchema().safeParse({...w,updates:[{...w.updates[0],changes:[{field:'risk',status:'unknown',value:null,quote:message}]}]}).success,false);
+});
+
+test('stale display focus cannot discard the current room correction',async()=>{
+ const s=await lamp(),id=s.issue.id;
+ const r=await turn(s,'Nein, Schlafzimmer.',plan('Dann im Schlafzimmer.',[{ref:'active',quote:'Nein, Schlafzimmer.',location:'Schlafzimmer',correction:true}],{focus:'new1'}));
+ assert.equal(r.state.issue.id,id);assert.equal(r.state.issue.location,'Schlafzimmer');assert.equal(r.state.issues.length,1);
+ assert.equal(r.requestedAction,null);assert.ok(r.toolEvents.some(e=>e.tool==='focus_hint'));
+ assert.equal(portalCaseFields(r.state.issue).unit,'Schlafzimmer');
+});
+
+test('invalid display hint never moves facts to a different existing issue',async()=>{
+ const s=(await turn(empty(),'Lampe im Bad kaputt. Heizung im Flur kalt.',plan('Zwei Anliegen.',[
+  {ref:'new1',quote:'Lampe im Bad kaputt.',equipment:'light',defect:'kaputt',location:'Bad'},
+  {ref:'new2',quote:'Heizung im Flur kalt.',equipment:'heater',defect:'kalt',location:'Flur'},
+ ],{focus:'new2'}))).state;
+ const ids=s.issues.map(i=>i.id);
+ const r=await turn(s,'Die Lampe ist im Schlafzimmer.',plan('Dann im Schlafzimmer.',[{ref:'other1',quote:'Die Lampe ist im Schlafzimmer.',location:'Schlafzimmer',correction:true}],{focus:'new4'}));
+ assert.deepEqual(r.state.issues.map(i=>i.id),ids);
+ assert.equal(r.state.issues.find(i=>i.equipment==='light').location,'Schlafzimmer');
+ assert.equal(r.state.issues.find(i=>i.equipment==='heater').location,'Flur');
+});
+
+test('exact later field evidence extends the source span without inventing text',async()=>{
+ const message='Die Lampe ist kaputt. Den Beginn weiss ich nicht.';
+ const w=wirePlan(plan('Das ist in Ordnung.',[{ref:'active',quote:'Die Lampe ist kaputt.',unknown:[{field:'since',quote:'Den Beginn weiss ich nicht.'}]}],{focus:'active'}));
+ const r=await sdk([JSON.stringify(w)]).converse(message,await lamp(),['cases']);
+ assert.equal(r.state.issue.fieldFacts.since.status,'unknown');assert.equal(r.state.issue.since,null);
+ assert.equal(r.state.issue.location,'Wohnzimmer');
+ const forged=structuredClone(w);forged.updates[0].changes[0].quote='Seit gestern';
+ assert.throws(()=>decodeCompactPlan(forged,message),e=>e.diagnostic.detail==='field_quote_not_in_message');
+});
+
+test('source coverage cannot cross into a second issue or choose ambiguous evidence',async()=>{
+ const message='Lampe im Bad kaputt. Heizung im Flur kalt.';
+ const w=wirePlan(plan('Zwei Anliegen.',[
+  {ref:'new1',quote:'Lampe im Bad kaputt.',equipment:'light',defect:'kaputt',location:'Bad'},
+  {ref:'new2',quote:'Heizung im Flur kalt.',equipment:'heater',defect:'kalt',location:'Flur'},
+ ]));
+ w.updates[0].changes.find(c=>c.field==='location').quote='im Flur';
+ await assert.rejects(sdk([JSON.stringify(w)]).converse(message,empty(),['cases']),e=>e.conversationState.issues.length===0&&e.diagnostic.reason==='invalid_record_issues');
+ const ambiguous=wirePlan(plan('Unbekannt.',[{ref:'new1',quote:'Lampe kaputt.',unknown:[{field:'since',quote:'Unbekannt.'}]}]));
+ assert.throws(()=>decodeCompactPlan(ambiguous,'Lampe kaputt. Unbekannt. Heizung kalt. Unbekannt.'),e=>e.diagnostic.detail==='ambiguous_field_quote');
+});
+
+test('form operation carries one typed intent and no contradictory navigation fields',()=>{
+ const p=wirePlan(plan('Ich öffne die Angaben.',[],{topic:'issue',focus:'active',next:{type:'form',action:'prepare',ref:'active',requestQuote:'Bitte vorbereiten.'}}));
+ assert.equal(compactSchema().safeParse(p).success,true);
+ assert.deepEqual(decodeCompactPlan(p).next,{type:'form',action:'prepare',ref:'active',requestQuote:'Bitte vorbereiten.'});
+ const bad=structuredClone(p);bad.next.target='cases';assert.equal(compactSchema().safeParse(bad).success,false);
+ const missing=structuredClone(p);delete missing.next.requestQuote;assert.equal(compactSchema().safeParse(missing).success,false);
 });
