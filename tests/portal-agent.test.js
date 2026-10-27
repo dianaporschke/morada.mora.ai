@@ -181,3 +181,29 @@ test('default UI uses the agent endpoint and isolated storage key; messages rema
  let requested;const c=createPortalClient(w.document,w,{role:()=> 'admin',open:()=>true,available:()=>[],currentDraft:()=>null},{fetcher:async(url)=>{requested=url;return {ok:true,json:async()=>({architecture:'portal_agent_v1',reply:'<script>bad()</script>',session:'test',controls:{}})};}});
  try{c.open();await c.send('Hallo');assert.equal(requested,'/api/portal-agent');assert.ok(w.sessionStorage.getItem('morada.portal.mora.agent.v1.admin'));assert.equal(w.sessionStorage.getItem('morada.portal.mora.v1.admin'),null);assert.equal(c.element.querySelector('script'),null);}finally{w.close();}
 });
+
+test('fresh confirmed correction stays reviewable after a rejected automatic action',async()=>{
+ const s=await lamp(),op=beginPreparation(s);acceptReceipt(s,{...op,status:'portal_received'});
+ const corrected=await patch(s,'Nein, Schlafzimmer.',{location:'Schlafzimmer',correction:true});
+ const handler=createPortalChatHandler({integration:'portal_agent_v1',converse:async()=>{throw Object.assign(Error('Action rejected'),{conversationState:corrected,toolEvents:[{tool:'record_issues',ok:true},{tool:'open_form',ok:false}]});}});
+ const result=await call(handler,{message:'Nein, Schlafzimmer.',messageId:randomUUID(),navigation:['cases']});
+ assert.equal(result.status,503);assert.equal(result.data.factsAccepted,true);assert.equal(result.data.controls.save.operation,'update');assert.equal(result.data.issue.location,'Schlafzimmer');
+ const d=new JSDOM('<div id="portalPreview"></div>',{url:'https://example.test/portal.html'}),w=d.window;w.structuredClone=structuredClone;let prepared=0;
+ const c=createPortalClient(w.document,w,{role:()=> 'admin',open:()=>true,available:()=>['cases'],currentDraft:()=>null,prepare(){prepared++;}},{fetcher:async()=>({ok:false,json:async()=>({...result.data,requestedAction:'prepare',reply:'Unsafe model text'})})});
+ try{c.open();await c.send('Nein, Schlafzimmer.');
+  assert.equal(c.getState().data.issue.location,'Schlafzimmer');assert.equal(prepared,0);assert.equal(c.getState().data.requestedAction,null);
+  assert.ok([...c.element.querySelectorAll('.mora-portal-actions button')].some(b=>b.textContent==='Anliegen aktualisieren'));
+  assert.ok(!c.getState().messages.some(m=>m.content==='Unsafe model text'));
+ }finally{w.close();}
+});
+
+test('unconfirmed failed turn cannot resurrect old controls or replace a session from another architecture',async()=>{
+ const d=new JSDOM('<div id="portalPreview"></div>',{url:'https://example.test/portal.html'}),w=d.window;w.structuredClone=structuredClone;let n=0;
+ const results=[{ok:true,data:{architecture:'portal_agent_v1',session:'good',controls:{save:{operation:'create'}}}},
+  {ok:false,data:{architecture:'portal_agent_v1',session:'pending',factsAccepted:false,controls:{save:{operation:'create'}},error:'Unavailable'}},
+  {ok:false,data:{architecture:'other',session:'wrong',factsAccepted:true,controls:{save:{operation:'create'}}}}];
+ const c=createPortalClient(w.document,w,{role:()=> 'admin',open:()=>true,available:()=>['cases'],currentDraft:()=>null},{fetcher:async()=>{const r=results[n++];return {ok:r.ok,json:async()=>r.data};}});
+ try{c.open();await c.send('Lampe kaputt');await c.send('Nein, Schlafzimmer.');assert.equal(c.getState().data,null);assert.equal(c.element.querySelectorAll('.mora-portal-actions button').length,0);
+  await c.send('Hallo');assert.equal(c.getState().session,'pending');assert.equal(c.getState().data,null);
+ }finally{w.close();}
+});

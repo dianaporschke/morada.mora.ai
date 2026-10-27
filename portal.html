@@ -8624,9 +8624,14 @@ function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(w
     try{data=await response.json();}catch{throw Error('Das geschützte Backend konnte nicht erreicht werden. Bitte laden Sie die Testversion neu.');}
     const parsed=window.performance.now();
     if(startedRole!==bridge.role()||!bridge.open())throw Error('Die Portalansicht wurde gewechselt. Öffnen Sie MORA erneut.');
+    if(data.architecture!==architecture){thread.data=null;persist();throw Error('Unerwartete Backend-Antwort.');}
     if(data.session)thread.session=data.session;
-    if(!response.ok){thread.data=null;persist();throw Error(data.error||'Die Backend-Verbindung ist gerade nicht verfügbar.');}
-    if(data.architecture!==architecture)throw Error('Unerwartete Backend-Antwort.');
+    if(!response.ok){
+      // Only a fresh server-confirmed fact update may retain controls on an
+      // error. Never reuse old buttons or execute the rejected model action.
+      thread.data=data.factsAccepted===true&&data.session&&data.controls?{...data,reply:'',requestedAction:null,navigation:[]}:null;
+      persist();throw Error(data.error||'Die Backend-Verbindung ist gerade nicht verfügbar.');
+    }
     thread.data=data;persist();
     // Timings contain no customer text, tokens or credentials. DOM insertion is
     // measured separately from request duration; it is not a provider TTFT.

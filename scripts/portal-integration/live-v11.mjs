@@ -18,7 +18,7 @@ const portalPath='/portal.html'+(cfg.path==='/api/portal-agent'?'':'?mora=legacy
 const evidence={portalSha256:createHash('sha256').update(html).digest('hex'),scope:'Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.',url:cfg.url+portalPath,conversations:[]};
 const before=await transport(null);assert.equal(before.status,200);assert.equal(before.data.inferenceStarted,false);evidence.before=before.data;evidence.model=before.data.model;if(cfg.expectedModel)assert.equal(evidence.model,cfg.expectedModel);
 const cases=[
- {id:'lamp',messages:cfg.compactLamp?['Eine Lampe im Wohnzimmer ist kaputt. Sonst ist alles normal.','Bitte bereiten Sie das Anliegen jetzt vor.']:['lampe kaputt','wohnzimmer','Nur eine Lampe ist betroffen, sonst ist alles normal.','Bitte bereiten Sie das Anliegen jetzt vor.'],room:'Wohnzimmer',label:/Lampe \/ Leuchte/,correction:'Nein, ich meinte Schlafzimmer.',correctedRoom:'Schlafzimmer'},
+ {id:'lamp',messages:cfg.lampMessages || (cfg.compactLamp?['Eine Lampe im Wohnzimmer ist kaputt. Sonst ist alles normal.','Bitte bereiten Sie das Anliegen jetzt vor.']:['lampe kaputt','wohnzimmer','Nur eine Lampe ist betroffen, sonst ist alles normal.','Bitte bereiten Sie das Anliegen jetzt vor.']),room:'Wohnzimmer',label:/Lampe \/ Leuchte/,correction:'Nein, ich meinte Schlafzimmer.',correctedRoom:'Schlafzimmer'},
  {id:'socket',messages:['Die Steckdose im Büro funktioniert nicht. Es gibt weder Funken noch Geruch oder Wärme.','Bitte das Anliegen vorbereiten.'],room:'Büro',label:/Steckdose/},
  {id:'water',messages:['Ein alter trockener Wasserfleck ist an der Wand im Schlafzimmer. Es tropft nichts, es gibt keine Elektrik in der Nähe.','Bitte das Anliegen vorbereiten.'],room:'Schlafzimmer',label:/Wasser|Feuchtigkeit|Wand/},
  {id:'unknown',messages:['Das Spezialteil im Bad sitzt lose. Den Beginn kenne ich nicht.','Bitte als Anliegen vorbereiten.'],room:'Bad',label:/Spezialteil/},
@@ -26,7 +26,7 @@ const cases=[
 ];
 try{
  for(const c of cases.filter(c=>!cfg.caseIds||cfg.caseIds.includes(c.id))){
-  const entry={id:c.id,transports:[],snapshots:[],clientTimings:[],dataFailures:[]};evidence.conversations.push(entry);let failure;
+  const entry={id:c.id,transports:[],snapshots:[],clientTimings:[],dataFailures:[],modelFailures:[]};evidence.conversations.push(entry);let failure;
   const vc=new VirtualConsole(),errors=[];vc.on('info',(label,value)=>{if(['MORA portal timing','MORA portal visible response'].includes(label))entry.clientTimings.push({label,...value});});vc.on('jsdomError',e=>{if(!['not-implemented','css-parsing'].includes(e.type))errors.push(e.message);});
   const d=new JSDOM(html,{url:cfg.url+portalPath,runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){
    w.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});w.structuredClone=structuredClone;w.indexedDB=indexedDB;w.scrollTo=()=>{};w.confirm=()=>true;
@@ -84,10 +84,12 @@ try{
      }finally{Object.defineProperty(w.localStorage.__proto__,'setItem',{configurable:true,value:original});}
     }
    }
-   // Preserve failed data acceptance while still checking independent native
-   // photo/update/storage-error behaviour. Never report that scenario passed.
-   entry.success=entry.dataFailures.length===0;
-   if(!entry.success)entry.failure=entry.dataFailures.join('; ');
+   // A recovered UI operation is not proof of an accepted model answer.
+   // Preserve both failures even when native update/photo/error handling pass.
+   entry.nativeOperationsVerified=true;
+   entry.modelFailures=entry.transports.filter(t=>t.request.message&&t.status!==200).map(t=>({message:t.request.message,status:t.status,code:t.data.code,factsAccepted:t.data.factsAccepted===true}));
+   entry.success=entry.dataFailures.length===0&&entry.modelFailures.length===0;
+   if(!entry.success)entry.failure=[...entry.dataFailures,...entry.modelFailures.map(f=>'Rejected model turn: '+f.code)].join('; ');
   }catch(e){entry.success=false;entry.failure=e.message;if(failure)evidence.stopped=failure;}
   finally{entry.messages=w.MORAPortal?.getState()?.messages;entry.controls=w.MORAPortal?.getState()?.data?.controls;entry.errors=errors;w.close();writeFileSync(cfg.output,JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify({case:c.id,success:entry.success,failure:entry.failure}));}
   if(evidence.stopped)break;
