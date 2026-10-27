@@ -15,10 +15,10 @@ const empty=()=>hydrateSimple(null);
 const plan=(reply,updates=[],extra={})=>({reply,topic:updates.length?'issue':'information',updates,focus:null,next:{type:'none'},...extra});
 const wirePlan=p=>p?.updates?{...p,updates:p.updates.map(u=>{
  const changes=new Map();
- for(const field of ['equipment','defect','location','count','since','extent','details','cause','risk'])if(u[field]!=null)changes.set(field,{field,status:'known',value:String(u[field]),quote:u.quote});
+ for(const field of ['equipment','defect','location','count','since','extent','details','cause'])if(u[field]!=null)changes.set(field,{field,status:'known',value:String(u[field]),quote:u.quote});
  for(const status of ['unknown','uncertain'])for(const x of u[status]||[])changes.set(x.field,{field:x.field,status,value:status==='uncertain'&&u[x.field]!=null?String(u[x.field]):null,quote:x.quote});
  for(const field of u.clearFields||[])changes.set(field,{field,status:'clear',value:null,quote:u.quote});
- return {ref:u.ref,quote:u.quote,correction:u.correction||false,changes:[...changes.values()]};
+ return {ref:u.ref,quote:u.quote,correction:u.correction||false,risk:u.risk||'none',changes:[...changes.values()]};
 }),next:{action:null,ref:null,target:null,requestQuote:null,...p.next}}:p;
 function sdk(outputs,guard=async()=>{}) {
   let n=0;
@@ -115,4 +115,17 @@ test('inactive action metadata cannot run an operation or discard valid facts',a
  w.next={type:'none',action:'prepare',ref:'active',target:'cases',requestQuote:'unused'};
  const r=await sdk([JSON.stringify(w)]).converse('Eine Lampe ist kaputt.',empty(),['cases']);
  assert.equal(r.requestedAction,null);assert.equal(r.state.issue.count,1);assert.deepEqual(r.navigation,[]);
+});
+
+test('danger classification is separate from unknown and corrected customer fields',async()=>{
+ const message='Kein Rauch, keine Funken und kein Brandgeruch.';
+ const w=wirePlan(plan('Alles klar.',[{ref:'active',quote:message,risk:'none',details:message}],{focus:'active'}));
+ assert.equal(compactSchema().safeParse(w).success,true);
+ const r=await sdk([JSON.stringify(w)]).converse(message,await lamp(),['cases']);
+ assert.equal(r.state.safety,null);assert.equal(r.state.issue.details,message);
+ const danger=structuredClone(w);danger.updates[0].risk='electric';
+ const previouslyDangerous=await lamp();previouslyDangerous.safety={hazard:'electric',urgency:'emergency'};
+ const preserved=await sdk([JSON.stringify(w)]).converse(message,previouslyDangerous,['cases']);
+ assert.equal(preserved.state.safety.hazard,'electric');
+ assert.equal(compactSchema().safeParse({...w,updates:[{...w.updates[0],changes:[{field:'risk',status:'unknown',value:null,quote:message}]}]}).success,false);
 });
