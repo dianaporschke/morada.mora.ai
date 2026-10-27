@@ -108,6 +108,16 @@ test('negative delivery statements accept recipients without treating mixed succ
  for(const text of ['Es wurde nicht an die Bewirtschaftung versendet.','Ich habe das Anliegen nicht an die Verwaltung gesendet.','Nein, es wurde nichts an MORADA gesendet.'])assert.equal(hasUnconfirmedSuccess(text),false,text);
  for(const text of ['Es wurde nicht nur an die Verwaltung gesendet.','Es wurde nicht an MORADA gesendet aber an Alexander versendet.','Es wurde nicht an MORADA gesendet; der Handwerker wurde beauftragt.'])assert.equal(hasUnconfirmedSuccess(text),true,text);
 });
+test('ambiguous mixed clauses receive one bounded effect review without rewriting the response',async()=>{
+ const s=await lamp(),op=beginPreparation(s);acceptReceipt(s,{...op,status:'portal_received'});
+ const text='Das Anliegen ist nur lokal auf diesem Gerät gespeichert und wurde nicht an MORADA gesendet.';
+ let guards=0;const a=sdk([text,JSON.stringify({allowed:true})],async()=>{guards++;});
+ const r=await a.converse('Ist das schon gesendet?',s,['cases']);assert.equal(r.reply,text);assert.equal(r.modelCalls,2);assert.equal(guards,2);assert.deepEqual(r.toolEvents,[{tool:'effect_review',ok:true}]);
+ const bad=sdk(['Das Anliegen wurde an MORADA gesendet.',JSON.stringify({allowed:false})]);
+ await assert.rejects(bad.converse('Bitte senden',s,['cases']),e=>e.diagnostic?.reason==='unconfirmed_success');
+ let n=0;const capped=sdk([text],async()=>{if(++n===2)throw Object.assign(Error('limit'),{code:'PREVIEW_CREDIT_BOUNDARY'});});
+ await assert.rejects(capped.converse('Ist das gesendet?',s,['cases']),e=>e.code==='PREVIEW_CREDIT_BOUNDARY'&&e.modelCalls===1);
+});
 test('actual SDK: one tool update, then natural reply with current facts, two calls',async()=>{
  let guarded=0;const a=sdk([[toolCall('record_issues',{updates:[{ref:'new1',quote:'Lampe kaputt',equipment:'light',defect:'kaputt'}]})],'Wo befindet sich die Lampe?'],async()=>{guarded++;});
  const r=await a.converse('Lampe kaputt',empty(),['cases']);assert.equal(r.modelCalls,2);assert.equal(guarded,2);assert.equal(r.state.issue.equipment,'light');assert.equal(r.reply,'Wo befindet sich die Lampe?');assert.match(a.model.doGenerateCalls[1].prompt[0].content,/"equipment":"light"/);
