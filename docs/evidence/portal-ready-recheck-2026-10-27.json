@@ -1,0 +1,1642 @@
+{
+  "scope": "Real portal_agent_v1 backend responses. Browser rendering and local saving are separate checks.",
+  "url": "https://morada-mora-fxzutgf97-dianaporschke-1255s-projects.vercel.app/portal.html?mora=agent",
+  "model": "openai/gpt-6.1-sol",
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 23.240815168,
+    "totalUsedUsd": 1.759184832,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "openai/gpt-6.1-sol",
+    "pricing": {
+      "input": 2e-06,
+      "output": 1e-05
+    }
+  },
+  "conversations": [
+    {
+      "id": "12",
+      "title": "Wasseraustritt, unbekannte Ursache",
+      "turns": [
+        {
+          "customer": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+          "status": 200,
+          "httpMs": 11099.42,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Sie können die Angaben zur Pfütze unter dem Lavabo im Bad für eine lokale Meldung vorbereiten lassen. Es wird dabei nichts an die Bewirtschaftung gesendet.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YMX2BH3QSGHTVQEX5VYWWA",
+              "gen_01M5YMX4JW4EAC70561074WM9P"
+            ],
+            "usage": [
+              {
+                "inputTokens": 1787,
+                "outputTokens": 75,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 1959,
+                "outputTokens": 40,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 5161,
+              "creditGuard": 468,
+              "total": 5657
+            },
+            "issue": {
+              "id": "4839a638-7c4b-4b14-bd93-3f6d1b157df1",
+              "category": "water",
+              "equipment": "Lavabo",
+              "subcategory": null,
+              "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+              "defect": "Kleine Pfütze unter dem Lavabo",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lavabo\nKleine Pfütze unter dem Lavabo\nBereich: Bad\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Kleine Pfütze unter dem Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "water",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T12:21:03.549Z",
+              "updatedAt": "2026-10-27T12:21:03.560Z",
+              "shortLabel": "Lavabo",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"water\",\"Lavabo\",\"Unter dem Lavabo im Bad ist eine kleine Pfütze.\",\"Kleine Pfütze unter dem Lavabo\",null,\"Bad\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"water\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Kleine Pfütze unter dem Lavabo\",null],[\"description\",\"known\",\"Unter dem Lavabo im Bad ist eine kleine Pfütze.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"Lavabo\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Bad\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "4839a638-7c4b-4b14-bd93-3f6d1b157df1",
+                "category": "water",
+                "equipment": "Lavabo",
+                "subcategory": null,
+                "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                "defect": "Kleine Pfütze unter dem Lavabo",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lavabo\nKleine Pfütze unter dem Lavabo\nBereich: Bad\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Kleine Pfütze unter dem Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "water",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T12:21:03.549Z",
+                "updatedAt": "2026-10-27T12:21:03.560Z",
+                "shortLabel": "Lavabo",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"water\",\"Lavabo\",\"Unter dem Lavabo im Bad ist eine kleine Pfütze.\",\"Kleine Pfütze unter dem Lavabo\",null,\"Bad\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"water\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Kleine Pfütze unter dem Lavabo\",null],[\"description\",\"known\",\"Unter dem Lavabo im Bad ist eine kleine Pfütze.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"Lavabo\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Bad\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "4839a638-7c4b-4b14-bd93-3f6d1b157df1"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "4839a638-7c4b-4b14-bd93-3f6d1b157df1"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam.",
+          "status": 200,
+          "httpMs": 32998.87,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Stellen Sie, wenn möglich, ein Gefäss unter die Tropfstelle und wischen Sie die Pfütze auf, damit niemand ausrutscht. Die Ursache können wir offenlassen.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YMXD3ERX4KZ35644WBG6AN",
+              "gen_01M5YMY4D24GTJZMNVBCNFJ0R2"
+            ],
+            "usage": [
+              {
+                "inputTokens": 1932,
+                "outputTokens": 70,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2069,
+                "outputTokens": 44,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 27191,
+              "creditGuard": 376,
+              "total": 27574
+            },
+            "issue": {
+              "id": "4839a638-7c4b-4b14-bd93-3f6d1b157df1",
+              "category": "water",
+              "equipment": "Lavabo",
+              "subcategory": null,
+              "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+              "defect": "Kleine Pfütze unter dem Lavabo",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": "Es tropft nur langsam.",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                {
+                  "question": "description",
+                  "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [
+                "cause"
+              ],
+              "summary": "Lavabo\nKleine Pfütze unter dem Lavabo\nBereich: Bad\nUmfang / Situation: Es tropft nur langsam.\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Kleine Pfütze unter dem Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "Es tropft nur langsam.",
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                "category": {
+                  "status": "known",
+                  "value": "water",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T12:21:03.549Z",
+              "updatedAt": "2026-10-27T12:21:36.074Z",
+              "shortLabel": "Lavabo",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"water\",\"Lavabo\",\"Unter dem Lavabo im Bad ist eine kleine Pfütze.\",\"Kleine Pfütze unter dem Lavabo\",null,\"Bad\",null,\"Es tropft nur langsam.\",null,null,\"normal\",\"none\",[],[\"cause\"],[[\"category\",\"known\",\"water\",null],[\"cause\",\"unknown\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Kleine Pfütze unter dem Lavabo\",null],[\"description\",\"known\",\"Unter dem Lavabo im Bad ist eine kleine Pfütze.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"Lavabo\",null],[\"extent\",\"known\",\"Es tropft nur langsam.\",null],[\"location\",\"known\",\"Bad\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "4839a638-7c4b-4b14-bd93-3f6d1b157df1",
+                "category": "water",
+                "equipment": "Lavabo",
+                "subcategory": null,
+                "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                "defect": "Kleine Pfütze unter dem Lavabo",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": "Es tropft nur langsam.",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [
+                  "cause"
+                ],
+                "summary": "Lavabo\nKleine Pfütze unter dem Lavabo\nBereich: Bad\nUmfang / Situation: Es tropft nur langsam.\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Kleine Pfütze unter dem Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "Es tropft nur langsam.",
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "water",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T12:21:03.549Z",
+                "updatedAt": "2026-10-27T12:21:36.074Z",
+                "shortLabel": "Lavabo",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"water\",\"Lavabo\",\"Unter dem Lavabo im Bad ist eine kleine Pfütze.\",\"Kleine Pfütze unter dem Lavabo\",null,\"Bad\",null,\"Es tropft nur langsam.\",null,null,\"normal\",\"none\",[],[\"cause\"],[[\"category\",\"known\",\"water\",null],[\"cause\",\"unknown\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Kleine Pfütze unter dem Lavabo\",null],[\"description\",\"known\",\"Unter dem Lavabo im Bad ist eine kleine Pfütze.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"Lavabo\",null],[\"extent\",\"known\",\"Es tropft nur langsam.\",null],[\"location\",\"known\",\"Bad\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "4839a638-7c4b-4b14-bd93-3f6d1b157df1"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "4839a638-7c4b-4b14-bd93-3f6d1b157df1"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Nein, ich habe kein undichtes Rohr festgestellt, nur das Wasser gesehen.",
+          "status": 200,
+          "httpMs": 22386.68,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Verstanden: Sie haben nur Wasser gesehen, kein undichtes Rohr festgestellt. Die Ursache bleibt offen.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YMYD97ZKEVPKKY5WXXC5G6",
+              "gen_01M5YMYVTNJ437C0J7TMKTC9V6"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2031,
+                "outputTokens": 56,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2135,
+                "outputTokens": 25,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 16763,
+              "creditGuard": 329,
+              "total": 17100
+            },
+            "issue": {
+              "id": "4839a638-7c4b-4b14-bd93-3f6d1b157df1",
+              "category": "water",
+              "equipment": "Lavabo",
+              "subcategory": null,
+              "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+              "defect": "Kleine Pfütze unter dem Lavabo",
+              "count": null,
+              "location": "Bad",
+              "since": null,
+              "extent": "Es tropft nur langsam.",
+              "details": "Kein undichtes Rohr festgestellt; nur Wasser gesehen.",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                {
+                  "question": "description",
+                  "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                {
+                  "question": "description",
+                  "answer": "Nein, ich habe kein undichtes Rohr festgestellt, nur das Wasser gesehen."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [
+                "cause"
+              ],
+              "summary": "Lavabo\nKleine Pfütze unter dem Lavabo\nBereich: Bad\nUmfang / Situation: Es tropft nur langsam.\nZusatzangaben: Kein undichtes Rohr festgestellt; nur Wasser gesehen.\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Kleine Pfütze unter dem Lavabo",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Bad",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "Es tropft nur langsam.",
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                "details": {
+                  "status": "known",
+                  "value": "Kein undichtes Rohr festgestellt; nur Wasser gesehen.",
+                  "source": "Nein, ich habe kein undichtes Rohr festgestellt, nur das Wasser gesehen."
+                },
+                "cause": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                },
+                "category": {
+                  "status": "known",
+                  "value": "water",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                  "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T12:21:03.549Z",
+              "updatedAt": "2026-10-27T12:22:00.114Z",
+              "shortLabel": "Lavabo",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"water\",\"Lavabo\",\"Unter dem Lavabo im Bad ist eine kleine Pfütze.\",\"Kleine Pfütze unter dem Lavabo\",null,\"Bad\",null,\"Es tropft nur langsam.\",\"Kein undichtes Rohr festgestellt; nur Wasser gesehen.\",null,\"normal\",\"none\",[],[\"cause\"],[[\"category\",\"known\",\"water\",null],[\"cause\",\"unknown\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Kleine Pfütze unter dem Lavabo\",null],[\"description\",\"known\",\"Unter dem Lavabo im Bad ist eine kleine Pfütze.\",null],[\"details\",\"known\",\"Kein undichtes Rohr festgestellt; nur Wasser gesehen.\",null],[\"equipment\",\"known\",\"Lavabo\",null],[\"extent\",\"known\",\"Es tropft nur langsam.\",null],[\"location\",\"known\",\"Bad\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 4
+              }
+            },
+            "issues": [
+              {
+                "id": "4839a638-7c4b-4b14-bd93-3f6d1b157df1",
+                "category": "water",
+                "equipment": "Lavabo",
+                "subcategory": null,
+                "description": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                "defect": "Kleine Pfütze unter dem Lavabo",
+                "count": null,
+                "location": "Bad",
+                "since": null,
+                "extent": "Es tropft nur langsam.",
+                "details": "Kein undichtes Rohr festgestellt; nur Wasser gesehen.",
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Nein, ich habe kein undichtes Rohr festgestellt, nur das Wasser gesehen."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [
+                  "cause"
+                ],
+                "summary": "Lavabo\nKleine Pfütze unter dem Lavabo\nBereich: Bad\nUmfang / Situation: Es tropft nur langsam.\nZusatzangaben: Kein undichtes Rohr festgestellt; nur Wasser gesehen.\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Kleine Pfütze unter dem Lavabo",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "Es tropft nur langsam.",
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "Kein undichtes Rohr festgestellt; nur Wasser gesehen.",
+                    "source": "Nein, ich habe kein undichtes Rohr festgestellt, nur das Wasser gesehen."
+                  },
+                  "cause": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam."
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "water",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Unter dem Lavabo im Bad ist eine kleine Pfütze.",
+                    "source": "Unter dem Lavabo im Bad ist eine kleine Pfütze."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T12:21:03.549Z",
+                "updatedAt": "2026-10-27T12:22:00.114Z",
+                "shortLabel": "Lavabo",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"water\",\"Lavabo\",\"Unter dem Lavabo im Bad ist eine kleine Pfütze.\",\"Kleine Pfütze unter dem Lavabo\",null,\"Bad\",null,\"Es tropft nur langsam.\",\"Kein undichtes Rohr festgestellt; nur Wasser gesehen.\",null,\"normal\",\"none\",[],[\"cause\"],[[\"category\",\"known\",\"water\",null],[\"cause\",\"unknown\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Kleine Pfütze unter dem Lavabo\",null],[\"description\",\"known\",\"Unter dem Lavabo im Bad ist eine kleine Pfütze.\",null],[\"details\",\"known\",\"Kein undichtes Rohr festgestellt; nur Wasser gesehen.\",null],[\"equipment\",\"known\",\"Lavabo\",null],[\"extent\",\"known\",\"Es tropft nur langsam.\",null],[\"location\",\"known\",\"Bad\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 4
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "4839a638-7c4b-4b14-bd93-3f6d1b157df1"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "4839a638-7c4b-4b14-bd93-3f6d1b157df1"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "title": "Widerspruch und Rücknahme",
+      "turns": [
+        {
+          "customer": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.",
+          "status": 200,
+          "httpMs": 31290.3,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Sie können die Angaben zu den beiden defekten Lampen im Wohnzimmer jetzt für ein lokales Formular vorbereiten lassen. Dabei wird noch nichts an die Bewirtschaftung gesendet.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YMZ3CB86FC76JXEP7E0N23",
+              "gen_01M5YMZSQCAZ2HCTJX6HHP18PV"
+            ],
+            "usage": [
+              {
+                "inputTokens": 1784,
+                "outputTokens": 75,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 1766
+              },
+              {
+                "inputTokens": 1967,
+                "outputTokens": 39,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 24815,
+              "creditGuard": 932,
+              "total": 25753
+            },
+            "issue": {
+              "id": "ebd619c4-250a-4a1e-8d43-cd4de99fe775",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.",
+              "defect": "funktionieren nicht",
+              "count": 2,
+              "location": "Wohnzimmer",
+              "since": "seit Montag",
+              "extent": "2 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 2\nBereich: Wohnzimmer\nSeit wann: seit Montag\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "funktionieren nicht",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "seit Montag",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 2,
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "2 betroffene Einrichtung(en)",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T12:22:30.098Z",
+              "updatedAt": "2026-10-27T12:22:30.098Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.\",\"funktionieren nicht\",2,\"Wohnzimmer\",\"seit Montag\",\"2 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",2,null],[\"defect\",\"known\",\"funktionieren nicht\",null],[\"description\",\"known\",\"Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"2 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"seit Montag\",null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "ebd619c4-250a-4a1e-8d43-cd4de99fe775",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.",
+                "defect": "funktionieren nicht",
+                "count": 2,
+                "location": "Wohnzimmer",
+                "since": "seit Montag",
+                "extent": "2 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 2\nBereich: Wohnzimmer\nSeit wann: seit Montag\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "funktionieren nicht",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "since": {
+                    "status": "known",
+                    "value": "seit Montag",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 2,
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "2 betroffene Einrichtung(en)",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T12:22:30.098Z",
+                "updatedAt": "2026-10-27T12:22:30.098Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.\",\"funktionieren nicht\",2,\"Wohnzimmer\",\"seit Montag\",\"2 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",2,null],[\"defect\",\"known\",\"funktionieren nicht\",null],[\"description\",\"known\",\"Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"2 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"seit Montag\",null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "ebd619c4-250a-4a1e-8d43-cd4de99fe775"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "ebd619c4-250a-4a1e-8d43-cd4de99fe775"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Vielleicht ist es doch nur eine. Ich bin mir bei der zweiten nicht sicher.",
+          "status": 200,
+          "httpMs": 10305.99,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Ob auch die zweite Lampe betroffen ist, bleibt vorerst offen.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YN01SFE6W8PPAE63YHKMPE",
+              "gen_01M5YN04KSGYNEVWBDKKBNP5CR"
+            ],
+            "usage": [
+              {
+                "inputTokens": 1939,
+                "outputTokens": 74,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2076,
+                "outputTokens": 18,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 4721,
+              "creditGuard": 308,
+              "total": 5034
+            },
+            "issue": {
+              "id": "ebd619c4-250a-4a1e-8d43-cd4de99fe775",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.",
+              "defect": "funktionieren nicht",
+              "count": 2,
+              "location": "Wohnzimmer",
+              "since": "seit Montag",
+              "extent": "2 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                {
+                  "question": "description",
+                  "answer": "Vielleicht ist es doch nur eine. Ich bin mir bei der zweiten nicht sicher."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: unsicher (bisherige Angabe: 2)\nBereich: Wohnzimmer\nSeit wann: seit Montag\nUmfang / Situation: Anzahl noch unsicher\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "funktionieren nicht",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "seit Montag",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "count": {
+                  "status": "uncertain",
+                  "value": 2,
+                  "candidate": 1,
+                  "source": "Vielleicht ist es doch nur eine. Ich bin mir bei der zweiten nicht sicher."
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "2 betroffene Einrichtung(en)",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T12:22:30.098Z",
+              "updatedAt": "2026-10-27T12:22:41.883Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.\",\"funktionieren nicht\",2,\"Wohnzimmer\",\"seit Montag\",\"2 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"uncertain\",2,1],[\"defect\",\"known\",\"funktionieren nicht\",null],[\"description\",\"known\",\"Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"2 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"seit Montag\",null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "ebd619c4-250a-4a1e-8d43-cd4de99fe775",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.",
+                "defect": "funktionieren nicht",
+                "count": 2,
+                "location": "Wohnzimmer",
+                "since": "seit Montag",
+                "extent": "2 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Vielleicht ist es doch nur eine. Ich bin mir bei der zweiten nicht sicher."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: unsicher (bisherige Angabe: 2)\nBereich: Wohnzimmer\nSeit wann: seit Montag\nUmfang / Situation: Anzahl noch unsicher\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "funktionieren nicht",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "since": {
+                    "status": "known",
+                    "value": "seit Montag",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "count": {
+                    "status": "uncertain",
+                    "value": 2,
+                    "candidate": 1,
+                    "source": "Vielleicht ist es doch nur eine. Ich bin mir bei der zweiten nicht sicher."
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "2 betroffene Einrichtung(en)",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T12:22:30.098Z",
+                "updatedAt": "2026-10-27T12:22:41.883Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.\",\"funktionieren nicht\",2,\"Wohnzimmer\",\"seit Montag\",\"2 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"uncertain\",2,1],[\"defect\",\"known\",\"funktionieren nicht\",null],[\"description\",\"known\",\"Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"2 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"seit Montag\",null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "ebd619c4-250a-4a1e-8d43-cd4de99fe775"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "ebd619c4-250a-4a1e-8d43-cd4de99fe775"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen.",
+          "status": 200,
+          "httpMs": 9745.76,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Dann ist genau eine Lampe im Wohnzimmer betroffen.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YN0BY7JBJAZZJFQVCJVN0E",
+              "gen_01M5YN0E5DQM721V8EKD8YQ971"
+            ],
+            "usage": [
+              {
+                "inputTokens": 2006,
+                "outputTokens": 57,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2070,
+                "outputTokens": 14,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 4153,
+              "creditGuard": 261,
+              "total": 4419
+            },
+            "issue": {
+              "id": "ebd619c4-250a-4a1e-8d43-cd4de99fe775",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: seit Montag\nUmfang / Situation: Genau eine Lampe betroffen\nDringlichkeit: Normal",
+              "defect": "funktionieren nicht",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": "seit Montag",
+              "extent": "Genau eine Lampe betroffen",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                {
+                  "question": "description",
+                  "answer": "Vielleicht ist es doch nur eine. Ich bin mir bei der zweiten nicht sicher."
+                },
+                {
+                  "question": "description",
+                  "answer": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "extent": {
+                      "from": "2 betroffene Einrichtung(en)",
+                      "to": "Genau eine Lampe betroffen"
+                    },
+                    "count": {
+                      "from": 2,
+                      "to": 1
+                    }
+                  },
+                  "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen.",
+                  "at": "2026-10-27T12:22:51.672Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: seit Montag\nUmfang / Situation: Genau eine Lampe betroffen\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "funktionieren nicht",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "seit Montag",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                },
+                "count": {
+                  "status": "corrected",
+                  "value": 1,
+                  "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+                },
+                "extent": {
+                  "status": "corrected",
+                  "value": "Genau eine Lampe betroffen",
+                  "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: seit Montag\nUmfang / Situation: Genau eine Lampe betroffen\nDringlichkeit: Normal",
+                  "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T12:22:30.098Z",
+              "updatedAt": "2026-10-27T12:22:51.672Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nfunktionieren nicht\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: seit Montag\\nUmfang / Situation: Genau eine Lampe betroffen\\nDringlichkeit: Normal\",\"funktionieren nicht\",1,\"Wohnzimmer\",\"seit Montag\",\"Genau eine Lampe betroffen\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"corrected\",1,null],[\"defect\",\"known\",\"funktionieren nicht\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nfunktionieren nicht\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: seit Montag\\nUmfang / Situation: Genau eine Lampe betroffen\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"corrected\",\"Genau eine Lampe betroffen\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"seit Montag\",null]]]",
+                "revision": 4
+              }
+            },
+            "issues": [
+              {
+                "id": "ebd619c4-250a-4a1e-8d43-cd4de99fe775",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: seit Montag\nUmfang / Situation: Genau eine Lampe betroffen\nDringlichkeit: Normal",
+                "defect": "funktionieren nicht",
+                "count": 1,
+                "location": "Wohnzimmer",
+                "since": "seit Montag",
+                "extent": "Genau eine Lampe betroffen",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Vielleicht ist es doch nur eine. Ich bin mir bei der zweiten nicht sicher."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "extent": {
+                        "from": "2 betroffene Einrichtung(en)",
+                        "to": "Genau eine Lampe betroffen"
+                      },
+                      "count": {
+                        "from": 2,
+                        "to": 1
+                      }
+                    },
+                    "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen.",
+                    "at": "2026-10-27T12:22:51.672Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: seit Montag\nUmfang / Situation: Genau eine Lampe betroffen\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "funktionieren nicht",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "since": {
+                    "status": "known",
+                    "value": "seit Montag",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  },
+                  "count": {
+                    "status": "corrected",
+                    "value": 1,
+                    "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+                  },
+                  "extent": {
+                    "status": "corrected",
+                    "value": "Genau eine Lampe betroffen",
+                    "source": "Ich habe nachgesehen: Es ist genau eine Lampe betroffen."
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Lampe / Leuchte\nfunktionieren nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: seit Montag\nUmfang / Situation: Genau eine Lampe betroffen\nDringlichkeit: Normal",
+                    "source": "Zwei Lampen im Wohnzimmer funktionieren seit Montag nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T12:22:30.098Z",
+                "updatedAt": "2026-10-27T12:22:51.672Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nfunktionieren nicht\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: seit Montag\\nUmfang / Situation: Genau eine Lampe betroffen\\nDringlichkeit: Normal\",\"funktionieren nicht\",1,\"Wohnzimmer\",\"seit Montag\",\"Genau eine Lampe betroffen\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"corrected\",1,null],[\"defect\",\"known\",\"funktionieren nicht\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nfunktionieren nicht\\nAnzahl: 1\\nBereich: Wohnzimmer\\nSeit wann: seit Montag\\nUmfang / Situation: Genau eine Lampe betroffen\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"corrected\",\"Genau eine Lampe betroffen\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"known\",\"seit Montag\",null]]]",
+                  "revision": 4
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "ebd619c4-250a-4a1e-8d43-cd4de99fe775"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "ebd619c4-250a-4a1e-8d43-cd4de99fe775"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 23.179814068,
+    "totalUsedUsd": 1.820185932,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "openai/gpt-6.1-sol",
+    "pricing": {
+      "input": 2e-06,
+      "output": 1e-05
+    }
+  },
+  "actualAccountDeltaUsd": 0.06100109999999992
+}

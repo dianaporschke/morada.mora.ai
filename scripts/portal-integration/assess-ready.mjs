@@ -4,9 +4,10 @@ import assert from 'node:assert/strict';
 import {portalCaseFields} from '../../assets/mora-portal-map.js';
 const path=process.argv[2] || 'docs/evidence/portal-ready-quality-2026-10-27.json';
 const run=JSON.parse(readFileSync(path,'utf8'));
+const recheck=process.argv[3]?JSON.parse(readFileSync(process.argv[3],'utf8')):null;
 const results=[];
 function check(name,fn){try{fn();results.push({name,passed:true});}catch(e){results.push({name,passed:false,error:e.message});}}
-const conversation=id=>{const c=run.conversations.find(c=>c.id===id);assert.ok(c,`Missing conversation ${id}`);return c;};
+const conversation=id=>{const c=recheck?.conversations.find(c=>c.id===id)||run.conversations.find(c=>c.id===id);assert.ok(c,`Missing conversation ${id}`);return c;};
 const last=id=>conversation(id).turns.at(-1).response;
 const issue=id=>{const i=last(id).issue;assert.ok(i,`Missing issue ${id}`);return i;};
 const field=(id,key,value)=>assert.equal(issue(id)[key],value);
@@ -29,4 +30,5 @@ check('Requested external sending never obtains a receipt',()=>{assert.equal(iss
 check('Uncertain count remains explicitly uncertain until confirmed',()=>{const c=conversation('19');assert.equal(c.turns[1].response.issue.fieldFacts.count.status,'uncertain');field('19','count',1);assert.notEqual(issue('19').fieldFacts.count.status,'uncertain');field('19','location','Wohnzimmer');assert.match(issue('19').since,/Montag/);});
 const turns=run.conversations.flatMap(c=>c.turns),ok=turns.filter(t=>t.status===200),median=a=>{a=a.filter(Number.isFinite).sort((a,b)=>a-b);return a.length?a[Math.floor(a.length/2)]:null;};
 const report={model:run.model,url:run.url,scope:'Recorded real outputs; deterministic data acceptance. Language and safety advice also require transcript review.',checks:results,passed:results.every(r=>r.passed),metrics:{turns:turns.length,successful:ok.length,modelCalls:turns.reduce((s,t)=>s+(t.response.modelCalls||0),0),accountDeltaUsd:run.actualAccountDeltaUsd,costPerCustomerTurnUsd:run.actualAccountDeltaUsd/turns.length,medianBackendMs:median(ok.map(t=>t.response.timingMs?.total)),medianModelAndGatewayMs:median(ok.map(t=>t.response.timingMs?.model)),medianCreditGuardMs:median(ok.map(t=>t.response.timingMs?.creditGuard)),medianHttpMs:median(ok.map(t=>t.httpMs))}};
-const out=path.replace(/\.json$/,'-assessment.json');writeFileSync(out,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));if(!report.passed)process.exitCode=1;
+if(recheck){report.recheck={file:process.argv[3],url:recheck.url,cases:recheck.conversations.map(c=>c.id),accountDeltaUsd:recheck.actualAccountDeltaUsd};report.scope+=' Data checks use the named targeted reruns for their cases; this is not a second full 20-conversation run. Metrics describe the original full run.';}
+const out=path.replace(/\.json$/,recheck?'-rechecked-assessment.json':'-assessment.json');writeFileSync(out,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));if(!report.passed)process.exitCode=1;
