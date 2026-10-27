@@ -1,0 +1,75 @@
+{
+  "scope": "Real model replies; explicit data assertions. Language is manually reviewed and not marked fully satisfactory. Native flows use JSDOM, not a rendered device.",
+  "runs": [
+    {
+      "file": "portal-claude-switch-2026-10-27.json",
+      "model": "anthropic/claude-sonnet-5.5",
+      "turns": 12,
+      "modelCalls": 22,
+      "accountDeltaUsd": 0.2478039999999999,
+      "costPerCustomerTurnUsd": 0.020650333333333326,
+      "medianBackendMs": 3734.5,
+      "medianModelGatewayMs": 3236.5,
+      "medianCreditGuardMs": 323.5,
+      "medianHttpMs": 9689.455,
+      "minHttpMs": 7045.94,
+      "maxHttpMs": 12534.02
+    },
+    {
+      "file": "portal-opus-native-2026-10-27.json",
+      "model": "anthropic/claude-opus-5.5-fast",
+      "turns": 7,
+      "modelCalls": 11,
+      "accountDeltaUsd": 0.43121600000000004,
+      "costPerCustomerTurnUsd": 0.06160228571428572,
+      "medianBackendMs": 2448,
+      "medianModelGatewayMs": 2175,
+      "medianCreditGuardMs": 385,
+      "medianHttpMs": 8110.16,
+      "minHttpMs": 6546.52,
+      "maxHttpMs": 13225.54
+    },
+    {
+      "file": "portal-opus-reply-2026-10-27.json",
+      "model": "anthropic/claude-opus-5.5-fast",
+      "turns": 3,
+      "modelCalls": 6,
+      "accountDeltaUsd": 0.20203999999999978,
+      "costPerCustomerTurnUsd": 0.0673466666666666,
+      "medianBackendMs": 2962,
+      "medianModelGatewayMs": 2585,
+      "medianCreditGuardMs": 345,
+      "medianHttpMs": 8840.12,
+      "minHttpMs": 8428.33,
+      "maxHttpMs": 10397.11
+    },
+    {
+      "file": "portal-opus-final-native-2026-10-27.json",
+      "model": "anthropic/claude-opus-5.5-fast",
+      "turns": 3,
+      "modelCalls": 6,
+      "accountDeltaUsd": 0.2293200000000004,
+      "costPerCustomerTurnUsd": 0.07644000000000013,
+      "medianBackendMs": 3423,
+      "medianModelGatewayMs": 2978,
+      "medianCreditGuardMs": 418,
+      "medianHttpMs": 9077.6,
+      "minHttpMs": 7426.77,
+      "maxHttpMs": 20873.23
+    }
+  ],
+  "checks": {
+    "all25CustomerTurnsHttp200": true,
+    "screenshotCorrectionRetainsIssueIdentity": true,
+    "finalNativeSavedFieldsMatch": true,
+    "finalNativeSameSavedRecordId": true,
+    "finalNativePhotoAndControlledStorageFailure": true,
+    "languageFullySatisfactory": false,
+    "productionReadinessProven": false
+  },
+  "currentTurnCostUsd": 1.1103800000000001,
+  "totalCostSinceOriginalAuthorizationUsd": 1.7290149000000001,
+  "remainingAuthorizationUsd": 0.27098509999999987,
+  "absoluteUsedUsd": 3.067871032,
+  "absoluteCapUsd": 3.338856132
+}

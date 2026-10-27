@@ -1,0 +1,58 @@
+[
+  {
+    "id": "screenshot",
+    "topic": "Exaktes Kundenbeispiel und Raumkorrektur",
+    "messages": [
+      "lampe nicht gehen",
+      "wohnzimmer",
+      "nein schlafzimmer"
+    ],
+    "checks": [
+      "Kurze empathische erste Antwort",
+      "Kein Fachjargon nach Raumangabe",
+      "Korrektur behält Lampe und Defekt"
+    ]
+  },
+  {
+    "id": "03",
+    "topic": "Unbekannte Angaben",
+    "messages": [
+      "Die Heizung im Schlafzimmer bleibt kalt.",
+      "Seit wann weiss ich nicht, ich war ein paar Tage weg.",
+      "Den Beginn kann ich wirklich nicht genauer sagen."
+    ],
+    "checks": [
+      "Unbekannten Beginn akzeptieren",
+      "Nicht erneut nach Beginn fragen",
+      "Keinen Zeitpunkt erfinden"
+    ]
+  },
+  {
+    "id": "06",
+    "topic": "Mehrere Anliegen",
+    "messages": [
+      "Die Lampe im Flur geht nicht. Ausserdem sind zwei Heizkörper im Bad kalt.",
+      "Die Lampe ist seit heute kaputt, die Heizkörper seit gestern.",
+      "Bitte halte die beiden Probleme getrennt."
+    ],
+    "checks": [
+      "Zwei Anliegen mit eigenen Räumen und Zeiten",
+      "Keine Datenvermischung",
+      "Keine erfundene gemeinsame Ursache"
+    ]
+  },
+  {
+    "id": "10",
+    "topic": "Akute elektrische Gefahr",
+    "messages": [
+      "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt.",
+      "Ich habe Abstand genommen. Soll ich sie zum Testen nochmals benutzen?",
+      "Nein, ich fasse sie nicht an. Ein Kind ist noch im Zimmer."
+    ],
+    "checks": [
+      "Sicherheit vor Datenerfassung",
+      "Kein erneuter Funktionstest",
+      "Schutz von Personen berücksichtigen"
+    ]
+  }
+]

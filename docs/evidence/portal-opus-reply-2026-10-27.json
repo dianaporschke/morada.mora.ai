@@ -1,0 +1,824 @@
+{
+  "scope": "Real portal_agent_v1 backend responses. Browser rendering and local saving are separate checks.",
+  "url": "https://morada-mora-5cdejcig9-dianaporschke-1255s-projects.vercel.app/portal.html?mora=agent",
+  "model": "anthropic/claude-opus-5.5-fast",
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 22.363488968,
+    "totalUsedUsd": 2.636511032,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-opus-5.5-fast",
+    "pricing": {
+      "input": 8e-06,
+      "output": 4e-05
+    }
+  },
+  "conversations": [
+    {
+      "id": "screenshot",
+      "title": "Exaktes Kundenbeispiel und Raumkorrektur",
+      "turns": [
+        {
+          "customer": "lampe nicht gehen",
+          "status": 200,
+          "httpMs": 8840.12,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Schade, dass Ihre Lampe nicht angeht. In welchem Raum ist die Lampe?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YXTJ55BM82VTRZAN3S7N6V",
+              "gen_01M5YXTKNSBHFN81JWMYYDCAWK"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4313,
+                "outputTokens": 143,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2796,
+                "outputTokens": 62,
+                "reasoningTokens": 24,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2572,
+              "creditGuard": 362,
+              "total": 2962
+            },
+            "issue": {
+              "id": "2fd34446-fc32-4884-a282-6fc6de831c52",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe nicht gehen",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": null,
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe nicht gehen"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe nicht gehen"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "lampe nicht gehen"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe nicht gehen",
+                  "source": "lampe nicht gehen"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:56:57.861Z",
+              "updatedAt": "2026-10-27T14:56:57.873Z",
+              "shortLabel": "Lampe / Leuchte"
+            },
+            "issues": [
+              {
+                "id": "2fd34446-fc32-4884-a282-6fc6de831c52",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "lampe nicht gehen",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": null,
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "lampe nicht gehen"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "lampe nicht gehen"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "lampe nicht gehen"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "lampe nicht gehen",
+                    "source": "lampe nicht gehen"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:56:57.861Z",
+                "updatedAt": "2026-10-27T14:56:57.873Z",
+                "shortLabel": "Lampe / Leuchte"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "wohnzimmer",
+          "status": 200,
+          "httpMs": 8428.33,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Danke, die Lampe im Wohnzimmer. Mehr brauchen wir nicht. Wenn Sie möchten, kann ich die Angaben jetzt vorbereiten, damit Sie sie prüfen oder ein Foto hinzufügen können. Diese Angaben bleiben nur hier auf Ihrem Gerät.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YXTTF33T7RM7ZF0XD9TCRV",
+              "gen_01M5YXTVN8HWASKRS9T633AZ0T"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4466,
+                "outputTokens": 83,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 2873,
+                "outputTokens": 202,
+                "reasoningTokens": 83,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2585,
+              "creditGuard": 284,
+              "total": 2878
+            },
+            "issue": {
+              "id": "2fd34446-fc32-4884-a282-6fc6de831c52",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe nicht gehen",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe nicht gehen"
+                },
+                {
+                  "question": "description",
+                  "answer": "wohnzimmer"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe nicht gehen"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "lampe nicht gehen"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "wohnzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe nicht gehen",
+                  "source": "lampe nicht gehen"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:56:57.861Z",
+              "updatedAt": "2026-10-27T14:57:06.076Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe nicht gehen\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"lampe nicht gehen\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "2fd34446-fc32-4884-a282-6fc6de831c52",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "lampe nicht gehen",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "lampe nicht gehen"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "wohnzimmer"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "lampe nicht gehen"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "lampe nicht gehen"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "wohnzimmer"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "lampe nicht gehen",
+                    "source": "lampe nicht gehen"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:56:57.861Z",
+                "updatedAt": "2026-10-27T14:57:06.076Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"lampe nicht gehen\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"lampe nicht gehen\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "2fd34446-fc32-4884-a282-6fc6de831c52"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "2fd34446-fc32-4884-a282-6fc6de831c52"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "nein schlafzimmer",
+          "status": 200,
+          "httpMs": 10397.11,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Alles klar, dann ist es die Lampe im Schlafzimmer. Den Button zum Vorbereiten der Angaben sehen Sie bereits.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YXV4EAT1A2AEAGEQPEPQQG",
+              "gen_01M5YXV68WT0YXACE4VRE22E0E"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4619,
+                "outputTokens": 89,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 3013,
+                "outputTokens": 56,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2801,
+              "creditGuard": 345,
+              "total": 3153
+            },
+            "issue": {
+              "id": "2fd34446-fc32-4884-a282-6fc6de831c52",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe nicht gehen"
+                },
+                {
+                  "question": "description",
+                  "answer": "wohnzimmer"
+                },
+                {
+                  "question": "description",
+                  "answer": "nein schlafzimmer"
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "location": {
+                      "from": "Wohnzimmer",
+                      "to": "Schlafzimmer"
+                    }
+                  },
+                  "source": "nein schlafzimmer",
+                  "at": "2026-10-27T14:57:16.900Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe nicht gehen"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "lampe nicht gehen"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Schlafzimmer",
+                  "source": "nein schlafzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+                  "source": "lampe nicht gehen"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:56:57.861Z",
+              "updatedAt": "2026-10-27T14:57:16.900Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nLampe lässt sich nicht einschalten.\\nBereich: Schlafzimmer\\nDringlichkeit: Normal\",\"Lampe lässt sich nicht einschalten.\",null,\"Schlafzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nLampe lässt sich nicht einschalten.\\nBereich: Schlafzimmer\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 4
+              }
+            },
+            "issues": [
+              {
+                "id": "2fd34446-fc32-4884-a282-6fc6de831c52",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": "Schlafzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "lampe nicht gehen"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "wohnzimmer"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "nein schlafzimmer"
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "location": {
+                        "from": "Wohnzimmer",
+                        "to": "Schlafzimmer"
+                      }
+                    },
+                    "source": "nein schlafzimmer",
+                    "at": "2026-10-27T14:57:16.900Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "lampe nicht gehen"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "lampe nicht gehen"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "corrected",
+                    "value": "Schlafzimmer",
+                    "source": "nein schlafzimmer"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+                    "source": "lampe nicht gehen"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:56:57.861Z",
+                "updatedAt": "2026-10-27T14:57:16.900Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nLampe lässt sich nicht einschalten.\\nBereich: Schlafzimmer\\nDringlichkeit: Normal\",\"Lampe lässt sich nicht einschalten.\",null,\"Schlafzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nLampe lässt sich nicht einschalten.\\nBereich: Schlafzimmer\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 4
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "2fd34446-fc32-4884-a282-6fc6de831c52"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "2fd34446-fc32-4884-a282-6fc6de831c52"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 22.161448968,
+    "totalUsedUsd": 2.838551032,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-opus-5.5-fast",
+    "pricing": {
+      "input": 8e-06,
+      "output": 4e-05
+    }
+  },
+  "actualAccountDeltaUsd": 0.20203999999999978
+}

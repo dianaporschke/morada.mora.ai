@@ -1,0 +1,29 @@
+{
+  "deployment": "morada-mora-gtf3cx5g5-dianaporschke-1255s-projects.vercel.app",
+  "commit": "37bac6803f5d91c76e011e72815276a3ec615aa8",
+  "operation": "GET /api/portal-agent; no inference",
+  "status": 503,
+  "body": {
+    "code": "PREVIEW_CREDIT_BOUNDARY",
+    "error": "Das freigegebene KI-Testbudget konnte nicht bestätigt werden."
+  },
+  "httpMs": 5706.71,
+  "note": "Native test stopped at read-only preflight before any customer/model turn; price lookup changed afterwards. The original response did not expose the underlying reason.",
+  "diagnosis": {
+    "sdkCatalogEndpoint": "https://ai-gateway.vercel.sh/v4/ai/config",
+    "protocolHeader": "ai-gateway-protocol-version: 0.0.1",
+    "sdkCatalogMatchedIds": [
+      "anthropic/claude-opus-5.5"
+    ],
+    "publicCatalogEndpoint": "https://ai-gateway.vercel.sh/v1/models",
+    "publicCatalogMatchedIds": [
+      "anthropic/claude-opus-5.5",
+      "anthropic/claude-opus-5.5-fast"
+    ],
+    "fastPriceUsdPerToken": {
+      "input": 8e-06,
+      "output": 4e-05
+    },
+    "fix": "Read exact model pricing from public catalog; preserve credits check and original USD 2 cap."
+  }
+}

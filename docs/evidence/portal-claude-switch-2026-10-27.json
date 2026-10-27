@@ -1,0 +1,3392 @@
+{
+  "scope": "Real portal_agent_v1 backend responses. Browser rendering and local saving are separate checks.",
+  "url": "https://morada-mora-3ozvnvyeb-dianaporschke-1255s-projects.vercel.app/portal.html?mora=agent",
+  "model": "anthropic/claude-sonnet-5.5",
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 23.042508968,
+    "totalUsedUsd": 1.957491032,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-sonnet-5.5",
+    "pricing": {
+      "input": 2e-06,
+      "output": 1e-05
+    }
+  },
+  "conversations": [
+    {
+      "id": "screenshot",
+      "title": "Exaktes Kundenbeispiel und Raumkorrektur",
+      "turns": [
+        {
+          "customer": "lampe nicht gehen",
+          "status": 200,
+          "httpMs": 9969.36,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Das ist ärgerlich, wenn die Lampe ausfällt. In welchem Raum befindet sich die Lampe?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YWXR9KKX10B59ARJVDRZQV",
+              "gen_01M5YWXTMEA081ZMSSS2FX1YC4"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4320,
+                "outputTokens": 143,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 4596,
+                "outputTokens": 45,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 3523,
+              "creditGuard": 793,
+              "total": 4345
+            },
+            "issue": {
+              "id": "8cb77932-9bc0-4c66-a696-4ac5b0a4372c",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe nicht gehen",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": null,
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe nicht gehen"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe nicht gehen"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "lampe nicht gehen"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe nicht gehen",
+                  "source": "lampe nicht gehen"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:41:14.289Z",
+              "updatedAt": "2026-10-27T14:41:14.308Z",
+              "shortLabel": "Lampe / Leuchte"
+            },
+            "issues": [
+              {
+                "id": "8cb77932-9bc0-4c66-a696-4ac5b0a4372c",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "lampe nicht gehen",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": null,
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "lampe nicht gehen"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "lampe nicht gehen"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "lampe nicht gehen"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "lampe nicht gehen",
+                    "source": "lampe nicht gehen"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:41:14.289Z",
+                "updatedAt": "2026-10-27T14:41:14.308Z",
+                "shortLabel": "Lampe / Leuchte"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "wohnzimmer",
+          "status": 200,
+          "httpMs": 8936.14,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Danke, die Lampe im Wohnzimmer, die sich nicht einschalten lässt, habe ich notiert. Soll ich die Angaben zur Prüfung vorbereiten? Wenn Sie möchten, können Sie auch ein Foto hinzufügen.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YWY1DAXX5FHEDJK3SQ7S1D",
+              "gen_01M5YWY3ATYXBXN280J98T7YZX"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4480,
+                "outputTokens": 83,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 4622,
+                "outputTokens": 96,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2311,
+              "creditGuard": 956,
+              "total": 3275
+            },
+            "issue": {
+              "id": "8cb77932-9bc0-4c66-a696-4ac5b0a4372c",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe nicht gehen",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe nicht gehen"
+                },
+                {
+                  "question": "description",
+                  "answer": "wohnzimmer"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe nicht gehen"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "lampe nicht gehen"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "wohnzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe nicht gehen",
+                  "source": "lampe nicht gehen"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:41:14.289Z",
+              "updatedAt": "2026-10-27T14:41:22.952Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe nicht gehen\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"lampe nicht gehen\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "8cb77932-9bc0-4c66-a696-4ac5b0a4372c",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "lampe nicht gehen",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "lampe nicht gehen"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "wohnzimmer"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "lampe nicht gehen"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "lampe nicht gehen"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "wohnzimmer"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "lampe nicht gehen",
+                    "source": "lampe nicht gehen"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:41:14.289Z",
+                "updatedAt": "2026-10-27T14:41:22.952Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"lampe nicht gehen\",\"Lampe lässt sich nicht einschalten.\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"lampe nicht gehen\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "8cb77932-9bc0-4c66-a696-4ac5b0a4372c"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "8cb77932-9bc0-4c66-a696-4ac5b0a4372c"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "nein schlafzimmer",
+          "status": 200,
+          "httpMs": 8659.23,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Entschuldigung, ich habe das korrigiert: Es geht um die Lampe im Schlafzimmer, die sich nicht einschalten lässt. Der vorbereitete Vorschlag oben bleibt weiterhin möglich, wenn Sie die Angaben prüfen oder ein Foto hinzufügen möchten.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YWYA9QW1DH6Y6N9PRWKV56",
+              "gen_01M5YWYBKRTNSGAEC2MW1G6VK4"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4610,
+                "outputTokens": 89,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 4746,
+                "outputTokens": 116,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2668,
+              "creditGuard": 310,
+              "total": 2987
+            },
+            "issue": {
+              "id": "8cb77932-9bc0-4c66-a696-4ac5b0a4372c",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe nicht gehen"
+                },
+                {
+                  "question": "description",
+                  "answer": "wohnzimmer"
+                },
+                {
+                  "question": "description",
+                  "answer": "nein schlafzimmer"
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "location": {
+                      "from": "Wohnzimmer",
+                      "to": "Schlafzimmer"
+                    }
+                  },
+                  "source": "nein schlafzimmer",
+                  "at": "2026-10-27T14:41:32.117Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe nicht gehen"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "lampe nicht gehen"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Schlafzimmer",
+                  "source": "nein schlafzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+                  "source": "lampe nicht gehen"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:41:14.289Z",
+              "updatedAt": "2026-10-27T14:41:32.117Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nLampe lässt sich nicht einschalten.\\nBereich: Schlafzimmer\\nDringlichkeit: Normal\",\"Lampe lässt sich nicht einschalten.\",null,\"Schlafzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nLampe lässt sich nicht einschalten.\\nBereich: Schlafzimmer\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 4
+              }
+            },
+            "issues": [
+              {
+                "id": "8cb77932-9bc0-4c66-a696-4ac5b0a4372c",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": "Schlafzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "lampe nicht gehen"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "wohnzimmer"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "nein schlafzimmer"
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "location": {
+                        "from": "Wohnzimmer",
+                        "to": "Schlafzimmer"
+                      }
+                    },
+                    "source": "nein schlafzimmer",
+                    "at": "2026-10-27T14:41:32.117Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "lampe nicht gehen"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "lampe nicht gehen"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "corrected",
+                    "value": "Schlafzimmer",
+                    "source": "nein schlafzimmer"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+                    "source": "lampe nicht gehen"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:41:14.289Z",
+                "updatedAt": "2026-10-27T14:41:32.117Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\nLampe lässt sich nicht einschalten.\\nBereich: Schlafzimmer\\nDringlichkeit: Normal\",\"Lampe lässt sich nicht einschalten.\",null,\"Schlafzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Lampe / Leuchte\\nLampe lässt sich nicht einschalten.\\nBereich: Schlafzimmer\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 4
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "8cb77932-9bc0-4c66-a696-4ac5b0a4372c"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "8cb77932-9bc0-4c66-a696-4ac5b0a4372c"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "title": "Unbekannte Angaben",
+      "turns": [
+        {
+          "customer": "Die Heizung im Schlafzimmer bleibt kalt.",
+          "status": 200,
+          "httpMs": 9751.21,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Das ist unangenehm, besonders wenn das Schlafzimmer dadurch auskühlt. Ich habe notiert, dass der Heizkörper im Schlafzimmer kalt bleibt.\n\nWenn Sie möchten, bereite ich dazu die Angaben vor. Sie können auch ein Foto hinzufügen. Beides bleibt nur lokal auf diesem Gerät. Ich versende nichts und beauftrage keine Handwerker.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YWYJRK1CAR29MZNFJFPG3F",
+              "gen_01M5YWYMDA62995A7AB0K2QQ1B"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4334,
+                "outputTokens": 168,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 4653,
+                "outputTokens": 162,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 3783,
+              "creditGuard": 247,
+              "total": 4034
+            },
+            "issue": {
+              "id": "6aa41c6b-f840-437f-acad-4929e07cc5d0",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Die Heizung im Schlafzimmer bleibt kalt.",
+              "defect": "bleibt kalt",
+              "count": null,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Die Heizung im Schlafzimmer bleibt kalt."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Heizkörper\nbleibt kalt\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "heater",
+                  "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "bleibt kalt",
+                  "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Schlafzimmer",
+                  "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Die Heizung im Schlafzimmer bleibt kalt.",
+                  "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:41:41.156Z",
+              "updatedAt": "2026-10-27T14:41:41.156Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"heating\",\"heater\",\"Die Heizung im Schlafzimmer bleibt kalt.\",\"bleibt kalt\",null,\"Schlafzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"bleibt kalt\",null],[\"description\",\"known\",\"Die Heizung im Schlafzimmer bleibt kalt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"heater\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "6aa41c6b-f840-437f-acad-4929e07cc5d0",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Die Heizung im Schlafzimmer bleibt kalt.",
+                "defect": "bleibt kalt",
+                "count": null,
+                "location": "Schlafzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Die Heizung im Schlafzimmer bleibt kalt."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Heizkörper\nbleibt kalt\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "heater",
+                    "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "bleibt kalt",
+                    "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Schlafzimmer",
+                    "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Die Heizung im Schlafzimmer bleibt kalt.",
+                    "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:41:41.156Z",
+                "updatedAt": "2026-10-27T14:41:41.156Z",
+                "shortLabel": "Heizkörper",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"heating\",\"heater\",\"Die Heizung im Schlafzimmer bleibt kalt.\",\"bleibt kalt\",null,\"Schlafzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"bleibt kalt\",null],[\"description\",\"known\",\"Die Heizung im Schlafzimmer bleibt kalt.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"heater\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "6aa41c6b-f840-437f-acad-4929e07cc5d0"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "6aa41c6b-f840-437f-acad-4929e07cc5d0"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Seit wann weiss ich nicht, ich war ein paar Tage weg.",
+          "status": 200,
+          "httpMs": 9627.7,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Das ist in Ordnung. Ich habe vermerkt, dass der Beginn unbekannt ist und Sie ein paar Tage weg waren.\n\nDie Angaben sind noch nicht gespeichert. Sagen Sie mir, wenn ich sie zur Prüfung öffnen soll.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YWYX115CBCCGJDZM66B5YG",
+              "gen_01M5YWYYKN5QRDWMH749WAPNKS"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4645,
+                "outputTokens": 142,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 4895,
+                "outputTokens": 105,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2950,
+              "creditGuard": 478,
+              "total": 3435
+            },
+            "issue": {
+              "id": "6aa41c6b-f840-437f-acad-4929e07cc5d0",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Die Heizung im Schlafzimmer bleibt kalt.",
+              "defect": "bleibt kalt",
+              "count": null,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": null,
+              "details": "Kunde war ein paar Tage weg.",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Die Heizung im Schlafzimmer bleibt kalt."
+                },
+                {
+                  "question": "description",
+                  "answer": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [
+                "since"
+              ],
+              "summary": "Heizkörper\nbleibt kalt\nBereich: Schlafzimmer\nBeginn: unbekannt\nZusatzangaben: Kunde war ein paar Tage weg.\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "heater",
+                  "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "bleibt kalt",
+                  "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Schlafzimmer",
+                  "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "known",
+                  "value": "Kunde war ein paar Tage weg.",
+                  "source": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Die Heizung im Schlafzimmer bleibt kalt.",
+                  "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:41:41.156Z",
+              "updatedAt": "2026-10-27T14:41:51.505Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"heating\",\"heater\",\"Die Heizung im Schlafzimmer bleibt kalt.\",\"bleibt kalt\",null,\"Schlafzimmer\",null,null,\"Kunde war ein paar Tage weg.\",null,\"normal\",\"none\",[],[\"since\"],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"bleibt kalt\",null],[\"description\",\"known\",\"Die Heizung im Schlafzimmer bleibt kalt.\",null],[\"details\",\"known\",\"Kunde war ein paar Tage weg.\",null],[\"equipment\",\"known\",\"heater\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Schlafzimmer\",null],[\"since\",\"unknown\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "6aa41c6b-f840-437f-acad-4929e07cc5d0",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Die Heizung im Schlafzimmer bleibt kalt.",
+                "defect": "bleibt kalt",
+                "count": null,
+                "location": "Schlafzimmer",
+                "since": null,
+                "extent": null,
+                "details": "Kunde war ein paar Tage weg.",
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Die Heizung im Schlafzimmer bleibt kalt."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [
+                  "since"
+                ],
+                "summary": "Heizkörper\nbleibt kalt\nBereich: Schlafzimmer\nBeginn: unbekannt\nZusatzangaben: Kunde war ein paar Tage weg.\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "heater",
+                    "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "bleibt kalt",
+                    "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Schlafzimmer",
+                    "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "Kunde war ein paar Tage weg.",
+                    "source": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Die Heizung im Schlafzimmer bleibt kalt.",
+                    "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:41:41.156Z",
+                "updatedAt": "2026-10-27T14:41:51.505Z",
+                "shortLabel": "Heizkörper",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"heating\",\"heater\",\"Die Heizung im Schlafzimmer bleibt kalt.\",\"bleibt kalt\",null,\"Schlafzimmer\",null,null,\"Kunde war ein paar Tage weg.\",null,\"normal\",\"none\",[],[\"since\"],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"bleibt kalt\",null],[\"description\",\"known\",\"Die Heizung im Schlafzimmer bleibt kalt.\",null],[\"details\",\"known\",\"Kunde war ein paar Tage weg.\",null],[\"equipment\",\"known\",\"heater\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Schlafzimmer\",null],[\"since\",\"unknown\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "6aa41c6b-f840-437f-acad-4929e07cc5d0"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "6aa41c6b-f840-437f-acad-4929e07cc5d0"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Den Beginn kann ich wirklich nicht genauer sagen.",
+          "status": 200,
+          "httpMs": 8315.58,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Das ist völlig in Ordnung. Ich habe den Beginn als unbekannt festgehalten und frage nicht mehr danach. Für die Meldung reichen Heizkörper, Problem und Schlafzimmer.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M5YWZ5MYWVNADB4G90CBW03V"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4838,
+                "outputTokens": 206,
+                "reasoningTokens": 127,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [],
+            "timingMs": {
+              "model": 2696,
+              "creditGuard": 128,
+              "total": 2831
+            },
+            "issue": {
+              "id": "6aa41c6b-f840-437f-acad-4929e07cc5d0",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Die Heizung im Schlafzimmer bleibt kalt.",
+              "defect": "bleibt kalt",
+              "count": null,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": null,
+              "details": "Kunde war ein paar Tage weg.",
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Die Heizung im Schlafzimmer bleibt kalt."
+                },
+                {
+                  "question": "description",
+                  "answer": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [
+                "since"
+              ],
+              "summary": "Heizkörper\nbleibt kalt\nBereich: Schlafzimmer\nBeginn: unbekannt\nZusatzangaben: Kunde war ein paar Tage weg.\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "heater",
+                  "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "bleibt kalt",
+                  "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Schlafzimmer",
+                  "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "unknown",
+                  "value": null,
+                  "source": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "known",
+                  "value": "Kunde war ein paar Tage weg.",
+                  "source": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Die Heizung im Schlafzimmer bleibt kalt.",
+                  "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:41:41.156Z",
+              "updatedAt": "2026-10-27T14:41:51.505Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"heating\",\"heater\",\"Die Heizung im Schlafzimmer bleibt kalt.\",\"bleibt kalt\",null,\"Schlafzimmer\",null,null,\"Kunde war ein paar Tage weg.\",null,\"normal\",\"none\",[],[\"since\"],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"bleibt kalt\",null],[\"description\",\"known\",\"Die Heizung im Schlafzimmer bleibt kalt.\",null],[\"details\",\"known\",\"Kunde war ein paar Tage weg.\",null],[\"equipment\",\"known\",\"heater\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Schlafzimmer\",null],[\"since\",\"unknown\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "6aa41c6b-f840-437f-acad-4929e07cc5d0",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Die Heizung im Schlafzimmer bleibt kalt.",
+                "defect": "bleibt kalt",
+                "count": null,
+                "location": "Schlafzimmer",
+                "since": null,
+                "extent": null,
+                "details": "Kunde war ein paar Tage weg.",
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Die Heizung im Schlafzimmer bleibt kalt."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [
+                  "since"
+                ],
+                "summary": "Heizkörper\nbleibt kalt\nBereich: Schlafzimmer\nBeginn: unbekannt\nZusatzangaben: Kunde war ein paar Tage weg.\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "heater",
+                    "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "bleibt kalt",
+                    "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Schlafzimmer",
+                    "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "unknown",
+                    "value": null,
+                    "source": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "Kunde war ein paar Tage weg.",
+                    "source": "Seit wann weiss ich nicht, ich war ein paar Tage weg."
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Die Heizung im Schlafzimmer bleibt kalt.",
+                    "source": "Die Heizung im Schlafzimmer bleibt kalt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:41:41.156Z",
+                "updatedAt": "2026-10-27T14:41:51.505Z",
+                "shortLabel": "Heizkörper",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"heating\",\"heater\",\"Die Heizung im Schlafzimmer bleibt kalt.\",\"bleibt kalt\",null,\"Schlafzimmer\",null,null,\"Kunde war ein paar Tage weg.\",null,\"normal\",\"none\",[],[\"since\"],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"bleibt kalt\",null],[\"description\",\"known\",\"Die Heizung im Schlafzimmer bleibt kalt.\",null],[\"details\",\"known\",\"Kunde war ein paar Tage weg.\",null],[\"equipment\",\"known\",\"heater\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Schlafzimmer\",null],[\"since\",\"unknown\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "title": "Mehrere Anliegen",
+      "turns": [
+        {
+          "customer": "Die Lampe im Flur geht nicht. Ausserdem sind zwei Heizkörper im Bad kalt.",
+          "status": 200,
+          "httpMs": 10139.68,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Das ist ärgerlich, besonders bei kalten Heizkörpern im Bad. Ich habe beide Anliegen getrennt festgehalten:\n\n1. Die Lampe im Flur lässt sich nicht einschalten.\n2. Zwei Heizkörper im Bad bleiben kalt.\n\nWenn Sie möchten, bereite ich die Angaben zu einem der beiden Anliegen im Formular vor. Dort können Sie sie auch prüfen oder ein Foto hinzufügen. Zu welchem soll ich beginnen?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YWZDXGEEE5B96PVBZAFB3B",
+              "gen_01M5YWZFWJ6RAF8CX4RAQS5WEM"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4352,
+                "outputTokens": 233,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 4875,
+                "outputTokens": 192,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 4254,
+              "creditGuard": 263,
+              "total": 4524
+            },
+            "issue": {
+              "id": "0a058671-86d4-4487-b9fe-1bcc32fc8dff",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Die Lampe im Flur geht nicht.",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Flur",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Die Lampe im Flur geht nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Die Lampe im Flur geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "Die Lampe im Flur geht nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Flur",
+                  "source": "Die Lampe im Flur geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Die Lampe im Flur geht nicht.",
+                  "source": "Die Lampe im Flur geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:42:09.288Z",
+              "updatedAt": "2026-10-27T14:42:09.289Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Die Lampe im Flur geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Flur\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Die Lampe im Flur geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Flur\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "0a058671-86d4-4487-b9fe-1bcc32fc8dff",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Die Lampe im Flur geht nicht.",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": "Flur",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Die Lampe im Flur geht nicht."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Die Lampe im Flur geht nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "Die Lampe im Flur geht nicht."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Flur",
+                    "source": "Die Lampe im Flur geht nicht."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Die Lampe im Flur geht nicht.",
+                    "source": "Die Lampe im Flur geht nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:42:09.288Z",
+                "updatedAt": "2026-10-27T14:42:09.289Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Die Lampe im Flur geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Flur\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Die Lampe im Flur geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Flur\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 2
+                }
+              },
+              {
+                "id": "edf03d80-41cc-431f-b5bd-061d5dec5ac6",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "zwei Heizkörper im Bad kalt",
+                "defect": "kalt",
+                "count": 2,
+                "location": "Bad",
+                "since": null,
+                "extent": "2 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "zwei Heizkörper im Bad kalt"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "heater",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kalt",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 2,
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "2 betroffene Einrichtung(en)",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "zwei Heizkörper im Bad kalt",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:42:09.289Z",
+                "updatedAt": "2026-10-27T14:42:09.290Z",
+                "shortLabel": "Heizkörper"
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "0a058671-86d4-4487-b9fe-1bcc32fc8dff"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "0a058671-86d4-4487-b9fe-1bcc32fc8dff"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Die Lampe ist seit heute kaputt, die Heizkörper seit gestern.",
+          "status": 200,
+          "httpMs": 8861.21,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Danke, das ist notiert: Die Lampe im Flur ist seit heute defekt, die beiden Heizkörper im Bad sind seit gestern kalt. Für welches der beiden Anliegen soll ich das Formular als Erstes vorbereiten?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YWZR0XMPDP8R4MF10AS8YT",
+              "gen_01M5YWZSKS2CA9XBKH603GVX8D"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4837,
+                "outputTokens": 124,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 5030,
+                "outputTokens": 91,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2868,
+              "creditGuard": 387,
+              "total": 3261
+            },
+            "issue": {
+              "id": "0a058671-86d4-4487-b9fe-1bcc32fc8dff",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Die Lampe im Flur geht nicht.",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Flur",
+              "since": "seit heute",
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Die Lampe im Flur geht nicht."
+                },
+                {
+                  "question": "description",
+                  "answer": "Die Lampe ist seit heute kaputt"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nSeit wann: seit heute\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Die Lampe im Flur geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "Die Lampe im Flur geht nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Flur",
+                  "source": "Die Lampe im Flur geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "known",
+                  "value": "seit heute",
+                  "source": "Die Lampe ist seit heute kaputt"
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Die Lampe im Flur geht nicht.",
+                  "source": "Die Lampe im Flur geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:42:09.288Z",
+              "updatedAt": "2026-10-27T14:42:19.232Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Die Lampe im Flur geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Flur\",\"seit heute\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Die Lampe im Flur geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Flur\",null],[\"since\",\"known\",\"seit heute\",null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "0a058671-86d4-4487-b9fe-1bcc32fc8dff",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Die Lampe im Flur geht nicht.",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": "Flur",
+                "since": "seit heute",
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Die Lampe im Flur geht nicht."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Die Lampe ist seit heute kaputt"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nSeit wann: seit heute\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Die Lampe im Flur geht nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "Die Lampe im Flur geht nicht."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Flur",
+                    "source": "Die Lampe im Flur geht nicht."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "known",
+                    "value": "seit heute",
+                    "source": "Die Lampe ist seit heute kaputt"
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Die Lampe im Flur geht nicht.",
+                    "source": "Die Lampe im Flur geht nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:42:09.288Z",
+                "updatedAt": "2026-10-27T14:42:19.232Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Die Lampe im Flur geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Flur\",\"seit heute\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Die Lampe im Flur geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Flur\",null],[\"since\",\"known\",\"seit heute\",null]]]",
+                  "revision": 3
+                }
+              },
+              {
+                "id": "edf03d80-41cc-431f-b5bd-061d5dec5ac6",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "zwei Heizkörper im Bad kalt",
+                "defect": "kalt",
+                "count": 2,
+                "location": "Bad",
+                "since": "seit gestern",
+                "extent": "2 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "zwei Heizkörper im Bad kalt"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "die Heizkörper seit gestern"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nSeit wann: seit gestern\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "heater",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kalt",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 2,
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "since": {
+                    "status": "known",
+                    "value": "seit gestern",
+                    "source": "die Heizkörper seit gestern"
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "2 betroffene Einrichtung(en)",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "zwei Heizkörper im Bad kalt",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:42:09.289Z",
+                "updatedAt": "2026-10-27T14:42:19.232Z",
+                "shortLabel": "Heizkörper"
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "0a058671-86d4-4487-b9fe-1bcc32fc8dff"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "0a058671-86d4-4487-b9fe-1bcc32fc8dff"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Bitte halte die beiden Probleme getrennt.",
+          "status": 200,
+          "httpMs": 7045.94,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Ja, die beiden Anliegen bleiben getrennt:\n\n1. Flur: Die Lampe lässt sich seit heute nicht einschalten.\n2. Bad: Zwei Heizkörper sind seit gestern kalt.\n\nMöchten Sie, dass ich das Formular zuerst für die Lampe oder für die Heizkörper vorbereite?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M5YX00P14QMMWVBGSMBMGCJK"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4966,
+                "outputTokens": 125,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [],
+            "timingMs": {
+              "model": 1278,
+              "creditGuard": 119,
+              "total": 1403
+            },
+            "issue": {
+              "id": "0a058671-86d4-4487-b9fe-1bcc32fc8dff",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Die Lampe im Flur geht nicht.",
+              "defect": "Lampe lässt sich nicht einschalten.",
+              "count": null,
+              "location": "Flur",
+              "since": "seit heute",
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Die Lampe im Flur geht nicht."
+                },
+                {
+                  "question": "description",
+                  "answer": "Die Lampe ist seit heute kaputt"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nSeit wann: seit heute\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "Die Lampe im Flur geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Lampe lässt sich nicht einschalten.",
+                  "source": "Die Lampe im Flur geht nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Flur",
+                  "source": "Die Lampe im Flur geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "known",
+                  "value": "seit heute",
+                  "source": "Die Lampe ist seit heute kaputt"
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Die Lampe im Flur geht nicht.",
+                  "source": "Die Lampe im Flur geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:42:09.288Z",
+              "updatedAt": "2026-10-27T14:42:19.232Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Die Lampe im Flur geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Flur\",\"seit heute\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Die Lampe im Flur geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Flur\",null],[\"since\",\"known\",\"seit heute\",null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "0a058671-86d4-4487-b9fe-1bcc32fc8dff",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "Die Lampe im Flur geht nicht.",
+                "defect": "Lampe lässt sich nicht einschalten.",
+                "count": null,
+                "location": "Flur",
+                "since": "seit heute",
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Die Lampe im Flur geht nicht."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Die Lampe ist seit heute kaputt"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nLampe lässt sich nicht einschalten.\nBereich: Flur\nSeit wann: seit heute\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "Die Lampe im Flur geht nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Lampe lässt sich nicht einschalten.",
+                    "source": "Die Lampe im Flur geht nicht."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Flur",
+                    "source": "Die Lampe im Flur geht nicht."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "known",
+                    "value": "seit heute",
+                    "source": "Die Lampe ist seit heute kaputt"
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Die Lampe im Flur geht nicht.",
+                    "source": "Die Lampe im Flur geht nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:42:09.288Z",
+                "updatedAt": "2026-10-27T14:42:19.232Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"Die Lampe im Flur geht nicht.\",\"Lampe lässt sich nicht einschalten.\",null,\"Flur\",\"seit heute\",null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"Lampe lässt sich nicht einschalten.\",null],[\"description\",\"known\",\"Die Lampe im Flur geht nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Flur\",null],[\"since\",\"known\",\"seit heute\",null]]]",
+                  "revision": 3
+                }
+              },
+              {
+                "id": "edf03d80-41cc-431f-b5bd-061d5dec5ac6",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "zwei Heizkörper im Bad kalt",
+                "defect": "kalt",
+                "count": 2,
+                "location": "Bad",
+                "since": "seit gestern",
+                "extent": "2 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "zwei Heizkörper im Bad kalt"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "die Heizkörper seit gestern"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Heizkörper\nkalt\nAnzahl: 2\nBereich: Bad\nSeit wann: seit gestern\nUmfang / Situation: 2 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "heater",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kalt",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Bad",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 2,
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "since": {
+                    "status": "known",
+                    "value": "seit gestern",
+                    "source": "die Heizkörper seit gestern"
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "2 betroffene Einrichtung(en)",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "zwei Heizkörper im Bad kalt",
+                    "source": "zwei Heizkörper im Bad kalt"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:42:09.289Z",
+                "updatedAt": "2026-10-27T14:42:19.232Z",
+                "shortLabel": "Heizkörper"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Akute elektrische Gefahr",
+      "turns": [
+        {
+          "customer": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt.",
+          "status": 200,
+          "httpMs": 12411.78,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Das klingt gefährlich. Bitte gehen Sie sofort Schritt für Schritt vor:\n\n1. **Nicht mehr anfassen.** Stecken Sie auch nichts ein oder aus.\n2. **Sicherung ausschalten**, wenn das gefahrlos geht. Gehen Sie dafür nur auf trockenem Boden zum Sicherungskasten. Wenn Sie dazu an der Steckdose vorbeimüssen, lassen Sie es.\n3. **Brennbares wegräumen.** Das gilt zum Beispiel für Vorhänge oder Möbel direkt an der Steckdose, aber nur, wenn Sie nicht näher heranmüssen.\n4. **Bei Flammen, Rauch oder wenn es weiterhin Funken gibt: Verlassen Sie die Wohnung und rufen Sie die Feuerwehr unter 118 an.** Löschen Sie nicht mit Wasser.\n\nWarnen Sie bitte auch die anderen Personen im Haus. Die Steckdose sollten Sie erst wieder benutzen, wenn eine Fachperson sie geprüft hat.\n\nIch kann leider niemanden verständigen oder aufbieten. Melden Sie den Vorfall bitte direkt Ihrer Verwaltung oder dem Notdienst. Sind Sie und alle anderen in Sicherheit?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YX07QG1DHRKQHJV4NTP7JB",
+              "gen_01M5YX09R8A82HHPKWYBHRZJFT"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4400,
+                "outputTokens": 159,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 4698,
+                "outputTokens": 482,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 6384,
+              "creditGuard": 314,
+              "total": 6704
+            },
+            "issue": {
+              "id": "e713f8d3-7385-4fec-8cc2-d37ffbfe03fa",
+              "category": "electricity",
+              "equipment": "socket",
+              "subcategory": null,
+              "description": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt.",
+              "defect": "Funken und Brandgeruch",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "emergency",
+              "hazard": "electric",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Steckdose\nFunken und Brandgeruch\nBereich: Wohnzimmer\nDringlichkeit: Mögliche akute Gefahr",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "socket",
+                  "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Funken und Brandgeruch",
+                  "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt.",
+                  "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:42:35.736Z",
+              "updatedAt": "2026-10-27T14:42:35.737Z",
+              "shortLabel": "Steckdose"
+            },
+            "issues": [
+              {
+                "id": "e713f8d3-7385-4fec-8cc2-d37ffbfe03fa",
+                "category": "electricity",
+                "equipment": "socket",
+                "subcategory": null,
+                "description": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt.",
+                "defect": "Funken und Brandgeruch",
+                "count": null,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "emergency",
+                "hazard": "electric",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Steckdose\nFunken und Brandgeruch\nBereich: Wohnzimmer\nDringlichkeit: Mögliche akute Gefahr",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "socket",
+                    "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Funken und Brandgeruch",
+                    "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt.",
+                    "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:42:35.736Z",
+                "updatedAt": "2026-10-27T14:42:35.737Z",
+                "shortLabel": "Steckdose"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "electric",
+              "urgency": "emergency",
+              "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+            }
+          }
+        },
+        {
+          "customer": "Ich habe Abstand genommen. Soll ich sie zum Testen nochmals benutzen?",
+          "status": 200,
+          "httpMs": 12534.02,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Nein, benutzen Sie die Steckdose auf keinen Fall zum Testen. Funken und Brandgeruch deuten auf eine mögliche Brandgefahr hin. Schon ein kurzer Test kann gefährlich sein.\n\n- Bleiben Sie weg von der Steckdose, und stecken Sie nichts ein oder aus.\n- Schalten Sie die Sicherung für diesen Stromkreis nur aus, wenn Sie den Sicherungskasten gefahrlos erreichen.\n- Achten Sie auf Rauch, Hitze oder neue Funken. Wenn etwas davon auftritt, verlassen Sie die Wohnung und rufen Sie die Feuerwehr unter 118 an.\n- Lassen Sie die Steckdose von einer Elektrofachperson prüfen. Melden Sie den Vorfall dafür bitte sofort Ihrer Verwaltung oder dem Notdienst. Ich kann selbst niemanden benachrichtigen.\n\nGibt es im Moment noch Rauch oder Funken?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YX0NB53Q9236PV2C0AG06X",
+              "gen_01M5YX0QAZ8ZG4VPBNTMJV5N67"
+            ],
+            "usage": [
+              {
+                "inputTokens": 5029,
+                "outputTokens": 139,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 5228,
+                "outputTokens": 370,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 4905,
+              "creditGuard": 397,
+              "total": 5310
+            },
+            "issue": {
+              "id": "e713f8d3-7385-4fec-8cc2-d37ffbfe03fa",
+              "category": "electricity",
+              "equipment": "socket",
+              "subcategory": null,
+              "description": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt.",
+              "defect": "Funken und Brandgeruch",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": "Kunde hat Abstand zur Steckdose genommen.",
+              "cause": null,
+              "urgency": "emergency",
+              "hazard": "electric",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                },
+                {
+                  "question": "description",
+                  "answer": "Ich habe Abstand genommen. Soll ich sie zum Testen nochmals benutzen?"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Steckdose\nFunken und Brandgeruch\nBereich: Wohnzimmer\nZusatzangaben: Kunde hat Abstand zur Steckdose genommen.\nDringlichkeit: Mögliche akute Gefahr",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "socket",
+                  "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Funken und Brandgeruch",
+                  "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "known",
+                  "value": "Kunde hat Abstand zur Steckdose genommen.",
+                  "source": "Ich habe Abstand genommen. Soll ich sie zum Testen nochmals benutzen?"
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt.",
+                  "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:42:35.736Z",
+              "updatedAt": "2026-10-27T14:42:49.542Z",
+              "shortLabel": "Steckdose"
+            },
+            "issues": [
+              {
+                "id": "e713f8d3-7385-4fec-8cc2-d37ffbfe03fa",
+                "category": "electricity",
+                "equipment": "socket",
+                "subcategory": null,
+                "description": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt.",
+                "defect": "Funken und Brandgeruch",
+                "count": null,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": null,
+                "details": "Kunde hat Abstand zur Steckdose genommen.",
+                "cause": null,
+                "urgency": "emergency",
+                "hazard": "electric",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Ich habe Abstand genommen. Soll ich sie zum Testen nochmals benutzen?"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Steckdose\nFunken und Brandgeruch\nBereich: Wohnzimmer\nZusatzangaben: Kunde hat Abstand zur Steckdose genommen.\nDringlichkeit: Mögliche akute Gefahr",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "socket",
+                    "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Funken und Brandgeruch",
+                    "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "known",
+                    "value": "Kunde hat Abstand zur Steckdose genommen.",
+                    "source": "Ich habe Abstand genommen. Soll ich sie zum Testen nochmals benutzen?"
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt.",
+                    "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:42:35.736Z",
+                "updatedAt": "2026-10-27T14:42:49.542Z",
+                "shortLabel": "Steckdose"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "electric",
+              "urgency": "emergency",
+              "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+            }
+          }
+        },
+        {
+          "customer": "Nein, ich fasse sie nicht an. Ein Kind ist noch im Zimmer.",
+          "status": 200,
+          "httpMs": 10488.17,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Bitte holen Sie das Kind jetzt aus dem Wohnzimmer. Gehen Sie dabei nicht nahe an der Steckdose vorbei und fassen Sie sie nicht an. Gehen Sie mit dem Kind in einen anderen Raum, am besten ins Freie, und schliessen Sie die Zimmertür hinter sich.\n\nBleiben Sie dann draussen oder weit weg von diesem Zimmer. Rufen Sie die Feuerwehr unter 118 an, wenn Sie wieder Rauch, Hitze, Funken oder Brandgeruch bemerken. Das gilt auch, wenn der Geruch stärker wird. Melden Sie den Vorfall ausserdem sofort Ihrer Verwaltung oder dem Notdienst. Ich kann das nicht für Sie tun.\n\nIst das Kind schon aus dem Zimmer?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 2,
+            "generationIds": [
+              "gen_01M5YX108A1421J2R11HDAE62B",
+              "gen_01M5YX123EVJA3JGM4TK10TGWR"
+            ],
+            "usage": [
+              {
+                "inputTokens": 5459,
+                "outputTokens": 139,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              },
+              {
+                "inputTokens": 5674,
+                "outputTokens": 314,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 4466,
+              "creditGuard": 333,
+              "total": 4805
+            },
+            "issue": {
+              "id": "e713f8d3-7385-4fec-8cc2-d37ffbfe03fa",
+              "category": "electricity",
+              "equipment": "socket",
+              "subcategory": null,
+              "description": "Steckdose\nFunken und Brandgeruch\nBereich: Wohnzimmer\nZusatzangaben: Kunde hat Abstand zur Steckdose genommen.\nKunde fasst die Steckdose nicht an. Ein Kind ist noch im Wohnzimmer.\nDringlichkeit: Mögliche akute Gefahr",
+              "defect": "Funken und Brandgeruch",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": "Kunde hat Abstand zur Steckdose genommen.\nKunde fasst die Steckdose nicht an. Ein Kind ist noch im Wohnzimmer.",
+              "cause": null,
+              "urgency": "emergency",
+              "hazard": "electric",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                },
+                {
+                  "question": "description",
+                  "answer": "Ich habe Abstand genommen. Soll ich sie zum Testen nochmals benutzen?"
+                },
+                {
+                  "question": "description",
+                  "answer": "Ein Kind ist noch im Zimmer."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "details": {
+                      "from": "Kunde hat Abstand zur Steckdose genommen.",
+                      "to": "Kunde hat Abstand zur Steckdose genommen.\nKunde fasst die Steckdose nicht an. Ein Kind ist noch im Wohnzimmer."
+                    }
+                  },
+                  "source": "Ein Kind ist noch im Zimmer.",
+                  "at": "2026-10-27T14:43:00.693Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Steckdose\nFunken und Brandgeruch\nBereich: Wohnzimmer\nZusatzangaben: Kunde hat Abstand zur Steckdose genommen.\nKunde fasst die Steckdose nicht an. Ein Kind ist noch im Wohnzimmer.\nDringlichkeit: Mögliche akute Gefahr",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "socket",
+                  "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "Funken und Brandgeruch",
+                  "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "corrected",
+                  "value": "Kunde hat Abstand zur Steckdose genommen.\nKunde fasst die Steckdose nicht an. Ein Kind ist noch im Wohnzimmer.",
+                  "source": "Ein Kind ist noch im Zimmer."
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Steckdose\nFunken und Brandgeruch\nBereich: Wohnzimmer\nZusatzangaben: Kunde hat Abstand zur Steckdose genommen.\nKunde fasst die Steckdose nicht an. Ein Kind ist noch im Wohnzimmer.\nDringlichkeit: Mögliche akute Gefahr",
+                  "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T14:42:35.736Z",
+              "updatedAt": "2026-10-27T14:43:00.693Z",
+              "shortLabel": "Steckdose"
+            },
+            "issues": [
+              {
+                "id": "e713f8d3-7385-4fec-8cc2-d37ffbfe03fa",
+                "category": "electricity",
+                "equipment": "socket",
+                "subcategory": null,
+                "description": "Steckdose\nFunken und Brandgeruch\nBereich: Wohnzimmer\nZusatzangaben: Kunde hat Abstand zur Steckdose genommen.\nKunde fasst die Steckdose nicht an. Ein Kind ist noch im Wohnzimmer.\nDringlichkeit: Mögliche akute Gefahr",
+                "defect": "Funken und Brandgeruch",
+                "count": null,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": null,
+                "details": "Kunde hat Abstand zur Steckdose genommen.\nKunde fasst die Steckdose nicht an. Ein Kind ist noch im Wohnzimmer.",
+                "cause": null,
+                "urgency": "emergency",
+                "hazard": "electric",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Ich habe Abstand genommen. Soll ich sie zum Testen nochmals benutzen?"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Ein Kind ist noch im Zimmer."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "details": {
+                        "from": "Kunde hat Abstand zur Steckdose genommen.",
+                        "to": "Kunde hat Abstand zur Steckdose genommen.\nKunde fasst die Steckdose nicht an. Ein Kind ist noch im Wohnzimmer."
+                      }
+                    },
+                    "source": "Ein Kind ist noch im Zimmer.",
+                    "at": "2026-10-27T14:43:00.693Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Steckdose\nFunken und Brandgeruch\nBereich: Wohnzimmer\nZusatzangaben: Kunde hat Abstand zur Steckdose genommen.\nKunde fasst die Steckdose nicht an. Ein Kind ist noch im Wohnzimmer.\nDringlichkeit: Mögliche akute Gefahr",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "socket",
+                    "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "Funken und Brandgeruch",
+                    "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "corrected",
+                    "value": "Kunde hat Abstand zur Steckdose genommen.\nKunde fasst die Steckdose nicht an. Ein Kind ist noch im Wohnzimmer.",
+                    "source": "Ein Kind ist noch im Zimmer."
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Steckdose\nFunken und Brandgeruch\nBereich: Wohnzimmer\nZusatzangaben: Kunde hat Abstand zur Steckdose genommen.\nKunde fasst die Steckdose nicht an. Ein Kind ist noch im Wohnzimmer.\nDringlichkeit: Mögliche akute Gefahr",
+                    "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T14:42:35.736Z",
+                "updatedAt": "2026-10-27T14:43:00.693Z",
+                "shortLabel": "Steckdose"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": {
+              "hazard": "electric",
+              "urgency": "emergency",
+              "source": "Aus der Steckdose im Wohnzimmer kommen Funken und es riecht verbrannt."
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 22.794704968,
+    "totalUsedUsd": 2.205295032,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-sonnet-5.5",
+    "pricing": {
+      "input": 2e-06,
+      "output": 1e-05
+    }
+  },
+  "actualAccountDeltaUsd": 0.2478039999999999
+}
