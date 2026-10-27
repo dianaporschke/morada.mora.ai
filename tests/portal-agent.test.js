@@ -11,7 +11,7 @@ import {hydrateSimple,contentHash,beginPreparation,acceptReceipt} from '../lib/m
 import {portalCaseFields,portalCaseEvidence} from '../assets/mora-portal-map.js';
 import {createPortalClient} from '../assets/mora-portal-client.js';
 import {createPortalChatHandler,controls} from '../api/portal-chat.js';
-import {MODEL} from '../lib/mora/portal/budget.js';
+import {AGENT_MODEL as MODEL} from '../lib/mora/portal/budget.js';
 
 const empty=()=>hydrateSimple(null);
 const invoke=(t,name,input)=>t.tools[name].execute(input,{});
