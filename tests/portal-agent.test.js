@@ -121,6 +121,16 @@ test('ambiguous mixed clauses receive one bounded effect review without rewritin
 test('actual SDK: one tool update, then natural reply with current facts, two calls',async()=>{
  let guarded=0;const a=sdk([[toolCall('record_issues',{updates:[{ref:'new1',quote:'Lampe kaputt',equipment:'light',defect:'kaputt'}]})],'Wo befindet sich die Lampe?'],async()=>{guarded++;});
  const r=await a.converse('Lampe kaputt',empty(),['cases']);assert.equal(r.modelCalls,2);assert.equal(guarded,2);assert.equal(r.state.issue.equipment,'light');assert.equal(r.reply,'Wo befindet sich die Lampe?');assert.match(a.model.doGenerateCalls[1].prompt[0].content,/"equipment":"light"/);
+ assert.ok(a.model.doGenerateCalls[0].tools.some(t=>t.name==='record_issues'));
+ assert.ok(!a.model.doGenerateCalls[1].tools.some(t=>t.name==='record_issues'));
+ assert.ok(a.model.doGenerateCalls[1].tools.some(t=>t.name==='open_form'));
+});
+test('actual SDK: new facts plus explicit preparation retain the action after the extraction schema is removed',async()=>{
+ const message='Die Lampe im Wohnzimmer ist kaputt. Bitte vorbereiten.';
+ const a=sdk([[toolCall('record_issues',{updates:[{ref:'new1',quote:'Die Lampe im Wohnzimmer ist kaputt.',equipment:'light',defect:'kaputt',location:'Wohnzimmer'}]})],[toolCall('open_form',{action:'prepare',ref:'new1',requestQuote:'Bitte vorbereiten.'})]]);
+ const r=await a.converse(message,empty(),['cases']);
+ assert.equal(r.modelCalls,2);assert.equal(r.requestedAction,'prepare');assert.equal(r.reply,'');
+ assert.equal(r.state.issue.location,'Wohnzimmer');assert.equal(r.state.issue.preparation.status,'not_prepared');
 });
 test('actual SDK: invalid tool data is repaired only at that tool, within three calls',async()=>{
  const a=sdk([[toolCall('record_issues',{updates:[{ref:'new1',quote:'not said',location:'Bad'}]})],[toolCall('record_issues',{updates:[{ref:'new1',quote:'Lampe kaputt',equipment:'light',defect:'kaputt'}]})],'In welchem Raum ist die Lampe?']);
