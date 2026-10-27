@@ -14,7 +14,8 @@ const responses=createInterface({input:child.stdout}),pending=[];responses.on('l
 const transport=body=>{const p=new Promise(r=>pending.push(r));child.stdin.write(JSON.stringify(body)+'\n');return p;};
 const delay=ms=>new Promise(r=>setTimeout(r,ms));let lastModelAt=0;
 const html=readFileSync('portal.html','utf8');
-const evidence={portalSha256:createHash('sha256').update(html).digest('hex'),scope:'Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.',url:cfg.url+'/portal.html',conversations:[]};
+const portalPath='/portal.html'+(cfg.path==='/api/portal-agent'?'?mora=agent':'');
+const evidence={portalSha256:createHash('sha256').update(html).digest('hex'),scope:'Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.',url:cfg.url+portalPath,conversations:[]};
 const before=await transport(null);assert.equal(before.status,200);assert.equal(before.data.inferenceStarted,false);evidence.before=before.data;evidence.model=before.data.model;if(cfg.expectedModel)assert.equal(evidence.model,cfg.expectedModel);
 const cases=[
  {id:'lamp',messages:['lampe kaputt','wohnzimmer','Nur eine Lampe ist betroffen, sonst ist alles normal.','Bitte bereiten Sie das Anliegen jetzt vor.'],room:'Wohnzimmer',label:/Lampe \/ Leuchte/,correction:'Nein, ich meinte Schlafzimmer.',correctedRoom:'Schlafzimmer'},
@@ -27,7 +28,7 @@ try{
  for(const c of cases.filter(c=>!cfg.caseIds||cfg.caseIds.includes(c.id))){
   const entry={id:c.id,transports:[],snapshots:[],clientTimings:[]};evidence.conversations.push(entry);let failure;
   const vc=new VirtualConsole(),errors=[];vc.on('info',(label,value)=>{if(['MORA portal timing','MORA portal visible response'].includes(label))entry.clientTimings.push({label,...value});});vc.on('jsdomError',e=>{if(!['not-implemented','css-parsing'].includes(e.type))errors.push(e.message);});
-  const d=new JSDOM(html,{url:cfg.url+'/portal.html',runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){
+  const d=new JSDOM(html,{url:cfg.url+portalPath,runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){
    w.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});w.structuredClone=structuredClone;w.indexedDB=indexedDB;w.scrollTo=()=>{};w.confirm=()=>true;
    Object.defineProperty(w.navigator,'locks',{value:{request:async(n,o,f)=>typeof o==='function'?o({}):f({})}});
    w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;this.dispatchEvent(new w.Event('close'));};

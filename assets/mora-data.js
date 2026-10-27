@@ -36,7 +36,7 @@ export function issueContent(issue) {
   // Provenance/audit wording is not a change to the customer's service data.
   return JSON.stringify(draftFields.map(key=>key==='fieldFacts'
     ? Object.entries(issue.fieldFacts || {}).sort(([a],[b])=>a.localeCompare(b)).map(([field,fact])=>[field,fact.status,fact.value ?? null,fact.candidate ?? null])
-    : issue[key] ?? null));
+    : issue[key] ?? null).concat(issue.walkthrough?[{walkthrough:issue.walkthrough}]:[]));
 }
 export function matchesIssueContent(content,issue) {
   if(content===issueContent(issue))return true;

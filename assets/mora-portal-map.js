@@ -24,7 +24,8 @@ export function portalCaseFields(issue) {
   const category=['water','electricity','heating','appliances'].includes(draft.category)
     ? 'Schaden / Reparatur':draft.category==='access'?'Schlüssel / Zutritt'
     :draft.category==='neighbours'?'Beschwerde':'Allgemein';
-  const description='Fachbereich: '+(draft.category==='general'?'Noch nicht zugeordnet':categoryLabels[draft.category])+'\n'+draftSummary(draft)+(!draft.since&&!draft.unknownFields?.includes('since')&&draft.fieldFacts?.since?.status!=='uncertain'?'\nBeginn: Nicht angegeben':'');
+  const spatial=draft.walkthrough?(draft.walkthrough.status==='selected'?'\nIm Walkthrough ausgewählt: '+draft.walkthrough.objectLabel+' · '+draft.walkthrough.roomLabel:'\nWalkthrough-Zuordnung: nach Korrektur erneut auswählen.') : '';
+  const description='Fachbereich: '+(draft.category==='general'?'Noch nicht zugeordnet':categoryLabels[draft.category])+'\n'+draftSummary(draft)+(!draft.since&&!draft.unknownFields?.includes('since')&&draft.fieldFacts?.since?.status!=='uncertain'?'\nBeginn: Nicht angegeben':'')+spatial;
   if(description.length>3000)throw Error('Die Beschreibung ist zu lang für das Anliegenformular. Bitte im Chat kürzen.');
   return {title:[draftLabel(draft),draft.location].filter(Boolean).join(' · ').slice(0,180),
     category,unit:draft.location || '',description};
@@ -41,4 +42,7 @@ export function portalIssueReadiness(issue){
 }
 /** Keep exact customer evidence in the existing case history. It is an audit
  * record, not a second diagnosis or an obsolete value in the current fields. */
-export const portalCaseEvidence=issue=>(issue.answers || []).slice(-6).map(a=>a.answer).join('\n').slice(-2800);
+export const portalCaseEvidence=issue=>{
+  const reference=issue.walkthrough?'\nMORA Walkthrough reference: '+JSON.stringify(issue.walkthrough):'';
+  return (issue.answers || []).slice(-6).map(a=>a.answer).join('\n').slice(-(2800-reference.length))+reference;
+};

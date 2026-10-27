@@ -2,6 +2,9 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "functions": {
+    "api/portal-agent.js": {
+      "maxDuration": 60
+    },
     "api/portal-chat.js": {
       "maxDuration": 60
     },

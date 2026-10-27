@@ -12,24 +12,24 @@ const schema=z.object({session:z.string().max(180000).optional(),message:z.strin
   .refine(v=>[v.message,v.action,v.receipt].filter(Boolean).length===1)
   .refine(v=>!v.message||Boolean(v.messageId));
 export const controls=portalControls;
-export function createPortalChatHandler({converse=createPortalService(),preflight=createPreviewCreditGuard()}={}) {
+export function createPortalChatHandler({converse=createPortalService(),preflight=createPreviewCreditGuard(),integration='portal_v1'}={}) {
  return async function handler(req,res){
   res.setHeader('Cache-Control','private, no-store');
   // An isolated Preview route; never activate this integration on production.
   if(process.env.VERCEL_ENV==='production')return res.status(404).json({code:'NOT_FOUND'});
   if(req.method==='GET'){
-    try{return res.status(200).json({architecture:'portal_v1',inferenceStarted:false,...await preflight()});}
+    try{return res.status(200).json({architecture:integration,inferenceStarted:false,...await preflight()});}
     catch{return res.status(503).json({code:'PREVIEW_CREDIT_BOUNDARY',error:'Das freigegebene KI-Testbudget konnte nicht bestätigt werden.'});}
   }
   if(req.method!=='POST')return res.status(405).json({code:'METHOD_NOT_ALLOWED'});
   const parsed=schema.safeParse(req.body);if(!parsed.success)return res.status(400).json({code:'INVALID_INPUT',error:'Bitte prüfen Sie die Nachricht.'});
   const input=parsed.data,start=Date.now();let state;
-  const reply=(status,data)=>res.status(status).json({architecture:'portal_v1',...data,...(state?{session:sealSession(state),issue:state.issue,issues:state.issues,controls:controls(state,data.navigation || [],input.navigation.includes('cases')),safety:state.safety || null}:{}),timingMs:{...(data.timingMs||{}),total:Date.now()-start}});
+  const reply=(status,data)=>res.status(status).json({architecture:integration,...data,...(state?{session:sealSession(state),issue:state.issue,issues:state.issues,controls:controls(state,data.navigation || [],input.navigation.includes('cases')),safety:state.safety || null}:{}),timingMs:{...(data.timingMs||{}),total:Date.now()-start}});
   try{
     const previous=input.session?readSession(input.session):null;
-    if(previous&&previous.integration!=='portal_v1')throw Object.assign(Error('Wrong integration'),{code:'INVALID_SESSION'});
-    state=hydrateSimple(previous);state.integration='portal_v1';state.portalJournal ||= [];state.portalPending ||= [];
-    if(input.action==='new-conversation'){state=hydrateSimple(null);state.integration='portal_v1';state.portalJournal=[];state.portalPending=[];return reply(200,{mode:'control',modelCalls:0});}
+    if(previous&&previous.integration!==integration)throw Object.assign(Error('Wrong integration'),{code:'INVALID_SESSION'});
+    state=hydrateSimple(previous);state.integration=integration;state.portalJournal ||= [];state.portalPending ||= [];
+    if(input.action==='new-conversation'){state=hydrateSimple(null);state.integration=integration;state.portalJournal=[];state.portalPending=[];return reply(200,{mode:'control',modelCalls:0});}
     if(input.receipt){
       acceptReceipt(state,input.receipt);
       if(input.receipt.status==='portal_received'){const i=state.issues.find(i=>i.id===input.receipt.issueId);i.portalAttachmentCount=input.receipt.attachmentCount ?? i.portalAttachmentCount ?? 0;}
@@ -66,15 +66,20 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
     state.portalJournal=state.portalJournal.slice(-48);
     state.portalPending.push({content:input.message,id:input.messageId});
     const result=await converse(message,before,input.navigation,45000);
-    const journal=state.portalJournal;state=result.state;state.integration='portal_v1';
+    const journal=state.portalJournal;state=result.state;state.integration=integration;
     state.portalJournal=[...journal,{role:'assistant',content:result.reply}].slice(-48);state.portalPending=[];
     // Portal controls are derived separately from plan.actions. Record the
     // actual offer returned to this client, so the next model turn sees it.
     // A visible offer is neither an opened form nor a successful save.
     if(input.navigation.includes('cases')&&controls(state).save)rememberPreparationOffer(state);
     const actionable=controls(state).save||controls(state).review;
-    return reply(200,{mode:'model',reply:result.reply,navigation:result.navigation,requestedAction:actionable?result.requestedAction:null,modelCalls:result.modelCalls,generationIds:result.generationIds,usage:result.usage,repaired:result.repaired,repairScope:result.repairScope || null,timingMs:{model:result.modelMs,creditGuard:result.guardMs}});
+    return reply(200,{mode:'model',reply:result.reply,navigation:result.navigation,requestedAction:actionable?result.requestedAction:null,modelCalls:result.modelCalls,generationIds:result.generationIds,usage:result.usage,repaired:result.repaired,repairScope:result.repairScope || null,...('toolEvents' in result?{toolEvents:result.toolEvents}:{}),timingMs:{model:result.modelMs,creditGuard:result.guardMs}});
   }catch(error){
+    if(integration==='portal_agent_v1'&&error.conversationState&&state){
+      const journal=state.portalJournal,pending=state.portalPending;
+      state=hydrateSimple(error.conversationState);state.integration=integration;state.portalJournal=journal;
+      state.portalPending=error.toolEvents?.some(e=>e.tool==='record_issues'&&e.ok)?[]:pending;
+    }
     const conflict=['INVALID_ACTION','INVALID_SESSION','ISSUE_LIMIT'].includes(error.code);
     const code=conflict?error.code:error.code==='PREVIEW_CREDIT_BOUNDARY'?'PREVIEW_CREDIT_BOUNDARY':'MODEL_UNAVAILABLE';
     const limited=error.availability?.reason==='rate_limit_exceeded'||error.availability?.status===429;
