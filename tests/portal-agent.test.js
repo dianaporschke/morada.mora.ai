@@ -78,6 +78,11 @@ test('actual SDK: ordinary response uses one model call and no judge',async()=>{
  const a=sdk(['Ein Übergabeprotokoll hält den Zustand bei der Übergabe fest.']);const r=await a.converse('Was ist ein Übergabeprotokoll?',empty(),['cases']);
  assert.equal(r.modelCalls,1);assert.equal(a.model.doGenerateCalls.length,1);assert.equal(r.state.issues.length,0);assert.equal(r.toolEvents.length,0);
 });
+test('actual SDK: a valid form action stops after one call and leaves confirmation to native UI',async()=>{
+ const a=sdk([[toolCall('open_form',{action:'prepare',ref:'active',requestQuote:'Bitte vorbereiten.'})]]);
+ const r=await a.converse('Bitte vorbereiten.',await lamp(),['cases']);
+ assert.equal(r.modelCalls,1);assert.equal(r.requestedAction,'prepare');assert.equal(r.reply,'');assert.equal(r.state.issue.preparation.status,'not_prepared');
+});
 test('actual SDK: one tool update, then natural reply with current facts, two calls',async()=>{
  let guarded=0;const a=sdk([[toolCall('record_issues',{updates:[{ref:'new1',quote:'Lampe kaputt',equipment:'light',defect:'kaputt'}]})],'Wo befindet sich die Lampe?'],async()=>{guarded++;});
  const r=await a.converse('Lampe kaputt',empty(),['cases']);assert.equal(r.modelCalls,2);assert.equal(guarded,2);assert.equal(r.state.issue.equipment,'light');assert.equal(r.reply,'Wo befindet sich die Lampe?');assert.match(a.model.doGenerateCalls[1].prompt[0].content,/"equipment":"light"/);
