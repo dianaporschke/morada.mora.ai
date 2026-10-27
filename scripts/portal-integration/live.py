@@ -45,6 +45,7 @@ for case in cases:
   output.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
   print(json.dumps({'case':case['id'],'turn':n,'status':status,'ms':ms,'reply':data.get('reply'),'calls':data.get('modelCalls'),'code':data.get('code')},ensure_ascii=False),flush=True)
   if data.get('code') in ['PREVIEW_CREDIT_BOUNDARY','MODEL_RATE_LIMIT']:evidence['stopped']=data.get('code');break
+  if status!=200 and cfg.get('stopOnError'):evidence['stopped']='HTTP_'+str(status);break
  output.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
  if evidence.get('stopped'):break
 status,after,_=request();evidence['after']=after;evidence['actualAccountDeltaUsd']=after.get('totalUsedUsd',0)-credit['totalUsedUsd'];output.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')

@@ -3,7 +3,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {MockLanguageModelV4} from 'ai/test';
-import {createCompactPortalAgent} from '../lib/mora/portal/compact-agent.js';
+import {createCompactPortalAgent,compactSchema,decodeCompactPlan} from '../lib/mora/portal/compact-agent.js';
+import {createAgentTurn} from '../lib/mora/portal/agent.js';
+import {z} from 'zod';
 import {hydrateSimple,beginPreparation,acceptReceipt} from '../lib/mora/simple/state.js';
 import {portalCaseFields} from '../assets/mora-portal-map.js';
 import {portalActionState} from '../lib/mora/portal/action-state.js';
@@ -11,11 +13,18 @@ import {AGENT_MODEL} from '../lib/mora/portal/budget.js';
 
 const empty=()=>hydrateSimple(null);
 const plan=(reply,updates=[],extra={})=>({reply,topic:updates.length?'issue':'information',updates,focus:null,next:{type:'none'},...extra});
+const wirePlan=p=>p?.updates?{...p,updates:p.updates.map(u=>{
+ const changes=new Map();
+ for(const field of ['equipment','defect','location','count','since','extent','details','cause','risk'])if(u[field]!=null)changes.set(field,{field,status:'known',value:String(u[field]),quote:u.quote});
+ for(const status of ['unknown','uncertain'])for(const x of u[status]||[])changes.set(x.field,{field:x.field,status,value:status==='uncertain'&&u[x.field]!=null?String(u[x.field]):null,quote:x.quote});
+ for(const field of u.clearFields||[])changes.set(field,{field,status:'clear',value:null,quote:u.quote});
+ return {ref:u.ref,quote:u.quote,correction:u.correction||false,changes:[...changes.values()]};
+}),next:{action:null,ref:null,target:null,requestQuote:null,...p.next}}:p;
 function sdk(outputs,guard=async()=>{}) {
   let n=0;
   const model=new MockLanguageModelV4({modelId:AGENT_MODEL,doGenerate:async()=>{
     assert.ok(n<outputs.length,'Unexpected extra generation');const value=outputs[n++];if(value instanceof Error)throw value;
-    return {content:[{type:'text',text:typeof value==='string'?value:JSON.stringify(value)}],finishReason:{unified:'stop',raw:'stop'},usage:{inputTokens:{total:100,noCache:100,cacheRead:0},outputTokens:{total:30,text:30,reasoning:0}},warnings:[]};
+    return {content:[{type:'text',text:typeof value==='string'?value:JSON.stringify(wirePlan(value))}],finishReason:{unified:'stop',raw:'stop'},usage:{inputTokens:{total:100,noCache:100,cacheRead:0},outputTokens:{total:30,text:30,reasoning:0}},warnings:[]};
   }});
   return {model,converse:createCompactPortalAgent({resolve:async()=>({ready:true,provider:'gateway',model:AGENT_MODEL,createModel:()=>model}),guard})};
 }
@@ -83,4 +92,20 @@ test('budget boundary stops before inference and malformed output never launches
   const a=sdk([],async()=>{throw Object.assign(Error('budget'),{code:'PREVIEW_CREDIT_BOUNDARY'});});
   await assert.rejects(a.converse('Hallo',empty(),['cases']),e=>e.code==='PREVIEW_CREDIT_BOUNDARY'&&e.modelCalls===0);assert.equal(a.model.doGenerateCalls.length,0);
   const b=sdk(['not json']);await assert.rejects(b.converse('Hallo',empty(),['cases']),e=>e.modelCalls===1);assert.equal(b.model.doGenerateCalls.length,1);
+});
+test('provider schema stays identical when existing issue references change',async()=>{
+ const a=compactSchema(createAgentTurn(empty(),'Hallo',['cases']));
+ const b=compactSchema(createAgentTurn(await lamp(),'Nein, Bad.',['cases']));
+ assert.deepEqual(z.toJSONSchema(a),z.toJSONSchema(b));
+});
+test('wire decoder rejects duplicate fields, unsupported values and fabricated field quotes',()=>{
+ const good=wirePlan(plan('Alles klar.',[{ref:'new1',quote:'Eine Lampe ist kaputt.',equipment:'light',count:1}]));
+ assert.equal(decodeCompactPlan(good).updates[0].count,1);
+ const duplicate=structuredClone(good);duplicate.updates[0].changes.push(duplicate.updates[0].changes[0]);assert.throws(()=>decodeCompactPlan(duplicate));
+ const unsupported=structuredClone(good);unsupported.updates[0].changes[0].quote='not said';assert.throws(()=>decodeCompactPlan(unsupported));
+ const inconsistent=structuredClone(good);inconsistent.next.action='prepare';assert.throws(()=>decodeCompactPlan(inconsistent));
+});
+test('future forwarding promises also trigger the bounded effect check',async()=>{
+ const a=sdk([plan('Prüfen Sie das Formular, damit wir den Fall weiterleiten können.'),{allowed:false}]);
+ await assert.rejects(a.converse('Wohnzimmer',await lamp(),['cases']),e=>e.modelCalls===2&&e.diagnostic.reason==='unconfirmed_success');
 });
