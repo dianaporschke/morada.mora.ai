@@ -124,6 +124,7 @@ test('actual SDK: one tool update, then natural reply with current facts, two ca
  assert.ok(a.model.doGenerateCalls[0].tools.some(t=>t.name==='record_issues'));
  assert.ok(!a.model.doGenerateCalls[1].tools.some(t=>t.name==='record_issues'));
  assert.ok(a.model.doGenerateCalls[1].tools.some(t=>t.name==='open_form'));
+ assert.deepEqual(a.model.doGenerateCalls[1].prompt.map(m=>m.role),['system','user']);
 });
 test('actual SDK: new facts plus explicit preparation retain the action after the extraction schema is removed',async()=>{
  const message='Die Lampe im Wohnzimmer ist kaputt. Bitte vorbereiten.';
