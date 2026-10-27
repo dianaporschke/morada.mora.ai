@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {checkPreviewCredits,createPreviewCreditGuard,readGatewayPrice,BASELINE_USED_USD,MAX_USED_USD} from '../lib/mora/portal/budget.js';
+import {checkPreviewCredits,createPreviewCreditGuard,readGatewayPrice,priceForInput,BASELINE_USED_USD,MAX_USED_USD} from '../lib/mora/portal/budget.js';
 
 const credits=used=>({balance:25-used,totalUsed:used});
 test('paid preview honours the approved baseline and reserves the next request',()=>{
@@ -27,4 +27,11 @@ test('price reservations use the exact fast catalog entry and never the base pri
  assert.deepEqual(await readGatewayPrice('anthropic/claude-opus-5.5-fast',fetcher),{input:.000008,output:.00004});
  models.pop();await assert.rejects(readGatewayPrice('anthropic/claude-opus-5.5-fast',fetcher),e=>e.boundaryReason==='pricing_unverified');
  models[0].pricing.input='NaN';await assert.rejects(readGatewayPrice('anthropic/claude-opus-5.5',fetcher),e=>e.boundaryReason==='pricing_unverified');
+});
+test('long input reservations respect live Haiku tier prices',async()=>{
+ const pricing={input:'0.0000001',output:'0.0000005',input_tiers:[{min:0,cost:'0.0000001'},{min:100001,cost:'0.0000005'}],output_tiers:[{min:0,cost:'0.0000005'},{min:100001,cost:'0.0000025'}]};
+ const read=()=>readGatewayPrice('haiku',async()=>({ok:true,json:async()=>({data:[{id:'haiku',pricing}]})}));
+ const p=await read();assert.deepEqual(priceForInput(p,100000),{input:.0000001,output:.0000005});
+ assert.deepEqual(priceForInput(p,100001),{input:.0000005,output:.0000025});
+ pricing.input_tiers[1].cost='invalid';await assert.rejects(read(),e=>e.boundaryReason==='pricing_unverified');
 });
