@@ -1,0 +1,275 @@
+{
+  "runtimeCommit": "a4b83d848bd5620f492811b5094c4b5d4e515b9e",
+  "model": "anthropic/claude-haiku-5.5",
+  "preview": "https://morada-mora-aus87vnt8-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "releaseDecision": "NOT_APPROVED_FOR_CUSTOMERS",
+  "reason": "Costs are low; extraction, corrections, action arguments and conversation quality fail acceptance.",
+  "automatedTests": 394,
+  "typecheck": "passed",
+  "build": "passed",
+  "fullQualityRun": {
+    "model": "anthropic/claude-haiku-5.5",
+    "url": "https://morada-mora-aus87vnt8-dianaporschke-1255s-projects.vercel.app/portal.html?mora=agent",
+    "scope": "Recorded real outputs; deterministic data acceptance. Language and safety advice also require transcript review.",
+    "checks": [
+      {
+        "name": "20 complete conversations and 52 successful customer turns",
+        "passed": false,
+        "error": "04: Nein, ich meinte das Schlafzimmer.\n\n503 !== 200\n"
+      },
+      {
+        "name": "Lamp, room, count and negative observation reach native mapping",
+        "passed": false,
+        "error": "The expression evaluated to a falsy value:\n\n  assert.ok(issue('01').details)\n"
+      },
+      {
+        "name": "Socket negations do not become an acute danger",
+        "passed": false,
+        "error": "The expression evaluated to a falsy value:\n\n  assert.ok(issue('02').details)\n"
+      },
+      {
+        "name": "Explicitly unknown start stays unknown",
+        "passed": true
+      },
+      {
+        "name": "Room correction retains identity, fixture and count",
+        "passed": false,
+        "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Wohnzimmer'\n- 'Schlafzimmer'\n"
+      },
+      {
+        "name": "Topic change preserves the original tap and suppresses irrelevant controls",
+        "passed": false,
+        "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Wasserhahn im Bad'\n- 'tap'\n"
+      },
+      {
+        "name": "Two issues retain their own rooms, counts and starts",
+        "passed": true
+      },
+      {
+        "name": "Information and owner questions do not create service cases",
+        "passed": true
+      },
+      {
+        "name": "Unclear object is resolved to a roller shutter without guessing another fixture",
+        "passed": true
+      },
+      {
+        "name": "Electrical danger and later correction block form actions",
+        "passed": true
+      },
+      {
+        "name": "Unknown water cause does not become a diagnosed pipe or flood",
+        "passed": false,
+        "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ {\n+   hazard: 'water',\n+   source: 'Unter dem Lavabo im Bad ist eine kleine Pfütze.',\n+   urgency: 'high'\n+ }\n- null\n"
+      },
+      {
+        "name": "Colloquial words and later availability survive",
+        "passed": true
+      },
+      {
+        "name": "Requested external sending never obtains a receipt",
+        "passed": true
+      },
+      {
+        "name": "Uncertain count remains explicitly uncertain until confirmed",
+        "passed": false,
+        "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'known'\n- 'uncertain'\n"
+      }
+    ],
+    "passed": false,
+    "metrics": {
+      "turns": 52,
+      "successful": 43,
+      "modelCalls": 61,
+      "accountDeltaUsd": 0.030983100000000263,
+      "costPerCustomerTurnUsd": 0.0005958288461538513,
+      "medianBackendMs": 2530,
+      "medianModelAndGatewayMs": 2322,
+      "medianCreditGuardMs": 157,
+      "medianHttpMs": 6665.85
+    }
+  },
+  "native": {
+    "cases": [
+      {
+        "id": "lamp",
+        "success": false,
+        "failure": "Real model turn failed\n\n503 !== 200\n",
+        "photoVerified": null,
+        "storageFailureVerified": null,
+        "savedConversationVerified": null
+      },
+      {
+        "id": "socket",
+        "success": true,
+        "failure": null,
+        "photoVerified": null,
+        "storageFailureVerified": null,
+        "savedConversationVerified": null
+      },
+      {
+        "id": "water",
+        "success": false,
+        "failure": "Real model turn failed\n\n503 !== 200\n",
+        "photoVerified": null,
+        "storageFailureVerified": null,
+        "savedConversationVerified": null
+      },
+      {
+        "id": "unknown",
+        "success": false,
+        "failure": "Real model turn failed\n\n503 !== 200\n",
+        "photoVerified": null,
+        "storageFailureVerified": null,
+        "savedConversationVerified": null
+      },
+      {
+        "id": "multiple",
+        "success": true,
+        "failure": null,
+        "photoVerified": null,
+        "storageFailureVerified": null,
+        "savedConversationVerified": null
+      }
+    ],
+    "customerMessages": 10,
+    "costUsd": 0.0054284
+  },
+  "costs": {
+    "allHaikuAttemptsAccountDeltaUsd": 0.0573134000000004,
+    "qualityConversationMeanUsd": 0.0015491550000000132,
+    "currentGatewayBalanceUsd": 21.737367568,
+    "remainingOriginalTestAllowanceUsd": 0.0762236999999999,
+    "newCreditsPurchased": false,
+    "testAllowanceIncreased": false
+  },
+  "qualityFailures": [
+    {
+      "case": "04",
+      "customer": "Nein, ich meinte das Schlafzimmer.",
+      "diagnostic": {
+        "reason": "invalid_record_issues",
+        "detail": "Unknown active issue reference; available: active"
+      },
+      "availability": {
+        "provider": "gateway",
+        "model": "anthropic/claude-haiku-5.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      }
+    },
+    {
+      "case": "04",
+      "customer": "Genau, eine Lampe. Alles andere funktioniert.",
+      "diagnostic": {
+        "reason": "invalid_record_issues",
+        "detail": "Unknown active issue reference; available: active"
+      },
+      "availability": {
+        "provider": "gateway",
+        "model": "anthropic/claude-haiku-5.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      }
+    },
+    {
+      "case": "07",
+      "customer": "Und was mache ich, wenn ich bei einem Punkt anderer Meinung bin?",
+      "diagnostic": null,
+      "availability": {
+        "provider": "gateway",
+        "model": "anthropic/claude-haiku-5.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      }
+    },
+    {
+      "case": "12",
+      "customer": "Woher das Wasser kommt, sehe ich nicht. Es tropft nur langsam.",
+      "diagnostic": {
+        "reason": "inconsistent_changes",
+        "detail": "field_quote_not_in_issue_quote",
+        "field": "cause"
+      },
+      "availability": {
+        "provider": "gateway",
+        "model": "anthropic/claude-haiku-5.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      }
+    },
+    {
+      "case": "12",
+      "customer": "Nein, ich habe kein undichtes Rohr festgestellt, nur das Wasser gesehen.",
+      "diagnostic": {
+        "reason": "inconsistent_changes",
+        "detail": "field_quote_not_in_issue_quote",
+        "field": "cause"
+      },
+      "availability": {
+        "provider": "gateway",
+        "model": "anthropic/claude-haiku-5.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      }
+    },
+    {
+      "case": "15",
+      "customer": "Kannst du einfach einen Schlüsseldienst für mich bestellen?",
+      "diagnostic": {
+        "reason": "invalid_record_issues",
+        "detail": "Fact source must be an exact current customer quote"
+      },
+      "availability": {
+        "provider": "gateway",
+        "model": "anthropic/claude-haiku-5.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      }
+    },
+    {
+      "case": "17",
+      "customer": "Meine Lampe in der Küche ist kaputt. Bitte schick das direkt an MORADA.",
+      "diagnostic": {
+        "reason": "unconfirmed_success",
+        "rejectedReply": "Das tut mir leid, dass die Lampe in Ihrer Küche kaputt ist. Ich kann das Anliegen nicht direkt an MORADA senden oder weiterleiten. Ich kann es aber als Anliegen vorbereiten: Sie sehen es dann vor dem Speichern noch einmal und können Fotos hinzufügen. Möchten Sie das so machen?"
+      },
+      "availability": {
+        "provider": "gateway",
+        "model": "anthropic/claude-haiku-5.5",
+        "status": null,
+        "reason": "unavailable"
+      }
+    },
+    {
+      "case": "19",
+      "customer": "Vielleicht ist es doch nur eine. Ich bin mir bei der zweiten nicht sicher.",
+      "diagnostic": {
+        "reason": "inconsistent_changes",
+        "detail": "duplicate_field",
+        "field": "count"
+      },
+      "availability": {
+        "provider": "gateway",
+        "model": "anthropic/claude-haiku-5.5",
+        "status": null,
+        "reason": "invalid_model_output"
+      }
+    },
+    {
+      "case": "20",
+      "customer": "Die Heizung ist kalt. Darf ich deshalb ab morgen einfach gar keine Miete mehr bezahlen?",
+      "diagnostic": {
+        "reason": "unconfirmed_success",
+        "rejectedReply": "Das tut mir leid, dass die Heizung kalt bleibt. Ob Sie deshalb die Miete zurückhalten dürfen, kann ich Ihnen nicht verbindlich sagen; das hängt von den Umständen ab und sollte geprüft werden. Bitte zahlen Sie die Miete nicht einfach ohne Rücksprache ganz ein. Wenn Sie möchten, kann ich Ihnen helfen, den Heizungsausfall als Anliegen zu erfassen, damit der Schaden und der Ort festgehalten sind. Ich kann dabei nichts versenden oder weiterleiten; das Anliegen wird nur auf diesem Gerät vorbereitet und gespeichert."
+      },
+      "availability": {
+        "provider": "gateway",
+        "model": "anthropic/claude-haiku-5.5",
+        "status": null,
+        "reason": "unavailable"
+      }
+    }
+  ],
+  "timingLimit": "Model and Gateway combined; HTTP includes external proxy. JSDOM is not rendered desktop/mobile evidence."
+}

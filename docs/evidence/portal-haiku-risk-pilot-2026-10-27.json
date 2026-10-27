@@ -1,0 +1,1263 @@
+{
+  "scope": "Real portal_agent_v1 backend responses. Browser rendering and local saving are separate checks.",
+  "url": "https://morada-mora-k9ljx7f4w-dianaporschke-1255s-projects.vercel.app/portal.html?mora=agent",
+  "model": "anthropic/claude-haiku-5.5",
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.776407468,
+    "totalUsedUsd": 3.223592532,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "id": "01",
+      "title": "Lampe, kurze Antworten",
+      "turns": [
+        {
+          "customer": "lampe kaputt",
+          "status": 200,
+          "httpMs": 6270.67,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Das tut mir leid, dass Ihre Lampe ausgefallen ist. Damit Ihr Anliegen richtig erfasst werden kann: Wo genau befindet sich die Lampe, und was passiert genau, wenn Sie das Licht einschalten?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M5ZARZ6F2FE9PRG69D542X9A"
+            ],
+            "usage": [
+              {
+                "inputTokens": 3084,
+                "outputTokens": 340,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 1628,
+              "creditGuard": 690,
+              "total": 2358
+            },
+            "issue": {
+              "id": "7eaa3222-7cbe-43d2-a7e6-d762cfe9bbb5",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe kaputt",
+              "defect": "kaputt",
+              "count": null,
+              "location": null,
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe kaputt",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T18:43:17.379Z",
+              "updatedAt": "2026-10-27T18:43:17.396Z",
+              "shortLabel": "Lampe / Leuchte"
+            },
+            "issues": [
+              {
+                "id": "7eaa3222-7cbe-43d2-a7e6-d762cfe9bbb5",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "lampe kaputt",
+                "defect": "kaputt",
+                "count": null,
+                "location": null,
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "lampe kaputt"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "lampe kaputt"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "lampe kaputt"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "lampe kaputt",
+                    "source": "lampe kaputt"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T18:43:17.379Z",
+                "updatedAt": "2026-10-27T18:43:17.396Z",
+                "shortLabel": "Lampe / Leuchte"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "wohnzimmer",
+          "status": 200,
+          "httpMs": 5832.09,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Danke, die Lampe steht also im Wohnzimmer. Ich habe das bei Ihrem Anliegen vermerkt. Bitte beschreiben Sie noch kurz, was genau nicht funktioniert, zum Beispiel ob sich die Lampe gar nicht einschalten lässt oder ob sie flackert.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M5ZAS4YT293RYTQ506W027R9"
+            ],
+            "usage": [
+              {
+                "inputTokens": 3279,
+                "outputTokens": 335,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 1677,
+              "creditGuard": 156,
+              "total": 1847
+            },
+            "issue": {
+              "id": "7eaa3222-7cbe-43d2-a7e6-d762cfe9bbb5",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe kaputt",
+              "defect": "kaputt",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                },
+                {
+                  "question": "description",
+                  "answer": "wohnzimmer"
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "wohnzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe kaputt",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T18:43:17.379Z",
+              "updatedAt": "2026-10-27T18:43:23.325Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "7eaa3222-7cbe-43d2-a7e6-d762cfe9bbb5",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "lampe kaputt",
+                "defect": "kaputt",
+                "count": null,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "lampe kaputt"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "wohnzimmer"
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "lampe kaputt"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "lampe kaputt"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "wohnzimmer"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "lampe kaputt",
+                    "source": "lampe kaputt"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T18:43:17.379Z",
+                "updatedAt": "2026-10-27T18:43:23.325Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "7eaa3222-7cbe-43d2-a7e6-d762cfe9bbb5"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "7eaa3222-7cbe-43d2-a7e6-d762cfe9bbb5"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Nur eine Lampe ist betroffen, sonst ist alles normal.",
+          "status": 200,
+          "httpMs": 6122.92,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Danke für die Angabe, dass nur diese eine Lampe betroffen ist. Das hilft bei der Einordnung. Ich habe vermerkt, dass im Wohnzimmer eine Lampe kaputt ist und die übrigen Geräte normal funktionieren. Möchten Sie, dass ich das Anliegen mit Fotos vorbereite?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M5ZASAPKWHB4E64EMJP5NG5Z"
+            ],
+            "usage": [
+              {
+                "inputTokens": 3446,
+                "outputTokens": 435,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 1961,
+              "creditGuard": 319,
+              "total": 2289
+            },
+            "issue": {
+              "id": "7eaa3222-7cbe-43d2-a7e6-d762cfe9bbb5",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "lampe kaputt",
+              "defect": "kaputt",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": "Nur eine Lampe betroffen, sonst alles normal",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "lampe kaputt"
+                },
+                {
+                  "question": "description",
+                  "answer": "wohnzimmer"
+                },
+                {
+                  "question": "description",
+                  "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: Nur eine Lampe betroffen, sonst alles normal\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "light",
+                  "source": "lampe kaputt"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "kaputt",
+                  "source": "lampe kaputt"
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "wohnzimmer"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "Nur eine Lampe betroffen, sonst alles normal",
+                  "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "lampe kaputt",
+                  "source": "lampe kaputt"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T18:43:17.379Z",
+              "updatedAt": "2026-10-27T18:43:29.514Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",1,\"Wohnzimmer\",null,\"Nur eine Lampe betroffen, sonst alles normal\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"Nur eine Lampe betroffen, sonst alles normal\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 4
+              }
+            },
+            "issues": [
+              {
+                "id": "7eaa3222-7cbe-43d2-a7e6-d762cfe9bbb5",
+                "category": "electricity",
+                "equipment": "light",
+                "subcategory": null,
+                "description": "lampe kaputt",
+                "defect": "kaputt",
+                "count": 1,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": "Nur eine Lampe betroffen, sonst alles normal",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "lampe kaputt"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "wohnzimmer"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Lampe / Leuchte\nkaputt\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: Nur eine Lampe betroffen, sonst alles normal\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "light",
+                    "source": "lampe kaputt"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "kaputt",
+                    "source": "lampe kaputt"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "wohnzimmer"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "Nur eine Lampe betroffen, sonst alles normal",
+                    "source": "Nur eine Lampe ist betroffen, sonst ist alles normal."
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "lampe kaputt",
+                    "source": "lampe kaputt"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T18:43:17.379Z",
+                "updatedAt": "2026-10-27T18:43:29.514Z",
+                "shortLabel": "Lampe / Leuchte",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"light\",\"lampe kaputt\",\"kaputt\",1,\"Wohnzimmer\",null,\"Nur eine Lampe betroffen, sonst alles normal\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"kaputt\",null],[\"description\",\"known\",\"lampe kaputt\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"light\",null],[\"extent\",\"known\",\"Nur eine Lampe betroffen, sonst alles normal\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 4
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "7eaa3222-7cbe-43d2-a7e6-d762cfe9bbb5"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "7eaa3222-7cbe-43d2-a7e6-d762cfe9bbb5"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "title": "Steckdose",
+      "turns": [
+        {
+          "customer": "Eine Steckdose in der Küche funktioniert seit heute nicht.",
+          "status": 200,
+          "httpMs": 6267.23,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Das tut mir leid, dass die Steckdose in der Küche seit heute nicht funktioniert. Damit Sie das Anliegen gut weitergeben können: Ist an der Steckdose etwas sichtbar beschädigt, verfärbt oder riecht es verbrannt? Falls ja, schalten Sie bitte die Sicherung für diesen Bereich aus und nutzen Sie die Steckdose nicht mehr.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M5ZASGH5DJC24YJ3X371G979"
+            ],
+            "usage": [
+              {
+                "inputTokens": 3103,
+                "outputTokens": 489,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2264,
+              "creditGuard": 140,
+              "total": 2413
+            },
+            "issue": {
+              "id": "67cf9132-281e-4d3e-89d0-142a2910df45",
+              "category": "electricity",
+              "equipment": "socket",
+              "subcategory": null,
+              "description": "Eine Steckdose in der Küche funktioniert seit heute nicht.",
+              "defect": "funktioniert nicht",
+              "count": 1,
+              "location": "Küche",
+              "since": "heute",
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "socket",
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "funktioniert nicht",
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Küche",
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "heute",
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Eine Steckdose in der Küche funktioniert seit heute nicht.",
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T18:43:35.786Z",
+              "updatedAt": "2026-10-27T18:43:35.787Z",
+              "shortLabel": "Steckdose",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"socket\",\"Eine Steckdose in der Küche funktioniert seit heute nicht.\",\"funktioniert nicht\",1,\"Küche\",\"heute\",\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"funktioniert nicht\",null],[\"description\",\"known\",\"Eine Steckdose in der Küche funktioniert seit heute nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"socket\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Küche\",null],[\"since\",\"known\",\"heute\",null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "67cf9132-281e-4d3e-89d0-142a2910df45",
+                "category": "electricity",
+                "equipment": "socket",
+                "subcategory": null,
+                "description": "Eine Steckdose in der Küche funktioniert seit heute nicht.",
+                "defect": "funktioniert nicht",
+                "count": 1,
+                "location": "Küche",
+                "since": "heute",
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "socket",
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "funktioniert nicht",
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Küche",
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  },
+                  "since": {
+                    "status": "known",
+                    "value": "heute",
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Eine Steckdose in der Küche funktioniert seit heute nicht.",
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T18:43:35.786Z",
+                "updatedAt": "2026-10-27T18:43:35.787Z",
+                "shortLabel": "Steckdose",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"socket\",\"Eine Steckdose in der Küche funktioniert seit heute nicht.\",\"funktioniert nicht\",1,\"Küche\",\"heute\",\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"funktioniert nicht\",null],[\"description\",\"known\",\"Eine Steckdose in der Küche funktioniert seit heute nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"socket\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Küche\",null],[\"since\",\"known\",\"heute\",null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "67cf9132-281e-4d3e-89d0-142a2910df45"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "67cf9132-281e-4d3e-89d0-142a2910df45"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          }
+        },
+        {
+          "customer": "Kein Rauch, keine Funken und kein Brandgeruch.",
+          "status": 503,
+          "httpMs": 6158.26,
+          "response": {
+            "architecture": "portal_agent_v1",
+            "code": "MODEL_UNAVAILABLE",
+            "error": "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.",
+            "toolEvents": [],
+            "diagnostic": {
+              "reason": "inconsistent_changes",
+              "detail": "risk_status",
+              "field": "risk"
+            },
+            "availability": {
+              "provider": "gateway",
+              "model": "anthropic/claude-haiku-5.5",
+              "status": null,
+              "reason": "invalid_model_output"
+            },
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M5ZASPN4EFVER6MN4ZNQANNF"
+            ],
+            "issue": {
+              "id": "67cf9132-281e-4d3e-89d0-142a2910df45",
+              "category": "electricity",
+              "equipment": "socket",
+              "subcategory": null,
+              "description": "Eine Steckdose in der Küche funktioniert seit heute nicht.",
+              "defect": "funktioniert nicht",
+              "count": 1,
+              "location": "Küche",
+              "since": "heute",
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                }
+              ],
+              "corrections": [],
+              "unknownFields": [],
+              "summary": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "known",
+                  "value": "socket",
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "funktioniert nicht",
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Küche",
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                },
+                "since": {
+                  "status": "known",
+                  "value": "heute",
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Eine Steckdose in der Küche funktioniert seit heute nicht.",
+                  "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-27T18:43:35.786Z",
+              "updatedAt": "2026-10-27T18:43:35.787Z",
+              "shortLabel": "Steckdose",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"socket\",\"Eine Steckdose in der Küche funktioniert seit heute nicht.\",\"funktioniert nicht\",1,\"Küche\",\"heute\",\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"funktioniert nicht\",null],[\"description\",\"known\",\"Eine Steckdose in der Küche funktioniert seit heute nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"socket\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Küche\",null],[\"since\",\"known\",\"heute\",null]]]",
+                "revision": 2
+              }
+            },
+            "issues": [
+              {
+                "id": "67cf9132-281e-4d3e-89d0-142a2910df45",
+                "category": "electricity",
+                "equipment": "socket",
+                "subcategory": null,
+                "description": "Eine Steckdose in der Küche funktioniert seit heute nicht.",
+                "defect": "funktioniert nicht",
+                "count": 1,
+                "location": "Küche",
+                "since": "heute",
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  }
+                ],
+                "corrections": [],
+                "unknownFields": [],
+                "summary": "Steckdose\nfunktioniert nicht\nAnzahl: 1\nBereich: Küche\nSeit wann: heute\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "known",
+                    "value": "socket",
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "funktioniert nicht",
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Küche",
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  },
+                  "since": {
+                    "status": "known",
+                    "value": "heute",
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "electricity",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Eine Steckdose in der Küche funktioniert seit heute nicht.",
+                    "source": "Eine Steckdose in der Küche funktioniert seit heute nicht."
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-27T18:43:35.786Z",
+                "updatedAt": "2026-10-27T18:43:35.787Z",
+                "shortLabel": "Steckdose",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"electricity\",\"socket\",\"Eine Steckdose in der Küche funktioniert seit heute nicht.\",\"funktioniert nicht\",1,\"Küche\",\"heute\",\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"funktioniert nicht\",null],[\"description\",\"known\",\"Eine Steckdose in der Küche funktioniert seit heute nicht.\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"known\",\"socket\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Küche\",null],[\"since\",\"known\",\"heute\",null]]]",
+                  "revision": 2
+                }
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 2417
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "stopped": "HTTP_503",
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.773779068,
+    "totalUsedUsd": 3.226220932,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "actualAccountDeltaUsd": 0.002628399999999864
+}

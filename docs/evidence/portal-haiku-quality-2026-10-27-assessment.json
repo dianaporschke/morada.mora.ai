@@ -1,0 +1,82 @@
+{
+  "model": "anthropic/claude-haiku-5.5",
+  "url": "https://morada-mora-aus87vnt8-dianaporschke-1255s-projects.vercel.app/portal.html?mora=agent",
+  "scope": "Recorded real outputs; deterministic data acceptance. Language and safety advice also require transcript review.",
+  "checks": [
+    {
+      "name": "20 complete conversations and 52 successful customer turns",
+      "passed": false,
+      "error": "04: Nein, ich meinte das Schlafzimmer.\n\n503 !== 200\n"
+    },
+    {
+      "name": "Lamp, room, count and negative observation reach native mapping",
+      "passed": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(issue('01').details)\n"
+    },
+    {
+      "name": "Socket negations do not become an acute danger",
+      "passed": false,
+      "error": "The expression evaluated to a falsy value:\n\n  assert.ok(issue('02').details)\n"
+    },
+    {
+      "name": "Explicitly unknown start stays unknown",
+      "passed": true
+    },
+    {
+      "name": "Room correction retains identity, fixture and count",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Wohnzimmer'\n- 'Schlafzimmer'\n"
+    },
+    {
+      "name": "Topic change preserves the original tap and suppresses irrelevant controls",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Wasserhahn im Bad'\n- 'tap'\n"
+    },
+    {
+      "name": "Two issues retain their own rooms, counts and starts",
+      "passed": true
+    },
+    {
+      "name": "Information and owner questions do not create service cases",
+      "passed": true
+    },
+    {
+      "name": "Unclear object is resolved to a roller shutter without guessing another fixture",
+      "passed": true
+    },
+    {
+      "name": "Electrical danger and later correction block form actions",
+      "passed": true
+    },
+    {
+      "name": "Unknown water cause does not become a diagnosed pipe or flood",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ {\n+   hazard: 'water',\n+   source: 'Unter dem Lavabo im Bad ist eine kleine Pfütze.',\n+   urgency: 'high'\n+ }\n- null\n"
+    },
+    {
+      "name": "Colloquial words and later availability survive",
+      "passed": true
+    },
+    {
+      "name": "Requested external sending never obtains a receipt",
+      "passed": true
+    },
+    {
+      "name": "Uncertain count remains explicitly uncertain until confirmed",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'known'\n- 'uncertain'\n"
+    }
+  ],
+  "passed": false,
+  "metrics": {
+    "turns": 52,
+    "successful": 43,
+    "modelCalls": 61,
+    "accountDeltaUsd": 0.030983100000000263,
+    "costPerCustomerTurnUsd": 0.0005958288461538513,
+    "medianBackendMs": 2530,
+    "medianModelAndGatewayMs": 2322,
+    "medianCreditGuardMs": 157,
+    "medianHttpMs": 6665.85
+  }
+}
