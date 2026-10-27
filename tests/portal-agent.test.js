@@ -137,8 +137,8 @@ test('room correction invalidates an old hotspot instead of silently moving it',
  let s=await patch(empty(),'Heizung kaputt',{equipment:'heater',defect:'kaputt'});s=await attachWalkthroughSelection(s,{issueId:s.issue.id,selectionToken:'selection'},'customer',async()=>selection);
  s=await patch(s,'Nein, Wohnzimmer.',{location:'Wohnzimmer',correction:true});assert.equal(s.issue.walkthrough.status,'needs_reselection');assert.equal(s.issue.walkthrough.roomId,'room-1');assert.equal(s.issue.location,'Wohnzimmer');assert.match(portalCaseFields(s.issue).description,/erneut auswählen/);
 });
-test('UI variant uses a different endpoint and storage key; messages remain plain text',async()=>{
- const d=new JSDOM('<div id="portalPreview"></div>',{url:'https://example.test/portal.html?mora=agent'}),w=d.window;w.structuredClone=structuredClone;
+test('default UI uses the agent endpoint and isolated storage key; messages remain plain text',async()=>{
+ const d=new JSDOM('<div id="portalPreview"></div>',{url:'https://example.test/portal.html'}),w=d.window;w.structuredClone=structuredClone;
  let requested;const c=createPortalClient(w.document,w,{role:()=> 'admin',open:()=>true,available:()=>[],currentDraft:()=>null},{fetcher:async(url)=>{requested=url;return {ok:true,json:async()=>({architecture:'portal_agent_v1',reply:'<script>bad()</script>',session:'test',controls:{}})};}});
  try{c.open();await c.send('Hallo');assert.equal(requested,'/api/portal-agent');assert.ok(w.sessionStorage.getItem('morada.portal.mora.agent.v1.admin'));assert.equal(w.sessionStorage.getItem('morada.portal.mora.v1.admin'),null);assert.equal(c.element.querySelector('script'),null);}finally{w.close();}
 });

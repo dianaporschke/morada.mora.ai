@@ -17,7 +17,7 @@ function lamp(){return update(hydrateSimple(null),'Eine Lampe im Wohnzimmer geht
 async function call(handler,body,method='POST'){let status=200,answer;await handler({method,body},{setHeader(){},status(n){status=n;return this;},json(v){answer=v;return this;}});return {status,body:answer};}
 function dom(fetcher){
  const errors=[],vc=new VirtualConsole();vc.on('jsdomError',e=>{if(e.type!=='css-parsing'&&e.type!=='not-implemented')errors.push(e);});
- const d=new JSDOM(readFileSync('portal.html','utf8'),{url:'https://portal.example/portal.html',runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){
+ const d=new JSDOM(readFileSync('portal.html','utf8'),{url:'https://portal.example/portal.html?mora=legacy',runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){
   w.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});w.structuredClone=structuredClone;w.fetch=fetcher;w.scrollTo=()=>{};w.confirm=()=>true;w.indexedDB=indexedDB;
   Object.defineProperty(w.navigator,'locks',{value:{request:async(_n,_opts,fn)=>typeof _opts==='function'?_opts({}):fn({})}});
   w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;this.dispatchEvent(new w.Event('close'));};

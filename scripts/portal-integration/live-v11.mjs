@@ -14,7 +14,7 @@ const responses=createInterface({input:child.stdout}),pending=[];responses.on('l
 const transport=body=>{const p=new Promise(r=>pending.push(r));child.stdin.write(JSON.stringify(body)+'\n');return p;};
 const delay=ms=>new Promise(r=>setTimeout(r,ms));let lastModelAt=0;
 const html=readFileSync('portal.html','utf8');
-const portalPath='/portal.html'+(cfg.path==='/api/portal-agent'?'?mora=agent':'');
+const portalPath='/portal.html'+(cfg.path==='/api/portal-agent'?'':'?mora=legacy');
 const evidence={portalSha256:createHash('sha256').update(html).digest('hex'),scope:'Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.',url:cfg.url+portalPath,conversations:[]};
 const before=await transport(null);assert.equal(before.status,200);assert.equal(before.data.inferenceStarted,false);evidence.before=before.data;evidence.model=before.data.model;if(cfg.expectedModel)assert.equal(evidence.model,cfg.expectedModel);
 const cases=[
@@ -32,7 +32,7 @@ try{
    w.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});w.structuredClone=structuredClone;w.indexedDB=indexedDB;w.scrollTo=()=>{};w.confirm=()=>true;
    Object.defineProperty(w.navigator,'locks',{value:{request:async(n,o,f)=>typeof o==='function'?o({}):f({})}});
    w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;this.dispatchEvent(new w.Event('close'));};
-   w.fetch=async(_u,opt)=>{const input=JSON.parse(opt.body);if(input.message){await delay(Math.max(0,(cfg.delaySeconds||21)*1000-(Date.now()-lastModelAt)));lastModelAt=Date.now();}const result=await transport(input),{session,...safe}=result.data;void session;entry.transports.push({request:{...input,session:input.session?'[signed session omitted]':undefined},status:result.status,data:safe,httpMs:result.httpMs});if(result.data.code==='MODEL_RATE_LIMIT'||result.data.code==='PREVIEW_CREDIT_BOUNDARY')failure=result.data.code;return {ok:result.status===200,json:async()=>result.data};};
+   w.fetch=async(_u,opt)=>{assert.equal(_u,cfg.path || '/api/portal-chat','UI must use the tested backend');const input=JSON.parse(opt.body);if(input.message){await delay(Math.max(0,(cfg.delaySeconds||21)*1000-(Date.now()-lastModelAt)));lastModelAt=Date.now();}const result=await transport(input),{session,...safe}=result.data;void session;entry.transports.push({request:{...input,session:input.session?'[signed session omitted]':undefined},status:result.status,data:safe,httpMs:result.httpMs});if(result.data.code==='MODEL_RATE_LIMIT'||result.data.code==='PREVIEW_CREDIT_BOUNDARY')failure=result.data.code;return {ok:result.status===200,json:async()=>result.data};};
   }}),w=d.window;
   const snapshot=()=>{const s=JSON.parse(w.localStorage.getItem('morada-portal-clean-20261011-v1')||'null');return s?.cases||[];};
   async function settle(){for(let n=0;n<600;n++){await delay(50);if(w.MORAPortal.element.getAttribute('aria-busy')!=='true')return;}throw Error('UI operation timed out');}

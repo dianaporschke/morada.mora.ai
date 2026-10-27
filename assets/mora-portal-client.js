@@ -3,14 +3,13 @@ import {draftLabel} from './mora-data.js';
 import {portalNavigation} from './mora-portal-map.js';
 /** No provider credentials, model calls or portal business rules in this UI. */
 export function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(window)}={}) {
-  const agent=new URL(window.location.href).searchParams.get('mora')==='agent';
+  const agent=new URL(window.location.href).searchParams.get('mora')!=='legacy';
   const architecture=agent?'portal_agent_v1':'portal_v1',endpoint=agent?'/api/portal-agent':'/api/portal-chat';
   const greeting='Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?';
   const names=Object.fromEntries(Object.entries(portalNavigation).map(([id,v])=>[id,v.label]));
   const panel=document.createElement('section');panel.id='moraPortalChat';panel.className='mora-portal-chat';panel.hidden=true;panel.setAttribute('role','dialog');panel.setAttribute('aria-labelledby','moraPortalTitle');
   panel.innerHTML='<header><div><h2 id="moraPortalTitle">MORA</h2><small>Ihre digitale Assistenz bei MORADA</small></div><button type="button" data-mp="clear" aria-label="Neues Gespräch">↻</button><button type="button" data-mp="close" aria-label="MORA schliessen">×</button></header><div class="mora-portal-log" role="log" aria-live="polite" aria-relevant="additions text"></div><div class="mora-portal-status" role="status"></div><div class="mora-portal-actions"></div><form class="mora-portal-compose"><label class="sr-only" for="moraPortalInput">Nachricht an MORA</label><textarea id="moraPortalInput" rows="2" maxlength="2000" placeholder="Schreiben Sie MORA …" required></textarea><button class="btn primary" type="submit" aria-label="Nachricht senden">Senden</button></form><p class="mora-portal-note">Anliegen bleiben auf diesem Gerät. Kein Versand an MORADA. Ihre Chatnachrichten werden zur KI-Verarbeitung an das geschützte Backend übergeben.</p>';
   document.getElementById('portalPreview').append(panel);
-  if(agent)panel.querySelector('h2').textContent='MORA · Agent-Test';
   const log=panel.querySelector('[role="log"]'),status=panel.querySelector('[role="status"]'),actions=panel.querySelector('.mora-portal-actions'),form=panel.querySelector('form'),input=panel.querySelector('textarea');
   let thread,activeRole,busy=false,lastFocus,storageWarning='';
   const blank=()=>({session:null,messages:[{role:'assistant',content:greeting}],data:null,saved:{},pendingReceipt:null});
