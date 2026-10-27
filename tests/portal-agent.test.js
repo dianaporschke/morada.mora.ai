@@ -104,6 +104,10 @@ test('confirmed local storage can be described; absent, stale or external succes
  assert.equal(hasUnconfirmedSuccess('Das Anliegen wurde lokal gespeichert und an MORADA gesendet.',{localStorageConfirmed:true}),true);
  assert.equal(hasUnconfirmedSuccess('Der Handwerker wurde beauftragt.',{localStorageConfirmed:true}),true);
 });
+test('negative delivery statements accept recipients without treating mixed success clauses as denials',()=>{
+ for(const text of ['Es wurde nicht an die Bewirtschaftung versendet.','Ich habe das Anliegen nicht an die Verwaltung gesendet.','Nein, es wurde nichts an MORADA gesendet.'])assert.equal(hasUnconfirmedSuccess(text),false,text);
+ for(const text of ['Es wurde nicht nur an die Verwaltung gesendet.','Es wurde nicht an MORADA gesendet aber an Alexander versendet.','Es wurde nicht an MORADA gesendet; der Handwerker wurde beauftragt.'])assert.equal(hasUnconfirmedSuccess(text),true,text);
+});
 test('actual SDK: one tool update, then natural reply with current facts, two calls',async()=>{
  let guarded=0;const a=sdk([[toolCall('record_issues',{updates:[{ref:'new1',quote:'Lampe kaputt',equipment:'light',defect:'kaputt'}]})],'Wo befindet sich die Lampe?'],async()=>{guarded++;});
  const r=await a.converse('Lampe kaputt',empty(),['cases']);assert.equal(r.modelCalls,2);assert.equal(guarded,2);assert.equal(r.state.issue.equipment,'light');assert.equal(r.reply,'Wo befindet sich die Lampe?');assert.match(a.model.doGenerateCalls[1].prompt[0].content,/"equipment":"light"/);
