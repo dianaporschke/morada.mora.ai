@@ -19,7 +19,7 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
   if(process.env.VERCEL_ENV==='production')return res.status(404).json({code:'NOT_FOUND'});
   if(req.method==='GET'){
     try{return res.status(200).json({architecture:integration,inferenceStarted:false,...await preflight()});}
-    catch{return res.status(503).json({code:'PREVIEW_CREDIT_BOUNDARY',error:'Das freigegebene KI-Testbudget konnte nicht bestätigt werden.'});}
+    catch(error){return res.status(503).json({code:'PREVIEW_CREDIT_BOUNDARY',reason:error.boundaryReason || 'credit_lookup_failed',error:'Das freigegebene KI-Testbudget konnte nicht bestätigt werden.'});}
   }
   if(req.method!=='POST')return res.status(405).json({code:'METHOD_NOT_ALLOWED'});
   const parsed=schema.safeParse(req.body);if(!parsed.success)return res.status(400).json({code:'INVALID_INPUT',error:'Bitte prüfen Sie die Nachricht.'});
