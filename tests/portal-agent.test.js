@@ -39,6 +39,16 @@ test('unknown start, uncertain count and corrections remain distinct',async()=>{
  assert.equal(s.issue.fieldFacts.count.status,'uncertain');assert.equal(s.issue.count,1);assert.equal(s.issue.fieldFacts.since.status,'unknown');
  s=await patch(s,'Es ist sicher eine.',{count:1,correction:true});assert.equal(s.issue.fieldFacts.count.status,'corrected');assert.match(portalCaseFields(s.issue).description,/Beginn: unbekannt/);
 });
+test('uncertainty wins over an overlapping withdrawal without deleting the confirmed count',async()=>{
+ const s=await patch(await lamp(),'Vielleicht sind es zwei.',{count:2,clearFields:['count'],uncertain:[{field:'count',quote:'Vielleicht sind es zwei.'}]});
+ assert.equal(s.issue.count,1);assert.equal(s.issue.fieldFacts.count.status,'uncertain');assert.equal(s.issue.fieldFacts.count.candidate,2);
+ assert.match(portalCaseFields(s.issue).description,/unsicher/i);
+});
+test('a negated component in new notes cannot reclassify the existing object through local keyword fallback',async()=>{
+ let s=await patch(empty(),'Unter dem Lavabo im Bad ist eine Pfütze.',{equipment:'Lavabo',defect:'Pfütze darunter',location:'Bad'});
+ s=await patch(s,'Kein undichtes Rohr festgestellt, nur Wasser gesehen.',{details:'Kein undichtes Rohr festgestellt.',unknown:[{field:'cause',quote:'Kein undichtes Rohr festgestellt'}]});
+ assert.equal(s.issue.equipment,'Lavabo');assert.equal(s.issue.cause,null);assert.doesNotMatch(portalCaseFields(s.issue).title,/Rohr/);
+});
 test('model context retains uncertainty and saved status without empty fields or duplicate tool snapshots',async()=>{
  let s=await lamp();s=await patch(s,'Beginn unbekannt.',{unknown:[{field:'since',quote:'unbekannt'}]});
  s=await patch(s,'Vielleicht zwei.',{count:2,uncertain:[{field:'count',quote:'Vielleicht zwei.'}]});
