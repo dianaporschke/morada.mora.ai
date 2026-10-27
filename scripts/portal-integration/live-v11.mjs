@@ -26,7 +26,7 @@ const cases=[
 ];
 try{
  for(const c of cases.filter(c=>!cfg.caseIds||cfg.caseIds.includes(c.id))){
-  const entry={id:c.id,transports:[],snapshots:[],clientTimings:[]};evidence.conversations.push(entry);let failure;
+  const entry={id:c.id,transports:[],snapshots:[],clientTimings:[],dataFailures:[]};evidence.conversations.push(entry);let failure;
   const vc=new VirtualConsole(),errors=[];vc.on('info',(label,value)=>{if(['MORA portal timing','MORA portal visible response'].includes(label))entry.clientTimings.push({label,...value});});vc.on('jsdomError',e=>{if(!['not-implemented','css-parsing'].includes(e.type))errors.push(e.message);});
   const d=new JSDOM(html,{url:cfg.url+portalPath,runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){
    w.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});w.structuredClone=structuredClone;w.indexedDB=indexedDB;w.scrollTo=()=>{};w.confirm=()=>true;
@@ -50,9 +50,14 @@ try{
     await prepare();assert.equal(snapshot().length,0,'Preparation must not claim persistence');assert.equal(w.document.querySelector('[name="unit"]').value.toLowerCase(),c.room.toLowerCase());await save();let rows=snapshot();assert.equal(rows.length,1);assert.match(rows[0].title,c.label);assert.equal(rows[0].unit.toLowerCase(),c.room.toLowerCase());const id=rows[0].id;
     if(c.id==='lamp'){
      const captured=w.MORAPortal.getState().data.issue;
-     assert.equal(captured.count,1);assert.ok(captured.details?.trim(),'The explicit additional observation must survive extraction');
-     assert.ok(rows[0].description.includes(captured.details),'The captured additional observation must reach native storage');
-     entry.capturedLampDetails=captured.details;
+     assert.equal(captured.count,1);
+     // The real acceptance criterion is preservation in the native record.
+     // A scope note may include "otherwise normal"; requiring one internal
+     // field would incorrectly fail a complete persisted description.
+     const observation=[captured.details,captured.extent].find(v=>v&&/normal|keine (?:weiteren|sonstigen|Auffälligkeiten)/iu.test(v));
+     if(!observation)entry.dataFailures.push('The explicit negative observation is missing from current fields');
+     else assert.ok(rows[0].description.includes(observation),'The captured observation must reach native storage');
+     entry.capturedLampObservation=observation || null;
      if(cfg.verifySavedConversation){
       for(const text of ['Ist das Anliegen schon gespeichert?','Ist es damit auch schon an MORADA gesendet?']){
        w.MORAPortal.open();await w.MORAPortal.send(text);
@@ -63,7 +68,7 @@ try{
       entry.savedConversationVerified=true;
      }
     }
-    if(c.correction){w.MORAPortal.open();await w.MORAPortal.send(c.correction);await prepare('Anliegen aktualisieren');await save();rows=snapshot();assert.equal(rows.length,1);assert.equal(rows[0].id,id);assert.equal(rows[0].unit.toLowerCase(),c.correctedRoom.toLowerCase());if(c.id==='lamp'){assert.equal(w.MORAPortal.getState().data.issue.count,1);assert.ok(rows[0].description.includes(entry.capturedLampDetails),'Room correction must retain the additional observation');}}
+    if(c.correction){w.MORAPortal.open();await w.MORAPortal.send(c.correction);await prepare('Anliegen aktualisieren');await save();rows=snapshot();assert.equal(rows.length,1);assert.equal(rows[0].id,id);assert.equal(rows[0].unit.toLowerCase(),c.correctedRoom.toLowerCase());if(c.id==='lamp'){assert.equal(w.MORAPortal.getState().data.issue.count,1);if(entry.capturedLampObservation)assert.ok(rows[0].description.includes(entry.capturedLampObservation),'Room correction must retain the additional observation');}}
     if(c.id==='lamp'){
      w.MORAPortal.open();await prepare('Foto hinzufügen');
      const input=w.document.getElementById('opsFileInput'),bytes=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aN1kAAAAASUVORK5CYII=','base64');
@@ -79,7 +84,10 @@ try{
      }finally{Object.defineProperty(w.localStorage.__proto__,'setItem',{configurable:true,value:original});}
     }
    }
-   entry.success=true;
+   // Preserve failed data acceptance while still checking independent native
+   // photo/update/storage-error behaviour. Never report that scenario passed.
+   entry.success=entry.dataFailures.length===0;
+   if(!entry.success)entry.failure=entry.dataFailures.join('; ');
   }catch(e){entry.success=false;entry.failure=e.message;if(failure)evidence.stopped=failure;}
   finally{entry.messages=w.MORAPortal?.getState()?.messages;entry.controls=w.MORAPortal?.getState()?.data?.controls;entry.errors=errors;w.close();writeFileSync(cfg.output,JSON.stringify(evidence,null,2)+'\n');console.log(JSON.stringify({case:c.id,success:entry.success,failure:entry.failure}));}
   if(evidence.stopped)break;

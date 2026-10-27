@@ -179,3 +179,21 @@ test('form operation carries one typed intent and no contradictory navigation fi
  const bad=structuredClone(p);bad.next.target='cases';assert.equal(compactSchema().safeParse(bad).success,false);
  const missing=structuredClone(p);delete missing.next.requestQuote;assert.equal(compactSchema().safeParse(missing).success,false);
 });
+
+test('repeated confirmed facts with their original quote cannot block preparation',async()=>{
+ const s=await lamp(),id=s.issue.id;
+ const p=plan('Ich öffne die Angaben.',[{ref:'active',quote:'Eine Lampe im Wohnzimmer ist kaputt.',equipment:'light',defect:'kaputt',location:'Wohnzimmer',count:1}],{focus:'active',next:{type:'form',action:'prepare',ref:'active',requestQuote:'Bitte vorbereiten.'}});
+ const r=await turn(s,'Bitte vorbereiten.',p);
+ assert.equal(r.requestedAction,'prepare');assert.equal(r.state.issue.id,id);assert.equal(r.state.issue.revision,s.issue.revision);
+ assert.ok(!r.toolEvents.some(e=>e.tool==='record_issues'));assert.equal(r.state.issue.preparation.status,'not_prepared');
+});
+
+test('no-op removal cannot hide changed values, another issue, or new uncertainty',async()=>{
+ const s=await lamp();
+ const changed=plan('Ich öffne die Angaben.',[{ref:'active',quote:'Old quote',equipment:'light',location:'Küche'}],{next:{type:'form',action:'prepare',ref:'active',requestQuote:'Bitte vorbereiten.'}});
+ await assert.rejects(turn(s,'Bitte vorbereiten.',changed),e=>e.conversationState.issue.location==='Wohnzimmer'&&e.toolEvents.length===0);
+ const duplicate=plan('Alles klar.',[{ref:'new1',quote:'Old quote',equipment:'light',location:'Wohnzimmer'}]);
+ await assert.rejects(turn(s,'Bitte vorbereiten.',duplicate),e=>e.conversationState.issues.length===1);
+ const unsure=await turn(s,'Vielleicht doch eine.',plan('Die Anzahl ist noch unsicher.',[{ref:'active',quote:'Vielleicht doch eine.',count:1,uncertain:[{field:'count',quote:'Vielleicht doch eine.'}]}],{focus:'active'}));
+ assert.equal(unsure.state.issue.fieldFacts.count.status,'uncertain');assert.equal(unsure.state.issue.count,1);
+});
