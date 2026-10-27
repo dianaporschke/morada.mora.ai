@@ -103,9 +103,16 @@ test('wire decoder rejects duplicate fields, unsupported values and fabricated f
  assert.equal(decodeCompactPlan(good).updates[0].count,1);
  const duplicate=structuredClone(good);duplicate.updates[0].changes.push(duplicate.updates[0].changes[0]);assert.throws(()=>decodeCompactPlan(duplicate));
  const unsupported=structuredClone(good);unsupported.updates[0].changes[0].quote='not said';assert.throws(()=>decodeCompactPlan(unsupported));
- const inconsistent=structuredClone(good);inconsistent.next.action='prepare';assert.throws(()=>decodeCompactPlan(inconsistent));
+ const inconsistent=structuredClone(good);inconsistent.next.type='form';assert.throws(()=>decodeCompactPlan(inconsistent),e=>e.diagnostic.detail==='incomplete_form_action');
 });
 test('future forwarding promises also trigger the bounded effect check',async()=>{
  const a=sdk([plan('Prüfen Sie das Formular, damit wir den Fall weiterleiten können.'),{allowed:false}]);
  await assert.rejects(a.converse('Wohnzimmer',await lamp(),['cases']),e=>e.modelCalls===2&&e.diagnostic.reason==='unconfirmed_success');
+});
+
+test('inactive action metadata cannot run an operation or discard valid facts',async()=>{
+ const w=wirePlan(plan('Alles klar.',[{ref:'new1',quote:'Eine Lampe ist kaputt.',equipment:'light',count:1}]));
+ w.next={type:'none',action:'prepare',ref:'active',target:'cases',requestQuote:'unused'};
+ const r=await sdk([JSON.stringify(w)]).converse('Eine Lampe ist kaputt.',empty(),['cases']);
+ assert.equal(r.requestedAction,null);assert.equal(r.state.issue.count,1);assert.deepEqual(r.navigation,[]);
 });
