@@ -53,6 +53,15 @@ try{
      assert.equal(captured.count,1);assert.ok(captured.details?.trim(),'The explicit additional observation must survive extraction');
      assert.ok(rows[0].description.includes(captured.details),'The captured additional observation must reach native storage');
      entry.capturedLampDetails=captured.details;
+     if(cfg.verifySavedConversation){
+      for(const text of ['Ist das Anliegen schon gespeichert?','Ist es damit auch schon an MORADA gesendet?']){
+       w.MORAPortal.open();await w.MORAPortal.send(text);
+       assert.equal(entry.transports.at(-1).status,200,'Saved-status conversation failed');
+       assert.equal(w.MORAPortal.getState().data.controls.save,null,'Saved case must not be offered as a new case');
+       assert.equal(snapshot().length,1);assert.equal(snapshot()[0].id,id);
+      }
+      entry.savedConversationVerified=true;
+     }
     }
     if(c.correction){w.MORAPortal.open();await w.MORAPortal.send(c.correction);await prepare('Anliegen aktualisieren');await save();rows=snapshot();assert.equal(rows.length,1);assert.equal(rows[0].id,id);assert.equal(rows[0].unit.toLowerCase(),c.correctedRoom.toLowerCase());if(c.id==='lamp'){assert.equal(w.MORAPortal.getState().data.issue.count,1);assert.ok(rows[0].description.includes(entry.capturedLampDetails),'Room correction must retain the additional observation');}}
     if(c.id==='lamp'){

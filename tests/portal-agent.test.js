@@ -12,6 +12,7 @@ import {portalCaseFields,portalCaseEvidence} from '../assets/mora-portal-map.js'
 import {createPortalClient} from '../assets/mora-portal-client.js';
 import {createPortalChatHandler,controls} from '../api/portal-chat.js';
 import {AGENT_MODEL as MODEL} from '../lib/mora/portal/budget.js';
+import {hasUnconfirmedSuccess} from '../lib/mora/portal/reply-validation.js';
 
 const empty=()=>hydrateSimple(null);
 const invoke=(t,name,input)=>t.tools[name].execute(input,{});
@@ -82,6 +83,16 @@ test('actual SDK: a valid form action stops after one call and leaves confirmati
  const a=sdk([[toolCall('open_form',{action:'prepare',ref:'active',requestQuote:'Bitte vorbereiten.'})]]);
  const r=await a.converse('Bitte vorbereiten.',await lamp(),['cases']);
  assert.equal(r.modelCalls,1);assert.equal(r.requestedAction,'prepare');assert.equal(r.reply,'');assert.equal(r.state.issue.preparation.status,'not_prepared');
+});
+test('confirmed local storage can be described; absent, stale or external success is rejected',async()=>{
+ const s=await lamp(),op=beginPreparation(s);acceptReceipt(s,{...op,status:'portal_received'});
+ const answer='Das Anliegen wurde auf diesem Gerät gespeichert.';
+ assert.equal((await sdk([answer]).converse('Ist das gespeichert?',s,['cases'])).reply,answer);
+ await assert.rejects(sdk([answer]).converse('Ist das gespeichert?',await lamp(),['cases']));
+ const changed=await patch(s,'Nein, Schlafzimmer.',{location:'Schlafzimmer',correction:true});
+ await assert.rejects(sdk([answer]).converse('Ist das gespeichert?',changed,['cases']));
+ assert.equal(hasUnconfirmedSuccess('Das Anliegen wurde lokal gespeichert und an MORADA gesendet.',{localStorageConfirmed:true}),true);
+ assert.equal(hasUnconfirmedSuccess('Der Handwerker wurde beauftragt.',{localStorageConfirmed:true}),true);
 });
 test('actual SDK: one tool update, then natural reply with current facts, two calls',async()=>{
  let guarded=0;const a=sdk([[toolCall('record_issues',{updates:[{ref:'new1',quote:'Lampe kaputt',equipment:'light',defect:'kaputt'}]})],'Wo befindet sich die Lampe?'],async()=>{guarded++;});
