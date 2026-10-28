@@ -18,6 +18,7 @@ const portalPath='/portal.html'+(cfg.path==='/api/portal-agent'?'':'?mora=legacy
 const evidence={portalSha256:createHash('sha256').update(html).digest('hex'),scope:'Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.',url:cfg.url+portalPath,conversations:[]};
 const before=await transport(null);assert.equal(before.status,200);assert.equal(before.data.inferenceStarted,false);evidence.before=before.data;evidence.model=before.data.model;if(cfg.expectedModel)assert.equal(evidence.model,cfg.expectedModel);
 const cases=[
+ {id:'heater-screenshot',messages:['heizung gehen nicht','heizung in wohnzimmer nur 1 heizung'],room:'Wohnzimmer',label:/Heizkörper/,correction:'Nein, ich meinte Schlafzimmer.',correctedRoom:'Schlafzimmer'},
  {id:'lamp',messages:cfg.lampMessages || (cfg.compactLamp?['Eine Lampe im Wohnzimmer ist kaputt. Sonst ist alles normal.','Bitte bereiten Sie das Anliegen jetzt vor.']:['lampe kaputt','wohnzimmer','Nur eine Lampe ist betroffen, sonst ist alles normal.','Bitte bereiten Sie das Anliegen jetzt vor.']),room:'Wohnzimmer',label:/Lampe \/ Leuchte/,correction:'Nein, ich meinte Schlafzimmer.',correctedRoom:'Schlafzimmer'},
  {id:'socket',messages:['Die Steckdose im Büro funktioniert nicht. Es gibt weder Funken noch Geruch oder Wärme.','Bitte das Anliegen vorbereiten.'],room:'Büro',label:/Steckdose/},
  {id:'water',messages:['Ein alter trockener Wasserfleck ist an der Wand im Schlafzimmer. Es tropft nichts, es gibt keine Elektrik in der Nähe.','Bitte das Anliegen vorbereiten.'],room:'Schlafzimmer',label:/Wasser|Feuchtigkeit|Wand/},
@@ -48,6 +49,11 @@ try{
     const data=w.MORAPortal.getState().data;assert.equal(data.issues.length,2);const ids=data.issues.map(i=>i.id);await prepare();await save();w.MORAPortal.open();const sel=w.document.querySelector('select[aria-label="Anliegen auswählen"]');sel.value=ids.find(id=>id!==data.issue.id);sel.dispatchEvent(new w.Event('change'));await settle();await prepare();await save();assert.equal(snapshot().length,2);assert.deepEqual(new Set(snapshot().map(r=>r.unit.toLowerCase())),new Set(['wohnzimmer','flur']));
    }else{
     await prepare();assert.equal(snapshot().length,0,'Preparation must not claim persistence');assert.equal(w.document.querySelector('[name="unit"]').value.toLowerCase(),c.room.toLowerCase());await save();let rows=snapshot();assert.equal(rows.length,1);assert.match(rows[0].title,c.label);assert.equal(rows[0].unit.toLowerCase(),c.room.toLowerCase());const id=rows[0].id;
+    if(c.id==='heater-screenshot'){
+     const captured=w.MORAPortal.getState().data.issue;assert.equal(captured.equipment,'heater');assert.equal(captured.count,1);
+     assert.equal(w.MORAPortal.getState().data.safety,null);assert.match(rows[0].description,/Anzahl: 1/);assert.match(rows[0].description,/Beginn: Nicht angegeben/);
+     assert.equal(rows[0].caseInfo.category,'Schaden / Reparatur');
+    }
     if(c.id==='lamp'){
      const captured=w.MORAPortal.getState().data.issue;
      assert.equal(captured.count,1);
@@ -68,7 +74,7 @@ try{
       entry.savedConversationVerified=true;
      }
     }
-    if(c.correction){w.MORAPortal.open();await w.MORAPortal.send(c.correction);await prepare('Anliegen aktualisieren');await save();rows=snapshot();assert.equal(rows.length,1);assert.equal(rows[0].id,id);assert.equal(rows[0].unit.toLowerCase(),c.correctedRoom.toLowerCase());if(c.id==='lamp'){assert.equal(w.MORAPortal.getState().data.issue.count,1);if(entry.capturedLampObservation)assert.ok(rows[0].description.includes(entry.capturedLampObservation),'Room correction must retain the additional observation');}}
+    if(c.correction){w.MORAPortal.open();await w.MORAPortal.send(c.correction);await prepare('Anliegen aktualisieren');await save();rows=snapshot();assert.equal(rows.length,1);assert.equal(rows[0].id,id);assert.equal(rows[0].unit.toLowerCase(),c.correctedRoom.toLowerCase());if(['lamp','heater-screenshot'].includes(c.id)){assert.equal(w.MORAPortal.getState().data.issue.count,1);if(entry.capturedLampObservation)assert.ok(rows[0].description.includes(entry.capturedLampObservation),'Room correction must retain the additional observation');}}
     if(c.id==='lamp'){
      w.MORAPortal.open();await prepare('Foto hinzufügen');
      const input=w.document.getElementById('opsFileInput'),bytes=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aN1kAAAAASUVORK5CYII=','base64');

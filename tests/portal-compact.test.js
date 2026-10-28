@@ -31,6 +31,30 @@ function sdk(outputs,guard=async()=>{}) {
 async function turn(state,message,p){const a=sdk([p]);return a.converse(message,state,['cases']);}
 const lamp=async()=> (await turn(empty(),'Eine Lampe im Wohnzimmer ist kaputt.',plan('Das tut mir leid.',[{ref:'new1',quote:'Eine Lampe im Wohnzimmer ist kaputt.',equipment:'light',defect:'kaputt',location:'Wohnzimmer',count:1}]))).state;
 
+test('emergency role rejection retains heater facts without a second paid call or invented danger',async()=>{
+  const initial='heizung gehen nicht';
+  const s=(await turn(empty(),initial,plan('In welchem Raum?', [{ref:'new1',quote:initial,equipment:'heater',defect:'funktioniert nicht'}]))).state;
+  const text='heizung in wohnzimmer nur 1 heizung';
+  const a=sdk([plan('Falls Wasser austritt, es nach Gas riecht oder Sie eine Gefahr bemerken, schützen Sie bitte zuerst sich und andere und melden Sie sich sofort bei mir.',[{ref:'active',quote:text,location:'Wohnzimmer',count:1}],{focus:'active'})]);
+  await assert.rejects(a.converse(text,s,['cases']),e=>{
+    assert.equal(e.diagnostic.reason,'unsupported_emergency_role');assert.equal(e.modelCalls,1);
+    assert.equal(e.conversationState.issue.id,s.issue.id);assert.equal(e.conversationState.issue.equipment,'heater');
+    assert.equal(e.conversationState.issue.location,'Wohnzimmer');assert.equal(e.conversationState.issue.count,1);
+    assert.equal(e.conversationState.safety,null);assert.ok(portalActionState(e.conversationState).controls.save);
+    assert.ok(e.toolEvents.some(t=>t.tool==='record_issues'&&t.ok));return true;
+  });
+  assert.equal(a.model.doGenerateCalls.length,1);
+});
+
+test('real danger preserves safety and blocks inappropriate conversational routing',async()=>{
+  const message='Jetzt riecht es nach Gas.';
+  const a=sdk([plan('Wenden Sie sich sofort an mich.',[{ref:'new1',quote:message,equipment:'Heizung',details:message,risk:'gas'}])]);
+  await assert.rejects(a.converse(message,empty(),['cases']),e=>{
+    assert.equal(e.diagnostic.reason,'unsupported_emergency_role');assert.equal(e.conversationState.safety.hazard,'gas');
+    assert.equal(portalActionState(e.conversationState).controls.save,null);return true;
+  });
+});
+
 test('compact response and extraction share exactly one real SDK generation',async()=>{
   let guards=0;const a=sdk([plan('Wo steht die Lampe?',[{ref:'new1',quote:'lampe kaputt',equipment:'light',defect:'kaputt'}])],async()=>{guards++;});
   const r=await a.converse('lampe kaputt',empty(),['cases']);

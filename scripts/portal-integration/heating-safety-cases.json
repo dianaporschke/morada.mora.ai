@@ -1,0 +1,6 @@
+[
+  {"id":"heater-gas","title":"Neue echte Gefahr nach gewöhnlichem Heizungsdefekt","messages":["Ein Heizkörper im Wohnzimmer wird nicht warm.","Jetzt riecht es hier nach Gas."]},
+  {"id":"heater-no-gas","title":"Verneinte Symptome sind keine Gefahr","messages":["Die Heizung im Wohnzimmer bleibt kalt. Es riecht nicht nach Gas, es tritt kein Wasser aus.","Nur dieser eine Heizkörper."]},
+  {"id":"general-safety","title":"Ausdrückliche hypothetische Sicherheitsfrage","messages":["Nur theoretisch: Was soll ich tun, falls es irgendwann nach Gas riecht?", "Kann ich mich dann zuerst bei dir melden?"]},
+  {"id":"socket-sparks","title":"Tatsächliche elektrische Gefahr","messages":["Aus der Steckdose im Büro kommen Funken.","Soll ich erst hier im Portal ein Anliegen vorbereiten?"]}
+]
