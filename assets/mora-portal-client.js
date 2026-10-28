@@ -7,37 +7,55 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
   const architecture=agent?'portal_agent_v1':'portal_v1',endpoint=agent?'/api/portal-agent':'/api/portal-chat';
   const greeting='Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?';
   const names=Object.fromEntries(Object.entries(portalNavigation).map(([id,v])=>[id,v.label]));
+  // The four-point mark follows the existing MORA star in index.html.
+  const star='<span class="mora-portal-star" aria-hidden="true"></span>';
+  const icons={restart:'M20 7v5h-5 M19.2 12a7.2 7.2 0 1 1-2.1-5.1L20 10',close:'m6 6 12 12M18 6 6 18',send:'M12 19V5m-7 7 7-7 7 7',prepare:'m14 6 4-3 3 3-3 4-4-4ZM14 6 4 16v4h4l10-10',photo:'M4 7h4l2-3h4l2 3h4v13H4ZM16 13a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z',review:'M5 4h14v16H5ZM9 9h6M9 13h6M9 17h3',arrow:'M5 12h14m-6-6 6 6-6 6'};
+  const uiIcon=name=>'<svg class="mora-portal-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="'+icons[name]+'"/></svg>';
   const panel=document.createElement('section');panel.id='moraPortalChat';panel.className='mora-portal-chat';panel.hidden=true;panel.setAttribute('role','dialog');panel.setAttribute('aria-labelledby','moraPortalTitle');
-  panel.innerHTML='<header><div><h2 id="moraPortalTitle">MORA</h2><small>Ihre digitale Assistenz bei MORADA</small></div><button type="button" data-mp="clear" aria-label="Neues Gespräch">↻</button><button type="button" data-mp="close" aria-label="MORA schliessen">×</button></header><div class="mora-portal-log" role="log" aria-live="polite" aria-relevant="additions text"></div><div class="mora-portal-status" role="status"></div><div class="mora-portal-actions"></div><form class="mora-portal-compose"><label class="sr-only" for="moraPortalInput">Nachricht an MORA</label><textarea id="moraPortalInput" rows="2" maxlength="2000" placeholder="Schreiben Sie MORA …" required></textarea><button class="btn primary" type="submit" aria-label="Nachricht senden">Senden</button></form><p class="mora-portal-note">Anliegen bleiben auf diesem Gerät. Kein Versand an MORADA. Ihre Chatnachrichten werden zur KI-Verarbeitung an das geschützte Backend übergeben.</p>';
+  panel.innerHTML='<header><span class="mora-portal-emblem">'+star+'</span><div class="mora-portal-heading"><h2 id="moraPortalTitle">MORA</h2><small>Ihre digitale Assistenz bei MORADA</small></div><button type="button" data-mp="clear" aria-label="Neues Gespräch" title="Neues Gespräch">'+uiIcon('restart')+'</button><button type="button" data-mp="close" aria-label="MORA schliessen" title="MORA schliessen">'+uiIcon('close')+'</button></header><div class="mora-portal-scroll" tabindex="0" aria-label="Gesprächsverlauf"><div class="mora-portal-log" role="log" aria-live="polite" aria-relevant="additions text"></div><div class="mora-portal-status" role="status"></div><div class="mora-portal-actions"></div></div><form class="mora-portal-compose"><label class="mora-portal-sr" for="moraPortalInput">Nachricht an MORA</label><textarea id="moraPortalInput" rows="1" maxlength="2000" placeholder="Schreiben Sie MORA …" required></textarea><button class="btn primary" type="submit" aria-label="Nachricht senden" title="Nachricht senden">'+uiIcon('send')+'</button></form><p class="mora-portal-note">Anliegen bleiben auf diesem Gerät. Kein Versand an MORADA. Ihre Chatnachrichten werden zur KI-Verarbeitung an das geschützte Backend übergeben.</p>';
   document.getElementById('portalPreview').append(panel);
-  const log=panel.querySelector('[role="log"]'),status=panel.querySelector('[role="status"]'),actions=panel.querySelector('.mora-portal-actions'),form=panel.querySelector('form'),input=panel.querySelector('textarea');
-  let thread,activeRole,busy=false,lastFocus,storageWarning='';
+  const log=panel.querySelector('[role="log"]'),scroller=panel.querySelector('.mora-portal-scroll'),status=panel.querySelector('[role="status"]'),actions=panel.querySelector('.mora-portal-actions'),form=panel.querySelector('form'),input=panel.querySelector('textarea');
+  const launcher=document.getElementById('moraFab');
+  if(launcher){launcher.innerHTML=star+'<span>MORA Assistenz</span>';launcher.setAttribute('aria-label','MORA öffnen');}
+  let thread,activeRole,busy=false,lastFocus,storageWarning='',followEnd=true,readingOffset=0;
+  const scrollEnd=()=>{if(!panel.hidden&&followEnd)scroller.scrollTop=scroller.scrollHeight;};
+  scroller.addEventListener('scroll',()=>{if(panel.hidden)return;readingOffset=scroller.scrollTop;followEnd=scroller.scrollHeight-scroller.clientHeight-scroller.scrollTop<48;});
+  function sizeInput(){
+    input.style.height='auto';const css=window.getComputedStyle(input);
+    const limit=parseFloat(css.maxHeight)||128,border=(parseFloat(css.borderTopWidth)||0)+(parseFloat(css.borderBottomWidth)||0),needed=input.scrollHeight+border;
+    const height=Math.max(parseFloat(css.minHeight)||48,Math.min(needed,limit));
+    input.style.height=height+'px';input.style.overflowY=needed>limit?'auto':'hidden';scrollEnd();
+  }
+  function fitViewport(){const viewport=window.visualViewport;panel.style.setProperty('--mp-viewport-height',(viewport?.height||window.innerHeight)+'px');panel.style.setProperty('--mp-viewport-top',(viewport?.offsetTop||0)+'px');scrollEnd();}
+  window.visualViewport?.addEventListener('resize',fitViewport);window.visualViewport?.addEventListener('scroll',fitViewport);window.addEventListener('resize',fitViewport);
+  input.addEventListener('input',sizeInput);fitViewport();
   const blank=()=>({session:null,messages:[{role:'assistant',content:greeting}],data:null,saved:{},pendingReceipt:null});
   const key=()=> (agent?'morada.portal.mora.agent.v1.':'morada.portal.mora.v1.')+activeRole;
   function persist(){try{window.sessionStorage.setItem(key(),JSON.stringify(thread));}catch{storageWarning='Der Chatverlauf kann in diesem Browser nicht behalten werden. Gespeicherte Portaleinträge bleiben davon unabhängig.';}}
   function load(){activeRole=bridge.role();thread=blank();try{const t=JSON.parse(window.sessionStorage.getItem(key())||'null');if(t&&Array.isArray(t.messages)&&t.messages.every(m=>['user','assistant','error','receipt'].includes(m.role)&&typeof m.content==='string')&&t.saved&&typeof t.saved==='object'){thread={...blank(),...t};}}catch{storageWarning='Der frühere Chat konnte nicht geladen werden.';}}
   function bubble(role,content){const p=document.createElement('p');p.className='mora-portal-message '+role;p.textContent=content;log.append(p);}
-  function message(role,content){thread.messages.push({role,content});thread.messages=thread.messages.slice(-80);bubble(role,content);log.scrollTop=log.scrollHeight;persist();}
-  function button(label,run){const b=document.createElement('button');b.type='button';b.className='btn';b.textContent=label;b.disabled=busy;b.addEventListener('click',()=>{if(!busy)run();});actions.append(b);}
+  function message(role,content){if(role==='user')followEnd=true;thread.messages.push({role,content});thread.messages=thread.messages.slice(-80);bubble(role,content);scrollEnd();persist();}
+  function button(label,run,primary=false,iconName='arrow'){const b=document.createElement('button');b.type='button';b.className='btn mora-portal-action'+(primary?' mora-portal-primary':'');b.innerHTML=uiIcon(iconName);const caption=document.createElement('span');caption.textContent=label;b.append(caption);b.disabled=busy;b.addEventListener('click',()=>{if(!busy)run();});actions.append(b);}
   function showControls(){
     actions.replaceChildren();
-    if(thread.pendingReceipt){button('Speicherbestätigung erneut abgleichen',()=>syncReceipt());return;}
-    const data=thread.data;if(!data)return;
+    if(thread.pendingReceipt){button('Speicherbestätigung erneut abgleichen',()=>syncReceipt(),true,'restart');scrollEnd();return;}
+    const data=thread.data;if(!data){scrollEnd();return;}
     if(data.issues?.length>1){
       const select=document.createElement('select');select.setAttribute('aria-label','Anliegen auswählen');select.disabled=busy||Boolean(bridge.currentDraft());
       for(const issue of data.issues){const o=document.createElement('option');o.value=issue.id;o.textContent=[draftLabel(issue),issue.location].filter(Boolean).join(' · ');o.selected=issue.id===data.issue?.id;select.append(o);}
       select.addEventListener('change',async()=>{if(busy)return;setBusy(true,'Anliegen wird gewechselt …');try{await request({action:'switch-issue',issueId:select.value});}catch(e){message('error',e.message);}finally{setBusy(false);}});actions.append(select);
     }
     const connected=bridge.available().includes('cases');
-    if(data.controls?.save&&connected)button(data.controls.save.operation==='update'?'Anliegen aktualisieren':'Anliegen vorbereiten',()=>prepareIssue());
-    else if(data.controls?.prepared&&connected)button('Angaben überprüfen',()=>prepareIssue());
-    else if(data.controls?.stored)button('Gespeichertes Anliegen öffnen',()=>navigate(()=>bridge.view(data.controls.stored.id)));
-    if(data.controls?.review&&connected)button('Foto hinzufügen',()=>prepareIssue(true));
+    if(data.controls?.save&&connected)button(data.controls.save.operation==='update'?'Anliegen aktualisieren':'Anliegen vorbereiten',()=>prepareIssue(),true,'prepare');
+    else if(data.controls?.prepared&&connected)button('Angaben überprüfen',()=>prepareIssue(),true,'review');
+    else if(data.controls?.stored)button('Gespeichertes Anliegen öffnen',()=>navigate(()=>bridge.view(data.controls.stored.id)),true,'review');
+    if(data.controls?.review&&connected)button('Foto hinzufügen',()=>prepareIssue(true),false,'photo');
     for(const target of data.controls?.navigation || [])if(bridge.available().includes(target)&&names[target])button(names[target],()=>navigate(()=>bridge.navigate(target)));
 
+    scrollEnd();
   }
   function setBusy(value,label=''){busy=value;form.querySelector('button').disabled=value;input.disabled=value;panel.querySelector('[data-mp="clear"]').disabled=value;panel.setAttribute('aria-busy',String(value));status.textContent=label||storageWarning;showControls();}
-  function close(){panel.hidden=true;document.getElementById('moraFab')?.setAttribute('aria-expanded','false');lastFocus?.focus?.();}
+  function close(){readingOffset=scroller.scrollTop;panel.hidden=true;document.getElementById('moraFab')?.setAttribute('aria-expanded','false');lastFocus?.focus?.();}
   function navigate(fn){try{const ok=fn();if(ok!==false)close();}catch(e){status.textContent=e.message;}}
   async function request(payload){
     if(window.location.protocol==='file:')throw Error('Bitte öffnen Sie die bereitgestellte HTTPS-Testversion. Die lokale HTML-Datei enthält absichtlich keinen KI-Schlüssel.');
@@ -68,7 +86,7 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
     // A failed attempt must never leave an old action enabled.
     thread.data=null;message('user',text.trim());
     const hazard=detectHazard(text.trim());if(hazard.hazard!=='none')message('error','Sicherheitshinweis: '+safetyNotice(hazard.hazard));
-    input.value='';setBusy(true,'MORA antwortet …');
+    input.value='';sizeInput();setBusy(true,'MORA antwortet …');
     const start=window.performance.now();
     try{if(thread.pendingClose){await request({action:'draft-closed',issueId:thread.pendingClose});thread.pendingClose=null;persist();}const data=await request({message:text.trim(),messageId:window.crypto.randomUUID()});const performed=data.requestedAction?await prepareIssue(data.requestedAction==='photo',true):true;if(performed&&data.reply)message('assistant',data.reply);window.console.info('MORA portal visible response',{answerDomMs:window.performance.now()-start});}
     catch(e){message('error',e.message);}
@@ -117,14 +135,14 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
 
   function open(){
     if(!bridge.open())return;
-    if(activeRole!==bridge.role()){load();log.replaceChildren();thread.messages.forEach(m=>bubble(m.role,m.content));}
-    lastFocus=document.activeElement;panel.hidden=false;document.getElementById('moraFab')?.setAttribute('aria-expanded','true');showControls();input.focus();log.scrollTop=log.scrollHeight;
+    if(activeRole!==bridge.role()){load();log.replaceChildren();thread.messages.forEach(m=>bubble(m.role,m.content));followEnd=true;readingOffset=0;}
+    if(panel.hidden)lastFocus=document.activeElement;panel.hidden=false;document.getElementById('moraFab')?.setAttribute('aria-expanded','true');showControls();input.focus({preventScroll:true});sizeInput();if(followEnd)scrollEnd();else scroller.scrollTop=readingOffset;
     if(thread.data?.controls?.prepared&&!bridge.currentDraft()&&!busy){setBusy(true);request({action:'draft-closed',issueId:thread.data.controls.prepared.issueId}).catch(e=>message('error',e.message)).finally(()=>setBusy(false));}
   }
   form.addEventListener('submit',e=>{e.preventDefault();send(input.value);});
   input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();send(input.value);}});
   panel.querySelector('[data-mp="close"]').addEventListener('click',close);
-  panel.querySelector('[data-mp="clear"]').addEventListener('click',()=>{if(busy||thread.pendingReceipt||bridge.currentDraft())return;thread=blank();persist();log.replaceChildren();bubble('assistant',greeting);setBusy(false);input.focus();});
+  panel.querySelector('[data-mp="clear"]').addEventListener('click',()=>{if(busy||thread.pendingReceipt||bridge.currentDraft())return;thread=blank();persist();log.replaceChildren();bubble('assistant',greeting);followEnd=true;setBusy(false);input.focus();});
   panel.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();close();}});
   new window.MutationObserver(()=>{if(!bridge.open())panel.hidden=true;}).observe(document.getElementById('portalPreview'),{attributes:true,attributeFilter:['hidden']});
   return {open,close,send,getState:()=>structuredClone(thread),element:panel};
