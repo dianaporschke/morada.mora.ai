@@ -61,7 +61,20 @@ test('compact response and extraction share exactly one real SDK generation',asy
   assert.equal(r.modelCalls,1);assert.equal(a.model.doGenerateCalls.length,1);assert.equal(guards,1);
   assert.equal(r.reply,'Wo steht die Lampe?');assert.equal(r.state.issue.equipment,'light');
   assert.ok(!a.model.doGenerateCalls[0].tools?.length);
+  const format=a.model.doGenerateCalls[0].responseFormat;
+  assert.equal(format.type,'json');
+  assert.match(format.schema.properties.reply.description,/Gesprächsfortsetzung/,'The provider must receive the reply purpose, not just a bare string schema');
+  assert.match(format.schema.properties.updates.items.properties.changes.items.properties.field.description,/keine Diagnose oder zusätzliche Präzisierung/);
   assert.equal(r.state.issue.location,null);assert.equal(r.state.issue.count,null);
+});
+test('requested summaries and quoted thanks are preserved without a local style filter or extra generation',async()=>{
+  const s=await lamp();
+  const reply='Die Lampe im Wohnzimmer ist kaputt. Eine Formulierung wie «Danke für die Angabe» würde hier nur wiederholen, was Sie gerade gesagt haben.';
+  const a=sdk([plan(reply)]);
+  const r=await a.converse('Bitte fassen Sie das Anliegen zusammen und erklären Sie die Formulierung «Danke für die Angabe».',s,['cases']);
+  assert.equal(r.reply,reply);assert.equal(r.modelCalls,1);
+  assert.equal(r.state.issue.id,s.issue.id);assert.equal(r.state.issue.defect,'kaputt');
+  assert.equal(r.state.issue.location,'Wohnzimmer');
 });
 test('short replies and correction keep the same issue and native mapping',async()=>{
   let s=(await turn(empty(),'lampe kaputt',plan('Wo ist die Lampe?',[{ref:'new1',quote:'lampe kaputt',equipment:'light',defect:'kaputt'}]))).state;
