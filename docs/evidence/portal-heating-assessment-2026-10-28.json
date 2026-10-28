@@ -1,0 +1,30 @@
+{
+  "runtimeCommit": "60ac6b541390238471d145bb85df0842f12bdd0a",
+  "model": "anthropic/claude-haiku-5.5",
+  "scope": "Observed data/action checks and explicit human reading of recorded genuine model responses; no full quality acceptance or device rendering claim.",
+  "automatedTestsPassed": 408,
+  "observedDataAndActionChecks": {
+    "heater_native_record_and_same_id_correction": true,
+    "all_eight_safety_http_responses_accepted": true,
+    "new_gas_suppresses_actions": true,
+    "negative_symptoms_stay_non_emergency": true,
+    "negative_observations_survive_count": true,
+    "hypothetical_question_creates_no_hazard_or_case": true,
+    "electric_hazard_persists_and_blocks_forms": true
+  },
+  "manualReplyAssessment": {
+    "emergencyChatRoutingAbsentInObservedReplies": true,
+    "naturalConversationAccepted": false,
+    "completeSafetyAdviceAccepted": false,
+    "findings": [
+      "Unsolicited hot-heater warning in native screenshot replay",
+      "Unnecessary tenant/owner and redundant symptom questions",
+      "Hypothetical gas answer includes contradictory instructions about leaving doors open and closing a door"
+    ]
+  },
+  "customerReady": false,
+  "liveCustomerMessages": 11,
+  "liveModelCalls": 12,
+  "actualAccountDeltaUsd": 0.008764,
+  "remainingOriginalAllowanceUsd": 0.0433166
+}

@@ -1,0 +1,3138 @@
+{
+  "portalSha256": "c6c0ea72c53d4bf224edb4222a55a5345e87900b8f393dd027198cea0a72f234",
+  "scope": "Real HTTPS Gateway conversations and actual native HTML portal saves/readbacks in JSDOM. No rendered browser/device claim.",
+  "url": "https://morada-mora-fwl7ibk0c-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "conversations": [
+    {
+      "id": "heater-screenshot",
+      "transports": [
+        {
+          "request": {
+            "message": "heizung gehen nicht",
+            "messageId": "1d4ffa5a-79a5-4b70-ae52-0146886bc5d7",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Das tut mir leid, dass Ihre Heizung nicht funktioniert. Damit es in der Wohnung nicht zu kalt wird, beschreibe ich Ihr Anliegen gern genauer. Wo genau steht die Heizung, zum Beispiel im Wohnzimmer oder in einem anderen Raum?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M61277M6KXYHRBKY2TYB496V"
+            ],
+            "usage": [
+              {
+                "inputTokens": 4948,
+                "outputTokens": 265,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              },
+              {
+                "tool": "use_issue",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 3514,
+              "creditGuard": 157,
+              "total": 3727
+            },
+            "issue": {
+              "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": null,
+              "location": null,
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "heizung gehen nicht"
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Heizung",
+                      "to": "heater"
+                    },
+                    "defect": {
+                      "from": null,
+                      "to": "geht nicht"
+                    }
+                  },
+                  "source": "heizung gehen nicht",
+                  "at": "2026-10-28T10:52:18.321Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "heater",
+                  "source": "heizung gehen nicht"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "heizung gehen nicht"
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                  "source": "heizung gehen nicht"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-28T10:52:18.319Z",
+              "updatedAt": "2026-10-28T10:52:18.335Z",
+              "shortLabel": "Heizkörper"
+            },
+            "issues": [
+              {
+                "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                "defect": "geht nicht",
+                "count": null,
+                "location": null,
+                "since": null,
+                "extent": null,
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "heizung gehen nicht"
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "Heizung",
+                        "to": "heater"
+                      },
+                      "defect": {
+                        "from": null,
+                        "to": "geht nicht"
+                      }
+                    },
+                    "source": "heizung gehen nicht",
+                    "at": "2026-10-28T10:52:18.321Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 2,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "heater",
+                    "source": "heizung gehen nicht"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "geht nicht",
+                    "source": "heizung gehen nicht"
+                  },
+                  "count": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "location": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                    "source": "heizung gehen nicht"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-28T10:52:18.319Z",
+                "updatedAt": "2026-10-28T10:52:18.335Z",
+                "shortLabel": "Heizkörper"
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": null,
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          },
+          "httpMs": 8688.36
+        },
+        {
+          "request": {
+            "session": "[signed session omitted]",
+            "message": "heizung in wohnzimmer nur 1 heizung",
+            "messageId": "623ed480-0748-4797-9f78-5a727b991776",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Danke, dann ist klar: Die Heizung im Wohnzimmer funktioniert nicht und es ist nur eine Heizung betroffen. Ich habe das bei Ihrem Anliegen vermerkt. Bitte achten Sie darauf, dass Sie sich nicht an einem heissen Heizkörper verbrennen, und prüfen Sie, ob in der Nähe etwas Brennbares liegt. Sollte es in der Wohnung deutlich kälter werden, wenden Sie sich bitte zusätzlich direkt an Ihre Verwaltung oder den Notdienst Ihrer Liegenschaft.",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M6127FXWEK8RY47ZCD0VY3YJ"
+            ],
+            "usage": [
+              {
+                "inputTokens": 5183,
+                "outputTokens": 380,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              },
+              {
+                "tool": "use_issue",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2255,
+              "creditGuard": 166,
+              "total": 2434
+            },
+            "issue": {
+              "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "heizung gehen nicht"
+                },
+                {
+                  "question": "description",
+                  "answer": "heizung in wohnzimmer nur 1 heizung"
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Heizung",
+                      "to": "heater"
+                    },
+                    "defect": {
+                      "from": null,
+                      "to": "geht nicht"
+                    }
+                  },
+                  "source": "heizung gehen nicht",
+                  "at": "2026-10-28T10:52:18.321Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "heater",
+                  "source": "heizung gehen nicht"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "heizung gehen nicht"
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                  "source": "heizung gehen nicht"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-28T10:52:18.319Z",
+              "updatedAt": "2026-10-28T10:52:25.593Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                "defect": "geht nicht",
+                "count": 1,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "heizung gehen nicht"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "heizung in wohnzimmer nur 1 heizung"
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "Heizung",
+                        "to": "heater"
+                      },
+                      "defect": {
+                        "from": null,
+                        "to": "geht nicht"
+                      }
+                    },
+                    "source": "heizung gehen nicht",
+                    "at": "2026-10-28T10:52:18.321Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "heater",
+                    "source": "heizung gehen nicht"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "geht nicht",
+                    "source": "heizung gehen nicht"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                    "source": "heizung gehen nicht"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-28T10:52:18.319Z",
+                "updatedAt": "2026-10-28T10:52:25.593Z",
+                "shortLabel": "Heizkörper",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          },
+          "httpMs": 7211.44
+        },
+        {
+          "request": {
+            "session": "[signed session omitted]",
+            "action": "save-issue",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_agent_v1",
+            "mode": "write_ticket",
+            "operation": {
+              "operationId": "abc5f7de-203f-5021-aa72-891a62ec41f2",
+              "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "revision": 3,
+              "contentHash": "13dc3717fb67b479fd592399e145d3f74ab286046920546e3f2588c84bf99244",
+              "scope": "this_device_test_app"
+            },
+            "fields": {
+              "title": "Heizkörper · Wohnzimmer",
+              "category": "Schaden / Reparatur",
+              "unit": "Wohnzimmer",
+              "description": "Fachbereich: Heizung\nHeizkörper\ngeht nicht\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben"
+            },
+            "sourceEvidence": "heizung gehen nicht\nheizung in wohnzimmer nur 1 heizung",
+            "modelCalls": 0,
+            "issue": {
+              "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "heizung gehen nicht"
+                },
+                {
+                  "question": "description",
+                  "answer": "heizung in wohnzimmer nur 1 heizung"
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Heizung",
+                      "to": "heater"
+                    },
+                    "defect": {
+                      "from": null,
+                      "to": "geht nicht"
+                    }
+                  },
+                  "source": "heizung gehen nicht",
+                  "at": "2026-10-28T10:52:18.321Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "heater",
+                  "source": "heizung gehen nicht"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "heizung gehen nicht"
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                  "source": "heizung gehen nicht"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-28T10:52:18.319Z",
+              "updatedAt": "2026-10-28T10:52:25.593Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                "defect": "geht nicht",
+                "count": 1,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "heizung gehen nicht"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "heizung in wohnzimmer nur 1 heizung"
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "Heizung",
+                        "to": "heater"
+                      },
+                      "defect": {
+                        "from": null,
+                        "to": "geht nicht"
+                      }
+                    },
+                    "source": "heizung gehen nicht",
+                    "at": "2026-10-28T10:52:18.321Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "heater",
+                    "source": "heizung gehen nicht"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "geht nicht",
+                    "source": "heizung gehen nicht"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                    "source": "heizung gehen nicht"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-28T10:52:18.319Z",
+                "updatedAt": "2026-10-28T10:52:25.593Z",
+                "shortLabel": "Heizkörper",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "create",
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 2
+            }
+          },
+          "httpMs": 4898.48
+        },
+        {
+          "request": {
+            "session": "[signed session omitted]",
+            "action": "draft-opened",
+            "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_agent_v1",
+            "mode": "control",
+            "modelCalls": 0,
+            "issue": {
+              "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "heizung gehen nicht"
+                },
+                {
+                  "question": "description",
+                  "answer": "heizung in wohnzimmer nur 1 heizung"
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Heizung",
+                      "to": "heater"
+                    },
+                    "defect": {
+                      "from": null,
+                      "to": "geht nicht"
+                    }
+                  },
+                  "source": "heizung gehen nicht",
+                  "at": "2026-10-28T10:52:18.321Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "heater",
+                  "source": "heizung gehen nicht"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "heizung gehen nicht"
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                  "source": "heizung gehen nicht"
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-28T10:52:18.319Z",
+              "updatedAt": "2026-10-28T10:52:25.593Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            },
+            "issues": [
+              {
+                "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                "defect": "geht nicht",
+                "count": 1,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "heizung gehen nicht"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "heizung in wohnzimmer nur 1 heizung"
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "Heizung",
+                        "to": "heater"
+                      },
+                      "defect": {
+                        "from": null,
+                        "to": "geht nicht"
+                      }
+                    },
+                    "source": "heizung gehen nicht",
+                    "at": "2026-10-28T10:52:18.321Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "heater",
+                    "source": "heizung gehen nicht"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "geht nicht",
+                    "source": "heizung gehen nicht"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                    "source": "heizung gehen nicht"
+                  }
+                },
+                "preparation": {
+                  "status": "not_prepared",
+                  "revision": 1
+                },
+                "status": "draft",
+                "createdAt": "2026-10-28T10:52:18.319Z",
+                "updatedAt": "2026-10-28T10:52:25.593Z",
+                "shortLabel": "Heizkörper",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                }
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": {
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "saved": false
+              },
+              "review": {
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 1
+            }
+          },
+          "httpMs": 4801.73
+        },
+        {
+          "request": {
+            "session": "[signed session omitted]",
+            "receipt": {
+              "operationId": "abc5f7de-203f-5021-aa72-891a62ec41f2",
+              "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "revision": 3,
+              "contentHash": "13dc3717fb67b479fd592399e145d3f74ab286046920546e3f2588c84bf99244",
+              "status": "portal_received",
+              "attachmentCount": 0,
+              "conflictFields": []
+            },
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_agent_v1",
+            "mode": "receipt",
+            "modelCalls": 0,
+            "receiptAccepted": true,
+            "issue": {
+              "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": 1,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "heizung gehen nicht"
+                },
+                {
+                  "question": "description",
+                  "answer": "heizung in wohnzimmer nur 1 heizung"
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Heizung",
+                      "to": "heater"
+                    },
+                    "defect": {
+                      "from": null,
+                      "to": "geht nicht"
+                    }
+                  },
+                  "source": "heizung gehen nicht",
+                  "at": "2026-10-28T10:52:18.321Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "heater",
+                  "source": "heizung gehen nicht"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "heizung gehen nicht"
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                  "source": "heizung gehen nicht"
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 3,
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "source": "client_write_readback",
+                "receipt": {
+                  "operationId": "abc5f7de-203f-5021-aa72-891a62ec41f2",
+                  "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                  "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                  "revision": 3,
+                  "contentHash": "13dc3717fb67b479fd592399e145d3f74ab286046920546e3f2588c84bf99244",
+                  "attachmentCount": 0,
+                  "conflictFields": [],
+                  "at": "2026-10-28T10:52:40.285Z"
+                }
+              },
+              "status": "draft",
+              "createdAt": "2026-10-28T10:52:18.319Z",
+              "updatedAt": "2026-10-28T10:52:25.593Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              },
+              "portalAttachmentCount": 0
+            },
+            "issues": [
+              {
+                "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                "defect": "geht nicht",
+                "count": 1,
+                "location": "Wohnzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "heizung gehen nicht"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "heizung in wohnzimmer nur 1 heizung"
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "Heizung",
+                        "to": "heater"
+                      },
+                      "defect": {
+                        "from": null,
+                        "to": "geht nicht"
+                      }
+                    },
+                    "source": "heizung gehen nicht",
+                    "at": "2026-10-28T10:52:18.321Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 3,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "heater",
+                    "source": "heizung gehen nicht"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "geht nicht",
+                    "source": "heizung gehen nicht"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "location": {
+                    "status": "known",
+                    "value": "Wohnzimmer",
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Heizkörper\ngeht nicht\nDringlichkeit: Normal",
+                    "source": "heizung gehen nicht"
+                  }
+                },
+                "preparation": {
+                  "status": "portal_received",
+                  "revision": 3,
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "source": "client_write_readback",
+                  "receipt": {
+                    "operationId": "abc5f7de-203f-5021-aa72-891a62ec41f2",
+                    "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                    "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                    "revision": 3,
+                    "contentHash": "13dc3717fb67b479fd592399e145d3f74ab286046920546e3f2588c84bf99244",
+                    "attachmentCount": 0,
+                    "conflictFields": [],
+                    "at": "2026-10-28T10:52:40.285Z"
+                  }
+                },
+                "status": "draft",
+                "createdAt": "2026-10-28T10:52:18.319Z",
+                "updatedAt": "2026-10-28T10:52:25.593Z",
+                "shortLabel": "Heizkörper",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "create",
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 3
+                },
+                "portalAttachmentCount": 0
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": {
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+              },
+              "stored": {
+                "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "scope": "this_device",
+                "transmitted": false
+              },
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 2
+            }
+          },
+          "httpMs": 4799.18
+        },
+        {
+          "request": {
+            "session": "[signed session omitted]",
+            "message": "Nein, ich meinte Schlafzimmer.",
+            "messageId": "cec0a100-fe7d-4abc-afee-27e5b6de2de3",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_agent_v1",
+            "mode": "model",
+            "reply": "Danke für die Korrektur. Dann steht die Heizung im Schlafzimmer, nicht im Wohnzimmer. Ich habe den Ort entsprechend angepasst. Die Angabe, dass nur eine Heizung betroffen ist, bleibt bestehen. Möchten Sie noch etwas zur Heizung im Schlafzimmer ergänzen?",
+            "navigation": [],
+            "requestedAction": null,
+            "modelCalls": 1,
+            "generationIds": [
+              "gen_01M61285DXWREVZBC5147G927X"
+            ],
+            "usage": [
+              {
+                "inputTokens": 5464,
+                "outputTokens": 264,
+                "reasoningTokens": 0,
+                "cachedInputTokens": 0
+              }
+            ],
+            "repaired": false,
+            "repairScope": null,
+            "toolEvents": [
+              {
+                "tool": "record_issues",
+                "ok": true
+              },
+              {
+                "tool": "use_issue",
+                "ok": true
+              }
+            ],
+            "timingMs": {
+              "model": 2204,
+              "creditGuard": 159,
+              "total": 2373
+            },
+            "issue": {
+              "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": 1,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "heizung gehen nicht"
+                },
+                {
+                  "question": "description",
+                  "answer": "heizung in wohnzimmer nur 1 heizung"
+                },
+                {
+                  "question": "description",
+                  "answer": "Nein, ich meinte Schlafzimmer."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Heizung",
+                      "to": "heater"
+                    },
+                    "defect": {
+                      "from": null,
+                      "to": "geht nicht"
+                    }
+                  },
+                  "source": "heizung gehen nicht",
+                  "at": "2026-10-28T10:52:18.321Z"
+                },
+                {
+                  "changes": {
+                    "location": {
+                      "from": "Wohnzimmer",
+                      "to": "Schlafzimmer"
+                    }
+                  },
+                  "source": "Nein, ich meinte Schlafzimmer.",
+                  "at": "2026-10-28T10:52:47.559Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "heater",
+                  "source": "heizung gehen nicht"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "heizung gehen nicht"
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Schlafzimmer",
+                  "source": "Nein, ich meinte Schlafzimmer."
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                  "source": "heizung gehen nicht"
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 3,
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "source": "client_write_readback",
+                "receipt": {
+                  "operationId": "abc5f7de-203f-5021-aa72-891a62ec41f2",
+                  "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                  "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                  "revision": 3,
+                  "contentHash": "13dc3717fb67b479fd592399e145d3f74ab286046920546e3f2588c84bf99244",
+                  "attachmentCount": 0,
+                  "conflictFields": [],
+                  "at": "2026-10-28T10:52:40.285Z"
+                }
+              },
+              "status": "draft",
+              "createdAt": "2026-10-28T10:52:18.319Z",
+              "updatedAt": "2026-10-28T10:52:47.559Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "update",
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 4
+              },
+              "portalAttachmentCount": 0
+            },
+            "issues": [
+              {
+                "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "defect": "geht nicht",
+                "count": 1,
+                "location": "Schlafzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "heizung gehen nicht"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Nein, ich meinte Schlafzimmer."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "Heizung",
+                        "to": "heater"
+                      },
+                      "defect": {
+                        "from": null,
+                        "to": "geht nicht"
+                      }
+                    },
+                    "source": "heizung gehen nicht",
+                    "at": "2026-10-28T10:52:18.321Z"
+                  },
+                  {
+                    "changes": {
+                      "location": {
+                        "from": "Wohnzimmer",
+                        "to": "Schlafzimmer"
+                      }
+                    },
+                    "source": "Nein, ich meinte Schlafzimmer.",
+                    "at": "2026-10-28T10:52:47.559Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "heater",
+                    "source": "heizung gehen nicht"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "geht nicht",
+                    "source": "heizung gehen nicht"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "location": {
+                    "status": "corrected",
+                    "value": "Schlafzimmer",
+                    "source": "Nein, ich meinte Schlafzimmer."
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                    "source": "heizung gehen nicht"
+                  }
+                },
+                "preparation": {
+                  "status": "portal_received",
+                  "revision": 3,
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "source": "client_write_readback",
+                  "receipt": {
+                    "operationId": "abc5f7de-203f-5021-aa72-891a62ec41f2",
+                    "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                    "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                    "revision": 3,
+                    "contentHash": "13dc3717fb67b479fd592399e145d3f74ab286046920546e3f2588c84bf99244",
+                    "attachmentCount": 0,
+                    "conflictFields": [],
+                    "at": "2026-10-28T10:52:40.285Z"
+                  }
+                },
+                "status": "draft",
+                "createdAt": "2026-10-28T10:52:18.319Z",
+                "updatedAt": "2026-10-28T10:52:47.559Z",
+                "shortLabel": "Heizkörper",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "update",
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 4
+                },
+                "portalAttachmentCount": 0
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "update",
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null
+          },
+          "httpMs": 7233.61
+        },
+        {
+          "request": {
+            "session": "[signed session omitted]",
+            "action": "save-issue",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_agent_v1",
+            "mode": "write_ticket",
+            "operation": {
+              "operationId": "40ab8dcf-a865-5b42-af2c-4bd580220d32",
+              "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "revision": 4,
+              "contentHash": "67a13590595119cbcce434fe04c67eb81a6900ca5c3fedafdc47141511c2b03c",
+              "scope": "this_device_test_app"
+            },
+            "fields": {
+              "title": "Heizkörper · Schlafzimmer",
+              "category": "Schaden / Reparatur",
+              "unit": "Schlafzimmer",
+              "description": "Fachbereich: Heizung\nHeizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben"
+            },
+            "sourceEvidence": "heizung gehen nicht\nheizung in wohnzimmer nur 1 heizung\nNein, ich meinte Schlafzimmer.",
+            "modelCalls": 0,
+            "issue": {
+              "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": 1,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "heizung gehen nicht"
+                },
+                {
+                  "question": "description",
+                  "answer": "heizung in wohnzimmer nur 1 heizung"
+                },
+                {
+                  "question": "description",
+                  "answer": "Nein, ich meinte Schlafzimmer."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Heizung",
+                      "to": "heater"
+                    },
+                    "defect": {
+                      "from": null,
+                      "to": "geht nicht"
+                    }
+                  },
+                  "source": "heizung gehen nicht",
+                  "at": "2026-10-28T10:52:18.321Z"
+                },
+                {
+                  "changes": {
+                    "location": {
+                      "from": "Wohnzimmer",
+                      "to": "Schlafzimmer"
+                    }
+                  },
+                  "source": "Nein, ich meinte Schlafzimmer.",
+                  "at": "2026-10-28T10:52:47.559Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "heater",
+                  "source": "heizung gehen nicht"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "heizung gehen nicht"
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Schlafzimmer",
+                  "source": "Nein, ich meinte Schlafzimmer."
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                  "source": "heizung gehen nicht"
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 3,
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "source": "client_write_readback",
+                "receipt": {
+                  "operationId": "abc5f7de-203f-5021-aa72-891a62ec41f2",
+                  "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                  "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                  "revision": 3,
+                  "contentHash": "13dc3717fb67b479fd592399e145d3f74ab286046920546e3f2588c84bf99244",
+                  "attachmentCount": 0,
+                  "conflictFields": [],
+                  "at": "2026-10-28T10:52:40.285Z"
+                }
+              },
+              "status": "draft",
+              "createdAt": "2026-10-28T10:52:18.319Z",
+              "updatedAt": "2026-10-28T10:52:47.559Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "update",
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 4
+              },
+              "portalAttachmentCount": 0
+            },
+            "issues": [
+              {
+                "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "defect": "geht nicht",
+                "count": 1,
+                "location": "Schlafzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "heizung gehen nicht"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Nein, ich meinte Schlafzimmer."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "Heizung",
+                        "to": "heater"
+                      },
+                      "defect": {
+                        "from": null,
+                        "to": "geht nicht"
+                      }
+                    },
+                    "source": "heizung gehen nicht",
+                    "at": "2026-10-28T10:52:18.321Z"
+                  },
+                  {
+                    "changes": {
+                      "location": {
+                        "from": "Wohnzimmer",
+                        "to": "Schlafzimmer"
+                      }
+                    },
+                    "source": "Nein, ich meinte Schlafzimmer.",
+                    "at": "2026-10-28T10:52:47.559Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "heater",
+                    "source": "heizung gehen nicht"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "geht nicht",
+                    "source": "heizung gehen nicht"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "location": {
+                    "status": "corrected",
+                    "value": "Schlafzimmer",
+                    "source": "Nein, ich meinte Schlafzimmer."
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                    "source": "heizung gehen nicht"
+                  }
+                },
+                "preparation": {
+                  "status": "portal_received",
+                  "revision": 3,
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "source": "client_write_readback",
+                  "receipt": {
+                    "operationId": "abc5f7de-203f-5021-aa72-891a62ec41f2",
+                    "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                    "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                    "revision": 3,
+                    "contentHash": "13dc3717fb67b479fd592399e145d3f74ab286046920546e3f2588c84bf99244",
+                    "attachmentCount": 0,
+                    "conflictFields": [],
+                    "at": "2026-10-28T10:52:40.285Z"
+                  }
+                },
+                "status": "draft",
+                "createdAt": "2026-10-28T10:52:18.319Z",
+                "updatedAt": "2026-10-28T10:52:47.559Z",
+                "shortLabel": "Heizkörper",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "update",
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 4
+                },
+                "portalAttachmentCount": 0
+              }
+            ],
+            "controls": {
+              "save": {
+                "operation": "update",
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+              },
+              "prepared": null,
+              "review": {
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 1
+            }
+          },
+          "httpMs": 4948.79
+        },
+        {
+          "request": {
+            "session": "[signed session omitted]",
+            "action": "draft-opened",
+            "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_agent_v1",
+            "mode": "control",
+            "modelCalls": 0,
+            "issue": {
+              "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": 1,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "heizung gehen nicht"
+                },
+                {
+                  "question": "description",
+                  "answer": "heizung in wohnzimmer nur 1 heizung"
+                },
+                {
+                  "question": "description",
+                  "answer": "Nein, ich meinte Schlafzimmer."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Heizung",
+                      "to": "heater"
+                    },
+                    "defect": {
+                      "from": null,
+                      "to": "geht nicht"
+                    }
+                  },
+                  "source": "heizung gehen nicht",
+                  "at": "2026-10-28T10:52:18.321Z"
+                },
+                {
+                  "changes": {
+                    "location": {
+                      "from": "Wohnzimmer",
+                      "to": "Schlafzimmer"
+                    }
+                  },
+                  "source": "Nein, ich meinte Schlafzimmer.",
+                  "at": "2026-10-28T10:52:47.559Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "heater",
+                  "source": "heizung gehen nicht"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "heizung gehen nicht"
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Schlafzimmer",
+                  "source": "Nein, ich meinte Schlafzimmer."
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                  "source": "heizung gehen nicht"
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 3,
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "source": "client_write_readback",
+                "receipt": {
+                  "operationId": "abc5f7de-203f-5021-aa72-891a62ec41f2",
+                  "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                  "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                  "revision": 3,
+                  "contentHash": "13dc3717fb67b479fd592399e145d3f74ab286046920546e3f2588c84bf99244",
+                  "attachmentCount": 0,
+                  "conflictFields": [],
+                  "at": "2026-10-28T10:52:40.285Z"
+                }
+              },
+              "status": "draft",
+              "createdAt": "2026-10-28T10:52:18.319Z",
+              "updatedAt": "2026-10-28T10:52:47.559Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "update",
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 4
+              },
+              "portalAttachmentCount": 0
+            },
+            "issues": [
+              {
+                "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "defect": "geht nicht",
+                "count": 1,
+                "location": "Schlafzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "heizung gehen nicht"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Nein, ich meinte Schlafzimmer."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "Heizung",
+                        "to": "heater"
+                      },
+                      "defect": {
+                        "from": null,
+                        "to": "geht nicht"
+                      }
+                    },
+                    "source": "heizung gehen nicht",
+                    "at": "2026-10-28T10:52:18.321Z"
+                  },
+                  {
+                    "changes": {
+                      "location": {
+                        "from": "Wohnzimmer",
+                        "to": "Schlafzimmer"
+                      }
+                    },
+                    "source": "Nein, ich meinte Schlafzimmer.",
+                    "at": "2026-10-28T10:52:47.559Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "heater",
+                    "source": "heizung gehen nicht"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "geht nicht",
+                    "source": "heizung gehen nicht"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "location": {
+                    "status": "corrected",
+                    "value": "Schlafzimmer",
+                    "source": "Nein, ich meinte Schlafzimmer."
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                    "source": "heizung gehen nicht"
+                  }
+                },
+                "preparation": {
+                  "status": "portal_received",
+                  "revision": 3,
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Wohnzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "source": "client_write_readback",
+                  "receipt": {
+                    "operationId": "abc5f7de-203f-5021-aa72-891a62ec41f2",
+                    "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                    "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                    "revision": 3,
+                    "contentHash": "13dc3717fb67b479fd592399e145d3f74ab286046920546e3f2588c84bf99244",
+                    "attachmentCount": 0,
+                    "conflictFields": [],
+                    "at": "2026-10-28T10:52:40.285Z"
+                  }
+                },
+                "status": "draft",
+                "createdAt": "2026-10-28T10:52:18.319Z",
+                "updatedAt": "2026-10-28T10:52:47.559Z",
+                "shortLabel": "Heizkörper",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "update",
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 4
+                },
+                "portalAttachmentCount": 0
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": {
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "saved": false
+              },
+              "review": {
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+              },
+              "stored": null,
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 1
+            }
+          },
+          "httpMs": 4837.54
+        },
+        {
+          "request": {
+            "session": "[signed session omitted]",
+            "receipt": {
+              "operationId": "40ab8dcf-a865-5b42-af2c-4bd580220d32",
+              "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "revision": 4,
+              "contentHash": "67a13590595119cbcce434fe04c67eb81a6900ca5c3fedafdc47141511c2b03c",
+              "status": "portal_received",
+              "attachmentCount": 0,
+              "conflictFields": []
+            },
+            "navigation": [
+              "cases",
+              "calendar",
+              "documents",
+              "properties",
+              "units",
+              "tasks",
+              "team",
+              "support",
+              "new-task",
+              "new-appointment",
+              "new-document"
+            ]
+          },
+          "status": 200,
+          "data": {
+            "architecture": "portal_agent_v1",
+            "mode": "receipt",
+            "modelCalls": 0,
+            "receiptAccepted": true,
+            "issue": {
+              "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+              "category": "heating",
+              "equipment": "heater",
+              "subcategory": null,
+              "description": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": 1,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": "1 betroffene Einrichtung(en)",
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "heizung gehen nicht"
+                },
+                {
+                  "question": "description",
+                  "answer": "heizung in wohnzimmer nur 1 heizung"
+                },
+                {
+                  "question": "description",
+                  "answer": "Nein, ich meinte Schlafzimmer."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Heizung",
+                      "to": "heater"
+                    },
+                    "defect": {
+                      "from": null,
+                      "to": "geht nicht"
+                    }
+                  },
+                  "source": "heizung gehen nicht",
+                  "at": "2026-10-28T10:52:18.321Z"
+                },
+                {
+                  "changes": {
+                    "location": {
+                      "from": "Wohnzimmer",
+                      "to": "Schlafzimmer"
+                    }
+                  },
+                  "source": "Nein, ich meinte Schlafzimmer.",
+                  "at": "2026-10-28T10:52:47.559Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "heater",
+                  "source": "heizung gehen nicht"
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "heizung gehen nicht"
+                },
+                "count": {
+                  "status": "known",
+                  "value": 1,
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Schlafzimmer",
+                  "source": "Nein, ich meinte Schlafzimmer."
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "known",
+                  "value": "1 betroffene Einrichtung(en)",
+                  "source": "heizung in wohnzimmer nur 1 heizung"
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "heating",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                  "source": "heizung gehen nicht"
+                }
+              },
+              "preparation": {
+                "status": "portal_received",
+                "revision": 4,
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "source": "client_write_readback",
+                "receipt": {
+                  "operationId": "40ab8dcf-a865-5b42-af2c-4bd580220d32",
+                  "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                  "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                  "revision": 4,
+                  "contentHash": "67a13590595119cbcce434fe04c67eb81a6900ca5c3fedafdc47141511c2b03c",
+                  "attachmentCount": 0,
+                  "conflictFields": [],
+                  "at": "2026-10-28T10:53:02.304Z"
+                }
+              },
+              "status": "draft",
+              "createdAt": "2026-10-28T10:52:18.319Z",
+              "updatedAt": "2026-10-28T10:52:47.559Z",
+              "shortLabel": "Heizkörper",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "update",
+                "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 4
+              },
+              "portalAttachmentCount": 0
+            },
+            "issues": [
+              {
+                "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "category": "heating",
+                "equipment": "heater",
+                "subcategory": null,
+                "description": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "defect": "geht nicht",
+                "count": 1,
+                "location": "Schlafzimmer",
+                "since": null,
+                "extent": "1 betroffene Einrichtung(en)",
+                "details": null,
+                "cause": null,
+                "urgency": "normal",
+                "hazard": "none",
+                "attachments": [],
+                "answers": [
+                  {
+                    "question": "description",
+                    "answer": "heizung gehen nicht"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  {
+                    "question": "description",
+                    "answer": "Nein, ich meinte Schlafzimmer."
+                  }
+                ],
+                "corrections": [
+                  {
+                    "changes": {
+                      "equipment": {
+                        "from": "Heizung",
+                        "to": "heater"
+                      },
+                      "defect": {
+                        "from": null,
+                        "to": "geht nicht"
+                      }
+                    },
+                    "source": "heizung gehen nicht",
+                    "at": "2026-10-28T10:52:18.321Z"
+                  },
+                  {
+                    "changes": {
+                      "location": {
+                        "from": "Wohnzimmer",
+                        "to": "Schlafzimmer"
+                      }
+                    },
+                    "source": "Nein, ich meinte Schlafzimmer.",
+                    "at": "2026-10-28T10:52:47.559Z"
+                  }
+                ],
+                "unknownFields": [],
+                "summary": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "pendingKey": null,
+                "clarification": null,
+                "attempts": {},
+                "revision": 4,
+                "fieldFacts": {
+                  "equipment": {
+                    "status": "corrected",
+                    "value": "heater",
+                    "source": "heizung gehen nicht"
+                  },
+                  "defect": {
+                    "status": "known",
+                    "value": "geht nicht",
+                    "source": "heizung gehen nicht"
+                  },
+                  "count": {
+                    "status": "known",
+                    "value": 1,
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "location": {
+                    "status": "corrected",
+                    "value": "Schlafzimmer",
+                    "source": "Nein, ich meinte Schlafzimmer."
+                  },
+                  "since": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "extent": {
+                    "status": "known",
+                    "value": "1 betroffene Einrichtung(en)",
+                    "source": "heizung in wohnzimmer nur 1 heizung"
+                  },
+                  "details": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "cause": {
+                    "status": "not_provided",
+                    "value": null,
+                    "source": null
+                  },
+                  "category": {
+                    "status": "known",
+                    "value": "heating",
+                    "source": null
+                  },
+                  "description": {
+                    "status": "known",
+                    "value": "Heizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                    "source": "heizung gehen nicht"
+                  }
+                },
+                "preparation": {
+                  "status": "portal_received",
+                  "revision": 4,
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "source": "client_write_readback",
+                  "receipt": {
+                    "operationId": "40ab8dcf-a865-5b42-af2c-4bd580220d32",
+                    "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                    "draftId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                    "revision": 4,
+                    "contentHash": "67a13590595119cbcce434fe04c67eb81a6900ca5c3fedafdc47141511c2b03c",
+                    "attachmentCount": 0,
+                    "conflictFields": [],
+                    "at": "2026-10-28T10:53:02.304Z"
+                  }
+                },
+                "status": "draft",
+                "createdAt": "2026-10-28T10:52:18.319Z",
+                "updatedAt": "2026-10-28T10:52:47.559Z",
+                "shortLabel": "Heizkörper",
+                "draftOfferShown": true,
+                "draftOffer": {
+                  "operation": "update",
+                  "content": "[\"heating\",\"heater\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",\"geht nicht\",1,\"Schlafzimmer\",null,\"1 betroffene Einrichtung(en)\",null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"heating\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"known\",1,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Heizkörper\\ngeht nicht\\nAnzahl: 1\\nBereich: Schlafzimmer\\nUmfang / Situation: 1 betroffene Einrichtung(en)\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"heater\",null],[\"extent\",\"known\",\"1 betroffene Einrichtung(en)\",null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                  "revision": 4
+                },
+                "portalAttachmentCount": 0
+              }
+            ],
+            "controls": {
+              "save": null,
+              "prepared": null,
+              "review": {
+                "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+              },
+              "stored": {
+                "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+                "scope": "this_device",
+                "transmitted": false
+              },
+              "navigation": []
+            },
+            "safety": null,
+            "timingMs": {
+              "total": 1
+            }
+          },
+          "httpMs": 4792.75
+        }
+      ],
+      "snapshots": [
+        [
+          {
+            "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+            "title": "Heizkörper · Wohnzimmer",
+            "propertyId": "",
+            "unitId": "",
+            "property": "",
+            "unit": "Wohnzimmer",
+            "attachments": [],
+            "date": "2026-10-28",
+            "owner": "Alexander",
+            "description": "Fachbereich: Heizung\nHeizkörper\ngeht nicht\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+            "status": "Neu",
+            "priority": "Normal",
+            "person": "",
+            "applicantId": "",
+            "relettingId": "",
+            "assetId": "",
+            "caseInfo": {
+              "reference": "A00001",
+              "category": "Schaden / Reparatur",
+              "receivedDate": "2026-10-28",
+              "channel": "Portal",
+              "reporterId": "",
+              "nextStep": "",
+              "waitingFor": "",
+              "resolution": "",
+              "closedAt": ""
+            },
+            "createdAt": "2026-10-28T10:52:35.518Z",
+            "createdBy": "Alexander",
+            "updatedAt": "2026-10-28T10:52:35.518Z",
+            "updatedBy": "Alexander",
+            "history": [
+              {
+                "id": "HISTORY-717d5a75-deb0-4f54-bec8-96926866cb94",
+                "at": "2026-10-28T10:52:35.518Z",
+                "by": "Alexander",
+                "type": "created",
+                "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nheizung gehen nicht\nheizung in wohnzimmer nur 1 heizung",
+                "changes": []
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+            "title": "Heizkörper · Schlafzimmer",
+            "propertyId": "",
+            "unitId": "",
+            "property": "",
+            "unit": "Schlafzimmer",
+            "attachments": [],
+            "date": "2026-10-28",
+            "owner": "Alexander",
+            "description": "Fachbereich: Heizung\nHeizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+            "status": "Neu",
+            "priority": "Normal",
+            "person": "",
+            "applicantId": "",
+            "relettingId": "",
+            "assetId": "",
+            "caseInfo": {
+              "reference": "A00001",
+              "category": "Schaden / Reparatur",
+              "receivedDate": "2026-10-28",
+              "channel": "Portal",
+              "reporterId": "",
+              "nextStep": "",
+              "waitingFor": "",
+              "resolution": "",
+              "closedAt": ""
+            },
+            "createdAt": "2026-10-28T10:52:35.518Z",
+            "createdBy": "Alexander",
+            "updatedAt": "2026-10-28T10:52:57.553Z",
+            "updatedBy": "Alexander",
+            "history": [
+              {
+                "id": "HISTORY-717d5a75-deb0-4f54-bec8-96926866cb94",
+                "at": "2026-10-28T10:52:35.518Z",
+                "by": "Alexander",
+                "type": "created",
+                "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nheizung gehen nicht\nheizung in wohnzimmer nur 1 heizung",
+                "changes": []
+              },
+              {
+                "id": "HISTORY-4f656e64-0cd4-4f77-9a4d-ce8dd3addda3",
+                "at": "2026-10-28T10:52:57.553Z",
+                "by": "Alexander",
+                "type": "edited",
+                "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nheizung gehen nicht\nheizung in wohnzimmer nur 1 heizung\nNein, ich meinte Schlafzimmer.",
+                "changes": [
+                  {
+                    "field": "Titel",
+                    "before": "Heizkörper · Wohnzimmer",
+                    "after": "Heizkörper · Schlafzimmer"
+                  },
+                  {
+                    "field": "Ort / Zusatzangabe",
+                    "before": "Wohnzimmer",
+                    "after": "Schlafzimmer"
+                  },
+                  {
+                    "field": "Beschreibung",
+                    "before": "Fachbereich: Heizung\nHeizkörper\ngeht nicht\nAnzahl: 1\nBereich: Wohnzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+                    "after": "Fachbereich: Heizung\nHeizkörper\ngeht nicht\nAnzahl: 1\nBereich: Schlafzimmer\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal\nBeginn: Nicht angegeben"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      ],
+      "clientTimings": [
+        {
+          "label": "MORA portal timing",
+          "httpMs": 8696.495291,
+          "responseHeadersMs": 8696.283355,
+          "jsonMs": 0.21193599999969592,
+          "backend": {
+            "model": 3514,
+            "creditGuard": 157,
+            "total": 3727
+          }
+        },
+        {
+          "label": "MORA portal visible response",
+          "answerDomMs": 8698.958608
+        },
+        {
+          "label": "MORA portal timing",
+          "httpMs": 7213.121445999997,
+          "responseHeadersMs": 7213.111069999999,
+          "jsonMs": 0.010375999998359475,
+          "backend": {
+            "model": 2255,
+            "creditGuard": 166,
+            "total": 2434
+          }
+        },
+        {
+          "label": "MORA portal visible response",
+          "answerDomMs": 7213.818643999999
+        },
+        {
+          "label": "MORA portal timing",
+          "httpMs": 4901.973931,
+          "responseHeadersMs": 4901.955076999999,
+          "jsonMs": 0.018854000001738314,
+          "backend": {
+            "total": 2
+          }
+        },
+        {
+          "label": "MORA portal timing",
+          "httpMs": 4804.453852999999,
+          "responseHeadersMs": 4804.4432000000015,
+          "jsonMs": 0.01065299999754643,
+          "backend": {
+            "total": 1
+          }
+        },
+        {
+          "label": "MORA portal timing",
+          "httpMs": 4800.555680000005,
+          "responseHeadersMs": 4800.549751000006,
+          "jsonMs": 0.005928999999014195,
+          "backend": {
+            "total": 2
+          }
+        },
+        {
+          "label": "MORA portal timing",
+          "httpMs": 7237.165213999997,
+          "responseHeadersMs": 7237.158822999994,
+          "jsonMs": 0.006391000002622604,
+          "backend": {
+            "model": 2204,
+            "creditGuard": 159,
+            "total": 2373
+          }
+        },
+        {
+          "label": "MORA portal visible response",
+          "answerDomMs": 7237.6022880000055
+        },
+        {
+          "label": "MORA portal timing",
+          "httpMs": 4950.145602000004,
+          "responseHeadersMs": 4950.139888000005,
+          "jsonMs": 0.005713999998988584,
+          "backend": {
+            "total": 1
+          }
+        },
+        {
+          "label": "MORA portal timing",
+          "httpMs": 4839.068385999999,
+          "responseHeadersMs": 4839.062743000002,
+          "jsonMs": 0.005642999996780418,
+          "backend": {
+            "total": 1
+          }
+        },
+        {
+          "label": "MORA portal timing",
+          "httpMs": 4794.099545000005,
+          "responseHeadersMs": 4794.093844000003,
+          "jsonMs": 0.0057010000018635765,
+          "backend": {
+            "total": 1
+          }
+        }
+      ],
+      "dataFailures": [],
+      "modelFailures": [],
+      "nativeOperationsVerified": true,
+      "success": true,
+      "messages": [
+        {
+          "role": "assistant",
+          "content": "Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?"
+        },
+        {
+          "role": "user",
+          "content": "heizung gehen nicht"
+        },
+        {
+          "role": "assistant",
+          "content": "Das tut mir leid, dass Ihre Heizung nicht funktioniert. Damit es in der Wohnung nicht zu kalt wird, beschreibe ich Ihr Anliegen gern genauer. Wo genau steht die Heizung, zum Beispiel im Wohnzimmer oder in einem anderen Raum?"
+        },
+        {
+          "role": "user",
+          "content": "heizung in wohnzimmer nur 1 heizung"
+        },
+        {
+          "role": "assistant",
+          "content": "Danke, dann ist klar: Die Heizung im Wohnzimmer funktioniert nicht und es ist nur eine Heizung betroffen. Ich habe das bei Ihrem Anliegen vermerkt. Bitte achten Sie darauf, dass Sie sich nicht an einem heissen Heizkörper verbrennen, und prüfen Sie, ob in der Nähe etwas Brennbares liegt. Sollte es in der Wohnung deutlich kälter werden, wenden Sie sich bitte zusätzlich direkt an Ihre Verwaltung oder den Notdienst Ihrer Liegenschaft."
+        },
+        {
+          "role": "receipt",
+          "content": "Das Anliegen wurde auf diesem Gerät gespeichert."
+        },
+        {
+          "role": "user",
+          "content": "Nein, ich meinte Schlafzimmer."
+        },
+        {
+          "role": "assistant",
+          "content": "Danke für die Korrektur. Dann steht die Heizung im Schlafzimmer, nicht im Wohnzimmer. Ich habe den Ort entsprechend angepasst. Die Angabe, dass nur eine Heizung betroffen ist, bleibt bestehen. Möchten Sie noch etwas zur Heizung im Schlafzimmer ergänzen?"
+        },
+        {
+          "role": "receipt",
+          "content": "Das Anliegen wurde auf diesem Gerät aktualisiert."
+        }
+      ],
+      "controls": {
+        "save": null,
+        "prepared": null,
+        "review": {
+          "issueId": "12019c3a-5b8f-4ff1-b37f-671ef3702df4"
+        },
+        "stored": {
+          "id": "12019c3a-5b8f-4ff1-b37f-671ef3702df4",
+          "scope": "this_device",
+          "transmitted": false
+        },
+        "navigation": []
+      },
+      "errors": []
+    }
+  ],
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.713224468,
+    "totalUsedUsd": 3.286775532,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-7,
+      "output": 5e-7
+    }
+  },
+  "model": "anthropic/claude-haiku-5.5",
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.711210468,
+    "totalUsedUsd": 3.288789532,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-7,
+      "output": 5e-7
+    }
+  },
+  "actualAccountDeltaUsd": 0.0020139999999999603
+}
