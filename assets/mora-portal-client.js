@@ -1,6 +1,7 @@
 import {detectHazard,safetyNotice} from './mora-safety.js';
 import {draftLabel} from './mora-data.js';
 import {portalNavigation} from './mora-portal-map.js';
+import {enablePortalWindow} from './mora-portal-window.js';
 /** No provider credentials, model calls or portal business rules in this UI. */
 export function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(window)}={}) {
   const agent=new URL(window.location.href).searchParams.get('mora')!=='legacy';
@@ -29,6 +30,7 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
   function fitViewport(){const viewport=window.visualViewport;panel.style.setProperty('--mp-viewport-height',(viewport?.height||window.innerHeight)+'px');panel.style.setProperty('--mp-viewport-top',(viewport?.offsetTop||0)+'px');scrollEnd();}
   window.visualViewport?.addEventListener('resize',fitViewport);window.visualViewport?.addEventListener('scroll',fitViewport);window.addEventListener('resize',fitViewport);
   input.addEventListener('input',sizeInput);fitViewport();
+  const windowLayout=enablePortalWindow(panel,window,sizeInput);
   const blank=()=>({session:null,messages:[{role:'assistant',content:greeting}],data:null,saved:{},pendingReceipt:null});
   const key=()=> (agent?'morada.portal.mora.agent.v1.':'morada.portal.mora.v1.')+activeRole;
   function persist(){try{window.sessionStorage.setItem(key(),JSON.stringify(thread));}catch{storageWarning='Der Chatverlauf kann in diesem Browser nicht behalten werden. Gespeicherte Portaleinträge bleiben davon unabhängig.';}}
@@ -136,7 +138,7 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
   function open(){
     if(!bridge.open())return;
     if(activeRole!==bridge.role()){load();log.replaceChildren();thread.messages.forEach(m=>bubble(m.role,m.content));followEnd=true;readingOffset=0;}
-    if(panel.hidden)lastFocus=document.activeElement;panel.hidden=false;document.getElementById('moraFab')?.setAttribute('aria-expanded','true');showControls();input.focus({preventScroll:true});sizeInput();if(followEnd)scrollEnd();else scroller.scrollTop=readingOffset;
+    if(panel.hidden)lastFocus=document.activeElement;panel.hidden=false;windowLayout.fit();document.getElementById('moraFab')?.setAttribute('aria-expanded','true');showControls();input.focus({preventScroll:true});sizeInput();if(followEnd)scrollEnd();else scroller.scrollTop=readingOffset;
     if(thread.data?.controls?.prepared&&!bridge.currentDraft()&&!busy){setBusy(true);request({action:'draft-closed',issueId:thread.data.controls.prepared.issueId}).catch(e=>message('error',e.message)).finally(()=>setBusy(false));}
   }
   form.addEventListener('submit',e=>{e.preventDefault();send(input.value);});

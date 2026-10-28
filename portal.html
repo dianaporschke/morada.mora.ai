@@ -8267,6 +8267,32 @@ void portalLoadExtended();
 @media(max-width:390px){#portalPreview #moraPortalChat .mora-portal-actions{grid-template-columns:minmax(0,1fr)}#portalPreview #moraPortalChat>header{gap:6px}#portalPreview #moraPortalChat .mora-portal-emblem{width:38px;height:38px;flex-basis:38px}}
 @media(prefers-reduced-motion:reduce){#portalPreview #moraPortalChat,#portalPreview #moraFab{animation:none;transition:none}}
 @media(prefers-reduced-transparency:reduce){#portalPreview #moraPortalChat{background:linear-gradient(155deg,#514132,#2b241d 75%);backdrop-filter:none;-webkit-backdrop-filter:none}}
+
+/* Window controls stay inside MORA and are available on desktop only. */
+#portalPreview #moraPortalChat .mora-portal-resize{display:none}
+@media(min-width:641px){
+ #portalPreview #moraPortalChat{left:var(--mp-window-left,auto);top:var(--mp-window-top,auto);width:var(--mp-window-width,min(440px,calc(100vw - 48px)));height:var(--mp-window-height,min(620px,calc(100dvh - 80px)));max-height:calc(100dvh - 24px)}
+ #portalPreview #moraPortalChat>header{cursor:grab;touch-action:none;user-select:none}
+ #portalPreview #moraPortalChat>header:focus-visible{outline:2px solid var(--mp-focus);outline-offset:-4px;border-radius:18px 18px 0 0}
+ #portalPreview #moraPortalChat.mora-portal-moving>header{cursor:grabbing}
+ #portalPreview #moraPortalChat:is(.mora-portal-moving,.mora-portal-resizing){user-select:none}
+ #portalPreview #moraPortalChat .mora-portal-resize{display:block;position:absolute;z-index:5;touch-action:none;background:transparent;border:0;border-radius:0;margin:0;padding:0;min-width:0;min-height:0;box-shadow:none;color:var(--mp-copper)}
+ #portalPreview #moraPortalChat .mora-portal-resize:is([data-resize="n"],[data-resize="s"]){left:20px;right:20px;height:8px;cursor:ns-resize}
+ #portalPreview #moraPortalChat .mora-portal-resize:is([data-resize="e"],[data-resize="w"]){top:20px;bottom:20px;width:8px;cursor:ew-resize}
+ #portalPreview #moraPortalChat .mora-portal-resize[data-resize="n"]{top:0}
+ #portalPreview #moraPortalChat .mora-portal-resize[data-resize="s"]{bottom:0}
+ #portalPreview #moraPortalChat .mora-portal-resize[data-resize="e"]{right:0}
+ #portalPreview #moraPortalChat .mora-portal-resize[data-resize="w"]{left:0}
+ #portalPreview #moraPortalChat .mora-portal-resize:is([data-resize="ne"],[data-resize="nw"],[data-resize="se"],[data-resize="sw"]){width:22px;height:22px}
+ #portalPreview #moraPortalChat .mora-portal-resize[data-resize="ne"]{top:0;right:0;cursor:nesw-resize}
+ #portalPreview #moraPortalChat .mora-portal-resize[data-resize="nw"]{top:0;left:0;cursor:nwse-resize}
+ #portalPreview #moraPortalChat .mora-portal-resize[data-resize="sw"]{bottom:0;left:0;cursor:nesw-resize}
+ #portalPreview #moraPortalChat .mora-portal-resize[data-resize="se"]{bottom:3px;right:3px;cursor:nwse-resize;border-radius:5px}
+ #portalPreview #moraPortalChat .mora-portal-resize[data-resize="se"]::after{content:"";position:absolute;right:5px;bottom:5px;width:10px;height:10px;background:linear-gradient(135deg,transparent 43%,currentColor 44% 51%,transparent 52% 65%,currentColor 66% 73%,transparent 74%);opacity:.7}
+ #portalPreview #moraPortalChat .mora-portal-resize[data-resize="se"]:hover{background:rgba(185,133,94,.12)}
+ #portalPreview #moraPortalChat .mora-portal-resize:focus-visible{outline:2px solid var(--mp-focus);outline-offset:-2px}
+ #portalPreview #moraPortalChat .mora-portal-note{padding-right:30px}
+}
 </style>
 <script>
 (()=>{
@@ -8651,6 +8677,122 @@ function createPortalBridge(mapping) {
   return api;
 }
 
+/** Presentation only: no chat state, persistence, portal actions or requests. */
+function enablePortalWindow(panel, window, onResize = () => {}) {
+  const header = panel.querySelector('header');
+  const properties = ['left', 'top', 'width', 'height'];
+  const directions = ['n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw'];
+  let geometry = null, gesture = null;
+  const desktop = () => window.innerWidth > 640;
+  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+  const bounds = () => {
+    const viewport = window.visualViewport, margin = 12;
+    const left = (viewport?.offsetLeft || 0) + margin, top = (viewport?.offsetTop || 0) + margin;
+    const width = Math.max(1, (viewport?.width || panel.ownerDocument.documentElement.clientWidth || window.innerWidth) - margin * 2);
+    const height = Math.max(1, (viewport?.height || window.innerHeight) - margin * 2);
+    return {left, top, right: left + width, bottom: top + height, width, height, minWidth: Math.min(360, width), minHeight: Math.min(360, height)};
+  };
+  function constrain(rect) {
+    const b = bounds(), width = clamp(rect.width, b.minWidth, b.width), height = clamp(rect.height, b.minHeight, b.height);
+    return {left: clamp(rect.left, b.left, b.right - width), top: clamp(rect.top, b.top, b.bottom - height), width, height};
+  }
+  function apply(rect) {
+    geometry = constrain(rect);
+    for (const key of properties) panel.style.setProperty('--mp-window-' + key, geometry[key] + 'px');
+    onResize();
+  }
+  function clearGeometry() {
+    geometry = null;
+    for (const key of properties) panel.style.removeProperty('--mp-window-' + key);
+    onResize();
+  }
+  function finish(cancel = false) {
+    if (!gesture) return;
+    const previous = gesture;
+    gesture = null;
+    panel.classList.remove('mora-portal-moving', 'mora-portal-resizing');
+    if (cancel) previous.original ? apply(previous.original) : clearGeometry();
+    if (previous.capture.hasPointerCapture?.(previous.pointerId)) previous.capture.releasePointerCapture(previous.pointerId);
+  }
+  function reset() { finish(); clearGeometry(); }
+  function start(event, direction) {
+    if (!desktop() || panel.hidden || gesture || event.button !== 0 || event.isPrimary === false) return;
+    if (!direction && event.target.closest('button,a,input,textarea,select')) return;
+    event.preventDefault();
+    gesture = {direction, pointerId: event.pointerId, capture: event.currentTarget, x: event.clientX, y: event.clientY,
+      rect: constrain(panel.getBoundingClientRect()), original: geometry && {...geometry}};
+    panel.classList.add(direction ? 'mora-portal-resizing' : 'mora-portal-moving');
+    gesture.capture.setPointerCapture?.(event.pointerId);
+  }
+  function resize(rect, direction, dx, dy) {
+    const b = bounds();
+    let {left, top} = rect, right = left + rect.width, bottom = top + rect.height;
+    if (direction.includes('e')) right = clamp(right + dx, left + b.minWidth, b.right);
+    if (direction.includes('w')) left = clamp(left + dx, b.left, right - b.minWidth);
+    if (direction.includes('s')) bottom = clamp(bottom + dy, top + b.minHeight, b.bottom);
+    if (direction.includes('n')) top = clamp(top + dy, b.top, bottom - b.minHeight);
+    return {left, top, width: right - left, height: bottom - top};
+  }
+  header.tabIndex = 0;
+  header.setAttribute('aria-label', 'MORA-Fenster verschieben. Pfeiltasten zum Verschieben, Pos1 für die Ausgangsgrösse.');
+  header.title = 'Zum Verschieben ziehen · Doppelklick für die Ausgangsgrösse';
+  header.addEventListener('pointerdown', event => start(event, ''));
+  header.addEventListener('dblclick', event => {
+    if (desktop() && !event.target.closest('button,a,input,textarea,select')) reset();
+  });
+  const handles = directions.map(direction => {
+    const handle = panel.ownerDocument.createElement(direction === 'se' ? 'button' : 'div');
+    handle.className = 'mora-portal-resize';
+    handle.dataset.resize = direction;
+    if (direction === 'se') {
+      handle.type = 'button';
+      handle.setAttribute('aria-label', 'MORA-Fenstergrösse ändern');
+      handle.title = 'Grösse ziehen · Pfeiltasten für Breite und Höhe · Pos1 zum Zurücksetzen';
+    } else handle.setAttribute('aria-hidden', 'true');
+    handle.addEventListener('pointerdown', event => start(event, direction));
+    panel.append(handle);
+    return handle;
+  });
+  function keyboard(event, resizing) {
+    if (!desktop() || event.target !== event.currentTarget) return;
+    if (event.key === 'Home') { event.preventDefault(); reset(); return; }
+    const delta = {ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1]}[event.key];
+    if (!delta) return;
+    event.preventDefault();
+    const step = event.shiftKey ? 40 : 10, [dx, dy] = delta.map(value => value * step);
+    const rect = constrain(panel.getBoundingClientRect());
+    apply(resizing ? resize(rect, 'se', dx, dy) : {...rect, left: rect.left + dx, top: rect.top + dy});
+  }
+  header.addEventListener('keydown', event => keyboard(event, false));
+  handles.find(handle => handle.dataset.resize === 'se').addEventListener('keydown', event => keyboard(event, true));
+  window.addEventListener('pointermove', event => {
+    if (!gesture || event.pointerId !== gesture.pointerId) return;
+    if (panel.hidden || !desktop()) { finish(); return; }
+    const {rect, direction} = gesture, dx = event.clientX - gesture.x, dy = event.clientY - gesture.y;
+    apply(direction ? resize(rect, direction, dx, dy) : {...rect, left: rect.left + dx, top: rect.top + dy});
+  });
+  window.addEventListener('pointerup', event => { if (gesture?.pointerId === event.pointerId) finish(); });
+  window.addEventListener('pointercancel', event => { if (gesture?.pointerId === event.pointerId) finish(true); });
+  panel.addEventListener('lostpointercapture', () => finish());
+  window.addEventListener('blur', () => finish());
+  panel.addEventListener('keydown', event => {
+    if (gesture && event.key === 'Escape') { event.preventDefault(); event.stopImmediatePropagation(); finish(true); }
+  }, true);
+  function fit() {
+    finish();
+    header.tabIndex = desktop() ? 0 : -1;
+    header.title = desktop() ? 'Zum Verschieben ziehen · Doppelklick für die Ausgangsgrösse' : '';
+    header.setAttribute('aria-label', desktop() ? 'MORA-Fenster verschieben. Pfeiltasten zum Verschieben, Pos1 für die Ausgangsgrösse.' : 'MORA');
+    if (desktop() && geometry) apply(geometry);
+  }
+  window.addEventListener('resize', fit);
+  window.visualViewport?.addEventListener('resize', fit);
+  window.visualViewport?.addEventListener('scroll', fit);
+  new window.MutationObserver(() => { if (panel.hidden) finish(); }).observe(panel, {attributes: true, attributeFilter: ['hidden']});
+  fit();
+  return {fit};
+}
+
 /** No provider credentials, model calls or portal business rules in this UI. */
 function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(window)}={}) {
   const agent=new URL(window.location.href).searchParams.get('mora')!=='legacy';
@@ -8679,6 +8821,7 @@ function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(w
   function fitViewport(){const viewport=window.visualViewport;panel.style.setProperty('--mp-viewport-height',(viewport?.height||window.innerHeight)+'px');panel.style.setProperty('--mp-viewport-top',(viewport?.offsetTop||0)+'px');scrollEnd();}
   window.visualViewport?.addEventListener('resize',fitViewport);window.visualViewport?.addEventListener('scroll',fitViewport);window.addEventListener('resize',fitViewport);
   input.addEventListener('input',sizeInput);fitViewport();
+  const windowLayout=enablePortalWindow(panel,window,sizeInput);
   const blank=()=>({session:null,messages:[{role:'assistant',content:greeting}],data:null,saved:{},pendingReceipt:null});
   const key=()=> (agent?'morada.portal.mora.agent.v1.':'morada.portal.mora.v1.')+activeRole;
   function persist(){try{window.sessionStorage.setItem(key(),JSON.stringify(thread));}catch{storageWarning='Der Chatverlauf kann in diesem Browser nicht behalten werden. Gespeicherte Portaleinträge bleiben davon unabhängig.';}}
@@ -8786,7 +8929,7 @@ function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(w
   function open(){
     if(!bridge.open())return;
     if(activeRole!==bridge.role()){load();log.replaceChildren();thread.messages.forEach(m=>bubble(m.role,m.content));followEnd=true;readingOffset=0;}
-    if(panel.hidden)lastFocus=document.activeElement;panel.hidden=false;document.getElementById('moraFab')?.setAttribute('aria-expanded','true');showControls();input.focus({preventScroll:true});sizeInput();if(followEnd)scrollEnd();else scroller.scrollTop=readingOffset;
+    if(panel.hidden)lastFocus=document.activeElement;panel.hidden=false;windowLayout.fit();document.getElementById('moraFab')?.setAttribute('aria-expanded','true');showControls();input.focus({preventScroll:true});sizeInput();if(followEnd)scrollEnd();else scroller.scrollTop=readingOffset;
     if(thread.data?.controls?.prepared&&!bridge.currentDraft()&&!busy){setBusy(true);request({action:'draft-closed',issueId:thread.data.controls.prepared.issueId}).catch(e=>message('error',e.message)).finally(()=>setBusy(false));}
   }
   form.addEventListener('submit',e=>{e.preventDefault();send(input.value);});

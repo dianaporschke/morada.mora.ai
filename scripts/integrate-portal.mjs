@@ -16,7 +16,7 @@ if(!html.includes('source=state,moraIdentity=null')){
  ];
  for(const [from,to]of edits){if(html.split(from).length!==2)throw Error('Native save interface changed: '+from);html=html.replace(from,to);}
 }
-const modules=['assets/mora-data.js','assets/mora-safety.js','assets/mora-portal-map.js','scripts/portal-integration/bridge.js','assets/mora-portal-client.js'];
+const modules=['assets/mora-data.js','assets/mora-safety.js','assets/mora-portal-map.js','scripts/portal-integration/bridge.js','assets/mora-portal-window.js','assets/mora-portal-client.js'];
 const js=modules.map(p=>readFileSync(p,'utf8').replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,'')).join('\n');
 const css=readFileSync('assets/mora-portal.css','utf8');
 const block=start+'\n<style>'+css+'</style>\n<script>\n(()=>{\n'+js+'\nconst bridge=createPortalBridge({managedCaseFields,sameCaseFields});\nwindow.MORAPortal=createPortalClient(document,window,bridge);\nshowMora=()=>{if(portalCloseDialog())window.MORAPortal.open();};\ndocument.getElementById("moraFab").setAttribute("aria-controls","moraPortalChat");\ndocument.getElementById("moraFab").setAttribute("aria-expanded","false");\n})();\n</script>\n'+end;
