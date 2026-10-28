@@ -8184,58 +8184,59 @@ void portalLoadExtended();
 #portalPreview #moraPortalChat[hidden]{display:none!important}
 #portalPreview #moraPortalChat{
  --mp-text:#f7f3ed;--mp-muted:#d3c7ba;--mp-copper:#b9855e;--mp-line:rgba(225,194,161,.24);--mp-focus:#e7b58b;
- position:fixed;z-index:45;right:24px;bottom:24px;width:min(552px,calc(100vw - 48px));height:min(780px,calc(100dvh - 48px));max-height:calc(100dvh - 48px);
- display:flex;flex-direction:column;overflow:hidden;isolation:isolate;box-sizing:border-box;border:1px solid rgba(239,215,188,.6);border-radius:24px;
- background:linear-gradient(155deg,#514132,#2b241d 75%);color:var(--mp-text);box-shadow:0 24px 70px rgba(38,27,18,.32),0 5px 18px rgba(38,27,18,.12),inset 0 1px 0 rgba(255,239,218,.2);
+ position:fixed;z-index:45;right:24px;bottom:24px;width:min(440px,calc(100vw - 48px));height:min(620px,calc(100dvh - 80px));max-height:calc(100dvh - 80px);
+ display:flex;flex-direction:column;overflow:hidden;isolation:isolate;box-sizing:border-box;border:1px solid rgba(239,215,188,.38);border-radius:20px;
+ background:linear-gradient(155deg,#514132,#2b241d 75%);color:var(--mp-text);box-shadow:0 16px 44px rgba(38,27,18,.22),0 3px 12px rgba(38,27,18,.1),inset 0 1px 0 rgba(255,239,218,.12);
  font-family:inherit;color-scheme:dark;text-align:left;animation:mora-portal-enter .16s ease-out;
 }
 @supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
  #portalPreview #moraPortalChat{background:linear-gradient(155deg,rgba(80,63,47,.91),rgba(43,36,29,.93) 72%,rgba(35,29,24,.95));backdrop-filter:blur(24px) saturate(.7);-webkit-backdrop-filter:blur(24px) saturate(.7)}
 }
 #portalPreview #moraPortalChat *{box-sizing:border-box}
-#portalPreview #moraPortalChat>header{display:flex;align-items:center;gap:12px;flex-shrink:0;padding:24px 22px 20px;border-bottom:1px solid var(--mp-line);background:transparent}
+#portalPreview #moraPortalChat>header{display:flex;align-items:center;gap:8px;flex-shrink:0;padding:13px 17px;border-bottom:1px solid var(--mp-line);background:transparent}
 #portalPreview #moraPortalChat .mora-portal-heading{flex:1;min-width:0}
-#portalPreview #moraPortalChat h2{margin:0 0 3px;font-size:24px;line-height:1.2;font-weight:650;letter-spacing:.01em;color:var(--mp-text)}
+#portalPreview #moraPortalChat h2{margin:0 0 3px;font-size:20px;line-height:1.2;font-weight:600;letter-spacing:.01em;color:var(--mp-text)}
 #portalPreview #moraPortalChat header small{display:block;font-size:12px;line-height:1.45;color:var(--mp-muted)}
-#portalPreview #moraPortalChat .mora-portal-emblem{display:grid;place-items:center;flex:0 0 54px;width:54px;height:54px;border-radius:50%;border:1px solid rgba(208,159,116,.8);background:rgba(32,27,22,.7);box-shadow:inset 0 1px 0 rgba(247,243,237,.06)}
-#portalPreview .mora-portal-star{display:block;flex-shrink:0;width:27px;height:27px;background:#c58e64;clip-path:polygon(50% 0%,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0% 50%,39% 39%)}
-#portalPreview #moraPortalChat .mora-portal-icon{display:block;flex:0 0 22px;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#portalPreview #moraPortalChat .mora-portal-emblem{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(208,159,116,.8);background:rgba(32,27,22,.7);box-shadow:inset 0 1px 0 rgba(247,243,237,.06)}
+#portalPreview .mora-portal-star{display:block;flex-shrink:0;width:22px;height:22px;background:#c58e64;clip-path:polygon(50% 0%,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0% 50%,39% 39%)}
+#portalPreview #moraPortalChat .mora-portal-icon{display:block;flex:0 0 20px;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 #portalPreview #moraPortalChat header button{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;min-width:44px;min-height:44px;padding:0;border:1px solid transparent;border-radius:12px;background:transparent;color:var(--mp-text);box-shadow:none;cursor:pointer}
 #portalPreview #moraPortalChat header button:hover:not(:disabled){background:rgba(247,243,237,.08);border-color:var(--mp-line)}
 #portalPreview #moraPortalChat .mora-portal-scroll{flex:1;min-height:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(211,169,131,.55) transparent;scroll-padding:18px;outline-offset:-4px}
 #portalPreview #moraPortalChat .mora-portal-scroll::-webkit-scrollbar{width:7px}
 #portalPreview #moraPortalChat .mora-portal-scroll::-webkit-scrollbar-thumb{background:rgba(211,169,131,.5);border:2px solid transparent;border-radius:8px;background-clip:padding-box}
-#portalPreview #moraPortalChat .mora-portal-log{display:flex;flex-direction:column;gap:20px;padding:22px 22px 18px;overflow:visible;min-height:0}
-#portalPreview #moraPortalChat .mora-portal-message{position:relative;align-self:flex-start;flex-shrink:0;width:fit-content;max-width:calc(100% - 44px);margin:0 0 0 44px;padding:14px 16px;border:1px solid rgba(227,204,177,.19);border-radius:17px;background:rgba(37,33,28,.57);color:var(--mp-text);white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.58;font-weight:400;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
-#portalPreview #moraPortalChat .mora-portal-message.assistant::before{content:"";position:absolute;left:-45px;top:3px;width:32px;height:32px;border-radius:50%;border:1px solid rgba(196,145,101,.8);background:rgba(30,26,22,.75) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23c58e64' d='M16 6 18.2 13.8 26 16 18.2 18.2 16 26 13.8 18.2 6 16 13.8 13.8Z'/%3E%3C/svg%3E") center/32px 32px no-repeat}
+#portalPreview #moraPortalChat .mora-portal-log{display:flex;flex-direction:column;gap:14px;padding:18px 17px 16px;overflow:visible;min-height:0}
+#portalPreview #moraPortalChat .mora-portal-message{position:relative;align-self:flex-start;flex-shrink:0;width:fit-content;max-width:calc(100% - 34px);margin:0 0 0 34px;padding:11px 13px;border:1px solid rgba(227,204,177,.19);border-radius:14px;background:rgba(37,33,28,.57);color:var(--mp-text);white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.58;font-weight:400;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
+#portalPreview #moraPortalChat .mora-portal-message.assistant::before{content:"";position:absolute;left:-35px;top:3px;width:26px;height:26px;border-radius:50%;border:1px solid rgba(196,145,101,.8);background:rgba(30,26,22,.75) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23c58e64' d='M16 6 18.2 13.8 26 16 18.2 18.2 16 26 13.8 18.2 6 16 13.8 13.8Z'/%3E%3C/svg%3E") center/27px 27px no-repeat}
 #portalPreview #moraPortalChat .mora-portal-message.user{align-self:flex-end;max-width:84%;margin-left:0;border-color:rgba(226,179,137,.18);background:linear-gradient(135deg,#8b6142,#755039);border-bottom-right-radius:6px}
 #portalPreview #moraPortalChat .mora-portal-message.error{margin-left:0;max-width:100%;border-color:rgba(210,149,108,.58);background:rgba(99,54,33,.46);color:#fff0e3;font-size:14px}
 #portalPreview #moraPortalChat .mora-portal-message.receipt{margin-left:0;max-width:100%;border-color:rgba(207,174,133,.35);background:rgba(73,61,45,.65);color:var(--mp-text);font-size:14px}
-#portalPreview #moraPortalChat .mora-portal-status{color:var(--mp-muted);font-size:13px;line-height:1.5;overflow-wrap:anywhere;padding:0 22px}
-#portalPreview #moraPortalChat .mora-portal-status:not(:empty){padding:0 22px 16px}
+#portalPreview #moraPortalChat .mora-portal-status{color:var(--mp-muted);font-size:13px;line-height:1.5;overflow-wrap:anywhere;padding:0 17px}
+#portalPreview #moraPortalChat .mora-portal-status:not(:empty){padding:0 17px 16px}
 #portalPreview #moraPortalChat .mora-portal-status:not(:empty)::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--mp-copper);margin:0 8px 2px 0}
-#portalPreview #moraPortalChat .mora-portal-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 22px;overflow:visible;max-height:none}
-#portalPreview #moraPortalChat .mora-portal-actions:not(:empty){padding-bottom:20px}
-#portalPreview #moraPortalChat .mora-portal-action{display:flex;align-items:center;justify-content:center;gap:9px;min-width:0;min-height:50px;margin:0;padding:12px 13px;border:1px solid rgba(223,196,164,.28);border-radius:12px;background:rgba(35,30,25,.42);color:var(--mp-text);font-family:inherit;font-size:13px;line-height:1.4;font-weight:500;box-shadow:inset 0 1px 0 rgba(255,255,255,.025);white-space:normal;overflow-wrap:anywhere;cursor:pointer}
+#portalPreview #moraPortalChat .mora-portal-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0 17px;overflow:visible;max-height:none}
+#portalPreview #moraPortalChat .mora-portal-actions:not(:empty){padding-bottom:16px}
+#portalPreview #moraPortalChat .mora-portal-action{display:flex;align-items:center;justify-content:center;gap:7px;min-width:0;min-height:44px;margin:0;padding:10px;border:1px solid rgba(223,196,164,.28);border-radius:12px;background:rgba(35,30,25,.42);color:var(--mp-text);font-family:inherit;font-size:13px;line-height:1.4;font-weight:500;box-shadow:inset 0 1px 0 rgba(255,255,255,.025);white-space:normal;overflow-wrap:anywhere;cursor:pointer}
 #portalPreview #moraPortalChat .mora-portal-action span{min-width:0}
 #portalPreview #moraPortalChat .mora-portal-primary{border-color:rgba(220,162,113,.44);background:linear-gradient(135deg,#90603f,#805135)}
 #portalPreview #moraPortalChat .mora-portal-action:only-child{grid-column:1/-1}
 #portalPreview #moraPortalChat .mora-portal-action:hover:not(:disabled){background:rgba(96,75,55,.7);border-color:rgba(231,190,152,.65)}
 #portalPreview #moraPortalChat .mora-portal-primary:hover:not(:disabled){background:#956443}
 #portalPreview #moraPortalChat .mora-portal-actions select{grid-column:1/-1;width:100%;min-width:0;min-height:44px;padding:10px 12px;border:1px solid var(--mp-line);border-radius:10px;background:#352c24;color:var(--mp-text);font:inherit;font-size:14px}
-#portalPreview #moraPortalChat .mora-portal-compose{display:flex;align-items:flex-end;gap:10px;flex-shrink:0;margin:0;padding:16px 22px 0;border-top:1px solid var(--mp-line);background:rgba(28,24,20,.12)}
-#portalPreview #moraPortalChat textarea{display:block;flex:1;min-width:0;min-height:52px;max-height:132px;resize:none;overflow-y:auto;margin:0;padding:14px 15px;border:1px solid rgba(222,196,164,.38);border-radius:13px;background:rgba(24,21,18,.55);color:var(--mp-text);caret-color:var(--mp-focus);font-family:inherit;font-size:15px;line-height:1.5;box-shadow:inset 0 1px 3px rgba(0,0,0,.08);scrollbar-width:thin;scrollbar-color:var(--mp-copper) transparent}
+#portalPreview #moraPortalChat .mora-portal-compose{display:flex;align-items:flex-end;gap:10px;flex-shrink:0;margin:0;padding:12px 17px 0;border-top:1px solid var(--mp-line);background:rgba(28,24,20,.12)}
+#portalPreview #moraPortalChat textarea{display:block;flex:1;min-width:0;min-height:46px;max-height:120px;resize:none;overflow-y:auto;margin:0;padding:10px 12px;border:1px solid rgba(222,196,164,.38);border-radius:13px;background:rgba(24,21,18,.55);color:var(--mp-text);caret-color:var(--mp-focus);font-family:inherit;font-size:15px;line-height:1.5;box-shadow:inset 0 1px 3px rgba(0,0,0,.08);scrollbar-width:thin;scrollbar-color:var(--mp-copper) transparent}
 #portalPreview #moraPortalChat textarea::placeholder{color:#c3b5a5;opacity:1}
-#portalPreview #moraPortalChat .mora-portal-compose button{display:grid;place-items:center;flex:0 0 52px;width:52px;height:52px;min-height:52px;margin:0;padding:0;border:1px solid rgba(234,183,137,.45);border-radius:13px;background:linear-gradient(135deg,#90603f,#805135);color:var(--mp-text);box-shadow:inset 0 1px 0 rgba(255,234,209,.1);cursor:pointer}
+#portalPreview #moraPortalChat .mora-portal-compose button{display:grid;place-items:center;flex:0 0 46px;width:46px;height:46px;min-height:46px;margin:0;padding:0;border:1px solid rgba(234,183,137,.45);border-radius:13px;background:linear-gradient(135deg,#90603f,#805135);color:var(--mp-text);box-shadow:inset 0 1px 0 rgba(255,234,209,.1);cursor:pointer}
 #portalPreview #moraPortalChat .mora-portal-compose button:hover:not(:disabled){background:#956443}
-#portalPreview #moraPortalChat .mora-portal-compose button .mora-portal-icon{width:25px;height:25px}
-#portalPreview #moraPortalChat .mora-portal-note{flex-shrink:0;margin:0;padding:12px 22px 19px;background:rgba(28,24,20,.12);color:var(--mp-muted);font-size:12px;line-height:1.5;letter-spacing:0}
+#portalPreview #moraPortalChat .mora-portal-compose button .mora-portal-icon{width:22px;height:22px}
+#portalPreview #moraPortalChat .mora-portal-note{flex-shrink:0;margin:0;padding:9px 17px 13px;background:rgba(28,24,20,.12);color:var(--mp-muted);font-size:12px;line-height:1.5;letter-spacing:0}
 #portalPreview #moraPortalChat :is(button,textarea,select,.mora-portal-scroll):focus-visible{outline:2px solid var(--mp-focus);outline-offset:3px}
 #portalPreview #moraPortalChat textarea:focus{border-color:var(--mp-focus);box-shadow:none}
+#portalPreview #moraPortalChat textarea:focus-visible{outline-offset:0;border-color:transparent}
 #portalPreview #moraPortalChat button:disabled,#portalPreview #moraPortalChat select:disabled{opacity:.45;cursor:not-allowed}
 #portalPreview #moraPortalChat textarea:disabled{color:var(--mp-muted);background:rgba(24,21,18,.35);cursor:wait}
 #portalPreview #moraPortalChat .mora-portal-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-#portalPreview #moraFab{display:flex;align-items:center;gap:11px;right:24px;bottom:24px;min-height:52px;padding:13px 21px;border:1px solid rgba(200,157,119,.8);border-radius:999px;background:linear-gradient(135deg,#4c3b2d,#2b241d);color:#f7f3ed;box-shadow:0 8px 26px rgba(43,32,24,.2);font-size:14px;font-weight:500;animation:none;transition:background .15s,border-color .15s}
+#portalPreview #moraFab{display:flex;align-items:center;gap:9px;right:24px;bottom:24px;min-height:48px;padding:11px 17px;border:1px solid rgba(200,157,119,.8);border-radius:999px;background:linear-gradient(135deg,#4c3b2d,#2b241d);color:#f7f3ed;box-shadow:0 8px 26px rgba(43,32,24,.2);font-size:14px;font-weight:500;animation:none;transition:background .15s,border-color .15s}
 #portalPreview #moraFab .mora-portal-star{width:23px;height:23px}
 #portalPreview #moraFab:hover{background:#55402f;border-color:#d7aa83}
 #portalPreview #moraFab:focus-visible{outline:2px solid #a86d45;outline-offset:4px}

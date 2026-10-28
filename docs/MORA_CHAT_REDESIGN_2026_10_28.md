@@ -27,3 +27,9 @@ Modell, Prompts, Gesprächsentscheidungen, Datenmapping, Speicherung, Portal-Bri
 ## Grenzen
 
 Responsive Mobilprüfung im Desktop-Chromium, kein physisches iPhone/Android-Gerät und keine echte Bildschirmtastatur. Die Höhenänderung wurde simuliert; VisualViewport-Verhalten ist zusätzlich automatisiert geprüft. Safari und leistungsschwache Geräte wurden nicht direkt geprüft. Reduzierte Bewegung und reduzierte Transparenz sind per CSS berücksichtigt. Keine Live-KI-Gespräche und keine KI-Kosten für diese UI-Abnahme.
+
+## Verfeinerung nach visueller Rückmeldung
+
+Die Desktopansicht wurde von 552×780 auf maximal 440×620 px verkleinert (rund 37 % weniger Fläche bei voller Höhe). Kopfzeile, Stern, Nachrichtenabstände und Eingabe sind kompakter; Kontur und Schatten zurückhaltender. Der doppelte Fokusrahmen der Eingabe wurde zu einer einzelnen klaren Kontur vereinfacht. Nachrichtentext bleibt 15 px auf Desktop und 16 px mobil. Die mobile Flächennutzung bleibt erhalten.
+
+Nur CSS und der daraus generierte MORA-Block wurden angepasst. Die sechs einschlägigen UI-/Portalquelltests sowie der Build bestehen. Browserprüfung bei 1440×900, 1180×720 und 390×844: kein horizontaler Chatüberlauf, Eingabe erreichbar, Aktionen weiterhin sichtbar. Aktuelle Aufnahme: `docs/evidence/mora-compact-desktop.jpg`.
