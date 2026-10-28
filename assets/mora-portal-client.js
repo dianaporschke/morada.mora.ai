@@ -18,7 +18,7 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
   const log=panel.querySelector('[role="log"]'),scroller=panel.querySelector('.mora-portal-scroll'),status=panel.querySelector('[role="status"]'),actions=panel.querySelector('.mora-portal-actions'),form=panel.querySelector('form'),input=panel.querySelector('textarea');
   const launcher=document.getElementById('moraFab');
   if(launcher){launcher.innerHTML=star+'<span>MORA Assistenz</span>';launcher.setAttribute('aria-label','MORA öffnen');}
-  let thread,activeRole,busy=false,lastFocus,storageWarning='',followEnd=true,readingOffset=0;
+  let thread,activeRole,busy=false,lastFocus,storageWarning='',followEnd=true,readingOffset=0,accessEpoch=0;
   const scrollEnd=()=>{if(!panel.hidden&&followEnd)scroller.scrollTop=scroller.scrollHeight;};
   scroller.addEventListener('scroll',()=>{if(panel.hidden)return;readingOffset=scroller.scrollTop;followEnd=scroller.scrollHeight-scroller.clientHeight-scroller.scrollTop<48;});
   function sizeInput(){
@@ -36,6 +36,25 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
   function persist(){try{window.sessionStorage.setItem(key(),JSON.stringify(thread));}catch{storageWarning='Der Chatverlauf kann in diesem Browser nicht behalten werden. Gespeicherte Portaleinträge bleiben davon unabhängig.';}}
   function load(){activeRole=bridge.role();thread=blank();try{const t=JSON.parse(window.sessionStorage.getItem(key())||'null');if(t&&Array.isArray(t.messages)&&t.messages.every(m=>['user','assistant','error','receipt'].includes(m.role)&&typeof m.content==='string')&&t.saved&&typeof t.saved==='object'){thread={...blank(),...t};}}catch{storageWarning='Der frühere Chat konnte nicht geladen werden.';}}
   function bubble(role,content){const p=document.createElement('p');p.className='mora-portal-message '+role;p.textContent=content;log.append(p);}
+  function clearPrivateResult(){log.querySelectorAll('[data-mora-private]').forEach(node=>node.remove());}
+  function showPortalResult(result){
+    clearPrivateResult();
+    const card=document.createElement('section');card.className='mora-portal-message assistant';card.dataset.moraPrivate='true';card.setAttribute('aria-label','Geprüfte Portalauskunft');
+    const add=text=>{const p=document.createElement('p');p.textContent=text;card.append(p);};
+    if(result.status!=='verified')add(result.message);
+    else{
+      const statusLabels={received:'Anfrage eingegangen',in_progress:'In Bearbeitung',contractor_contacted:'Handwerker kontaktiert',appointment_agreed:'Termin vereinbart',completed:'Abgeschlossen',cancelled:'Storniert'};
+      const equipmentLabels={light:'Lampe / Leuchte',socket:'Steckdose',heater:'Heizung',water:'Wasser',door:'Tür',window:'Fenster',appliance:'Gerät',other:'Anliegen'};
+      const date=value=>new Date(value).toLocaleString('de-CH');
+      add(result.title);
+      for(const row of result.rows.slice(0,50))add(result.kind==='repair-counts'?row.property+' · '+row.count+' offene Reparaturanliegen':
+        [row.property,equipmentLabels[row.equipment],statusLabels[row.status],row.reporter,...(row.appointmentAt?['Termin: '+date(row.appointmentAt)]:[])].filter(Boolean).join(' · '));
+      if(!result.rows.length)add('Im freigegebenen Umfang sind keine entsprechenden Anliegen vorhanden.');
+      if(result.rows.length>50)add('50 von '+result.rows.length+' Einträgen. Weitere Angaben finden Sie im freigegebenen Portalbereich.');
+      add('Datenstand: '+date(result.asOf)+'. Nur für diesen Abruf geprüft.');
+    }
+    log.append(card);scrollEnd();
+  }
   function message(role,content){if(role==='user')followEnd=true;thread.messages.push({role,content});thread.messages=thread.messages.slice(-80);bubble(role,content);scrollEnd();persist();}
   function button(label,run,primary=false,iconName='arrow'){const b=document.createElement('button');b.type='button';b.className='btn mora-portal-action'+(primary?' mora-portal-primary':'');b.innerHTML=uiIcon(iconName);const caption=document.createElement('span');caption.textContent=label;b.append(caption);b.disabled=busy;b.addEventListener('click',()=>{if(!busy)run();});actions.append(b);}
   function showControls(){
@@ -57,18 +76,19 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
     scrollEnd();
   }
   function setBusy(value,label=''){busy=value;form.querySelector('button').disabled=value;input.disabled=value;panel.querySelector('[data-mp="clear"]').disabled=value;panel.setAttribute('aria-busy',String(value));status.textContent=label||storageWarning;showControls();}
-  function close(){readingOffset=scroller.scrollTop;panel.hidden=true;document.getElementById('moraFab')?.setAttribute('aria-expanded','false');lastFocus?.focus?.();}
+  function close(){clearPrivateResult();readingOffset=scroller.scrollTop;panel.hidden=true;document.getElementById('moraFab')?.setAttribute('aria-expanded','false');lastFocus?.focus?.();}
   function navigate(fn){try{const ok=fn();if(ok!==false)close();}catch(e){status.textContent=e.message;}}
   async function request(payload){
     if(window.location.protocol==='file:')throw Error('Bitte öffnen Sie die bereitgestellte HTTPS-Testversion. Die lokale HTML-Datei enthält absichtlich keinen KI-Schlüssel.');
     if(!fetcher)throw Error('Die Backend-Verbindung ist in diesem Browser nicht verfügbar.');
-    const start=window.performance.now(),startedRole=activeRole;
+    const start=window.performance.now(),startedRole=activeRole,startedEpoch=accessEpoch;
     const response=await fetcher(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...(thread.session?{session:thread.session}:{}),...payload,navigation:bridge.available()}),signal:window.AbortSignal.timeout(55000)});
     const headers=window.performance.now();let data;
     try{data=await response.json();}catch{throw Error('Das geschützte Backend konnte nicht erreicht werden. Bitte laden Sie die Testversion neu.');}
     const parsed=window.performance.now();
-    if(startedRole!==bridge.role()||!bridge.open())throw Error('Die Portalansicht wurde gewechselt. Öffnen Sie MORA erneut.');
+    if(startedEpoch!==accessEpoch||startedRole!==bridge.role()||!bridge.open())throw Error('Die Portalansicht wurde gewechselt. Öffnen Sie MORA erneut.');
     if(data.architecture!==architecture){thread.data=null;persist();throw Error('Unerwartete Backend-Antwort.');}
+    if(data.resetConversation){thread=blank();log.replaceChildren();bubble('assistant',greeting);persist();}
     if(data.session)thread.session=data.session;
     if(!response.ok){
       // Only a fresh server-confirmed fact update may retain controls on an
@@ -76,7 +96,10 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
       thread.data=data.factsAccepted===true&&data.session&&data.controls?{...data,reply:'',requestedAction:null,navigation:[]}:null;
       persist();throw Error(data.error||'Die Backend-Verbindung ist gerade nicht verfügbar.');
     }
-    thread.data=data;persist();
+    // Personal query results are transient DOM output, never chat persistence,
+    // never reused on reopen and never sent back to the model on later turns.
+    const {portalResult,...conversationData}=data;void portalResult;
+    thread.data=conversationData;persist();
     // Timings contain no customer text, tokens or credentials. DOM insertion is
     // measured separately from request duration; it is not a provider TTFT.
     window.console.info('MORA portal timing',{httpMs:parsed-start,responseHeadersMs:headers-start,jsonMs:parsed-headers,backend:data.timingMs});
@@ -86,13 +109,13 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
     if(busy||!text.trim())return;
     if(thread.pendingReceipt){status.textContent='Bitte zuerst die noch offene Speicherbestätigung abgleichen.';return;}
     // A failed attempt must never leave an old action enabled.
-    thread.data=null;message('user',text.trim());
+    clearPrivateResult();thread.data=null;message('user',text.trim());
     const hazard=detectHazard(text.trim());if(hazard.hazard!=='none')message('error','Sicherheitshinweis: '+safetyNotice(hazard.hazard));
     input.value='';sizeInput();setBusy(true,'MORA antwortet …');
-    const start=window.performance.now();
-    try{if(thread.pendingClose){await request({action:'draft-closed',issueId:thread.pendingClose});thread.pendingClose=null;persist();}const data=await request({message:text.trim(),messageId:window.crypto.randomUUID()});const performed=data.requestedAction?await prepareIssue(data.requestedAction==='photo',true):true;if(performed&&data.reply)message('assistant',data.reply);window.console.info('MORA portal visible response',{answerDomMs:window.performance.now()-start});}
-    catch(e){message('error',e.message);}
-    finally{setBusy(false);if(!panel.hidden)input.focus();}
+    const start=window.performance.now(),startedEpoch=accessEpoch;
+    try{if(thread.pendingClose){await request({action:'draft-closed',issueId:thread.pendingClose});thread.pendingClose=null;persist();}const data=await request({message:text.trim(),messageId:window.crypto.randomUUID()});const performed=data.requestedAction?await prepareIssue(data.requestedAction==='photo',true):true;if(performed&&data.reply)message('assistant',data.reply);if(data.portalResult&&!panel.hidden)showPortalResult(data.portalResult);window.console.info('MORA portal visible response',{answerDomMs:window.performance.now()-start});}
+    catch(e){if(startedEpoch===accessEpoch)message('error',e.message);}
+    finally{if(startedEpoch===accessEpoch){setBusy(false);if(!panel.hidden)input.focus();}}
   }
   async function acknowledge(){
     const pending=thread.pendingReceipt;if(!pending)return;
@@ -103,36 +126,40 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
   async function syncReceipt(){if(busy)return;setBusy(true,'Speicherbestätigung wird abgeglichen …');try{await acknowledge();status.textContent='Der lokale Speicherstand ist bestätigt.';}catch(e){message('error',e.message);}finally{setBusy(false);}}
   const receiptFor=(ticket,extra)=>({...Object.fromEntries(['operationId','issueId','draftId','revision','contentHash'].map(k=>[k,ticket.operation[k]])),...extra});
   async function prepareIssue(photo=false,insideSend=false){
-    if(busy&&!insideSend)return;setBusy(true,'Angaben werden ins Anliegenformular übernommen …');
+    if(busy&&!insideSend)return;
+    const startedEpoch=accessEpoch,currentAccess=()=>startedEpoch===accessEpoch;
+    setBusy(true,'Angaben werden ins Anliegenformular übernommen …');
     try{
       const wasCurrent=Boolean(thread.data?.controls?.stored);
       const ticket=await request({action:thread.data?.controls?.save?'save-issue':'review-issue'});
       const issueId=ticket.operation.issueId;
       bridge.prepare(ticket,thread.saved[issueId],{
         current:wasCurrent,
-        onSaving(){setBusy(true,'Anliegen wird lokal gespeichert …');},
+        onSaving(){if(currentAccess())setBusy(true,'Anliegen wird lokal gespeichert …');},
         async onSaved(proof){
+          if(!currentAccess())return;
           // Keep the generated mapping separately from form edits, so a later
           // chat update can detect and preserve manual portal changes.
           thread.pendingReceipt={receipt:receiptFor(ticket,{status:'portal_received',attachmentCount:proof.attachmentCount,conflictFields:proof.conflictFields}),fields:proof.mappedFields};persist();
           message('receipt',proof.unchanged?'Der lokale Speicherstand ist bestätigt.':proof.updated?'Das Anliegen wurde auf diesem Gerät aktualisiert.':'Das Anliegen wurde auf diesem Gerät gespeichert.');
-          try{await acknowledge();}catch{message('error','Das Anliegen ist lokal gespeichert. Der Abgleich mit dem Chat ist noch offen. Nutzen Sie «Speicherbestätigung erneut abgleichen».');}
-          finally{setBusy(false);}
+          try{await acknowledge();}catch{if(currentAccess())message('error','Das Anliegen ist lokal gespeichert. Der Abgleich mit dem Chat ist noch offen. Nutzen Sie «Speicherbestätigung erneut abgleichen».');}
+          finally{if(currentAccess())setBusy(false);}
         },
-        async onError(error){message('error',error.message);try{await request({action:'draft-error',issueId});}catch{thread.data=null;}finally{setBusy(false);}},
+        async onError(error){if(!currentAccess())return;message('error',error.message);try{await request({action:'draft-error',issueId});}catch{if(currentAccess())thread.data=null;}finally{if(currentAccess())setBusy(false);}},
         async onClosed(){
+          if(!currentAccess())return;
           if(thread.pendingReceipt)return;
           thread.pendingClose=issueId;persist();
           setBusy(true,'Formularstatus wird abgeglichen …');
-          try{await request({action:'draft-closed',issueId});thread.pendingClose=null;persist();}catch(e){thread.data=null;message('error',e.message);}finally{setBusy(false);}
+          try{await request({action:'draft-closed',issueId});thread.pendingClose=null;persist();}catch(e){if(currentAccess()){thread.data=null;message('error',e.message);}}finally{if(currentAccess())setBusy(false);}
         },
       },photo);
       close();
       await request({action:'draft-opened',issueId});
       status.textContent='Die Angaben stehen im Anliegenformular zur Kontrolle bereit. Noch nicht gespeichert.';
       return true;
-    }catch(e){message('error',e.message);return false;}
-    finally{if(!insideSend)setBusy(false);}
+    }catch(e){if(currentAccess())message('error',e.message);return false;}
+    finally{if(!insideSend&&currentAccess())setBusy(false);}
   }
 
   function open(){
@@ -146,6 +173,16 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
   panel.querySelector('[data-mp="close"]').addEventListener('click',close);
   panel.querySelector('[data-mp="clear"]').addEventListener('click',()=>{if(busy||thread.pendingReceipt||bridge.currentDraft())return;thread=blank();persist();log.replaceChildren();bubble('assistant',greeting);followEnd=true;setBusy(false);input.focus();});
   panel.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();close();}});
-  new window.MutationObserver(()=>{if(!bridge.open())panel.hidden=true;}).observe(document.getElementById('portalPreview'),{attributes:true,attributeFilter:['hidden']});
+  // The real portal must emit this on login/logout/account or mandate changes.
+  // Frontend cleanup complements, never replaces, server authorization.
+  window.addEventListener('mora:access-changed',()=>{
+    accessEpoch++;close();
+    try{for(let i=window.sessionStorage.length-1;i>=0;i--){const k=window.sessionStorage.key(i);if(k?.startsWith('morada.portal.mora.'))window.sessionStorage.removeItem(k);}}catch{}
+    activeRole=bridge.role();thread=blank();log.replaceChildren();bubble('assistant',greeting);input.value='';setBusy(false);
+  });
+  new window.MutationObserver(()=>{
+    if(!bridge.open()){clearPrivateResult();if(!panel.hidden)panel.hidden=true;}
+    if(activeRole&&activeRole!==bridge.role()){accessEpoch++;close();load();log.replaceChildren();thread.messages.forEach(m=>bubble(m.role,m.content));setBusy(false);}
+  }).observe(document.getElementById('portalPreview'),{attributes:true,childList:true,subtree:true});
   return {open,close,send,getState:()=>structuredClone(thread),element:panel};
 }

@@ -9,6 +9,7 @@
  const id='11111111-1111-4111-8111-111111111111';
  const issue={id,equipment:'light',defect:'Lampe funktioniert nicht.',location:'Wohnzimmer',count:1,since:null,details:'Nur diese Lampe ist betroffen.',revision:1};
  const controls={save:{operation:'create',issueId:id},review:{issueId:id},navigation:[]};
+ if(scenario==='navigation-owner'||scenario==='navigation-tenant'){delete controls.save;delete controls.review;controls.navigation=[scenario==='navigation-owner'?'ownerFinance':'tenantPayments'];}
  const response={architecture:'portal_agent_v1',session:'LOCAL_UI_TEST_ONLY',issue,issues:[issue],controls,safety:null,modelCalls:0};
  const conversation=[{role:'user',content:'Die Lampe im Wohnzimmer funktioniert seit gestern nicht mehr.'},{role:'assistant',content:'Das ist ärgerlich. Für das Anliegen sind diese Angaben erfasst:\n\nLampe / Leuchte · Wohnzimmer\nEine Lampe · seit gestern\n\nSie können die Angaben im Anliegenformular prüfen und ergänzen.'}];
  let messages=conversation;
@@ -19,7 +20,9 @@
  if(scenario==='saved')messages=[...conversation,{role:'receipt',content:'Lokaler UI-Test: Das Anliegen wurde auf diesem Gerät gespeichert. Kein Versand an MORADA.'}];
  const data=['short','long','error','loading'].includes(scenario)?null:structuredClone(response);
  if(scenario==='saved')data.controls={stored:{id,scope:'this_device',transmitted:false},review:{issueId:id},navigation:[]};
- const sessionKey='morada.portal.mora.agent.v1.admin';
+ const testRole=scenario==='navigation-owner'?'owner':scenario==='navigation-tenant'?'tenant':'admin';
+ const sessionKey='morada.portal.mora.agent.v1.'+testRole;
+ if(scenario.startsWith('navigation-'))messages=[{role:'user',content:'Lokaler UI-Test: Wo finde ich meine Zahlungen?'},{role:'assistant',content:'Lokale Testantwort: Über den Button gelangen Sie zur vorhandenen Finanzansicht. MORA liest keine Rechnungen oder Beträge aus.'}];
  if(messages)sessionStorage.setItem(sessionKey,JSON.stringify({session:'LOCAL_UI_TEST_ONLY',messages,data,saved:{},pendingReceipt:null}));else sessionStorage.removeItem(sessionKey);
  window.__moraUiRequests=[];
  window.fetch=async(url,options)=>{
@@ -30,6 +33,10 @@
    if(scenario==='loading')await new Promise(resolve=>{window.__moraUiRelease=resolve;});
    if(scenario==='error'){ok=false;value.error='Lokaler UI-Test: Verbindung absichtlich unterbrochen.';value.controls={};}
    else value.reply='Lokale UI-Testantwort. Diese Nachricht stammt aus Testdaten; es wurde keine KI aufgerufen.';
+   if(scenario==='authorized-cases'){
+    value.reply='';value.controls={navigation:['cases']};
+    value.portalResult={status:'verified',kind:'case-status',asOf:new Date().toISOString(),title:'LOKALE TESTDATEN · Anliegenstände',rows:[{property:'Testliegenschaft A',equipment:'light',status:'contractor_contacted'},{property:'Testliegenschaft A',equipment:'heater',status:'appointment_agreed'}]};
+   }
   }
   if(['save-issue','review-issue'].includes(input.action)){
    value.operation={operationId:'22222222-2222-4222-8222-222222222222',issueId:id,draftId:id,revision:1,contentHash:'a'.repeat(64)};
@@ -41,6 +48,7 @@
  };
  document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('entry-form').dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));
+  if(testRole!=='admin')window.MoradaRoles.select(testRole);
   document.getElementById('moraFab').click();
   const badge=document.createElement('div');badge.textContent='Lokale UI-Testdaten · keine KI-Anfrage';badge.style.cssText='flex-shrink:0;padding:5px 22px;color:#d3c7ba;font:11px/1.3 system-ui;border-bottom:1px solid #cfab8625';
   document.querySelector('#moraPortalChat header').after(badge);
@@ -48,5 +56,6 @@
    const style=document.createElement('style');style.textContent='#portalPreview #moraPortalChat{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:linear-gradient(155deg,#514132,#2b241d 75%)!important}';document.head.append(style);
   }
   if(scenario==='loading')window.MORAPortal.send('Lokale Prüfung des Ladezustands.');
+  if(scenario==='authorized-cases')window.MORAPortal.send('Lokaler UI-Test: Meine Anliegenstände anzeigen.');
  });
 })();

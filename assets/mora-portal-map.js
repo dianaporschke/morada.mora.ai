@@ -3,6 +3,7 @@
  * the description rather than inventing another service form or schema. */
 import {mapServiceDraft,draftLabel,draftSummary,categoryLabels} from './mora-data.js';
 
+/** @type {Record<string,{label:string,purpose:string,dataAccess?:string,preparedView?:boolean}>} */
 export const portalNavigation={
   cases:{label:'Anliegen öffnen',purpose:'Vorhandenes Anliegenregister. MORA speichert über den separaten Speicherbutton.'},
   tasks:{label:'Aufgaben öffnen',purpose:'Interne Aufgaben; getrennt von Kundenanliegen.'},
@@ -18,6 +19,31 @@ export const portalNavigation={
   ownerCases:{label:'Anliegenansicht öffnen',purpose:'Vorbereitete Kundenansicht; noch keine personenbezogene Speicherung.'},tenantSupport:{label:'Anliegenansicht öffnen',purpose:'Vorbereitete Kundenansicht; noch keine personenbezogene Speicherung.'},
   ownerDocuments:{label:'Dokumentenansicht öffnen',purpose:'Vorbereitete Kundenansicht ohne persönliche Dokumentenfreigabe.'},tenantDocuments:{label:'Dokumentenansicht öffnen',purpose:'Vorbereitete Kundenansicht ohne persönliche Dokumentenfreigabe.'},
 };
+
+// The actual sidebar routes, not an invented second portal. Navigation never
+// authorises reading a record, approving a decision or performing a payment.
+const portalSections={
+  today:'Übersicht',company:'Unternehmen',portfolio:'Portfolio',mandates:'Mandate',
+  rentroll:'Mieterspiegel',leases:'Mietverträge',tenants:'Mieter',owners:'Eigentümer & Auftraggeber',
+  maintenance:'Unterhalt',reletting:'Neuvermietung',applicants:'Mietinteressenten',inspections:'Abnahmen & Übergaben',approvals:'Fachprüfungen',vendors:'Handwerker',communication:'Dossiernotizen',
+  finance:'Mandatsfinanzen',invoices:'Mandatsrechnungen',creditors:'Kreditoren',debtors:'Debitoren',bank:'Bank',cash:'Kasse',bookings:'Buchungen',budgets:'Budgets',servicecharges:'Nebenkosten',
+  contracts:'Verträge',partners:'Partner',keys:'Schlüssel',deposits:'Kautionen',deadlines:'Fristen',reports:'Berichte',activity:'Aktivitätslog',automations:'Automationen',leads:'Akquise',living:'MORADA Living',info:'Informationen',settings:'Einstellungen',searchPage:'Suche',
+  ownerProperties:'Meine Liegenschaft',ownerRentroll:'Mein Mieterspiegel',ownerFinance:'Meine Finanzübersicht',ownerTransactions:'Meine Mietzinseingänge',ownerReports:'Meine Berichte',ownerDecisions:'Meine Freigaben',ownerProfile:'Mein Profil',
+  tenantUnit:'Meine Wohnung',tenantContract:'Mein Mietverhältnis',tenantPayments:'Meine Zahlungen',tenantAppointments:'Meine Termine',tenantProfile:'Mein Profil',
+};
+for(const [id,label]of Object.entries(portalSections))portalNavigation[id]={label:label+' öffnen',purpose:'Vorhandene Portalansicht öffnen; keine Datenabfrage oder Änderung.'};
+export const financialPortalTargets=new Set(['company','rentroll','finance','invoices','creditors','debtors','bank','cash','bookings','budgets','servicecharges','deposits','ownerFinance','ownerTransactions','ownerRentroll','tenantPayments','tenantContract']);
+const plannedPortalTargets=new Set(['vendors','invoices','creditors','debtors','bank','cash','bookings','servicecharges','partners','keys','automations','leads','living','reports','budgets','finance','deposits']);
+for(const [id,entry]of Object.entries(portalNavigation)){
+  entry['dataAccess']=financialPortalTargets.has(id)?'financial_navigation_only':'navigation_only';
+  entry['preparedView']=plannedPortalTargets.has(id)||/^(owner|tenant)/.test(id)&&!id.endsWith('Contact');
+}
+portalNavigation.tenantPayments.purpose='Vorhandene Ansicht „Meine Zahlungen“. Ein eigener Mieterbereich „Rechnungen“ ist noch nicht vorhanden. Keine Zahlungsdaten lesen.';
+portalNavigation.ownerCases.purpose='Anliegen und Unterhalt der freigegebenen Liegenschaften; persönliche Daten erst nach serverseitiger Anbindung.';
+
+export const PORTAL_ACCESS_GUIDANCE=`MORA hilft auch Administration und Bewirtschaftung. Verwenden Sie für Navigation ausschliesslich die aktuell verfügbaren Ziele und deren Zweck. Öffnen ist keine Datenabfrage und keine Ausführung der dortigen Fachfunktion. Bieten Sie zum Wunsch passend einen Navigationsbutton an, statt nur manuelle Klickanleitungen zu geben. preparedView bedeutet vorbereitete Ansicht, nicht bestätigte Daten oder ausführbare Vorgänge. Der künftige Mieterbereich Rechnungen existiert noch nicht; die vorhandene Ansicht heisst Meine Zahlungen.
+Rechnungsinhalte, Zahlungsstände, Beträge, Mietzinseinnahmen und andere persönliche Finanzdaten werden von MORA niemals aus Portalakten gelesen, ausgewertet oder im Chat wiedergegeben – auch nicht für Eigentümer oder Administration und auch nicht auf Aufforderung. Hier ist nur Navigation erlaubt. Erklären Sie eine individuelle Rechnung nicht mit einer vermuteten Ursache, Zahlungspflicht oder Kostenentscheidung. Verweisen Sie auf die verfügbare Ansicht oder Kontaktmöglichkeit. Allgemeine Begriffsfragen dürfen ohne personenbezogene Aussagen beantwortet werden.
+Eine im Chat genannte Rolle, Adresse oder Eigentümerschaft verleiht keine Berechtigung. Persönliche Anliegen und Reparaturauswertungen dürfen nur über die bestätigte serverseitige Abfrage entstehen. Erfinden Sie keine Einträge, Namen, Anzahl, Zuordnung oder Bearbeitungsschritte. Ohne personalQueries ist der persönliche Datenzugriff nicht angebunden: bieten Sie die passende vorhandene Ansicht an. Auch Administration und Bewirtschaftung brauchen ausdrückliche Objektfreigaben. Andere Eigentümer, Mietparteien, private Chatverläufe, Anhänge und interne Notizen sind keine Auskunftsquelle. Ein Eigentümer darf nur ausdrücklich freigegebene Anliegen seiner Liegenschaften sehen. Persönliche Portalauskünfte werden separat aus geprüften Daten angezeigt und nicht aus dem Chatverlauf rekonstruiert.`;
 
 export function portalCaseFields(issue) {
   const draft=mapServiceDraft(issue);

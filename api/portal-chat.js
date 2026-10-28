@@ -6,13 +6,14 @@ import {createPreviewCreditGuard} from '../lib/mora/portal/budget.js';
 import {rememberPreparationOffer} from '../lib/mora/actions.js';
 import {portalCaseFields,portalCaseEvidence} from '../assets/mora-portal-map.js';
 import {portalControls} from '../lib/mora/portal/action-state.js';
+import {readPortalAccess,allowedPortalNavigation,accessCapabilities,readAuthorizedCases,portalServerAdapter} from '../lib/mora/portal/access.js';
 
 const receipt=z.object({operationId:z.string().uuid(),issueId:z.string().uuid(),draftId:z.string().uuid(),revision:z.number().int().positive(),contentHash:z.string().regex(/^[a-f0-9]{64}$/),status:z.enum(['portal_received','error']),attachmentCount:z.number().int().min(0).max(3).optional(),conflictFields:z.array(z.enum(['title','description','unit','category'])).max(4).optional()}).strict();
 const schema=z.object({session:z.string().max(180000).optional(),message:z.string().trim().min(1).max(2000).optional(),messageId:z.string().uuid().optional(),action:z.enum(['save-issue','review-issue','switch-issue','draft-opened','draft-closed','draft-error','new-conversation']).optional(),issueId:z.string().uuid().optional(),receipt:receipt.optional(),navigation:z.array(z.enum(targets)).max(targets.length).default([])}).strict()
   .refine(v=>[v.message,v.action,v.receipt].filter(Boolean).length===1)
   .refine(v=>!v.message||Boolean(v.messageId));
 export const controls=portalControls;
-export function createPortalChatHandler({converse=createPortalService(),preflight=createPreviewCreditGuard(),integration='portal_v1'}={}) {
+export function createPortalChatHandler({converse=createPortalService(),preflight=createPreviewCreditGuard(),integration='portal_v1',portalAdapter=portalServerAdapter}={}) {
  return async function handler(req,res){
   res.setHeader('Cache-Control','private, no-store');
   // An isolated Preview route; never activate this integration on production.
@@ -24,10 +25,17 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
   if(req.method!=='POST')return res.status(405).json({code:'METHOD_NOT_ALLOWED'});
   const parsed=schema.safeParse(req.body);if(!parsed.success)return res.status(400).json({code:'INVALID_INPUT',error:'Bitte prüfen Sie die Nachricht.'});
   const input=parsed.data,start=Date.now();let state;
-  const reply=(status,data)=>res.status(status).json({architecture:integration,...data,...(state?{session:sealSession(state),issue:state.issue,issues:state.issues,controls:controls(state,data.navigation || [],input.navigation.includes('cases')),safety:state.safety || null}:{}),timingMs:{...(data.timingMs||{}),total:Date.now()-start}});
+  const access=await readPortalAccess(req,portalAdapter),navigation=allowedPortalNavigation(input.navigation,access);
+  // Navigation advertised by this preview is a UI capability, never identity.
+  // Signed conversations also convey no authority; rebind on every request.
+  const reply=(status,data)=>{
+    if(state)state.accessBinding=access.binding;
+    return res.status(status).json({architecture:integration,...data,...(state?{session:sealSession(state),issue:state.issue,issues:state.issues,controls:controls(state,(data.navigation || []).filter(t=>navigation.includes(t)),navigation.includes('cases')),safety:state.safety || null}:{}),timingMs:{...(data.timingMs||{}),total:Date.now()-start}});
+  };
   try{
     const previous=input.session?readSession(input.session):null;
     if(previous&&previous.integration!==integration)throw Object.assign(Error('Wrong integration'),{code:'INVALID_SESSION'});
+    if(previous&&(previous.accessBinding||'unverified-preview')!==access.binding)return reply(409,{code:'ACCESS_CHANGED',resetConversation:true,modelCalls:0,error:'Der Portalzugang oder seine Freigaben haben sich geändert. Bitte beginnen Sie ein neues Gespräch.'});
     state=hydrateSimple(previous);state.integration=integration;state.portalJournal ||= [];state.portalPending ||= [];
     if(input.action==='new-conversation'){state=hydrateSimple(null);state.integration=integration;state.portalJournal=[];state.portalPending=[];return reply(200,{mode:'control',modelCalls:0});}
     if(input.receipt){
@@ -49,7 +57,7 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
       return reply(200,{mode:'control',modelCalls:0});
     }
     if(input.action==='save-issue'||input.action==='review-issue'){
-      if(!input.navigation.includes('cases')||!(input.action==='save-issue'?controls(state).save:controls(state).review))throw Object.assign(Error('Action unavailable'),{code:'INVALID_ACTION'});
+      if(!navigation.includes('cases')||!(input.action==='save-issue'?controls(state).save:controls(state).review))throw Object.assign(Error('Action unavailable'),{code:'INVALID_ACTION'});
       // A current saved case may be reopened for review/photos without changing
       // its chat revision. A ticket remains permission, never storage evidence.
       const current=state.issue.preparation?.receipt;
@@ -65,15 +73,19 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
     state.portalJournal.push({role:'user',content:input.message,id:input.messageId});
     state.portalJournal=state.portalJournal.slice(-48);
     state.portalPending.push({content:input.message,id:input.messageId});
-    const result=await converse(message,before,input.navigation,45000);
+    const result=await converse(message,before,navigation,45000,accessCapabilities(access));
+    const portalResult=result.portalQuery?await readAuthorizedCases(access,result.portalQuery):null;
+    // Personal data never enters the signed (readable) conversation or model
+    // history. Render the checked result separately and only for this request.
+    if(portalResult)result.reply='';
     const journal=state.portalJournal;state=result.state;state.integration=integration;
     state.portalJournal=[...journal,{role:'assistant',content:result.reply}].slice(-48);state.portalPending=[];
     // Portal controls are derived separately from plan.actions. Record the
     // actual offer returned to this client, so the next model turn sees it.
     // A visible offer is neither an opened form nor a successful save.
-    if(input.navigation.includes('cases')&&controls(state).save)rememberPreparationOffer(state);
+    if(navigation.includes('cases')&&controls(state).save)rememberPreparationOffer(state);
     const actionable=controls(state).save||controls(state).review;
-    return reply(200,{mode:'model',reply:result.reply,navigation:result.navigation,requestedAction:actionable?result.requestedAction:null,modelCalls:result.modelCalls,generationIds:result.generationIds,usage:result.usage,repaired:result.repaired,repairScope:result.repairScope || null,...('toolEvents' in result?{toolEvents:result.toolEvents}:{}),timingMs:{model:result.modelMs,creditGuard:result.guardMs}});
+    return reply(200,{mode:'model',reply:result.reply,...(portalResult?{portalResult}:{}),navigation:result.navigation,requestedAction:actionable?result.requestedAction:null,modelCalls:result.modelCalls,generationIds:result.generationIds,usage:result.usage,repaired:result.repaired,repairScope:result.repairScope || null,...('toolEvents' in result?{toolEvents:result.toolEvents}:{}),timingMs:{model:result.modelMs,creditGuard:result.guardMs}});
   }catch(error){
     if(integration==='portal_agent_v1'&&error.conversationState&&state){
       const journal=state.portalJournal,pending=state.portalPending;

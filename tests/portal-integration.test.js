@@ -88,6 +88,27 @@ test('full HTML: quota failure produces no success or portal record and leaves r
 test('full HTML: existing navigation/form functions and customer views remain',()=>{
  const d=dom();const w=d.window;try{for(const id of ['cases','properties','units','calendar','tasks','documents','maintenance','owners','leases','rentroll','approvals']){w.eval(`go('${id}')`);assert.ok(w.document.getElementById('main').textContent.trim());}w.eval("newEntry('task')");assert.ok(w.document.getElementById('opsEntryForm'));w.eval('portalCloseDialog()');w.MoradaRoles.select('tenant');w.document.getElementById('moraFab').click();assert.ok(w.MORAPortal.element.textContent.includes('Guten Tag!'));assert.equal(w.MORAPortal.getState().data,null);}finally{w.close();}
 });
+
+test('full HTML: MORA covers every actual sidebar route in all four roles and executes navigation through native handlers',async()=>{
+ let advertised=[];let target='ownerFinance';
+ const d=dom(async(_u,o)=>{advertised=JSON.parse(o.body).navigation;return {ok:true,json:async()=>({architecture:'portal_v1',controls:{navigation:[target]},reply:'Lokaler Navigationstest',modelCalls:0})};}),w=d.window;
+ try{
+  for(const role of ['admin','manager','owner','tenant']){
+   w.MoradaRoles.select(role);await settle();w.MORAPortal.open();
+   target=role==='admin'?'invoices':role==='manager'?'maintenance':role==='owner'?'ownerFinance':'tenantPayments';
+   await w.MORAPortal.send('Lokaler Navigationstest');
+   const sidebar=Array.from(w.eval('roleGroups().flatMap(([,items])=>items.map(([id])=>id))'));
+   for(const id of sidebar)assert.ok(advertised.includes(id),role+' is missing '+id);
+   if(role==='tenant'){assert.ok(!advertised.includes('ownerFinance'));assert.ok(!advertised.includes('invoices'));assert.ok(!advertised.includes('tenantInvoices'));}
+   if(role==='owner')assert.ok(!advertised.includes('tenantPayments'));
+   if(role==='manager')assert.ok(!advertised.includes('company'));
+   const button=[...w.document.querySelectorAll('.mora-portal-actions button')].find(b=>b.textContent.includes(target==='invoices'?'Mandatsrechnungen':target==='maintenance'?'Unterhalt':target==='ownerFinance'?'Finanzübersicht':'Zahlungen'));
+   assert.ok(button,'real navigation button for '+target);button.click();await settle();
+   assert.equal(w.location.hash,'#'+target);assert.equal(w.MORAPortal.element.hidden,true);
+   assert.ok(!w.document.getElementById('moraFab').hidden);
+  }
+ }finally{w.close();}
+});
 test('unsupported operation, stale receipt and tampered session never claim success',async()=>{
  const handler=createPortalChatHandler({converse:async()=>({state:lamp(),reply:'Im Chat erfasst.',navigation:[],modelCalls:1})});
  const a=await call(handler,{message:'Lampe im Wohnzimmer',messageId:randomUUID()});

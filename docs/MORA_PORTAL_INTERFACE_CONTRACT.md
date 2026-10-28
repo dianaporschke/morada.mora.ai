@@ -1,5 +1,7 @@
 # MORA ↔ MORADA Portal: Zuständigkeit und Schnittstellen
 
+**Aktualisierung 28. Oktober 2026:** Für die integrierte HTML-Version gilt der präzisierte [Navigations- und Zugriffsvertrag](MORA_PORTAL_ACCESS_2026_10_28.md). Rechnungen und persönliche Finanzdaten bleiben ausschliesslich Navigationsziele. Der ältere Vorschlag `getFinancialSummary` weiter unten ist damit aufgehoben und darf nicht an MORA angeschlossen werden.
+
 Stand: 20. Oktober 2026. Dieser Vertrag beschreibt die MORA-Seite und die noch benötigten Portal-Schnittstellen. Er implementiert weder ein zweites Portal noch Anmeldung, Rollenverwaltung, Datenbank oder Service-Backend.
 
 ## Aktuell überprüfbarer Funktionsumfang

@@ -7,7 +7,12 @@ export function createPortalBridge(mapping) {
     if(portalLoading||portalSaving||portalReadBlocked)throw Error('Bitte zuerst den Portalstand laden oder die laufende Speicherung abwarten.');
   };
   const api={
-    available(){return (crmWritable()?['cases','calendar','documents','properties','units','tasks','team','support','new-task','new-appointment','new-document']:[role+'Home',role+'Contact',role==='owner'?'ownerCases':'tenantSupport',role+'Documents']).filter(t=>allowed(t.startsWith('new-')?({task:'tasks',appointment:'calendar',document:'documents'})[t.slice(4)]:t));},
+    available(){
+      if(!previewOpen)return [];
+      const pages=[...roleGroups().flatMap(([,items])=>items.map(([id])=>id)),'searchPage'];
+      if(crmWritable())pages.push('communication','new-task','new-appointment','new-document');
+      return [...new Set(pages)].filter(t=>Object.hasOwn(portalNavigation,t)&&allowed(t.startsWith('new-')?({task:'tasks',appointment:'calendar',document:'documents'})[t.slice(4)]:t));
+    },
     role(){return role;},open(){return previewOpen;},
     navigate(target){
       if(!this.available().includes(target))throw Error('Diese Funktion ist in dieser Ansicht nicht verfügbar.');
