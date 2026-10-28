@@ -1,0 +1,78 @@
+{
+  "url": "https://morada-mora-4z8ipt9ys-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "source": "Real deployed /api/portal-agent responses; no mock wording",
+  "model": "anthropic/claude-haiku-5.5",
+  "runCeilingUsd": 0.25,
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.692906068,
+    "totalUsedUsd": 3.307093932,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "role": "tenant",
+      "turns": [
+        {
+          "customer": "hey",
+          "status": 200,
+          "httpMs": 5819.8,
+          "reply": "Hallo, schön, dass Sie da sind. Wie kann ich Ihnen heute helfen? Wenn Sie ein Anliegen zu Ihrer Wohnung haben, erzählen Sie mir einfach kurz, worum es geht.",
+          "navigation": [],
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 7601,
+              "outputTokens": 214,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1379,
+            "creditGuard": 263,
+            "total": 1664
+          },
+          "code": null
+        },
+        {
+          "customer": "Wobei können Sie mir in diesem Portalbereich helfen?",
+          "status": 503,
+          "httpMs": 11916.6,
+          "reply": null,
+          "navigation": [],
+          "modelCalls": 2,
+          "usage": null,
+          "timingMs": {
+            "total": 3926
+          },
+          "code": "MODEL_UNAVAILABLE"
+        }
+      ]
+    }
+  ],
+  "stopped": "HTTP_503",
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.690894268,
+    "totalUsedUsd": 3.309105732,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "observedAccountDeltaUsd": 0.002011800000000008
+}

@@ -39,7 +39,7 @@ try:
    body={'message':message,'messageId':str(uuid.uuid4()),'viewRole':case['role'],'navigation':case['navigation']}
    if session:body['session']=session
    status,data,elapsed=request(body);session=data.pop('session',None)
-   row['turns'].append({'customer':message,'status':status,'httpMs':elapsed,'reply':data.get('reply'),'navigation':(data.get('controls') or {}).get('navigation'), 'modelCalls':data.get('modelCalls'),'usage':data.get('usage'),'timingMs':data.get('timingMs'),'code':data.get('code')})
+   row['turns'].append({'customer':message,'status':status,'httpMs':elapsed,'reply':data.get('reply'),'navigation':(data.get('controls') or {}).get('navigation'), 'modelCalls':data.get('modelCalls'),'usage':data.get('usage'),'timingMs':data.get('timingMs'),'code':data.get('code'),'diagnostic':data.get('diagnostic'),'availability':data.get('availability'),'toolEvents':data.get('toolEvents')})
    save();print(json.dumps({'role':case['role'],'status':status,'ms':elapsed,'reply':data.get('reply'),'code':data.get('code')},ensure_ascii=False),flush=True)
    if status!=200:raise RuntimeError('HTTP_'+str(status))
 except Exception as error:

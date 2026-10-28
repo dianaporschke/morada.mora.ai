@@ -1,0 +1,92 @@
+{
+  "url": "https://morada-mora-4z8ipt9ys-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "source": "Real deployed /api/portal-agent responses; no mock wording",
+  "model": "anthropic/claude-haiku-5.5",
+  "runCeilingUsd": 0.02,
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.690894268,
+    "totalUsedUsd": 3.309105732,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "role": "owner",
+      "turns": [
+        {
+          "customer": "hey",
+          "status": 200,
+          "httpMs": 6147.8,
+          "reply": "Hallo, schön, dass Sie da sind. Wobei kann ich Ihnen heute helfen? Wenn Sie ein Anliegen zu einer Ihrer Liegenschaften melden möchten, beschreiben Sie es einfach in Ihren Worten.",
+          "navigation": [],
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 7888,
+              "outputTokens": 221,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1218,
+            "creditGuard": 248,
+            "total": 1473
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": []
+        },
+        {
+          "customer": "Wobei können Sie mir in diesem Portalbereich helfen?",
+          "status": 200,
+          "httpMs": 7772.1,
+          "reply": "In diesem Bereich helfe ich Ihnen als Eigentümer bei Anliegen und Unterhalt Ihrer von MORADA betreuten Liegenschaften, bei Fragen zu Ihren Freigaben sowie bei der Orientierung im Portal. Ich kann Sie zu den passenden Ansichten führen, zum Beispiel:\n\n- Anliegenansicht: Anliegen und Unterhalt der freigegebenen Liegenschaften\n- Meine Liegenschaft: Übersicht Ihrer Objekte\n- Meine Freigaben und Meine Berichte\n- Dokumentenansicht und Mein Profil\n\nPersönliche Anliegenstände kann ich im Chat gerade nicht abrufen, weil dafür noch keine Datenanbindung besteht. Finanzdaten, Rechnungen und Zahlungsstände gebe ich hier grundsätzlich nicht wieder; dafür verweise ich auf die entsprechenden Ansichten im Portal.\n\nMöchten Sie eine dieser Ansichten öffnen, oder haben Sie ein konkretes Anliegen zu einer Liegenschaft?",
+          "navigation": [],
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 8009,
+              "outputTokens": 528,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 2813,
+            "creditGuard": 118,
+            "total": 2938
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": []
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.688930068,
+    "totalUsedUsd": 3.311069932,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "observedAccountDeltaUsd": 0.0019642000000001936
+}

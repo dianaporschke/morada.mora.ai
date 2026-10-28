@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {randomUUID} from 'node:crypto';
 import {portalRoles,resolvePortalAudience,portalAudienceInstructions} from '../lib/mora/portal/audience.js';
 import {createPortalChatHandler} from '../api/portal-chat.js';
-import {createCompactPortalAgent} from '../lib/mora/portal/compact-agent.js';
+import {createCompactPortalAgent,COMPACT_INSTRUCTIONS} from '../lib/mora/portal/compact-agent.js';
 import {createPortalService} from '../lib/mora/portal/service.js';
 import {createAgentTurn} from '../lib/mora/portal/agent.js';
 import {hydrateSimple} from '../lib/mora/simple/state.js';
@@ -65,4 +65,9 @@ test('legacy endpoint receives the same role perspective, not a separate generic
  const converse=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:MODEL,createModel:()=>({})}),guard:async()=>{},generate:async o=>{instructions=o.instructions;return {output:{reply:'Testantwort',intent:'general',updates:[],actions:[]},usage:{},finalStep:{}};}});
  await converse('hey',hydrateSimple(null),['ownerHome'],45000,{...unavailable,audience:{role:'owner',source:'preview_view'}});
  assert.match(instructions,/Eigentümerzugang:/);assert.doesNotMatch(instructions,/Mieterzugang:/);
+});
+
+test('role descriptions cannot imply unavailable form or operational capabilities',()=>{
+ assert.match(COMPACT_INSTRUCTIONS,/Nur bei capabilities.localCases=true/);
+ for(const role of portalRoles){const prompt=portalAudienceInstructions({role});assert.match(prompt,/nur die tatsächlich verfügbaren Fähigkeiten/);assert.match(prompt,/Freigaben, Buchungen oder Beauftragungen können nicht ausgeführt/);}
 });
