@@ -91,7 +91,7 @@ test('full HTML: existing navigation/form functions and customer views remain',(
 
 test('full HTML: MORA covers every actual sidebar route in all four roles and executes navigation through native handlers',async()=>{
  let advertised=[];let target='ownerFinance';
- const d=dom(async(_u,o)=>{advertised=JSON.parse(o.body).navigation;return {ok:true,json:async()=>({architecture:'portal_v1',controls:{navigation:[target]},reply:'Lokaler Navigationstest',modelCalls:0})};}),w=d.window;
+ const d=dom(async(_u,o)=>{const sent=JSON.parse(o.body);advertised=sent.navigation;assert.equal(sent.viewRole,w.eval('role'));return {ok:true,json:async()=>({architecture:'portal_v1',controls:{navigation:[target]},reply:'Lokaler Navigationstest',modelCalls:0})};}),w=d.window;
  try{
   for(const role of ['admin','manager','owner','tenant']){
    w.MoradaRoles.select(role);await settle();w.MORAPortal.open();

@@ -8904,7 +8904,7 @@ function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(w
     if(window.location.protocol==='file:')throw Error('Bitte öffnen Sie die bereitgestellte HTTPS-Testversion. Die lokale HTML-Datei enthält absichtlich keinen KI-Schlüssel.');
     if(!fetcher)throw Error('Die Backend-Verbindung ist in diesem Browser nicht verfügbar.');
     const start=window.performance.now(),startedRole=activeRole,startedEpoch=accessEpoch;
-    const response=await fetcher(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...(thread.session?{session:thread.session}:{}),...payload,navigation:bridge.available()}),signal:window.AbortSignal.timeout(55000)});
+    const response=await fetcher(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...(thread.session?{session:thread.session}:{}),...payload,navigation:bridge.available(),viewRole:startedRole}),signal:window.AbortSignal.timeout(55000)});
     const headers=window.performance.now();let data;
     try{data=await response.json();}catch{throw Error('Das geschützte Backend konnte nicht erreicht werden. Bitte laden Sie die Testversion neu.');}
     const parsed=window.performance.now();

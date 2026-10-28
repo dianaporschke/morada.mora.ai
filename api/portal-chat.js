@@ -7,9 +7,10 @@ import {rememberPreparationOffer} from '../lib/mora/actions.js';
 import {portalCaseFields,portalCaseEvidence} from '../assets/mora-portal-map.js';
 import {portalControls} from '../lib/mora/portal/action-state.js';
 import {readPortalAccess,allowedPortalNavigation,accessCapabilities,readAuthorizedCases,portalServerAdapter} from '../lib/mora/portal/access.js';
+import {portalRoles,resolvePortalAudience} from '../lib/mora/portal/audience.js';
 
 const receipt=z.object({operationId:z.string().uuid(),issueId:z.string().uuid(),draftId:z.string().uuid(),revision:z.number().int().positive(),contentHash:z.string().regex(/^[a-f0-9]{64}$/),status:z.enum(['portal_received','error']),attachmentCount:z.number().int().min(0).max(3).optional(),conflictFields:z.array(z.enum(['title','description','unit','category'])).max(4).optional()}).strict();
-const schema=z.object({session:z.string().max(180000).optional(),message:z.string().trim().min(1).max(2000).optional(),messageId:z.string().uuid().optional(),action:z.enum(['save-issue','review-issue','switch-issue','draft-opened','draft-closed','draft-error','new-conversation']).optional(),issueId:z.string().uuid().optional(),receipt:receipt.optional(),navigation:z.array(z.enum(targets)).max(targets.length).default([])}).strict()
+const schema=z.object({session:z.string().max(180000).optional(),message:z.string().trim().min(1).max(2000).optional(),messageId:z.string().uuid().optional(),action:z.enum(['save-issue','review-issue','switch-issue','draft-opened','draft-closed','draft-error','new-conversation']).optional(),issueId:z.string().uuid().optional(),receipt:receipt.optional(),navigation:z.array(z.enum(targets)).max(targets.length).default([]),viewRole:z.enum(portalRoles).optional()}).strict()
   .refine(v=>[v.message,v.action,v.receipt].filter(Boolean).length===1)
   .refine(v=>!v.message||Boolean(v.messageId));
 export const controls=portalControls;
@@ -26,16 +27,18 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
   const parsed=schema.safeParse(req.body);if(!parsed.success)return res.status(400).json({code:'INVALID_INPUT',error:'Bitte prüfen Sie die Nachricht.'});
   const input=parsed.data,start=Date.now();let state;
   const access=await readPortalAccess(req,portalAdapter),navigation=allowedPortalNavigation(input.navigation,access);
+  const capabilities=accessCapabilities(access),audience=resolvePortalAudience(capabilities,input.viewRole,navigation);
   // Navigation advertised by this preview is a UI capability, never identity.
   // Signed conversations also convey no authority; rebind on every request.
   const reply=(status,data)=>{
-    if(state)state.accessBinding=access.binding;
+    if(state){state.accessBinding=access.binding;state.portalAudience=audience;}
     return res.status(status).json({architecture:integration,...data,...(state?{session:sealSession(state),issue:state.issue,issues:state.issues,controls:controls(state,(data.navigation || []).filter(t=>navigation.includes(t)),navigation.includes('cases')),safety:state.safety || null}:{}),timingMs:{...(data.timingMs||{}),total:Date.now()-start}});
   };
   try{
     const previous=input.session?readSession(input.session):null;
     if(previous&&previous.integration!==integration)throw Object.assign(Error('Wrong integration'),{code:'INVALID_SESSION'});
     if(previous&&(previous.accessBinding||'unverified-preview')!==access.binding)return reply(409,{code:'ACCESS_CHANGED',resetConversation:true,modelCalls:0,error:'Der Portalzugang oder seine Freigaben haben sich geändert. Bitte beginnen Sie ein neues Gespräch.'});
+    if(previous?.portalAudience?.role&&previous.portalAudience.role!==audience.role)return reply(409,{code:'ACCESS_CHANGED',resetConversation:true,modelCalls:0,error:'Der Portalbereich wurde gewechselt. Bitte beginnen Sie hier ein neues Gespräch.'});
     state=hydrateSimple(previous);state.integration=integration;state.portalJournal ||= [];state.portalPending ||= [];
     if(input.action==='new-conversation'){state=hydrateSimple(null);state.integration=integration;state.portalJournal=[];state.portalPending=[];return reply(200,{mode:'control',modelCalls:0});}
     if(input.receipt){
@@ -73,7 +76,7 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
     state.portalJournal.push({role:'user',content:input.message,id:input.messageId});
     state.portalJournal=state.portalJournal.slice(-48);
     state.portalPending.push({content:input.message,id:input.messageId});
-    const result=await converse(message,before,navigation,45000,accessCapabilities(access));
+    const result=await converse(message,before,navigation,45000,{...capabilities,audience});
     const portalResult=result.portalQuery?await readAuthorizedCases(access,result.portalQuery):null;
     // Personal data never enters the signed (readable) conversation or model
     // history. Render the checked result separately and only for this request.

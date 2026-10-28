@@ -41,7 +41,7 @@ test('Enter sends once, Shift+Enter and IME preserve typing, busy prevents repea
   assert.equal(calls.length,0);
   x.input.dispatchEvent(new x.w.KeyboardEvent('keydown',{key:'Enter',bubbles:true,cancelable:true}));
   await x.client.send('Doppelklick');
-  assert.equal(calls.length,1);assert.equal(calls[0].url,'/api/portal-agent');assert.equal(calls[0].body.message,'Mehrzeilige\nTestnachricht');
+  assert.equal(calls.length,1);assert.equal(calls[0].url,'/api/portal-agent');assert.equal(calls[0].body.message,'Mehrzeilige\nTestnachricht');assert.equal(calls[0].body.viewRole,'admin');
   assert.equal(x.input.disabled,true);assert.equal(x.client.element.getAttribute('aria-busy'),'true');
   release();await tick();
   assert.equal(x.input.disabled,false);assert.equal(x.client.element.getAttribute('aria-busy'),'false');
