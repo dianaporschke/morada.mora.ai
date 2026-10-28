@@ -1,0 +1,290 @@
+{
+  "url": "https://morada-mora-d2bkv7vc8-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "source": "Real deployed /api/portal-agent responses; no mock wording",
+  "model": "anthropic/claude-haiku-5.5",
+  "runCeilingUsd": 0.02,
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.688930068,
+    "totalUsedUsd": 3.311069932,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "role": "tenant",
+      "turns": [
+        {
+          "customer": "hey",
+          "status": 200,
+          "httpMs": 5886.0,
+          "reply": "Hallo! Schön, dass Sie sich melden. Wie kann ich Ihnen heute helfen? Wenn Sie ein Anliegen zu Ihrer Wohnung haben, sagen Sie mir einfach, worum es geht.",
+          "navigation": [],
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 7928,
+              "outputTokens": 212,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1276,
+            "creditGuard": 232,
+            "total": 1527
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": []
+        },
+        {
+          "customer": "Wobei können Sie mir in diesem Portalbereich helfen?",
+          "status": 200,
+          "httpMs": 11244.9,
+          "reply": "Ich kann Ihnen in diesem Bereich bei Fragen rund um Ihre Mietwohnung helfen und Sie zu den passenden Ansichten führen. Dazu gehören:\n\n- **Übersicht:** Ihre Mieteransicht als Startpunkt.\n- **Anliegen:** Die Anliegenansicht, in der Sie Ihre Anliegen zur Wohnung einsehen können.\n- **Meine Wohnung** und **Mein Mietverhältnis:** Angaben zu Ihrer Wohnung und Ihrem Mietverhältnis.\n- **Meine Termine:** Ihre Termine im Überblick.\n- **Dokumente:** Die Dokumentenansicht; persönliche Dokumente sind hier allerdings noch nicht freigegeben.\n- **Meine Zahlungen:** Die vorhandene Ansicht für Zahlungen. Ich lese dort keine Zahlungsdaten aus.\n- **Mein Profil** und **Kontakt:** Ihre Profildaten und Kontaktmöglichkeiten.\n\nSagen Sie mir gern, was Sie brauchen, dann öffne ich Ihnen die passende Ansicht.",
+          "navigation": [],
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 8040,
+              "outputTokens": 545,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 6576,
+            "creditGuard": 173,
+            "total": 6757
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": []
+        }
+      ]
+    },
+    {
+      "role": "owner",
+      "turns": [
+        {
+          "customer": "hey",
+          "status": 200,
+          "httpMs": 6604.1,
+          "reply": "Hallo, schön, dass Sie sich melden. Wie kann ich Ihnen heute helfen? Falls es um eine Liegenschaft oder ein Anliegen Ihrer Mietparteien geht, sagen Sie mir einfach, worum es geht.",
+          "navigation": [],
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 8215,
+              "outputTokens": 219,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1951,
+            "creditGuard": 189,
+            "total": 2145
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": []
+        },
+        {
+          "customer": "Wobei können Sie mir in diesem Portalbereich helfen?",
+          "status": 200,
+          "httpMs": 9932.1,
+          "reply": "Ich kann Ihnen hier vor allem beim Einstieg in die Eigentümeransichten helfen und Sie direkt dorthin öffnen. Dazu gehören zum Beispiel die Übersicht, Ihre Liegenschaften, die Anliegenansicht für Unterhalt und Meldungen zu Ihren Liegenschaften, Dokumente, Ihre Freigaben, Berichte und Ihr Profil.\n\nIm Moment kann ich Ihnen keine persönlichen Anliegenstände oder Auswertungen direkt im Chat anzeigen, da diese Anbindung hier noch nicht aktiv ist. Ich kann auch keine Meldungen versenden, Aufträge vergeben oder Termine buchen. Wenn Sie ein Anliegen melden möchten, können Sie das in der Anliegenansicht tun, und ich kann Sie dorthin führen.\n\nWobei darf ich Sie unterstützen?",
+          "navigation": [],
+          "modelCalls": 2,
+          "usage": [
+            {
+              "inputTokens": 8334,
+              "outputTokens": 458,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 1359,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 3553,
+            "creditGuard": 503,
+            "total": 4066
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "effect_review",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "manager",
+      "turns": [
+        {
+          "customer": "hey",
+          "status": 200,
+          "httpMs": 5585.5,
+          "reply": "Hallo, schön, dass Sie da sind. Wie kann ich Sie heute unterstützen?",
+          "navigation": [],
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 10425,
+              "outputTokens": 163,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1185,
+            "creditGuard": 172,
+            "total": 1366
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": []
+        },
+        {
+          "customer": "Wobei können Sie mir in diesem Portalbereich helfen?",
+          "status": 200,
+          "httpMs": 8740.6,
+          "reply": "Ich unterstütze Sie in diesem Portalbereich bei der Erfassung und Vorbereitung von Anliegen, also Meldungen zu Schäden oder Defekten in einer Liegenschaft oder Einheit. Dabei kann ich Ihnen helfen, das Anliegen verständlich zu beschreiben, und es lokal auf diesem Gerät vorbereiten, prüfen und speichern, inklusive Fotos.\n\nAusserdem kann ich Sie gezielt zu den Ansichten im Portal führen, zum Beispiel zu Anliegen, Unterhalt, Liegenschaften, Einheiten, Mietverträgen, Fristen oder Dokumenten. Das Öffnen einer Ansicht ruft keine Daten ab und führt keine Aktion aus. Versenden, Beauftragen oder Terminbuchungen kann ich dagegen nicht übernehmen.\n\nHaben Sie ein Anliegen, bei dem ich Ihnen helfen soll, oder suchen Sie eine bestimmte Ansicht?",
+          "navigation": [],
+          "modelCalls": 2,
+          "usage": [
+            {
+              "inputTokens": 10488,
+              "outputTokens": 498,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 1399,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 3575,
+            "creditGuard": 293,
+            "total": 3876
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "effect_review",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "admin",
+      "turns": [
+        {
+          "customer": "hey",
+          "status": 200,
+          "httpMs": 6145.8,
+          "reply": "Hallo, schön, dass Sie da sind. Wobei kann ich Ihnen heute helfen? Wenn Sie ein Anliegen zu einer Liegenschaft oder Einheit haben, sagen Sie mir einfach kurz, worum es geht, oder öffnen Sie die Anliegenansicht.",
+          "navigation": [],
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 10703,
+              "outputTokens": 238,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1685,
+            "creditGuard": 177,
+            "total": 1867
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": []
+        },
+        {
+          "customer": "Wobei können Sie mir in diesem Portalbereich helfen?",
+          "status": 200,
+          "httpMs": 8554.6,
+          "reply": "In diesem Portalbereich kann ich Ihnen vor allem bei Verwaltungs- und Bewirtschaftungsabläufen helfen. Ich kann die vorhandenen Ansichten für Sie öffnen, zum Beispiel Anliegen, Aufgaben, Kalender, Dokumente, Liegenschaften, Einheiten, Mietverträge, Unterhalt, Fristen oder Berichte. Ein Anliegen mit Beschreibung kann ich ausserdem lokal auf diesem Gerät vorbereiten, prüfen und speichern. Versenden, Beauftragen oder Termine buchen kann ich dabei nicht; Öffnen einer Ansicht führt keine Fachfunktion aus. Sagen Sie mir einfach, was Sie brauchen.",
+          "navigation": [],
+          "modelCalls": 2,
+          "usage": [
+            {
+              "inputTokens": 10841,
+              "outputTokens": 407,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 1303,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 4061,
+            "creditGuard": 347,
+            "total": 4413
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "effect_review",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.679604068,
+    "totalUsedUsd": 3.320395932,
+    "maxUsedUsd": 3.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 2,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "observedAccountDeltaUsd": 0.009325999999999723
+}
