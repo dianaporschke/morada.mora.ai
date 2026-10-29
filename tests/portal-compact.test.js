@@ -46,13 +46,11 @@ test('emergency role rejection retains heater facts without a second paid call o
   assert.equal(a.model.doGenerateCalls.length,1);
 });
 
-test('real danger preserves safety and blocks inappropriate conversational routing',async()=>{
-  const message='Jetzt riecht es nach Gas.';
-  const a=sdk([plan('Wenden Sie sich sofort an mich.',[{ref:'new1',quote:message,equipment:'Heizung',details:message,risk:'gas'}])]);
-  await assert.rejects(a.converse(message,empty(),['cases']),e=>{
-    assert.equal(e.diagnostic.reason,'unsupported_emergency_role');assert.equal(e.conversationState.safety.hazard,'gas');
-    assert.equal(portalActionState(e.conversationState).controls.save,null);return true;
-  });
+test('reported immediate danger uses the existing safety notice without generated advice',async()=>{
+  const a=sdk([]);
+  const r=await a.converse('Aus der Steckdose kommt Rauch und es riecht verbrannt.',empty(),['cases']);
+  assert.equal(r.modelCalls,0);assert.equal(r.reply,'');assert.equal(r.state.safety.hazard,'fire');
+  assert.equal(portalActionState(r.state).controls.save,null);assert.equal(a.model.doGenerateCalls.length,0);
 });
 
 test('compact response and extraction share exactly one real SDK generation',async()=>{
