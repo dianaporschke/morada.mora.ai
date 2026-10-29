@@ -1,0 +1,173 @@
+{
+  "url": "https://morada-mora-r9vewu9e7-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "source": "Real deployed /api/portal-agent responses; no mock wording",
+  "model": "anthropic/claude-haiku-5.5",
+  "runCeilingUsd": 0.04,
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.552369468,
+    "totalUsedUsd": 3.447630532,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "id": "owner-documents",
+      "role": "owner",
+      "turns": [
+        {
+          "customer": "Wo liegen die Dokumente zur Liegenschaft in Baden?",
+          "status": 200,
+          "httpMs": 10414.0,
+          "reply": "{\"allowed\": false, \"note\": \"Prüfung abgeschlossen. Die abgelehnte Antwort behauptet, dass die Dokumentenansicht ein Ort für Unterlagen zur Liegenschaft ist, und bietet an, dort Dokumente zu nennen. Das ist unzulässig, weil persönliche Inhalte nicht angeschlossen sind (recordConnection=false). Die Antwort verspricht zudem sinngemäß eine Hilfe bei Dokumentenfunden und bietet einen Button an, obwohl die Ansicht nur eine leere Vorschau ist.\"}",
+          "navigation": [
+            "ownerDocuments"
+          ],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "ownerDocuments"
+            ]
+          },
+          "modelCalls": 3,
+          "usage": [
+            {
+              "inputTokens": 6694,
+              "outputTokens": 279,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 3557,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 5834,
+              "outputTokens": 243,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 4670,
+            "creditGuard": 510,
+            "total": 5201
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            },
+            {
+              "tool": "effect_review",
+              "ok": false
+            },
+            {
+              "tool": "effect_repair",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "customer": "Sind dort schon meine Unterlagen verfügbar?",
+          "status": 200,
+          "httpMs": 9984.8,
+          "reply": "Ob Unterlagen zu Ihrer Liegenschaft in Baden vorliegen, kann ich Ihnen von hier aus nicht sagen. Die Dokumentenansicht ist nur eine leere Vorschau ohne angebundene persönliche Dateien, dort sehe ich also weder Dokumente noch Beträge. Sie können die Ansicht trotzdem selbst öffnen, sie zeigt Ihnen aber nichts Persönliches an.",
+          "navigation": [
+            "ownerDocuments"
+          ],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "ownerDocuments"
+            ]
+          },
+          "modelCalls": 3,
+          "usage": [
+            {
+              "inputTokens": 6929,
+              "outputTokens": 311,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 3583,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 5886,
+              "outputTokens": 195,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 4310,
+            "creditGuard": 579,
+            "total": 4898
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            },
+            {
+              "tool": "effect_review",
+              "ok": false
+            },
+            {
+              "tool": "effect_repair",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.548572168,
+    "totalUsedUsd": 3.451427832,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "observedAccountDeltaUsd": 0.0037973000000000035
+}

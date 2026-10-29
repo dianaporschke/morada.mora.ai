@@ -1,0 +1,173 @@
+{
+  "url": "https://morada-mora-gog7a2gxj-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "source": "Real deployed /api/portal-agent responses; no mock wording",
+  "model": "anthropic/claude-haiku-5.5",
+  "runCeilingUsd": 0.04,
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.548572168,
+    "totalUsedUsd": 3.451427832,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "id": "owner-documents",
+      "role": "owner",
+      "turns": [
+        {
+          "customer": "Wo liegen die Dokumente zur Liegenschaft in Baden?",
+          "status": 200,
+          "httpMs": 11090.3,
+          "reply": "Guten Tag,\n\nzu der Liegenschaft in Baden kann ich Ihnen im Moment leider keine Dokumente anzeigen. In der Dokumentenansicht des Portals sind aktuell keine persönlichen Dateien angebunden, deshalb sind dort keine Unterlagen zu dieser Liegenschaft verfügbar.\n\nIch kann Ihnen die Dokumentenansicht gerne öffnen, damit Sie sich selbst einen Überblick verschaffen können.\n\nFreundliche Grüsse\nMORA",
+          "navigation": [
+            "ownerDocuments"
+          ],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "ownerDocuments"
+            ]
+          },
+          "modelCalls": 3,
+          "usage": [
+            {
+              "inputTokens": 6694,
+              "outputTokens": 267,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 3545,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 1356,
+              "outputTokens": 221,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 4605,
+            "creditGuard": 538,
+            "total": 5174
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            },
+            {
+              "tool": "effect_review",
+              "ok": false
+            },
+            {
+              "tool": "effect_repair",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "customer": "Sind dort schon meine Unterlagen verfügbar?",
+          "status": 200,
+          "httpMs": 9761.3,
+          "reply": "Vielen Dank für Ihre Nachricht. Derzeit sind in der Dokumentenansicht keine persönlichen Unterlagen für Sie hinterlegt bzw. angebunden, daher kann ich Ihnen dort leider keine Dateien oder Downloads anzeigen. Ich kann Ihnen auch nicht zusagen, dass dort etwas für Sie bereitliegt. Bei weiteren Fragen zu Ihren Unterlagen helfe ich Ihnen gern weiter.",
+          "navigation": [
+            "ownerDocuments"
+          ],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "ownerDocuments"
+            ]
+          },
+          "modelCalls": 3,
+          "usage": [
+            {
+              "inputTokens": 6907,
+              "outputTokens": 302,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 3575,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 1386,
+              "outputTokens": 211,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 4029,
+            "creditGuard": 508,
+            "total": 4548
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            },
+            {
+              "tool": "effect_review",
+              "ok": false
+            },
+            {
+              "tool": "effect_repair",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.545690368,
+    "totalUsedUsd": 3.454309632,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "observedAccountDeltaUsd": 0.0028818000000003785
+}
