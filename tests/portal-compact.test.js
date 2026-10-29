@@ -110,10 +110,10 @@ test('saved draft correction keeps the receipt and creates an update instead of 
   s=(await turn(s,'Nein, Bad.',plan('Dann im Bad.',[{ref:'active',quote:'Nein, Bad.',location:'Bad',correction:true}],{focus:'active'}))).state;
   const a=portalActionState(s);assert.equal(a.hasStoredDraft,true);assert.equal(a.formSaved,false);assert.equal(a.controls.save.operation,'update');assert.equal(s.issue.id,op.issueId);
 });
-test('invalid source cannot change facts or execute an action; no automatic paid repair',async()=>{
-  const s=await lamp(),a=sdk([plan('Alles klar.',[{ref:'active',quote:'not said',location:'Küche'}],{focus:'active'})]);
-  await assert.rejects(a.converse('Nein, Bad.',s,['cases']),e=>e.modelCalls===1&&e.conversationState.issue.location==='Wohnzimmer');
-  assert.equal(a.model.doGenerateCalls.length,1);
+test('invalid source cannot change facts after one bounded correction',async()=>{
+  const s=await lamp(),bad=plan('Alles klar.',[{ref:'active',quote:'not said',location:'Küche'}],{focus:'active'}),a=sdk([bad,bad]);
+  await assert.rejects(a.converse('Nein, Bad.',s,['cases']),e=>e.modelCalls===2&&e.conversationState.issue.location==='Wohnzimmer');
+  assert.equal(a.model.doGenerateCalls.length,2);
 });
 test('unavailable or unrequested operations fail closed while valid facts survive',async()=>{
   const p=plan('Ich öffne das Formular.',[],{topic:'issue',focus:'active',next:{type:'form',action:'prepare',ref:'active',requestQuote:'Bitte vorbereiten.'}});
@@ -265,4 +265,35 @@ test('no available navigation omits view action without blocking an ordinary ans
  assert.equal(schema.safeParse(plan('Ansicht',[],{next:{type:'view',target:'cases'}})).success,false);
  const r=await sdk([plan('Guten Tag.')]).converse('Hallo',empty(),[]);
  assert.deepEqual(r.navigation,[]);assert.equal(r.modelCalls,1);
+});
+
+test('one evidence correction recovers the screenshot lamp without losing facts or duplicating issues',async()=>{
+ const message='Seit gestern funktioniert eine Lampe im Wohnzimmer nicht.';
+ const good=wirePlan(plan('Das ist ärgerlich.',[{ref:'new1',quote:message,equipment:'light',defect:'funktioniert nicht',location:'Wohnzimmer',since:'Seit gestern',count:1}]));
+ const bad=structuredClone(good);bad.updates[0].changes.find(c=>c.field==='defect').quote='Lampe funktioniert nicht';
+ const a=sdk([JSON.stringify(bad),JSON.stringify(good)]);
+ const r=await a.converse(message,empty(),['cases']);
+ assert.equal(r.modelCalls,2);assert.equal(r.repaired,true);assert.equal(r.repairScope,'source_evidence');
+ assert.equal(r.state.issues.length,1);assert.equal(r.state.issue.defect,'funktioniert nicht');
+ const mapped=portalCaseFields(r.state.issue);assert.equal(mapped.unit,'Wohnzimmer');assert.match(mapped.description,/Seit gestern/);
+ const next=await turn(r.state,'Nein, Schlafzimmer.',plan('Alles klar.',[{ref:'active',quote:'Nein, Schlafzimmer.',location:'Schlafzimmer',correction:true}]));
+ assert.equal(next.state.issue.id,r.state.issue.id);assert.equal(next.state.issue.defect,'funktioniert nicht');assert.equal(next.state.issue.since,'Seit gestern');
+ assert.equal(portalCaseFields(next.state.issue).unit,'Schlafzimmer');
+});
+
+test('repeated invalid evidence stops after one correction and cannot mutate prior facts',async()=>{
+ const state=await lamp(),before=JSON.stringify(state);
+ const bad=wirePlan(plan('Alles klar.',[{ref:'active',quote:'Nein, Schlafzimmer.',location:'Küche',correction:true}]));
+ bad.updates[0].changes[0].quote='Küche';
+ const a=sdk([JSON.stringify(bad),JSON.stringify(bad)]);
+ await assert.rejects(a.converse('Nein, Schlafzimmer.',state,['cases']),e=>e.modelCalls===2&&e.diagnostic.detail==='field_quote_not_in_message'&&e.conversationState.issue.location==='Wohnzimmer');
+ assert.equal(JSON.stringify(state),before);assert.equal(a.model.doGenerateCalls.length,2);
+});
+
+test('evidence correction obeys the existing cost guard before its second call',async()=>{
+ let guards=0;
+ const bad=wirePlan(plan('Antwort',[{ref:'new1',quote:'invented',equipment:'light'}]));
+ const a=sdk([JSON.stringify(bad)],async()=>{if(++guards===2)throw Object.assign(Error('budget'),{code:'PREVIEW_CREDIT_BOUNDARY'});});
+ await assert.rejects(a.converse('Lampe kaputt',empty(),['cases']),e=>e.code==='PREVIEW_CREDIT_BOUNDARY'&&e.modelCalls===1&&e.conversationState.issues.length===0);
+ assert.equal(a.model.doGenerateCalls.length,1);
 });
