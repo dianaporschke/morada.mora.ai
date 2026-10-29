@@ -27,7 +27,7 @@ path=pathlib.Path(cfg['output'])
 def save():path.write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
 try:
  for case in cfg['cases']:
-  session=None;row={'role':case['role'],'turns':[]};evidence['conversations'].append(row)
+  session=None;row={'id':case.get('id'),'role':case['role'],'turns':[]};evidence['conversations'].append(row)
   for message in case.get('messages',['hey','Wobei können Sie mir in diesem Portalbereich helfen?']):
    status,current,_=request()
    if status!=200:raise RuntimeError('EXISTING_PREVIEW_BUDGET_BOUNDARY')
@@ -39,7 +39,7 @@ try:
    body={'message':message,'messageId':str(uuid.uuid4()),'viewRole':case['role'],'navigation':case['navigation']}
    if session:body['session']=session
    status,data,elapsed=request(body);session=data.pop('session',None)
-   row['turns'].append({'customer':message,'status':status,'httpMs':elapsed,'reply':data.get('reply'),'navigation':(data.get('controls') or {}).get('navigation'), 'issue':data.get('issue'),'controls':data.get('controls'),'modelCalls':data.get('modelCalls'),'usage':data.get('usage'),'timingMs':data.get('timingMs'),'code':data.get('code'),'diagnostic':data.get('diagnostic'),'availability':data.get('availability'),'toolEvents':data.get('toolEvents')})
+   row['turns'].append({'customer':message,'status':status,'httpMs':elapsed,'reply':data.get('reply'),'navigation':(data.get('controls') or {}).get('navigation'), 'issue':data.get('issue'),'issues':data.get('issues'),'requestedAction':data.get('requestedAction'),'safety':data.get('safety'),'controls':data.get('controls'),'modelCalls':data.get('modelCalls'),'usage':data.get('usage'),'timingMs':data.get('timingMs'),'code':data.get('code'),'diagnostic':data.get('diagnostic'),'availability':data.get('availability'),'toolEvents':data.get('toolEvents')})
    save();print(json.dumps({'role':case['role'],'status':status,'ms':elapsed,'reply':data.get('reply'),'code':data.get('code')},ensure_ascii=False),flush=True)
    if status!=200:raise RuntimeError('HTTP_'+str(status))
 except Exception as error:

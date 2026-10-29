@@ -110,6 +110,18 @@ test('saved draft correction keeps the receipt and creates an update instead of 
   s=(await turn(s,'Nein, Bad.',plan('Dann im Bad.',[{ref:'active',quote:'Nein, Bad.',location:'Bad',correction:true}],{focus:'active'}))).state;
   const a=portalActionState(s);assert.equal(a.hasStoredDraft,true);assert.equal(a.formSaved,false);assert.equal(a.controls.save.operation,'update');assert.equal(s.issue.id,op.issueId);
 });
+
+test('model context distinguishes an offered action, open form and stored draft',async()=>{
+  const s=await lamp();s.issue.draftOfferShown=true;
+  let a=createAgentTurn(s,'Noch eine Ergänzung',['cases']).snapshot().issues[0].action;
+  assert.equal(a.offerAlreadyShown,true);assert.equal(a.formOpened,false);assert.equal(a.hasStoredDraft,false);
+  s.portalDraftOpen={issueId:s.issue.id,revision:s.issue.revision,status:'prepared'};
+  a=createAgentTurn(s,'Ist es gespeichert?',['cases']).snapshot().issues[0].action;
+  assert.equal(a.formOpened,true);assert.equal(a.formSaved,false);
+  delete s.portalDraftOpen;const op=beginPreparation(s);acceptReceipt(s,{...op,status:'portal_received'});
+  a=createAgentTurn(s,'Ist es gespeichert?',['cases']).snapshot().issues[0].action;
+  assert.equal(a.formOpened,false);assert.equal(a.formSaved,true);assert.equal(a.savedFactsMatch,true);
+});
 test('invalid source cannot change facts after one bounded correction',async()=>{
   const s=await lamp(),bad=plan('Alles klar.',[{ref:'active',quote:'not said',location:'Küche'}],{focus:'active'}),a=sdk([bad,bad]);
   await assert.rejects(a.converse('Nein, Bad.',s,['cases']),e=>e.modelCalls===2&&e.conversationState.issue.location==='Wohnzimmer');
