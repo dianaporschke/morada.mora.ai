@@ -66,11 +66,15 @@ export function createCustomerCases(){
     const button=(label,fn)=>{const b=document.createElement('button');b.type='button';b.className='btn';b.textContent=label;b.onclick=()=>{try{fn();}catch(error){notify(error.message);}};section.append(b);};
     button('Anliegen selbst erfassen',()=>open());button('Mit MORA vorbereiten',()=>{window.MORAPortal.open();window.MORAPortal.send('Ich möchte ein Anliegen mit Ihnen vorbereiten.');});
     main.prepend(section);
-    const body=main.querySelector('tbody');if(body){body.replaceChildren();
-      for(const r of state.cases.filter(owns)){const row=document.createElement('tr');
+    const records=state.cases.filter(owns),body=main.querySelector('tbody');if(body){body.replaceChildren();
+      for(const r of records){const row=document.createElement('tr');
         for(const text of [r.title,r.date,'—','Lokal gespeichert · nicht übermittelt']){const cell=document.createElement('td');cell.textContent=text;row.append(cell);}
-        const b=document.createElement('button');b.type='button';b.className='btn';b.textContent='Prüfen / ergänzen';b.onclick=()=>{try{open(r.id);}catch(error){notify(error.message);}};row.firstChild.append(b);body.append(row);}
+        const b=document.createElement('button');b.type='button';b.className='btn';b.textContent='Prüfen / ergänzen';b.onclick=()=>{try{open(r.id);}catch(error){notify(error.message);}};const details=document.createElement('td');details.append(b);row.append(details);body.append(row);}
     }
+    const count=main.querySelector('#recordCount'),empty=main.querySelector('#emptyRows'),foot=main.querySelector('.table-foot span:last-child');
+    if(count)count.textContent=records.length+' lokale Entwürfe';
+    if(empty)empty.hidden=records.length>0;
+    if(foot)foot.textContent=records.length+' lokale Entwürfe';
   }
   const originalRender=render;render=function(...args){const result=originalRender.apply(this,args);mount();return result;};
   window.addEventListener('mora:access-changed',()=>{scopes.clear();for(const r of ['tenant','owner'])try{sessionStorage.removeItem('morada.mora.local-case-scope.'+r);}catch{}});

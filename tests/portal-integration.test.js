@@ -261,6 +261,9 @@ test('customer cases: manual and MORA use one portal store, preserve corrections
   let f=w.document.getElementById('opsEntryForm');assert.ok(f);assert.equal(f.elements.namedItem('owner'),null);assert.equal(f.elements.namedItem('propertyId'),null);assert.equal(f.elements.namedItem('status'),null);
   f.elements.title.value='Manueller Mieterentwurf';f.elements.description.value='Fenster klemmt';f.elements.unit.value='Küche';await saveForm(w);
   assert.equal(w.document.querySelectorAll('#main tbody tr').length,1,w.document.getElementById('opsFormError')?.textContent||w.document.getElementById('main').textContent);
+  assert.equal(w.document.getElementById('emptyRows').hidden,true);
+  assert.equal(w.document.getElementById('recordCount').textContent,'1 lokale Entwürfe');
+  assert.equal(w.document.querySelector('#main tbody tr').children.length,5);
   w.MORAPortal.open();await w.MORAPortal.send('Lampe im Wohnzimmer');await prepare(w);await saveForm(w);
   let records=(await w.eval('portalReadStored()')).next.cases;assert.equal(records.length,2);const lampRecord=records.find(r=>r.unit==='Wohnzimmer');assert.ok(lampRecord);assert.equal(lampRecord.moraLocalRole,'tenant');
   w.MORAPortal.open();await w.MORAPortal.send('Nein, Schlafzimmer');await prepare(w,'Anliegen aktualisieren');await saveForm(w);
