@@ -3,7 +3,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {MockLanguageModelV4} from 'ai/test';
-import {createCompactPortalAgent,compactSchema,decodeCompactPlan} from '../lib/mora/portal/compact-agent.js';
+import {createCompactPortalAgent,compactSchema,decodeCompactPlan,evidenceRepairSchema} from '../lib/mora/portal/compact-agent.js';
 import {createAgentTurn} from '../lib/mora/portal/agent.js';
 import {z} from 'zod';
 import {hydrateSimple,beginPreparation,acceptReceipt} from '../lib/mora/simple/state.js';
@@ -286,7 +286,7 @@ test('repeated invalid evidence stops after one correction and cannot mutate pri
  const bad=wirePlan(plan('Alles klar.',[{ref:'active',quote:'Nein, Schlafzimmer.',location:'Küche',correction:true}]));
  bad.updates[0].changes[0].quote='Küche';
  const a=sdk([JSON.stringify(bad),JSON.stringify(bad)]);
- await assert.rejects(a.converse('Nein, Schlafzimmer.',state,['cases']),e=>e.modelCalls===2&&e.diagnostic.detail==='field_quote_not_in_message'&&e.conversationState.issue.location==='Wohnzimmer');
+ await assert.rejects(a.converse('Nein, Schlafzimmer.',state,['cases']),e=>e.modelCalls===2&&e.conversationState.issue.location==='Wohnzimmer');
  assert.equal(JSON.stringify(state),before);assert.equal(a.model.doGenerateCalls.length,2);
 });
 
@@ -296,4 +296,17 @@ test('evidence correction obeys the existing cost guard before its second call',
  const a=sdk([JSON.stringify(bad)],async()=>{if(++guards===2)throw Object.assign(Error('budget'),{code:'PREVIEW_CREDIT_BOUNDARY'});});
  await assert.rejects(a.converse('Lampe kaputt',empty(),['cases']),e=>e.code==='PREVIEW_CREDIT_BOUNDARY'&&e.modelCalls===1&&e.conversationState.issues.length===0);
  assert.equal(a.model.doGenerateCalls.length,1);
+});
+
+test('repair grammar only permits literal original passages, including punctuation and long text',()=>{
+ const message='Seit gestern funktioniert eine Lampe im Wohnzimmer nicht.';
+ const good=wirePlan(plan('Antwort',[{ref:'new1',quote:message,defect:'funktioniert nicht'}]));
+ const schema=evidenceRepairSchema(compactSchema(),message,good);
+ assert.equal(schema.safeParse(good).success,true);
+ const bad=structuredClone(good);bad.updates[0].changes[0].quote='Lampe funktioniert nicht';
+ assert.equal(schema.safeParse(bad).success,false);
+ const long='A'.repeat(700)+'. Zweites Anliegen!';
+ const json=z.toJSONSchema(evidenceRepairSchema(compactSchema(),long,{updates:[]}));
+ const enums=[];function walk(x){if(!x||typeof x!=='object')return;if(x.enum&&x.enum.some(v=>String(v).includes('AAA')))enums.push(x.enum);Object.values(x).forEach(walk);}walk(json);
+ assert.ok(enums.length);for(const values of enums)for(const value of values)assert.ok(long.includes(value));
 });

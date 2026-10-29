@@ -7,3 +7,8 @@ Der kompakte Agent korrigiert einmalig die strukturierte Erfassung, wenn ein Anl
 Nur diese beiden Belegfehler lösen den zusätzlichen Aufruf aus. Keine Schleife, kein Modellwechsel, keine zusätzliche Stilüberarbeitung. Der bestehende Zeitrahmen und die Budgetreserve gelten vor jedem Aufruf. Normale Nachrichten bleiben bei einem Aufruf, die bisherige bedingte Aktionsprüfung bleibt bestehen. Erfolgreiche Belegkorrektur erscheint als repaired=true, repairScope=source_evidence und evidence_repair-Ereignis.
 
 464 automatisierte Tests, Typprüfung und Build bestanden. Regressionen: Screenshot-Lampe, vollständiges Mapping, anschliessende Raumkorrektur unter gleicher ID; zweimal falscher Beleg ohne Zustandsänderung; Budgetblock vor zweitem Aufruf. Mock-Modelltransporte sind kein Nachweis echter Gesprächsqualität. Live-Test wird separat aufgezeichnet. Bestehende Probleme mit Portalbehauptungen und Fehlalarmen der Aktionsprüfung sind nicht Gegenstand dieser gezielten Änderung.
+
+## Erster echter Versuch und nachgewiesene Grenze
+Die erste Korrekturvariante scheiterte am Screenshot-Satz erneut mit field_quote_not_in_message. Zwei echte Modellaufrufe, beobachtete Kontodifferenz USD 0,0023073. Nachweis: evidence/mora-source-recovery-live-2026-10-29.json. Der Test wurde sofort beendet; kein Erfolgsnachweis.
+
+Die Korrektur verwendet deshalb jetzt ein eingeschränktes Schema: quote kann ausschliesslich aus wörtlichen Originalpassagen gewählt werden. Passagen entstehen aus Sätzen, bei langen Sätzen aus begrenzten Abschnitten, und bereits gültigen Originalbelegen. Werte und Referenzen durchlaufen weiter die vorhandenen Prüfungen. Das macht falsche Wortfolgen im Textbeleg strukturell ungültig, ersetzt aber keine vollständige semantische Wahrheitsprüfung.
