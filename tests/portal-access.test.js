@@ -116,7 +116,7 @@ test('compact agent selects a typed query with one test generation; no model-aut
  const wire={reply:'Invented private result',topic:'information',updates:[],focus:null,next:{type:'portal-query',query:'repair-counts',requestQuote:message}};
  const converse=createCompactPortalAgent({resolve:async()=>({ready:true,provider:'gateway',model:AGENT_MODEL,createModel:()=>({})}),guard:async()=>{},generate:async options=>{calls++;instructions=options.instructions;return {output:wire,usage:{},finalStep:{}};}});
  const r=await converse(message,hydrateSimple(null),['ownerCases','ownerFinance'],45000,{status:'verified',personalQueries:['repair-counts']});
- assert.equal(calls,1);assert.equal(r.reply,'');assert.equal(r.portalQuery,'repair-counts');assert.match(instructions,/financial_navigation_only/);assert.match(instructions,/Rechnungsinhalte/);
+ assert.equal(calls,1);assert.equal(r.reply,'');assert.equal(r.portalQuery,'repair-counts');assert.match(instructions,/financial_navigation_only/);assert.match(instructions,/Finanzdaten bleiben immer reine Navigation/);
  assert.equal(compactSchema().safeParse({...wire,next:{type:'portal-query',query:'invoices',requestQuote:message}}).success,false);
  assert.throws(()=>decodeCompactPlan({...wire,next:{...wire.next,requestQuote:'not said'}},message));
 });

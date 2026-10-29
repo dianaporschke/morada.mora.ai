@@ -137,7 +137,9 @@ test('invalid source cannot change facts after one bounded correction',async()=>
 });
 test('unavailable or unrequested operations fail closed while valid facts survive',async()=>{
   const p=plan('Ich öffne das Formular.',[],{topic:'issue',focus:'active',next:{type:'form',action:'prepare',ref:'active',requestQuote:'Bitte vorbereiten.'}});
-  const a=sdk([p]);await assert.rejects(a.converse('Hallo',await lamp(),['cases']),e=>e.modelCalls===1&&e.diagnostic.reason==='invalid_open_form');
+  const a=sdk([p]);const blocked=await a.converse('Hallo',await lamp(),['cases']);
+  assert.equal(blocked.modelCalls,1);assert.equal(blocked.requestedAction,null);assert.equal(blocked.reply,'');
+  assert.equal(blocked.state.issue.location,'Wohnzimmer');assert.ok(blocked.toolEvents.some(e=>e.tool==='rejected_action_retained_facts'));
   const s=await lamp();s.safety={hazard:'electric'};
   await assert.rejects(sdk([p]).converse('Bitte vorbereiten.',s,['cases']),e=>e.conversationState.safety.hazard==='electric');
 });
