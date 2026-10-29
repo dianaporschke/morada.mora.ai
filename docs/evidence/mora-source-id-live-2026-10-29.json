@@ -1,0 +1,584 @@
+{
+  "url": "https://morada-mora-gg0hjuxpg-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "source": "Real deployed /api/portal-agent responses; no mock wording",
+  "model": "anthropic/claude-haiku-5.5",
+  "runCeilingUsd": 0.025,
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.645819368,
+    "totalUsedUsd": 3.354180632,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "role": "tenant",
+      "turns": [
+        {
+          "customer": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht.",
+          "status": 200,
+          "httpMs": 8924.0,
+          "reply": "Das tut mir leid, dass die Lampe im Wohnzimmer seit gestern nicht funktioniert. Ich habe das Anliegen vorbereitet. Möchten Sie es zur Prüfung öffnen, oder soll ich Ihnen zuerst die Anliegenansicht zeigen?",
+          "navigation": [],
+          "issue": {
+            "id": "a9c8d281-cebc-421e-af3e-132e088937e4",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\nfunktioniert nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: seit gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "defect": "funktioniert nicht",
+            "count": 1,
+            "location": "Wohnzimmer",
+            "since": "seit gestern",
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "equipment": {
+                    "from": "Lampe",
+                    "to": "light"
+                  },
+                  "defect": {
+                    "from": null,
+                    "to": "funktioniert nicht"
+                  },
+                  "location": {
+                    "from": null,
+                    "to": "Wohnzimmer"
+                  },
+                  "since": {
+                    "from": null,
+                    "to": "seit gestern"
+                  },
+                  "count": {
+                    "from": null,
+                    "to": 1
+                  }
+                },
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht.",
+                "at": "2026-10-29T09:57:25.525Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nfunktioniert nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: seit gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 2,
+            "fieldFacts": {
+              "equipment": {
+                "status": "corrected",
+                "value": "light",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "defect": {
+                "status": "known",
+                "value": "funktioniert nicht",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "since": {
+                "status": "known",
+                "value": "seit gestern",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\nfunktioniert nicht\nAnzahl: 1\nBereich: Wohnzimmer\nSeit wann: seit gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-29T09:57:25.523Z",
+            "updatedAt": "2026-10-29T09:57:25.539Z",
+            "shortLabel": "Lampe / Leuchte"
+          },
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 2,
+          "usage": [
+            {
+              "inputTokens": 8603,
+              "outputTokens": 449,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 9084,
+              "outputTokens": 390,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 3819,
+            "creditGuard": 425,
+            "total": 4290
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "evidence_repair",
+              "ok": true
+            },
+            {
+              "tool": "record_issues",
+              "ok": true
+            },
+            {
+              "tool": "use_issue",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "customer": "Nein, ich meinte Schlafzimmer.",
+          "status": 200,
+          "httpMs": 12274.8,
+          "reply": "Danke für die Korrektur, ich habe die Angabe auf das Schlafzimmer geändert. Die Lampe im Schlafzimmer funktioniert seit gestern nicht.\n\nWenn Sie möchten, kann ich Ihnen die Anliegenansicht öffnen, damit Sie das Anliegen dort prüfen.",
+          "navigation": [
+            "tenantSupport"
+          ],
+          "issue": {
+            "id": "a9c8d281-cebc-421e-af3e-132e088937e4",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\nfunktioniert nicht\nAnzahl: 1\nBereich: Schlafzimmer\nSeit wann: seit gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "defect": "funktioniert nicht",
+            "count": 1,
+            "location": "Schlafzimmer",
+            "since": "seit gestern",
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              {
+                "question": "description",
+                "answer": "Nein, ich meinte Schlafzimmer."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "equipment": {
+                    "from": "Lampe",
+                    "to": "light"
+                  },
+                  "defect": {
+                    "from": null,
+                    "to": "funktioniert nicht"
+                  },
+                  "location": {
+                    "from": null,
+                    "to": "Wohnzimmer"
+                  },
+                  "since": {
+                    "from": null,
+                    "to": "seit gestern"
+                  },
+                  "count": {
+                    "from": null,
+                    "to": 1
+                  }
+                },
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht.",
+                "at": "2026-10-29T09:57:25.525Z"
+              },
+              {
+                "changes": {
+                  "location": {
+                    "from": "Wohnzimmer",
+                    "to": "Schlafzimmer"
+                  }
+                },
+                "source": "Nein, ich meinte Schlafzimmer.",
+                "at": "2026-10-29T09:57:42.419Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nfunktioniert nicht\nAnzahl: 1\nBereich: Schlafzimmer\nSeit wann: seit gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 3,
+            "fieldFacts": {
+              "equipment": {
+                "status": "corrected",
+                "value": "light",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "defect": {
+                "status": "known",
+                "value": "funktioniert nicht",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "location": {
+                "status": "corrected",
+                "value": "Schlafzimmer",
+                "source": "Nein, ich meinte Schlafzimmer."
+              },
+              "since": {
+                "status": "known",
+                "value": "seit gestern",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\nfunktioniert nicht\nAnzahl: 1\nBereich: Schlafzimmer\nSeit wann: seit gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-29T09:57:25.523Z",
+            "updatedAt": "2026-10-29T09:57:42.419Z",
+            "shortLabel": "Lampe / Leuchte"
+          },
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "tenantSupport"
+            ]
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 8878,
+              "outputTokens": 352,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1677,
+            "creditGuard": 161,
+            "total": 1854
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "record_issues",
+              "ok": true
+            },
+            {
+              "tool": "use_issue",
+              "ok": true
+            },
+            {
+              "tool": "show_view",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "customer": "Die anderen Lampen funktionieren.",
+          "status": 200,
+          "httpMs": 7539.4,
+          "reply": "Danke, gut zu wissen, dass die anderen Lampen funktionieren. Dann scheint es sich um die Lampe im Schlafzimmer selbst zu handeln. Ich habe diesen Hinweis zum Anliegen ergänzt.\n\nDie Anliegenansicht können Sie über den Button unten öffnen, um das Anliegen dort anzuschauen. Eine Aktion zum Versenden oder Speichern steht mir hier nicht zur Verfügung.",
+          "navigation": [
+            "tenantSupport"
+          ],
+          "issue": {
+            "id": "a9c8d281-cebc-421e-af3e-132e088937e4",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\nfunktioniert nicht\nAnzahl: 1\nBereich: Schlafzimmer\nSeit wann: seit gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+            "defect": "funktioniert nicht",
+            "count": 1,
+            "location": "Schlafzimmer",
+            "since": "seit gestern",
+            "extent": "1 betroffene Einrichtung(en)",
+            "details": "Die anderen Lampen im Schlafzimmer bzw. in der Wohnung funktionieren.",
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              {
+                "question": "description",
+                "answer": "Nein, ich meinte Schlafzimmer."
+              },
+              {
+                "question": "description",
+                "answer": "Die anderen Lampen funktionieren."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "equipment": {
+                    "from": "Lampe",
+                    "to": "light"
+                  },
+                  "defect": {
+                    "from": null,
+                    "to": "funktioniert nicht"
+                  },
+                  "location": {
+                    "from": null,
+                    "to": "Wohnzimmer"
+                  },
+                  "since": {
+                    "from": null,
+                    "to": "seit gestern"
+                  },
+                  "count": {
+                    "from": null,
+                    "to": 1
+                  }
+                },
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht.",
+                "at": "2026-10-29T09:57:25.525Z"
+              },
+              {
+                "changes": {
+                  "location": {
+                    "from": "Wohnzimmer",
+                    "to": "Schlafzimmer"
+                  }
+                },
+                "source": "Nein, ich meinte Schlafzimmer.",
+                "at": "2026-10-29T09:57:42.419Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nfunktioniert nicht\nAnzahl: 1\nBereich: Schlafzimmer\nSeit wann: seit gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nZusatzangaben: Die anderen Lampen im Schlafzimmer bzw. in der Wohnung funktionieren.\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 4,
+            "fieldFacts": {
+              "equipment": {
+                "status": "corrected",
+                "value": "light",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "defect": {
+                "status": "known",
+                "value": "funktioniert nicht",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "location": {
+                "status": "corrected",
+                "value": "Schlafzimmer",
+                "source": "Nein, ich meinte Schlafzimmer."
+              },
+              "since": {
+                "status": "known",
+                "value": "seit gestern",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "count": {
+                "status": "known",
+                "value": 1,
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "extent": {
+                "status": "known",
+                "value": "1 betroffene Einrichtung(en)",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              },
+              "details": {
+                "status": "known",
+                "value": "Die anderen Lampen im Schlafzimmer bzw. in der Wohnung funktionieren.",
+                "source": "Die anderen Lampen funktionieren."
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\nfunktioniert nicht\nAnzahl: 1\nBereich: Schlafzimmer\nSeit wann: seit gestern\nUmfang / Situation: 1 betroffene Einrichtung(en)\nDringlichkeit: Normal",
+                "source": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht."
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-29T09:57:25.523Z",
+            "updatedAt": "2026-10-29T09:57:53.715Z",
+            "shortLabel": "Lampe / Leuchte"
+          },
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "tenantSupport"
+            ]
+          },
+          "modelCalls": 2,
+          "usage": [
+            {
+              "inputTokens": 9016,
+              "outputTokens": 421,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 1192,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 2725,
+            "creditGuard": 273,
+            "total": 3012
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "record_issues",
+              "ok": true
+            },
+            {
+              "tool": "use_issue",
+              "ok": true
+            },
+            {
+              "tool": "show_view",
+              "ok": true
+            },
+            {
+              "tool": "effect_review",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.641318568,
+    "totalUsedUsd": 3.358681432,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "observedAccountDeltaUsd": 0.0045008000000001935
+}
