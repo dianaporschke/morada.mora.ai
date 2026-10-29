@@ -271,7 +271,8 @@ test('one evidence correction recovers the screenshot lamp without losing facts 
  const message='Seit gestern funktioniert eine Lampe im Wohnzimmer nicht.';
  const good=wirePlan(plan('Das ist ärgerlich.',[{ref:'new1',quote:message,equipment:'light',defect:'funktioniert nicht',location:'Wohnzimmer',since:'Seit gestern',count:1}]));
  const bad=structuredClone(good);bad.updates[0].changes.find(c=>c.field==='defect').quote='Lampe funktioniert nicht';
- const a=sdk([JSON.stringify(bad),JSON.stringify(good)]);
+ const corrected={...good,updates:good.updates.map(({quote,changes,...u})=>({...u,source:'p0',changes:changes.map(({quote,...c})=>({...c,source:'p0'}))}))};
+ const a=sdk([JSON.stringify(bad),JSON.stringify(corrected)]);
  const r=await a.converse(message,empty(),['cases']);
  assert.equal(r.modelCalls,2);assert.equal(r.repaired,true);assert.equal(r.repairScope,'source_evidence');
  assert.equal(r.state.issues.length,1);assert.equal(r.state.issue.defect,'funktioniert nicht');
@@ -301,12 +302,16 @@ test('evidence correction obeys the existing cost guard before its second call',
 test('repair grammar only permits literal original passages, including punctuation and long text',()=>{
  const message='Seit gestern funktioniert eine Lampe im Wohnzimmer nicht.';
  const good=wirePlan(plan('Antwort',[{ref:'new1',quote:message,defect:'funktioniert nicht'}]));
- const schema=evidenceRepairSchema(compactSchema(),message,good);
- assert.equal(schema.safeParse(good).success,true);
+ const repair=evidenceRepairSchema(compactSchema(),message,good),schema=repair.schema;
+ const corrected={...good,updates:good.updates.map(({quote,changes,...u})=>({...u,source:'p0',changes:changes.map(({quote,...c})=>({...c,source:'p0'}))}))};
+ assert.equal(schema.safeParse(corrected).success,true);
+ assert.deepEqual(repair.restore(corrected),good);
  const bad=structuredClone(good);bad.updates[0].changes[0].quote='Lampe funktioniert nicht';
  assert.equal(schema.safeParse(bad).success,false);
  const long='A'.repeat(700)+'. Zweites Anliegen!';
- const json=z.toJSONSchema(evidenceRepairSchema(compactSchema(),long,{updates:[]}));
- const enums=[];function walk(x){if(!x||typeof x!=='object')return;if(x.enum&&x.enum.some(v=>String(v).includes('AAA')))enums.push(x.enum);Object.values(x).forEach(walk);}walk(json);
- assert.ok(enums.length);for(const values of enums)for(const value of values)assert.ok(long.includes(value));
+ const longRepair=evidenceRepairSchema(compactSchema(),long,{updates:[]});
+ for(const text of Object.values(longRepair.sources))assert.ok(long.includes(text));
+ const json=z.toJSONSchema(longRepair.schema);
+ const enums=[];function walk(x){if(!x||typeof x!=='object')return;if(x.enum&&x.enum.some(v=>v==='p0'))enums.push(x.enum);Object.values(x).forEach(walk);}walk(json);
+ assert.ok(enums.length);for(const values of enums)for(const value of values)assert.ok(Object.hasOwn(longRepair.sources,value));
 });

@@ -1,0 +1,72 @@
+{
+  "url": "https://morada-mora-1axvc13lk-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "source": "Real deployed /api/portal-agent responses; no mock wording",
+  "model": "anthropic/claude-haiku-5.5",
+  "runCeilingUsd": 0.03,
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.648110568,
+    "totalUsedUsd": 3.351889432,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "role": "tenant",
+      "turns": [
+        {
+          "customer": "Seit gestern funktioniert eine Lampe im Wohnzimmer nicht.",
+          "status": 503,
+          "httpMs": 14363.5,
+          "reply": null,
+          "navigation": [],
+          "issue": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 2,
+          "usage": null,
+          "timingMs": {
+            "total": 5068
+          },
+          "code": "MODEL_UNAVAILABLE",
+          "diagnostic": null,
+          "availability": {
+            "provider": "gateway",
+            "model": "anthropic/claude-haiku-5.5",
+            "status": null,
+            "reason": "invalid_model_output"
+          },
+          "toolEvents": []
+        }
+      ]
+    }
+  ],
+  "stopped": "HTTP_503",
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.645819368,
+    "totalUsedUsd": 3.354180632,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "observedAccountDeltaUsd": 0.0022911999999997157
+}
