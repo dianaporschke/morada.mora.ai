@@ -55,8 +55,12 @@ for(const role of portalRoles)test('compact model gets only the active '+role+' 
  let state=hydrateSimple(null);
  for(const message of ['hey','Wobei können Sie mir hier helfen?'])state=(await converse(message,state,[],45000,context)).state;
  assert.equal(calls,2);
- const labels={tenant:'Mieterzugang:',owner:'Eigentümerzugang:',manager:'Bewirtschaftungszugang:',admin:'Administrationszugang:'};
- for(const prompt of instructions){assert.ok(prompt.includes(labels[role]));for(const other of portalRoles.filter(x=>x!==role))assert.ok(!prompt.includes(labels[other]));}
+ for(const prompt of instructions){
+  const snapshot=JSON.parse(prompt.split('Bestätigter Anwendungsstand (Daten):\n')[1]);
+  assert.deepEqual(snapshot.audience,{role,source:'preview_view'});
+  assert.equal(snapshot.capabilities.localCases,false);
+  assert.equal(snapshot.capabilities.personalRecords,false);
+ }
  assert.equal(createAgentTurn(state,'hey',[],context).snapshot().audience.role,role);
 });
 
@@ -68,6 +72,6 @@ test('legacy endpoint receives the same role perspective, not a separate generic
 });
 
 test('role descriptions cannot imply unavailable form or operational capabilities',()=>{
- assert.match(COMPACT_INSTRUCTIONS,/Nur bei capabilities.localCases=true/);
+ assert.match(COMPACT_INSTRUCTIONS,/Nur bei localCases können Anliegen lokal vorbereitet werden/);
  for(const role of portalRoles){const prompt=portalAudienceInstructions({role});assert.match(prompt,/nur die tatsächlich verfügbaren Fähigkeiten/);assert.match(prompt,/Freigaben, Buchungen oder Beauftragungen können nicht ausgeführt/);}
 });

@@ -122,6 +122,14 @@ test('model context distinguishes an offered action, open form and stored draft'
   a=createAgentTurn(s,'Ist es gespeichert?',['cases']).snapshot().issues[0].action;
   assert.equal(a.formOpened,false);assert.equal(a.formSaved,true);assert.equal(a.savedFactsMatch,true);
 });
+
+test('rejected navigation wording retains only the checked navigation, no fake model success',async()=>{
+  const a=sdk([plan('Das Formular wurde erstellt.',[],{next:{type:'view',target:'customer-case'}}),{allowed:false},{reply:'Ich habe den Entwurf gespeichert.'}]);
+  const r=await a.converse('Ich will das selber ausfüllen.',empty(),['customer-case']);
+  assert.equal(r.reply,'');assert.deepEqual(r.navigation,['customer-case']);
+  assert.equal(r.state.issues.length,0);assert.equal(r.requestedAction,null);
+  assert.ok(r.toolEvents.some(e=>e.tool==='navigation_only_recovery'));
+});
 test('invalid source cannot change facts after one bounded correction',async()=>{
   const s=await lamp(),bad=plan('Alles klar.',[{ref:'active',quote:'not said',location:'Küche'}],{focus:'active'}),a=sdk([bad,bad]);
   await assert.rejects(a.converse('Nein, Bad.',s,['cases']),e=>e.modelCalls===2&&e.conversationState.issue.location==='Wohnzimmer');
