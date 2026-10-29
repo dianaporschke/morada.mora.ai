@@ -33,7 +33,7 @@ const portalSections={
 };
 for(const [id,label]of Object.entries(portalSections))portalNavigation[id]={label:label+' öffnen',purpose:'Vorhandene Portalansicht öffnen; keine Datenabfrage oder Änderung.'};
 export const financialPortalTargets=new Set(['company','rentroll','finance','invoices','creditors','debtors','bank','cash','bookings','budgets','servicecharges','deposits','ownerFinance','ownerTransactions','ownerRentroll','tenantPayments','tenantContract']);
-const plannedPortalTargets=new Set(['vendors','invoices','creditors','debtors','bank','cash','bookings','servicecharges','partners','keys','automations','leads','living','reports','budgets','finance','deposits']);
+const plannedPortalTargets=new Set(['vendors','invoices','creditors','debtors','bank','cash','bookings','servicecharges','partners','keys','automations','leads','living','reports','budgets','finance']);
 for(const [id,entry]of Object.entries(portalNavigation)){
   entry['dataAccess']=financialPortalTargets.has(id)?'financial_navigation_only':'navigation_only';
   entry['preparedView']=plannedPortalTargets.has(id)||/^(owner|tenant)/.test(id)&&!id.endsWith('Contact');

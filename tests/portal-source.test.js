@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 
-test('26 October portal: all supplied design and business logic survives the MORA integration',()=>{
+test('29 October deposits portal: all supplied design and business logic survives the MORA integration',()=>{
   const html=readFileSync('portal.html','utf8');
   const start='<!-- MORA INTEGRATION 1.0 START -->';
   const end='<!-- MORA INTEGRATION 1.0 END -->';
@@ -20,5 +20,5 @@ test('26 October portal: all supplied design and business logic survives the MOR
     assert.equal(native.split(patched).length,2);
     native=native.replace(patched,original);
   }
-  assert.equal(createHash('sha256').update(native).digest('hex'),'1d8798759dbdce830c11717fc51f785a6719c3c72b3fe6006b802a5cac9a6614');
+  assert.equal(createHash('sha256').update(native).digest('hex'),'6af8c190fafc2ee94b8a8cfdba904226d8a0c3d7f3303b8e1e7a6cbace162ef5');
 });
