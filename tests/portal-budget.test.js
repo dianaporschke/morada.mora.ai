@@ -19,7 +19,9 @@ test('test allowance is unavailable outside Preview before any network access',a
 });
 test('model comparison cannot use an arbitrary model or change the existing spend cap',()=>{
  assert.throws(()=>createPreviewCreditGuard({VERCEL_ENV:'preview'},'unapproved/model'),e=>e.boundaryReason==='model_unverified');
- assert.equal(MAX_USED_USD,3.338856132);
+ assert.equal(MAX_USED_USD,4.338856132);
+ assert.equal(checkPreviewCredits(credits(3.338856132),.01).testAllowanceUsd,3);
+ assert.throws(()=>checkPreviewCredits(credits(4.338856132),.001),e=>e.boundaryReason==='cap');
 });
 test('price reservations use the exact fast catalog entry and never the base price',async()=>{
  const models=[{id:'anthropic/claude-opus-5.5',pricing:{input:'0.000004',output:'0.00002'}},{id:'anthropic/claude-opus-5.5-fast',pricing:{input:'0.000008',output:'0.00004'}}];
