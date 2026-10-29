@@ -11,3 +11,9 @@ compact-agent erzeugt die view-Zielauswahl aus capabilities.navigation des aktue
 
 ## Grenzen
 Persönliche Datenanbindung und Versand werden nicht hinzugefügt. Die Rollenanzeige ersetzt keine serverseitige Autorisierung. Allgemeine Gesprächsqualität ist mit dieser gezielten Navigationskorrektur nicht vollständig gelöst.
+
+## Echte Preview-Prüfung
+Getestete Preview: https://morada-mora-mngga4gfx-dianaporschke-1255s-projects.vercel.app/portal.html (Commit 88e4a4a).
+Fünf echte Antworten, vier Rollen, alle HTTP 200 und ausschliesslich verfügbare Ziele: tenantSupport, tenantDocuments, ownerCases, cases. Viermal die Screenshotfrage zum Versandstatus, zusätzlich die Dokumentenfrage. Kein invalid_show_view. HTTP-Laufzeiten 6,55–8,67 Sekunden (kein Browser-TTFT). Beobachtete Kontodifferenz USD 0,0049227; kein exakt zugeordnetes Rechnungsprotokoll. Testobergrenze USD 0,06, bestehende Preview-Grenze unverändert.
+
+Die Sprachqualität ist ausdrücklich nicht vollständig bestanden: Die Eigentümerantwort behauptet zunächst sichtbare Bearbeitungsstände und erwähnt erst danach die fehlende Anbindung; auch interne Rollen beschreiben eine nicht belegte Versandstatusanzeige. Navigationstexte sind trotz Klarstellung teilweise weiterhin ungenau. Diese Antworten stehen unverändert in docs/evidence/mora-navigation-scope-live-2026-10-29.json. Die strukturelle Zielbeschränkung funktioniert in diesen Tests, die semantische Wahrheit aller Antworttexte ist damit nicht garantiert.

@@ -1,0 +1,267 @@
+{
+  "url": "https://morada-mora-mngga4gfx-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "source": "Real deployed /api/portal-agent responses; no mock wording",
+  "model": "anthropic/claude-haiku-5.5",
+  "runCeilingUsd": 0.06,
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.661809668,
+    "totalUsedUsd": 3.338190332,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "role": "tenant",
+      "turns": [
+        {
+          "customer": "Wo sehe ich, ob mein Anliegen wirklich abgeschickt wurde oder nur gespeichert ist?",
+          "status": 200,
+          "httpMs": 6840.7,
+          "reply": "Gute Frage. Ob ein Anliegen schon abgeschickt oder nur zwischengespeichert ist, kann ich von hier aus nicht prüfen, weil in diesem Chat kein Anliegen mit einem bestätigten Status vorliegt. Die Anliegenansicht zeigt im Portal die vorbereitete Tabelle Ihrer Anliegen. Über den Button unten können Sie diese Ansicht öffnen und dort nachsehen.",
+          "navigation": [
+            "tenantSupport"
+          ],
+          "issue": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "tenantSupport"
+            ]
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 8616,
+              "outputTokens": 300,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 2336,
+            "creditGuard": 207,
+            "total": 2565
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "customer": "Ich sehe keine Dokumente. Bin ich im falschen Bereich oder ist noch nichts hinterlegt?",
+          "status": 200,
+          "httpMs": 8671.9,
+          "reply": "Das lässt sich aus diesem Chat nicht eindeutig sagen. Die Dokumentenansicht ist im Portal vorbereitet, ist aber noch nicht mit Ihren persönlichen Dateien verbunden. Eine leere Ansicht heisst deshalb nicht, dass bei MORADA keine Unterlagen zu Ihnen vorliegen, und sie zeigt auch nicht an, ob Sie im richtigen Bereich sind.\n\nSie können die Dokumentenansicht über den Button unten öffnen. Falls Sie Fragen zu bestimmten Unterlagen haben, hilft Ihnen die Kontaktansicht weiter.",
+          "navigation": [
+            "tenantDocuments"
+          ],
+          "issue": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "tenantDocuments"
+            ]
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 8825,
+              "outputTokens": 373,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 2726,
+            "creditGuard": 169,
+            "total": 2903
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "owner",
+      "turns": [
+        {
+          "customer": "Wo sehe ich, ob mein Anliegen wirklich abgeschickt wurde oder nur gespeichert ist?",
+          "status": 200,
+          "httpMs": 6548.3,
+          "reply": "Gute Frage. Ob ein Anliegen abgeschickt oder nur gespeichert ist, sehen Sie in der Anliegenansicht. Dort wird der Bearbeitungsstand Ihres Anliegens angezeigt. Ich kann Ihnen die Ansicht gerne öffnen. Ich kann Ihnen aber nicht bestätigen, welcher Stand bei Ihnen aktuell gilt, da hier im Chat keine persönlichen Anliegen abgerufen werden. Die Anliegenansicht in dieser Version ist derzeit noch ohne Verbindung zu Ihren persönlichen Meldungen vorbereitet.",
+          "navigation": [
+            "ownerCases"
+          ],
+          "issue": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "ownerCases"
+            ]
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 8792,
+              "outputTokens": 368,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1934,
+            "creditGuard": 224,
+            "total": 2163
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "manager",
+      "turns": [
+        {
+          "customer": "Wo sehe ich, ob mein Anliegen wirklich abgeschickt wurde oder nur gespeichert ist?",
+          "status": 200,
+          "httpMs": 6814.4,
+          "reply": "Gute Frage. Ein gespeichertes Anliegen ist nur auf diesem Gerät gesichert, es ist noch nicht bei MORADA eingegangen. Ob es tatsächlich abgeschickt wurde, sehen Sie in der Anliegenansicht. Dort finden Sie das Anliegenregister mit dem aktuellen Stand. Ich öffne Ihnen die Ansicht gern direkt.",
+          "navigation": [
+            "cases"
+          ],
+          "issue": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "cases"
+            ]
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 7531,
+              "outputTokens": 282,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1677,
+            "creditGuard": 225,
+            "total": 1907
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "admin",
+      "turns": [
+        {
+          "customer": "Wo sehe ich, ob mein Anliegen wirklich abgeschickt wurde oder nur gespeichert ist?",
+          "status": 200,
+          "httpMs": 8599.2,
+          "reply": "Das erkennen Sie am Anliegenregister: Dort sehen Sie, ob ein Anliegen nur gespeichert oder tatsächlich abgeschickt ist. Im Moment besteht in dieser Ansicht noch kein Anliegen, und ein Versand ist hier nicht möglich. Ich kann Ihnen das Anliegenregister öffnen, sobald Sie möchten.",
+          "navigation": [
+            "cases"
+          ],
+          "issue": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "cases"
+            ]
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 7488,
+              "outputTokens": 272,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 2929,
+            "creditGuard": 141,
+            "total": 3075
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.656886968,
+    "totalUsedUsd": 3.343113032,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "observedAccountDeltaUsd": 0.00492270000000028
+}
