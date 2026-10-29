@@ -235,3 +235,34 @@ test('no-op removal cannot hide changed values, another issue, or new uncertaint
  const unsure=await turn(s,'Vielleicht doch eine.',plan('Die Anzahl ist noch unsicher.',[{ref:'active',quote:'Vielleicht doch eine.',count:1,uncertain:[{field:'count',quote:'Vielleicht doch eine.'}]}],{focus:'active'}));
  assert.equal(unsure.state.issue.fieldFacts.count.status,'uncertain');assert.equal(unsure.state.issue.count,1);
 });
+
+test('navigation grammar only admits current portal destinations for each access',async()=>{
+ for(const available of [['tenantSupport','tenantDocuments'],['ownerCases','ownerDocuments'],['cases','documents'],['cases','tasks']]){
+  const t=createAgentTurn(empty(),'Wo sehe ich meine Anliegen?',available);
+  const schema=compactSchema(t);
+  const json=JSON.stringify(z.toJSONSchema(schema));
+  for(const target of available){
+   const p=plan('Über diesen Button gelangen Sie zur Ansicht.',[],{next:{type:'view',target}});
+   assert.equal(schema.safeParse(p).success,true);
+   const a=sdk([p]);const result=await a.converse('Wo sehe ich meine Anliegen?',empty(),available);
+   assert.deepEqual(result.navigation,[target]);assert.equal(result.modelCalls,1);
+   assert.equal(t.schemas.show_view.safeParse({target}).success,true);
+  }
+  for(const target of ['tenantSupport','ownerCases','cases','missing-view'].filter(x=>!available.includes(x))){
+   assert.equal(schema.safeParse(plan('Ansicht',[],{next:{type:'view',target}})).success,false);
+   assert.equal(t.schemas.show_view.safeParse({target}).success,false);
+   assert.ok(!json.includes('"'+target+'"'));
+   assert.equal((await t.tools.show_view.execute({target},{})).ok,false);
+  }
+ }
+});
+
+test('no available navigation omits view action without blocking an ordinary answer',async()=>{
+ const t=createAgentTurn(empty(),'Hallo',[]);
+ const schema=compactSchema(t);
+ assert.doesNotThrow(()=>z.toJSONSchema(schema));
+ assert.equal(schema.safeParse(plan('Guten Tag.')).success,true);
+ assert.equal(schema.safeParse(plan('Ansicht',[],{next:{type:'view',target:'cases'}})).success,false);
+ const r=await sdk([plan('Guten Tag.')]).converse('Hallo',empty(),[]);
+ assert.deepEqual(r.navigation,[]);assert.equal(r.modelCalls,1);
+});
