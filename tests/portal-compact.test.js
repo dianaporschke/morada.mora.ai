@@ -101,7 +101,7 @@ test('combined facts and preparation request use one call and only issue a UI re
   const text='Eine Lampe im Bad ist kaputt. Bitte vorbereiten.';
   const p=plan('Ich öffne die Angaben.',[{ref:'new1',quote:'Eine Lampe im Bad ist kaputt.',equipment:'light',defect:'kaputt',location:'Bad'}],{focus:'new1',next:{type:'form',action:'prepare',ref:'new1',requestQuote:'Bitte vorbereiten.'}});
   const a=sdk([p]);const r=await a.converse(text,empty(),['cases']);
-  assert.equal(r.modelCalls,1);assert.equal(r.requestedAction,'prepare');assert.equal(r.reply,'');assert.equal(r.state.issue.preparation.status,'not_prepared');
+  assert.equal(r.modelCalls,1);assert.equal(r.requestedAction,'prepare');assert.equal(r.reply,'Ich öffne die Angaben.');assert.equal(r.state.issue.preparation.status,'not_prepared');
 });
 test('saved draft correction keeps the receipt and creates an update instead of a new record',async()=>{
   let s=await lamp();const op=beginPreparation(s);acceptReceipt(s,{...op,status:'portal_received'});
@@ -121,12 +121,9 @@ test('model context distinguishes an offered action, open form and stored draft'
   assert.equal(a.formOpened,false);assert.equal(a.formSaved,true);assert.equal(a.savedFactsMatch,true);
 });
 
-test('rejected navigation wording retains only the checked navigation, no fake model success',async()=>{
+test('unrepairable navigation wording raises a visible error instead of a silent success',async()=>{
   const a=sdk([plan('Das Formular wurde erstellt.',[],{next:{type:'view',target:'customer-case'}}),{allowed:false},{reply:'Ich habe den Entwurf gespeichert.'}]);
-  const r=await a.converse('Ich will das selber ausfüllen.',empty(),['customer-case']);
-  assert.equal(r.reply,'');assert.deepEqual(r.navigation,['customer-case']);
-  assert.equal(r.state.issues.length,0);assert.equal(r.requestedAction,null);
-  assert.ok(r.toolEvents.some(e=>e.tool==='navigation_only_recovery'));
+  await assert.rejects(a.converse('Ich will das selber ausfüllen.',empty(),['customer-case']),e=>e.diagnostic.reason==='unconfirmed_success'&&e.conversationState.issues.length===0);
 });
 test('invalid source cannot change facts after one bounded correction',async()=>{
   const s=await lamp(),bad=plan('Alles klar.',[{ref:'active',quote:'not said',location:'Küche'}],{focus:'active'}),a=sdk([bad,bad]);
@@ -135,11 +132,29 @@ test('invalid source cannot change facts after one bounded correction',async()=>
 });
 test('unavailable or unrequested operations fail closed while valid facts survive',async()=>{
   const p=plan('Ich öffne das Formular.',[],{topic:'issue',focus:'active',next:{type:'form',action:'prepare',ref:'active',requestQuote:'Bitte vorbereiten.'}});
-  const a=sdk([p]);const blocked=await a.converse('Hallo',await lamp(),['cases']);
-  assert.equal(blocked.modelCalls,1);assert.equal(blocked.requestedAction,null);assert.equal(blocked.reply,'');
+  const a=sdk([p,{allowed:false},{reply:'Guten Tag! Wie kann ich Ihnen helfen?'}]);const blocked=await a.converse('Hallo',await lamp(),['cases']);
+  assert.equal(blocked.modelCalls,3);assert.equal(blocked.requestedAction,null);assert.equal(blocked.reply,'Guten Tag! Wie kann ich Ihnen helfen?');
   assert.equal(blocked.state.issue.location,'Wohnzimmer');assert.ok(blocked.toolEvents.some(e=>e.tool==='rejected_action_retained_facts'));
   const s=await lamp();s.safety={hazard:'electric'};
   await assert.rejects(sdk([p]).converse('Bitte vorbereiten.',s,['cases']),e=>e.conversationState.safety.hazard==='electric');
+});
+
+test('an invalid form request preserves a safe answer and corrected facts without another generation',async()=>{
+  const s=await lamp(),id=s.issue.id;
+  const a=sdk([plan('Dann betrifft es die Lampe im Schlafzimmer.',[{ref:'active',quote:'Nein, Schlafzimmer.',location:'Schlafzimmer',correction:true}],{topic:'issue',focus:'active',next:{type:'form',action:'prepare',ref:'active',requestQuote:'Bitte vorbereiten.'}})]);
+  const r=await a.converse('Nein, Schlafzimmer.',s,['cases']);
+  assert.equal(r.modelCalls,1);assert.equal(r.requestedAction,null);assert.equal(r.reply,'Dann betrifft es die Lampe im Schlafzimmer.');
+  assert.equal(r.state.issue.id,id);assert.equal(r.state.issue.location,'Schlafzimmer');assert.equal(r.state.issues.length,1);
+  assert.ok(portalActionState(r.state).controls.save);assert.ok(r.toolEvents.some(e=>e.tool==='rejected_action_retained_facts'));
+});
+
+test('unconnected document claims are reviewed against the actual view and repaired with no action or data mutation',async()=>{
+  const a=sdk([plan('Ihre Dokumente finden Sie unter Dokumente. Persönliche Dateien sind dort noch nicht angeschlossen.',[],{next:{type:'view',target:'ownerDocuments'}}),{allowed:false},{reply:'Persönliche Dokumente stehen hier noch nicht zur Verfügung. Die Dokumentenansicht können Sie über den Button öffnen.'}]);
+  const r=await a.converse('Wo liegen die Dokumente zur Liegenschaft in Baden?',empty(),['ownerDocuments'],45000,{status:'unavailable',personalQueries:[],audience:{role:'owner',source:'preview_view'}});
+  assert.equal(r.modelCalls,3);assert.match(r.reply,/noch nicht zur Verfügung/);assert.doesNotMatch(r.reply,/finden Sie/);
+  assert.deepEqual(r.navigation,['ownerDocuments']);assert.equal(r.state.issues.length,0);assert.equal(r.requestedAction,null);
+  const review=a.model.doGenerateCalls[1].prompt.find(m=>m.role==='user').content[0].text;
+  const context=JSON.parse(review);assert.equal(context.context.capabilities.navigation[0].recordConnection,false);assert.equal(context.context.audience.role,'owner');
 });
 test('rare ambiguous success claim is reviewed at most once with the same low-cost model',async()=>{
   const a=sdk([plan('Das Anliegen wurde an MORADA gesendet.'),{allowed:false},{reply:'Das Anliegen wurde an MORADA gesendet.'}]);
