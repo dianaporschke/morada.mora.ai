@@ -106,6 +106,7 @@ test('full HTML: MORA covers every actual sidebar route in all four roles and ex
    for(const id of sidebar)assert.ok(advertised.includes(id),role+' is missing '+id);
    if(role==='tenant'){assert.ok(!advertised.includes('ownerFinance'));assert.ok(!advertised.includes('invoices'));assert.ok(!advertised.includes('tenantInvoices'));}
    if(role==='owner')assert.ok(!advertised.includes('tenantPayments'));
+   assert.equal(advertised.includes('new-case'),['admin','manager'].includes(role),'manual form respects native role access');
    if(role==='manager')assert.ok(!advertised.includes('company'));
    const button=[...w.document.querySelectorAll('.mora-portal-actions button')].find(b=>b.textContent.includes(target==='invoices'?'Mandatsrechnungen':target==='maintenance'?'Unterhalt':target==='ownerFinance'?'Finanzübersicht':'Zahlungen'));
    assert.ok(button,'real navigation button for '+target);button.click();await settle();
@@ -139,7 +140,7 @@ test('full HTML: lost receipt acknowledgment retries without another portal writ
 test('full HTML: after failed next message an earlier save button is removed',async()=>{
  let n=0;const handler=createPortalChatHandler({converse:async()=>{if(n++)throw Error('model');return {state:lamp(),reply:'Im Chat erfasst.',navigation:[],modelCalls:1};}});
  const d=await dom(async(_u,o)=>{const r=await call(handler,JSON.parse(o.body));return {ok:r.status===200,json:async()=>r.body};}),w=d.window;
- try{w.document.getElementById('moraFab').click();await w.MORAPortal.send('Lampe im Wohnzimmer');assert.equal(w.document.querySelectorAll('.mora-portal-actions button').length,2);await w.MORAPortal.send('Noch etwas');assert.equal(w.document.querySelectorAll('.mora-portal-actions button').length,0);}finally{w.close();}
+ try{w.document.getElementById('moraFab').click();await w.MORAPortal.send('Lampe im Wohnzimmer');assert.deepEqual([...w.document.querySelectorAll('.mora-portal-actions button')].map(b=>b.textContent),['Anliegen vorbereiten','Foto hinzufügen','Anliegen selbst erfassen']);await w.MORAPortal.send('Noch etwas');assert.equal(w.document.querySelectorAll('.mora-portal-actions button').length,0);}finally{w.close();}
 });
 
 // These deterministic regression fixtures isolate the portal pipeline. They are
@@ -229,4 +230,24 @@ test('action intent uses the actual current request rather than a brittle copied
 test('portal model switch uses the same Gateway credentials and approved model',async()=>{
  let selected;const service=createPortalService({env:{AI_GATEWAY_MODEL:'inception/mercury-2.5',MORA_AI_PROVIDER:'auto',AI_GATEWAY_API_KEY:'test-placeholder'},resolve:async env=>{selected=env;return {ready:true,provider:'gateway',model:env.AI_GATEWAY_MODEL,createModel:()=>({})};},guard:async()=>{},generate:async()=>({output:plan([],{intent:'general',reply:'Guten Tag.'}),usage:{},finalStep:{providerMetadata:{}}})});
  await service('Hallo',hydrateSimple(null),[]);assert.equal(selected.AI_GATEWAY_MODEL,'google/gemini-3.8-flash');assert.equal(selected.MORA_AI_PROVIDER,'gateway');assert.equal(selected.AI_GATEWAY_API_KEY,'test-placeholder');
+});
+
+// Local transport only: checks real DOM/form handlers and persisted data, not model wording.
+test('manual alternative opens the same native form once and saves through the native handler',async()=>{
+ const handler=createPortalChatHandler({converse:async()=>({state:lamp(),reply:'Lokaler Funktionstest',navigation:['new-case'],modelCalls:0})});
+ const d=await dom(async(_u,o)=>{const r=await call(handler,JSON.parse(o.body));return {ok:r.status===200,json:async()=>r.body};}),w=d.window;
+ try{
+  w.MORAPortal.open();await w.MORAPortal.send('Lokaler Funktionstest');
+  const buttons=[...w.document.querySelectorAll('.mora-portal-actions button')];
+  assert.equal(buttons.filter(b=>b.textContent==='Anliegen vorbereiten').length,1);
+  const manual=buttons.filter(b=>b.textContent==='Anliegen selbst erfassen');assert.equal(manual.length,1);
+  manual[0].click();await settle();
+  const f=w.document.getElementById('opsEntryForm');assert.ok(f);assert.equal(f.dataset.moraIssue,undefined);
+  assert.equal(f.elements.title.value,'','manual route must not silently copy the conversation');
+  f.elements.title.value='Manuell erfasste Lampe';f.elements.description.value='Lampe defekt';f.elements.unit.value='Wohnzimmer';
+  await saveForm(w);
+  const stored=await w.eval('portalReadStored()');
+  assert.ok(stored.next.cases.some(c=>c.title==='Manuell erfasste Lampe'&&c.unit==='Wohnzimmer'));
+  assert.equal(w.MORAPortal.getState().data.controls.stored,null,'manual save is not a receipt for a MORA draft');
+ }finally{w.close();}
 });

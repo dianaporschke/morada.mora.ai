@@ -71,7 +71,9 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
     else if(data.controls?.prepared&&connected)button('Angaben überprüfen',()=>prepareIssue(),true,'review');
     else if(data.controls?.stored)button('Gespeichertes Anliegen öffnen',()=>navigate(()=>bridge.view(data.controls.stored.id)),true,'review');
     if(data.controls?.review&&connected)button('Foto hinzufügen',()=>prepareIssue(true),false,'photo');
-    for(const target of data.controls?.navigation || [])if(bridge.available().includes(target)&&names[target])button(names[target],()=>navigate(()=>bridge.navigate(target)));
+    const manual=Boolean(data.controls?.save?.operation==='create'&&bridge.available().includes('new-case'));
+    if(manual)button(names['new-case'],()=>navigate(()=>bridge.navigate('new-case')));
+    for(const target of data.controls?.navigation || [])if(!(manual&&target==='new-case')&&bridge.available().includes(target)&&names[target])button(names[target],()=>navigate(()=>bridge.navigate(target)));
 
     scrollEnd();
   }
