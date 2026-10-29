@@ -251,3 +251,46 @@ test('manual alternative opens the same native form once and saves through the n
   assert.equal(w.MORAPortal.getState().data.controls.stored,null,'manual save is not a receipt for a MORA draft');
  }finally{w.close();}
 });
+
+test('customer cases: manual and MORA use one portal store, preserve corrections, and isolate local scopes',async()=>{
+ let turns=0;const handler=createPortalChatHandler({converse:async(message,s)=>({state:turns++?update(s,message,{location:'Schlafzimmer',correction:true}):lamp(),reply:'Lokaler Test',navigation:[],modelCalls:0})});
+ const d=await dom(async(_u,o)=>{const r=await call(handler,JSON.parse(o.body));return {ok:r.status===200,json:async()=>r.body};}),w=d.window;
+ try{
+  w.MoradaRoles.select('tenant');await settle();w.eval("go('tenantSupport')");
+  const manual=[...w.document.querySelectorAll('[data-mora-customer-cases] button')].find(b=>b.textContent==='Anliegen selbst erfassen');assert.ok(manual);manual.click();
+  let f=w.document.getElementById('opsEntryForm');assert.ok(f);assert.equal(f.elements.namedItem('owner'),null);assert.equal(f.elements.namedItem('propertyId'),null);assert.equal(f.elements.namedItem('status'),null);
+  f.elements.title.value='Manueller Mieterentwurf';f.elements.description.value='Fenster klemmt';f.elements.unit.value='Küche';await saveForm(w);
+  assert.equal(w.document.querySelectorAll('#main tbody tr').length,1,w.document.getElementById('opsFormError')?.textContent||w.document.getElementById('main').textContent);
+  w.MORAPortal.open();await w.MORAPortal.send('Lampe im Wohnzimmer');await prepare(w);await saveForm(w);
+  let records=(await w.eval('portalReadStored()')).next.cases;assert.equal(records.length,2);const lampRecord=records.find(r=>r.unit==='Wohnzimmer');assert.ok(lampRecord);assert.equal(lampRecord.moraLocalRole,'tenant');
+  w.MORAPortal.open();await w.MORAPortal.send('Nein, Schlafzimmer');await prepare(w,'Anliegen aktualisieren');await saveForm(w);
+  records=(await w.eval('portalReadStored()')).next.cases;assert.equal(records.length,2);assert.equal(records.find(r=>r.id===lampRecord.id).unit,'Schlafzimmer');
+  assert.equal(w.document.querySelectorAll('#main tbody tr').length,2);
+  w.MoradaRoles.select('owner');await settle();w.eval("go('ownerCases')");assert.equal(w.document.querySelectorAll('#main tbody tr').length,0,'other customer role sees no tenant drafts');
+  w.dispatchEvent(new w.Event('mora:access-changed'));w.MoradaRoles.select('tenant');await settle();w.eval("go('tenantSupport')");assert.equal(w.document.querySelectorAll('#main tbody tr').length,0,'new access context cannot reopen previous session drafts');
+ }finally{w.close();}
+});
+
+test('tenant: native multiple cases, switching, supplement and photo use the same portal store',async()=>{
+ const text='Die Lampe im Wohnzimmer geht nicht. Die Steckdose im Büro ist kaputt.';
+ const p=plan([{ref:'new1',quote:'Die Lampe im Wohnzimmer geht nicht.',equipment:'light',defect:'Lässt sich nicht einschalten.',location:'Wohnzimmer'}, {ref:'new2',quote:'Die Steckdose im Büro ist kaputt.',equipment:'socket',defect:'Funktioniert nicht.',location:'Büro'}],{activeIssueRef:'new1'});
+ let n=0;const handler=createPortalChatHandler({converse:async(m,s)=>({state:++n===1?commitDecision(projectDecision(hydrateSimple(null),text,p),text,p).state:update(s,m,{details:'Flackert kurz beim Einschalten.'}),reply:'Sie können die Angaben prüfen.',navigation:[],modelCalls:1})});
+ const d=await dom(async(_u,o)=>{const r=await call(handler,JSON.parse(o.body));return {ok:r.status===200,json:async()=>r.body};}),w=d.window;
+ try{
+  w.MoradaRoles.select('tenant');await settle();w.document.getElementById('moraFab').click();await w.MORAPortal.send(text);const ids=w.MORAPortal.getState().data.issues.map(i=>i.id);await prepare(w);await saveForm(w);
+  w.MORAPortal.open();const selector=w.document.querySelector('.mora-portal-actions select');selector.value=ids[1];selector.dispatchEvent(new w.Event('change'));await settle();await prepare(w);await saveForm(w);
+  let rows=JSON.parse(w.localStorage.getItem('morada-portal-clean-20261011-v1')).cases;assert.equal(rows.length,2);assert.equal(rows.find(r=>r.id===ids[0]).unit,'Wohnzimmer');assert.equal(rows.find(r=>r.id===ids[1]).unit,'Büro');
+  // Switch back; a supplement updates the same issue, keeping the other record.
+  w.MORAPortal.open();const again=w.document.querySelector('select[aria-label="Anliegen auswählen"]');again.value=ids[0];again.dispatchEvent(new w.Event('change'));await settle();await w.MORAPortal.send('Flackert kurz beim Einschalten.');await prepare(w,'Anliegen aktualisieren');
+  const input=w.document.getElementById('opsFileInput');const bytes=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aN1kAAAAASUVORK5CYII=','base64');
+  const file=new w.File([bytes],'lampe.png',{type:'image/png'});file.arrayBuffer=async()=>bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength); // JSDOM File API shim only.
+  Object.defineProperty(input,'files',{configurable:true,value:[file]});input.dispatchEvent(new w.Event('change',{bubbles:true}));await settle();assert.match(w.document.getElementById('opsFileStatus').textContent,/1 Datei ausgewählt/);await saveForm(w);
+  rows=JSON.parse(w.localStorage.getItem('morada-portal-clean-20261011-v1')).cases;assert.equal(rows.length,2);const lampRow=rows.find(r=>r.id===ids[0]),socketRow=rows.find(r=>r.id===ids[1]);assert.equal(lampRow.attachments.length,1);assert.equal(lampRow.attachments[0].name,'lampe.png');assert.match(lampRow.attachments[0].dataUrl,/^data:image\/png;base64,/);assert.match(lampRow.description,/Flackert/);assert.equal(socketRow.attachments.length,0);assert.doesNotMatch(socketRow.description,/Flackert/);assert.equal(w.MORAPortal.getState().data.issue.portalAttachmentCount,1);
+ }finally{w.close();}
+});
+
+test('tenant: full HTML: quota failure produces no success or portal record and leaves retry control',async()=>{
+ const handler=createPortalChatHandler({converse:async()=>({state:lamp(),reply:'Sie können das Anliegen lokal speichern.',navigation:[],modelCalls:1})});
+ const d=await dom(async(_u,o)=>{const r=await call(handler,JSON.parse(o.body));return {ok:r.status===200,json:async()=>r.body};});const w=d.window;
+ try{w.MoradaRoles.select('tenant');await settle();w.document.getElementById('moraFab').click();await w.MORAPortal.send('Lampe im Wohnzimmer kaputt');Object.defineProperty(w.localStorage.__proto__,'setItem',{configurable:true,value(){throw Error('quota');}});await prepare(w);await saveForm(w);assert.equal(w.MORAPortal.getState().messages.filter(m=>m.role==='receipt').length,0);assert.equal(w.localStorage.getItem('morada-portal-clean-20261011-v1'),null);assert.ok(w.MORAPortal.getState().messages.some(m=>m.role==='error'));}finally{w.close();}
+});

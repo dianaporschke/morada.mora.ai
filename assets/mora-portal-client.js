@@ -1,6 +1,6 @@
 import {detectHazard,safetyNotice} from './mora-safety.js';
 import {draftLabel} from './mora-data.js';
-import {portalNavigation} from './mora-portal-map.js';
+import {portalNavigation,hasCaseForm} from './mora-portal-map.js';
 import {enablePortalWindow} from './mora-portal-window.js';
 /** No provider credentials, model calls or portal business rules in this UI. */
 export function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(window)}={}) {
@@ -66,15 +66,17 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
       for(const issue of data.issues){const o=document.createElement('option');o.value=issue.id;o.textContent=[draftLabel(issue),issue.location].filter(Boolean).join(' · ');o.selected=issue.id===data.issue?.id;select.append(o);}
       select.addEventListener('change',async()=>{if(busy)return;setBusy(true,'Anliegen wird gewechselt …');try{await request({action:'switch-issue',issueId:select.value});}catch(e){message('error',e.message);}finally{setBusy(false);}});actions.append(select);
     }
-    const connected=bridge.available().includes('cases');
+    const connected=hasCaseForm(bridge.available());
+    const manualTarget=bridge.available().includes('customer-case')?'customer-case':'new-case';
     if(data.controls?.save&&connected)button(data.controls.save.operation==='update'?'Anliegen aktualisieren':'Anliegen vorbereiten',()=>prepareIssue(),true,'prepare');
     else if(data.controls?.prepared&&connected)button('Angaben überprüfen',()=>prepareIssue(),true,'review');
     else if(data.controls?.stored)button('Gespeichertes Anliegen öffnen',()=>navigate(()=>bridge.view(data.controls.stored.id)),true,'review');
     if(data.controls?.review&&connected)button('Foto hinzufügen',()=>prepareIssue(true),false,'photo');
-    const manual=Boolean(data.controls?.save?.operation==='create'&&bridge.available().includes('new-case'));
-    if(manual)button(names['new-case'],()=>navigate(()=>bridge.navigate('new-case')));
-    for(const target of data.controls?.navigation || [])if(!(manual&&target==='new-case')&&bridge.available().includes(target)&&names[target])button(names[target],()=>navigate(()=>bridge.navigate(target)));
+    const manual=Boolean(data.controls?.save?.operation==='create'&&bridge.available().includes(manualTarget));
+    if(manual)button(names[manualTarget],()=>navigate(()=>bridge.navigate(manualTarget)));
+    for(const target of data.controls?.navigation || [])if(!(manual&&target===manualTarget)&&bridge.available().includes(target)&&names[target])button(names[target],()=>navigate(()=>bridge.navigate(target)));
 
+    if(!data.issue&&(data.controls?.navigation||[]).includes(manualTarget))button('Mit MORA vorbereiten',()=>send('Ich möchte ein Anliegen mit Ihnen vorbereiten.'),true,'prepare');
     scrollEnd();
   }
   function setBusy(value,label=''){busy=value;form.querySelector('button').disabled=value;input.disabled=value;panel.querySelector('[data-mp="clear"]').disabled=value;panel.setAttribute('aria-busy',String(value));status.textContent=label||storageWarning;showControls();}

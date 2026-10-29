@@ -1,3 +1,4 @@
+import {hasCaseForm} from '../assets/mora-portal-map.js';
 import {z} from 'zod';
 import {readSession,sealSession} from '../lib/mora/session.js';
 import {hydrateSimple,beginPreparation,acceptReceipt,safetyContext,contentHash} from '../lib/mora/simple/state.js';
@@ -32,7 +33,7 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
   // Signed conversations also convey no authority; rebind on every request.
   const reply=(status,data)=>{
     if(state){state.accessBinding=access.binding;state.portalAudience=audience;}
-    return res.status(status).json({architecture:integration,...data,...(state?{session:sealSession(state),issue:state.issue,issues:state.issues,controls:controls(state,(data.navigation || []).filter(t=>navigation.includes(t)),navigation.includes('cases')),safety:state.safety || null}:{}),timingMs:{...(data.timingMs||{}),total:Date.now()-start}});
+    return res.status(status).json({architecture:integration,...data,...(state?{session:sealSession(state),issue:state.issue,issues:state.issues,controls:controls(state,(data.navigation || []).filter(t=>navigation.includes(t)),hasCaseForm(navigation)),safety:state.safety || null}:{}),timingMs:{...(data.timingMs||{}),total:Date.now()-start}});
   };
   try{
     const previous=input.session?readSession(input.session):null;
@@ -60,7 +61,7 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
       return reply(200,{mode:'control',modelCalls:0});
     }
     if(input.action==='save-issue'||input.action==='review-issue'){
-      if(!navigation.includes('cases')||!(input.action==='save-issue'?controls(state).save:controls(state).review))throw Object.assign(Error('Action unavailable'),{code:'INVALID_ACTION'});
+      if(!hasCaseForm(navigation)||!(input.action==='save-issue'?controls(state).save:controls(state).review))throw Object.assign(Error('Action unavailable'),{code:'INVALID_ACTION'});
       // A current saved case may be reopened for review/photos without changing
       // its chat revision. A ticket remains permission, never storage evidence.
       const current=state.issue.preparation?.receipt;
@@ -86,7 +87,7 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
     // Portal controls are derived separately from plan.actions. Record the
     // actual offer returned to this client, so the next model turn sees it.
     // A visible offer is neither an opened form nor a successful save.
-    if(navigation.includes('cases')&&controls(state).save)rememberPreparationOffer(state);
+    if(hasCaseForm(navigation)&&controls(state).save)rememberPreparationOffer(state);
     const actionable=controls(state).save||controls(state).review;
     return reply(200,{mode:'model',reply:result.reply,...(portalResult?{portalResult}:{}),navigation:result.navigation,requestedAction:actionable?result.requestedAction:null,modelCalls:result.modelCalls,generationIds:result.generationIds,usage:result.usage,repaired:result.repaired,repairScope:result.repairScope || null,...('toolEvents' in result?{toolEvents:result.toolEvents}:{}),timingMs:{model:result.modelMs,creditGuard:result.guardMs}});
   }catch(error){

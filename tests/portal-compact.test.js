@@ -122,9 +122,9 @@ test('unavailable or unrequested operations fail closed while valid facts surviv
   await assert.rejects(sdk([p]).converse('Bitte vorbereiten.',s,['cases']),e=>e.conversationState.safety.hazard==='electric');
 });
 test('rare ambiguous success claim is reviewed at most once with the same low-cost model',async()=>{
-  const a=sdk([plan('Das Anliegen wurde an MORADA gesendet.'),{allowed:false}]);
-  await assert.rejects(a.converse('Bitte senden.',empty(),['cases']),e=>e.modelCalls===2&&e.diagnostic.reason==='unconfirmed_success');
-  assert.equal(a.model.doGenerateCalls.length,2);
+  const a=sdk([plan('Das Anliegen wurde an MORADA gesendet.'),{allowed:false},{reply:'Das Anliegen wurde an MORADA gesendet.'}]);
+  await assert.rejects(a.converse('Bitte senden.',empty(),['cases']),e=>e.modelCalls===3&&e.diagnostic.reason==='unconfirmed_success');
+  assert.equal(a.model.doGenerateCalls.length,3);
 });
 test('budget boundary stops before inference and malformed output never launches a second generation',async()=>{
   const a=sdk([],async()=>{throw Object.assign(Error('budget'),{code:'PREVIEW_CREDIT_BOUNDARY'});});
@@ -144,8 +144,8 @@ test('wire decoder rejects duplicate fields, unsupported values and fabricated f
  const inconsistent=structuredClone(good);inconsistent.next.type='prepare';assert.throws(()=>decodeCompactPlan(inconsistent),e=>e.diagnostic.detail==='incomplete_form_action');
 });
 test('future forwarding promises also trigger the bounded effect check',async()=>{
- const a=sdk([plan('Prüfen Sie das Formular, damit wir den Fall weiterleiten können.'),{allowed:false}]);
- await assert.rejects(a.converse('Wohnzimmer',await lamp(),['cases']),e=>e.modelCalls===2&&e.diagnostic.reason==='unconfirmed_success');
+ const a=sdk([plan('Prüfen Sie das Formular, damit wir den Fall weiterleiten können.'),{allowed:false},{reply:'Wir werden es weiterleiten.'}]);
+ await assert.rejects(a.converse('Wohnzimmer',await lamp(),['cases']),e=>e.modelCalls===3&&e.diagnostic.reason==='unconfirmed_success');
 });
 
 test('inactive action metadata cannot run an operation or discard valid facts',async()=>{
@@ -314,4 +314,11 @@ test('repair grammar only permits literal original passages, including punctuati
  const json=z.toJSONSchema(longRepair.schema);
  const enums=[];function walk(x){if(!x||typeof x!=='object')return;if(x.enum&&x.enum.some(v=>v==='p0'))enums.push(x.enum);Object.values(x).forEach(walk);}walk(json);
  assert.ok(enums.length);for(const values of enums)for(const value of values)assert.ok(Object.hasOwn(longRepair.sources,value));
+});
+
+test('unconfirmed prepared claim is repaired without modifying facts or fabricating a receipt',async()=>{
+ const a=sdk([plan('Ich habe das Anliegen vorbereitet.',[{ref:'new1',quote:'Lampe im Wohnzimmer kaputt',equipment:'light',defect:'kaputt',location:'Wohnzimmer'}]),{allowed:false},{reply:'Sie können die Angaben jetzt im Formular prüfen.'}]);
+ const r=await a.converse('Lampe im Wohnzimmer kaputt',empty(),['customer-case','tenantSupport']);
+ assert.equal(r.modelCalls,3);assert.equal(r.state.issue.location,'Wohnzimmer');assert.equal(r.state.issue.preparation?.receipt,undefined);
+ assert.ok(r.toolEvents.some(e=>e.tool==='effect_repair'&&e.ok));assert.equal(r.reply,'Sie können die Angaben jetzt im Formular prüfen.');
 });

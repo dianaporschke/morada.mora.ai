@@ -1,26 +1,28 @@
 /** MORA boundary to the supplied portal. No parallel case/file storage. */
 export function createPortalBridge(mapping) {
   const {managedCaseFields,sameCaseFields}=mapping;
-  let review=null;
+  let review=null;const customer=createCustomerCases();
   const ensure=()=>{
-    if(!crmWritable())throw Error('Anliegen sind in dieser Ansicht noch nicht zum Speichern angebunden.');
+    if(!crmWritable()&&!customer.enabled())throw Error('Anliegen sind in dieser Ansicht noch nicht zum Speichern angebunden.');
     if(portalLoading||portalSaving||portalReadBlocked)throw Error('Bitte zuerst den Portalstand laden oder die laufende Speicherung abwarten.');
   };
   const api={
     available(){
       if(!previewOpen)return [];
       const pages=[...roleGroups().flatMap(([,items])=>items.map(([id])=>id)),'searchPage'];
+      if(customer.enabled())pages.push('customer-case');
       if(crmWritable())pages.push('communication','new-case','new-task','new-appointment','new-document');
-      return [...new Set(pages)].filter(t=>Object.hasOwn(portalNavigation,t)&&allowed(t.startsWith('new-')?({case:'cases',task:'tasks',appointment:'calendar',document:'documents'})[t.slice(4)]:t));
+      return [...new Set(pages)].filter(t=>Object.hasOwn(portalNavigation,t)&&(t==='customer-case'&&customer.enabled()||allowed(t.startsWith('new-')?({case:'cases',task:'tasks',appointment:'calendar',document:'documents'})[t.slice(4)]:t)));
     },
     role(){return role;},open(){return previewOpen;},
     navigate(target){
       if(!this.available().includes(target))throw Error('Diese Funktion ist in dieser Ansicht nicht verfügbar.');
+      if(target==='customer-case')return customer.open();
       if(target==='new-case'){ensure();if(!portalCloseDialog())return false;return Boolean(caseOpenForm());}
       if(target.startsWith('new-')){if(!portalCloseDialog())return false;newEntry(target.slice(4));return true;}
       go(target);return current===target;
     },
-    view(id){ensure();if(!state.cases.some(c=>c.id===id))throw Error('Das Anliegen ist in diesem Portalstand nicht vorhanden.');caseDetail(id);},
+    view(id){ensure();if(customer.enabled()){customer.find(id);return customer.open(id);}if(!state.cases.some(c=>c.id===id))throw Error('Das Anliegen ist in diesem Portalstand nicht vorhanden.');caseDetail(id);},
     currentDraft(){return review&&dialog.open&&review.form.isConnected?{issueId:review.ticket.operation.issueId}:null;},
     prepare(ticket,previousFields,callbacks={},photo=false){
       ensure();
@@ -30,13 +32,14 @@ export function createPortalBridge(mapping) {
       }
       if(!portalCloseDialog())throw Error('Bitte zuerst die offenen Formulareingaben sichern.');
       const {operation,fields}=ticket,id=operation.issueId,old=state.cases.find(c=>c.id===id);
+      if(old&&customer.enabled())customer.find(id);
       if(old&&(opsClosed(old)||old.archivedAt))throw Error('Dieses Anliegen ist abgeschlossen. Bitte im Anliegenregister prüfen.');
       const same=old&&sameCaseFields(managedCaseFields(old),fields);
       // A photo/review of the current chat revision preserves customer edits.
       const current=old&&callbacks.current;
       if(old&&!same&&!current&&(!previousFields||!sameCaseFields(managedCaseFields(old),previousFields)))throw Error('Das Anliegen enthält eigene Formularänderungen. Bitte im Anliegenregister prüfen; MORA überschreibt sie nicht.');
       if(!old&&previousFields)throw Error('Das zuvor gespeicherte Anliegen fehlt. Bitte den aktuellen Portalstand laden.');
-      if(!caseOpenForm(old?id:'','','',{...fields,caseInfo:{category:fields.category,channel:'Portal'}}))throw Error('Das Anliegenformular konnte nicht geöffnet werden.');
+      if(!(customer.enabled()?customer.open(old?id:'',fields,true):caseOpenForm(old?id:'','','',{...fields,caseInfo:{category:fields.category,channel:'Portal'}})))throw Error('Das Anliegenformular konnte nicht geöffnet werden.');
       const form=document.getElementById('opsEntryForm');
       if(!current)for(const [key,value]of Object.entries(fields))form.elements.namedItem(key).value=value;
       if(!current&&!sameCaseFields(Object.fromEntries(Object.keys(fields).map(k=>[k,form.elements.namedItem(k).value])),fields))throw Error('Die Formularübernahme konnte nicht bestätigt werden.');
@@ -52,13 +55,14 @@ export function createPortalBridge(mapping) {
         try{
           ensure();
           const data=Object.fromEntries(new FormData(form));
-          const result=await opsSaveRecord('case',data,form.dataset.id,draft.items,draft.source,{id,note:'MORA · Gesprächsbelege (spätere Korrekturen gelten):\n'+String(ticket.sourceEvidence||'').slice(-2800)});
+          const identity={id,note:'MORA · Gesprächsbelege (spätere Korrekturen gelten):\n'+String(ticket.sourceEvidence||'').slice(-2800)};
+          const result=customer.enabled()?await customer.save(data,form.dataset.id,draft.items,draft.source,identity):await opsSaveRecord('case',data,form.dataset.id,draft.items,draft.source,identity);
           if(result.error||!result.persisted)throw Error(result.error||'Die Speicherung wurde nicht bestätigt.');
           form.dataset.id=id;opsDraft.id=id;opsDraft.source=state;ctx.source=state;
           const persisted=await portalReadStored(),saved=persisted.next.cases.find(c=>c.id===id);
           if(!saved||!sameCaseFields(managedCaseFields(saved),managedCaseFields(result.record))||JSON.stringify(saved.attachments)!==JSON.stringify(result.record.attachments))throw Error('Der gespeicherte Portalstand konnte nicht vollständig bestätigt werden. Bitte erneut speichern oder im Anliegenregister prüfen.');
           ctx.complete=true;review=null;
-          opsAfterSave('case',saved,form.dataset.returnTo,!ctx.old);caseDetail(id);
+          if(customer.enabled())customer.show();else{opsAfterSave('case',saved,form.dataset.returnTo,!ctx.old);caseDetail(id);}
           await callbacks.onSaved?.({id,fields:managedCaseFields(saved),mappedFields:fields,attachmentCount:saved.attachments.length,conflictFields:Object.keys(fields).filter(k=>fields[k]!==managedCaseFields(saved)[k]),updated:ctx.old,unchanged:Boolean(result.unchanged)});
         }catch(error){opsFormError(error.message);await callbacks.onError?.(error);}
         finally{ctx.saving=false;if(form.isConnected)form.querySelector('[type="submit"]').disabled=false;}
