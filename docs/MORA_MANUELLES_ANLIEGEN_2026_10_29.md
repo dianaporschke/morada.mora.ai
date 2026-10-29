@@ -32,3 +32,15 @@ Der Adapter braucht getrennte Ereignisse für Formular geöffnet, geschlossen, S
 Automatisierte DOM-Tests verwenden explizite lokale Testantworten. Geprüft: beide Wege benutzen das native Formular; manuelle Erfassung startet leer; native Speicherung und Rücklesen; keine doppelte manuelle Aktion; alte Aktionen verschwinden bei Fehlern; kein Kunden-Zugriff auf das Verwaltungsformular. Der bestehende Quellvergleich prüft den unveränderten Portalteil.
 
 Echte Modellantworten und Kosten werden separat in `docs/evidence/mora-manual-paths-live-2026-10-29.json` festgehalten, sofern der bestehende Budgetwächter den Test zulässt. Automatisierte DOM-Tests belegen keine fehlerfreie Gesprächsqualität und keine mobile Safari-Prüfung.
+
+
+### Ergebnis dieser Prüfung
+
+- Gesamtlauf: 466 Tests, davon zunächst 465 erfolgreich; die alte Prüfung erwartete zwei statt nun drei Aktionen. Nach Änderung auf explizite Buttonbeschriftungen bestanden alle 32 Portal-Integrationstests. Die übrigen 434 Tests hatten bereits bestanden.
+- Typecheck und Build (139 Dateien) erfolgreich. Native Portalquelle unverändert.
+- Drei echte Antworten auf der Preview: Mieter nennt fehlendes Formular; Administration erklärt beide Wege; ausdrücklicher manueller Wunsch verweist auf den vorhandenen Formularbutton. Alle drei HTTP 200. Konto-Kostendifferenz ca. 0,0032014 USD (keine exakte Einzelabrechnung). HTTP-Laufzeiten 11,35 / 7,85 / 7,74 Sekunden; keine Messung der Browseranzeige.
+- Die Antworten sind noch ausführlich. Kein Nachweis einer allgemeinen Verbesserung der Natürlichkeit; kein vollständiger Mieterablauf.
+- Laufzeitcommit: e99c2c61e61a73d5e38c55a90369fe5152245fb7.
+- Preview: https://morada-mora-bw7mu6ium-dianaporschke-1255s-projects.vercel.app/portal.html
+
+- Offener Befund: Bei der kombinierten Verwaltungsfrage erklärt das Modell beide Möglichkeiten, liefert aber zunächst keine Aktionsbuttons (`controls.navigation=[]`, `save=null`). Erst auf den ausdrücklichen manuellen Wunsch folgt `new-case`. Die lokale UI-Prüfung belegt beide Buttons bei strukturiert vorbereitbarem Anliegen, nicht deren zuverlässige Auslösung durch jede natürliche Formulierung.

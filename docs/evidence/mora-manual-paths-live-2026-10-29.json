@@ -1,0 +1,280 @@
+{
+  "url": "https://morada-mora-bw7mu6ium-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "source": "Real deployed /api/portal-agent responses; no mock wording",
+  "model": "anthropic/claude-haiku-5.5",
+  "runCeilingUsd": 0.025,
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.630259468,
+    "totalUsedUsd": 3.369740532,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "role": "tenant",
+      "turns": [
+        {
+          "customer": "Die Lampe im Wohnzimmer ist kaputt. Wo kann ich sie selber melden oder kannst du das Formular vorbereiten?",
+          "status": 200,
+          "httpMs": 11348.1,
+          "reply": "Das tut mir leid, dass die Lampe im Wohnzimmer nicht funktioniert. Ich kann Ihnen hier leider kein Meldeformular für Anliegen anbieten: Die Anliegenübersicht in diesem Bereich ist nur eine leere Vorschau ohne Formularanbindung, und ich kann auf diesem Gerät kein Anliegen vorbereiten oder speichern. Wenn Sie den Defekt melden möchten, können Sie die Kontaktansicht öffnen; dort finden Sie die Möglichkeit, MORADA direkt zu kontaktieren.",
+          "navigation": [
+            "tenantContact"
+          ],
+          "issue": {
+            "id": "24651da9-6119-4cd8-8811-0d94781c2588",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\nkaputt\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+            "defect": "kaputt",
+            "count": null,
+            "location": "Wohnzimmer",
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Die Lampe im Wohnzimmer ist kaputt."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "equipment": {
+                    "from": "Lampe",
+                    "to": "light"
+                  },
+                  "defect": {
+                    "from": null,
+                    "to": "kaputt"
+                  },
+                  "location": {
+                    "from": null,
+                    "to": "Wohnzimmer"
+                  }
+                },
+                "source": "Die Lampe im Wohnzimmer ist kaputt.",
+                "at": "2026-10-29T13:38:30.066Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\nkaputt\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 2,
+            "fieldFacts": {
+              "equipment": {
+                "status": "corrected",
+                "value": "light",
+                "source": "Die Lampe im Wohnzimmer ist kaputt."
+              },
+              "defect": {
+                "status": "known",
+                "value": "kaputt",
+                "source": "Die Lampe im Wohnzimmer ist kaputt."
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "Die Lampe im Wohnzimmer ist kaputt."
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\nkaputt\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+                "source": "Die Lampe im Wohnzimmer ist kaputt."
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-29T13:38:30.063Z",
+            "updatedAt": "2026-10-29T13:38:30.082Z",
+            "shortLabel": "Lampe / Leuchte"
+          },
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "tenantContact"
+            ]
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 9118,
+              "outputTokens": 552,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 4596,
+            "creditGuard": 591,
+            "total": 5232
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "record_issues",
+              "ok": true
+            },
+            {
+              "tool": "use_issue",
+              "ok": true
+            },
+            {
+              "tool": "show_view",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "admin",
+      "turns": [
+        {
+          "customer": "Die Lampe im Wohnzimmer ist kaputt. Wo kann ich sie selber melden oder kannst du das Formular vorbereiten?",
+          "status": 200,
+          "httpMs": 7854.1,
+          "reply": "Es tut mir leid, dass die Lampe im Wohnzimmer nicht funktioniert. Sie können das Anliegen selbst über «Anliegen selbst erfassen» eingeben. Dort finden Sie ein leeres Formular, das Sie manuell ausfüllen und speichern können. Alternativ kann ich die Angaben aus unserem Gespräch in dieses Formular übernehmen, sodass Sie nur noch prüfen müssen. Gespeichert wird lokal auf diesem Gerät; ein Versand erfolgt damit nicht.\n\nMöchten Sie, dass ich das Formular mit den Angaben vorbereite, oder lieber selbst erfassen?",
+          "navigation": [],
+          "issue": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 8437,
+              "outputTokens": 367,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1804,
+            "creditGuard": 172,
+            "total": 1983
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": []
+        },
+        {
+          "customer": "Ich möchte das Formular selbst ausfüllen.",
+          "status": 200,
+          "httpMs": 7741.5,
+          "reply": "Gerne. Mit «Anliegen selbst erfassen» öffnen Sie das leere Formular, und Sie können es in Ruhe ausfüllen. Speichern sichert das Anliegen lokal auf diesem Gerät; ein Versand erfolgt damit nicht.",
+          "navigation": [
+            "new-case"
+          ],
+          "issue": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "new-case"
+            ]
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 8699,
+              "outputTokens": 233,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1439,
+            "creditGuard": 271,
+            "total": 1722
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.627058068,
+    "totalUsedUsd": 3.372941932,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "observedAccountDeltaUsd": 0.003201400000000021
+}
