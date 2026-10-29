@@ -1,21 +1,33 @@
-# MORA: natürliche Fortsetzung nach kurzen Antworten
+# MORA: Wiederholungen und unbelegte Defektpräzisierung
 
-## Beobachteter Fehler und Herkunft
+## Zwei getrennte Fehler
 
-Die Kundenscreenshots zeigen die Folge «lampe geht nicht» → Rückfrage zum Raum → «wohnzimmer» → «Danke, die Lampe im Wohnzimmer lässt sich also nicht einschalten». Die Antwort wiederholt die erfassten Angaben und präzisiert den Defekt unbelegt. Auch die anschliessende Aufforderung, die Angabe in einem Anliegen zu ergänzen, setzt einen nicht bestätigten Formularstand voraus.
+Die Kundenscreenshots zeigen «lampe geht nicht» → Rückfrage zum Raum → «wohnzimmer» → «Danke, die Lampe im Wohnzimmer lässt sich also nicht einschalten».
 
-Der aktive Endpunkt `/api/portal-agent` verwendet `createCompactPortalAgent`. Dessen `plan.reply` gelangt unverändert an den Client; `assets/mora-portal-client.js` zeigt `data.reply` über `textContent`. Es gibt keinen lokalen Satzbaustein, der diese Bestätigung einfügt. Der Systemprompt untersagte routinemässige Dankesformeln bereits. Der Vorfall ist daher ein tatsächliches Befolgungsproblem des Modells. Die bisherige technische Prüfung kontrolliert Daten und Aktionsbehauptungen, nicht den Gesprächsstil.
+Der vollständige Satz stammt vom Modell. Der aktive Endpunkt `/api/portal-agent` verwendet `createCompactPortalAgent`; dessen `plan.reply` gelangt unverändert an den Client, der `data.reply` über `textContent` anzeigt. Der Systemprompt untersagt routinemässige Dankesformeln bereits. Dass trotzdem eine solche Formulierung erscheint, ist ein tatsächliches Befolgungsproblem. Die technische Prüfung kontrolliert Daten und Aktionsbehauptungen, nicht zuverlässig den Gesprächsstil.
 
-## Begrenzte Korrektur
+Zusätzlich existierte eine konkrete lokale Ursache für den wiederkehrenden Defektwortlaut: `applyPatch` in `lib/mora/issue-state.js` ersetzte bei Lampen «geht nicht», «geht gar nicht» und «funktioniert nicht» automatisch durch «Lampe lässt sich nicht einschalten.». Die gleiche Regel erfasste auch Formulierungen mit dem Präfix «Lampe». Dieser genauere, nicht belegte Defekt gelangte in den Gesprächszustand, den nächsten Modellkontext und die Portalbeschreibung. Die erste, auf den Portalordner begrenzte Prüfung hatte diese gemeinsame Zustandsregel übersehen.
 
-`lib/mora/portal/compact-agent.js` beschreibt jetzt den Zweck von `reply` direkt im tatsächlich an den Anbieter übergebenen Ausgabeschema. Eine kurze Antwort auf eine Rückfrage soll zum hilfreichen nächsten Schritt führen. Erbetene Zusammenfassungen und knappe Korrekturbestätigungen bleiben möglich. Die Formulierung muss zur aktiven Rolle und zur tatsächlich verfügbaren Aktion passen. Eine blosse Navigation darf keine Datenübernahme oder vorhandene Speicherung unterstellen.
+## Nachweislich fehlgeschlagener Formulierungsversuch
 
-Das Schema führt strukturierte Angaben und Aktionsentscheidung vor dem Antwortfeld auf. Das ist eine Anleitung innerhalb desselben Modellaufrufs, keine Garantie über interne Modellschritte. Die Feldbeschreibung für den Defekt verlangt zusätzlich, allgemeines Nichtfunktionieren nicht als konkreten Einschaltfehler oder als Diagnose auszugeben.
+Commit `2944f882d0e063b1628a5a263d94dcfffe63575d` ergänzte den Zweck von `reply` direkt im Ausgabeschema und stellte Angaben/Aktionsentscheidung vor das Antwortfeld. Eine Feldbeschreibung sollte die unbelegte Defektpräzisierung verhindern. Die lokalen Tests waren erfolgreich, der echte Test aber nicht.
 
-Keine neuen Antwortvorlagen, kein nachträgliches Streichen einzelner Wörter, keine zusätzliche KI-Formulierungsstufe, kein Modellwechsel. Portalrollen, Berechtigungsprüfung, Speicherung, Anliegenaktionen und Oberfläche bleiben unverändert.
+Der geschützte Preview-Lauf verwendete das unveränderte Modell `anthropic/claude-haiku-5.5`. Für Mieter und Eigentümer waren jeweils «lampe geht nicht», «wohnzimmer», «nein, schlafzimmer» geplant. Tatsächlich wurden fünf Nachrichten verarbeitet, bevor der Lauf beim ersten HTTP-Fehler automatisch stoppte:
 
-## Prüfung
+- Mieter: alle drei HTTP 200, aber unnötige Mehrfachfragen und erneut «Danke, die Lampe im Wohnzimmer haben wir vermerkt». Auch die Raumkorrektur begann mit «Danke für die Korrektur». Der Raum wurde im Datensatz richtig zu Schlafzimmer geändert.
+- Eigentümer: erste Antwort HTTP 200. Die Folgeantwort begann ebenfalls mit «Danke … notiert»; die bestehende Wirkungsprüfung verwarf sie als `unconfirmed_success` (HTTP 503). Die letzte geplante Korrektur wurde nicht mehr aufgerufen.
+- Die ursprüngliche lokale Umdeutung blieb in den zurückgegebenen Daten sichtbar. Eine zusätzliche Modellanweisung konnte sie nicht verhindern.
 
-Die SDK-Regression prüft, dass der Anbieter die Beschreibungen im tatsächlichen `responseFormat` erhält. Eine weitere Prüfung erhält ausdrücklich gewünschte Zusammenfassungen und zitierte Dankesformulierungen unverändert; damit entsteht keine lokale Wortverbotsliste. Diese Tests beweisen die technische Übergabe, nicht die Qualität einer echten Modellantwort.
+[Vollständige tatsächliche Antworten und Daten](evidence/mora-conversation-continuation-live-2026-10-28.json). Fünf Nachrichten verursachten sechs Modellaufrufe einschliesslich der vorhandenen Wirkungsprüfung. Beobachtete Änderung des Gateway-Kontostands: USD 0.0052632. Das ist eine Kontostandsdifferenz, keine separat zugeordnete Rechnung. Die bestehende USD-2-Testgrenze wurde nicht erhöht.
 
-Der vorhandene Live-Runner unterstützt jetzt zusätzlich pro Rolle konfigurierte Nachrichten und protokolliert die tatsächlich zurückgegebenen Anliegenfelder und Aktionen. Die bestehende Kostenobergrenze bleibt unverändert. Ergebnisse des gezielten echten Gesprächstests werden nach Durchführung ergänzt.
+**Der Formulierungsversuch wurde zurückgenommen.** Es gibt keine neue Antwortvorlage, Wortverbotsliste oder zusätzliche KI-Formulierungsstufe. Ein erfolgreicher HTTP-Aufruf und bestandene technische Tests werden hier ausdrücklich nicht als Nachweis guter Gesprächsqualität gewertet.
+
+## Tatsächliche Korrektur und Grenze
+
+Die unbelegte Umdeutung in `lib/mora/issue-state.js` wurde entfernt. Die lokale Verarbeitung bewahrt nun den vom Modell gelieferten berichteten Defekt, statt selbst einen Einschaltfehler hinzuzufügen. Ein ausdrücklich genannter Einschaltfehler bleibt erhalten. Die Regression prüft fünf Varianten über die tatsächlichen Reducer, den nächsten Modellkontext, eine Raumkorrektur und das Portal-Mapping.
+
+`scripts/portal-integration/role-live.py` kann jetzt pro Rolle konfigurierte Nachrichten ausführen und die zurückgegebenen Anliegenfelder protokollieren. Modell, Portalrollen, Berechtigungen, Speicherung und Oberfläche wurden nicht verändert. Früher gespeicherte Datensätze werden nicht rückwirkend umgeschrieben; für einen neuen Vergleich ist ein neues Gespräch nötig.
+
+Die Entfernung der lokalen Regel behebt die von der Anwendung hinzugefügte Präzisierung. Sie garantiert nicht, dass das Modell selbst nie genauer formuliert, und löst insbesondere das mechanische «Danke …» noch nicht zuverlässig. Dafür ist eine echte vergleichende Prüfung einer veränderten Gesprächssteuerung nötig; eine weitere unbelegte Erfolgsmeldung oder pauschale Ersatzformulierung wäre nicht gerechtfertigt.
+
+Automatisierte Prüfung nach Entfernung der Regel und Rücknahme des Formulierungsversuchs: **456 Tests bestanden**, Typprüfung bestanden, Build bestanden (137 Dateien geprüft). Die neue Regression deckt allgemein gemeldetes Nichtfunktionieren und ausdrücklich gemeldeten Einschaltfehler getrennt ab.

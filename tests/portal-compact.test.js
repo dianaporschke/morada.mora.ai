@@ -61,20 +61,7 @@ test('compact response and extraction share exactly one real SDK generation',asy
   assert.equal(r.modelCalls,1);assert.equal(a.model.doGenerateCalls.length,1);assert.equal(guards,1);
   assert.equal(r.reply,'Wo steht die Lampe?');assert.equal(r.state.issue.equipment,'light');
   assert.ok(!a.model.doGenerateCalls[0].tools?.length);
-  const format=a.model.doGenerateCalls[0].responseFormat;
-  assert.equal(format.type,'json');
-  assert.match(format.schema.properties.reply.description,/Gesprächsfortsetzung/,'The provider must receive the reply purpose, not just a bare string schema');
-  assert.match(format.schema.properties.updates.items.properties.changes.items.properties.field.description,/keine Diagnose oder zusätzliche Präzisierung/);
   assert.equal(r.state.issue.location,null);assert.equal(r.state.issue.count,null);
-});
-test('requested summaries and quoted thanks are preserved without a local style filter or extra generation',async()=>{
-  const s=await lamp();
-  const reply='Die Lampe im Wohnzimmer ist kaputt. Eine Formulierung wie «Danke für die Angabe» würde hier nur wiederholen, was Sie gerade gesagt haben.';
-  const a=sdk([plan(reply)]);
-  const r=await a.converse('Bitte fassen Sie das Anliegen zusammen und erklären Sie die Formulierung «Danke für die Angabe».',s,['cases']);
-  assert.equal(r.reply,reply);assert.equal(r.modelCalls,1);
-  assert.equal(r.state.issue.id,s.issue.id);assert.equal(r.state.issue.defect,'kaputt');
-  assert.equal(r.state.issue.location,'Wohnzimmer');
 });
 test('short replies and correction keep the same issue and native mapping',async()=>{
   let s=(await turn(empty(),'lampe kaputt',plan('Wo ist die Lampe?',[{ref:'new1',quote:'lampe kaputt',equipment:'light',defect:'kaputt'}]))).state;
@@ -84,6 +71,20 @@ test('short replies and correction keep the same issue and native mapping',async
   s=(await turn(s,'Nein, Schlafzimmer.',plan('Dann im Schlafzimmer.',[{ref:'active',quote:'Nein, Schlafzimmer.',location:'Schlafzimmer',correction:true}],{focus:'active'}))).state;
   assert.equal(s.issue.id,id);assert.equal(s.issues.length,1);assert.equal(s.issue.count,1);assert.equal(s.issue.fieldFacts.since.status,'unknown');
   const f=portalCaseFields(s.issue);assert.equal(f.unit,'Schlafzimmer');assert.match(f.title,/Lampe \/ Leuchte/);assert.doesNotMatch(f.description,/Wohnzimmer/);
+});
+test('lamp symptoms retain their reported precision in memory, subsequent model context and portal mapping',async()=>{
+  for(const defect of ['geht nicht','geht gar nicht','funktioniert nicht','Lampe funktioniert nicht.','Lampe lässt sich nicht einschalten.']){
+    const text='Meine Lampe: '+defect;
+    let s=(await turn(empty(),text,plan('In welchem Raum?',[{ref:'new1',quote:text,equipment:'light',defect}]))).state;
+    const id=s.issue.id;
+    assert.equal(s.issue.defect,defect,'No local rewriting into a more specific fault');
+    assert.equal(createAgentTurn(s,'wohnzimmer',['cases']).snapshot().issues[0].defect,defect);
+    s=(await turn(s,'wohnzimmer',plan('Sie können fortfahren.',[{ref:'active',quote:'wohnzimmer',location:'Wohnzimmer'}],{focus:'active'}))).state;
+    s=(await turn(s,'Nein, Schlafzimmer.',plan('Dann im Schlafzimmer.',[{ref:'active',quote:'Nein, Schlafzimmer.',location:'Schlafzimmer',correction:true}],{focus:'active'}))).state;
+    assert.equal(s.issue.id,id);assert.equal(s.issue.defect,defect);assert.equal(s.issue.fieldFacts.defect.value,defect);
+    const mapped=portalCaseFields(s.issue);assert.equal(mapped.unit,'Schlafzimmer');assert.ok(mapped.description.includes(defect));
+    if(!defect.includes('einschalten'))assert.doesNotMatch(mapped.description,/einschalten/);
+  }
 });
 test('uncertainty preserves last confirmed count and source',async()=>{
   const s=(await turn(await lamp(),'Vielleicht zwei.',plan('Sie sind sich noch nicht sicher.',[{ref:'active',quote:'Vielleicht zwei.',count:2,uncertain:[{field:'count',quote:'Vielleicht zwei.'}]}],{focus:'active'}))).state;
