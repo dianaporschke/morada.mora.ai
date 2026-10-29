@@ -166,7 +166,8 @@ test('a repaired modal offer is not mistaken for an executed form action',async(
 
 test('provider reply envelopes decode as text without interpreting nested actions or arbitrary JSON',()=>{
   assert.equal(readableCompactReply('{"reply":"Persönliche Dokumente stehen hier noch nicht zur Verfügung."}'),'Persönliche Dokumente stehen hier noch nicht zur Verfügung.');
-  for(const text of ['Normaler Text.','{"reply":"Text","action":"prepare"}','{"count":2}','{"reply":42}'])assert.equal(readableCompactReply(text),text);
+  assert.equal(readableCompactReply('Normaler Text.'),'Normaler Text.');
+  for(const text of ['{"reply":"Text","action":"prepare"}','{"count":2}','{"reply":42}','{"allowed":false,"note":"internal review"}'])assert.throws(()=>readableCompactReply(text),e=>e.diagnostic.reason==='invalid_reply_format');
 });
 test('rare ambiguous success claim is reviewed at most once with the same low-cost model',async()=>{
   const a=sdk([plan('Das Anliegen wurde an MORADA gesendet.'),{allowed:false},{reply:'Das Anliegen wurde an MORADA gesendet.'}]);
