@@ -1,0 +1,204 @@
+{
+  "scope": "Offline replay of real recorded model facts into native customer case storage; not fresh inference or a browser/device rendering test.",
+  "input": "docs/evidence/mora-quality-acceptance-release-live-2026-10-29.json",
+  "snapshots": [
+    [
+      {
+        "id": "5541a7d8-0d55-4607-87d5-da193d2c9a61",
+        "title": "Lampe / Leuchte · Wohnzimmer",
+        "description": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nkaputt\nBereich: Wohnzimmer\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+        "unit": "Wohnzimmer",
+        "propertyId": "",
+        "unitId": "",
+        "property": "",
+        "person": "",
+        "date": "2026-10-29",
+        "owner": "MORADA",
+        "status": "Neu",
+        "priority": "Normal",
+        "attachments": [],
+        "moraLocalScope": "9e070ae0-d3de-4b01-9fde-627bc61929be",
+        "moraLocalRole": "tenant",
+        "createdAt": "2026-10-29T15:31:36.350Z",
+        "createdBy": "Lokaler Entwurf",
+        "caseInfo": {
+          "reference": "A00001",
+          "category": "Schaden / Reparatur",
+          "receivedDate": "2026-10-29",
+          "channel": "Portal",
+          "reporterId": "",
+          "nextStep": "",
+          "waitingFor": "",
+          "resolution": "",
+          "closedAt": ""
+        },
+        "updatedAt": "2026-10-29T15:31:36.351Z",
+        "updatedBy": "Mieterzugang",
+        "history": [
+          {
+            "id": "HISTORY-1ede72f2-dd7a-403d-ad97-840324b66eab",
+            "at": "2026-10-29T15:31:36.351Z",
+            "by": "Mieterzugang",
+            "type": "created",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nlampe kaputt\nwohnzimmer",
+            "changes": []
+          }
+        ],
+        "assetId": ""
+      }
+    ],
+    [
+      {
+        "id": "5541a7d8-0d55-4607-87d5-da193d2c9a61",
+        "title": "Lampe / Leuchte · Schlafzimmer",
+        "description": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nkaputt\nBereich: Schlafzimmer\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+        "unit": "Schlafzimmer",
+        "propertyId": "",
+        "unitId": "",
+        "property": "",
+        "person": "",
+        "date": "2026-10-29",
+        "owner": "MORADA",
+        "status": "Neu",
+        "priority": "Normal",
+        "attachments": [],
+        "moraLocalScope": "9e070ae0-d3de-4b01-9fde-627bc61929be",
+        "moraLocalRole": "tenant",
+        "createdAt": "2026-10-29T15:31:36.350Z",
+        "createdBy": "Lokaler Entwurf",
+        "caseInfo": {
+          "reference": "A00001",
+          "category": "Schaden / Reparatur",
+          "receivedDate": "2026-10-29",
+          "channel": "Portal",
+          "reporterId": "",
+          "nextStep": "",
+          "waitingFor": "",
+          "resolution": "",
+          "closedAt": ""
+        },
+        "updatedAt": "2026-10-29T15:31:37.133Z",
+        "updatedBy": "Mieterzugang",
+        "history": [
+          {
+            "id": "HISTORY-1ede72f2-dd7a-403d-ad97-840324b66eab",
+            "at": "2026-10-29T15:31:36.351Z",
+            "by": "Mieterzugang",
+            "type": "created",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nlampe kaputt\nwohnzimmer",
+            "changes": []
+          },
+          {
+            "id": "HISTORY-3306dc2d-4d3a-49a6-966d-1e5ee3813040",
+            "at": "2026-10-29T15:31:37.133Z",
+            "by": "Mieterzugang",
+            "type": "edited",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nlampe kaputt\nwohnzimmer\nSchlafzimmer",
+            "changes": [
+              {
+                "field": "Titel",
+                "before": "Lampe / Leuchte · Wohnzimmer",
+                "after": "Lampe / Leuchte · Schlafzimmer"
+              },
+              {
+                "field": "Ort / Zusatzangabe",
+                "before": "Wohnzimmer",
+                "after": "Schlafzimmer"
+              },
+              {
+                "field": "Beschreibung",
+                "before": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nkaputt\nBereich: Wohnzimmer\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+                "after": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nkaputt\nBereich: Schlafzimmer\nDringlichkeit: Normal\nBeginn: Nicht angegeben"
+              }
+            ]
+          }
+        ],
+        "assetId": ""
+      }
+    ],
+    [
+      {
+        "id": "5541a7d8-0d55-4607-87d5-da193d2c9a61",
+        "title": "Lampe / Leuchte · Schlafzimmer",
+        "description": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nkaputt\nBereich: Schlafzimmer\nBeginn: unbekannt\nDringlichkeit: Normal",
+        "unit": "Schlafzimmer",
+        "propertyId": "",
+        "unitId": "",
+        "property": "",
+        "person": "",
+        "date": "2026-10-29",
+        "owner": "MORADA",
+        "status": "Neu",
+        "priority": "Normal",
+        "attachments": [],
+        "moraLocalScope": "9e070ae0-d3de-4b01-9fde-627bc61929be",
+        "moraLocalRole": "tenant",
+        "createdAt": "2026-10-29T15:31:36.350Z",
+        "createdBy": "Lokaler Entwurf",
+        "caseInfo": {
+          "reference": "A00001",
+          "category": "Schaden / Reparatur",
+          "receivedDate": "2026-10-29",
+          "channel": "Portal",
+          "reporterId": "",
+          "nextStep": "",
+          "waitingFor": "",
+          "resolution": "",
+          "closedAt": ""
+        },
+        "updatedAt": "2026-10-29T15:31:37.878Z",
+        "updatedBy": "Mieterzugang",
+        "history": [
+          {
+            "id": "HISTORY-1ede72f2-dd7a-403d-ad97-840324b66eab",
+            "at": "2026-10-29T15:31:36.351Z",
+            "by": "Mieterzugang",
+            "type": "created",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nlampe kaputt\nwohnzimmer",
+            "changes": []
+          },
+          {
+            "id": "HISTORY-3306dc2d-4d3a-49a6-966d-1e5ee3813040",
+            "at": "2026-10-29T15:31:37.133Z",
+            "by": "Mieterzugang",
+            "type": "edited",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nlampe kaputt\nwohnzimmer\nSchlafzimmer",
+            "changes": [
+              {
+                "field": "Titel",
+                "before": "Lampe / Leuchte · Wohnzimmer",
+                "after": "Lampe / Leuchte · Schlafzimmer"
+              },
+              {
+                "field": "Ort / Zusatzangabe",
+                "before": "Wohnzimmer",
+                "after": "Schlafzimmer"
+              },
+              {
+                "field": "Beschreibung",
+                "before": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nkaputt\nBereich: Wohnzimmer\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+                "after": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nkaputt\nBereich: Schlafzimmer\nDringlichkeit: Normal\nBeginn: Nicht angegeben"
+              }
+            ]
+          },
+          {
+            "id": "HISTORY-7821f926-f0f1-4162-9950-0203e266ca7e",
+            "at": "2026-10-29T15:31:37.878Z",
+            "by": "Mieterzugang",
+            "type": "edited",
+            "note": "MORA · Gesprächsbelege (spätere Korrekturen gelten):\nlampe kaputt\nwohnzimmer\nSchlafzimmer\nSeit wann weiss ich nicht.",
+            "changes": [
+              {
+                "field": "Beschreibung",
+                "before": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nkaputt\nBereich: Schlafzimmer\nDringlichkeit: Normal\nBeginn: Nicht angegeben",
+                "after": "Fachbereich: Elektrik / Beleuchtung\nLampe / Leuchte\nkaputt\nBereich: Schlafzimmer\nBeginn: unbekannt\nDringlichkeit: Normal"
+              }
+            ]
+          }
+        ],
+        "assetId": ""
+      }
+    ]
+  ],
+  "success": true
+}

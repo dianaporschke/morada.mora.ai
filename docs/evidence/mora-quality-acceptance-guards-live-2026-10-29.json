@@ -1,0 +1,275 @@
+{
+  "url": "https://morada-mora-2nd0idq4d-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "source": "Real deployed /api/portal-agent responses; no mock wording",
+  "model": "anthropic/claude-haiku-5.5",
+  "runCeilingUsd": 0.06,
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.579222468,
+    "totalUsedUsd": 3.420777532,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "id": "08-safety",
+      "role": "tenant",
+      "turns": [
+        {
+          "customer": "Aus der Steckdose kommt Rauch und es riecht verbrannt.",
+          "status": 200,
+          "httpMs": 4507.4,
+          "reply": "",
+          "navigation": [],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": {
+            "hazard": "fire",
+            "urgency": "emergency"
+          },
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 0,
+          "usage": [],
+          "timingMs": {
+            "model": 0,
+            "creditGuard": 0,
+            "total": 16
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "existing_safety_notice",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "09-manual",
+      "role": "tenant",
+      "turns": [
+        {
+          "customer": "Wo kann ich einen Defekt melden?",
+          "status": 200,
+          "httpMs": 7897.2,
+          "reply": "Defekte melden Sie am einfachsten in der Anliegenansicht. Dort können Sie einen lokalen Entwurf anlegen, prüfen und ergänzen. Ich kann Sie direkt dorthin führen, oder Sie beschreiben mir kurz, was defekt ist, dann helfe ich Ihnen beim Vorbereiten.",
+          "navigation": [
+            "tenantSupport"
+          ],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "tenantSupport"
+            ]
+          },
+          "modelCalls": 2,
+          "usage": [
+            {
+              "inputTokens": 5881,
+              "outputTokens": 261,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 1271,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 2968,
+            "creditGuard": 304,
+            "total": 3297
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            },
+            {
+              "tool": "effect_review",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "customer": "Ich will das selber ausfüllen.",
+          "status": 200,
+          "httpMs": 6840.9,
+          "reply": "Gerne, dann füllen Sie das Formular selbst aus. Ich kann Ihnen die Anliegenansicht öffnen, dort erstellen Sie einen lokalen Entwurf und können ihn später prüfen und ergänzen. Ich habe dazu einen Navigationsbutton bereitgestellt. Bitte beachten Sie: Der Entwurf wird noch nicht an MORADA übermittelt, Sie müssen ihn danach selbst prüfen.",
+          "navigation": [
+            "tenantSupport"
+          ],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "tenantSupport"
+            ]
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 6022,
+              "outputTokens": 303,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1632,
+            "creditGuard": 141,
+            "total": 1782
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10-owner",
+      "role": "owner",
+      "turns": [
+        {
+          "customer": "Welche Liegenschaft von mir hat die meisten offenen Reparaturen?",
+          "status": 200,
+          "httpMs": 6371.8,
+          "reply": "Das kann ich Ihnen hier leider nicht beantworten. Im Moment sind keine persönlichen Anliegen oder Liegenschaftsdaten mit diesem Chat verbunden, deshalb kann ich keine offenen Reparaturen einzelner Objekte auslesen. Sie können aber in der Übersicht Ihre Liegenschaft öffnen, dort finden Sie die Angaben zu Ihren Objekten. Oder Sie erfassen ein konkretes Anliegen über „Anliegen selbst erfassen“, dann helfe ich Ihnen gerne dabei.",
+          "navigation": [],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 5251,
+              "outputTokens": 336,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1864,
+            "creditGuard": 179,
+            "total": 2049
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": []
+        },
+        {
+          "customer": "Kannst du die Reparaturen gleich beauftragen?",
+          "status": 200,
+          "httpMs": 7291.5,
+          "reply": "Nein, beauftragen kann ich nichts. Ich kann keine Reparaturen auslösen, keine Handwerker aufbieten und auch nichts buchen oder später für Sie aktiv werden. Was ich für Sie tun kann: Ein konkretes Anliegen lokal vorbereiten, damit es sauber dokumentiert ist. Die Beauftragung läuft danach anders weiter. Sagen Sie mir einfach, welcher Schaden oder welche Reparatur Sie beschäftigt, dann helfe ich Ihnen beim Erfassen.",
+          "navigation": [],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 2,
+          "usage": [
+            {
+              "inputTokens": 5484,
+              "outputTokens": 326,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 1346,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 2795,
+            "creditGuard": 423,
+            "total": 3227
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "effect_review",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.576048968,
+    "totalUsedUsd": 3.423951032,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "observedAccountDeltaUsd": 0.0031735000000003843
+}
