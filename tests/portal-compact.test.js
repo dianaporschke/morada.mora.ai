@@ -3,7 +3,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {MockLanguageModelV4} from 'ai/test';
-import {createCompactPortalAgent,compactSchema,decodeCompactPlan,evidenceRepairSchema} from '../lib/mora/portal/compact-agent.js';
+import {createCompactPortalAgent,compactSchema,decodeCompactPlan,evidenceRepairSchema,readableCompactReply} from '../lib/mora/portal/compact-agent.js';
 import {createAgentTurn} from '../lib/mora/portal/agent.js';
 import {z} from 'zod';
 import {hydrateSimple,beginPreparation,acceptReceipt} from '../lib/mora/simple/state.js';
@@ -155,6 +155,18 @@ test('unconnected document claims are reviewed against the actual view and repai
   assert.deepEqual(r.navigation,['ownerDocuments']);assert.equal(r.state.issues.length,0);assert.equal(r.requestedAction,null);
   const review=a.model.doGenerateCalls[1].prompt.find(m=>m.role==='user').content[0].text;
   const context=JSON.parse(review);assert.equal(context.context.capabilities.navigation[0].recordConnection,false);assert.equal(context.context.audience.role,'owner');
+});
+
+test('a repaired modal offer is not mistaken for an executed form action',async()=>{
+  const a=sdk([plan('Ich habe das Anliegen vorbereitet.'),{allowed:false},{reply:'Ich kann die Angaben für Sie vorbereiten.'}]);
+  const r=await a.converse('Seit gestern funktioniert eine Lampe im Wohnzimmer nicht.',await lamp(),['cases']);
+  assert.equal(r.reply,'Ich kann die Angaben für Sie vorbereiten.');assert.equal(r.requestedAction,null);
+  assert.equal(r.state.issue.preparation.status,'not_prepared');
+});
+
+test('provider reply envelopes decode as text without interpreting nested actions or arbitrary JSON',()=>{
+  assert.equal(readableCompactReply('{"reply":"Persönliche Dokumente stehen hier noch nicht zur Verfügung."}'),'Persönliche Dokumente stehen hier noch nicht zur Verfügung.');
+  for(const text of ['Normaler Text.','{"reply":"Text","action":"prepare"}','{"count":2}','{"reply":42}'])assert.equal(readableCompactReply(text),text);
 });
 test('rare ambiguous success claim is reviewed at most once with the same low-cost model',async()=>{
   const a=sdk([plan('Das Anliegen wurde an MORADA gesendet.'),{allowed:false},{reply:'Das Anliegen wurde an MORADA gesendet.'}]);
