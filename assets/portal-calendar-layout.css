@@ -1,0 +1,146 @@
+/* Calendar workspace: fixed month cells, shared records and existing MORADA tokens. */
+#portalPreview #main.content:has(.cal-page){padding:22px 24px 20px}
+#portalPreview #main .cal-page .page-head{margin-bottom:16px;gap:16px}
+#portalPreview #main .cal-page .page-head h1{margin:5px 0 6px}
+#portalPreview #main .cal-page .page-head .subtitle{margin:0;font-size:13px}
+#portalPreview #main .cal-page .page-head .btn{min-height:40px;padding:9px 12px;font-size:12px}
+#portalPreview #main .cal-workspace{display:grid;grid-template-columns:minmax(0,1fr) clamp(240px,20vw,292px);gap:16px;align-items:stretch}
+#portalPreview #main .cal-primary{display:flex;flex-direction:column;gap:10px;min-width:0;min-height:0}
+#portalPreview #main .cal-kpis{gap:10px;margin:0}
+#portalPreview #main .cal-kpi{padding:12px 13px;gap:10px;min-height:66px;border-radius:10px}
+#portalPreview #main .cal-kpi>.icon{width:21px;height:21px;color:var(--copper)}
+#portalPreview #main .cal-kpi strong{font-size:26px;font-weight:400;line-height:1}
+#portalPreview #main .cal-kpi>span{font-size:11px;line-height:1.4;min-width:0;flex:1}
+#portalPreview #main .cal-kpi small{font-size:10px;line-height:1.4;margin-top:3px}
+#portalPreview #main .cal-kpi-arrow{font-size:20px;font-style:normal;color:var(--copper)}
+#portalPreview #main .cal-toolbar{flex-wrap:nowrap;gap:10px;margin:0;padding:7px;background:var(--active);border:1px solid var(--line);border-radius:10px}
+#portalPreview #main .cal-controls{flex:1;flex-wrap:nowrap;gap:7px;min-width:0}
+#portalPreview #main .cal-controls h2{font-size:20px;line-height:1.2;margin:0 4px;white-space:nowrap}
+#portalPreview #main .cal-arrow{flex:none;width:32px;height:36px;border-radius:6px;font-size:23px}
+#portalPreview #main .cal-controls .btn{min-height:36px;padding:7px 10px;font-size:12px;gap:6px}
+#portalPreview #main #calJump{min-width:0;width:133px;min-height:36px;padding:6px 8px;font-size:12px;border-radius:6px}
+#portalPreview #main .cal-switch{flex:none;padding:3px;gap:2px;border-radius:7px}
+#portalPreview #main .cal-switch button{min-height:32px;padding:6px 10px;font-size:12px;line-height:1.5;border-radius:5px}
+#portalPreview #main .cal-filters{display:grid;grid-template-columns:minmax(170px,1.7fr) repeat(3,minmax(0,1fr)) minmax(0,.95fr);gap:8px;padding:0;border:0;align-items:end}
+#portalPreview #main .cal-filters .field-search,#portalPreview #main .cal-filters .portfolio-filter-label{min-width:0;width:100%;margin:0}
+#portalPreview #main .cal-filters .field-search{min-height:36px;gap:7px;padding:0 9px;background:var(--card)}
+#portalPreview #main .cal-filters .field-search .icon{width:16px;height:16px}
+#portalPreview #main .cal-filters .portfolio-filter-label{font-size:11px;line-height:1.4;gap:4px}
+#portalPreview #main .cal-filters input,#portalPreview #main .cal-filters select{min-width:0;min-height:36px;height:36px;font-size:11px;line-height:1.4;padding:6px 8px;text-overflow:ellipsis}
+#portalPreview #main .cal-filters .field-search input{padding:0;width:100%;height:34px;min-height:34px}
+#portalPreview #main .cal-context{margin:0;padding:0;gap:5px 12px;font-size:10px;line-height:1.4;flex-wrap:wrap}
+#portalPreview #main .cal-context .head-actions{gap:12px;flex-wrap:wrap}
+#portalPreview #main .cal-context .link{font-size:10px}
+#portalPreview #main #calContent{min-width:0;min-height:0;flex:1}
+#portalPreview #main .cal-board{border-radius:10px}
+#portalPreview #main .cal-month-board{display:flex;flex-direction:column;height:100%;min-height:0}
+#portalPreview #main .cal-month{flex:1;min-height:0;grid-template-rows:28px repeat(var(--cal-weeks),minmax(0,1fr));overflow:hidden}
+#portalPreview #main .cal-weekday{padding:6px;font-size:10px;line-height:15px}
+#portalPreview #main .cal-cell{height:100%;min-height:0;padding:3px 4px;overflow:hidden;display:flex;flex-direction:column;gap:2px}
+#portalPreview #main .cal-cell button:focus-visible{outline-offset:-2px}
+#portalPreview #main .cal-day-number{flex:none;height:22px;min-height:0;margin:0;padding:0 2px;font-size:11px}
+#portalPreview #main .cal-day-number>span{height:22px;min-width:22px}
+#portalPreview #main .cal-chip{flex:none;height:18px;min-height:0;padding:2px 4px;margin:0;font-size:10px;line-height:14px;border-left-width:2px}
+#portalPreview #main .cal-chip-secondary{display:none}
+#portalPreview #main .cal-more{flex:none;align-self:flex-start;max-width:100%;min-height:0;height:16px;margin:0;padding:0 2px;font-size:10px;line-height:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#portalPreview #main .cal-more-expanded{display:none}
+#portalPreview #main .cal-legend{flex:none;padding:7px 12px;gap:4px 12px;font-size:9px;line-height:1.4}
+#portalPreview #main #calSelectedDay{min-width:0;min-height:0}
+#portalPreview #main .cal-day-panel{display:flex;flex-direction:column;height:100%;max-height:760px;padding:16px;border-radius:10px;min-height:0}
+#portalPreview #main .cal-day-head{padding-bottom:14px;border-bottom:1px solid var(--line)}
+#portalPreview #main .cal-day-panel h2{font-size:21px;line-height:1.2;margin:0 0 7px}
+#portalPreview #main .cal-day-date{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px;line-height:1.4}
+#portalPreview #main .cal-day-nav{display:flex;gap:4px;flex:none}
+#portalPreview #main .cal-day-nav .cal-arrow{width:26px;height:28px;font-size:20px}
+#portalPreview #main .cal-day-panel .cal-day-subtitle{font-size:10px;margin:7px 0 0}
+#portalPreview #main .cal-day-body{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-right:2px}
+#portalPreview #main .cal-day-section{padding:14px 0;border-bottom:1px solid var(--line)}
+#portalPreview #main .cal-day-section:last-child{border-bottom:0}
+#portalPreview #main .cal-day-panel .cal-section-title{display:flex;align-items:center;gap:8px;font-family:var(--morada-font-body);font-size:12px;line-height:1.4;font-weight:500;letter-spacing:0;text-transform:none;color:var(--ink);margin:0 0 9px}
+#portalPreview #main .cal-section-title .icon{width:18px;height:18px;color:var(--copper)}
+#portalPreview #main .cal-section-title small{font-size:inherit;font-weight:400;color:var(--muted)}
+#portalPreview #main .cal-day-panel .cal-empty{font-size:11px;line-height:1.5;padding:0;margin:0;color:var(--muted)}
+#portalPreview #main .cal-day-panel .cal-item{display:block;padding:8px 9px;margin:0 0 6px;border:0;border-left:2px solid var(--cal-visit);border-radius:6px;background:color-mix(in srgb,var(--cal-visit) 7%,var(--card))}
+#portalPreview #main .cal-day-panel .cal-item.cal-task{border-color:var(--cal-task);background:color-mix(in srgb,var(--cal-task) 7%,var(--card))}
+#portalPreview #main .cal-day-panel .cal-item.cal-deadline{border-color:var(--cal-deadline);background:color-mix(in srgb,var(--cal-deadline) 7%,var(--card))}
+#portalPreview #main .cal-day-panel .cal-item.cal-maintenance{border-color:var(--cal-work);background:color-mix(in srgb,var(--cal-work) 7%,var(--card))}
+#portalPreview #main .cal-day-panel .cal-item.cal-case{border-color:var(--cal-case);background:color-mix(in srgb,var(--cal-case) 7%,var(--card))}
+#portalPreview #main .cal-day-panel .cal-item-time{display:flex;gap:4px;min-width:0;font-size:10px;line-height:1.4;margin-bottom:3px}
+#portalPreview #main .cal-day-panel .cal-item-time small{font-size:10px;line-height:1.4}
+#portalPreview #main .cal-day-panel .cal-item strong{font-size:12px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#portalPreview #main .cal-day-panel .cal-item-copy>small{font-size:10px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+#portalPreview #main .cal-section-more{font-size:11px}
+#portalPreview #main .cal-day-quick{flex:none;padding-top:12px;border-top:1px solid var(--line);margin-top:5px}
+#portalPreview #main .cal-day-quick h3{font-size:17px;line-height:1.3;margin:0 0 8px}
+#portalPreview #main .cal-day-actions{display:grid;grid-template-columns:1fr;gap:7px;margin:0}
+#portalPreview #main .cal-day-actions .btn{min-height:37px;justify-content:center;padding:7px 10px;font-size:12px}
+#portalPreview #main .cal-notes{margin:10px 0 0;font-size:11px}
+#portalPreview #main .cal-notes p{font-size:12px}
+@media(min-width:1101px){
+ #portalPreview #main:has(.cal-page) .portal-history-bar{margin:0 0 5px;min-height:24px}
+ #portalPreview #main:has(.cal-page) .portal-back{min-height:24px;padding:2px 7px;font-size:11px}
+ #portalPreview #main .cal-workspace[data-view=month]{height:calc(100dvh - 300px);min-height:calc(var(--cal-weeks)*68px + 294px)}
+ #portalPreview #main .cal-workspace[data-view=month] .cal-day-panel{max-height:none}
+}
+@media(min-width:1251px) and (max-height:820px){
+ #portalPreview #main .cal-workspace[data-view=month]{min-height:calc(var(--cal-weeks)*50px + 294px)}
+ #portalPreview #main .cal-cell .cal-more{display:none}
+ #portalPreview #main .cal-day-number small{display:inline;font-size:10px}
+}
+@media(min-width:1440px) and (min-height:1000px){
+ #portalPreview #main .cal-workspace[data-view=month]{min-height:calc(var(--cal-weeks)*90px + 294px)}
+ #portalPreview #main .cal-chip-secondary{display:block}
+ #portalPreview #main .cal-more-compact{display:none}
+ #portalPreview #main .cal-more-expanded{display:block}
+}
+@media(min-width:1101px) and (max-width:1450px){
+ #portalPreview #main .cal-kpi{padding:10px;gap:7px}
+ #portalPreview #main .cal-kpi>.icon{width:17px;height:17px}
+ #portalPreview #main .cal-kpi-arrow{display:none}
+ #portalPreview #main .cal-controls h2{font-size:18px;margin:0}
+ #portalPreview #main .cal-controls{gap:5px}
+ #portalPreview #main .cal-controls .btn .icon{display:none}
+ #portalPreview #main .cal-switch button{padding:6px 7px}
+ #portalPreview #main #calJump{width:119px;font-size:11px;padding:6px}
+}
+@media(max-width:1250px) and (min-width:1101px){
+ #portalPreview #main .cal-toolbar{flex-wrap:wrap}
+ #portalPreview #main .cal-switch{margin-left:auto}
+ #portalPreview #main .cal-filters{grid-template-columns:repeat(4,minmax(0,1fr))}
+ #portalPreview #main .cal-filters .field-search{grid-column:1/-1}
+ #portalPreview #main .cal-workspace[data-view=month]{min-height:calc(var(--cal-weeks)*68px + 318px)}
+}
+@media(max-width:1100px){
+ #portalPreview #main .cal-workspace{grid-template-columns:minmax(0,1fr)}
+ #portalPreview #main .cal-month-board{height:calc(var(--cal-weeks)*76px + 66px)}
+ #portalPreview #main .cal-toolbar{flex-wrap:wrap}
+ #portalPreview #main .cal-filters{grid-template-columns:repeat(4,minmax(0,1fr))}
+ #portalPreview #main .cal-filters .field-search{grid-column:1/-1}
+ #portalPreview #main .cal-day-panel{height:auto;max-height:none}
+ #portalPreview #main .cal-day-body{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;overflow:visible}
+ #portalPreview #main .cal-day-section{min-width:0;border-bottom:0}
+ #portalPreview #main .cal-day-actions{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+ #portalPreview #main.content:has(.cal-page){padding:18px 14px}
+ #portalPreview #main .cal-page .page-head{align-items:flex-start;flex-direction:column;gap:12px}
+ #portalPreview #main .cal-kpis{grid-template-columns:1fr 1fr;gap:8px}
+ #portalPreview #main .cal-kpi{display:grid;grid-template-columns:21px minmax(0,1fr);min-height:64px;padding:11px;gap:5px 8px}
+ #portalPreview #main .cal-kpi>span{grid-column:1/-1}
+ #portalPreview #main .cal-kpi-arrow{display:none}
+ #portalPreview #main .cal-toolbar{padding:8px}
+ #portalPreview #main .cal-controls{flex:1 0 100%;width:100%;flex-wrap:wrap;gap:7px}
+ #portalPreview #main .cal-controls h2{flex:none;width:auto;font-size:19px;margin:0 3px}
+ #portalPreview #main .cal-controls .btn{margin-left:auto}
+ #portalPreview #main .cal-switch{width:100%;margin-left:0}
+ #portalPreview #main .cal-switch button{flex:1;padding:6px 8px}
+ #portalPreview #main .cal-filters{grid-template-columns:1fr 1fr}
+ #portalPreview #main .cal-day-body{display:block}
+ #portalPreview #main .cal-day-section{border-bottom:1px solid var(--line)}
+ #portalPreview #main .cal-day-actions{grid-template-columns:1fr}
+ #portalPreview #main .cal-cell{padding:3px 2px}
+ #portalPreview #main .cal-day-number{padding:0;justify-content:center}
+ #portalPreview #main .cal-chip{font-size:9px;padding:2px;line-height:16px}
+ #portalPreview #main .cal-more{font-size:9px}
+ #portalPreview #main .cal-legend{gap:4px 8px;padding:7px}
+}

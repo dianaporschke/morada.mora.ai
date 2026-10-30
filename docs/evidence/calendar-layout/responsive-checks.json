@@ -1,0 +1,106 @@
+[
+  {
+    "scenario": [
+      "1366x768",
+      "2026-08-31",
+      "de",
+      "admin"
+    ],
+    "cellOverflow": 0,
+    "cells": 42,
+    "heightDifference": 0.015625,
+    "pageOverflow": false,
+    "widthDifference": 0.015625
+  },
+  {
+    "scenario": [
+      "1440x900",
+      "2027-02-15",
+      "en",
+      "manager"
+    ],
+    "cellOverflow": 0,
+    "cells": 28,
+    "heightDifference": 0.015625,
+    "pageOverflow": false,
+    "widthDifference": 0.015625
+  },
+  {
+    "scenario": [
+      "1672x941",
+      "2026-10-30",
+      "de",
+      "admin"
+    ],
+    "cellOverflow": 0,
+    "cells": 35,
+    "heightDifference": 0.015625,
+    "pageOverflow": false,
+    "widthDifference": 0.015625
+  },
+  {
+    "scenario": [
+      "1920x1080",
+      "2026-08-31",
+      "fr",
+      "manager"
+    ],
+    "cellOverflow": 0,
+    "cells": 42,
+    "heightDifference": 0.015625,
+    "pageOverflow": false,
+    "widthDifference": 0.015625
+  },
+  {
+    "scenario": [
+      "1024x768",
+      "2026-08-31",
+      "fr",
+      "admin"
+    ],
+    "cellOverflow": 0,
+    "cells": 42,
+    "heightDifference": 0.015625,
+    "pageOverflow": false,
+    "widthDifference": 0
+  },
+  {
+    "scenario": [
+      "768x1024",
+      "2027-02-15",
+      "en",
+      "manager"
+    ],
+    "cellOverflow": 0,
+    "cells": 28,
+    "heightDifference": 0.015625,
+    "pageOverflow": false,
+    "widthDifference": 0.015625
+  },
+  {
+    "scenario": [
+      "390x844",
+      "2026-10-30",
+      "de",
+      "admin"
+    ],
+    "cellOverflow": 0,
+    "cells": 35,
+    "heightDifference": 0,
+    "pageOverflow": false,
+    "widthDifference": 0.015625
+  },
+  {
+    "scenario": [
+      "320x640",
+      "2026-08-31",
+      "fr",
+      "manager"
+    ],
+    "cellOverflow": 0,
+    "cells": 42,
+    "heightDifference": 0.015625,
+    "pageOverflow": false,
+    "widthDifference": 0.015625
+  }
+]
