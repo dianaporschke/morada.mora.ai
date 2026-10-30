@@ -28,3 +28,12 @@ test('internal case workflow is not disabled by customer preview limits',()=>{
  assert.equal(snapshot.capabilities.navigation[0].implementation,undefined);
  assert.deepEqual(navigationKnowledge(['ownerCases','ownerCases']).map(v=>v.id),['ownerCases']);
 });
+
+test('document directions use the native sidebar labels without implying record access',()=>{
+ const html=readFileSync('portal.html','utf8');
+ for(const [id,path] of [['ownerDocuments',['Verwaltung','Dokumente']],['tenantDocuments',['Service','Meine Dokumente']]]){
+  const view=navigationKnowledge([id])[0];
+  assert.deepEqual(view.customerPath,path);assert.equal(view.recordConnection,false);
+  assert.ok(html.includes("['"+id+"','file','"+path[1]+"']"));
+ }
+});

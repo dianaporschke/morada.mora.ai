@@ -25,6 +25,8 @@ const wirePlan=p=>p?.updates?{...p,reply:replyParts(p.reply),updates:p.updates.m
 
 test('optional answer parts add no canned wording and cannot carry executable actions',()=>{
   assert.equal(renderConversationReply({answer:'Alles klar.',explanation:null,nextStep:null}),'Alles klar.');
+  assert.equal(renderConversationReply({answer:'Alles klar.',explanation:'',nextStep:''}),'Alles klar.');
+  assert.equal(renderConversationReply('Gültige freie Antwort.'),'Gültige freie Antwort.');
   const parts={answer:'Die Dokumentenansicht ist verfügbar.',explanation:'Persönliche Dateien stehen hier noch nicht bereit.',nextStep:'Über den Button können Sie die Ansicht öffnen.'};
   assert.equal(renderConversationReply(parts),Object.values(parts).join(' '));
   assert.throws(()=>renderConversationReply({...parts,action:'send'}));
