@@ -83,5 +83,11 @@ test('language changes preserve original user text, field values and MORA transc
   w.eval('portalMarkDialogClean();portalCloseDialog()');w.MORAPortal.open();
   const textarea=d.getElementById('moraPortalInput');textarea.value='Meine Wohnung';w.MoradaI18n.setLanguage('en');assert.equal(textarea.value,'Meine Wohnung');
   assert.equal(d.querySelector('#moraPortalChat [data-mp=clear]').getAttribute('aria-label'),messages['Neues Gespräch'].en);
+  const header=d.querySelector('#moraPortalChat header');
+  for(const lang of ['en','fr','de']){
+   w.MoradaI18n.setLanguage(lang);w.dispatchEvent(new w.Event('resize'));
+   const source='MORA-Fenster verschieben. Pfeiltasten zum Verschieben, Pos1 für die Ausgangsgrösse.';
+   assert.equal(header.getAttribute('aria-label'),lang==='de'?source:messages[source][lang]);
+  }
  }finally{w.close();}
 });

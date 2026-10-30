@@ -12347,6 +12347,7 @@ function createPortalBridge(mapping) {
 
 /** Presentation only: no chat state, persistence, portal actions or requests. */
 function enablePortalWindow(panel, window, onResize = () => {}) {
+  const t = source => window.MoradaI18n?.t(source) ?? source;
   const header = panel.querySelector('header');
   const properties = ['left', 'top', 'width', 'height'];
   const directions = ['n', 'e', 's', 'w', 'ne', 'se', 'sw', 'nw'];
@@ -12449,11 +12450,15 @@ function enablePortalWindow(panel, window, onResize = () => {}) {
   function fit() {
     finish();
     header.tabIndex = desktop() ? 0 : -1;
-    header.title = desktop() ? 'Zum Verschieben ziehen · Doppelklick für die Ausgangsgrösse' : '';
-    header.setAttribute('aria-label', desktop() ? 'MORA-Fenster verschieben. Pfeiltasten zum Verschieben, Pos1 für die Ausgangsgrösse.' : 'MORA');
+    header.title = desktop() ? t('Zum Verschieben ziehen · Doppelklick für die Ausgangsgrösse') : '';
+    header.setAttribute('aria-label', desktop() ? t('MORA-Fenster verschieben. Pfeiltasten zum Verschieben, Pos1 für die Ausgangsgrösse.') : 'MORA');
+    const resizeHandle = handles.find(handle => handle.dataset.resize === 'se');
+    resizeHandle.setAttribute('aria-label', t('MORA-Fenstergrösse ändern'));
+    resizeHandle.title = t('Grösse ziehen · Pfeiltasten für Breite und Höhe · Pos1 zum Zurücksetzen');
     if (desktop() && geometry) apply(geometry);
   }
   window.addEventListener('resize', fit);
+  window.addEventListener('morada:languagechange', fit);
   window.visualViewport?.addEventListener('resize', fit);
   window.visualViewport?.addEventListener('scroll', fit);
   new window.MutationObserver(() => { if (panel.hidden) finish(); }).observe(panel, {attributes: true, attributeFilter: ['hidden']});
