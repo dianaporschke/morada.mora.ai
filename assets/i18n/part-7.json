@@ -1,0 +1,1014 @@
+{
+  "Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?": {
+    "en": "Hello! I’m MORA, your digital assistant at MORADA. How can I help you today?",
+    "fr": "Bonjour ! Je suis MORA, votre assistante numérique chez MORADA. Comment puis-je vous aider aujourd’hui ?"
+  },
+  "MORA": {
+    "en": "MORA",
+    "fr": "MORA"
+  },
+  "Ihre digitale Assistenz bei MORADA": {
+    "en": "Your digital assistant at MORADA",
+    "fr": "Votre assistante numérique chez MORADA"
+  },
+  "Neues Gespräch": {
+    "en": "New conversation",
+    "fr": "Nouvelle conversation"
+  },
+  "MORA schliessen": {
+    "en": "Close MORA",
+    "fr": "Fermer MORA"
+  },
+  "Nachricht an MORA": {
+    "en": "Message to MORA",
+    "fr": "Message à MORA"
+  },
+  "Gesprächsverlauf": {
+    "en": "Conversation history",
+    "fr": "Historique de la conversation"
+  },
+  "Schreiben Sie MORA …": {
+    "en": "Write to MORA …",
+    "fr": "Écrivez à MORA …"
+  },
+  "Nachricht senden": {
+    "en": "Send message",
+    "fr": "Envoyer le message"
+  },
+  "Anliegen bleiben auf diesem Gerät. Kein Versand an MORADA. Ihre Chatnachrichten werden zur KI-Verarbeitung an das geschützte Backend übergeben.": {
+    "en": "Requests stay on this device. Nothing is sent to MORADA. Your chat messages are sent to the protected backend for AI processing.",
+    "fr": "Les demandes restent sur cet appareil. Aucun envoi à MORADA. Vos messages de chat sont transmis au serveur protégé pour être traités par l’IA."
+  },
+  "MORA Assistenz": {
+    "en": "MORA assistant",
+    "fr": "Assistante MORA"
+  },
+  "MORA öffnen": {
+    "en": "Open MORA",
+    "fr": "Ouvrir MORA"
+  },
+  "Der Chatverlauf kann in diesem Browser nicht behalten werden. Gespeicherte Portaleinträge bleiben davon unabhängig.": {
+    "en": "Chat history cannot be retained in this browser. Saved portal entries are not affected.",
+    "fr": "L’historique du chat ne peut pas être conservé dans ce navigateur. Les entrées du portail enregistrées ne sont pas concernées."
+  },
+  "Der frühere Chat konnte nicht geladen werden.": {
+    "en": "The previous chat could not be loaded.",
+    "fr": "La conversation précédente n’a pas pu être chargée."
+  },
+  "Geprüfte Portalauskunft": {
+    "en": "Verified portal information",
+    "fr": "Informations vérifiées du portail"
+  },
+  "Anfrage eingegangen": {
+    "en": "Request received",
+    "fr": "Demande reçue"
+  },
+  "In Bearbeitung": {
+    "en": "In progress",
+    "fr": "En cours de traitement"
+  },
+  "Handwerker kontaktiert": {
+    "en": "Contractor contacted",
+    "fr": "Artisan contacté"
+  },
+  "Termin vereinbart": {
+    "en": "Appointment agreed",
+    "fr": "Rendez-vous convenu"
+  },
+  "Abgeschlossen": {
+    "en": "Completed",
+    "fr": "Terminé"
+  },
+  "Storniert": {
+    "en": "Cancelled",
+    "fr": "Annulé"
+  },
+  "Lampe / Leuchte": {
+    "en": "Lamp / light fitting",
+    "fr": "Lampe / luminaire"
+  },
+  "Steckdose": {
+    "en": "Socket",
+    "fr": "Prise électrique"
+  },
+  "Heizung": {
+    "en": "Heating",
+    "fr": "Chauffage"
+  },
+  "Wasser": {
+    "en": "Water",
+    "fr": "Eau"
+  },
+  "Tür": {
+    "en": "Door",
+    "fr": "Porte"
+  },
+  "Fenster": {
+    "en": "Window",
+    "fr": "Fenêtre"
+  },
+  "Gerät": {
+    "en": "Appliance",
+    "fr": "Appareil"
+  },
+  "Anliegen": {
+    "en": "Requests",
+    "fr": "Demandes"
+  },
+  "offene Reparaturanliegen": {
+    "en": "open repair requests",
+    "fr": "demandes de réparation ouvertes"
+  },
+  "Termin:": {
+    "en": "Appointment:",
+    "fr": "Rendez-vous :"
+  },
+  "Im freigegebenen Umfang sind keine entsprechenden Anliegen vorhanden.": {
+    "en": "There are no matching requests within your authorised scope.",
+    "fr": "Aucune demande correspondante dans le périmètre autorisé."
+  },
+  "50 von": {
+    "en": "50 of",
+    "fr": "50 sur"
+  },
+  "Einträgen. Weitere Angaben finden Sie im freigegebenen Portalbereich.": {
+    "en": "entries. You can find further details in the authorised portal area.",
+    "fr": "entrées. Vous trouverez d’autres informations dans l’espace du portail autorisé."
+  },
+  "Datenstand:": {
+    "en": "Data as of:",
+    "fr": "Données au :"
+  },
+  "Speicherbestätigung erneut abgleichen": {
+    "en": "Reconcile save confirmation again",
+    "fr": "Vérifier à nouveau la confirmation d’enregistrement"
+  },
+  "Anliegen auswählen": {
+    "en": "Select request",
+    "fr": "Sélectionner une demande"
+  },
+  "Anliegen wird gewechselt …": {
+    "en": "Switching request …",
+    "fr": "Changement de demande …"
+  },
+  "Anliegen aktualisieren": {
+    "en": "Update request",
+    "fr": "Mettre à jour la demande"
+  },
+  "Anliegen vorbereiten": {
+    "en": "Prepare request",
+    "fr": "Préparer une demande"
+  },
+  "Angaben überprüfen": {
+    "en": "Check details",
+    "fr": "Vérifier les informations"
+  },
+  "Gespeichertes Anliegen öffnen": {
+    "en": "Open saved request",
+    "fr": "Ouvrir la demande enregistrée"
+  },
+  "Foto hinzufügen": {
+    "en": "Add photo",
+    "fr": "Ajouter une photo"
+  },
+  "Mit MORA vorbereiten": {
+    "en": "Prepare with MORA",
+    "fr": "Préparer avec MORA"
+  },
+  "Ich möchte ein Anliegen mit Ihnen vorbereiten.": {
+    "en": "I would like to prepare a request with you.",
+    "fr": "Je souhaite préparer une demande avec vous."
+  },
+  "Bitte öffnen Sie die bereitgestellte HTTPS-Testversion. Die lokale HTML-Datei enthält absichtlich keinen KI-Schlüssel.": {
+    "en": "Please open the provided HTTPS test version. The local HTML file intentionally contains no AI key.",
+    "fr": "Veuillez ouvrir la version de test HTTPS fournie. Le fichier HTML local ne contient volontairement aucune clé d’IA."
+  },
+  "Die Backend-Verbindung ist in diesem Browser nicht verfügbar.": {
+    "en": "The backend connection is not available in this browser.",
+    "fr": "La connexion au serveur n’est pas disponible dans ce navigateur."
+  },
+  "Das geschützte Backend konnte nicht erreicht werden. Bitte laden Sie die Testversion neu.": {
+    "en": "The protected backend could not be reached. Please reload the test version.",
+    "fr": "Le serveur protégé n’a pas pu être joint. Veuillez recharger la version de test."
+  },
+  "Die Portalansicht wurde gewechselt. Öffnen Sie MORA erneut.": {
+    "en": "The portal view has changed. Please reopen MORA.",
+    "fr": "La vue du portail a changé. Veuillez rouvrir MORA."
+  },
+  "Unerwartete Backend-Antwort.": {
+    "en": "Unexpected backend response.",
+    "fr": "Réponse inattendue du serveur."
+  },
+  "Die Backend-Verbindung ist gerade nicht verfügbar.": {
+    "en": "The backend connection is currently unavailable.",
+    "fr": "La connexion au serveur est actuellement indisponible."
+  },
+  "Bitte zuerst die noch offene Speicherbestätigung abgleichen.": {
+    "en": "Please reconcile the pending save confirmation first.",
+    "fr": "Veuillez d’abord vérifier la confirmation d’enregistrement en attente."
+  },
+  "Sicherheitshinweis:": {
+    "en": "Safety notice:",
+    "fr": "Consigne de sécurité :"
+  },
+  "MORA antwortet …": {
+    "en": "MORA is replying …",
+    "fr": "MORA vous répond …"
+  },
+  "Der Portalstand ist gespeichert, die Gesprächsbestätigung ist noch offen.": {
+    "en": "The portal data has been saved; conversation confirmation is still pending.",
+    "fr": "Les données du portail sont enregistrées ; la confirmation dans la conversation est encore en attente."
+  },
+  "Speicherbestätigung wird abgeglichen …": {
+    "en": "Reconciling save confirmation …",
+    "fr": "Vérification de la confirmation d’enregistrement …"
+  },
+  "Der lokale Speicherstand ist bestätigt.": {
+    "en": "The local saved data is confirmed.",
+    "fr": "L’enregistrement local est confirmé."
+  },
+  "Angaben werden ins Anliegenformular übernommen …": {
+    "en": "Transferring details to the request form …",
+    "fr": "Transfert des informations dans le formulaire de demande …"
+  },
+  "Anliegen wird lokal gespeichert …": {
+    "en": "Saving request locally …",
+    "fr": "Enregistrement local de la demande …"
+  },
+  "Das Anliegen wurde auf diesem Gerät aktualisiert.": {
+    "en": "The request has been updated on this device.",
+    "fr": "La demande a été mise à jour sur cet appareil."
+  },
+  "Das Anliegen wurde auf diesem Gerät gespeichert.": {
+    "en": "The request has been saved on this device.",
+    "fr": "La demande a été enregistrée sur cet appareil."
+  },
+  "Das Anliegen ist lokal gespeichert. Der Abgleich mit dem Chat ist noch offen. Nutzen Sie «Speicherbestätigung erneut abgleichen».": {
+    "en": "The request is saved locally. Reconciliation with the chat is still pending. Use “Reconcile save confirmation again”.",
+    "fr": "La demande est enregistrée localement. La vérification avec le chat est encore en attente. Utilisez « Vérifier à nouveau la confirmation d’enregistrement »."
+  },
+  "Formularstatus wird abgeglichen …": {
+    "en": "Reconciling form status …",
+    "fr": "Vérification de l’état du formulaire …"
+  },
+  "Die Angaben stehen im Anliegenformular zur Kontrolle bereit. Noch nicht gespeichert.": {
+    "en": "The details are ready for review in the request form. Not yet saved.",
+    "fr": "Les informations sont prêtes à être vérifiées dans le formulaire de demande. Elles ne sont pas encore enregistrées."
+  },
+  "MORA-Fenster verschieben. Pfeiltasten zum Verschieben, Pos1 für die Ausgangsgrösse.": {
+    "en": "Move the MORA window. Use the arrow keys to move it and Home to restore the original size.",
+    "fr": "Déplacer la fenêtre MORA. Utilisez les flèches pour la déplacer et la touche Début pour rétablir la taille initiale."
+  },
+  "Zum Verschieben ziehen · Doppelklick für die Ausgangsgrösse": {
+    "en": "Drag to move · Double-click to restore original size",
+    "fr": "Glisser pour déplacer · Double-cliquer pour rétablir la taille initiale"
+  },
+  "MORA-Fenstergrösse ändern": {
+    "en": "Resize MORA window",
+    "fr": "Redimensionner la fenêtre MORA"
+  },
+  "Grösse ziehen · Pfeiltasten für Breite und Höhe · Pos1 zum Zurücksetzen": {
+    "en": "Drag to resize · Arrow keys for width and height · Home to reset",
+    "fr": "Glisser pour redimensionner · Flèches pour la largeur et la hauteur · Début pour réinitialiser"
+  },
+  "Bei Gasgeruch bitte den Gefahrenbereich verlassen. Betätigen Sie keine Schalter oder elektrischen Geräte, auch kein Telefon im Gebäude, und vermeiden Sie Flammen. Rufen Sie von draussen 112 an. Warten Sie nicht auf eine Antwort im Portal.": {
+    "en": "If you smell gas, please leave the danger area. Do not operate switches or electrical devices, including a telephone inside the building, and avoid flames. Call 112 from outside. Do not wait for a reply in the portal.",
+    "fr": "Si vous sentez une odeur de gaz, quittez la zone dangereuse. N’actionnez aucun interrupteur ni appareil électrique, y compris un téléphone à l’intérieur du bâtiment, et évitez toute flamme. Appelez le 112 depuis l’extérieur. N’attendez pas de réponse dans le portail."
+  },
+  "Bei Rauch, Feuer oder Brandgeruch verlassen Sie den Gefahrenbereich und rufen Sie von einem sicheren Ort 112 an. Warten Sie nicht auf eine Antwort im Portal.": {
+    "en": "In the event of smoke, fire or a smell of burning, leave the danger area and call 112 from a safe place. Do not wait for a reply in the portal.",
+    "fr": "En cas de fumée, de feu ou d’odeur de brûlé, quittez la zone dangereuse et appelez le 112 depuis un lieu sûr. N’attendez pas de réponse dans le portail."
+  },
+  "Bitte halten Sie Abstand zu beschädigten elektrischen Teilen und berühren Sie keine Kabel oder nassen Geräte. Bei unmittelbarer Gefahr rufen Sie von einem sicheren Ort 112 an. Warten Sie nicht auf eine Antwort im Portal.": {
+    "en": "Please keep away from damaged electrical parts and do not touch cables or wet devices. In immediate danger, call 112 from a safe place. Do not wait for a reply in the portal.",
+    "fr": "Restez à distance des éléments électriques endommagés et ne touchez ni les câbles ni les appareils mouillés. En cas de danger immédiat, appelez le 112 depuis un lieu sûr. N’attendez pas de réponse dans le portail."
+  },
+  "Bei starkem Wasseraustritt halten Sie Abstand zu elektrischen Geräten und nassen Leitungen. Stoppen Sie die Wasserzufuhr nur, wenn das gefahrlos möglich ist. Bei unmittelbarer Gefahr rufen Sie 112 an; warten Sie nicht auf das Portal.": {
+    "en": "In the event of a major water leak, keep away from electrical devices and wet wiring. Shut off the water supply only if it is safe to do so. In immediate danger, call 112; do not wait for the portal.",
+    "fr": "En cas de fuite d’eau importante, restez à distance des appareils électriques et des câbles mouillés. Coupez l’arrivée d’eau uniquement si cela peut être fait sans danger. En cas de danger immédiat, appelez le 112 ; n’attendez pas le portail."
+  },
+  "Bei unmittelbarer Gefahr verlassen Sie den Gefahrenbereich und rufen Sie von einem sicheren Ort 112 an. Warten Sie nicht auf eine Antwort im Portal.": {
+    "en": "In immediate danger, leave the danger area and call 112 from a safe place. Do not wait for a reply in the portal.",
+    "fr": "En cas de danger immédiat, quittez la zone dangereuse et appelez le 112 depuis un lieu sûr. N’attendez pas de réponse dans le portail."
+  },
+  "Lichtschalter": {
+    "en": "Light switch",
+    "fr": "Interrupteur"
+  },
+  "Stromversorgung": {
+    "en": "Power supply",
+    "fr": "Alimentation électrique"
+  },
+  "Heizkörper": {
+    "en": "Radiator",
+    "fr": "Radiateur"
+  },
+  "Schlüssel / Zugang": {
+    "en": "Key / access",
+    "fr": "Clé / accès"
+  },
+  "Waschmaschine": {
+    "en": "Washing machine",
+    "fr": "Lave-linge"
+  },
+  "Trockner": {
+    "en": "Dryer",
+    "fr": "Sèche-linge"
+  },
+  "Geschirrspüler": {
+    "en": "Dishwasher",
+    "fr": "Lave-vaisselle"
+  },
+  "Wasserhahn": {
+    "en": "Tap",
+    "fr": "Robinet"
+  },
+  "Abfluss": {
+    "en": "Drain",
+    "fr": "Évacuation"
+  },
+  "Rohr / Leitung": {
+    "en": "Pipe / line",
+    "fr": "Tuyau / conduite"
+  },
+  "Wasseraustritt": {
+    "en": "Water leak",
+    "fr": "Fuite d’eau"
+  },
+  "Lärmstörung": {
+    "en": "Noise disturbance",
+    "fr": "Nuisance sonore"
+  },
+  "Noch unklar": {
+    "en": "Not yet clear",
+    "fr": "Encore indéterminé"
+  },
+  "Wasser / Feuchtigkeit": {
+    "en": "Water / moisture",
+    "fr": "Eau / humidité"
+  },
+  "Elektrik / Beleuchtung": {
+    "en": "Electrical / lighting",
+    "fr": "Électricité / éclairage"
+  },
+  "Nachbarschaft / Lärm": {
+    "en": "Neighbours / noise",
+    "fr": "Voisinage / bruit"
+  },
+  "Geräte / Waschküche": {
+    "en": "Appliances / laundry room",
+    "fr": "Appareils / buanderie"
+  },
+  "Allgemeines Anliegen": {
+    "en": "General request",
+    "fr": "Demande générale"
+  },
+  "noch unklar": {
+    "en": "not yet clear",
+    "fr": "encore indéterminé"
+  },
+  "{0}: unsicher{1}": {
+    "en": "{0}: uncertain{1}",
+    "fr": "{0} : incertain{1}"
+  },
+  "(bisherige Angabe: {0})": {
+    "en": "(previous information: {0})",
+    "fr": "(information précédente : {0})"
+  },
+  "(Zuordnung unsicher)": {
+    "en": "(assignment uncertain)",
+    "fr": "(attribution incertaine)"
+  },
+  "Defekt": {
+    "en": "Defect",
+    "fr": "Défaut"
+  },
+  "Anzahl": {
+    "en": "Quantity",
+    "fr": "Nombre"
+  },
+  "Bereich": {
+    "en": "Area",
+    "fr": "Domaine"
+  },
+  "Seit wann": {
+    "en": "Since when",
+    "fr": "Depuis quand"
+  },
+  "Beginn: unbekannt": {
+    "en": "Start: unknown",
+    "fr": "Début : inconnu"
+  },
+  "Umfang / Situation: Anzahl noch unsicher": {
+    "en": "Extent / situation: quantity still uncertain",
+    "fr": "Étendue / situation : nombre encore incertain"
+  },
+  "Umfang / Situation": {
+    "en": "Extent / situation",
+    "fr": "Étendue / situation"
+  },
+  "Zusatzangaben": {
+    "en": "Additional details",
+    "fr": "Informations complémentaires"
+  },
+  "Genannte Ursache": {
+    "en": "Reported cause",
+    "fr": "Cause mentionnée"
+  },
+  "Dringlichkeit: {0}": {
+    "en": "Urgency: {0}",
+    "fr": "Urgence : {0}"
+  },
+  "Normal": {
+    "en": "Normal",
+    "fr": "Normal"
+  },
+  "Dringend": {
+    "en": "Urgent",
+    "fr": "Urgent"
+  },
+  "Mögliche akute Gefahr": {
+    "en": "Possible immediate danger",
+    "fr": "Danger immédiat possible"
+  },
+  "Fotos: {0} (lokal, noch nicht hochgeladen)": {
+    "en": "Photos: {0} (local, not yet uploaded)",
+    "fr": "Photos : {0} (locales, pas encore téléversées)"
+  },
+  "Anliegen sind in dieser Ansicht noch nicht zum Speichern angebunden.": {
+    "en": "Saving requests is not yet connected in this view.",
+    "fr": "L’enregistrement des demandes n’est pas encore connecté dans cette vue."
+  },
+  "Bitte zuerst den Portalstand laden oder die laufende Speicherung abwarten.": {
+    "en": "Please load the portal data first or wait for the current save to finish.",
+    "fr": "Veuillez d’abord charger les données du portail ou attendre la fin de l’enregistrement en cours."
+  },
+  "Diese Funktion ist in dieser Ansicht nicht verfügbar.": {
+    "en": "This function is not available in this view.",
+    "fr": "Cette fonction n’est pas disponible dans cette vue."
+  },
+  "Das Anliegen ist in diesem Portalstand nicht vorhanden.": {
+    "en": "The request does not exist in this portal data.",
+    "fr": "La demande n’existe pas dans ces données du portail."
+  },
+  "Bitte das offene Anliegen zuerst speichern oder schliessen.": {
+    "en": "Please save or close the open request first.",
+    "fr": "Veuillez d’abord enregistrer ou fermer la demande ouverte."
+  },
+  "Bitte zuerst die offenen Formulareingaben sichern.": {
+    "en": "Please save the open form entries first.",
+    "fr": "Veuillez d’abord enregistrer les saisies du formulaire ouvert."
+  },
+  "Dieses Anliegen ist abgeschlossen. Bitte im Anliegenregister prüfen.": {
+    "en": "This request is completed. Please check it in the request register.",
+    "fr": "Cette demande est terminée. Veuillez la vérifier dans le registre des demandes."
+  },
+  "Das Anliegen enthält eigene Formularänderungen. Bitte im Anliegenregister prüfen; MORA überschreibt sie nicht.": {
+    "en": "The request contains manual form changes. Please check it in the request register; MORA will not overwrite them.",
+    "fr": "La demande contient des modifications manuelles du formulaire. Veuillez la vérifier dans le registre des demandes ; MORA ne les écrasera pas."
+  },
+  "Das zuvor gespeicherte Anliegen fehlt. Bitte den aktuellen Portalstand laden.": {
+    "en": "The previously saved request is missing. Please load the latest portal data.",
+    "fr": "La demande enregistrée précédemment est manquante. Veuillez charger les données actuelles du portail."
+  },
+  "Portal": {
+    "en": "Portal",
+    "fr": "Portail"
+  },
+  "Das Anliegenformular konnte nicht geöffnet werden.": {
+    "en": "The request form could not be opened.",
+    "fr": "Le formulaire de demande n’a pas pu être ouvert."
+  },
+  "Die Formularübernahme konnte nicht bestätigt werden.": {
+    "en": "The transfer to the form could not be confirmed.",
+    "fr": "Le transfert dans le formulaire n’a pas pu être confirmé."
+  },
+  "Von MORA vorausgefüllt. Bitte prüfen und speichern. Dateien und Anliegen werden auf diesem Gerät gespeichert; kein Versand an MORADA.": {
+    "en": "Prefilled by MORA. Please check and save. Files and requests are saved on this device; nothing is sent to MORADA.",
+    "fr": "Prérempli par MORA. Veuillez vérifier et enregistrer. Les fichiers et demandes sont enregistrés sur cet appareil ; aucun envoi à MORADA."
+  },
+  "Bitte den aktuellen Portalstand prüfen und warten, bis die Dateien eingelesen sind.": {
+    "en": "Please check the current portal data and wait until the files have been read.",
+    "fr": "Veuillez vérifier les données actuelles du portail et attendre la fin de la lecture des fichiers."
+  },
+  "MORA · Gesprächsbelege (spätere Korrekturen gelten):": {
+    "en": "MORA · Conversation evidence (later corrections take precedence):",
+    "fr": "MORA · Éléments de la conversation (les corrections ultérieures prévalent) :"
+  },
+  "Die Speicherung wurde nicht bestätigt.": {
+    "en": "Saving could not be confirmed.",
+    "fr": "L’enregistrement n’a pas pu être confirmé."
+  },
+  "Der gespeicherte Portalstand konnte nicht vollständig bestätigt werden. Bitte erneut speichern oder im Anliegenregister prüfen.": {
+    "en": "The saved portal data could not be fully confirmed. Please save again or check the request register.",
+    "fr": "Les données enregistrées du portail n’ont pas pu être entièrement confirmées. Veuillez enregistrer à nouveau ou vérifier le registre des demandes."
+  },
+  "Bitte zuerst das Anliegenformular öffnen.": {
+    "en": "Please open the request form first.",
+    "fr": "Veuillez d’abord ouvrir le formulaire de demande."
+  },
+  "Der Fotoanhang ist nicht verfügbar.": {
+    "en": "The photo attachment is not available.",
+    "fr": "L’ajout de photo n’est pas disponible."
+  },
+  "Der Portalstand ist gerade nicht zum Speichern bereit.": {
+    "en": "The portal data is not ready for saving at the moment.",
+    "fr": "Les données du portail ne sont pas prêtes à être enregistrées pour le moment."
+  },
+  "Dieser lokale Entwurf gehört nicht zu dieser Sitzung.": {
+    "en": "This local draft does not belong to this session.",
+    "fr": "Ce brouillon local n’appartient pas à cette session."
+  },
+  "Der Portalstand hat sich geändert. Bitte das Formular erneut öffnen.": {
+    "en": "The portal data has changed. Please reopen the form.",
+    "fr": "Les données du portail ont changé. Veuillez rouvrir le formulaire."
+  },
+  "Diese Anliegenkennung wird bereits verwendet.": {
+    "en": "This request ID is already in use.",
+    "fr": "Cet identifiant de demande est déjà utilisé."
+  },
+  "Bitte Titel, Beschreibung, Bereich und Anliegenart prüfen.": {
+    "en": "Please check the title, description, area and request type.",
+    "fr": "Veuillez vérifier le titre, la description, la zone et le type de demande."
+  },
+  "Dieses Anliegen ist abgeschlossen und kann hier nicht geändert werden.": {
+    "en": "This request is completed and cannot be changed here.",
+    "fr": "Cette demande est terminée et ne peut pas être modifiée ici."
+  },
+  "MORADA": {
+    "en": "MORADA",
+    "fr": "MORADA"
+  },
+  "Neu": {
+    "en": "New",
+    "fr": "Nouveau"
+  },
+  "Lokaler Entwurf": {
+    "en": "Local draft",
+    "fr": "Brouillon local"
+  },
+  "Lokaler Anliegenentwurf gespeichert": {
+    "en": "Local request draft saved",
+    "fr": "Brouillon local de demande enregistré"
+  },
+  "Der gespeicherte Entwurf konnte nicht überprüft werden.": {
+    "en": "The saved draft could not be verified.",
+    "fr": "Le brouillon enregistré n’a pas pu être vérifié."
+  },
+  "Schaden / Reparatur": {
+    "en": "Damage / repair",
+    "fr": "Dommage / réparation"
+  },
+  "Worum geht es? *": {
+    "en": "What is it about? *",
+    "fr": "De quoi s’agit-il ? *"
+  },
+  "Art des Anliegens": {
+    "en": "Request type",
+    "fr": "Type de demande"
+  },
+  "Beschreibung *": {
+    "en": "Description *",
+    "fr": "Description *"
+  },
+  "Raum / Bereich": {
+    "en": "Room / area",
+    "fr": "Pièce / zone"
+  },
+  "Anliegen prüfen.": {
+    "en": "Review request.",
+    "fr": "Vérifier la demande."
+  },
+  "Anliegen vorbereiten.": {
+    "en": "Prepare request.",
+    "fr": "Préparer une demande."
+  },
+  "Lokaler Entwurf auf diesem Gerät. Noch nicht an MORADA übermittelt.": {
+    "en": "Local draft on this device. Not yet sent to MORADA.",
+    "fr": "Brouillon local sur cet appareil. Pas encore transmis à MORADA."
+  },
+  "Fotos & Dateien (optional)": {
+    "en": "Photos & files (optional)",
+    "fr": "Photos et fichiers (facultatif)"
+  },
+  "Abbrechen": {
+    "en": "Cancel",
+    "fr": "Annuler"
+  },
+  "Entwurf speichern": {
+    "en": "Save draft",
+    "fr": "Enregistrer le brouillon"
+  },
+  "MORADA · ANLIEGEN": {
+    "en": "MORADA · REQUESTS",
+    "fr": "MORADA · DEMANDES"
+  },
+  "Der Portalzugang wurde gewechselt.": {
+    "en": "The portal access has changed.",
+    "fr": "L’accès au portail a changé."
+  },
+  "Entwurf auf diesem Gerät gespeichert. Nicht übermittelt.": {
+    "en": "Draft saved on this device. Not sent.",
+    "fr": "Brouillon enregistré sur cet appareil. Non transmis."
+  },
+  "Lokale Entwürfe dieser Sitzung. Kein Versand an MORADA und keine angebundenen Kundenakten.": {
+    "en": "Local drafts for this session. Nothing is sent to MORADA and no customer files are connected.",
+    "fr": "Brouillons locaux de cette session. Aucun envoi à MORADA et aucun dossier client connecté."
+  },
+  "Anliegen selbst erfassen": {
+    "en": "Enter request yourself",
+    "fr": "Saisir la demande vous-même"
+  },
+  "Lokal gespeichert · nicht übermittelt": {
+    "en": "Saved locally · not sent",
+    "fr": "Enregistré localement · non transmis"
+  },
+  "Prüfen / ergänzen": {
+    "en": "Review / complete",
+    "fr": "Vérifier / compléter"
+  },
+  "lokale Entwürfe": {
+    "en": "local drafts",
+    "fr": "brouillons locaux"
+  },
+  "Das freigegebene KI-Testbudget konnte nicht bestätigt werden.": {
+    "en": "The approved AI test budget could not be confirmed.",
+    "fr": "Le budget de test IA approuvé n’a pas pu être confirmé."
+  },
+  "Bitte prüfen Sie die Nachricht.": {
+    "en": "Please check the message.",
+    "fr": "Veuillez vérifier le message."
+  },
+  "Der Portalzugang oder seine Freigaben haben sich geändert. Bitte beginnen Sie ein neues Gespräch.": {
+    "en": "The portal access or its permissions have changed. Please start a new conversation.",
+    "fr": "L’accès au portail ou ses autorisations ont changé. Veuillez commencer une nouvelle conversation."
+  },
+  "Der Portalbereich wurde gewechselt. Bitte beginnen Sie hier ein neues Gespräch.": {
+    "en": "The portal area has changed. Please start a new conversation here.",
+    "fr": "L’espace du portail a changé. Veuillez commencer une nouvelle conversation ici."
+  },
+  "Diese Nachricht ist bereits im Gespräch enthalten.": {
+    "en": "This message is already part of the conversation.",
+    "fr": "Ce message figure déjà dans la conversation."
+  },
+  "Mehrere Nachrichten sind noch unbeantwortet. Bitte starten Sie ein neues Gespräch; der bisherige Chat bleibt sichtbar.": {
+    "en": "Several messages are still unanswered. Please start a new conversation; the previous chat will remain visible.",
+    "fr": "Plusieurs messages sont encore sans réponse. Veuillez commencer une nouvelle conversation ; le chat précédent restera visible."
+  },
+  "Diese Aktion ist nicht mehr verfügbar. Ihre gespeicherten Angaben bleiben erhalten.": {
+    "en": "This action is no longer available. Your saved information will be retained.",
+    "fr": "Cette action n’est plus disponible. Vos informations enregistrées sont conservées."
+  },
+  "Das freigegebene KI-Testbudget erlaubt gerade keine weitere Modellanfrage. Ihre Angaben bleiben erhalten.": {
+    "en": "The approved AI test budget does not currently allow another model request. Your information will be retained.",
+    "fr": "Le budget de test IA approuvé ne permet pas de nouvelle requête au modèle pour le moment. Vos informations sont conservées."
+  },
+  "Die KI-Anbindung hat gerade ihr Anfragelimit erreicht. Bitte versuchen Sie es später erneut. Ihre Nachricht bleibt erhalten.": {
+    "en": "The AI connection has reached its request limit. Please try again later. Your message will be retained.",
+    "fr": "La connexion IA a atteint sa limite de requêtes. Veuillez réessayer plus tard. Votre message est conservé."
+  },
+  "Ihre Angaben wurden im Gespräch übernommen. Die Antwort konnte nicht bestätigt werden.": {
+    "en": "Your information has been added to the conversation. The response could not be confirmed.",
+    "fr": "Vos informations ont été intégrées à la conversation. La réponse n’a pas pu être confirmée."
+  },
+  "MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.": {
+    "en": "MORA could not provide a reliable response just now. Your message will be retained for the next attempt.",
+    "fr": "MORA n’a pas pu fournir une réponse fiable pour le moment. Votre message est conservé pour la prochaine tentative."
+  },
+  "Anliegen öffnen": {
+    "en": "Open requests",
+    "fr": "Ouvrir les demandes"
+  },
+  "Aufgaben öffnen": {
+    "en": "Open tasks",
+    "fr": "Ouvrir les tâches"
+  },
+  "Kalender öffnen": {
+    "en": "Open calendar",
+    "fr": "Ouvrir le calendrier"
+  },
+  "Dokumente öffnen": {
+    "en": "Open documents",
+    "fr": "Ouvrir les documents"
+  },
+  "Liegenschaften öffnen": {
+    "en": "Open properties",
+    "fr": "Ouvrir les immeubles"
+  },
+  "Einheiten öffnen": {
+    "en": "Open units",
+    "fr": "Ouvrir les unités"
+  },
+  "Team & Kontakte öffnen": {
+    "en": "Open team & contacts",
+    "fr": "Ouvrir l’équipe et les contacts"
+  },
+  "Hilfe öffnen": {
+    "en": "Open help",
+    "fr": "Ouvrir l’aide"
+  },
+  "Aufgabenformular öffnen": {
+    "en": "Open task form",
+    "fr": "Ouvrir le formulaire de tâche"
+  },
+  "Terminformular öffnen": {
+    "en": "Open appointment form",
+    "fr": "Ouvrir le formulaire de rendez-vous"
+  },
+  "Dokumentenformular öffnen": {
+    "en": "Open document form",
+    "fr": "Ouvrir le formulaire de document"
+  },
+  "Übersicht öffnen": {
+    "en": "Open overview",
+    "fr": "Ouvrir la vue d’ensemble"
+  },
+  "Kontakt öffnen": {
+    "en": "Open contact",
+    "fr": "Ouvrir le contact"
+  },
+  "Anliegenansicht öffnen": {
+    "en": "Open request view",
+    "fr": "Ouvrir la vue des demandes"
+  },
+  "Dokumentenansicht öffnen": {
+    "en": "Open document view",
+    "fr": "Ouvrir la vue des documents"
+  },
+  "Übersicht": {
+    "en": "Overview",
+    "fr": "Vue d’ensemble"
+  },
+  "Unternehmen": {
+    "en": "Company",
+    "fr": "Entreprise"
+  },
+  "Portfolio": {
+    "en": "Portfolio",
+    "fr": "Portefeuille"
+  },
+  "Mandate": {
+    "en": "Management mandates",
+    "fr": "Mandats"
+  },
+  "Mieterspiegel": {
+    "en": "Rent roll",
+    "fr": "État locatif"
+  },
+  "Mietverträge": {
+    "en": "Leases",
+    "fr": "Baux"
+  },
+  "Mieter": {
+    "en": "Tenants",
+    "fr": "Locataires"
+  },
+  "Eigentümer & Auftraggeber": {
+    "en": "Owners & clients",
+    "fr": "Propriétaires et mandants"
+  },
+  "Unterhalt": {
+    "en": "Maintenance",
+    "fr": "Entretien"
+  },
+  "Neuvermietung": {
+    "en": "Reletting",
+    "fr": "Relocation"
+  },
+  "Mietinteressenten": {
+    "en": "Prospective tenants",
+    "fr": "Candidats à la location"
+  },
+  "Abnahmen & Übergaben": {
+    "en": "Inspections & handovers",
+    "fr": "États des lieux et remises"
+  },
+  "Fachprüfungen": {
+    "en": "Specialist reviews",
+    "fr": "Contrôles spécialisés"
+  },
+  "Handwerker": {
+    "en": "Contractors",
+    "fr": "Artisans"
+  },
+  "Dossiernotizen": {
+    "en": "File notes",
+    "fr": "Notes de dossier"
+  },
+  "Mandatsfinanzen": {
+    "en": "Mandate finances",
+    "fr": "Finances des mandats"
+  },
+  "Mandatsrechnungen": {
+    "en": "Mandate invoices",
+    "fr": "Factures des mandats"
+  },
+  "Kreditoren": {
+    "en": "Accounts payable",
+    "fr": "Créanciers"
+  },
+  "Debitoren": {
+    "en": "Accounts receivable",
+    "fr": "Débiteurs"
+  },
+  "Bank": {
+    "en": "Bank",
+    "fr": "Banque"
+  },
+  "Kasse": {
+    "en": "Cash",
+    "fr": "Caisse"
+  },
+  "Buchungen": {
+    "en": "Transactions",
+    "fr": "Écritures"
+  },
+  "Budgets": {
+    "en": "Budgets",
+    "fr": "Budgets"
+  },
+  "Nebenkosten": {
+    "en": "Service charges",
+    "fr": "Charges"
+  },
+  "Verträge": {
+    "en": "Contracts",
+    "fr": "Contrats"
+  },
+  "Partner": {
+    "en": "Partners",
+    "fr": "Partenaires"
+  },
+  "Schlüssel": {
+    "en": "Keys",
+    "fr": "Clés"
+  },
+  "Kautionen": {
+    "en": "Security deposits",
+    "fr": "Garanties de loyer"
+  },
+  "Fristen": {
+    "en": "Deadlines",
+    "fr": "Échéances"
+  },
+  "Berichte": {
+    "en": "Reports",
+    "fr": "Rapports"
+  },
+  "Aktivitätslog": {
+    "en": "Activity log",
+    "fr": "Journal d’activité"
+  },
+  "Automationen": {
+    "en": "Automations",
+    "fr": "Automatisations"
+  },
+  "Akquise": {
+    "en": "Business development",
+    "fr": "Prospection"
+  },
+  "MORADA Living": {
+    "en": "MORADA Living",
+    "fr": "MORADA Living"
+  },
+  "Informationen": {
+    "en": "Information",
+    "fr": "Informations"
+  },
+  "Einstellungen": {
+    "en": "Settings",
+    "fr": "Paramètres"
+  },
+  "Suche": {
+    "en": "Search",
+    "fr": "Recherche"
+  },
+  "Meine Liegenschaft": {
+    "en": "My property",
+    "fr": "Mon immeuble"
+  },
+  "Mein Mieterspiegel": {
+    "en": "My rent roll",
+    "fr": "Mon état locatif"
+  },
+  "Meine Finanzübersicht": {
+    "en": "My financial overview",
+    "fr": "Ma vue d’ensemble des finances"
+  },
+  "Meine Mietzinseingänge": {
+    "en": "My rent receipts",
+    "fr": "Mes encaissements de loyers"
+  },
+  "Meine Berichte": {
+    "en": "My reports",
+    "fr": "Mes rapports"
+  },
+  "Meine Freigaben": {
+    "en": "My approvals",
+    "fr": "Mes validations"
+  },
+  "Mein Profil": {
+    "en": "My profile",
+    "fr": "Mon profil"
+  },
+  "Meine Wohnung": {
+    "en": "My apartment",
+    "fr": "Mon appartement"
+  },
+  "Mein Mietverhältnis": {
+    "en": "My tenancy",
+    "fr": "Ma relation locative"
+  },
+  "Meine Zahlungen": {
+    "en": "My payments",
+    "fr": "Mes paiements"
+  },
+  "Meine Termine": {
+    "en": "My appointments",
+    "fr": "Mes rendez-vous"
+  },
+  "öffnen": {
+    "en": "open",
+    "fr": "ouvrir"
+  },
+  "Schlüssel / Zutritt": {
+    "en": "Key / access",
+    "fr": "Clé / accès"
+  },
+  "Beschwerde": {
+    "en": "Complaint",
+    "fr": "Réclamation"
+  },
+  "Allgemein": {
+    "en": "General",
+    "fr": "Général"
+  },
+  "Im Walkthrough ausgewählt:": {
+    "en": "Selected in the walkthrough:",
+    "fr": "Sélectionné dans la visite guidée :"
+  },
+  "Walkthrough-Zuordnung: nach Korrektur erneut auswählen.": {
+    "en": "Walkthrough assignment: select again after correction.",
+    "fr": "Attribution de la visite guidée : sélectionner à nouveau après correction."
+  },
+  "Fachbereich:": {
+    "en": "Specialist area:",
+    "fr": "Domaine spécialisé :"
+  },
+  "Noch nicht zugeordnet": {
+    "en": "Not yet assigned",
+    "fr": "Pas encore attribué"
+  },
+  "Beginn: Nicht angegeben": {
+    "en": "Start: not specified",
+    "fr": "Début : non précisé"
+  },
+  "Die Beschreibung ist zu lang für das Anliegenformular. Bitte im Chat kürzen.": {
+    "en": "The description is too long for the request form. Please shorten it in the chat.",
+    "fr": "La description est trop longue pour le formulaire de demande. Veuillez la raccourcir dans le chat."
+  },
+  ". Nur für diesen Abruf geprüft.": {
+    "en": ". Verified for this request only.",
+    "fr": ". Vérifiées uniquement pour cette consultation."
+  },
+  "{0} · {1} offene Reparaturanliegen": {
+    "en": "{0} · {1} open repair requests",
+    "fr": "{0} · {1} demandes de réparation ouvertes"
+  },
+  "Termin: {0}": {
+    "en": "Appointment: {0}",
+    "fr": "Rendez-vous : {0}"
+  },
+  "50 von {0} Einträgen. Weitere Angaben finden Sie im freigegebenen Portalbereich.": {
+    "en": "50 of {0} entries. You can find further details in the authorised portal area.",
+    "fr": "50 entrées sur {0}. Vous trouverez d’autres informations dans l’espace du portail autorisé."
+  },
+  "Datenstand: {0}. Nur für diesen Abruf geprüft.": {
+    "en": "Data as of: {0}. Verified for this request only.",
+    "fr": "Données au : {0}. Vérifiées uniquement pour cette consultation."
+  },
+  "Sicherheitshinweis: {0}": {
+    "en": "Safety notice: {0}",
+    "fr": "Consigne de sécurité : {0}"
+  },
+  "{0} lokale Entwürfe": {
+    "en": "Local drafts: {0}",
+    "fr": "Brouillons locaux : {0}"
+  },
+  "{0} öffnen": {
+    "en": "Open {0}",
+    "fr": "Ouvrir {0}"
+  },
+  "Diese Portalauskunft ist aktuell nicht freigegeben oder nicht verfügbar. Bitte prüfen Sie den Stand in Ihrem Portalbereich.": {
+    "en": "This portal information is currently not authorised or unavailable. Please check the current status in your portal area.",
+    "fr": "Ces informations du portail ne sont actuellement pas autorisées ou disponibles. Veuillez vérifier la situation dans votre espace du portail."
+  },
+  "Offene Reparaturanliegen Ihrer freigegebenen Liegenschaften": {
+    "en": "Open repair requests for your authorised properties",
+    "fr": "Demandes de réparation ouvertes pour vos immeubles autorisés"
+  },
+  "Freigegebene Anliegen und Bearbeitungsstände": {
+    "en": "Authorised requests and processing statuses",
+    "fr": "Demandes autorisées et états de traitement"
+  }
+}

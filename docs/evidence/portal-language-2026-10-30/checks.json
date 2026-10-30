@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-30",
+  "branch": "codex/mora-ai-2.0",
+  "base": "84c0be5a6cf2dbbdc101c9750cc404853fa84eff",
+  "resources": 8123,
+  "tests": 492,
+  "passed": 492,
+  "failed": 0,
+  "routeChecks": 204,
+  "formChecks": 190,
+  "build": "passed",
+  "typecheck": "passed",
+  "mobileLanguageMenu320": {
+    "left": 12,
+    "right": 242,
+    "width": 230
+  },
+  "mobileAccessPanel320": {
+    "width": 261,
+    "scrollWidth": 261,
+    "height": 624,
+    "scrollHeight": 956
+  }
+}

@@ -42,8 +42,8 @@ export function createCustomerCases(){
   function open(id='',preset={},managed=false){
     requireReady();if(!portalCloseDialog())return false;
     const old=id?find(id):null,values=old?managedCaseFields(old):{title:'',description:'',unit:'',category:'Schaden / Reparatur',...preset};
-    const fields=portfolioInput('Worum geht es? *','title',values.title,'required maxlength="180"',true)+select('Art des Anliegens','category',caseCategories(),values.category)+crmTextarea('Beschreibung *','description',values.description,3000).replace('textarea name="description"','textarea name="description" required')+portfolioInput('Raum / Bereich','unit',values.unit,'maxlength="500"',true);
-    const ok=openModal(old?'Anliegen prüfen.':'Anliegen vorbereiten.',`<form id="opsEntryForm" data-kind="case" data-id="${esc(id)}" class="case-form" data-customer-case="true"><p class="crm-form-note">Lokaler Entwurf auf diesem Gerät. Noch nicht an MORADA übermittelt.</p><div class="form-grid">${fields}</div><details><summary>Fotos & Dateien (optional)</summary>${opsFileForm(old?.attachments||[])}</details><p id="opsFormError" class="company-form-error" role="alert" hidden></p><div class="dialog-actions">${btn('Abbrechen','type="button" data-action="close"',false,'arrow')}${btn('Entwurf speichern','type="submit"',true,'check')}</div></form>`,'MORADA · ANLIEGEN');
+    const fields=portfolioInput('Worum geht es? *','title',values.title,'required maxlength="180"',true)+select(MoradaI18n.t('Art des Anliegens'),'category',caseCategories(),values.category)+crmTextarea('Beschreibung *','description',values.description,3000).replace('textarea name="description"','textarea name="description" required')+portfolioInput('Raum / Bereich','unit',values.unit,'maxlength="500"',true);
+    const ok=openModal(old?MoradaI18n.t('Anliegen prüfen.'):MoradaI18n.t('Anliegen vorbereiten.'),MoradaI18n.html`<form id="opsEntryForm" data-kind="case" data-id="${esc(id)}" class="case-form" data-customer-case="true"><p class="crm-form-note">Lokaler Entwurf auf diesem Gerät. Noch nicht an MORADA übermittelt.</p><div class="form-grid">${fields}</div><details><summary>Fotos & Dateien (optional)</summary>${opsFileForm(old?.attachments||[])}</details><p id="opsFormError" class="company-form-error" role="alert" hidden></p><div class="dialog-actions">${btn(MoradaI18n.t('Abbrechen'),'type="button" data-action="close"',false,'arrow')}${btn(MoradaI18n.t('Entwurf speichern'),'type="submit"',true,'check')}</div></form>`,'MORADA · ANLIEGEN');
     if(!ok)return false;
     opsDraft={kind:'case',id,items:[...(old?.attachments||[])],source:state,reading:false};
     const form=document.getElementById('opsEntryForm'),startedRole=role,startedScope=scope();let saving=false;
@@ -53,7 +53,7 @@ export function createCustomerCases(){
       e.preventDefault();e.stopImmediatePropagation();if(saving||!form.reportValidity()||opsDraft?.reading)return;
       if(role!==startedRole||scope()!==startedScope||!opsDraft){opsFormError('Der Portalzugang wurde gewechselt.');return;}
       saving=true;form.querySelector('[type="submit"]').disabled=true;
-      try{const r=await saveCase(Object.fromEntries(new FormData(form)),form.dataset.id,opsDraft.items,opsDraft.source);portalMarkDialogClean();dialog.close();go(route());notify('Entwurf auf diesem Gerät gespeichert. Nicht übermittelt.');}
+      try{const r=await saveCase(Object.fromEntries(new FormData(form)),form.dataset.id,opsDraft.items,opsDraft.source);portalMarkDialogClean();dialog.close();go(route());notify(MoradaI18n.t('Entwurf auf diesem Gerät gespeichert. Nicht übermittelt.'));}
       catch(error){opsFormError(error.message);}finally{saving=false;if(form.isConnected)form.querySelector('[type="submit"]').disabled=false;}
     });
     portalMarkDialogClean();return true;
@@ -62,19 +62,19 @@ export function createCustomerCases(){
     if(!enabled()||current!==route())return;
     const main=document.getElementById('main');if(main.querySelector('[data-mora-customer-cases]'))return;
     const section=document.createElement('section');section.dataset.moraCustomerCases='true';section.className='crm-form-note';
-    const note=document.createElement('p');note.textContent='Lokale Entwürfe dieser Sitzung. Kein Versand an MORADA und keine angebundenen Kundenakten.';section.append(note);
+    const note=document.createElement('p');note.textContent=MoradaI18n.t('Lokale Entwürfe dieser Sitzung. Kein Versand an MORADA und keine angebundenen Kundenakten.');section.append(note);
     const button=(label,fn)=>{const b=document.createElement('button');b.type='button';b.className='btn';b.textContent=label;b.onclick=()=>{try{fn();}catch(error){notify(error.message);}};section.append(b);};
-    button('Anliegen selbst erfassen',()=>open());button('Mit MORA vorbereiten',()=>{window.MORAPortal.open();window.MORAPortal.send('Ich möchte ein Anliegen mit Ihnen vorbereiten.');});
+    button(MoradaI18n.t('Anliegen selbst erfassen'),()=>open());button(MoradaI18n.t('Mit MORA vorbereiten'),()=>{window.MORAPortal.open();window.MORAPortal.send('Ich möchte ein Anliegen mit Ihnen vorbereiten.');});
     main.prepend(section);
     const records=state.cases.filter(owns),body=main.querySelector('tbody');if(body){body.replaceChildren();
       for(const r of records){const row=document.createElement('tr');
         for(const text of [r.title,r.date,'—','Lokal gespeichert · nicht übermittelt']){const cell=document.createElement('td');cell.textContent=text;row.append(cell);}
-        const b=document.createElement('button');b.type='button';b.className='btn';b.textContent='Prüfen / ergänzen';b.onclick=()=>{try{open(r.id);}catch(error){notify(error.message);}};const details=document.createElement('td');details.append(b);row.append(details);body.append(row);}
+        const b=document.createElement('button');b.type='button';b.className='btn';b.textContent=MoradaI18n.t('Prüfen / ergänzen');b.onclick=()=>{try{open(r.id);}catch(error){notify(error.message);}};const details=document.createElement('td');details.append(b);row.append(details);body.append(row);}
     }
     const count=main.querySelector('#recordCount'),empty=main.querySelector('#emptyRows'),foot=main.querySelector('.table-foot span:last-child');
-    if(count)count.textContent=records.length+' lokale Entwürfe';
+    if(count)count.textContent=records.length+MoradaI18n.t(' lokale Entwürfe');
     if(empty)empty.hidden=records.length>0;
-    if(foot)foot.textContent=records.length+' lokale Entwürfe';
+    if(foot)foot.textContent=records.length+MoradaI18n.t(' lokale Entwürfe');
   }
   const originalRender=render;render=function(...args){const result=originalRender.apply(this,args);mount();return result;};
   window.addEventListener('mora:access-changed',()=>{scopes.clear();for(const r of ['tenant','owner'])try{sessionStorage.removeItem('morada.mora.local-case-scope.'+r);}catch{}});

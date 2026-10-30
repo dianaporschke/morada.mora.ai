@@ -1,0 +1,230 @@
+{
+  "{0} Beleg": {
+    "en": "{0} receipt",
+    "fr": "{0} justificatif"
+  },
+  "{0} Belege": {
+    "en": "{0} receipts",
+    "fr": "{0} justificatifs"
+  },
+  "{0} Beleg ausgewählt. Wird mit dem Eintrag gespeichert.": {
+    "en": "{0} receipt selected. It will be saved with the entry.",
+    "fr": "{0} justificatif sélectionné. Il sera enregistré avec l'entrée."
+  },
+  "{0} Belege ausgewählt. Werden mit dem Eintrag gespeichert.": {
+    "en": "{0} receipts selected. They will be saved with the entry.",
+    "fr": "{0} justificatifs sélectionnés. Ils seront enregistrés avec l'entrée."
+  },
+  "{0} Zahlung": {
+    "en": "{0} payment",
+    "fr": "{0} paiement"
+  },
+  "{0} Zahlungen": {
+    "en": "{0} payments",
+    "fr": "{0} paiements"
+  },
+  "{0} Datei mit Dateiinhalten und Zuordnungen enthalten. Die vorhandenen Daten dieses Geräts werden vollständig ersetzt.": {
+    "en": "Contains {0} file with its content and links. All existing data on this device will be replaced.",
+    "fr": "Contient {0} fichier avec son contenu et ses rattachements. Toutes les données existantes de cet appareil seront remplacées."
+  },
+  "{0} Dateien mit Dateiinhalten und Zuordnungen enthalten. Die vorhandenen Daten dieses Geräts werden vollständig ersetzt.": {
+    "en": "Contains {0} files with their contents and links. All existing data on this device will be replaced.",
+    "fr": "Contient {0} fichiers avec leurs contenus et leurs rattachements. Toutes les données existantes de cet appareil seront remplacées."
+  },
+  "{0} Angabe offen": {
+    "en": "{0} detail outstanding",
+    "fr": "{0} donnée à préciser"
+  },
+  "{0} Angaben offen": {
+    "en": "{0} details outstanding",
+    "fr": "{0} données à préciser"
+  },
+  "{0} Unterhaltseintrag": {
+    "en": "{0} maintenance entry",
+    "fr": "{0} entrée d'entretien"
+  },
+  "{0} Unterhaltseinträge": {
+    "en": "{0} maintenance entries",
+    "fr": "{0} entrées d'entretien"
+  },
+  "{0} Überschneidung mit geplanten Terminen. Im Bearbeitungsformular prüfen.": {
+    "en": "{0} overlap with scheduled appointments. Check it in the edit form.",
+    "fr": "{0} chevauchement avec des rendez-vous prévus. Vérifiez-le dans le formulaire de modification."
+  },
+  "{0} Überschneidungen mit geplanten Terminen. Im Bearbeitungsformular prüfen.": {
+    "en": "{0} overlaps with scheduled appointments. Check them in the edit form.",
+    "fr": "{0} chevauchements avec des rendez-vous prévus. Vérifiez-les dans le formulaire de modification."
+  },
+  "{0} weitere Zuordnung": {
+    "en": "{0} additional link",
+    "fr": "{0} rattachement supplémentaire"
+  },
+  "{0} weitere Zuordnungen": {
+    "en": "{0} additional links",
+    "fr": "{0} rattachements supplémentaires"
+  },
+  "{0} Rechnung": {
+    "en": "{0} invoice",
+    "fr": "{0} facture"
+  },
+  "{0} Rechnungen": {
+    "en": "{0} invoices",
+    "fr": "{0} factures"
+  },
+  "{0} Beleg / Unterlage": {
+    "en": "{0} receipt / document",
+    "fr": "{0} justificatif / document"
+  },
+  "{0} Belege / Unterlagen": {
+    "en": "{0} receipts / documents",
+    "fr": "{0} justificatifs / documents"
+  },
+  "{0} Prüfhinweis": {
+    "en": "{0} review notice",
+    "fr": "{0} point à vérifier"
+  },
+  "{0} Prüfhinweise": {
+    "en": "{0} review notices",
+    "fr": "{0} points à vérifier"
+  },
+  "Vorheriger Zeitraum": {
+    "en": "Previous period",
+    "fr": "Période précédente"
+  },
+  "Vorheriger Monat": {
+    "en": "Previous month",
+    "fr": "Mois précédent"
+  },
+  "Nächster Zeitraum": {
+    "en": "Next period",
+    "fr": "Période suivante"
+  },
+  "Nächster Monat": {
+    "en": "Next month",
+    "fr": "Mois suivant"
+  },
+  "{0} Datei": {
+    "en": "{0} file",
+    "fr": "{0} fichier"
+  },
+  "{0} Dateien": {
+    "en": "{0} files",
+    "fr": "{0} fichiers"
+  },
+  "{0} Datei ausgewählt. Sie wird mit dem Eintrag gespeichert.": {
+    "en": "{0} file selected. It will be saved with the entry.",
+    "fr": "{0} fichier sélectionné. Il sera enregistré avec l'entrée."
+  },
+  "{0} Dateien ausgewählt. Sie werden mit dem Eintrag gespeichert.": {
+    "en": "{0} files selected. They will be saved with the entry.",
+    "fr": "{0} fichiers sélectionnés. Ils seront enregistrés avec l'entrée."
+  },
+  "Eine verknüpfte Vertragsgrundlage fehlt.": {
+    "en": "A linked contractual basis is missing.",
+    "fr": "Une base contractuelle liée manque."
+  },
+  "Eine verknüpfte Kostengrundlage fehlt.": {
+    "en": "A linked cost basis is missing.",
+    "fr": "Une base de coûts liée manque."
+  },
+  "Eine verknüpfte Verteilungsgrundlage fehlt.": {
+    "en": "A linked allocation basis is missing.",
+    "fr": "Une base de répartition liée manque."
+  },
+  "Eine verknüpfte Verbrauchsgrundlage fehlt.": {
+    "en": "A linked consumption record is missing.",
+    "fr": "Un justificatif de consommation lié manque."
+  },
+  "Eine verknüpfte Freigabegrundlage fehlt.": {
+    "en": "A linked approval basis is missing.",
+    "fr": "Une base d'approbation liée manque."
+  },
+  "{0} Liegenschaft im Archiv": {
+    "en": "{0} archived property",
+    "fr": "{0} immeuble archivé"
+  },
+  "{0} Liegenschaften im Archiv": {
+    "en": "{0} archived properties",
+    "fr": "{0} immeubles archivés"
+  },
+  "{0} Liegenschaft inklusive Archiv": {
+    "en": "{0} property, including archive",
+    "fr": "{0} immeuble, archives comprises"
+  },
+  "{0} Liegenschaften inklusive Archiv": {
+    "en": "{0} properties, including archive",
+    "fr": "{0} immeubles, archives comprises"
+  },
+  "{0} Liegenschaft im Bestand": {
+    "en": "{0} property in the portfolio",
+    "fr": "{0} immeuble dans le parc"
+  },
+  "{0} Liegenschaften im Bestand": {
+    "en": "{0} properties in the portfolio",
+    "fr": "{0} immeubles dans le parc"
+  },
+  "Keine Treffer · {0} Liegenschaft im Archiv": {
+    "en": "No results · {0} archived property",
+    "fr": "Aucun résultat · {0} immeuble archivé"
+  },
+  "Keine Treffer · {0} Liegenschaften im Archiv": {
+    "en": "No results · {0} archived properties",
+    "fr": "Aucun résultat · {0} immeubles archivés"
+  },
+  "Keine Treffer · {0} Liegenschaft inklusive Archiv": {
+    "en": "No results · {0} property, including archive",
+    "fr": "Aucun résultat · {0} immeuble, archives comprises"
+  },
+  "Keine Treffer · {0} Liegenschaften inklusive Archiv": {
+    "en": "No results · {0} properties, including archive",
+    "fr": "Aucun résultat · {0} immeubles, archives comprises"
+  },
+  "Keine Treffer · {0} Liegenschaft im Bestand": {
+    "en": "No results · {0} property in the portfolio",
+    "fr": "Aucun résultat · {0} immeuble dans le parc"
+  },
+  "Keine Treffer · {0} Liegenschaften im Bestand": {
+    "en": "No results · {0} properties in the portfolio",
+    "fr": "Aucun résultat · {0} immeubles dans le parc"
+  },
+  "{0} von {1} Liegenschaft im Archiv": {
+    "en": "{0} of {1} archived property",
+    "fr": "Immeuble archivé : {0} sur {1}"
+  },
+  "{0} von {1} Liegenschaften im Archiv": {
+    "en": "{0} of {1} archived properties",
+    "fr": "Immeubles archivés : {0} sur {1}"
+  },
+  "{0} von {1} Liegenschaft inklusive Archiv": {
+    "en": "{0} of {1} property, including archive",
+    "fr": "Immeuble, archives comprises : {0} sur {1}"
+  },
+  "{0} von {1} Liegenschaften inklusive Archiv": {
+    "en": "{0} of {1} properties, including archive",
+    "fr": "Immeubles, archives comprises : {0} sur {1}"
+  },
+  "{0} von {1} Liegenschaft im Bestand": {
+    "en": "{0} of {1} property in the portfolio",
+    "fr": "Immeuble dans le parc : {0} sur {1}"
+  },
+  "{0} von {1} Liegenschaften im Bestand": {
+    "en": "{0} of {1} properties in the portfolio",
+    "fr": "Immeubles dans le parc : {0} sur {1}"
+  },
+  "{0} von {1} Einheit im Archiv": {
+    "en": "{0} of {1} archived unit",
+    "fr": "Unité archivée : {0} sur {1}"
+  },
+  "{0} von {1} Einheiten im Archiv": {
+    "en": "{0} of {1} archived units",
+    "fr": "Unités archivées : {0} sur {1}"
+  },
+  "{0} von {1} Einheit im Bestand": {
+    "en": "{0} of {1} unit in the portfolio",
+    "fr": "Unité dans le parc : {0} sur {1}"
+  },
+  "{0} von {1} Einheiten im Bestand": {
+    "en": "{0} of {1} units in the portfolio",
+    "fr": "Unités dans le parc : {0} sur {1}"
+  }
+}

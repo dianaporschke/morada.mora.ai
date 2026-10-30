@@ -7,7 +7,7 @@ import {hydrateSimple} from '../lib/mora/simple/state.js';
 
 test('customer view knowledge matches the native empty-table implementation',()=>{
  const html=readFileSync('portal.html','utf8');
- assert.match(html,/tablePage\(c.title,c.desc,c.cols,\[\]/);
+ assert.match(html,/tablePage\(MoradaI18n\.t\(c.title\),MoradaI18n\.t\(c.desc\),c.cols,\[\]/);
  for(const id of ['tenantDocuments','tenantSupport','tenantPayments','ownerCases','ownerDocuments']){
   const [view]=navigationKnowledge([id]);
   assert.equal(view.implementation,'empty_preview_table');assert.equal(view.recordConnection,false);

@@ -7,6 +7,28 @@ export function normalize(text = '') {
 // turn ordinary defects into emergencies. This is a fast safety net, not NLU.
 function safetyText(value) {
   return normalize(value)
+    // Bounded EN/FR observation aliases feed the same hazard/negation rules.
+    // This never translates stored evidence or depends on the selected locale.
+    .replace(/\b(?:fire alarm|smoke detector|detecteur de fumee|alarme incendie)\b/g, 'melder')
+    .replace(/\b(?:cannot rule out|can t rule out|ne peux pas exclure)\b/g, 'nicht auszuschliessen')
+    .replace(/\b(?:not sure|pas sur|pas certain)\b/g, 'nicht sicher')
+    .replace(/\b(?:no longer|ne [a-z ]{0,15}plus|a cesse|has stopped|stopped)\b/g, 'nicht mehr')
+    .replace(/\b(?:gas smell|smell of gas|gas leak|odeur de gas|fuite de gas|odeur de gaz|fuite de gaz)\b/g, 'gasgeruch')
+    .replace(/\b(?:smell|smells|sens|sent)\s+(?:du |de |le )?(?:gas|gaz)\b/g, 'rieche gas')
+    .replace(/\b(?:burning smell|smell of burning|odeur de brule)\b/g, 'brandgeruch')
+    .replace(/\b(?:electric shock|electrical shock|decharge electrique|electrocution)\b/g, 'stromschlag')
+    .replace(/\b(?:exposed|bare) (?:electrical )?wires?\b|\bfils? (?:electriques? )?(?:denudes?|exposes?)\b/g, 'offene kabel')
+    .replace(/\b(?:water (?:is )?(?:pouring|coming|flowing|dripping) (?:from|through) (?:the )?ceiling|eau (?:coule|tombe|s ecoule) (?:du|a travers le) plafond)\b/g, 'wasser aus der decke')
+    .replace(/\b(?:burst pipe|canalisation eclatee|rupture de canalisation)\b/g, 'rohrbruch')
+    .replace(/\b(?:uncontrolled water leak|major water leak|forte fuite d eau|fuite d eau importante)\b/g, 'starker wasseraustritt')
+    .replace(/\b(?:wet (?:socket|outlet)|prise (?:est )?mouillee)\b/g, 'nasse steckdose')
+    .replace(/\b(?:smoke|fumee)\b/g, 'rauch')
+    .replace(/\b(?:fire|flames?|incendie|feu|flammes?)\b/g, 'feuer')
+    .replace(/\b(?:sparks?|sparking|etincelles?)\b/g, 'funken')
+    .replace(/\bni\s+(?:de |d )?/g, 'kein ').replace(/\bneither\s+/g, 'weder ').replace(/\b(?:nor)\s+/g, 'noch ')
+    .replace(/\b(?:not only|pas seulement)\b/g, 'sogar')
+    .replace(/\b(?:no|without|sans|pas de|pas d)\s+/g, 'kein ')
+    .replace(/\b(?:cannot|can t|do not|don t|does not|doesn t|not|jamais)\s+/g, 'nicht ')
     .replace(/\b(?:gasgeruh|gasgeruchh|gasgeruchhh|gazgeruch|gas geruch)\b/g, 'gasgeruch')
     .replace(/\b(?:riche|riehce|riehche|rische)\b/g, 'rieche')
     .replace(/\b(?:gaz|gaas)\b/g, 'gas')
@@ -27,6 +49,9 @@ function safetyText(value) {
 }
 
 function hypothetical(text) {
+  if(/\b(?:hypothetically|theoretically|for example|as an example|what if|suppose|en theorie|hypothetiquement|par exemple|supposons|que faire si)\b/.test(text))return true;
+  if(/\b(?:last year|years ago|l an dernier|l annee derniere|il y a [a-z0-9]+ ans)\b/.test(text)&&!/\b(?:now|currently|again|still|maintenant|actuellement|encore)\b/.test(text))return true;
+
   // Do not apply this to every "wenn": worried users often describe a real
   // hazard conditionally. Suppress only explicit thought experiments/history.
   if (/\b(nur theoretisch|rein hypothetisch|als beispiel|angenommen|ich frage vorsorglich|fur den fall dass)\b/.test(text)) return true;
@@ -61,7 +86,7 @@ function evidenceIn(clauses, pattern) {
 export function detectHazard(message) {
   // Keep punctuation until clause boundaries are established. A negation in
   // "kein Rauch, aber die Steckdose funkt" applies only to its own evidence.
-  const clauses = String(message ?? '').split(/[.!?;\n]+|\b(?:aber|jedoch|sondern|allerdings)\b/iu)
+  const clauses = String(message ?? '').split(/[.!?;\n]+|\b(?:aber|jedoch|sondern|allerdings|but|however|mais|pourtant|cependant)\b/iu)
     .map(safetyText).filter(text => text && !hypothetical(text));
   const has = pattern => evidenceIn(clauses, pattern);
   if (has('\\b(?:gasgeruch|gasaustritt|gasleck)\\b|\\b(?:riech\\w*|stinkt|geruch)\\b[^,]{0,40}\\bgas\\b|\\bgas\\b[^,]{0,25}\\b(?:riech\\w*|tritt\\s+aus|stromt\\s+aus|stinkt)\\b')) {
@@ -93,8 +118,8 @@ export function detectHazard(message) {
 export function explicitHazardDenial(message, priorHazard) {
   const text = safetyText(String(message ?? ''));
   if (detectHazard(message).hazard !== 'none' || hypothetical(text)) return false;
-  if (/\b(?:mehr|vorbei|behoben|repariert|geloscht|verschwunden|aufgehort|jetzt|inzwischen|mittlerweile)\b/.test(text)) return false;
-  if (/\b(?:vielleicht|eventuell|vermutlich|moglicherweise|glaube|denke)\b|\bnicht sicher\b|\bweiss? nicht\b|\bausschliessen\b/.test(text) || String(message).includes('?')) return false;
+  if (/\b(?:mehr|vorbei|behoben|repariert|geloscht|verschwunden|aufgehort|jetzt|inzwischen|mittlerweile|now|stopped|gone|repaired|maintenant|arrete|repare|disparu)\b/.test(text)) return false;
+  if (/\b(?:vielleicht|eventuell|vermutlich|moglicherweise|glaube|denke|perhaps|maybe|possibly|think|believe|peut etre|probablement|pense|crois)\b|\bnicht sicher\b|\bweiss? nicht\b|\bausschliessen\b/.test(text) || String(message).includes('?')) return false;
   const patterns = {
     gas:/\b(?:gasgeruch|gasaustritt|gasleck)\b|\briech\w*\b.{0,35}\bgas\b/g,
     fire:/\b(?:rauch|feuer|flammen|brand|brandgeruch|brennt|raucht)\b|\briech\w*\b.{0,25}\b(?:verbrannt|verschmort)\b/g,

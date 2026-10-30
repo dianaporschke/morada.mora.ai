@@ -218,7 +218,7 @@ test('invalid verifier format repairs verification without regenerating a valid 
  const p=plan([{ref:'new1',quote:'Das Spezialteil im Bad ist lose. Beginn unbekannt.',equipment:'Spezialteil',defect:'lose',location:'Bad',unknown:[{field:'since',quote:'Beginn unbekannt.'}]}],{reply:'Sie können das Anliegen vorbereiten.'});
  let calls=0;const outputs=[p,{type:'object',properties:{violations:{type:'array'}}},{violations:[]}];const instructions=[];
  const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:MODEL,createModel:()=>({})}),guard:async()=>{},generate:async o=>{instructions.push(o.instructions);return {output:outputs[calls++],usage:{},finalStep:{providerMetadata:{}}};}});
- const r=await service('Das Spezialteil im Bad ist lose. Beginn unbekannt.',hydrateSimple(null),['cases']);assert.equal(calls,3);assert.equal(r.repaired,true);assert.equal(instructions.filter(i=>i.startsWith('Sie sind MORA')).length,1);assert.equal(r.state.issue.location,'Bad');assert.equal(r.state.issue.fieldFacts.since.status,'unknown');
+ const r=await service('Das Spezialteil im Bad ist lose. Beginn unbekannt.',hydrateSimple(null),['cases']);assert.equal(calls,3);assert.equal(r.repaired,true);assert.equal(instructions.filter(i=>i.includes('Sie sind MORA, die digitale Assistenz')).length,1);assert.equal(r.state.issue.location,'Bad');assert.equal(r.state.issue.fieldFacts.since.status,'unknown');
 });
 test('action intent uses the actual current request rather than a brittle copied quote',async()=>{
  let n=0;const seen=[];const outputs=[plan([],{reply:'Bitte prüfen Sie die Angaben.',requestedAction:'prepare',requestQuote:'Bitte bereiten Sie den Fall vor.'}),{violations:[]}];
@@ -296,4 +296,20 @@ test('tenant: full HTML: quota failure produces no success or portal record and 
  const handler=createPortalChatHandler({converse:async()=>({state:lamp(),reply:'Sie können das Anliegen lokal speichern.',navigation:[],modelCalls:1})});
  const d=await dom(async(_u,o)=>{const r=await call(handler,JSON.parse(o.body));return {ok:r.status===200,json:async()=>r.body};});const w=d.window;
  try{w.MoradaRoles.select('tenant');await settle();w.document.getElementById('moraFab').click();await w.MORAPortal.send('Lampe im Wohnzimmer kaputt');Object.defineProperty(w.localStorage.__proto__,'setItem',{configurable:true,value(){throw Error('quota');}});await prepare(w);await saveForm(w);assert.equal(w.MORAPortal.getState().messages.filter(m=>m.role==='receipt').length,0);assert.equal(w.localStorage.getItem('morada-portal-clean-20261011-v1'),null);assert.ok(w.MORAPortal.getState().messages.some(m=>m.role==='error'));}finally{w.close();}
+});
+
+test('portal language crosses the client/API boundary without translating customer messages',async()=>{
+ const seen=[];
+ const handler=createPortalChatHandler({converse:async(message,previous,navigation,timeout,context)=>{seen.push({message,language:context.language});return {state:previous,reply:'Test response',navigation:[],modelCalls:0};}});
+ const d=await dom(async(_u,o)=>{const response=await call(handler,JSON.parse(o.body));return {ok:response.status===200,json:async()=>response.body};});
+ try{const w=d.window;w.MORAPortal.open();for(const language of ['de','en','fr']){w.MoradaI18n.setLanguage(language);await w.MORAPortal.send('Meine Wohnung');}
+  assert.deepEqual(seen,[{message:'Meine Wohnung',language:'de'},{message:'Meine Wohnung',language:'en'},{message:'Meine Wohnung',language:'fr'}]);
+ }finally{d.window.close();}
+});
+
+test('model and reply instruction path includes the normalized language preference',async()=>{
+ for(const [language,name] of [['de','German'],['en','English'],['fr','French']]){
+  let instructions;const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:MODEL,createModel:()=>({})}),guard:async()=>{},generate:async o=>{instructions=o.instructions;return {output:plan([],{reply:'Test response',intent:'general',activeIssueRef:null}),usage:{},finalStep:{providerMetadata:{}}};}});
+  await service('Hello',hydrateSimple(null),['support'],45000,{language});assert.ok(instructions.includes('Preferred portal language: '+name));assert.ok(instructions.includes('explicitly requests a different language'));
+ }
 });

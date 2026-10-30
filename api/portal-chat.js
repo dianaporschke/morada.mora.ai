@@ -11,7 +11,7 @@ import {readPortalAccess,allowedPortalNavigation,accessCapabilities,readAuthoriz
 import {portalRoles,resolvePortalAudience} from '../lib/mora/portal/audience.js';
 
 const receipt=z.object({operationId:z.string().uuid(),issueId:z.string().uuid(),draftId:z.string().uuid(),revision:z.number().int().positive(),contentHash:z.string().regex(/^[a-f0-9]{64}$/),status:z.enum(['portal_received','error']),attachmentCount:z.number().int().min(0).max(3).optional(),conflictFields:z.array(z.enum(['title','description','unit','category'])).max(4).optional()}).strict();
-const schema=z.object({session:z.string().max(180000).optional(),message:z.string().trim().min(1).max(2000).optional(),messageId:z.string().uuid().optional(),action:z.enum(['save-issue','review-issue','switch-issue','draft-opened','draft-closed','draft-error','new-conversation']).optional(),issueId:z.string().uuid().optional(),receipt:receipt.optional(),navigation:z.array(z.enum(targets)).max(targets.length).default([]),viewRole:z.enum(portalRoles).optional()}).strict()
+const schema=z.object({language:z.enum(['de','en','fr']).default('de'),session:z.string().max(180000).optional(),message:z.string().trim().min(1).max(2000).optional(),messageId:z.string().uuid().optional(),action:z.enum(['save-issue','review-issue','switch-issue','draft-opened','draft-closed','draft-error','new-conversation']).optional(),issueId:z.string().uuid().optional(),receipt:receipt.optional(),navigation:z.array(z.enum(targets)).max(targets.length).default([]),viewRole:z.enum(portalRoles).optional()}).strict()
   .refine(v=>[v.message,v.action,v.receipt].filter(Boolean).length===1)
   .refine(v=>!v.message||Boolean(v.messageId));
 export const controls=portalControls;
@@ -77,7 +77,7 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
     state.portalJournal.push({role:'user',content:input.message,id:input.messageId});
     state.portalJournal=state.portalJournal.slice(-48);
     state.portalPending.push({content:input.message,id:input.messageId});
-    const result=await converse(message,before,navigation,45000,{...capabilities,audience});
+    const result=await converse(message,before,navigation,45000,{...capabilities,audience,language:input.language});
     const portalResult=result.portalQuery?await readAuthorizedCases(access,result.portalQuery):null;
     // Personal data never enters the signed (readable) conversation or model
     // history. Render the checked result separately and only for this request.

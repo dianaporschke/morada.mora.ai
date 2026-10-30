@@ -1,0 +1,5098 @@
+{
+  "Das Dokument erscheint wieder in der aktuellen Ablage.": {
+    "en": "The document appears in the current files again.",
+    "fr": "Le document figure à nouveau dans les dossiers courants."
+  },
+  "Dateien und Verlauf bleiben erhalten. Das Dokument ist im Archiv weiterhin auffindbar.": {
+    "en": "Files and history are retained. The document remains available in the archive.",
+    "fr": "Les fichiers et l’historique sont conservés. Le document reste accessible dans les archives."
+  },
+  "Dokument archiviert.": {
+    "en": "Document archived.",
+    "fr": "Document archivé."
+  },
+  "Dokument wiederhergestellt.": {
+    "en": "Document restored.",
+    "fr": "Document restauré."
+  },
+  "Bitte warten, bis alle Dateien eingelesen sind.": {
+    "en": "Please wait until all files have been read.",
+    "fr": "Veuillez patienter jusqu’à la lecture de tous les fichiers."
+  },
+  "Keine Änderungen.": {
+    "en": "No changes.",
+    "fr": "Aucune modification."
+  },
+  "Termin gespeichert. Die aktuellen Filter blenden ihn aus.": {
+    "en": "Appointment saved. It is hidden by the current filters.",
+    "fr": "Rendez-vous enregistré. Les filtres actuels le masquent."
+  },
+  "Eintrag gespeichert.": {
+    "en": "Entry saved.",
+    "fr": "Entrée enregistrée."
+  },
+  "Rückmeldung gespeichert.": {
+    "en": "Update saved.",
+    "fr": "Retour enregistré."
+  },
+  "Bitte Gebäude-, Heizungs- und Versicherungsangaben prüfen.": {
+    "en": "Please check the building, heating and insurance details.",
+    "fr": "Veuillez vérifier les informations sur le bâtiment, le chauffage et l’assurance."
+  },
+  "Bitte das Baujahr der Heizung vierstellig erfassen.": {
+    "en": "Please enter the heating system’s year of construction using four digits.",
+    "fr": "Veuillez saisir l’année de construction du chauffage sur quatre chiffres."
+  },
+  "Pro Liegenschaft sind höchstens 5’000 Geräte und Anlagen möglich.": {
+    "en": "Each property can have up to 5,000 appliances and installations.",
+    "fr": "Chaque immeuble peut comprendre au maximum 5’000 appareils et installations."
+  },
+  "Eine Anlagenkennung ist ungültig.": {
+    "en": "An installation ID is invalid.",
+    "fr": "Un identifiant d’installation n’est pas valide."
+  },
+  "Bitte die Anlagenangaben prüfen.": {
+    "en": "Please check the installation details.",
+    "fr": "Veuillez vérifier les informations de l’installation."
+  },
+  "Bitte Anlage und Anlagenart erfassen.": {
+    "en": "Please enter the installation and its type.",
+    "fr": "Veuillez saisir l’installation et son type."
+  },
+  "Bitte ein gültiges Anlagenbaujahr eingeben.": {
+    "en": "Please enter a valid installation year.",
+    "fr": "Veuillez saisir une année de construction valide pour l’installation."
+  },
+  "Bitte gültige Wartungsdaten eingeben.": {
+    "en": "Please enter valid maintenance dates.",
+    "fr": "Veuillez saisir des dates d’entretien valides."
+  },
+  "Die nächste Wartung muss nach der letzten Wartung liegen.": {
+    "en": "The next maintenance date must follow the last one.",
+    "fr": "La prochaine date d’entretien doit être postérieure à la précédente."
+  },
+  "Bitte die E-Mail-Adresse der Servicefirma prüfen.": {
+    "en": "Please check the service company’s email address.",
+    "fr": "Veuillez vérifier l’adresse e-mail de l’entreprise de maintenance."
+  },
+  "Ein Datum der Anlage ist ungültig.": {
+    "en": "An installation date is invalid.",
+    "fr": "Une date de l’installation n’est pas valide."
+  },
+  "Bitte das Baujahr der Heizung vierstellig eingeben.": {
+    "en": "Please enter the heating system’s year of construction using four digits.",
+    "fr": "Veuillez saisir l’année de construction du chauffage sur quatre chiffres."
+  },
+  "Technik & Versicherung · optional": {
+    "en": "Technical details & insurance · optional",
+    "fr": "Technique et assurance · facultatif"
+  },
+  "Parzelle / Grundstück": {
+    "en": "Plot / land",
+    "fr": "Parcelle / terrain"
+  },
+  "Heizung / Energieträger": {
+    "en": "Heating / energy source",
+    "fr": "Chauffage / source d’énergie"
+  },
+  "Policennummer": {
+    "en": "Policy number",
+    "fr": "Numéro de police"
+  },
+  "Versicherung · Kontakt / Schadenmeldung": {
+    "en": "Insurance · contact / claim reporting",
+    "fr": "Assurance · contact / déclaration de sinistre"
+  },
+  "Technische Hinweise / Notfallinformationen": {
+    "en": "Technical notes / emergency information",
+    "fr": "Notes techniques / informations d’urgence"
+  },
+  "Keine archivierten Anlagen": {
+    "en": "No archived installations",
+    "fr": "Aucune installation archivée"
+  },
+  "Noch keine Anlagen erfasst": {
+    "en": "No installations recorded yet",
+    "fr": "Aucune installation enregistrée"
+  },
+  "Heizung, Lift, Lüftung oder andere Anlagen mit Wartungsdaten und Servicekontakt erfassen.": {
+    "en": "Record heating, lifts, ventilation or other installations with maintenance dates and a service contact.",
+    "fr": "Enregistrez le chauffage, l’ascenseur, la ventilation ou d’autres installations avec leurs dates d’entretien et le contact de maintenance."
+  },
+  "Servicefirma": {
+    "en": "Service company",
+    "fr": "Entreprise de maintenance"
+  },
+  "Aktion": {
+    "en": "Action",
+    "fr": "Action"
+  },
+  "Zuletzt: {10}": {
+    "en": "Last: {10}",
+    "fr": "Dernier : {10}"
+  },
+  "Nächster Termin offen": {
+    "en": "Next date not set",
+    "fr": "Prochaine date à définir"
+  },
+  "Offene Aufgabe": {
+    "en": "Open task",
+    "fr": "Tâche en cours"
+  },
+  "Wartungsaufgabe ↗": {
+    "en": "Maintenance task ↗",
+    "fr": "Tâche d’entretien ↗"
+  },
+  "Anlagen und Wartungstermine": {
+    "en": "Installations and maintenance dates",
+    "fr": "Installations et dates d’entretien"
+  },
+  "Anlagen": {
+    "en": "Installations",
+    "fr": "Installations"
+  },
+  "Technik & Versicherung": {
+    "en": "Technical details & insurance",
+    "fr": "Technique et assurance"
+  },
+  "Servicekontakte und nächste Kontrollen je Anlage": {
+    "en": "Service contacts and next inspections for each installation",
+    "fr": "Contacts de maintenance et prochains contrôles par installation"
+  },
+  "Gerät erfassen": {
+    "en": "Add appliance",
+    "fr": "Ajouter un appareil"
+  },
+  "Anlagenbestand": {
+    "en": "Installation inventory",
+    "fr": "Parc d’installations"
+  },
+  "Aktive Anlagen": {
+    "en": "Active installations",
+    "fr": "Installations actives"
+  },
+  "Archivierte Anlagen": {
+    "en": "Archived installations",
+    "fr": "Installations archivées"
+  },
+  "Der Stand hat sich geändert. Bitte die Anlage erneut öffnen.": {
+    "en": "The data has changed. Please reopen the installation.",
+    "fr": "Les données ont changé. Veuillez rouvrir l’installation."
+  },
+  "Bitte die aktive Liegenschaft und Anlage erneut öffnen.": {
+    "en": "Please reopen the active property and installation.",
+    "fr": "Veuillez rouvrir l’immeuble actif et l’installation."
+  },
+  "Bitte das Anlagenbaujahr vierstellig eingeben.": {
+    "en": "Please enter the installation year using four digits.",
+    "fr": "Veuillez saisir l’année de construction de l’installation sur quatre chiffres."
+  },
+  "Eine Anlage mit diesem Namen und Standort ist bereits erfasst.": {
+    "en": "An installation with this name and location already exists.",
+    "fr": "Une installation portant ce nom existe déjà à cet emplacement."
+  },
+  "Gerät / Anlage": {
+    "en": "Appliance / installation",
+    "fr": "Appareil / installation"
+  },
+  "Für dieses Gerät bestehen offene Aufgaben oder Unterhaltsarbeiten. Bitte diese zuerst abschliessen.": {
+    "en": "This appliance has open tasks or maintenance work. Please complete them first.",
+    "fr": "Cet appareil comporte des tâches ou travaux d’entretien en cours. Veuillez d’abord les terminer."
+  },
+  "Eine aktive Anlage mit diesem Namen und Standort ist bereits erfasst.": {
+    "en": "An active installation with this name and location already exists.",
+    "fr": "Une installation active portant ce nom existe déjà à cet emplacement."
+  },
+  "Wartung:": {
+    "en": "Maintenance:",
+    "fr": "Entretien :"
+  },
+  "Standort:": {
+    "en": "Location:",
+    "fr": "Emplacement :"
+  },
+  "Servicefirma:": {
+    "en": "Service company:",
+    "fr": "Entreprise de maintenance :"
+  },
+  "Telefon:": {
+    "en": "Telephone:",
+    "fr": "Téléphone :"
+  },
+  "E-Mail:": {
+    "en": "Email:",
+    "fr": "E-mail :"
+  },
+  "Die hinterlegten Service- und Folgedaten prüfen.": {
+    "en": "Check the recorded service details and upcoming dates.",
+    "fr": "Vérifiez les informations de maintenance et les prochaines dates enregistrées."
+  },
+  "Anlagen & Wartung öffnen ↗": {
+    "en": "Open installations & maintenance ↗",
+    "fr": "Ouvrir les installations et l’entretien ↗"
+  },
+  "Anlage mit fälliger Wartung": {
+    "en": "Installation with maintenance due",
+    "fr": "Installation dont l’entretien est dû"
+  },
+  "Anlagen mit fälliger Wartung": {
+    "en": "Installations with maintenance due",
+    "fr": "Installations dont l’entretien est dû"
+  },
+  "Anlage wieder aktivieren?": {
+    "en": "Reactivate installation?",
+    "fr": "Réactiver l’installation ?"
+  },
+  "Anlage archivieren?": {
+    "en": "Archive installation?",
+    "fr": "Archiver l’installation ?"
+  },
+  "Alle Angaben bleiben erhalten. {1}": {
+    "en": "All details are retained. {1}",
+    "fr": "Toutes les informations sont conservées. {1}"
+  },
+  "Die Anlage erscheint wieder im aktiven Bestand.": {
+    "en": "The installation appears in the active inventory again.",
+    "fr": "L’installation figure à nouveau dans le parc actif."
+  },
+  "Offene Wartungsaufgaben müssen vorher erledigt sein.": {
+    "en": "Open maintenance tasks must be completed first.",
+    "fr": "Les tâches d’entretien en cours doivent d’abord être terminées."
+  },
+  "Anlage aktiviert.": {
+    "en": "Installation activated.",
+    "fr": "Installation activée."
+  },
+  "Anlage archiviert.": {
+    "en": "Installation archived.",
+    "fr": "Installation archivée."
+  },
+  "Anlage gespeichert.": {
+    "en": "Installation saved.",
+    "fr": "Installation enregistrée."
+  },
+  "MORADA kontaktieren": {
+    "en": "Contact MORADA",
+    "fr": "Contacter MORADA"
+  },
+  "Anliegen öffnen": {
+    "en": "Open requests",
+    "fr": "Ouvrir les demandes"
+  },
+  "Documents": {
+    "en": "Documents",
+    "fr": "Documents"
+  },
+  "Dokumente öffnen": {
+    "en": "Open documents",
+    "fr": "Ouvrir les documents"
+  },
+  "Finanzen öffnen": {
+    "en": "Open finances",
+    "fr": "Ouvrir les finances"
+  },
+  "Zahlungen öffnen": {
+    "en": "Open payments",
+    "fr": "Ouvrir les paiements"
+  },
+  "Kalender öffnen": {
+    "en": "Open calendar",
+    "fr": "Ouvrir le calendrier"
+  },
+  "Hilfe öffnen": {
+    "en": "Open help",
+    "fr": "Ouvrir l’aide"
+  },
+  "Direkt zum passenden Bereich.": {
+    "en": "Go straight to the right section.",
+    "fr": "Accédez directement à la bonne rubrique."
+  },
+  "Wie können wir Ihnen helfen?": {
+    "en": "How can we help you?",
+    "fr": "Comment pouvons-nous vous aider ?"
+  },
+  "Was möchtest du erledigen?": {
+    "en": "What would you like to do?",
+    "fr": "Que souhaitez-vous faire ?"
+  },
+  "Lokale Einträge entfernen?": {
+    "en": "Delete local entries?",
+    "fr": "Supprimer les entrées locales ?"
+  },
+  "Selbst erfasste Liegenschaften, Einheiten, Anliegen, Aufgaben, Termine, Dokumente, Unterhaltseinträge, Wartungspläne, Geräte, Unternehmenseinträge, Zahlungen, Vorlagen, Papierkorbeinträge, Belege und Aktivitäten werden von diesem Gerät gelöscht. Diese Aktion lässt sich nicht rückgängig machen.": {
+    "en": "Properties, units, requests, tasks, appointments, documents, maintenance entries, maintenance plans, appliances, business entries, payments, templates, deleted entries, receipts and activities you have recorded will be deleted from this device. This action cannot be undone.",
+    "fr": "Les immeubles, lots, demandes, tâches, rendez-vous, documents, travaux et plans d’entretien, appareils, écritures d’entreprise, paiements, modèles, éléments de la corbeille, justificatifs et activités que vous avez saisis seront supprimés de cet appareil. Cette action est irréversible."
+  },
+  "Vermietungsstand ergänzen": {
+    "en": "Complete letting status",
+    "fr": "Compléter la situation locative"
+  },
+  "Bestätigten Mietvertrag erfassen": {
+    "en": "Record confirmed lease",
+    "fr": "Enregistrer un bail confirmé"
+  },
+  "Vermietbarkeit vor Vertragsbeginn prüfen": {
+    "en": "Check letting availability before the lease starts",
+    "fr": "Vérifier la disponibilité à la location avant le début du bail"
+  },
+  "Alle Einheiten im Bestand": {
+    "en": "All units in the portfolio",
+    "fr": "Tous les lots du parc"
+  },
+  "Vertragsende innert 90 Tagen": {
+    "en": "Lease ending within 90 days",
+    "fr": "Fin de bail dans les 90 jours"
+  },
+  "Mit geplantem Mietvertrag": {
+    "en": "With a planned lease",
+    "fr": "Avec un bail prévu"
+  },
+  "{0} archivierte {1} in der Auswahl. Auch Einheiten archivierter Liegenschaften erscheinen hier.": {
+    "en": "{0} archived {1} in the selection. Units in archived properties also appear here.",
+    "fr": "{0} {1} archivés dans la sélection. Les lots d’immeubles archivés figurent également ici."
+  },
+  "Bestand öffnen ↗": {
+    "en": "Open portfolio ↗",
+    "fr": "Ouvrir le parc ↗"
+  },
+  "Einheiten nach Vermietung und Handlungsbedarf": {
+    "en": "Units by letting status and required action",
+    "fr": "Lots par situation locative et actions requises"
+  },
+  "innert 90 Tagen": {
+    "en": "within 90 days",
+    "fr": "Dans les 90 jours"
+  },
+  "archivierten Einheiten": {
+    "en": "archived units",
+    "fr": "Lots archivés"
+  },
+  "Einheiten im Bestand": {
+    "en": "units in the portfolio",
+    "fr": "Lots du parc"
+  },
+  "Nummer, Bezeichnung, Adresse oder Mieter …": {
+    "en": "Number, name, address or tenant …",
+    "fr": "Numéro, désignation, adresse ou locataire…"
+  },
+  "Zuständig für Liegenschaft": {
+    "en": "Responsible for property",
+    "fr": "Responsable de l’immeuble"
+  },
+  "Höchste Nettomiete / Zielmiete": {
+    "en": "Highest net rent / target rent",
+    "fr": "Loyer net / loyer cible le plus élevé"
+  },
+  "Einheitenbestand": {
+    "en": "Unit portfolio",
+    "fr": "Parc de lots"
+  },
+  "Stand {6} · Kennzahlen berücksichtigen Suche, Nutzung, Liegenschaft und Zuständigkeit. Vertragsmieten und Zielmieten sind gekennzeichnet.": {
+    "en": "As of {6} · Figures reflect the search, use, property and responsibility filters. Contractual and target rents are labelled.",
+    "fr": "État au {6} · Les indicateurs tiennent compte de la recherche, de l’affectation, de l’immeuble et du responsable. Les loyers contractuels et cibles sont identifiés."
+  },
+  "Einheiten.": {
+    "en": "Units.",
+    "fr": "Lots."
+  },
+  "Wohnungen, Gewerberäume, Parkplätze und weitere Mietobjekte.": {
+    "en": "Apartments, commercial premises, parking spaces and other rental units.",
+    "fr": "Appartements, locaux commerciaux, places de stationnement et autres objets locatifs."
+  },
+  "Auswertung exportieren": {
+    "en": "Export analysis",
+    "fr": "Exporter l’analyse"
+  },
+  "Erste Einheit erfassen.": {
+    "en": "Add your first unit.",
+    "fr": "Ajoutez votre premier lot."
+  },
+  "Keine archivierten Einheiten in dieser Auswahl.": {
+    "en": "No archived units in this selection.",
+    "fr": "Aucun lot archivé dans cette sélection."
+  },
+  "Keine passenden Einheiten.": {
+    "en": "No matching units.",
+    "fr": "Aucun lot correspondant."
+  },
+  "Ordnet jede Wohnung, Gewerbefläche oder jeden Parkplatz einer Liegenschaft zu. Mietverträge und Unterlagen ergänzt ihr im Dossier.": {
+    "en": "Assign each apartment, commercial space or parking space to a property. Add leases and documents in the dossier.",
+    "fr": "Rattachez chaque appartement, local commercial ou place de stationnement à un immeuble. Complétez ensuite les baux et documents dans le dossier."
+  },
+  "Passt eure Suche oder Filter an.": {
+    "en": "Adjust your search or filters.",
+    "fr": "Adaptez votre recherche ou vos filtres."
+  },
+  "Einheiten, Mietverhältnisse und Handlungsbedarf am {0}": {
+    "en": "Units, tenancies and required action as of {0}",
+    "fr": "Lots, locations et actions requises au {0}"
+  },
+  "Einheit / Liegenschaft": {
+    "en": "Unit / property",
+    "fr": "Lot / immeuble"
+  },
+  "Nutzung / Angaben": {
+    "en": "Use / details",
+    "fr": "Affectation / informations"
+  },
+  "Vermietung / Mietverhältnis": {
+    "en": "Letting / tenancy",
+    "fr": "Location / bail"
+  },
+  "Mietzins / Monat": {
+    "en": "Rent / month",
+    "fr": "Loyer / mois"
+  },
+  "Pendenzen / Hinweise": {
+    "en": "Open items / notes",
+    "fr": "Points en suspens / remarques"
+  },
+  "{13} · netto": {
+    "en": "{13} · net",
+    "fr": "{13} · net"
+  },
+  "Dossier ↗": {
+    "en": "Dossier ↗",
+    "fr": "Dossier ↗"
+  },
+  "Weitere Angaben noch offen": {
+    "en": "Further details still pending",
+    "fr": "Informations complémentaires à renseigner"
+  },
+  "Ohne bestätigten Mietvertrag": {
+    "en": "No confirmed lease",
+    "fr": "Sans bail confirmé"
+  },
+  "Kein laufender Mietvertrag": {
+    "en": "No current lease",
+    "fr": "Aucun bail en cours"
+  },
+  "Vertragsende {1}": {
+    "en": "Lease ends {1}",
+    "fr": "Fin du bail le {1}"
+  },
+  "Neuer Vertrag ab {0}": {
+    "en": "New lease from {0}",
+    "fr": "Nouveau bail dès le {0}"
+  },
+  "Zielmiete": {
+    "en": "Target rent",
+    "fr": "Loyer cible"
+  },
+  "Vertragsmiete": {
+    "en": "Contractual rent",
+    "fr": "Loyer contractuel"
+  },
+  "Manuelle Angabe": {
+    "en": "Manual entry",
+    "fr": "Saisie manuelle"
+  },
+  "NK {0}": {
+    "en": "Charges {0}",
+    "fr": "Charges {0}"
+  },
+  "{1} offen{2}": {
+    "en": "{1} open{2}",
+    "fr": "{1} en cours{2}"
+  },
+  "überfällig": {
+    "en": "overdue",
+    "fr": "En retard"
+  },
+  "Dossier öffnen:": {
+    "en": "Open dossier:",
+    "fr": "Ouvrir le dossier :"
+  },
+  "Zuständig: {7}": {
+    "en": "Responsible: {7}",
+    "fr": "Responsable : {7}"
+  },
+  "{11} / Monat": {
+    "en": "{11} / month",
+    "fr": "{11} / mois"
+  },
+  "Vertragsende {0}": {
+    "en": "Lease ends {0}",
+    "fr": "Fin du bail le {0}"
+  },
+  "Nächster Mietbeginn {0}": {
+    "en": "Next tenancy starts {0}",
+    "fr": "Prochain début de bail le {0}"
+  },
+  "Vertragsmiete · Nebenkosten": {
+    "en": "Contractual rent · service charges",
+    "fr": "Loyer contractuel · charges"
+  },
+  "Manuelle Angabe · ohne Nebenkosten": {
+    "en": "Manual entry · excluding service charges",
+    "fr": "Saisie manuelle · hors charges"
+  },
+  "{1} offene {2}{3} ↗": {
+    "en": "{1} open {2}{3} ↗",
+    "fr": "{1} {2}{3} en cours ↗"
+  },
+  "Pendenz": {
+    "en": "Open item",
+    "fr": "Point en suspens"
+  },
+  "Dossier öffnen": {
+    "en": "Open dossier",
+    "fr": "Ouvrir le dossier"
+  },
+  "Mietvertrag ↗": {
+    "en": "Lease ↗",
+    "fr": "Bail ↗"
+  },
+  "Vertrag endet am {0}. Der nächste bestätigte Vertrag beginnt am {1}.{2}": {
+    "en": "The lease ends on {0}. The next confirmed lease starts on {1}.{2}",
+    "fr": "Le bail se termine le {0}. Le prochain bail confirmé commence le {1}.{2}"
+  },
+  "Dazwischen besteht eine Vertragslücke.": {
+    "en": "There is a gap between the leases.",
+    "fr": "Une période sans bail les sépare."
+  },
+  "Vertrag endet am {0}. Ab {1} ist kein bestätigter Anschlussvertrag erfasst.": {
+    "en": "The lease ends on {0}. No confirmed follow-on lease is recorded from {1}.",
+    "fr": "Le bail se termine le {0}. Aucun bail suivant confirmé n’est enregistré dès le {1}."
+  },
+  "Nächster bestätigter Mietbeginn:": {
+    "en": "Next confirmed tenancy start:",
+    "fr": "Prochain début de bail confirmé :"
+  },
+  "Einheit & Zuordnung": {
+    "en": "Unit & assignment",
+    "fr": "Lot et rattachement"
+  },
+  "Aktuelles Mietverhältnis": {
+    "en": "Current tenancy",
+    "fr": "Location actuelle"
+  },
+  "Arbeit an dieser Einheit": {
+    "en": "Work on this unit",
+    "fr": "Travaux concernant ce lot"
+  },
+  "Fläche": {
+    "en": "Floor area",
+    "fr": "Surface"
+  },
+  "Liegenschaft öffnen": {
+    "en": "Open property",
+    "fr": "Ouvrir l’immeuble"
+  },
+  "Mietvertrag öffnen ↗": {
+    "en": "Open lease ↗",
+    "fr": "Ouvrir le bail ↗"
+  },
+  "Vermietung und Mietzins sind manuell erfasst. Der bestätigte Mietvertrag fehlt.": {
+    "en": "Letting status and rent were entered manually. The confirmed lease is missing.",
+    "fr": "La situation locative et le loyer ont été saisis manuellement. Le bail confirmé manque."
+  },
+  "Für heute ist kein laufender Mietvertrag erfasst.": {
+    "en": "No current lease is recorded for today.",
+    "fr": "Aucun bail en cours n’est enregistré à ce jour."
+  },
+  "Quelle": {
+    "en": "Source",
+    "fr": "Source"
+  },
+  "Bestätigter Mietvertrag": {
+    "en": "Confirmed lease",
+    "fr": "Bail confirmé"
+  },
+  "Datierter Leerstand / Zielmiete": {
+    "en": "Dated vacancy / target rent",
+    "fr": "Vacance datée / loyer cible"
+  },
+  "Vertragsverlauf / Zielmiete": {
+    "en": "Lease history / target rent",
+    "fr": "Historique des baux / loyer cible"
+  },
+  "Manuelle Angaben": {
+    "en": "Manual details",
+    "fr": "Informations manuelles"
+  },
+  "Ohne datierten Verlauf nicht ausgewiesen": {
+    "en": "Not shown without a dated history",
+    "fr": "Non indiqué sans historique daté"
+  },
+  "Sollbrutto / Monat": {
+    "en": "Gross rent due / month",
+    "fr": "Loyer brut dû / mois"
+  },
+  "Nicht festgelegt": {
+    "en": "Not specified",
+    "fr": "Non défini"
+  },
+  "{1} · ab {2}": {
+    "en": "{1} · from {2}",
+    "fr": "{1} · dès le {2}"
+  },
+  "Nächster Vertrag ·": {
+    "en": "Next lease ·",
+    "fr": "Prochain bail ·"
+  },
+  "Mietverträge & Verlauf": {
+    "en": "Leases & history",
+    "fr": "Baux et historique"
+  },
+  "{0} verknüpfte {1} · Mietzinsverlauf im jeweiligen Vertrag": {
+    "en": "{0} linked {1} · rent history in each lease",
+    "fr": "{0} {1} liés · historique des loyers dans chaque bail"
+  },
+  "Alle Verträge": {
+    "en": "All leases",
+    "fr": "Tous les baux"
+  },
+  "Vertrag / Mieter": {
+    "en": "Lease / tenant",
+    "fr": "Bail / locataire"
+  },
+  "Unterlagen": {
+    "en": "Documents",
+    "fr": "Documents"
+  },
+  "Kündigung erhalten: {0}": {
+    "en": "Notice received: {0}",
+    "fr": "Résiliation reçue : {0}"
+  },
+  "Keine Dateien": {
+    "en": "No files",
+    "fr": "Aucun fichier"
+  },
+  "Keine Mietverträge in dieser Ansicht.": {
+    "en": "No leases in this view.",
+    "fr": "Aucun bail dans cette vue."
+  },
+  "Erfasst den ersten Vertrag oder passt den Filter an.": {
+    "en": "Record the first lease or adjust the filter.",
+    "fr": "Enregistrez le premier bail ou adaptez le filtre."
+  },
+  "Unterhalt erfassen": {
+    "en": "Add maintenance work",
+    "fr": "Ajouter des travaux d’entretien"
+  },
+  "Pendenzen dieser Einheit": {
+    "en": "Open items for this unit",
+    "fr": "Points en suspens pour ce lot"
+  },
+  "Keine Pendenzen in dieser Ansicht.": {
+    "en": "No open items in this view.",
+    "fr": "Aucun point en suspens dans cette vue."
+  },
+  "Hier erscheinen Aufgaben, Anliegen, Unterhalt und Wartungen dieser Einheit.": {
+    "en": "Tasks, requests, maintenance work and services for this unit appear here.",
+    "fr": "Les tâches, demandes, travaux et entretiens de ce lot figurent ici."
+  },
+  "Allgemeine Gebäudeunterlagen findet ihr im Liegenschaftsdossier.": {
+    "en": "General building documents are in the property dossier.",
+    "fr": "Les documents généraux du bâtiment se trouvent dans le dossier de l’immeuble."
+  },
+  "Unterlagen dieser Einheit": {
+    "en": "Documents for this unit",
+    "fr": "Documents de ce lot"
+  },
+  "Keine Dokumente in dieser Ansicht.": {
+    "en": "No documents in this view.",
+    "fr": "Aucun document dans cette vue."
+  },
+  "Erfasst eine Unterlage für diese Einheit oder passt Suche und Ablage an.": {
+    "en": "Add a document for this unit or adjust the search and filing filters.",
+    "fr": "Ajoutez un document pour ce lot ou adaptez la recherche et les filtres de classement."
+  },
+  "Einheit nicht gefunden.": {
+    "en": "Unit not found.",
+    "fr": "Lot introuvable."
+  },
+  "Öffnet die gewünschte Einheit über den Einheitenbestand.": {
+    "en": "Open the unit you want from the unit portfolio.",
+    "fr": "Ouvrez le lot souhaité depuis le parc de lots."
+  },
+  "Einheiten öffnen": {
+    "en": "Open units",
+    "fr": "Ouvrir les lots"
+  },
+  "· Stand {4}": {
+    "en": "· As of {4}",
+    "fr": "· État au {4}"
+  },
+  "Einheitendossier": {
+    "en": "Unit dossier",
+    "fr": "Dossier du lot"
+  },
+  "Die zugehörige Liegenschaft ist archiviert.": {
+    "en": "The related property is archived.",
+    "fr": "L’immeuble associé est archivé."
+  },
+  "Diese Einheit ist archiviert.": {
+    "en": "This unit is archived.",
+    "fr": "Ce lot est archivé."
+  },
+  "Nettomiete / Zielmiete CHF": {
+    "en": "Net rent / target rent CHF",
+    "fr": "Loyer net / loyer cible CHF"
+  },
+  "Mietzinsart": {
+    "en": "Rent type",
+    "fr": "Type de loyer"
+  },
+  "Nebenkosten CHF": {
+    "en": "Service charges CHF",
+    "fr": "Charges CHF"
+  },
+  "Bruttomiete CHF": {
+    "en": "Gross rent CHF",
+    "fr": "Loyer brut CHF"
+  },
+  "Überfällige Pendenzen": {
+    "en": "Overdue items",
+    "fr": "Points en suspens en retard"
+  },
+  "Beauftragt": {
+    "en": "Commissioned",
+    "fr": "Commandé"
+  },
+  "Reparatur": {
+    "en": "Repair",
+    "fr": "Réparation"
+  },
+  "Ersatz": {
+    "en": "Replacement",
+    "fr": "Remplacement"
+  },
+  "Kontrolle": {
+    "en": "Inspection",
+    "fr": "Contrôle"
+  },
+  "Renovation": {
+    "en": "Renovation",
+    "fr": "Rénovation"
+  },
+  "Reinigung": {
+    "en": "Cleaning",
+    "fr": "Nettoyage"
+  },
+  "Weitere Arbeiten": {
+    "en": "Other work",
+    "fr": "Autres travaux"
+  },
+  "Alle Geräte & Anlagen": {
+    "en": "All appliances & installations",
+    "fr": "Tous les appareils et installations"
+  },
+  "Alle Wartungen": {
+    "en": "All scheduled maintenance",
+    "fr": "Tous les entretiens planifiés"
+  },
+  "Alle Unterhaltseinträge": {
+    "en": "All maintenance entries",
+    "fr": "Tous les travaux d’entretien"
+  },
+  "Allgemeiner Gebäudeunterhalt": {
+    "en": "General building maintenance",
+    "fr": "Entretien général du bâtiment"
+  },
+  "Geräte & Anlagen der Einheiten": {
+    "en": "Appliances & installations in units",
+    "fr": "Appareils et installations des lots"
+  },
+  "Wartungen der Einheiten": {
+    "en": "Scheduled maintenance for units",
+    "fr": "Entretiens planifiés des lots"
+  },
+  "Unterhalt der Einheiten": {
+    "en": "Maintenance work in units",
+    "fr": "Travaux d’entretien des lots"
+  },
+  "Das Wartungsintervall muss eine ganze Zahl von 0 bis 120 Monaten sein.": {
+    "en": "The maintenance interval must be a whole number from 0 to 120 months.",
+    "fr": "L’intervalle d’entretien doit être un nombre entier compris entre 0 et 120 mois."
+  },
+  "Liegenschaft, Einheit und Gerät müssen zusammengehören.": {
+    "en": "The property, unit and appliance must belong together.",
+    "fr": "L’immeuble, le lot et l’appareil doivent correspondre."
+  },
+  "Bitte die zusätzlichen Geräteangaben prüfen.": {
+    "en": "Please check the additional appliance details.",
+    "fr": "Veuillez vérifier les informations complémentaires de l’appareil."
+  },
+  "Die Geräteeinheit gehört nicht zur Liegenschaft.": {
+    "en": "The appliance’s unit does not belong to this property.",
+    "fr": "Le lot de l’appareil n’appartient pas à cet immeuble."
+  },
+  "Bitte Einbau- und Garantiedatum prüfen.": {
+    "en": "Please check the installation and warranty dates.",
+    "fr": "Veuillez vérifier les dates d’installation et de garantie."
+  },
+  "Das Garantieende darf nicht vor dem Einbau liegen.": {
+    "en": "The warranty must not end before installation.",
+    "fr": "La garantie ne peut pas se terminer avant l’installation."
+  },
+  "Das Intervall muss zwischen 0 und 120 Monaten liegen.": {
+    "en": "The interval must be between 0 and 120 months.",
+    "fr": "L’intervalle doit être compris entre 0 et 120 mois."
+  },
+  "Ungültiger oder zu grosser Unterhaltsbestand.": {
+    "en": "Invalid or oversized maintenance inventory.",
+    "fr": "Le registre d’entretien est invalide ou trop volumineux."
+  },
+  "Bitte Titel und eindeutige Kennung prüfen.": {
+    "en": "Please check the title and unique ID.",
+    "fr": "Veuillez vérifier le titre et l’identifiant unique."
+  },
+  "Eine Unterhaltsangabe fehlt oder ist zu lang.": {
+    "en": "A maintenance detail is missing or too long.",
+    "fr": "Une information d’entretien manque ou est trop longue."
+  },
+  "Die zuständige Person im Verlauf fehlt.": {
+    "en": "The person responsible is missing from the history.",
+    "fr": "Le responsable manque dans l’historique."
+  },
+  "Der Änderungsverlauf ist ungültig oder voll.": {
+    "en": "The change history is invalid or full.",
+    "fr": "L’historique des modifications est invalide ou plein."
+  },
+  "Ein Unterhaltsverlauf ist ungültig.": {
+    "en": "A maintenance history is invalid.",
+    "fr": "Un historique d’entretien est invalide."
+  },
+  "Bitte letzte und nächste Wartung prüfen.": {
+    "en": "Please check the last and next maintenance dates.",
+    "fr": "Veuillez vérifier les dates du dernier et du prochain entretien."
+  },
+  "Bitte die Unterhaltsangaben prüfen.": {
+    "en": "Please check the maintenance details.",
+    "fr": "Veuillez vérifier les informations d’entretien."
+  },
+  "Bitte Raum / Bauteil und Ausführungsbeginn prüfen.": {
+    "en": "Please check the room / component and work start date.",
+    "fr": "Veuillez vérifier la pièce / l’élément et le début des travaux."
+  },
+  "Der Ausführungsbeginn ist ungültig.": {
+    "en": "The work start date is invalid.",
+    "fr": "La date de début des travaux est invalide."
+  },
+  "Das Ende der Ausführung darf nicht vor dem Beginn liegen.": {
+    "en": "Work cannot end before it starts.",
+    "fr": "La fin des travaux ne peut pas précéder leur début."
+  },
+  "Tatsächliche Ausführungsdaten dürfen nicht in der Zukunft liegen.": {
+    "en": "Actual work dates cannot be in the future.",
+    "fr": "Les dates d’exécution réelles ne peuvent pas être futures."
+  },
+  "Bitte Art, Status und Zuständigkeit prüfen.": {
+    "en": "Please check the type, status and responsibility.",
+    "fr": "Veuillez vérifier le type, le statut et le responsable."
+  },
+  "Ein Unterhaltsdatum ist ungültig.": {
+    "en": "A maintenance date is invalid.",
+    "fr": "Une date d’entretien est invalide."
+  },
+  "Das Ausführungsdatum gehört zu einem erledigten Eintrag.": {
+    "en": "The execution date belongs to a completed entry.",
+    "fr": "La date d’exécution concerne une entrée terminée."
+  },
+  "Bitte die Stornierung begründen.": {
+    "en": "Please give a reason for the cancellation.",
+    "fr": "Veuillez indiquer le motif de l’annulation."
+  },
+  "Bitte gültige CHF-Beträge erfassen.": {
+    "en": "Please enter valid CHF amounts.",
+    "fr": "Veuillez saisir des montants en CHF valides."
+  },
+  "Offene Unterhaltseinträge dürfen nicht archiviert werden.": {
+    "en": "Open maintenance entries cannot be archived.",
+    "fr": "Les travaux d’entretien en cours ne peuvent pas être archivés."
+  },
+  "Das verknüpfte Anliegen gehört nicht zur gewählten Zuordnung.": {
+    "en": "The linked request does not match the selected assignment.",
+    "fr": "La demande liée ne correspond pas au rattachement sélectionné."
+  },
+  "Der verknüpfte Wartungstermin ist ungültig.": {
+    "en": "The linked maintenance date is invalid.",
+    "fr": "La date d’entretien liée est invalide."
+  },
+  "Das Wartungsgerät wurde nicht gefunden.": {
+    "en": "The appliance to be maintained was not found.",
+    "fr": "L’appareil à entretenir est introuvable."
+  },
+  "Der Wartungsplan gehört nicht zu dieser Zuordnung.": {
+    "en": "The maintenance plan does not match this assignment.",
+    "fr": "Le plan d’entretien ne correspond pas à ce rattachement."
+  },
+  "Die Unterhaltsnummer ist bereits vergeben.": {
+    "en": "The maintenance number is already in use.",
+    "fr": "Le numéro d’entretien est déjà attribué."
+  },
+  "Dieser Wartungstermin ist bereits als Unterhalt erfasst.": {
+    "en": "This maintenance date is already recorded as a maintenance entry.",
+    "fr": "Cette échéance est déjà enregistrée comme travaux d’entretien."
+  },
+  "Gerät": {
+    "en": "Appliance",
+    "fr": "Appareil"
+  },
+  "Verknüpfte Firma": {
+    "en": "Linked company",
+    "fr": "Entreprise liée"
+  },
+  "Handwerker / Servicefirma": {
+    "en": "Contractor / service company",
+    "fr": "Artisan / entreprise de maintenance"
+  },
+  "Erfasst am": {
+    "en": "Recorded on",
+    "fr": "Enregistré le"
+  },
+  "Ausführung von": {
+    "en": "Work from",
+    "fr": "Exécution du"
+  },
+  "Ausführung bis": {
+    "en": "Work until",
+    "fr": "Exécution au"
+  },
+  "Raum / Bauteil": {
+    "en": "Room / component",
+    "fr": "Pièce / élément"
+  },
+  "Kosten geschätzt · Rappen": {
+    "en": "Estimated cost · centimes",
+    "fr": "Coût estimé · centimes"
+  },
+  "Kosten effektiv · Rappen": {
+    "en": "Actual cost · centimes",
+    "fr": "Coût effectif · centimes"
+  },
+  "Beleg / Rechnungsnummer": {
+    "en": "Receipt / invoice number",
+    "fr": "Justificatif / numéro de facture"
+  },
+  "Letzte Wartung": {
+    "en": "Last maintenance",
+    "fr": "Dernier entretien"
+  },
+  "Nächste Wartung": {
+    "en": "Next maintenance",
+    "fr": "Prochain entretien"
+  },
+  "Intervall · Monate": {
+    "en": "Interval · months",
+    "fr": "Intervalle · mois"
+  },
+  "Bitte eine aktive Liegenschaft, Einheit und Anlage auswählen.": {
+    "en": "Please select an active property, unit and installation.",
+    "fr": "Veuillez sélectionner un immeuble, un lot et une installation actifs."
+  },
+  "Der Stand hat sich geändert. Bitte den Unterhaltseintrag erneut öffnen.": {
+    "en": "The data has changed. Please reopen the maintenance entry.",
+    "fr": "Les données ont changé. Veuillez rouvrir les travaux d’entretien."
+  },
+  "Bitte den Eintrag zuerst öffnen oder aus dem Archiv wiederherstellen.": {
+    "en": "Please open the entry first or restore it from the archive.",
+    "fr": "Veuillez d’abord ouvrir l’entrée ou la restaurer depuis les archives."
+  },
+  "Bitte Liegenschaft, Einheit und Gerät zuerst aktivieren.": {
+    "en": "Please activate the property, unit and appliance first.",
+    "fr": "Veuillez d’abord activer l’immeuble, le lot et l’appareil."
+  },
+  "Eine erledigte Arbeit kann kein zukünftiges Ausführungsdatum haben.": {
+    "en": "Completed work cannot have a future execution date.",
+    "fr": "Des travaux terminés ne peuvent pas avoir une date d’exécution future."
+  },
+  "Die Zuordnung eines Wartungstermins bleibt erhalten. Für einen anderen Vorgang einen neuen Eintrag erfassen.": {
+    "en": "The assignment of a maintenance date is retained. Create a new entry for a different operation.",
+    "fr": "Le rattachement d’une échéance d’entretien est conservé. Créez une nouvelle entrée pour une autre intervention."
+  },
+  "Diese Wartung hat den Plan bereits fortgeschrieben. Korrigiert die Angaben hier und den nächsten Termin im Wartungsplan.": {
+    "en": "This maintenance has already updated the plan. Correct the details here and the next date in the maintenance plan.",
+    "fr": "Cet entretien a déjà mis à jour le plan. Corrigez les informations ici et la prochaine date dans le plan d’entretien."
+  },
+  "Das verknüpfte Anliegen ist abgeschlossen. Bitte zuerst das Anliegen wieder öffnen.": {
+    "en": "The linked request is closed. Please reopen it first.",
+    "fr": "La demande liée est clôturée. Veuillez d’abord la rouvrir."
+  },
+  "Zu diesem Anliegen besteht bereits ein Unterhaltseintrag. Bitte diesen öffnen.": {
+    "en": "A maintenance entry already exists for this request. Please open it.",
+    "fr": "Des travaux d’entretien existent déjà pour cette demande. Veuillez les ouvrir."
+  },
+  "Der Wartungsplan hat sich geändert. Bitte den aktuellen Termin prüfen.": {
+    "en": "The maintenance plan has changed. Please check the current date.",
+    "fr": "Le plan d’entretien a changé. Veuillez vérifier la date actuelle."
+  },
+  "Die Ausführung liegt vor der zuletzt erfassten Wartung.": {
+    "en": "The execution date precedes the last recorded maintenance.",
+    "fr": "La date d’exécution précède le dernier entretien enregistré."
+  },
+  "Der nächste Termin muss nach der Ausführung liegen.": {
+    "en": "The next date must follow the execution date.",
+    "fr": "La prochaine date doit être postérieure à l’exécution."
+  },
+  "Wartung ausgeführt ·": {
+    "en": "Maintenance completed ·",
+    "fr": "Entretien effectué ·"
+  },
+  "Der zugehörige Wartungsplan wurde nicht gefunden. Bitte die Geräte- oder Planangaben prüfen.": {
+    "en": "The related maintenance plan was not found. Please check the appliance or plan details.",
+    "fr": "Le plan d’entretien associé est introuvable. Veuillez vérifier les informations de l’appareil ou du plan."
+  },
+  "Die korrigierte Ausführung liegt am oder nach dem nächsten Wartungstermin. Bitte zuerst den Folgetermin im Wartungsplan anpassen.": {
+    "en": "The corrected execution date is on or after the next maintenance date. Please adjust the following date in the maintenance plan first.",
+    "fr": "La date d’exécution corrigée coïncide avec le prochain entretien ou le suit. Veuillez d’abord adapter la prochaine échéance dans le plan d’entretien."
+  },
+  "Ausführungsdatum korrigiert ·": {
+    "en": "Execution date corrected ·",
+    "fr": "Date d’exécution corrigée ·"
+  },
+  "Zum Anliegen bestehen weitere offene Unterhaltsarbeiten. Bitte diese zuerst abschliessen.": {
+    "en": "There is other open maintenance work for this request. Please complete it first.",
+    "fr": "D’autres travaux d’entretien sont en cours pour cette demande. Veuillez d’abord les terminer."
+  },
+  "Erledigt mit": {
+    "en": "Completed with",
+    "fr": "Terminé avec"
+  },
+  "Der Stand hat sich geändert. Bitte den Wartungsplan erneut öffnen.": {
+    "en": "The data has changed. Please reopen the maintenance plan.",
+    "fr": "Les données ont changé. Veuillez rouvrir le plan d’entretien."
+  },
+  "Wartungsplan nicht gefunden.": {
+    "en": "Maintenance plan not found.",
+    "fr": "Plan d’entretien introuvable."
+  },
+  "Zu diesem Plan besteht bereits eine Historie. Seine Zuordnung bleibt erhalten.": {
+    "en": "This plan already has a history. Its assignment is retained.",
+    "fr": "Ce plan possède déjà un historique. Son rattachement est conservé."
+  },
+  "Wartungsplan": {
+    "en": "Maintenance plan",
+    "fr": "Plan d’entretien"
+  },
+  "Bitte den aktuellen Eintrag erneut öffnen.": {
+    "en": "Please reopen the current entry.",
+    "fr": "Veuillez rouvrir l’entrée actuelle."
+  },
+  "Bitte den Unterhalt zuerst erledigen oder begründet stornieren.": {
+    "en": "Please complete the maintenance first or cancel it with a reason.",
+    "fr": "Veuillez d’abord terminer les travaux d’entretien ou les annuler en indiquant un motif."
+  },
+  "Für diesen Plan besteht noch ein offener Unterhaltseintrag.": {
+    "en": "There is still an open maintenance entry for this plan.",
+    "fr": "Des travaux d’entretien sont encore en cours pour ce plan."
+  },
+  "Bitte die zugehörige Liegenschaft, Einheit und Anlage zuerst aktivieren.": {
+    "en": "Please activate the related property, unit and installation first.",
+    "fr": "Veuillez d’abord activer l’immeuble, le lot et l’installation associés."
+  },
+  "Gesamte Liegenschaft": {
+    "en": "Entire property",
+    "fr": "Tout l’immeuble"
+  },
+  "Beginn:": {
+    "en": "Start:",
+    "fr": "Début :"
+  },
+  "Seit": {
+    "en": "Since",
+    "fr": "Depuis"
+  },
+  "Ausgeführt": {
+    "en": "Completed",
+    "fr": "Effectué"
+  },
+  "Seite {5} / {6}": {
+    "en": "Page {5} / {6}",
+    "fr": "Page {5} / {6}"
+  },
+  "Unterhalt durchblättern": {
+    "en": "Browse maintenance",
+    "fr": "Parcourir les travaux d’entretien"
+  },
+  "Einträge pro Seite": {
+    "en": "Entries per page",
+    "fr": "Entrées par page"
+  },
+  "Noch kein Unterhalt erfasst": {
+    "en": "No maintenance work recorded yet",
+    "fr": "Aucun travail d’entretien enregistré"
+  },
+  "Noch keine Geräte oder Anlagen": {
+    "en": "No appliances or installations yet",
+    "fr": "Aucun appareil ni installation"
+  },
+  "Noch keine Wartungen geplant": {
+    "en": "No maintenance scheduled yet",
+    "fr": "Aucun entretien planifié"
+  },
+  "Erfasst Arbeiten mit ihrer Zuordnung, Zuständigkeit und den vorhandenen Belegen.": {
+    "en": "Record work with its assignment, person responsible and available receipts.",
+    "fr": "Enregistrez les travaux avec leur rattachement, leur responsable et les justificatifs disponibles."
+  },
+  "Geräte aus den Liegenschaften erscheinen hier automatisch.": {
+    "en": "Appliances from the properties appear here automatically.",
+    "fr": "Les appareils des immeubles apparaissent automatiquement ici."
+  },
+  "Plant wiederkehrende Arbeiten oder hinterlegt beim Gerät den nächsten Servicetermin.": {
+    "en": "Plan recurring work or record the next service date for the appliance.",
+    "fr": "Planifiez les travaux récurrents ou enregistrez la prochaine date d’entretien de l’appareil."
+  },
+  "Zuständig / Firma": {
+    "en": "Responsible / company",
+    "fr": "Responsable / entreprise"
+  },
+  "Kosten effektiv": {
+    "en": "Actual cost",
+    "fr": "Coût effectif"
+  },
+  "· Hohe Priorität": {
+    "en": "· High priority",
+    "fr": "· Priorité élevée"
+  },
+  "Firma noch offen": {
+    "en": "Company not yet specified",
+    "fr": "Entreprise à définir"
+  },
+  "Geschätzt:": {
+    "en": "Estimated:",
+    "fr": "Estimation :"
+  },
+  "Keine Schätzung": {
+    "en": "No estimate",
+    "fr": "Aucune estimation"
+  },
+  "Hersteller / Modell": {
+    "en": "Manufacturer / model",
+    "fr": "Fabricant / modèle"
+  },
+  "Garantie bis": {
+    "en": "Warranty until",
+    "fr": "Garantie jusqu’au"
+  },
+  "· SN": {
+    "en": "· SN",
+    "fr": "· N° de série"
+  },
+  "Abgelaufen": {
+    "en": "Expired",
+    "fr": "Expiré"
+  },
+  "Geräte und Anlagen": {
+    "en": "Appliances and installations",
+    "fr": "Appareils et installations"
+  },
+  "Wartung / Kontrolle": {
+    "en": "Maintenance / inspection",
+    "fr": "Entretien / contrôle"
+  },
+  "Letzte Ausführung": {
+    "en": "Last execution",
+    "fr": "Dernière exécution"
+  },
+  "Nächster Termin": {
+    "en": "Next date",
+    "fr": "Prochaine date"
+  },
+  "Monate": {
+    "en": "Months",
+    "fr": "Mois"
+  },
+  "Termin manuell festlegen": {
+    "en": "Set date manually",
+    "fr": "Définir la date manuellement"
+  },
+  "Ausführung öffnen": {
+    "en": "Open execution",
+    "fr": "Ouvrir l’exécution"
+  },
+  "Unterhalt öffnen": {
+    "en": "Open maintenance",
+    "fr": "Ouvrir l’entretien"
+  },
+  "Termin festlegen": {
+    "en": "Set date",
+    "fr": "Définir une date"
+  },
+  "Termin / Ausführung": {
+    "en": "Date / execution",
+    "fr": "Date / exécution"
+  },
+  "Alle aktuellen Einträge": {
+    "en": "All current entries",
+    "fr": "Toutes les entrées courantes"
+  },
+  "Aktiver Bestand": {
+    "en": "Active inventory",
+    "fr": "Parc actif"
+  },
+  "Offene Arbeiten": {
+    "en": "Open work",
+    "fr": "Travaux en cours"
+  },
+  "Erledigt / storniert": {
+    "en": "Completed / cancelled",
+    "fr": "Terminés / annulés"
+  },
+  "Fällig bis heute": {
+    "en": "Due by today",
+    "fr": "Échus à ce jour"
+  },
+  "Heute bis in 30 Tagen": {
+    "en": "Today through the next 30 days",
+    "fr": "D’aujourd’hui aux 30 prochains jours"
+  },
+  "Unterhalt durchsuchen": {
+    "en": "Search maintenance",
+    "fr": "Rechercher des travaux d’entretien"
+  },
+  "Weitere Filter{8}": {
+    "en": "More filters{8}",
+    "fr": "Autres filtres{8}"
+  },
+  "Titel, Raum, Bauteil, Firma oder Adresse …": {
+    "en": "Title, room, component, company or address …",
+    "fr": "Titre, pièce, élément, entreprise ou adresse…"
+  },
+  "Alle Einheiten / Allgemein": {
+    "en": "All units / general",
+    "fr": "Tous les lots / général"
+  },
+  "Alle Geräte / allgemeine Arbeiten": {
+    "en": "All appliances / general work",
+    "fr": "Tous les appareils / travaux généraux"
+  },
+  "Zuletzt bearbeitet": {
+    "en": "Last edited",
+    "fr": "Dernière modification"
+  },
+  "Bezeichnung A–Z": {
+    "en": "Name A–Z",
+    "fr": "Désignation A–Z"
+  },
+  "· aktiv": {
+    "en": "· active",
+    "fr": "· actif"
+  },
+  "Alle Personen": {
+    "en": "All people",
+    "fr": "Toutes les personnes"
+  },
+  "Alle Arbeiten": {
+    "en": "All work",
+    "fr": "Tous les travaux"
+  },
+  "Jahr · Ausführung / Erfassung": {
+    "en": "Year · execution / recording",
+    "fr": "Année · exécution / saisie"
+  },
+  "Alle Jahre": {
+    "en": "All years",
+    "fr": "Toutes les années"
+  },
+  "Geplant bis in Bearbeitung": {
+    "en": "Planned to in progress",
+    "fr": "De prévu à en cours"
+  },
+  "Überfällige Arbeiten": {
+    "en": "Overdue work",
+    "fr": "Travaux en retard"
+  },
+  "Fälligkeit vor heute": {
+    "en": "Due before today",
+    "fr": "Échéance antérieure à aujourd’hui"
+  },
+  "Fällige Wartungen": {
+    "en": "Maintenance due",
+    "fr": "Entretiens échus"
+  },
+  "Heute und überfällig": {
+    "en": "Today and overdue",
+    "fr": "Aujourd’hui et en retard"
+  },
+  "Effektive Kosten dieser Auswahl:": {
+    "en": "Actual costs for this selection:",
+    "fr": "Coûts effectifs de cette sélection :"
+  },
+  "Erfasste Beträge inkl. allfälliger MWST. Keine Buchung oder Zahlungsbestätigung.": {
+    "en": "Recorded amounts include any VAT. No posting or payment confirmation.",
+    "fr": "Les montants enregistrés incluent la TVA éventuelle. Aucune écriture comptable ni confirmation de paiement."
+  },
+  "Einträge mit offenen Kosten": {
+    "en": "Entries with costs still pending",
+    "fr": "Entrées dont les coûts restent à préciser"
+  },
+  "Wartung planen": {
+    "en": "Schedule maintenance",
+    "fr": "Planifier un entretien"
+  },
+  "Unterhalt.": {
+    "en": "Maintenance.",
+    "fr": "Entretien."
+  },
+  "Arbeiten, Geräte und wiederkehrende Kontrollen an einem Ort.": {
+    "en": "Work, appliances and recurring inspections in one place.",
+    "fr": "Travaux, appareils et contrôles récurrents au même endroit."
+  },
+  "Liegenschaft auswählen": {
+    "en": "Select property",
+    "fr": "Sélectionner un immeuble"
+  },
+  "Kein Gerät / allgemeine Arbeit": {
+    "en": "No appliance / general work",
+    "fr": "Sans appareil / travaux généraux"
+  },
+  "Ohne verknüpftes Anliegen": {
+    "en": "No linked request",
+    "fr": "Sans demande liée"
+  },
+  "Anliegen verknüpfen": {
+    "en": "Link request",
+    "fr": "Lier une demande"
+  },
+  "Erfasst zuerst eine Liegenschaft für den Unterhalt.": {
+    "en": "First add a property for the maintenance work.",
+    "fr": "Ajoutez d’abord un immeuble pour les travaux d’entretien."
+  },
+  "Bitte den Eintrag zuerst wiederherstellen.": {
+    "en": "Please restore the entry first.",
+    "fr": "Veuillez d’abord restaurer l’entrée."
+  },
+  "Arbeit / Bezeichnung *": {
+    "en": "Work / name *",
+    "fr": "Travaux / désignation *"
+  },
+  "Art der Arbeit": {
+    "en": "Type of work",
+    "fr": "Type de travaux"
+  },
+  "Erfasst am *": {
+    "en": "Recorded on *",
+    "fr": "Enregistré le *"
+  },
+  "Tatsächlicher Beginn, falls bekannt.": {
+    "en": "Actual start, if known.",
+    "fr": "Début réel, s’il est connu."
+  },
+  "Ausführung bis *": {
+    "en": "Work until *",
+    "fr": "Exécution au *"
+  },
+  "Firma / Fachperson (Freitext)": {
+    "en": "Company / specialist (free text)",
+    "fr": "Entreprise / spécialiste (texte libre)"
+  },
+  "Kosten geschätzt · CHF": {
+    "en": "Estimated cost · CHF",
+    "fr": "Coût estimé · CHF"
+  },
+  "Kosten effektiv · CHF": {
+    "en": "Actual cost · CHF",
+    "fr": "Coût effectif · CHF"
+  },
+  "Beschreibung / Ausführung / interne Hinweise": {
+    "en": "Description / execution / internal notes",
+    "fr": "Description / exécution / notes internes"
+  },
+  "Stornogrund *": {
+    "en": "Reason for cancellation *",
+    "fr": "Motif d’annulation *"
+  },
+  "Wartungsplan abgleichen": {
+    "en": "Reconcile maintenance plan",
+    "fr": "Rapprocher le plan d’entretien"
+  },
+  "Wartungsplan fortschreiben": {
+    "en": "Update maintenance plan",
+    "fr": "Mettre à jour le plan d’entretien"
+  },
+  "Eine Datumskorrektur wird bei der letzten Ausführung im Wartungsplan berücksichtigt. Spätere Ausführungen bleiben massgebend. Den bestätigten Folgetermin könnt ihr direkt im Wartungsplan ändern.": {
+    "en": "A date correction is reflected in the last execution in the maintenance plan. Later executions remain authoritative. You can change the confirmed following date directly in the maintenance plan.",
+    "fr": "Une correction de date est répercutée sur la dernière exécution du plan d’entretien. Les exécutions ultérieures restent déterminantes. Vous pouvez modifier la prochaine date confirmée directement dans le plan d’entretien."
+  },
+  "Beim Abschliessen werden das Ende der Ausführung und der bestätigte Folgetermin im Wartungsplan gespeichert.": {
+    "en": "On completion, the work end date and confirmed following date are saved in the maintenance plan.",
+    "fr": "À la clôture, la fin des travaux et la prochaine date confirmée sont enregistrées dans le plan d’entretien."
+  },
+  "Vorschlag ab Ende der Ausführung gemäss hinterlegtem Monatsintervall. Bei leerem Feld bleibt der nächste Termin offen.": {
+    "en": "Suggested date from the end of work based on the recorded monthly interval. If left blank, the next date remains unset.",
+    "fr": "Date proposée à partir de la fin des travaux selon l’intervalle mensuel enregistré. Si le champ est vide, la prochaine date reste à définir."
+  },
+  "Unterhalt bearbeiten.": {
+    "en": "Edit maintenance work.",
+    "fr": "Modifier les travaux d’entretien."
+  },
+  "Unterhalt erfassen.": {
+    "en": "Add maintenance work.",
+    "fr": "Ajouter des travaux d’entretien."
+  },
+  "Beträge inkl. allfälliger MWST. Leeres Feld bedeutet «noch offen»; CHF 0 nur bei ausdrücklich kostenfreier Arbeit.": {
+    "en": "Amounts include any VAT. A blank field means “pending”; enter CHF 0 only for explicitly free work.",
+    "fr": "Les montants incluent la TVA éventuelle. Un champ vide signifie « à préciser » ; saisissez CHF 0 uniquement pour des travaux expressément gratuits."
+  },
+  "Verknüpftes Anliegen ebenfalls abschliessen": {
+    "en": "Also close the linked request",
+    "fr": "Clôturer également la demande liée"
+  },
+  "Wartungstermin: {0} · Zuordnung aus dem Wartungsplan.": {
+    "en": "Maintenance date: {0} · assignment from the maintenance plan.",
+    "fr": "Date d’entretien : {0} · rattachement issu du plan d’entretien."
+  },
+  "MORADA · UNTERHALT": {
+    "en": "MORADA · MAINTENANCE",
+    "fr": "MORADA · ENTRETIEN"
+  },
+  "Erfasst zuerst eine Liegenschaft für den Wartungsplan.": {
+    "en": "First add a property for the maintenance plan.",
+    "fr": "Ajoutez d’abord un immeuble pour le plan d’entretien."
+  },
+  "Wartungsplan bearbeiten.": {
+    "en": "Edit maintenance plan.",
+    "fr": "Modifier le plan d’entretien."
+  },
+  "Wartung planen.": {
+    "en": "Schedule maintenance.",
+    "fr": "Planifier un entretien."
+  },
+  "Für wiederkehrende Arbeiten und Kontrollen, auch ohne einzelnes Gerät.": {
+    "en": "For recurring work and inspections, including those without a specific appliance.",
+    "fr": "Pour les travaux et contrôles récurrents, même sans appareil particulier."
+  },
+  "Der Folgetermin wird beim Abschliessen einer Wartung vorgeschlagen und bestätigt. Es werden keine Aufträge automatisch versendet.": {
+    "en": "The following date is proposed and confirmed when maintenance is completed. No work orders are sent automatically.",
+    "fr": "La prochaine date est proposée et confirmée à la clôture de l’entretien. Aucun ordre de travail n’est envoyé automatiquement."
+  },
+  "Dieser Wartungsplan ist archiviert.": {
+    "en": "This maintenance plan is archived.",
+    "fr": "Ce plan d’entretien est archivé."
+  },
+  "Wartung / Kontrolle *": {
+    "en": "Maintenance / inspection *",
+    "fr": "Entretien / contrôle *"
+  },
+  "Intervall in Monaten": {
+    "en": "Interval in months",
+    "fr": "Intervalle en mois"
+  },
+  "Leistungsumfang / Servicevertrag / Hinweise": {
+    "en": "Scope of services / service contract / notes",
+    "fr": "Prestations / contrat d’entretien / remarques"
+  },
+  "MORADA · WARTUNGSPLAN": {
+    "en": "MORADA · MAINTENANCE PLAN",
+    "fr": "MORADA · PLAN D’ENTRETIEN"
+  },
+  "Erfasst zuerst eine Liegenschaft für das Geräteverzeichnis.": {
+    "en": "First add a property for the appliance register.",
+    "fr": "Ajoutez d’abord un immeuble pour le registre des appareils."
+  },
+  "Haushaltsgerät": {
+    "en": "Household appliance",
+    "fr": "Appareil électroménager"
+  },
+  "Waschküche": {
+    "en": "Laundry room",
+    "fr": "Buanderie"
+  },
+  "Lift": {
+    "en": "Lift",
+    "fr": "Ascenseur"
+  },
+  "Lüftung / Klima": {
+    "en": "Ventilation / air conditioning",
+    "fr": "Ventilation / climatisation"
+  },
+  "Elektro": {
+    "en": "Electrical",
+    "fr": "Électricité"
+  },
+  "Sanitär": {
+    "en": "Plumbing",
+    "fr": "Sanitaire"
+  },
+  "Brandschutz": {
+    "en": "Fire protection",
+    "fr": "Protection incendie"
+  },
+  "Tor / Zutritt": {
+    "en": "Gate / access",
+    "fr": "Portail / accès"
+  },
+  "Mobiliar / Ausstattung": {
+    "en": "Furniture / fittings",
+    "fr": "Mobilier / équipement"
+  },
+  "Weitere Anlage": {
+    "en": "Other installation",
+    "fr": "Autre installation"
+  },
+  "Gerät / Anlage bearbeiten.": {
+    "en": "Edit appliance / installation.",
+    "fr": "Modifier l’appareil / l’installation."
+  },
+  "Gerät / Anlage erfassen.": {
+    "en": "Add appliance / installation.",
+    "fr": "Ajouter un appareil / une installation."
+  },
+  "Wartung & Servicekontakt": {
+    "en": "Maintenance & service contact",
+    "fr": "Entretien et contact de maintenance"
+  },
+  "Dieses Gerät ist archiviert.": {
+    "en": "This appliance is archived.",
+    "fr": "Cet appareil est archivé."
+  },
+  "Gerät / Anlage *": {
+    "en": "Appliance / installation *",
+    "fr": "Appareil / installation *"
+  },
+  "Geräteart": {
+    "en": "Appliance type",
+    "fr": "Type d’appareil"
+  },
+  "Standort / Raum": {
+    "en": "Location / room",
+    "fr": "Emplacement / pièce"
+  },
+  "Hersteller": {
+    "en": "Manufacturer",
+    "fr": "Fabricant"
+  },
+  "Modell / Typ": {
+    "en": "Model / type",
+    "fr": "Modèle / type"
+  },
+  "Seriennummer": {
+    "en": "Serial number",
+    "fr": "Numéro de série"
+  },
+  "Baujahr / Installationsjahr": {
+    "en": "Year built / installed",
+    "fr": "Année de construction / d’installation"
+  },
+  "Einbaudatum": {
+    "en": "Installation date",
+    "fr": "Date d’installation"
+  },
+  "Intervall / Vereinbarung": {
+    "en": "Interval / agreement",
+    "fr": "Intervalle / convention"
+  },
+  "Service · Telefon": {
+    "en": "Service · telephone",
+    "fr": "Maintenance · téléphone"
+  },
+  "Service · E-Mail": {
+    "en": "Service · email",
+    "fr": "Maintenance · e-mail"
+  },
+  "Hinweise / Zugang / Unterlagen": {
+    "en": "Notes / access / documents",
+    "fr": "Remarques / accès / documents"
+  },
+  "Zeitwert berechnen": {
+    "en": "Calculate current value",
+    "fr": "Calculer la valeur résiduelle"
+  },
+  "Gerätehistorie öffnen": {
+    "en": "Open appliance history",
+    "fr": "Ouvrir l’historique de l’appareil"
+  },
+  "MORADA · GERÄTE & ANLAGEN": {
+    "en": "MORADA · APPLIANCES & INSTALLATIONS",
+    "fr": "MORADA · APPAREILS ET INSTALLATIONS"
+  },
+  "Unterhaltsnummer": {
+    "en": "Maintenance number",
+    "fr": "Numéro d’entretien"
+  },
+  "Allgemeine Arbeit": {
+    "en": "General work",
+    "fr": "Travaux généraux"
+  },
+  "Kosten geschätzt": {
+    "en": "Estimated cost",
+    "fr": "Coût estimé"
+  },
+  "Bisherige Belegreferenz": {
+    "en": "Previous receipt reference",
+    "fr": "Référence du justificatif précédent"
+  },
+  "Belege & Fotos": {
+    "en": "Receipts & photos",
+    "fr": "Justificatifs et photos"
+  },
+  "Archivierter Unterhaltseintrag · alle Angaben bleiben erhalten.": {
+    "en": "Archived maintenance entry · all details are retained.",
+    "fr": "Travaux d’entretien archivés · toutes les informations sont conservées."
+  },
+  "Verknüpfter Wartungstermin: {0}{1}": {
+    "en": "Linked maintenance date: {0}{1}",
+    "fr": "Date d’entretien liée : {0}{1}"
+  },
+  "· Danach vorgesehener Termin:": {
+    "en": "· Next planned date:",
+    "fr": "· Prochaine date prévue :"
+  },
+  "Einheit öffnen": {
+    "en": "Open unit",
+    "fr": "Ouvrir le lot"
+  },
+  "Gerätehistorie": {
+    "en": "Appliance history",
+    "fr": "Historique de l’appareil"
+  },
+  "Noch keine Unterhaltseinträge in dieser Auswahl.": {
+    "en": "No maintenance entries in this selection yet.",
+    "fr": "Aucun travail d’entretien dans cette sélection."
+  },
+  "Unterhaltshistorie · {5} Einträge": {
+    "en": "Maintenance history · {5} entries",
+    "fr": "Historique d’entretien · {5} entrées"
+  },
+  "Standort": {
+    "en": "Location",
+    "fr": "Emplacement"
+  },
+  "Modell": {
+    "en": "Model",
+    "fr": "Modèle"
+  },
+  "Einbau": {
+    "en": "Installation",
+    "fr": "Installation"
+  },
+  "Gerät bearbeiten": {
+    "en": "Edit appliance",
+    "fr": "Modifier l’appareil"
+  },
+  "Alle Geräteeinträge": {
+    "en": "All appliance entries",
+    "fr": "Toutes les entrées de l’appareil"
+  },
+  "Unterhalt dieser Einheit · {0}": {
+    "en": "Maintenance for this unit · {0}",
+    "fr": "Entretien de ce lot · {0}"
+  },
+  "Unterhalt anzeigen": {
+    "en": "Show maintenance",
+    "fr": "Afficher l’entretien"
+  },
+  "Arbeiten an gemeinschaftlichen Räumen, Bauteilen und Anlagen ohne Zuordnung zu einer Einheit.": {
+    "en": "Work on shared rooms, components and installations not assigned to a unit.",
+    "fr": "Travaux sur les locaux, éléments et installations communs, sans rattachement à un lot."
+  },
+  "Arbeiten, die einer Wohnung oder anderen Einheit dieser Liegenschaft zugeordnet sind.": {
+    "en": "Work assigned to an apartment or another unit in this property.",
+    "fr": "Travaux rattachés à un appartement ou à un autre lot de cet immeuble."
+  },
+  "Gebäudeunterhalt und Arbeiten an allen Einheiten dieser Liegenschaft.": {
+    "en": "Building maintenance and work in all units of this property.",
+    "fr": "Entretien du bâtiment et travaux dans tous les lots de cet immeuble."
+  },
+  "{0} offene Arbeiten · {1} Einträge": {
+    "en": "{0} open work items · {1} entries",
+    "fr": "{0} travaux en cours · {1} entrées"
+  },
+  "{8} aktive Geräte in dieser Auswahl": {
+    "en": "{8} active appliances in this selection",
+    "fr": "{8} appareils actifs dans cette sélection"
+  },
+  "Unterhaltsregister öffnen": {
+    "en": "Open maintenance register",
+    "fr": "Ouvrir le registre d’entretien"
+  },
+  "Die letzten 8 von {0} Einträgen. Weitere Einträge und das Archiv findet ihr im Unterhaltsregister.": {
+    "en": "The last 8 of {0} entries. Further entries and the archive are in the maintenance register.",
+    "fr": "Les 8 dernières entrées sur {0}. Les autres entrées et les archives se trouvent dans le registre d’entretien."
+  },
+  "Wartungsplan öffnen": {
+    "en": "Open maintenance plan",
+    "fr": "Ouvrir le plan d’entretien"
+  },
+  "Geräteverzeichnis öffnen": {
+    "en": "Open appliance register",
+    "fr": "Ouvrir le registre des appareils"
+  },
+  "Noch keine Geräte in dieser Auswahl.": {
+    "en": "No appliances in this selection yet.",
+    "fr": "Aucun appareil dans cette sélection."
+  },
+  "Gemeinschaftliche Anlagen findet ihr im Liegenschaftsdossier.": {
+    "en": "Shared installations are in the property dossier.",
+    "fr": "Les installations communes se trouvent dans le dossier de l’immeuble."
+  },
+  "Verknüpfter Unterhalt": {
+    "en": "Linked maintenance",
+    "fr": "Entretien lié"
+  },
+  "Noch kein Unterhalt zugeordnet.": {
+    "en": "No maintenance assigned yet.",
+    "fr": "Aucun entretien rattaché."
+  },
+  "Als Unterhalt erfassen": {
+    "en": "Record as maintenance",
+    "fr": "Enregistrer comme entretien"
+  },
+  "offene Unterhaltseinträge müssen vor dem Archivieren erledigt oder begründet storniert werden.": {
+    "en": "open maintenance entries must be completed or cancelled with a reason before archiving.",
+    "fr": "les travaux d’entretien en cours doivent être terminés ou annulés avec un motif avant l’archivage."
+  },
+  "Arbeit": {
+    "en": "Work",
+    "fr": "Travail"
+  },
+  "Kosten geschätzt CHF": {
+    "en": "Estimated cost CHF",
+    "fr": "Coût estimé CHF"
+  },
+  "Kosten effektiv CHF": {
+    "en": "Actual cost CHF",
+    "fr": "Coût effectif CHF"
+  },
+  "Rechnungsnummer": {
+    "en": "Invoice number",
+    "fr": "Numéro de facture"
+  },
+  "Installationsjahr": {
+    "en": "Installation year",
+    "fr": "Année d’installation"
+  },
+  "Service Telefon": {
+    "en": "Service telephone",
+    "fr": "Téléphone de maintenance"
+  },
+  "Service E-Mail": {
+    "en": "Service email",
+    "fr": "E-mail de maintenance"
+  },
+  "Intervall Monate": {
+    "en": "Interval in months",
+    "fr": "Intervalle en mois"
+  },
+  "Geraete": {
+    "en": "Appliances",
+    "fr": "Appareils"
+  },
+  "Gespeichert.": {
+    "en": "Saved.",
+    "fr": "Enregistré."
+  },
+  "Eintrag wiederherstellen?": {
+    "en": "Restore entry?",
+    "fr": "Restaurer l’entrée ?"
+  },
+  "Angaben, Belege und Verlauf bleiben erhalten.": {
+    "en": "Details, receipts and history are retained.",
+    "fr": "Les informations, justificatifs et l’historique sont conservés."
+  },
+  "Bitte eine Rückmeldung erfassen.": {
+    "en": "Please enter an update.",
+    "fr": "Veuillez saisir un retour."
+  },
+  "Fälligkeit": {
+    "en": "Due date",
+    "fr": "Échéance"
+  },
+  "Bearbeitung": {
+    "en": "Processing",
+    "fr": "Traitement"
+  },
+  "Unterhalt · Anliegen verknüpft": {
+    "en": "Maintenance · linked request",
+    "fr": "Entretien · demande liée"
+  },
+  "Fälligkeit / Ausführung": {
+    "en": "Due date / execution",
+    "fr": "Échéance / exécution"
+  },
+  "Intervall": {
+    "en": "Interval",
+    "fr": "Intervalle"
+  },
+  "Wartungsfälligkeit ohne vereinbarte Uhrzeit. Die Durchführung wird im Unterhalt erfasst.": {
+    "en": "Maintenance due date without an agreed time. Completion is recorded in maintenance.",
+    "fr": "Échéance d’entretien sans horaire convenu. L’exécution est enregistrée dans l’entretien."
+  },
+  "Wartung bearbeiten": {
+    "en": "Edit maintenance",
+    "fr": "Modifier l’entretien"
+  },
+  "MORADA · WARTUNG": {
+    "en": "MORADA · SCHEDULED MAINTENANCE",
+    "fr": "MORADA · ENTRETIEN PLANIFIÉ"
+  },
+  "Keine Unterhalts- oder Wartungsfälligkeiten in diesem Zeitraum.": {
+    "en": "No maintenance work or service due dates in this period.",
+    "fr": "Aucune échéance de travaux ou d’entretien dans cette période."
+  },
+  "{3} · {4} · ohne Uhrzeit{5}": {
+    "en": "{3} · {4} · no time set{5}",
+    "fr": "{3} · {4} · sans horaire{5}"
+  },
+  "{1} {2} fällig": {
+    "en": "{1} {2} due",
+    "fr": "{1} {2} à échéance"
+  },
+  "Bis heute · älteste Fälligkeit {3} · verknüpfte Aufträge einmal gezählt": {
+    "en": "Due by today · earliest due date {3} · linked work orders counted once",
+    "fr": "Échus à ce jour · première échéance {3} · ordres liés comptés une seule fois"
+  },
+  "Fälligkeiten ansehen ↗": {
+    "en": "View due dates ↗",
+    "fr": "Voir les échéances ↗"
+  },
+  "Fälliger Unterhalt": {
+    "en": "Maintenance due",
+    "fr": "Entretien échu"
+  },
+  "Unterhaltsarbeit oder Wartung ist": {
+    "en": "maintenance work or service is",
+    "fr": "travail ou entretien est"
+  },
+  "Unterhaltsarbeiten und Wartungen sind": {
+    "en": "maintenance work and services are",
+    "fr": "travaux et entretiens sont"
+  },
+  "{0} offene Arbeiten und Wartungen bis heute. Erledigte, stornierte und archivierte Arbeiten sind ausgeblendet.": {
+    "en": "{0} work items and services due by today. Completed, cancelled and archived work is hidden.",
+    "fr": "{0} travaux et entretiens en cours échus à ce jour. Les travaux terminés, annulés et archivés sont masqués."
+  },
+  "Seite {1} / {2}": {
+    "en": "Page {1} / {2}",
+    "fr": "Page {1} / {2}"
+  },
+  "MORADA · PENDENZEN": {
+    "en": "MORADA · OPEN ITEMS",
+    "fr": "MORADA · POINTS EN SUSPENS"
+  },
+  "Fälligkeiten": {
+    "en": "Due dates",
+    "fr": "Échéances"
+  },
+  "Die lokalen Einträge wurden entfernt.": {
+    "en": "Local entries have been deleted.",
+    "fr": "Les entrées locales ont été supprimées."
+  },
+  "Noch nicht geprüft": {
+    "en": "Not checked yet",
+    "fr": "Pas encore vérifié"
+  },
+  "In Vorbereitung": {
+    "en": "In preparation",
+    "fr": "En préparation"
+  },
+  "Zur Unterschrift versandt": {
+    "en": "Sent for signature",
+    "fr": "Envoyé pour signature"
+  },
+  "Teilweise unterschrieben": {
+    "en": "Partly signed",
+    "fr": "Partiellement signé"
+  },
+  "Unterschriften vollständig": {
+    "en": "All signatures complete",
+    "fr": "Signatures complètes"
+  },
+  "Noch nicht zugeordnet / Sonstiges": {
+    "en": "Not assigned yet / other",
+    "fr": "Pas encore attribué / autre"
+  },
+  "Vertragsentwurf": {
+    "en": "Draft lease",
+    "fr": "Projet de bail"
+  },
+  "Unterzeichneter Mietvertrag": {
+    "en": "Signed lease",
+    "fr": "Bail signé"
+  },
+  "Allgemeine Bedingungen": {
+    "en": "General terms",
+    "fr": "Conditions générales"
+  },
+  "Hausordnung": {
+    "en": "House rules",
+    "fr": "Règlement de maison"
+  },
+  "Nachtrag": {
+    "en": "Amendment",
+    "fr": "Avenant"
+  },
+  "Kündigung / Aufhebung": {
+    "en": "Notice / termination",
+    "fr": "Résiliation / dissolution"
+  },
+  "Amtliches Formular": {
+    "en": "Official form",
+    "fr": "Formule officielle"
+  },
+  "Übergabeprotokoll": {
+    "en": "Handover report",
+    "fr": "Procès-verbal de remise"
+  },
+  "Keine Sicherheit vereinbart": {
+    "en": "No security agreed",
+    "fr": "Aucune garantie convenue"
+  },
+  "Mietkautionskonto": {
+    "en": "Rental deposit account",
+    "fr": "Compte de garantie de loyer"
+  },
+  "Mietkautionsgarantie": {
+    "en": "Rental deposit guarantee",
+    "fr": "Garantie de loyer"
+  },
+  "Andere Sicherheit": {
+    "en": "Other security",
+    "fr": "Autre garantie"
+  },
+  "Ausstehend": {
+    "en": "Pending",
+    "fr": "En attente"
+  },
+  "Teilweise nachgewiesen": {
+    "en": "Partly evidenced",
+    "fr": "Partiellement justifié"
+  },
+  "Vollständig nachgewiesen": {
+    "en": "Fully evidenced",
+    "fr": "Entièrement justifié"
+  },
+  "Freigegeben / beendet": {
+    "en": "Released / ended",
+    "fr": "Libéré / terminé"
+  },
+  "Ungültiges Vertragsdossier.": {
+    "en": "Invalid lease dossier.",
+    "fr": "Dossier de bail invalide."
+  },
+  "Eine Vertragsangabe ist zu lang oder ungültig.": {
+    "en": "A lease detail is too long or invalid.",
+    "fr": "Une information du bail est trop longue ou invalide."
+  },
+  "Vertragsnotizen dürfen höchstens 3’000 Zeichen enthalten.": {
+    "en": "Lease notes must not exceed 3,000 characters.",
+    "fr": "Les notes du bail ne doivent pas dépasser 3’000 caractères."
+  },
+  "Bitte gültige Datumsangaben im Vertragsdossier erfassen.": {
+    "en": "Please enter valid dates in the lease dossier.",
+    "fr": "Veuillez saisir des dates valides dans le dossier du bail."
+  },
+  "Ungültige Auswahl im Vertragsdossier.": {
+    "en": "Invalid selection in the lease dossier.",
+    "fr": "Sélection invalide dans le dossier du bail."
+  },
+  "Bitte die Vermieterschaft über die Kontaktauswahl zuordnen.": {
+    "en": "Please assign the landlord using the contact selection.",
+    "fr": "Veuillez désigner le bailleur dans la sélection des contacts."
+  },
+  "Bitte einen gültigen Kautionsbetrag erfassen.": {
+    "en": "Please enter a valid deposit amount.",
+    "fr": "Veuillez saisir un montant de garantie valide."
+  },
+  "Bitte das Datum der vollständigen Unterzeichnung erfassen.": {
+    "en": "Please enter the date when all signatures were completed.",
+    "fr": "Veuillez saisir la date de signature complète."
+  },
+  "Das Unterzeichnungsdatum liegt vor dem Versanddatum. Bitte prüfen.": {
+    "en": "The signing date precedes the sending date. Please check.",
+    "fr": "La date de signature précède la date d’envoi. Veuillez vérifier."
+  },
+  "Für ein bestätigtes befristetes Mietverhältnis bitte den letzten Miettag erfassen.": {
+    "en": "For a confirmed fixed-term tenancy, please enter the last rental day.",
+    "fr": "Pour une location confirmée de durée déterminée, veuillez saisir le dernier jour de location."
+  },
+  "Mindestdauer und frühester Kündigungstermin passen nicht zum Mietbeginn.": {
+    "en": "The minimum term and earliest termination date do not match the tenancy start.",
+    "fr": "La durée minimale et la première date de résiliation ne correspondent pas au début du bail."
+  },
+  "Referenzzins und Index bitte als positive Zahl oder 0 erfassen.": {
+    "en": "Please enter the reference rate and index as a positive number or 0.",
+    "fr": "Veuillez saisir le taux de référence et l’indice sous forme de nombre positif ou de 0."
+  },
+  "Bitte den Referenzzinssatz prüfen.": {
+    "en": "Please check the reference interest rate.",
+    "fr": "Veuillez vérifier le taux d’intérêt de référence."
+  },
+  "Bitte einen gültigen Indexmonat wählen.": {
+    "en": "Please select a valid index month.",
+    "fr": "Veuillez choisir un mois d’indice valide."
+  },
+  "Der Vertragsverlauf ist ungültig.": {
+    "en": "The lease history is invalid.",
+    "fr": "L’historique du bail est invalide."
+  },
+  "Bitte Dokumentart, Datum und Version prüfen.": {
+    "en": "Please check the document type, date and version.",
+    "fr": "Veuillez vérifier le type de document, la date et la version."
+  },
+  "Cents": {
+    "en": "Centimes",
+    "fr": "Centimes"
+  },
+  "Vermieterschaft": {
+    "en": "Landlord",
+    "fr": "Bailleur"
+  },
+  "Versand": {
+    "en": "Sending",
+    "fr": "Envoi"
+  },
+  "Kautionsstand": {
+    "en": "Deposit status",
+    "fr": "État de la garantie"
+  },
+  "Kaution": {
+    "en": "Deposit",
+    "fr": "Garantie de loyer"
+  },
+  "Kündigungsfrist": {
+    "en": "Notice period",
+    "fr": "Délai de résiliation"
+  },
+  "Kündigungstermine": {
+    "en": "Termination dates",
+    "fr": "Échéances de résiliation"
+  },
+  "Mietzinsgrundlagen": {
+    "en": "Rent calculation basis",
+    "fr": "Bases du loyer"
+  },
+  "Gespeichert ·": {
+    "en": "Saved ·",
+    "fr": "Enregistré ·"
+  },
+  "Vertragsangaben geprüft / angepasst": {
+    "en": "Lease details checked / adjusted",
+    "fr": "Informations du bail vérifiées / adaptées"
+  },
+  "Mietverhältnis erfasst": {
+    "en": "Tenancy recorded",
+    "fr": "Location enregistrée"
+  },
+  "Vermieterschaft zuordnen": {
+    "en": "Assign landlord",
+    "fr": "Désigner le bailleur"
+  },
+  "Bearbeitungsstand prüfen": {
+    "en": "Check processing status",
+    "fr": "Vérifier l’état de traitement"
+  },
+  "Unterschriften offen": {
+    "en": "Signatures pending",
+    "fr": "Signatures en attente"
+  },
+  "Unterzeichneter Vertrag fehlt": {
+    "en": "Signed lease missing",
+    "fr": "Bail signé manquant"
+  },
+  "Laufzeitart prüfen": {
+    "en": "Check term type",
+    "fr": "Vérifier le type de durée"
+  },
+  "Kündigungsbedingungen ergänzen": {
+    "en": "Complete termination terms",
+    "fr": "Compléter les conditions de résiliation"
+  },
+  "Kaution prüfen": {
+    "en": "Check deposit",
+    "fr": "Vérifier la garantie"
+  },
+  "Kautionsnachweis offen": {
+    "en": "Deposit evidence pending",
+    "fr": "Justificatif de garantie en attente"
+  },
+  "Kündigung: Vertragsende prüfen": {
+    "en": "Notice: check lease end",
+    "fr": "Résiliation : vérifier la fin du bail"
+  },
+  "Frist beachten": {
+    "en": "Observe deadline",
+    "fr": "Respecter le délai"
+  },
+  "Die lokale Dateispeicherung ist nicht verfügbar.": {
+    "en": "Local file storage is unavailable.",
+    "fr": "Le stockage local des fichiers est indisponible."
+  },
+  "Bitte andere Portalfenster schliessen und erneut versuchen.": {
+    "en": "Please close other portal windows and try again.",
+    "fr": "Veuillez fermer les autres fenêtres du portail et réessayer."
+  },
+  "Der lokale Datenstand fehlt. Bitte eine Datensicherung wiederherstellen.": {
+    "en": "The local data is missing. Please restore a backup.",
+    "fr": "Les données locales sont absentes. Veuillez restaurer une sauvegarde."
+  },
+  "Dateispeicherung abgebrochen.": {
+    "en": "File storage cancelled.",
+    "fr": "Enregistrement du fichier annulé."
+  },
+  "Die gespeicherten Daten konnten nicht geladen werden.": {
+    "en": "The saved data could not be loaded.",
+    "fr": "Les données enregistrées n’ont pas pu être chargées."
+  },
+  "Einheit *": {
+    "en": "Unit *",
+    "fr": "Lot *"
+  },
+  "Mieter / Vertragsparteien *": {
+    "en": "Tenants / parties to the lease *",
+    "fr": "Locataires / parties au bail *"
+  },
+  "Vermieterschaft gemäss Vertrag": {
+    "en": "Landlord as stated in the lease",
+    "fr": "Bailleur selon le contrat"
+  },
+  "Verwaltung / Vertretung": {
+    "en": "Management / representation",
+    "fr": "Gérance / représentation"
+  },
+  "Die Vermieterschaft gemäss Vertrag auswählen. Alle beteiligten Personen und Firmen werden als Kontakte geführt. Der Bearbeitungsstand ersetzt keine Prüfung des Vertragsabschlusses.": {
+    "en": "Select the landlord named in the lease. All people and companies involved are maintained as contacts. The processing status does not replace verification that the lease has been concluded.",
+    "fr": "Sélectionnez le bailleur indiqué au contrat. Toutes les personnes et entreprises concernées sont enregistrées comme contacts. L’état de traitement ne remplace pas la vérification de la conclusion du bail."
+  },
+  "Erfassung im Mieterspiegel": {
+    "en": "Inclusion in the rent roll",
+    "fr": "Prise en compte dans l’état locatif"
+  },
+  "Entwurf · noch nicht berücksichtigen": {
+    "en": "Draft · not yet included",
+    "fr": "Projet · pas encore pris en compte"
+  },
+  "Bestätigt · ab Mietbeginn berücksichtigen": {
+    "en": "Confirmed · include from tenancy start",
+    "fr": "Confirmé · pris en compte dès le début du bail"
+  },
+  "Zur Unterschrift versandt am": {
+    "en": "Sent for signature on",
+    "fr": "Envoyé pour signature le"
+  },
+  "Vollständig unterzeichnet am": {
+    "en": "Fully signed on",
+    "fr": "Entièrement signé le"
+  },
+  "Vertragsvorlage": {
+    "en": "Lease template",
+    "fr": "Modèle de bail"
+  },
+  "HEV": {
+    "en": "HEV",
+    "fr": "HEV"
+  },
+  "Andere Vorlage / Bestandsvertrag": {
+    "en": "Other template / existing lease",
+    "fr": "Autre modèle / bail existant"
+  },
+  "Vorlage / Kanton": {
+    "en": "Template / canton",
+    "fr": "Modèle / canton"
+  },
+  "Ausgabe / Stand der Vorlage": {
+    "en": "Template edition / version",
+    "fr": "Édition / version du modèle"
+  },
+  "Laufzeitart gemäss Vertrag": {
+    "en": "Term type according to lease",
+    "fr": "Type de durée selon le bail"
+  },
+  "Befristet": {
+    "en": "Fixed term",
+    "fr": "Durée déterminée"
+  },
+  "Vertragsbeginn *": {
+    "en": "Lease start *",
+    "fr": "Début du bail *"
+  },
+  "Letzter Miettag / vereinbartes Ende": {
+    "en": "Last rental day / agreed end",
+    "fr": "Dernier jour de location / fin convenue"
+  },
+  "Kündigungstermine / Ausnahmen": {
+    "en": "Termination dates / exceptions",
+    "fr": "Échéances de résiliation / exceptions"
+  },
+  "Mindestdauer bis": {
+    "en": "Minimum term until",
+    "fr": "Durée minimale jusqu’au"
+  },
+  "Frühester ordentlicher Kündigungstermin": {
+    "en": "Earliest ordinary termination date",
+    "fr": "Première échéance de résiliation ordinaire"
+  },
+  "Bedingungen geprüft am": {
+    "en": "Terms checked on",
+    "fr": "Conditions vérifiées le"
+  },
+  "Besondere Vereinbarungen": {
+    "en": "Special agreements",
+    "fr": "Conventions particulières"
+  },
+  "Termine aus dem Vertrag übernehmen. Kündigungsfristen werden nicht automatisch rechtlich berechnet. Ein Ende kann auch durch Kündigung oder Aufhebung entstehen. Der letzte Miettag gehört noch zum Vertrag.": {
+    "en": "Copy dates from the lease. Notice periods are not automatically calculated under the law. The lease may also end through notice or mutual termination. The last rental day is still part of the lease.",
+    "fr": "Reprenez les dates du contrat. Les délais de résiliation ne font l’objet d’aucun calcul juridique automatique. Le bail peut aussi prendre fin par résiliation ou accord de dissolution. Le dernier jour de location fait encore partie du bail."
+  },
+  "Nettomiete / Monat · CHF": {
+    "en": "Net rent / month · CHF",
+    "fr": "Loyer net / mois · CHF"
+  },
+  "Vereinbarte Nebenkostenpositionen": {
+    "en": "Agreed service charge items",
+    "fr": "Postes de charges convenus"
+  },
+  "Nebenkosten-Abrechnungsperiode": {
+    "en": "Service charge accounting period",
+    "fr": "Période de décompte des charges"
+  },
+  "Referenzzinssatz gemäss Vertragsgrundlage · %": {
+    "en": "Reference interest rate in lease basis · %",
+    "fr": "Taux d’intérêt de référence selon le bail · %"
+  },
+  "Landesindex der Konsumentenpreise · Stand": {
+    "en": "Consumer price index · level",
+    "fr": "Indice des prix à la consommation · valeur"
+  },
+  "Indexmonat": {
+    "en": "Index month",
+    "fr": "Mois de l’indice"
+  },
+  "Indexbasis": {
+    "en": "Index base",
+    "fr": "Base de l’indice"
+  },
+  "Kostenstand / Grundlage per": {
+    "en": "Cost basis / reference date",
+    "fr": "État des coûts / date de référence"
+  },
+  "Die Beträge oben gelten ab Mietbeginn. Spätere Mietzinsänderungen im Mietzinsverlauf erfassen. Referenzzins und Index bleiben die hier dokumentierte Vertragsgrundlage; sie werden nicht mit aktuellen Marktdaten überschrieben.": {
+    "en": "The amounts above apply from the tenancy start. Record later rent changes in the rent history. The reference rate and index remain the documented lease basis; they are not overwritten with current market data.",
+    "fr": "Les montants ci-dessus s’appliquent dès le début du bail. Enregistrez les modifications ultérieures dans l’historique des loyers. Le taux de référence et l’indice restent les bases contractuelles documentées ici ; ils ne sont pas remplacés par les données actuelles du marché."
+  },
+  "Offenen Leerstand am Vortag des bestätigten Mietbeginns schliessen.": {
+    "en": "Close the open vacancy period on the day before the confirmed tenancy start.",
+    "fr": "Clôturer la période de vacance ouverte la veille du début de bail confirmé."
+  },
+  "Art der Sicherheit": {
+    "en": "Type of security",
+    "fr": "Type de garantie"
+  },
+  "Nachweisstand": {
+    "en": "Evidence status",
+    "fr": "État des justificatifs"
+  },
+  "Vereinbarte Sicherheit · CHF": {
+    "en": "Agreed security · CHF",
+    "fr": "Garantie convenue · CHF"
+  },
+  "Nachgewiesener Betrag / Garantiesumme · CHF": {
+    "en": "Evidenced amount / guarantee sum · CHF",
+    "fr": "Montant justifié / somme garantie · CHF"
+  },
+  "Bank / Anbieter": {
+    "en": "Bank / provider",
+    "fr": "Banque / prestataire"
+  },
+  "Konto- / Policenreferenz": {
+    "en": "Account / policy reference",
+    "fr": "Référence du compte / de la police"
+  },
+  "Nachweis fällig am": {
+    "en": "Evidence due on",
+    "fr": "Justificatif dû le"
+  },
+  "Nachweis geprüft am": {
+    "en": "Evidence checked on",
+    "fr": "Justificatif vérifié le"
+  },
+  "Notizen zur Sicherheit / Freigabe": {
+    "en": "Notes on security / release",
+    "fr": "Notes sur la garantie / libération"
+  },
+  "Nachweise manuell prüfen und dokumentieren. Diese Angaben sind keine Bankbestätigung. Eine Erinnerung an den Fälligkeitstermin könnt ihr unter «Bedingungen & Fristen» anlegen.": {
+    "en": "Check and document evidence manually. These details are not bank confirmation. You can add a due-date reminder under “Terms & deadlines”.",
+    "fr": "Vérifiez et documentez les justificatifs manuellement. Ces informations ne constituent pas une confirmation bancaire. Vous pouvez créer un rappel d’échéance sous « Conditions et délais »."
+  },
+  "1 · Parteien & Zuordnung": {
+    "en": "1 · Parties & assignment",
+    "fr": "1 · Parties et rattachement"
+  },
+  "2 · Vertragsabschluss & Vorlage": {
+    "en": "2 · Lease conclusion & template",
+    "fr": "2 · Conclusion du bail et modèle"
+  },
+  "3 · Laufzeit & Kündigung": {
+    "en": "3 · Term & termination",
+    "fr": "3 · Durée et résiliation"
+  },
+  "4 · Miete & Nebenkosten": {
+    "en": "4 · Rent & service charges",
+    "fr": "4 · Loyer et charges"
+  },
+  "5 · Kaution": {
+    "en": "5 · Deposit",
+    "fr": "5 · Garantie de loyer"
+  },
+  "6 · Vertragsunterlagen": {
+    "en": "6 · Lease documents",
+    "fr": "6 · Documents du bail"
+  },
+  "PDF oder Bild · bis zu 50 Dateien à 10 MB je Mietverhältnis. Gespeicherte Fassungen bleiben erhalten; über «Frühere Fassung» kennzeichnen. Alle Dateien sind in der vollständigen Datensicherung enthalten.": {
+    "en": "PDF or image · up to 50 files of 10 MB per tenancy. Saved versions are retained; mark them as “Previous version”. All files are included in the complete backup.",
+    "fr": "PDF ou image · jusqu’à 50 fichiers de 10 Mo par location. Les versions enregistrées sont conservées ; identifiez-les comme « Version précédente ». Tous les fichiers sont inclus dans la sauvegarde complète."
+  },
+  "Dokumente hinzufügen": {
+    "en": "Add documents",
+    "fr": "Ajouter des documents"
+  },
+  "MB": {
+    "en": "MB",
+    "fr": "Mo"
+  },
+  "KB": {
+    "en": "KB",
+    "fr": "Ko"
+  },
+  "Dokumentart": {
+    "en": "Document type",
+    "fr": "Type de document"
+  },
+  "Version / Bezeichnung": {
+    "en": "Version / name",
+    "fr": "Version / désignation"
+  },
+  "Fassung": {
+    "en": "Version",
+    "fr": "Version"
+  },
+  "Frühere Fassung": {
+    "en": "Previous version",
+    "fr": "Version précédente"
+  },
+  "Neue Datei entfernen": {
+    "en": "Remove new file",
+    "fr": "Retirer le nouveau fichier"
+  },
+  "Gespeicherte Datei · Inhalt bleibt erhalten": {
+    "en": "Saved file · content is retained",
+    "fr": "Fichier enregistré · contenu conservé"
+  },
+  "Noch keine Unterlagen hinterlegt.": {
+    "en": "No documents stored yet.",
+    "fr": "Aucun document déposé."
+  },
+  "»: maximal 10 MB pro Datei.": {
+    "en": "”: maximum 10 MB per file.",
+    "fr": "» : 10 Mo maximum par fichier."
+  },
+  "Bitte PDF, JPG, PNG oder WEBP wählen.": {
+    "en": "Please select PDF, JPG, PNG or WEBP.",
+    "fr": "Veuillez choisir un fichier PDF, JPG, PNG ou WEBP."
+  },
+  "Einlesen abgebrochen.": {
+    "en": "Reading cancelled.",
+    "fr": "Lecture annulée."
+  },
+  "Laufend": {
+    "en": "Current",
+    "fr": "En cours"
+  },
+  "Aktive Mietverhältnisse": {
+    "en": "Active tenancies",
+    "fr": "Locations actives"
+  },
+  "Kommend": {
+    "en": "Upcoming",
+    "fr": "À venir"
+  },
+  "Bestätigt · Beginn in Zukunft": {
+    "en": "Confirmed · starts in the future",
+    "fr": "Confirmé · début futur"
+  },
+  "Enden demnächst": {
+    "en": "Ending soon",
+    "fr": "Prennent fin prochainement"
+  },
+  "Innerhalb von 90 Tagen": {
+    "en": "Within 90 days",
+    "fr": "Dans les 90 jours"
+  },
+  "Zu bearbeiten": {
+    "en": "Action required",
+    "fr": "À traiter"
+  },
+  "Angaben, Nachweise oder Fristen": {
+    "en": "Details, evidence or deadlines",
+    "fr": "Informations, justificatifs ou délais"
+  },
+  "Stand {1} · Gesamter Vertragsbestand ohne Archiv und Stornos. Die Filter gelten für die Liste.": {
+    "en": "As of {1} · Entire lease portfolio excluding archives and cancellations. Filters apply to the list.",
+    "fr": "État au {1} · Ensemble des baux hors archives et annulations. Les filtres s’appliquent à la liste."
+  },
+  "Keine Mietverträge in dieser Auswahl": {
+    "en": "No leases in this selection",
+    "fr": "Aucun bail dans cette sélection"
+  },
+  "Passt die Filter an oder erfasst ein weiteres Mietverhältnis.": {
+    "en": "Adjust the filters or add another tenancy.",
+    "fr": "Adaptez les filtres ou ajoutez une autre location."
+  },
+  "Erfasst zuerst die Einheit und die Mieterkontakte, danach den zugehörigen Vertrag.": {
+    "en": "First add the unit and tenant contacts, then the related lease.",
+    "fr": "Ajoutez d’abord le lot et les contacts locataires, puis le bail associé."
+  },
+  "Mietvertrag / Parteien": {
+    "en": "Lease / parties",
+    "fr": "Bail / parties"
+  },
+  "Mietdauer": {
+    "en": "Tenancy duration",
+    "fr": "Durée de location"
+  },
+  "Monatsmiete · CHF": {
+    "en": "Monthly rent · CHF",
+    "fr": "Loyer mensuel · CHF"
+  },
+  "Vertragsstand / Unterlagen": {
+    "en": "Lease status / documents",
+    "fr": "État du bail / documents"
+  },
+  "Netto {8}": {
+    "en": "Net {8}",
+    "fr": "Net {8}"
+  },
+  "NK {9}": {
+    "en": "Charges {9}",
+    "fr": "Charges {9}"
+  },
+  "Punkt offen": {
+    "en": "point pending",
+    "fr": "point en suspens"
+  },
+  "Punkte offen": {
+    "en": "points pending",
+    "fr": "points en suspens"
+  },
+  "Keine offenen Hinweise": {
+    "en": "No outstanding notes",
+    "fr": "Aucune remarque en suspens"
+  },
+  "Mietverträge, Mietbeträge und Bearbeitungsstände": {
+    "en": "Leases, rent amounts and processing statuses",
+    "fr": "Baux, montants des loyers et états de traitement"
+  },
+  "Vertragsbestand": {
+    "en": "Lease portfolio",
+    "fr": "Parc de baux"
+  },
+  "HEV-Verträge und bestehende Mietverhältnisse": {
+    "en": "HEV leases and existing tenancies",
+    "fr": "Baux HEV et locations existantes"
+  },
+  "Vertrag beim Anbieter ausfüllen, unterzeichnen lassen und hier zusammen mit den Vertragsdaten ablegen.": {
+    "en": "Complete the lease with the provider, have it signed and file it here with the lease data.",
+    "fr": "Remplissez le bail auprès du fournisseur, faites-le signer et déposez-le ici avec ses données."
+  },
+  "HEV-Formulare öffnen ↗": {
+    "en": "Open HEV forms ↗",
+    "fr": "Ouvrir les formulaires HEV ↗"
+  },
+  "Mietverträge.": {
+    "en": "Leases.",
+    "fr": "Baux."
+  },
+  "Verträge, Unterlagen und nächste Schritte an einem Ort.": {
+    "en": "Leases, documents and next steps in one place.",
+    "fr": "Baux, documents et prochaines étapes au même endroit."
+  },
+  "Vertragsnummer, Mieter, Vermieter oder Adresse …": {
+    "en": "Lease number, tenant, landlord or address …",
+    "fr": "Numéro de bail, locataire, bailleur ou adresse…"
+  },
+  "Handlungsbedarf": {
+    "en": "Action required",
+    "fr": "Actions requises"
+  },
+  "Gesamte Auswahl": {
+    "en": "Entire selection",
+    "fr": "Toute la sélection"
+  },
+  "Mit offenen Punkten": {
+    "en": "With pending points",
+    "fr": "Avec des points en suspens"
+  },
+  "Ende in 90 Tagen": {
+    "en": "Ending within 90 days",
+    "fr": "Fin dans les 90 jours"
+  },
+  "Mietbeginn · neueste zuerst": {
+    "en": "Tenancy start · newest first",
+    "fr": "Début de bail · plus récent d’abord"
+  },
+  "Vertragsende · nächste zuerst": {
+    "en": "Lease end · nearest first",
+    "fr": "Fin de bail · plus proche d’abord"
+  },
+  "Vertretung: {1}": {
+    "en": "Represented by: {1}",
+    "fr": "Représentation : {1}"
+  },
+  "Mieterschaft": {
+    "en": "Tenants",
+    "fr": "Locataires"
+  },
+  "Noch zu bearbeiten": {
+    "en": "Still to be processed",
+    "fr": "Encore à traiter"
+  },
+  "Hinweise auf Basis eurer Erfassung; keine rechtliche Vertragsprüfung.": {
+    "en": "Notes based on your entries; not a legal review of the lease.",
+    "fr": "Indications fondées sur vos saisies ; aucune vérification juridique du bail."
+  },
+  "Offene Punkte": {
+    "en": "Pending points",
+    "fr": "Points en suspens"
+  },
+  "Parteien & Objekt": {
+    "en": "Parties & property",
+    "fr": "Parties et objet"
+  },
+  "Einheit öffnen ↗": {
+    "en": "Open unit ↗",
+    "fr": "Ouvrir le lot ↗"
+  },
+  "Liegenschaft öffnen ↗": {
+    "en": "Open property ↗",
+    "fr": "Ouvrir l’immeuble ↗"
+  },
+  "Kein Ende erfasst": {
+    "en": "No end date recorded",
+    "fr": "Aucune date de fin enregistrée"
+  },
+  "Laufzeitart": {
+    "en": "Term type",
+    "fr": "Type de durée"
+  },
+  "Versandt am": {
+    "en": "Sent on",
+    "fr": "Envoyé le"
+  },
+  "Vollständig unterzeichnet": {
+    "en": "Fully signed",
+    "fr": "Entièrement signé"
+  },
+  "Monatsmiete": {
+    "en": "Monthly rent",
+    "fr": "Loyer mensuel"
+  },
+  "Vertragsbeträge per": {
+    "en": "Lease amounts as of",
+    "fr": "Montants contractuels au"
+  },
+  "Ablagereferenz": {
+    "en": "Filing reference",
+    "fr": "Référence de classement"
+  },
+  "Unterzeichneter Vertrag": {
+    "en": "Signed lease",
+    "fr": "Bail signé"
+  },
+  "Als Dokument hinterlegt": {
+    "en": "Stored as a document",
+    "fr": "Déposé comme document"
+  },
+  "Noch nicht hinterlegt": {
+    "en": "Not stored yet",
+    "fr": "Pas encore déposé"
+  },
+  "Dokumente öffnen ↗": {
+    "en": "Open documents ↗",
+    "fr": "Ouvrir les documents ↗"
+  },
+  "Bearbeitungsverlauf ({0})": {
+    "en": "Processing history ({0})",
+    "fr": "Historique de traitement ({0})"
+  },
+  "Die letzten 20 Änderungen werden angezeigt; die vollständige gespeicherte Historie ist in der Datensicherung enthalten.": {
+    "en": "The last 20 changes are shown; the complete saved history is included in the backup.",
+    "fr": "Les 20 dernières modifications sont affichées ; l’historique enregistré complet est inclus dans la sauvegarde."
+  },
+  "Beträge ab dem jeweiligen Gültigkeitsdatum. Änderungen wirken im Mieterspiegel mit.": {
+    "en": "Amounts apply from their respective effective dates. Changes are reflected in the rent roll.",
+    "fr": "Les montants s’appliquent à partir de leur date de validité respective. Les modifications se répercutent dans l’état locatif."
+  },
+  "Änderung erfassen": {
+    "en": "Add change",
+    "fr": "Ajouter une modification"
+  },
+  "Nebenkostenvereinbarung": {
+    "en": "Service charge agreement",
+    "fr": "Convention relative aux charges"
+  },
+  "Noch keine einzelnen Nebenkostenpositionen erfasst.": {
+    "en": "No individual service charge items recorded yet.",
+    "fr": "Aucun poste de charges individuel enregistré."
+  },
+  "Erfasste Mietzinsgrundlagen": {
+    "en": "Recorded rent calculation bases",
+    "fr": "Bases du loyer enregistrées"
+  },
+  "Referenzzinssatz": {
+    "en": "Reference interest rate",
+    "fr": "Taux d’intérêt de référence"
+  },
+  "Landesindex": {
+    "en": "National index",
+    "fr": "Indice national"
+  },
+  "Kostenstand per": {
+    "en": "Cost level as of",
+    "fr": "État des coûts au"
+  },
+  "Dokumentierter Vertragsstand. Spätere Anpassungsschreiben als Nachtrag ablegen; keine automatische Neuberechnung.": {
+    "en": "Documented lease status. File later adjustment notices as amendments; no automatic recalculation.",
+    "fr": "État contractuel documenté. Déposez les avis d’adaptation ultérieurs comme avenants ; aucun recalcul automatique."
+  },
+  "Laufzeit & Kündigung": {
+    "en": "Term & termination",
+    "fr": "Durée et résiliation"
+  },
+  "Keine besonderen Vereinbarungen erfasst.": {
+    "en": "No special agreements recorded.",
+    "fr": "Aucune convention particulière enregistrée."
+  },
+  "Angaben gemäss Vertrag. Fristen und Erinnerungen darunter werden separat erfasst und ändern die Vertragsdauer nicht.": {
+    "en": "Details according to the lease. Deadlines and reminders below are recorded separately and do not change the lease term.",
+    "fr": "Informations selon le contrat. Les délais et rappels ci-dessous sont saisis séparément et ne modifient pas la durée du bail."
+  },
+  "Fristen & Pendenzen": {
+    "en": "Deadlines & open items",
+    "fr": "Délais et points en suspens"
+  },
+  "Noch keine Fristen erfasst. Unterzeichnung, Kautionsnachweis, Kündigung oder Übergabe mit einem Termin und einer Zuständigkeit vormerken.": {
+    "en": "No deadlines recorded yet. Note signing, deposit evidence, termination or handover with a date and a person responsible.",
+    "fr": "Aucun délai enregistré. Planifiez la signature, le justificatif de garantie, la résiliation ou la remise en indiquant une date et un responsable."
+  },
+  "Erinnerungen erscheinen im Portal ab dem gewählten Vorlauf. E-Mail und Push sind nicht verbunden.": {
+    "en": "Reminders appear in the portal from the selected advance period. Email and push are not connected.",
+    "fr": "Les rappels s’affichent dans le portail selon le préavis choisi. Les e-mails et notifications push ne sont pas connectés."
+  },
+  "Kaution & Nachweise": {
+    "en": "Deposit & evidence",
+    "fr": "Garantie et justificatifs"
+  },
+  "Vereinbarte Sicherheit": {
+    "en": "Agreed security",
+    "fr": "Garantie convenue"
+  },
+  "Nachgewiesen / Garantiesumme": {
+    "en": "Evidenced / guarantee sum",
+    "fr": "Montant justifié / somme garantie"
+  },
+  "Noch nachzuweisen": {
+    "en": "Evidence still required",
+    "fr": "Reste à justifier"
+  },
+  "Nachweis fällig": {
+    "en": "Evidence due",
+    "fr": "Justificatif dû"
+  },
+  "Nachweis geprüft": {
+    "en": "Evidence checked",
+    "fr": "Justificatif vérifié"
+  },
+  "Manuell dokumentierter Nachweis. Keine Bankanbindung und keine automatische Freigabe von Geldern.": {
+    "en": "Manually documented evidence. No bank connection or automatic release of funds.",
+    "fr": "Justificatif documenté manuellement. Aucune connexion bancaire ni libération automatique de fonds."
+  },
+  "Kautionsübersicht öffnen ↗": {
+    "en": "Open deposit overview ↗",
+    "fr": "Ouvrir la vue des garanties ↗"
+  },
+  "Kautionsdokumente ansehen ↗": {
+    "en": "View deposit documents ↗",
+    "fr": "Voir les documents de garantie ↗"
+  },
+  "Nachweis bearbeiten": {
+    "en": "Edit evidence",
+    "fr": "Modifier le justificatif"
+  },
+  "{0} Dateien · Frühere Fassungen bleiben verfügbar. «Unterzeichnet» ist eure manuelle Zuordnung.": {
+    "en": "{0} files · Previous versions remain available. “Signed” is your manual classification.",
+    "fr": "{0} fichiers · Les versions précédentes restent disponibles. La mention « Signé » correspond à votre classement manuel."
+  },
+  "Ansehen": {
+    "en": "View",
+    "fr": "Consulter"
+  },
+  "Version offen": {
+    "en": "Version not specified",
+    "fr": "Version à préciser"
+  },
+  "Noch keine Vertragsunterlagen": {
+    "en": "No lease documents yet",
+    "fr": "Aucun document de bail"
+  },
+  "Ladet den HEV-Vertrag und seine Beilagen hoch.": {
+    "en": "Upload the HEV lease and its attachments.",
+    "fr": "Téléversez le bail HEV et ses annexes."
+  },
+  "Dateien werden auf diesem Gerät gespeichert. Über «Einstellungen → Einträge sichern» den vollständigen Datenstand inklusive Dokumenten sichern.": {
+    "en": "Files are stored on this device. Use “Settings → Back up entries” to save all data, including documents.",
+    "fr": "Les fichiers sont stockés sur cet appareil. Sauvegardez toutes les données, documents compris, via « Paramètres → Sauvegarder les entrées »."
+  },
+  "Dokumente verwalten": {
+    "en": "Manage documents",
+    "fr": "Gérer les documents"
+  },
+  "Mietvertrag nicht gefunden.": {
+    "en": "Lease not found.",
+    "fr": "Bail introuvable."
+  },
+  "Bedingungen & Fristen": {
+    "en": "Terms & deadlines",
+    "fr": "Conditions et délais"
+  },
+  "Kautionsübersicht": {
+    "en": "Deposit overview",
+    "fr": "Vue des garanties"
+  },
+  "Vereinbarte Sicherheiten und dokumentierte Nachweise je Mietverhältnis.": {
+    "en": "Agreed securities and documented evidence for each tenancy.",
+    "fr": "Garanties convenues et justificatifs documentés pour chaque location."
+  },
+  "Vertrag, Mieter oder Einheit …": {
+    "en": "Lease, tenant or unit …",
+    "fr": "Bail, locataire ou lot…"
+  },
+  "Nachweise": {
+    "en": "Evidence",
+    "fr": "Justificatifs"
+  },
+  "Offen / ungeprüft": {
+    "en": "Pending / unchecked",
+    "fr": "En attente / non vérifié"
+  },
+  "Freigegeben": {
+    "en": "Released",
+    "fr": "Libéré"
+  },
+  "Sicherheit": {
+    "en": "Security",
+    "fr": "Garantie"
+  },
+  "Vereinbart / nachgewiesen": {
+    "en": "Agreed / evidenced",
+    "fr": "Convenu / justifié"
+  },
+  "Termin / Stand": {
+    "en": "Date / status",
+    "fr": "Date / état"
+  },
+  "Nachgewiesen {6}": {
+    "en": "Evidenced {6}",
+    "fr": "Justifié {6}"
+  },
+  "Kein Fälligkeitstermin erfasst": {
+    "en": "No due date recorded",
+    "fr": "Aucune échéance enregistrée"
+  },
+  "Kautionen aus Mietverträgen": {
+    "en": "Deposits from leases",
+    "fr": "Garanties des baux"
+  },
+  "Keine Kautionen in dieser Auswahl": {
+    "en": "No deposits in this selection",
+    "fr": "Aucune garantie dans cette sélection"
+  },
+  "Kautionsangaben werden im jeweiligen Mietvertragsdossier erfasst.": {
+    "en": "Deposit details are recorded in the corresponding lease dossier.",
+    "fr": "Les informations de garantie sont saisies dans le dossier du bail correspondant."
+  },
+  "Dieselben Angaben erscheinen im Mietvertragsdossier. Nachweise sind manuell erfasst; Geldbewegungen und Freigaben werden hier nicht ausgeführt.": {
+    "en": "The same details appear in the lease dossier. Evidence is entered manually; no funds are moved or released here.",
+    "fr": "Les mêmes informations figurent dans le dossier du bail. Les justificatifs sont saisis manuellement ; aucun mouvement ni aucune libération de fonds n’est effectué ici."
+  },
+  "Vorlagenstand": {
+    "en": "Template version",
+    "fr": "Version du modèle"
+  },
+  "Frühester Kündigungstermin": {
+    "en": "Earliest termination date",
+    "fr": "Première échéance de résiliation"
+  },
+  "Unterzeichnet am": {
+    "en": "Signed on",
+    "fr": "Signé le"
+  },
+  "Mietzinsstand": {
+    "en": "Rent status",
+    "fr": "État du loyer"
+  },
+  "Netto CHF": {
+    "en": "Net CHF",
+    "fr": "Net CHF"
+  },
+  "Akonto CHF": {
+    "en": "Advance payments CHF",
+    "fr": "Acomptes CHF"
+  },
+  "Pauschale CHF": {
+    "en": "Flat rate CHF",
+    "fr": "Forfait CHF"
+  },
+  "Brutto CHF": {
+    "en": "Gross CHF",
+    "fr": "Brut CHF"
+  },
+  "Kautionsart": {
+    "en": "Deposit type",
+    "fr": "Type de garantie"
+  },
+  "Kaution vereinbart CHF": {
+    "en": "Agreed deposit CHF",
+    "fr": "Garantie convenue CHF"
+  },
+  "Nachgewiesen CHF": {
+    "en": "Evidenced CHF",
+    "fr": "Justifié CHF"
+  },
+  "Falls die Vorschau nicht angezeigt wird, die Datei herunterladen und lokal öffnen.": {
+    "en": "If the preview is not displayed, download the file and open it locally.",
+    "fr": "Si l’aperçu ne s’affiche pas, téléchargez le fichier et ouvrez-le localement."
+  },
+  "Herunterladen": {
+    "en": "Download",
+    "fr": "Télécharger"
+  },
+  "MORADA · VERTRAGSUNTERLAGEN": {
+    "en": "MORADA · LEASE DOCUMENTS",
+    "fr": "MORADA · DOCUMENTS DU BAIL"
+  },
+  "Verbergen": {
+    "en": "Hide",
+    "fr": "Masquer"
+  },
+  "Anzeigen": {
+    "en": "Show",
+    "fr": "Afficher"
+  },
+  "Passwort verbergen": {
+    "en": "Hide password",
+    "fr": "Masquer le mot de passe"
+  },
+  "Passwort anzeigen": {
+    "en": "Show password",
+    "fr": "Afficher le mot de passe"
+  },
+  "Die gespeicherten Daten werden noch geladen. Bitte kurz warten.": {
+    "en": "The saved data is still loading. Please wait a moment.",
+    "fr": "Les données enregistrées sont encore en cours de chargement. Veuillez patienter."
+  },
+  "Leerstandsabschnitt entfernen?": {
+    "en": "Remove vacancy period?",
+    "fr": "Supprimer la période de vacance ?"
+  },
+  "Dieser datierte Nachweis wird entfernt. Andere Abschnitte bleiben bestehen; im betroffenen Zeitraum können Historie und Mietwertquote anschliessend offen sein.": {
+    "en": "This dated record will be removed. Other periods remain; the history and rental value ratio may then be unknown for the affected period.",
+    "fr": "Cette période datée sera supprimée. Les autres périodes sont conservées ; l’historique et le taux de valeur locative pourront ensuite rester indéterminés pour la période concernée."
+  },
+  "Abschnitt entfernen": {
+    "en": "Remove period",
+    "fr": "Supprimer la période"
+  },
+  "Der Datenstand hat sich geändert. Bitte den aktuellen Abschnitt erneut öffnen.": {
+    "en": "The data has changed. Please reopen the current period.",
+    "fr": "Les données ont changé. Veuillez rouvrir la période actuelle."
+  },
+  "Leerstandsverlauf berichtigt.": {
+    "en": "Vacancy history corrected.",
+    "fr": "Historique des vacances corrigé."
+  },
+  "Deutsch": {
+    "en": "German",
+    "fr": "Allemand"
+  },
+  "Französisch": {
+    "en": "French",
+    "fr": "Français"
+  },
+  "Italienisch": {
+    "en": "Italian",
+    "fr": "Italien"
+  },
+  "Englisch": {
+    "en": "English",
+    "fr": "Anglais"
+  },
+  "Portugiesisch": {
+    "en": "Portuguese",
+    "fr": "Portugais"
+  },
+  "Andere Sprache": {
+    "en": "Other language",
+    "fr": "Autre langue"
+  },
+  "Keine Präferenz erfasst": {
+    "en": "No preference recorded",
+    "fr": "Aucune préférence enregistrée"
+  },
+  "Post": {
+    "en": "Post",
+    "fr": "Courrier postal"
+  },
+  "Die ergänzenden Kontaktangaben sind ungültig.": {
+    "en": "The additional contact details are invalid.",
+    "fr": "Les coordonnées complémentaires sont invalides."
+  },
+  "Bitte die ergänzenden Kontaktangaben prüfen.": {
+    "en": "Please check the additional contact details.",
+    "fr": "Veuillez vérifier les coordonnées complémentaires."
+  },
+  "Bitte Anrede, Sprache und Kontaktpräferenz aus der Auswahl wählen.": {
+    "en": "Please select a salutation, language and contact preference from the options.",
+    "fr": "Veuillez choisir une civilité, une langue et une préférence de contact dans les options proposées."
+  },
+  "Ergänzende Kontaktangaben": {
+    "en": "Additional contact details",
+    "fr": "Coordonnées complémentaires"
+  },
+  "Ansprechperson bei Unternehmen": {
+    "en": "Company contact person",
+    "fr": "Personne de contact dans l’entreprise"
+  },
+  "Die Korrespondenzadresse wird separat geführt. Mietobjekte und Vertragsparteien werden über den Mietvertrag zugeordnet. Eine Kontaktpräferenz ist keine Versandfreigabe.": {
+    "en": "The correspondence address is maintained separately. Rental properties and parties are assigned through the lease. A contact preference is not permission to send messages.",
+    "fr": "L’adresse de correspondance est gérée séparément. Les objets locatifs et les parties sont rattachés au moyen du bail. Une préférence de contact ne constitue pas une autorisation d’envoi."
+  },
+  "Alle Mietstatus": {
+    "en": "All tenancy statuses",
+    "fr": "Tous les statuts locatifs"
+  },
+  "Laufendes Mietverhältnis": {
+    "en": "Current tenancy",
+    "fr": "Location en cours"
+  },
+  "Kommendes Mietverhältnis": {
+    "en": "Upcoming tenancy",
+    "fr": "Location à venir"
+  },
+  "Nur frühere Mietverhältnisse": {
+    "en": "Past tenancies only",
+    "fr": "Locations antérieures uniquement"
+  },
+  "Mit Vertragsentwurf": {
+    "en": "With a draft lease",
+    "fr": "Avec un projet de bail"
+  },
+  "Ohne Mietvertrag": {
+    "en": "Without a lease",
+    "fr": "Sans bail"
+  },
+  "Nur stornierte Verträge": {
+    "en": "Cancelled leases only",
+    "fr": "Baux annulés uniquement"
+  },
+  "Ehemalig": {
+    "en": "Former",
+    "fr": "Ancien"
+  },
+  "E-Mail oder Telefon ergänzen": {
+    "en": "Add email or telephone",
+    "fr": "Compléter l’e-mail ou le téléphone"
+  },
+  "Korrespondenzadresse ergänzen": {
+    "en": "Add correspondence address",
+    "fr": "Compléter l’adresse de correspondance"
+  },
+  "E-Mail für den bevorzugten Kontaktweg fehlt": {
+    "en": "Email missing for the preferred contact method",
+    "fr": "E-mail manquant pour le moyen de contact préféré"
+  },
+  "Telefon für den bevorzugten Kontaktweg fehlt": {
+    "en": "Telephone missing for the preferred contact method",
+    "fr": "Téléphone manquant pour le moyen de contact préféré"
+  },
+  "Ansprechperson ergänzen": {
+    "en": "Add contact person",
+    "fr": "Compléter la personne de contact"
+  },
+  "Auch kommender Vertrag": {
+    "en": "Also has an upcoming lease",
+    "fr": "Également un bail à venir"
+  },
+  "Auch Vertragsentwurf": {
+    "en": "Also has a draft lease",
+    "fr": "Également un projet de bail"
+  },
+  "Keine E-Mail / Telefonnummer": {
+    "en": "No email / telephone number",
+    "fr": "Aucun e-mail / numéro de téléphone"
+  },
+  "Mieterkontakte": {
+    "en": "Tenant contacts",
+    "fr": "Contacts locataires"
+  },
+  "Personen und Unternehmen": {
+    "en": "People and companies",
+    "fr": "Personnes et entreprises"
+  },
+  "Mit laufendem Mietverhältnis": {
+    "en": "With a current tenancy",
+    "fr": "Avec une location en cours"
+  },
+  "Mit künftigem Mietbeginn": {
+    "en": "With a future tenancy start",
+    "fr": "Avec un début de bail futur"
+  },
+  "Erreichbarkeit und Korrespondenz": {
+    "en": "Contact details and correspondence",
+    "fr": "Coordonnées et correspondance"
+  },
+  "Stand {1} · Gesamter Kontaktbestand ohne Archiv. Ein Kontakt kann laufende und kommende Verträge haben. Die Filter gelten für die Liste.": {
+    "en": "As of {1} · All contacts excluding the archive. A contact may have current and upcoming leases. Filters apply to the list.",
+    "fr": "État au {1} · Tous les contacts hors archives. Un contact peut avoir des baux en cours et à venir. Les filtres s’appliquent à la liste."
+  },
+  "Liegenschaft prüfen": {
+    "en": "Check property",
+    "fr": "Vérifier l’immeuble"
+  },
+  "Einheitenzuordnung prüfen": {
+    "en": "Check unit assignment",
+    "fr": "Vérifier le rattachement au lot"
+  },
+  "Weitere {1} anzeigen ↗": {
+    "en": "Show {1} more ↗",
+    "fr": "Afficher {1} de plus ↗"
+  },
+  "Noch kein Mietvertrag zugeordnet": {
+    "en": "No lease assigned yet",
+    "fr": "Aucun bail rattaché"
+  },
+  "Mietbeginn {0}": {
+    "en": "Tenancy starts {0}",
+    "fr": "Début du bail le {0}"
+  },
+  "Mietende {0}": {
+    "en": "Tenancy ends {0}",
+    "fr": "Fin du bail le {0}"
+  },
+  "Letztes Mietende {0}": {
+    "en": "Last tenancy ended {0}",
+    "fr": "Dernière fin de bail le {0}"
+  },
+  "Keine Mieter in dieser Auswahl": {
+    "en": "No tenants in this selection",
+    "fr": "Aucun locataire dans cette sélection"
+  },
+  "Euren ersten Mieterkontakt erfassen": {
+    "en": "Add your first tenant contact",
+    "fr": "Ajoutez votre premier contact locataire"
+  },
+  "Passt die Suche oder die Filter an. Frühere Mietverhältnisse und archivierte Kontakte bleiben auffindbar.": {
+    "en": "Adjust the search or filters. Past tenancies and archived contacts remain available.",
+    "fr": "Adaptez la recherche ou les filtres. Les locations antérieures et contacts archivés restent accessibles."
+  },
+  "Erfasst jede Vertragspartei als eigenen Kontakt. Wohnung, Parkplatz und gemeinsame Verträge werden anschliessend verknüpft.": {
+    "en": "Record each party as a separate contact. Apartments, parking spaces and shared leases are linked afterwards.",
+    "fr": "Enregistrez chaque partie comme un contact distinct. Les appartements, places de stationnement et baux communs sont ensuite liés."
+  },
+  "Mieter erfassen": {
+    "en": "Add tenant",
+    "fr": "Ajouter un locataire"
+  },
+  "{0} {1} in der Auswahl{2}": {
+    "en": "{0} {1} in the selection{2}",
+    "fr": "{0} {1} dans la sélection{2}"
+  },
+  "Mieterkontakt": {
+    "en": "Tenant contact",
+    "fr": "Contact locataire"
+  },
+  "· Mietverhältnisse der ausgewählten Liegenschaft": {
+    "en": "· Tenancies in the selected property",
+    "fr": "· Locations de l’immeuble sélectionné"
+  },
+  "Einheiten & Verträge": {
+    "en": "Units & leases",
+    "fr": "Lots et baux"
+  },
+  "Kontaktangabe offen": {
+    "en": "Contact detail pending",
+    "fr": "Coordonnée à compléter"
+  },
+  "Kontaktangaben offen": {
+    "en": "Contact details pending",
+    "fr": "Coordonnées à compléter"
+  },
+  "Korrespondenzadresse offen": {
+    "en": "Correspondence address pending",
+    "fr": "Adresse de correspondance à compléter"
+  },
+  "Mieterkontakte mit verknüpften Mietverhältnissen": {
+    "en": "Tenant contacts with linked tenancies",
+    "fr": "Contacts locataires avec locations liées"
+  },
+  "Mieterverzeichnis": {
+    "en": "Tenant directory",
+    "fr": "Répertoire des locataires"
+  },
+  "Personen und Unternehmen mit ihren verknüpften Mietverträgen.": {
+    "en": "People and companies with their linked leases.",
+    "fr": "Personnes et entreprises avec leurs baux liés."
+  },
+  "Mietstatus und Mietobjekte stammen aus den verknüpften Verträgen. «Ehemalig» bezeichnet beendete Mietverhältnisse; das Kontaktarchiv wird separat geführt.": {
+    "en": "Tenancy status and rental units come from linked leases. “Former” refers to ended tenancies; the contact archive is maintained separately.",
+    "fr": "Le statut locatif et les objets loués proviennent des baux liés. « Ancien » désigne les locations terminées ; les archives des contacts sont gérées séparément."
+  },
+  "Kontakte, Mietverhältnisse und Erreichbarkeit im Überblick.": {
+    "en": "An overview of contacts, tenancies and contact details.",
+    "fr": "Vue d’ensemble des contacts, locations et coordonnées."
+  },
+  "Auswahl als CSV exportieren": {
+    "en": "Export selection as CSV",
+    "fr": "Exporter la sélection en CSV"
+  },
+  "Name, E-Mail, Telefon, Vertrag oder Liegenschaft …": {
+    "en": "Name, email, telephone, lease or property …",
+    "fr": "Nom, e-mail, téléphone, bail ou immeuble…"
+  },
+  "Kontaktbestand": {
+    "en": "Contact directory",
+    "fr": "Répertoire des contacts"
+  },
+  "Nicht archiviert": {
+    "en": "Not archived",
+    "fr": "Non archivé"
+  },
+  "Archivierte Kontakte": {
+    "en": "Archived contacts",
+    "fr": "Contacts archivés"
+  },
+  "Verknüpfte Liegenschaft": {
+    "en": "Linked property",
+    "fr": "Immeuble lié"
+  },
+  "Alle Kontaktarten": {
+    "en": "All contact types",
+    "fr": "Tous les types de contacts"
+  },
+  "Privatpersonen": {
+    "en": "Private individuals",
+    "fr": "Personnes physiques"
+  },
+  "Unternehmen / Organisationen": {
+    "en": "Companies / organisations",
+    "fr": "Entreprises / organisations"
+  },
+  "Im Blick behalten": {
+    "en": "Keep in view",
+    "fr": "À surveiller"
+  },
+  "Kontaktangaben ergänzen": {
+    "en": "Complete contact details",
+    "fr": "Compléter les coordonnées"
+  },
+  "Mietbeginn in den nächsten 90 Tagen": {
+    "en": "Tenancy starts in the next 90 days",
+    "fr": "Début de bail dans les 90 prochains jours"
+  },
+  "Mietende in den nächsten 90 Tagen": {
+    "en": "Tenancy ends in the next 90 days",
+    "fr": "Fin de bail dans les 90 prochains jours"
+  },
+  "Name · A–Z": {
+    "en": "Name · A–Z",
+    "fr": "Nom · A–Z"
+  },
+  "Mietstatus": {
+    "en": "Tenancy status",
+    "fr": "Statut locatif"
+  },
+  "Erreichbarkeit & Korrespondenz": {
+    "en": "Contact details & correspondence",
+    "fr": "Coordonnées et correspondance"
+  },
+  "E-Mail- und Telefonlinks öffnen eure jeweilige Anwendung. Es erfolgt kein automatischer Versand.": {
+    "en": "Email and telephone links open the relevant application. Nothing is sent automatically.",
+    "fr": "Les liens e-mail et téléphone ouvrent l’application correspondante. Aucun envoi n’est effectué automatiquement."
+  },
+  "Kontakt bearbeiten": {
+    "en": "Edit contact",
+    "fr": "Modifier le contact"
+  },
+  "Beträge für den gesamten Vertrag{5}. {6}": {
+    "en": "Amounts for the entire lease{5}. {6}",
+    "fr": "Montants pour l’ensemble du bail{5}. {6}"
+  },
+  "Unterlagen ({9}) ↗": {
+    "en": "Documents ({9}) ↗",
+    "fr": "Documents ({9}) ↗"
+  },
+  "Weitere Vertragsparteien: {0}": {
+    "en": "Other parties to the lease: {0}",
+    "fr": "Autres parties au bail : {0}"
+  },
+  "· keine Aufteilung auf einzelne Vertragsparteien": {
+    "en": "· Not divided between individual parties",
+    "fr": "· Sans répartition entre les parties"
+  },
+  "Diese Erfassung wird im Mieterspiegel nicht berücksichtigt.": {
+    "en": "This entry is not included in the rent roll.",
+    "fr": "Cette saisie n’est pas prise en compte dans l’état locatif."
+  },
+  "Mietvertrag öffnen": {
+    "en": "Open lease",
+    "fr": "Ouvrir le bail"
+  },
+  "Mietverhältnisse & Verlauf": {
+    "en": "Tenancies & history",
+    "fr": "Locations et historique"
+  },
+  "{0} {1} mit diesem Kontakt als Vertragspartei": {
+    "en": "{0} {1} with this contact as a party",
+    "fr": "{0} {1} avec ce contact comme partie"
+  },
+  "Keine Mietverhältnisse in dieser Auswahl": {
+    "en": "No tenancies in this selection",
+    "fr": "Aucune location dans cette sélection"
+  },
+  "Erfasst einen Vertrag oder passt den Filter an.": {
+    "en": "Add a lease or adjust the filter.",
+    "fr": "Ajoutez un bail ou adaptez le filtre."
+  },
+  "Angaben bearbeiten": {
+    "en": "Edit details",
+    "fr": "Modifier les informations"
+  },
+  "Mietverhältnisse auf einen Blick": {
+    "en": "Tenancies at a glance",
+    "fr": "Les locations en un coup d’œil"
+  },
+  "Laufende Verträge": {
+    "en": "Current leases",
+    "fr": "Baux en cours"
+  },
+  "Kommende Verträge": {
+    "en": "Upcoming leases",
+    "fr": "Baux à venir"
+  },
+  "Beendete Verträge": {
+    "en": "Ended leases",
+    "fr": "Baux terminés"
+  },
+  "Vertragsentwürfe": {
+    "en": "Draft leases",
+    "fr": "Projets de bail"
+  },
+  "Alle Mietverhältnisse anzeigen ↗": {
+    "en": "Show all tenancies ↗",
+    "fr": "Afficher toutes les locations ↗"
+  },
+  "Laufende & kommende Mietverhältnisse": {
+    "en": "Current & upcoming tenancies",
+    "fr": "Locations en cours et à venir"
+  },
+  "Weitere Mietverhältnisse anzeigen ↗": {
+    "en": "Show more tenancies ↗",
+    "fr": "Afficher d’autres locations ↗"
+  },
+  "Hier sind zurzeit keine laufenden oder kommenden Mietverhältnisse zugeordnet. Der vollständige Verlauf bleibt unter «Mietverhältnisse» erhalten.": {
+    "en": "No current or upcoming tenancies are assigned here at present. The complete history remains under “Tenancies”.",
+    "fr": "Aucune location en cours ou à venir n’est actuellement rattachée ici. L’historique complet reste disponible sous « Locations »."
+  },
+  "Dieser Kontakt hat noch keinen Mietvertrag. Beim Erfassen eines Vertrags wird er als Vertragspartei vorausgewählt.": {
+    "en": "This contact has no lease yet. They will be preselected as a party when you create a lease.",
+    "fr": "Ce contact n’a pas encore de bail. Il sera présélectionné comme partie lors de la saisie d’un bail."
+  },
+  "Noch keine internen Notizen erfasst.": {
+    "en": "No internal notes recorded yet.",
+    "fr": "Aucune note interne enregistrée."
+  },
+  "Weitere Rollen": {
+    "en": "Other roles",
+    "fr": "Autres rôles"
+  },
+  "Keine": {
+    "en": "None",
+    "fr": "Aucun"
+  },
+  "Eigentümer- & Auftraggeberdossier öffnen ↗": {
+    "en": "Open owner & client dossier ↗",
+    "fr": "Ouvrir le dossier propriétaire et mandant ↗"
+  },
+  "Archivieren erhält Kontakt, Verknüpfungen und frühere Mietverhältnisse. Laufende oder kommende Verträge und offene Vertragsentwürfe müssen vor der Archivierung geklärt werden.": {
+    "en": "Archiving retains the contact, links and past tenancies. Current or upcoming leases and open drafts must be resolved before archiving.",
+    "fr": "L’archivage conserve le contact, les liens et les locations antérieures. Les baux en cours ou à venir ainsi que les projets ouverts doivent être clarifiés avant l’archivage."
+  },
+  "Mieterkontakt nicht gefunden.": {
+    "en": "Tenant contact not found.",
+    "fr": "Contact locataire introuvable."
+  },
+  "Mietverhältnisse": {
+    "en": "Tenancies",
+    "fr": "Locations"
+  },
+  "Kontakt & Notizen": {
+    "en": "Contact & notes",
+    "fr": "Contact et notes"
+  },
+  "Mieterdossier": {
+    "en": "Tenant dossier",
+    "fr": "Dossier locataire"
+  },
+  "· Mieterdossier": {
+    "en": "· Tenant dossier",
+    "fr": "· Dossier locataire"
+  },
+  "Archivierter Kontakt · Angaben und Vertragsverläufe bleiben erhalten. Für einen neuen Mietvertrag den Kontakt zuerst zurückholen.": {
+    "en": "Archived contact · details and lease histories are retained. Restore the contact before creating a new lease.",
+    "fr": "Contact archivé · les informations et historiques des baux sont conservés. Restaurez le contact avant de créer un nouveau bail."
+  },
+  "Kontakt zurückholen": {
+    "en": "Restore contact",
+    "fr": "Restaurer le contact"
+  },
+  "Name / Firma": {
+    "en": "Name / company",
+    "fr": "Nom / entreprise"
+  },
+  "Sprache": {
+    "en": "Language",
+    "fr": "Langue"
+  },
+  "Kontaktpräferenz": {
+    "en": "Contact preference",
+    "fr": "Préférence de contact"
+  },
+  "Verknüpfte Verträge": {
+    "en": "Linked leases",
+    "fr": "Baux liés"
+  },
+  "Verknüpfte Einheiten": {
+    "en": "Linked units",
+    "fr": "Lots liés"
+  },
+  "Verknüpfte Liegenschaften": {
+    "en": "Linked properties",
+    "fr": "Immeubles liés"
+  },
+  "Offene Kontaktangaben": {
+    "en": "Missing contact details",
+    "fr": "Coordonnées manquantes"
+  },
+  "Keine Mieterkontakte in dieser Auswahl.": {
+    "en": "No tenant contacts in this selection.",
+    "fr": "Aucun contact locataire dans cette sélection."
+  },
+  "E-Mail oder Telefon noch ergänzen": {
+    "en": "Email or telephone still to be added",
+    "fr": "E-mail ou téléphone à compléter"
+  },
+  "Personen und Organisationen": {
+    "en": "People and organisations",
+    "fr": "Personnes et organisations"
+  },
+  "Mit Eigentümerrolle": {
+    "en": "With owner role",
+    "fr": "Avec le rôle de propriétaire"
+  },
+  "Mit Rolle oder erfasstem Mandat": {
+    "en": "With a role or recorded mandate",
+    "fr": "Avec un rôle ou un mandat enregistré"
+  },
+  "Gesamter Kontaktbestand ohne Archiv · Ein Kontakt kann Eigentümer und Auftraggeber sein. Die Filter gelten für die Liste.": {
+    "en": "All contacts excluding the archive · A contact can be both an owner and a client. Filters apply to the list.",
+    "fr": "Tous les contacts hors archives · Un contact peut être à la fois propriétaire et mandant. Les filtres s’appliquent à la liste."
+  },
+  "Ohne Liegenschaft / Mandat": {
+    "en": "Without property / mandate",
+    "fr": "Sans immeuble / mandat"
+  },
+  "Mit laufendem Mandat": {
+    "en": "With a current mandate",
+    "fr": "Avec un mandat en cours"
+  },
+  "Keine Kontakte in dieser Auswahl": {
+    "en": "No contacts in this selection",
+    "fr": "Aucun contact dans cette sélection"
+  },
+  "Passt die Suche an oder setzt die Filter zurück.": {
+    "en": "Adjust the search or reset the filters.",
+    "fr": "Adaptez la recherche ou réinitialisez les filtres."
+  },
+  "Euer erster Eigentümer oder Auftraggeber": {
+    "en": "Your first owner or client",
+    "fr": "Votre premier propriétaire ou mandant"
+  },
+  "Erfasst den Kontakt einmal. Liegenschaften und Mandate könnt ihr anschliessend direkt zuordnen.": {
+    "en": "Record the contact once. You can then assign properties and mandates directly.",
+    "fr": "Enregistrez le contact une seule fois. Vous pourrez ensuite lui rattacher directement des immeubles et mandats."
+  },
+  "Kontakt erfassen": {
+    "en": "Add contact",
+    "fr": "Ajouter un contact"
+  },
+  "Liegenschaften im Eigentum": {
+    "en": "Properties owned",
+    "fr": "Immeubles en propriété"
+  },
+  "Mandate als Auftraggeber": {
+    "en": "Mandates as client",
+    "fr": "Mandats comme mandant"
+  },
+  "Korrespondenzadresse noch ergänzen": {
+    "en": "Correspondence address still to be added",
+    "fr": "Adresse de correspondance à compléter"
+  },
+  "Angaben ergänzen ↗": {
+    "en": "Complete details ↗",
+    "fr": "Compléter les informations ↗"
+  },
+  "{1} {2} öffnen ↗": {
+    "en": "Open {1} {2} ↗",
+    "fr": "Ouvrir {1} {2} ↗"
+  },
+  "{3} ohne Archiv": {
+    "en": "{3} excluding archive",
+    "fr": "{3} hors archives"
+  },
+  "Noch keine Zuordnung": {
+    "en": "No assignment yet",
+    "fr": "Aucun rattachement"
+  },
+  "Keine Eigentümerrolle": {
+    "en": "No owner role",
+    "fr": "Aucun rôle de propriétaire"
+  },
+  "{3} laufend{4}": {
+    "en": "{3} current{4}",
+    "fr": "{3} en cours{4}"
+  },
+  "Noch kein Mandat": {
+    "en": "No mandate yet",
+    "fr": "Aucun mandat"
+  },
+  "Eigentümer und Auftraggeber mit Kontaktangaben und Zuordnungen": {
+    "en": "Owners and clients with contact details and assignments",
+    "fr": "Propriétaires et mandants avec coordonnées et rattachements"
+  },
+  "besitzen eine Liegenschaft.": {
+    "en": "own a property.",
+    "fr": "possèdent un immeuble."
+  },
+  "beauftragen MORADA mit einer Leistung. Oft ist das derselbe Kontakt – ihr müsst ihn nur einmal erfassen.": {
+    "en": "commission MORADA to provide a service. Often this is the same contact — you only need to record them once.",
+    "fr": "confient une prestation à MORADA. Il s’agit souvent du même contact : il suffit de l’enregistrer une fois."
+  },
+  "Kontaktverzeichnis": {
+    "en": "Contact directory",
+    "fr": "Répertoire des contacts"
+  },
+  "Kontakt öffnen, um Angaben und Zuordnungen zu bearbeiten.": {
+    "en": "Open a contact to edit details and assignments.",
+    "fr": "Ouvrez un contact pour modifier ses informations et rattachements."
+  },
+  "Eigentümer & Auftraggeber.": {
+    "en": "Owners & clients.",
+    "fr": "Propriétaires et mandants."
+  },
+  "Kontakte, Liegenschaften und Mandate an einem Ort.": {
+    "en": "Contacts, properties and mandates in one place.",
+    "fr": "Contacts, immeubles et mandats au même endroit."
+  },
+  "Liste als CSV exportieren": {
+    "en": "Export list as CSV",
+    "fr": "Exporter la liste en CSV"
+  },
+  "Name, Telefon, Liegenschaft oder Mandat suchen …": {
+    "en": "Search name, telephone, property or mandate …",
+    "fr": "Rechercher un nom, téléphone, immeuble ou mandat…"
+  },
+  "Rolle": {
+    "en": "Role",
+    "fr": "Rôle"
+  },
+  "Alle Kontakte": {
+    "en": "All contacts",
+    "fr": "Tous les contacts"
+  },
+  "Zuständigkeit noch offen": {
+    "en": "Responsibility not assigned yet",
+    "fr": "Responsable à désigner"
+  },
+  "Liegenschaft noch nicht zugeordnet": {
+    "en": "Property not assigned yet",
+    "fr": "Immeuble pas encore rattaché"
+  },
+  "{6} {7} · Eigentum wird direkt bei der Liegenschaft erfasst.": {
+    "en": "{6} {7} · Ownership is recorded directly on the property.",
+    "fr": "{6} {7} · La propriété est enregistrée directement dans l’immeuble."
+  },
+  "{11} laufend · {12} geplant · {13} insgesamt": {
+    "en": "{11} current · {12} planned · {13} total",
+    "fr": "{11} en cours · {12} prévus · {13} au total"
+  },
+  "Interne Notizen{20}": {
+    "en": "Internal notes{20}",
+    "fr": "Notes internes{20}"
+  },
+  "Kontaktnummer {23}{24}": {
+    "en": "Contact number {23}{24}",
+    "fr": "Numéro de contact {23}{24}"
+  },
+  "Archivierter Kontakt · Angaben und Verknüpfungen bleiben erhalten. Für neue Zuordnungen den Kontakt zuerst zurückholen.{0}": {
+    "en": "Archived contact · details and links are retained. Restore the contact before making new assignments.{0}",
+    "fr": "Contact archivé · les informations et liens sont conservés. Restaurez le contact avant tout nouveau rattachement.{0}"
+  },
+  "Zuordnungen": {
+    "en": "Assignments",
+    "fr": "Rattachements"
+  },
+  "Mehrere Eigentümer:": {
+    "en": "Multiple owners:",
+    "fr": "Plusieurs propriétaires :"
+  },
+  "Noch keine Liegenschaft zugeordnet. Ihr könnt eine bestehende Liegenschaft auswählen.": {
+    "en": "No property assigned yet. You can select an existing property.",
+    "fr": "Aucun immeuble rattaché. Vous pouvez sélectionner un immeuble existant."
+  },
+  "Dieser Kontakt ist als Auftraggeber erfasst. Liegenschaften aus seinen Aufträgen findet ihr beim jeweiligen Mandat.": {
+    "en": "This contact is recorded as a client. Properties associated with their orders are listed in the respective mandate.",
+    "fr": "Ce contact est enregistré comme mandant. Les immeubles concernés par ses commandes se trouvent dans le mandat correspondant."
+  },
+  "Liegenschaft zuordnen": {
+    "en": "Assign property",
+    "fr": "Rattacher un immeuble"
+  },
+  "Alle {1} Liegenschaften anzeigen ↗": {
+    "en": "Show all {1} properties ↗",
+    "fr": "Afficher les {1} immeubles ↗"
+  },
+  "Noch kein Mandat erfasst. Beim Erfassen wird dieser Kontakt als Auftraggeber vorausgewählt.": {
+    "en": "No mandate recorded yet. This contact will be preselected as the client when you create one.",
+    "fr": "Aucun mandat enregistré. Ce contact sera présélectionné comme mandant lors de la saisie."
+  },
+  "Alle Mandate anzeigen ↗": {
+    "en": "Show all mandates ↗",
+    "fr": "Afficher tous les mandats ↗"
+  },
+  "Leistungen, Honorar, Vertragsunterlagen und Fristen öffnet ihr direkt beim Mandat. Eine Mandatszuordnung ist keine Eigentümerzuordnung.": {
+    "en": "Open services, fees, contract documents and deadlines directly in the mandate. Assigning a mandate does not assign ownership.",
+    "fr": "Consultez les prestations, honoraires, documents contractuels et délais directement dans le mandat. Un rattachement à un mandat ne confère pas la qualité de propriétaire."
+  },
+  "Weitere Verknüpfungen{0}": {
+    "en": "Other links{0}",
+    "fr": "Autres liens{0}"
+  },
+  "Mietverträge als Vermieterschaft": {
+    "en": "Leases as landlord",
+    "fr": "Baux en tant que bailleur"
+  },
+  "Dieser Kontakt ist in folgenden Mietverträgen als Vermieterschaft erfasst.": {
+    "en": "This contact is recorded as the landlord in the following leases.",
+    "fr": "Ce contact est enregistré comme bailleur dans les baux suivants."
+  },
+  "Mieterdossier öffnen": {
+    "en": "Open tenant dossier",
+    "fr": "Ouvrir le dossier locataire"
+  },
+  "· noch keine erfasst": {
+    "en": "· None recorded yet",
+    "fr": "· Aucun enregistré"
+  },
+  "Notizen bearbeiten": {
+    "en": "Edit notes",
+    "fr": "Modifier les notes"
+  },
+  "· Aktualisiert am": {
+    "en": "· Updated on",
+    "fr": "· Mis à jour le"
+  },
+  "Keine weitere Liegenschaft verfügbar. Neue Liegenschaften könnt ihr unter «Liegenschaften» erfassen.": {
+    "en": "No other property is available. You can add new properties under “Properties”.",
+    "fr": "Aucun autre immeuble disponible. Vous pouvez ajouter de nouveaux immeubles sous « Immeubles »."
+  },
+  "{0} wird als Eigentümer ergänzt. Bereits verknüpfte Miteigentümer bleiben erhalten. Für einen Eigentümerwechsel bearbeitet ihr die jeweilige Liegenschaft.": {
+    "en": "{0} will be added as an owner. Existing co-owner links are retained. To change ownership, edit the respective property.",
+    "fr": "{0} sera ajouté comme propriétaire. Les copropriétaires déjà liés sont conservés. Pour un changement de propriétaire, modifiez l’immeuble concerné."
+  },
+  "Bestehende Liegenschaften auswählen": {
+    "en": "Select existing properties",
+    "fr": "Sélectionner des immeubles existants"
+  },
+  "Ich habe die bisherigen Eigentümerangaben geprüft. Die bisherige Freitextangabe darf durch diese Zuordnung ersetzt werden; sie bleibt in den Liegenschaftsnotizen erhalten.": {
+    "en": "I have checked the previous ownership details. The previous free-text entry may be replaced by this assignment; it will be retained in the property notes.",
+    "fr": "J’ai vérifié les anciennes informations de propriété. La saisie libre précédente peut être remplacée par ce rattachement ; elle sera conservée dans les notes de l’immeuble."
+  },
+  "Liegenschaft zuordnen.": {
+    "en": "Assign property.",
+    "fr": "Rattacher un immeuble."
+  },
+  "Zuordnung speichern": {
+    "en": "Save assignment",
+    "fr": "Enregistrer le rattachement"
+  },
+  "Bisher: {1}": {
+    "en": "Previously: {1}",
+    "fr": "Précédemment : {1}"
+  },
+  "Ergänzen: {2}{3}": {
+    "en": "Add: {2}{3}",
+    "fr": "Ajouter : {2}{3}"
+  },
+  "Keine Angabe": {
+    "en": "Not specified",
+    "fr": "Non renseigné"
+  },
+  "· bereits zugeordnet": {
+    "en": "· Already assigned",
+    "fr": "· Déjà rattaché"
+  },
+  "Bitte einen nicht archivierten Eigentümerkontakt wählen.": {
+    "en": "Please select an owner contact that is not archived.",
+    "fr": "Veuillez sélectionner un contact propriétaire non archivé."
+  },
+  "Bitte mindestens eine Liegenschaft auswählen.": {
+    "en": "Please select at least one property.",
+    "fr": "Veuillez sélectionner au moins un immeuble."
+  },
+  "Bitte nur nicht archivierte Liegenschaften auswählen.": {
+    "en": "Please select only properties that are not archived.",
+    "fr": "Veuillez sélectionner uniquement des immeubles non archivés."
+  },
+  "Dieser Kontakt ist den ausgewählten Liegenschaften bereits zugeordnet.": {
+    "en": "This contact is already assigned to the selected properties.",
+    "fr": "Ce contact est déjà rattaché aux immeubles sélectionnés."
+  },
+  "Eine Liegenschaft kann höchstens 20 Eigentümerkontakte haben.": {
+    "en": "A property can have up to 20 owner contacts.",
+    "fr": "Un immeuble peut avoir au maximum 20 contacts propriétaires."
+  },
+  "Bitte die bisherige Eigentümerangabe prüfen und die Ersetzung bestätigen.": {
+    "en": "Please check the previous ownership details and confirm the replacement.",
+    "fr": "Veuillez vérifier les anciennes informations de propriété et confirmer leur remplacement."
+  },
+  "Bisherige Eigentümerangabe (vor Kontaktzuordnung am": {
+    "en": "Previous ownership details (before contact assignment on",
+    "fr": "Anciennes informations de propriété (avant rattachement du contact le"
+  },
+  "Die bisherigen Angaben passen nicht mehr in die Notizen von": {
+    "en": "The previous details no longer fit in the notes for",
+    "fr": "Les anciennes informations ne tiennent plus dans les notes de"
+  },
+  "Laufende Mandate": {
+    "en": "Current mandates",
+    "fr": "Mandats en cours"
+  },
+  "Keine Kontakte in dieser Auswahl.": {
+    "en": "No contacts in this selection.",
+    "fr": "Aucun contact dans cette sélection."
+  },
+  "Der Datenstand hat sich geändert. Bitte das Formular neu öffnen. Eure Eingaben bleiben erhalten.": {
+    "en": "The data has changed. Please reopen the form. Your entries are retained.",
+    "fr": "Les données ont changé. Veuillez rouvrir le formulaire. Vos saisies sont conservées."
+  },
+  "Eigentümerzuordnung gespeichert.": {
+    "en": "Owner assignment saved.",
+    "fr": "Rattachement du propriétaire enregistré."
+  },
+  "Schaden / Reparatur": {
+    "en": "Damage / repair",
+    "fr": "Dommage / réparation"
+  },
+  "Zahlung / Rechnung": {
+    "en": "Payment / invoice",
+    "fr": "Paiement / facture"
+  },
+  "Beschwerde": {
+    "en": "Complaint",
+    "fr": "Réclamation"
+  },
+  "Schlüssel / Zutritt": {
+    "en": "Keys / access",
+    "fr": "Clés / accès"
+  },
+  "Versicherung": {
+    "en": "Insurance",
+    "fr": "Assurance"
+  },
+  "Persönlich": {
+    "en": "In person",
+    "fr": "En personne"
+  },
+  "Brief": {
+    "en": "Letter",
+    "fr": "Lettre"
+  },
+  "Portal": {
+    "en": "Portal",
+    "fr": "Portail"
+  },
+  "Ungültige Angaben im Anliegen.": {
+    "en": "Invalid request details.",
+    "fr": "Informations de la demande invalides."
+  },
+  "Eine Angabe im Anliegen ist ungültig oder zu lang.": {
+    "en": "A request detail is invalid or too long.",
+    "fr": "Une information de la demande est invalide ou trop longue."
+  },
+  "Die Anliegennummer fehlt.": {
+    "en": "The request number is missing.",
+    "fr": "Le numéro de la demande manque."
+  },
+  "Bitte eine gültige Art und einen gültigen Eingangskanal wählen.": {
+    "en": "Please select a valid type and incoming channel.",
+    "fr": "Veuillez choisir un type et un canal de réception valides."
+  },
+  "Bitte das Eingangsdatum prüfen.": {
+    "en": "Please check the date received.",
+    "fr": "Veuillez vérifier la date de réception."
+  },
+  "Der meldende Kontakt wurde nicht gefunden.": {
+    "en": "The reporting contact was not found.",
+    "fr": "Le contact déclarant est introuvable."
+  },
+  "Bitte den Abschluss des Anliegens prüfen.": {
+    "en": "Please check the closure of the request.",
+    "fr": "Veuillez vérifier la clôture de la demande."
+  },
+  "Der Eingang darf nicht in der Zukunft liegen.": {
+    "en": "The date received cannot be in the future.",
+    "fr": "La date de réception ne peut pas être future."
+  },
+  "Bitte einen nicht archivierten Kontakt auswählen.": {
+    "en": "Please select a contact that is not archived.",
+    "fr": "Veuillez sélectionner un contact non archivé."
+  },
+  "Die Wiedervorlage darf nicht vor dem Eingang liegen.": {
+    "en": "The follow-up date cannot precede the date received.",
+    "fr": "La date de suivi ne peut pas précéder la réception."
+  },
+  "Bitte den nächsten Schritt festhalten.": {
+    "en": "Please record the next step.",
+    "fr": "Veuillez indiquer la prochaine étape."
+  },
+  "Bitte angeben, von wem oder worauf ihr eine Rückmeldung erwartet.": {
+    "en": "Please specify from whom or about what you expect a response.",
+    "fr": "Veuillez préciser de qui ou à quel sujet vous attendez un retour."
+  },
+  "Bitte kurz festhalten, wie das Anliegen abgeschlossen wurde.": {
+    "en": "Please briefly record how the request was resolved.",
+    "fr": "Veuillez indiquer brièvement comment la demande a été clôturée."
+  },
+  "Zum Anliegen ist noch Unterhalt offen. Bitte zuerst die verknüpfte Arbeit erledigen oder stornieren.": {
+    "en": "Maintenance is still open for this request. Please complete or cancel the linked work first.",
+    "fr": "Des travaux d’entretien sont encore en cours pour cette demande. Veuillez d’abord terminer ou annuler les travaux liés."
+  },
+  "Anliegennummer": {
+    "en": "Request number",
+    "fr": "Numéro de la demande"
+  },
+  "Art des Anliegens": {
+    "en": "Request type",
+    "fr": "Type de demande"
+  },
+  "Eingegangen am": {
+    "en": "Received on",
+    "fr": "Reçu le"
+  },
+  "Eingang über": {
+    "en": "Received via",
+    "fr": "Reçu via"
+  },
+  "Meldender Kontakt": {
+    "en": "Reporting contact",
+    "fr": "Contact déclarant"
+  },
+  "Rückmeldung erwartet von / zu": {
+    "en": "Response expected from / about",
+    "fr": "Retour attendu de / concernant"
+  },
+  "Abschlussnotiz": {
+    "en": "Closing note",
+    "fr": "Note de clôture"
+  },
+  "Abgeschlossen am": {
+    "en": "Closed on",
+    "fr": "Clôturé le"
+  },
+  "Gesamter Anliegenbestand · Ein Anliegen kann in mehreren Kacheln erscheinen. Die Filter gelten für die Liste.": {
+    "en": "All requests · A request may appear in several tiles. Filters apply to the list.",
+    "fr": "Toutes les demandes · Une demande peut apparaître dans plusieurs tuiles. Les filtres s’appliquent à la liste."
+  },
+  "Alle laufenden Anliegen": {
+    "en": "All ongoing requests",
+    "fr": "Toutes les demandes en cours"
+  },
+  "Heute & überfällig": {
+    "en": "Today & overdue",
+    "fr": "Aujourd’hui et en retard"
+  },
+  "Wiedervorlage bis heute": {
+    "en": "Follow-up due by today",
+    "fr": "Suivi prévu au plus tard aujourd’hui"
+  },
+  "Warten auf Rückmeldung": {
+    "en": "Waiting for a response",
+    "fr": "En attente d’un retour"
+  },
+  "Nachfassen zum gesetzten Datum": {
+    "en": "Follow up on the set date",
+    "fr": "Relancer à la date prévue"
+  },
+  "Meine offenen Anliegen": {
+    "en": "My open requests",
+    "fr": "Mes demandes en cours"
+  },
+  "Abgeschlossene Anliegen": {
+    "en": "Closed requests",
+    "fr": "Demandes clôturées"
+  },
+  "Alle Anliegen": {
+    "en": "All requests",
+    "fr": "Toutes les demandes"
+  },
+  "Nächsten Schritt ergänzen": {
+    "en": "Add next step",
+    "fr": "Compléter la prochaine étape"
+  },
+  "Ohne Zuständigkeit": {
+    "en": "No person responsible",
+    "fr": "Sans responsable"
+  },
+  "Abgeschlossen · Datum nicht erfasst": {
+    "en": "Closed · date not recorded",
+    "fr": "Clôturé · date non renseignée"
+  },
+  "· heute": {
+    "en": "· Today",
+    "fr": "· Aujourd’hui"
+  },
+  "Keine Anliegen in dieser Auswahl": {
+    "en": "No requests in this selection",
+    "fr": "Aucune demande dans cette sélection"
+  },
+  "Das erste Anliegen erfassen": {
+    "en": "Add your first request",
+    "fr": "Ajoutez votre première demande"
+  },
+  "Haltet die Meldung fest, weist eine zuständige Person zu und plant die nächste Bearbeitung.": {
+    "en": "Record the report, assign a person responsible and plan the next action.",
+    "fr": "Consignez le signalement, désignez un responsable et planifiez la prochaine intervention."
+  },
+  "Zuordnung & Kontakt": {
+    "en": "Assignment & contact",
+    "fr": "Rattachement et contact"
+  },
+  "{0}{1} Unterhaltseintrag{2}": {
+    "en": "{0}{1} maintenance record{2}",
+    "fr": "{0}{1} entrée{2} d’entretien"
+  },
+  "Gemeldet von {0}": {
+    "en": "Reported by {0}",
+    "fr": "Signalé par {0}"
+  },
+  "Warten auf: {0}": {
+    "en": "Waiting for: {0}",
+    "fr": "En attente de : {0}"
+  },
+  "Anliegen mit Zuständigkeit und nächster Bearbeitung": {
+    "en": "Requests with responsibility and next action",
+    "fr": "Demandes avec responsable et prochaine intervention"
+  },
+  "Anliegenliste": {
+    "en": "Request list",
+    "fr": "Liste des demandes"
+  },
+  "Ein Anliegen öffnen, um Rückmeldungen, Dateien und verknüpften Unterhalt zu sehen.": {
+    "en": "Open a request to see updates, files and linked maintenance.",
+    "fr": "Ouvrez une demande pour consulter les retours, fichiers et travaux d’entretien liés."
+  },
+  "Anliegen suchen": {
+    "en": "Search requests",
+    "fr": "Rechercher des demandes"
+  },
+  "Anliegen, Aufgaben oder Unterhalt?": {
+    "en": "Request, task or maintenance?",
+    "fr": "Demande, tâche ou entretien ?"
+  },
+  "Anliegen:": {
+    "en": "Request:",
+    "fr": "Demande :"
+  },
+  "die eingegangene Meldung mit Rückmeldungen und Abschluss.": {
+    "en": "the incoming report with updates and closure.",
+    "fr": "le signalement reçu, avec les retours et la clôture."
+  },
+  "Aufgabe:": {
+    "en": "Task:",
+    "fr": "Tâche :"
+  },
+  "eine einzelne interne Tätigkeit.": {
+    "en": "a single internal activity.",
+    "fr": "une activité interne précise."
+  },
+  "Unterhalt:": {
+    "en": "Maintenance:",
+    "fr": "Entretien :"
+  },
+  "die Reparatur oder Wartung mit Firma, Ausführung und Kosten. Eine Reparatur könnt ihr direkt aus dem Anliegen mit dem Unterhalt verknüpfen.": {
+    "en": "the repair or service with the company, execution and costs. You can link a repair to maintenance directly from the request.",
+    "fr": "la réparation ou l’entretien avec l’entreprise, l’exécution et les coûts. Vous pouvez lier une réparation à l’entretien directement depuis la demande."
+  },
+  "Wiedervorlagen erscheinen in euren Pendenzen im Portal. Es werden keine automatischen E-Mails oder Nachrichten versendet.": {
+    "en": "Follow-ups appear in your open items in the portal. No automatic emails or messages are sent.",
+    "fr": "Les suivis apparaissent dans vos points en suspens du portail. Aucun e-mail ni message automatique n’est envoyé."
+  },
+  "Anliegen nach Bearbeitungsstand": {
+    "en": "Requests by processing status",
+    "fr": "Demandes par état de traitement"
+  },
+  "Nummer, Anliegen, Kontakt oder Liegenschaft …": {
+    "en": "Number, request, contact or property …",
+    "fr": "Numéro, demande, contact ou immeuble…"
+  },
+  "Anliegen.": {
+    "en": "Requests.",
+    "fr": "Demandes."
+  },
+  "Meldungen erfassen, die Bearbeitung planen und den Abschluss festhalten.": {
+    "en": "Record reports, plan processing and document resolution.",
+    "fr": "Enregistrez les signalements, planifiez leur traitement et documentez leur clôture."
+  },
+  "Alle Arten": {
+    "en": "All types",
+    "fr": "Tous les types"
+  },
+  "Alle Prioritäten": {
+    "en": "All priorities",
+    "fr": "Toutes les priorités"
+  },
+  "Dringlichkeit & Wiedervorlage": {
+    "en": "Urgency & follow-up",
+    "fr": "Urgence et suivi"
+  },
+  "Neueste Eingänge": {
+    "en": "Newest received",
+    "fr": "Réceptions les plus récentes"
+  },
+  "Titel · A–Z": {
+    "en": "Title · A–Z",
+    "fr": "Titre · A–Z"
+  },
+  "Name frei erfassen": {
+    "en": "Enter name freely",
+    "fr": "Saisir un nom librement"
+  },
+  "Worum geht es? *": {
+    "en": "What is it about? *",
+    "fr": "De quoi s’agit-il ? *"
+  },
+  "Was wurde gemeldet? *": {
+    "en": "What was reported? *",
+    "fr": "Qu’a-t-on signalé ? *"
+  },
+  "An diesem Tag wieder prüfen oder weiterbearbeiten. Auch beim Warten auf eine Rückmeldung einen Termin setzen.": {
+    "en": "Review or continue processing on this date. Set a date even when waiting for a response.",
+    "fr": "Vérifiez ou poursuivez le traitement à cette date. Prévoyez aussi une date lorsque vous attendez un retour."
+  },
+  "Wiedervorlage *": {
+    "en": "Follow-up *",
+    "fr": "Suivi *"
+  },
+  "Rückmeldung erwartet von / zu *": {
+    "en": "Response expected from / about *",
+    "fr": "Retour attendu de / concernant *"
+  },
+  "Abschlussnotiz *": {
+    "en": "Closing note *",
+    "fr": "Note de clôture *"
+  },
+  "Meldenden Kontakt zuordnen": {
+    "en": "Assign reporting contact",
+    "fr": "Rattacher le contact déclarant"
+  },
+  "Gemeldet von / Ansprechperson": {
+    "en": "Reported by / contact person",
+    "fr": "Signalé par / personne de contact"
+  },
+  "Raum / Zusatzangabe": {
+    "en": "Room / additional detail",
+    "fr": "Pièce / précision"
+  },
+  "Bisherige Zuordnung: {0}. Verknüpft eine Liegenschaft oder entfernt die Freitextzuordnung für ein internes Anliegen.": {
+    "en": "Previous assignment: {0}. Link a property or remove the free-text assignment for an internal request.",
+    "fr": "Rattachement précédent : {0}. Liez un immeuble ou retirez la saisie libre pour une demande interne."
+  },
+  "Anliegen bearbeiten.": {
+    "en": "Edit request.",
+    "fr": "Modifier la demande."
+  },
+  "Anliegen erfassen.": {
+    "en": "Add request.",
+    "fr": "Ajouter une demande."
+  },
+  "Eingang, Kontakt & weitere Angaben": {
+    "en": "Receipt, contact & further details",
+    "fr": "Réception, contact et autres informations"
+  },
+  "Dateien & Fotos{9}": {
+    "en": "Files & photos{9}",
+    "fr": "Fichiers et photos{9}"
+  },
+  "MORADA · ANLIEGEN": {
+    "en": "MORADA · REQUESTS",
+    "fr": "MORADA · DEMANDES"
+  },
+  "Abschluss": {
+    "en": "Closure",
+    "fr": "Clôture"
+  },
+  "Für dieses frühere Anliegen wurde keine Abschlussnotiz erfasst.": {
+    "en": "No closing note was recorded for this earlier request.",
+    "fr": "Aucune note de clôture n’a été enregistrée pour cette ancienne demande."
+  },
+  "Nächsten Schritt ergänzen.": {
+    "en": "Add next step.",
+    "fr": "Compléter la prochaine étape."
+  },
+  "Abschliessen": {
+    "en": "Close",
+    "fr": "Clôturer"
+  },
+  "Meldung & Zuordnung": {
+    "en": "Report & assignment",
+    "fr": "Signalement et rattachement"
+  },
+  "Einheit / Bereich": {
+    "en": "Unit / area",
+    "fr": "Lot / zone"
+  },
+  "Früher nicht erfasst": {
+    "en": "Not previously recorded",
+    "fr": "Non renseigné auparavant"
+  },
+  "Kontakt öffnen": {
+    "en": "Open contact",
+    "fr": "Ouvrir le contact"
+  },
+  "Wird im Verlauf gespeichert. Für Status oder Wiedervorlage «Bearbeiten» öffnen.": {
+    "en": "Saved in the history. Open “Edit” to change status or follow-up.",
+    "fr": "Enregistré dans l’historique. Ouvrez « Modifier » pour changer le statut ou le suivi."
+  },
+  "Was gibt es Neues?": {
+    "en": "What’s new?",
+    "fr": "Quoi de neuf ?"
+  },
+  "Notiz speichern": {
+    "en": "Save note",
+    "fr": "Enregistrer la note"
+  },
+  "Dateien & Fotos · {1}": {
+    "en": "Files & photos · {1}",
+    "fr": "Fichiers et photos · {1}"
+  },
+  "Verlauf · {0} Einträge": {
+    "en": "History · {0} entries",
+    "fr": "Historique · {0} entrées"
+  },
+  "Keine Anliegen in dieser Auswahl.": {
+    "en": "No requests in this selection.",
+    "fr": "Aucune demande dans cette sélection."
+  },
+  "Wände & Türen": {
+    "en": "Walls & doors",
+    "fr": "Murs et portes"
+  },
+  "Anstrich mit Dispersions- oder Leimfarbe": {
+    "en": "Emulsion or distemper paint",
+    "fr": "Peinture à dispersion ou à la colle"
+  },
+  "Wand oder Decke": {
+    "en": "Wall or ceiling",
+    "fr": "Mur ou plafond"
+  },
+  "Maler streichen weisseln": {
+    "en": "Painter painting whitewashing",
+    "fr": "Peintre peinture blanchiment"
+  },
+  "Anstrich mit Acryl- oder Kunstharzfarbe": {
+    "en": "Acrylic or synthetic resin paint",
+    "fr": "Peinture acrylique ou à résine synthétique"
+  },
+  "Raufasertapete": {
+    "en": "Woodchip wallpaper",
+    "fr": "Papier ingrain"
+  },
+  "Tür aus Holzwerkstoff / Pressspan": {
+    "en": "Engineered wood / chipboard door",
+    "fr": "Porte en bois reconstitué / aggloméré"
+  },
+  "Tür aus Massivholz": {
+    "en": "Solid wood door",
+    "fr": "Porte en bois massif"
+  },
+  "Öl- oder Kunstharzanstrich an Türen": {
+    "en": "Oil or synthetic resin paint on doors",
+    "fr": "Peinture à l’huile ou à résine synthétique sur les portes"
+  },
+  "Anstrich an Tür oder Rahmen": {
+    "en": "Paint on door or frame",
+    "fr": "Peinture sur porte ou cadre"
+  },
+  "Böden": {
+    "en": "Floors",
+    "fr": "Sols"
+  },
+  "Laminat · einfache Qualität": {
+    "en": "Laminate · basic quality",
+    "fr": "Stratifié · qualité simple"
+  },
+  "Klasse 21/31": {
+    "en": "Class 21/31",
+    "fr": "Classe 21/31"
+  },
+  "Laminat · mittlere Qualität": {
+    "en": "Laminate · medium quality",
+    "fr": "Stratifié · qualité moyenne"
+  },
+  "Klasse 22/32": {
+    "en": "Class 22/32",
+    "fr": "Classe 22/32"
+  },
+  "Laminat · gehobene Qualität": {
+    "en": "Laminate · high quality",
+    "fr": "Stratifié · qualité supérieure"
+  },
+  "Klasse 23/33": {
+    "en": "Class 23/33",
+    "fr": "Classe 23/33"
+  },
+  "Klebeparkett / Klötzliparkett": {
+    "en": "Glued parquet / mosaic parquet",
+    "fr": "Parquet collé / mosaïque"
+  },
+  "Kleinformatiges Massivholz; Oberfläche separat": {
+    "en": "Small-format solid wood; finish separate",
+    "fr": "Bois massif de petit format ; finition séparée"
+  },
+  "Versiegelung eines Parkettbodens": {
+    "en": "Sealing a parquet floor",
+    "fr": "Vitrification d’un parquet"
+  },
+  "Nur Oberflächenbehandlung": {
+    "en": "Surface treatment only",
+    "fr": "Traitement de surface uniquement"
+  },
+  "abschleifen versiegeln": {
+    "en": "sanding sealing",
+    "fr": "ponçage vitrification"
+  },
+  "Linoleumboden": {
+    "en": "Linoleum flooring",
+    "fr": "Sol en linoléum"
+  },
+  "Glasierte Keramik-Bodenplatten": {
+    "en": "Glazed ceramic floor tiles",
+    "fr": "Carreaux de sol en céramique émaillée"
+  },
+  "Spannteppich · mittlere Qualität": {
+    "en": "Fitted carpet · medium quality",
+    "fr": "Moquette · qualité moyenne"
+  },
+  "Küche": {
+    "en": "Kitchen",
+    "fr": "Cuisine"
+  },
+  "Kühlschrank mit integriertem Gefrierfach": {
+    "en": "Refrigerator with integrated freezer compartment",
+    "fr": "Réfrigérateur avec compartiment congélateur intégré"
+  },
+  "Tiefkühlteil im Gerät": {
+    "en": "Freezer compartment in the appliance",
+    "fr": "Compartiment congélateur dans l’appareil"
+  },
+  "Kuehlschrank Tiefkühler": {
+    "en": "Refrigerator freezer",
+    "fr": "Réfrigérateur congélateur"
+  },
+  "Geschirrspülmaschine": {
+    "en": "Dishwasher",
+    "fr": "Lave-vaisselle"
+  },
+  "Geschirrspüler Abwaschmaschine": {
+    "en": "Dishwasher dishwashing machine",
+    "fr": "Lave-vaisselle machine à laver la vaisselle"
+  },
+  "Herd / Backofen": {
+    "en": "Cooker / oven",
+    "fr": "Cuisinière / four"
+  },
+  "Kochfeld aus Glaskeramik": {
+    "en": "Ceramic hob",
+    "fr": "Plaque de cuisson vitrocéramique"
+  },
+  "Kochfeld mit Induktion": {
+    "en": "Induction hob",
+    "fr": "Plaque de cuisson à induction"
+  },
+  "Steamer / Kombigerät": {
+    "en": "Steam oven / combination appliance",
+    "fr": "Four vapeur / appareil combiné"
+  },
+  "Dunstabzugshaube": {
+    "en": "Extractor hood",
+    "fr": "Hotte aspirante"
+  },
+  "Mit Metallfilter": {
+    "en": "With metal filter",
+    "fr": "Avec filtre métallique"
+  },
+  "Dampfabzug": {
+    "en": "Extractor",
+    "fr": "Hotte"
+  },
+  "Küchenarbeitsplatte mit Kunstharzoberfläche": {
+    "en": "Kitchen worktop with synthetic resin surface",
+    "fr": "Plan de travail de cuisine à surface en résine synthétique"
+  },
+  "Auch entsprechende Rückwand": {
+    "en": "Also corresponding splashback",
+    "fr": "Également la crédence correspondante"
+  },
+  "Bad & Sanitär": {
+    "en": "Bathroom & plumbing",
+    "fr": "Salle de bains et sanitaire"
+  },
+  "Lavabo aus Keramik": {
+    "en": "Ceramic washbasin",
+    "fr": "Lavabo en céramique"
+  },
+  "WC-Schüssel aus Keramik": {
+    "en": "Ceramic toilet bowl",
+    "fr": "Cuvette de WC en céramique"
+  },
+  "Spülkasten separat": {
+    "en": "Cistern separate",
+    "fr": "Réservoir séparé"
+  },
+  "Badewanne / Duschwanne aus Acryl": {
+    "en": "Acrylic bathtub / shower tray",
+    "fr": "Baignoire / receveur de douche en acrylique"
+  },
+  "Badewanne / Duschwanne aus emailliertem Stahl": {
+    "en": "Enamelled steel bathtub / shower tray",
+    "fr": "Baignoire / receveur de douche en acier émaillé"
+  },
+  "Verchromte Mischarmatur": {
+    "en": "Chrome-plated mixer tap",
+    "fr": "Mitigeur chromé"
+  },
+  "Mischbatterie Wasserhahn": {
+    "en": "Mixer faucet tap",
+    "fr": "Mitigeur robinet"
+  },
+  "Dichtfugen im Bad": {
+    "en": "Sealing joints in the bathroom",
+    "fr": "Joints d’étanchéité de la salle de bains"
+  },
+  "Küche hat einen anderen Richtwert": {
+    "en": "Kitchen has a different guideline value",
+    "fr": "La cuisine relève d’une autre valeur indicative"
+  },
+  "Kittfugen Silikon": {
+    "en": "Sealant joints silicone",
+    "fr": "Joints de mastic silicone"
+  },
+  "Badezimmerspiegel": {
+    "en": "Bathroom mirror",
+    "fr": "Miroir de salle de bains"
+  },
+  "Spiegelschrank separat": {
+    "en": "Mirror cabinet separate",
+    "fr": "Armoire de toilette séparée"
+  },
+  "Gemeinschaft & Waschküche": {
+    "en": "Shared areas & laundry room",
+    "fr": "Parties communes et buanderie"
+  },
+  "Waschmaschine in der Waschküche": {
+    "en": "Washing machine in the laundry room",
+    "fr": "Lave-linge de buanderie"
+  },
+  "Tumbler in der Waschküche": {
+    "en": "Tumble dryer in the laundry room",
+    "fr": "Sèche-linge de buanderie"
+  },
+  "Wäschetrockner": {
+    "en": "Tumble dryer",
+    "fr": "Sèche-linge"
+  },
+  "Briefkastenanlage": {
+    "en": "Mailbox system",
+    "fr": "Ensemble de boîtes aux lettres"
+  },
+  "Garagentor": {
+    "en": "Garage door",
+    "fr": "Porte de garage"
+  },
+  "Anlage zur Wasserenthärtung": {
+    "en": "Water softening system",
+    "fr": "Installation d’adoucissement de l’eau"
+  },
+  "Unterhaltsbereiche": {
+    "en": "Maintenance sections",
+    "fr": "Rubriques d’entretien"
+  },
+  "Lebensdauer & Zeitwert": {
+    "en": "Useful life & current value",
+    "fr": "Durée de vie et valeur résiduelle"
+  },
+  "{0} von {1} Richtwerten": {
+    "en": "{0} of {1} guideline values",
+    "fr": "{0} valeurs indicatives sur {1}"
+  },
+  "Lebensdauertabelle · Auswahl häufiger Bauteile bei Wohnnutzung": {
+    "en": "Useful life table · common components for residential use",
+    "fr": "Tableau des durées de vie · éléments courants à usage résidentiel"
+  },
+  "Bauteil / Ausführung": {
+    "en": "Component / specification",
+    "fr": "Élément / exécution"
+  },
+  "Lebensdauer": {
+    "en": "Useful life",
+    "fr": "Durée de vie"
+  },
+  "Berechnung öffnen": {
+    "en": "Open calculation",
+    "fr": "Ouvrir le calcul"
+  },
+  "{3} Jahre": {
+    "en": "{3} years",
+    "fr": "{3} ans"
+  },
+  "Kein passender Bauteil": {
+    "en": "No matching component",
+    "fr": "Aucun élément correspondant"
+  },
+  "Versucht einen anderen Suchbegriff oder verwendet eine eigene, belegte Lebensdauer.": {
+    "en": "Try another search term or use your own documented useful life.",
+    "fr": "Essayez un autre terme ou utilisez votre propre durée de vie documentée."
+  },
+  "Eigene Angabe verwenden": {
+    "en": "Use custom value",
+    "fr": "Utiliser une valeur personnalisée"
+  },
+  "NACHSCHLAGEN & BERECHNEN": {
+    "en": "LOOK UP & CALCULATE",
+    "fr": "CONSULTER ET CALCULER"
+  },
+  "Lebensdauertabelle": {
+    "en": "Useful life table",
+    "fr": "Tableau des durées de vie"
+  },
+  "Wie lange hält ein Bauteil üblicherweise? Hier findet ihr häufige Richtwerte und könnt daraus den verbleibenden Zeitwert berechnen.": {
+    "en": "How long does a component usually last? Find common guideline values here and use them to calculate its remaining value.",
+    "fr": "Combien de temps dure généralement un élément ? Retrouvez les valeurs indicatives courantes et calculez sa valeur résiduelle."
+  },
+  "Auswahl für Wohnräume · Grundlage: paritätische Tabelle HEV / MV, Stand {2} · Quellen geprüft am {3}.": {
+    "en": "Selection for residential premises · based on the joint HEV / MV table, version {2} · sources checked on {3}.",
+    "fr": "Sélection pour les logements · base : tableau paritaire HEV / MV, version {2} · sources vérifiées le {3}."
+  },
+  "Original online ansehen ↗": {
+    "en": "View original online ↗",
+    "fr": "Consulter l’original en ligne ↗"
+  },
+  "Vollständige Broschüre beim HEV ↗": {
+    "en": "Complete brochure from HEV ↗",
+    "fr": "Brochure complète auprès de HEV ↗"
+  },
+  "Lebensdauertabelle durchsuchen": {
+    "en": "Search useful life table",
+    "fr": "Rechercher dans le tableau des durées de vie"
+  },
+  "Alle Bereiche": {
+    "en": "All sections",
+    "fr": "Toutes les rubriques"
+  },
+  "Lebensdauer ist ein Richtwert.": {
+    "en": "Useful life is a guideline.",
+    "fr": "La durée de vie est indicative."
+  },
+  "Material, Ausführung und Nutzung müssen zum ausgewählten Eintrag passen. Bei normaler Abnutzung entsteht daraus keine Schadenforderung. Haftung, Reparaturmöglichkeit und Kosten sind separat zu prüfen; ein abgelaufener Richtwert bedeutet auch keinen automatischen Ersatzanspruch.": {
+    "en": "Material, specification and use must match the selected entry. Normal wear does not give rise to a damage claim. Liability, repair options and costs must be assessed separately; an expired guideline life does not automatically entitle anyone to replacement.",
+    "fr": "Le matériau, l’exécution et l’usage doivent correspondre à l’entrée choisie. L’usure normale ne donne pas lieu à une demande d’indemnisation. La responsabilité, les possibilités de réparation et les coûts doivent être examinés séparément ; une durée indicative écoulée ne donne pas automatiquement droit à un remplacement."
+  },
+  "Für weitere Bauteile und Sonderfälle findet ihr oben die Originalquelle. Im Rechner könnt ihr eine eigene, begründete Lebensdauer verwenden.": {
+    "en": "For other components and special cases, see the original source above. In the calculator, you can use your own justified useful life.",
+    "fr": "Pour les autres éléments et les cas particuliers, consultez la source originale ci-dessus. Le calculateur permet d’utiliser votre propre durée de vie justifiée."
+  },
+  "z. B. Parkett, Anstrich oder Kühlschrank …": {
+    "en": "e.g. parquet, paint or refrigerator …",
+    "fr": "p. ex. parquet, peinture ou réfrigérateur…"
+  },
+  "Arbeiten, Geräte und Lebensdauer übersichtlich verwalten.": {
+    "en": "Manage work, appliances and useful life clearly.",
+    "fr": "Gérez clairement les travaux, appareils et durées de vie."
+  },
+  "Tabelle als CSV": {
+    "en": "Table as CSV",
+    "fr": "Tableau en CSV"
+  },
+  "Bei Abnahmen die passende Lebensdauer nachschlagen oder den Zeitwert eines Bauteils berechnen.": {
+    "en": "Look up the appropriate useful life during inspections or calculate a component’s current value.",
+    "fr": "Consultez la durée de vie adaptée lors des états des lieux ou calculez la valeur résiduelle d’un élément."
+  },
+  "Tabelle ansehen": {
+    "en": "View table",
+    "fr": "Consulter le tableau"
+  },
+  "Bitte einen gültigen Bauteil wählen.": {
+    "en": "Please select a valid component.",
+    "fr": "Veuillez choisir un élément valide."
+  },
+  "Bitte den Bauteil oder das Gerät mit höchstens 180 Zeichen benennen.": {
+    "en": "Please name the component or appliance using no more than 180 characters.",
+    "fr": "Veuillez nommer l’élément ou l’appareil en 180 caractères maximum."
+  },
+  "Bitte Einbaudatum und Bewertungsdatum vollständig und gültig erfassen.": {
+    "en": "Please enter complete, valid installation and valuation dates.",
+    "fr": "Veuillez saisir des dates d’installation et d’évaluation complètes et valides."
+  },
+  "Das Bewertungsdatum darf nicht vor dem Einbaudatum liegen.": {
+    "en": "The valuation date cannot precede the installation date.",
+    "fr": "La date d’évaluation ne peut pas précéder l’installation."
+  },
+  "Bitte eine Lebensdauer von 1 bis 150 ganzen Jahren erfassen.": {
+    "en": "Please enter a useful life of 1 to 150 whole years.",
+    "fr": "Veuillez saisir une durée de vie entière de 1 à 150 ans."
+  },
+  "Bitte die Grundlage für die eigene oder abweichende Lebensdauer angeben.": {
+    "en": "Please state the basis for your custom or different useful life.",
+    "fr": "Veuillez préciser la base de votre durée de vie personnalisée ou différente."
+  },
+  "Bitte die Grundlage auf höchstens 500 Zeichen kürzen.": {
+    "en": "Please shorten the basis to no more than 500 characters.",
+    "fr": "Veuillez limiter la justification à 500 caractères."
+  },
+  "Bitte die Ersatzkosten in CHF erfassen; 0 ist möglich.": {
+    "en": "Please enter the replacement cost in CHF; 0 is allowed.",
+    "fr": "Veuillez saisir le coût de remplacement en CHF ; 0 est possible."
+  },
+  "Richtwert HEV / MV:": {
+    "en": "HEV / MV guideline:",
+    "fr": "Valeur indicative HEV / MV :"
+  },
+  "· Allgemeiner Gebäudeunterhalt": {
+    "en": "· General building maintenance",
+    "fr": "· Entretien général du bâtiment"
+  },
+  "Beim Gerät ist nur das Bau-/Installationsjahr": {
+    "en": "Only the year built / installed",
+    "fr": "Seule l’année de construction / d’installation"
+  },
+  "hinterlegt. Bitte das tatsächliche Einbaudatum bestätigen.": {
+    "en": "is recorded for the appliance. Please confirm the actual installation date.",
+    "fr": "est renseignée pour l’appareil. Veuillez confirmer la date d’installation réelle."
+  },
+  "Bitte das Gerät erneut öffnen.": {
+    "en": "Please reopen the appliance.",
+    "fr": "Veuillez rouvrir l’appareil."
+  },
+  "1. Bauteil wählen · 2. Angaben prüfen · 3. Zeitwert berechnen": {
+    "en": "1. Choose component · 2. Check details · 3. Calculate current value",
+    "fr": "1. Choisir l’élément · 2. Vérifier les informations · 3. Calculer la valeur résiduelle"
+  },
+  "Massgebend ist das Alter des Bauteils bzw. der gewählten Oberflächenbehandlung. Die Mietdauer oder eine gewöhnliche Wartung setzen dieses Alter nicht zurück.": {
+    "en": "The age of the component or selected surface treatment is decisive. The tenancy duration or routine maintenance does not reset this age.",
+    "fr": "L’âge de l’élément ou du traitement de surface choisi est déterminant. La durée de location ou un entretien ordinaire ne remet pas cet âge à zéro."
+  },
+  "Die Berechnung wird nicht automatisch gespeichert. Über «Berechnung als CSV» könnt ihr die Angaben und das Ergebnis herunterladen.": {
+    "en": "The calculation is not saved automatically. Use “Calculation as CSV” to download the details and result.",
+    "fr": "Le calcul n’est pas enregistré automatiquement. Téléchargez les informations et le résultat via « Calcul en CSV »."
+  },
+  "Lebensdauer nachschlagen": {
+    "en": "Look up useful life",
+    "fr": "Consulter la durée de vie"
+  },
+  "Eigene Angabe / anderer Bauteil": {
+    "en": "Custom value / other component",
+    "fr": "Valeur personnalisée / autre élément"
+  },
+  "Jahre": {
+    "en": "Years",
+    "fr": "Ans"
+  },
+  "Bauteil / Gerät *": {
+    "en": "Component / appliance *",
+    "fr": "Élément / appareil *"
+  },
+  "Einbau / letzte Erneuerung *": {
+    "en": "Installation / last renewal *",
+    "fr": "Installation / dernier renouvellement *"
+  },
+  "Bewertung per *": {
+    "en": "Valuation as of *",
+    "fr": "Évaluation au *"
+  },
+  "Lebensdauer in Jahren *": {
+    "en": "Useful life in years *",
+    "fr": "Durée de vie en années *"
+  },
+  "Ersatzkosten · CHF *": {
+    "en": "Replacement cost · CHF *",
+    "fr": "Coût de remplacement · CHF *"
+  },
+  "Grundlage für eigene / abweichende Lebensdauer *": {
+    "en": "Basis for custom / different useful life *",
+    "fr": "Base de la durée de vie personnalisée / différente *"
+  },
+  "Berechnung als CSV": {
+    "en": "Calculation as CSV",
+    "fr": "Calcul en CSV"
+  },
+  "Zurück zum Gerät": {
+    "en": "Back to appliance",
+    "fr": "Retour à l’appareil"
+  },
+  "Zeitwert berechnen.": {
+    "en": "Calculate current value.",
+    "fr": "Calculer la valeur résiduelle."
+  },
+  "MORADA · LEBENSDAUER & ZEITWERT": {
+    "en": "MORADA · USEFUL LIFE & CURRENT VALUE",
+    "fr": "MORADA · DURÉE DE VIE ET VALEUR RÉSIDUELLE"
+  },
+  "Eigene Lebensdauer: Bitte z. B. Herstellerangabe oder fachliche Beurteilung als Grundlage nennen.": {
+    "en": "Custom useful life: please give a basis, such as manufacturer information or an expert assessment.",
+    "fr": "Durée de vie personnalisée : veuillez indiquer une base, par exemple les données du fabricant ou une évaluation spécialisée."
+  },
+  "Richtwert": {
+    "en": "Guideline value",
+    "fr": "Valeur indicative"
+  },
+  "Jahre ·": {
+    "en": "years ·",
+    "fr": "ans ·"
+  },
+  "RECHNERISCHER ZEITWERT": {
+    "en": "CALCULATED CURRENT VALUE",
+    "fr": "VALEUR RÉSIDUELLE CALCULÉE"
+  },
+  "Zeitwert": {
+    "en": "Current value",
+    "fr": "Valeur résiduelle"
+  },
+  "{2} % der Ersatzkosten": {
+    "en": "{2}% of replacement cost",
+    "fr": "{2} % du coût de remplacement"
+  },
+  "Alter am Stichtag": {
+    "en": "Age on valuation date",
+    "fr": "Âge à la date d’évaluation"
+  },
+  "von {4} Jahren Lebensdauer": {
+    "en": "of {4} years of useful life",
+    "fr": "sur {4} ans de durée de vie"
+  },
+  "Verbleibende Lebensdauer": {
+    "en": "Remaining useful life",
+    "fr": "Durée de vie restante"
+  },
+  "{5} Jahre": {
+    "en": "{5} years",
+    "fr": "{5} ans"
+  },
+  "Bewertung per {7} · Ersatzkosten {8}.": {
+    "en": "Valuation as of {7} · replacement cost {8}.",
+    "fr": "Évaluation au {7} · coût de remplacement {8}."
+  },
+  "Rechenweg & Grundlage": {
+    "en": "Calculation & basis",
+    "fr": "Calcul et base"
+  },
+  "Zeitwert = Ersatzkosten × verbleibende Lebensdauer ÷ gesamte Lebensdauer. Volle Jahre zählen jeweils bis zum Jahrestag, angebrochene Jahre anteilig nach Kalendertagen. Das Ergebnis wird auf Rappen gerundet und liegt zwischen 0 und den Ersatzkosten.": {
+    "en": "Current value = replacement cost × remaining useful life ÷ total useful life. Full years run to each anniversary; partial years are prorated by calendar days. The result is rounded to centimes and lies between 0 and the replacement cost.",
+    "fr": "Valeur résiduelle = coût de remplacement × durée de vie restante ÷ durée de vie totale. Les années entières courent jusqu’à chaque anniversaire ; les fractions d’année sont calculées au prorata des jours calendaires. Le résultat est arrondi au centime et se situe entre 0 et le coût de remplacement."
+  },
+  "Dies ist keine Schadenabrechnung. Ob jemand Kosten tragen muss, hängt unter anderem von Ursache, Abnutzung und Reparaturmöglichkeit ab.": {
+    "en": "This is not a damage settlement. Whether anyone must bear costs depends, among other things, on the cause, wear and repair options.",
+    "fr": "Il ne s’agit pas d’un décompte de dommages. L’obligation éventuelle de supporter des coûts dépend notamment de la cause, de l’usure et des possibilités de réparation."
+  },
+  "Rechnerisch vollständig amortisiert": {
+    "en": "Fully depreciated by calculation",
+    "fr": "Entièrement amorti selon le calcul"
+  },
+  "Rechnerischer Rest": {
+    "en": "Calculated remainder",
+    "fr": "Solde calculé"
+  },
+  "· Eigene Angabe": {
+    "en": "· Custom value",
+    "fr": "· Valeur personnalisée"
+  },
+  "· Quellenprüfung": {
+    "en": "· Source verification",
+    "fr": "· Vérification des sources"
+  },
+  "Angabe": {
+    "en": "Detail",
+    "fr": "Information"
+  },
+  "Wert": {
+    "en": "Value",
+    "fr": "Valeur"
+  },
+  "Bauteil / Gerät": {
+    "en": "Component / appliance",
+    "fr": "Élément / appareil"
+  },
+  "Freie Berechnung": {
+    "en": "Custom calculation",
+    "fr": "Calcul libre"
+  },
+  "Einbau / letzte Erneuerung": {
+    "en": "Installation / last renewal",
+    "fr": "Installation / dernier renouvellement"
+  },
+  "Bewertung per": {
+    "en": "Valuation as of",
+    "fr": "Évaluation au"
+  },
+  "Lebensdauer Jahre": {
+    "en": "Useful life in years",
+    "fr": "Durée de vie en années"
+  },
+  "Alter Jahre": {
+    "en": "Age in years",
+    "fr": "Âge en années"
+  },
+  "Verbleibende Jahre": {
+    "en": "Years remaining",
+    "fr": "Années restantes"
+  },
+  "Restwert Prozent": {
+    "en": "Residual value percent",
+    "fr": "Valeur résiduelle en pourcentage"
+  },
+  "Ersatzkosten CHF": {
+    "en": "Replacement cost CHF",
+    "fr": "Coût de remplacement CHF"
+  },
+  "Zeitwert CHF": {
+    "en": "Current value CHF",
+    "fr": "Valeur résiduelle CHF"
+  },
+  "Grundlage": {
+    "en": "Basis",
+    "fr": "Base"
+  },
+  "Quelle geprüft am": {
+    "en": "Source checked on",
+    "fr": "Source vérifiée le"
+  },
+  "Methode": {
+    "en": "Method",
+    "fr": "Méthode"
+  },
+  "Lineare Altersentwertung; volle Jahre plus Tagesanteil im laufenden Lebensjahr; auf Rappen gerundet.": {
+    "en": "Linear age depreciation; full years plus the proportion of days in the current year of life; rounded to centimes.",
+    "fr": "Dépréciation linéaire selon l’âge ; années entières plus part des jours de l’année de vie en cours ; arrondi au centime."
+  },
+  "Hinweis": {
+    "en": "Note",
+    "fr": "Remarque"
+  },
+  "Rechnerischer Zeitwert. Haftung und tatsächlich ersatzfähige Kosten separat prüfen.": {
+    "en": "Calculated current value. Assess liability and actual recoverable costs separately.",
+    "fr": "Valeur résiduelle calculée. Examiner séparément la responsabilité et les coûts effectivement indemnisables."
+  },
+  "Geprüft am": {
+    "en": "Checked on",
+    "fr": "Vérifié le"
+  },
+  "Bitte die Verknüpfung erneut auswählen.": {
+    "en": "Please select the link again.",
+    "fr": "Veuillez sélectionner à nouveau le lien."
+  },
+  "Bitte angeben, auf welche Rückmeldung ihr wartet.": {
+    "en": "Please specify which response you are waiting for.",
+    "fr": "Veuillez préciser quel retour vous attendez."
+  },
+  "Bitte kurz begründen, warum die Aufgabe abgebrochen wird.": {
+    "en": "Please briefly explain why the task is being cancelled.",
+    "fr": "Veuillez expliquer brièvement pourquoi la tâche est abandonnée."
+  },
+  "Bitte ein vorhandenes, nicht archiviertes Anliegen oder einen Unterhaltseintrag auswählen.": {
+    "en": "Please select an existing, non-archived request or maintenance entry.",
+    "fr": "Veuillez sélectionner une demande ou des travaux d’entretien existants et non archivés."
+  },
+  "Bitte die erwartete Rückmeldung oder den Abbruchgrund dieser Aufgabe ergänzen.": {
+    "en": "Please add the expected response or cancellation reason for this task.",
+    "fr": "Veuillez compléter le retour attendu ou le motif d’abandon de cette tâche."
+  },
+  "Die Zusatzangaben einer Aufgabe sind ungültig.": {
+    "en": "The additional task details are invalid.",
+    "fr": "Les informations complémentaires de la tâche sont invalides."
+  },
+  "Die Zusatzangaben einer Aufgabe sind ungültig oder zu lang.": {
+    "en": "The additional task details are invalid or too long.",
+    "fr": "Les informations complémentaires de la tâche sont invalides ou trop longues."
+  },
+  "Bitte die Verknüpfung der Aufgabe prüfen.": {
+    "en": "Please check the task link.",
+    "fr": "Veuillez vérifier le lien de la tâche."
+  },
+  "Das Abschlussdatum der Aufgabe ist ungültig.": {
+    "en": "The task completion date is invalid.",
+    "fr": "La date de clôture de la tâche est invalide."
+  },
+  "Eine offene Aufgabe darf kein Abschlussdatum haben.": {
+    "en": "An open task cannot have a completion date.",
+    "fr": "Une tâche en cours ne peut pas avoir de date de clôture."
+  },
+  "Bei einer wartenden Aufgabe fehlt die erwartete Rückmeldung.": {
+    "en": "A waiting task is missing the expected response.",
+    "fr": "Le retour attendu manque pour une tâche en attente."
+  },
+  "Bei einer abgebrochenen Aufgabe fehlt die Begründung.": {
+    "en": "A cancelled task is missing the reason.",
+    "fr": "Le motif manque pour une tâche abandonnée."
+  },
+  "Ein verknüpftes Anliegen oder ein Unterhaltseintrag fehlt.": {
+    "en": "A linked request or maintenance entry is missing.",
+    "fr": "Une demande ou des travaux d’entretien liés sont manquants."
+  },
+  "Die Zuordnung der verknüpften Aufgabe «": {
+    "en": "The assignment of the linked task “",
+    "fr": "Le rattachement de la tâche liée «"
+  },
+  "» passt nicht zum verknüpften Vorgang. Bitte die Verknüpfung in der Aufgabe entfernen oder die Zuordnung angleichen.": {
+    "en": "” does not match the linked operation. Please remove the task link or align the assignment.",
+    "fr": "» ne correspond pas à l’opération liée. Veuillez supprimer le lien dans la tâche ou harmoniser le rattachement."
+  },
+  "Erwartete Rückmeldung": {
+    "en": "Expected response",
+    "fr": "Retour attendu"
+  },
+  "Ergebnis / Abbruchgrund": {
+    "en": "Result / cancellation reason",
+    "fr": "Résultat / motif d’abandon"
+  },
+  "Verknüpfter Bereich": {
+    "en": "Linked section",
+    "fr": "Rubrique liée"
+  },
+  "Verknüpfter Vorgang": {
+    "en": "Linked operation",
+    "fr": "Opération liée"
+  },
+  "Abschlussdatum früher nicht erfasst": {
+    "en": "Completion date not previously recorded",
+    "fr": "Date de clôture non renseignée auparavant"
+  },
+  "Überfällig ·": {
+    "en": "Overdue ·",
+    "fr": "En retard ·"
+  },
+  "Heute ·": {
+    "en": "Today ·",
+    "fr": "Aujourd’hui ·"
+  },
+  "Frist bereits verstrichen": {
+    "en": "Deadline already passed",
+    "fr": "Délai déjà dépassé"
+  },
+  "Heute bearbeiten oder nachfassen": {
+    "en": "Process or follow up today",
+    "fr": "Traiter ou relancer aujourd’hui"
+  },
+  "Mit eigener Wiedervorlage": {
+    "en": "With its own follow-up",
+    "fr": "Avec son propre suivi"
+  },
+  "Starten": {
+    "en": "Start",
+    "fr": "Démarrer"
+  },
+  "Aufgabe starten:": {
+    "en": "Start task:",
+    "fr": "Démarrer la tâche :"
+  },
+  "Erledigt markieren": {
+    "en": "Mark as completed",
+    "fr": "Marquer comme terminée"
+  },
+  "Aufgabe als erledigt markieren:": {
+    "en": "Mark task as completed:",
+    "fr": "Marquer la tâche comme terminée :"
+  },
+  "Frist / Abschluss": {
+    "en": "Deadline / completion",
+    "fr": "Délai / clôture"
+  },
+  "Keine Aufgaben in dieser Auswahl": {
+    "en": "No tasks in this selection",
+    "fr": "Aucune tâche dans cette sélection"
+  },
+  "Passt die Suche oder die Filter an.": {
+    "en": "Adjust the search or filters.",
+    "fr": "Adaptez la recherche ou les filtres."
+  },
+  "Eure erste Aufgabe": {
+    "en": "Your first task",
+    "fr": "Votre première tâche"
+  },
+  "Was ist zu tun, wer übernimmt und bis wann? Haltet den nächsten Arbeitsschritt hier fest.": {
+    "en": "What needs doing, who will handle it and by when? Record the next work step here.",
+    "fr": "Que faut-il faire, qui s’en charge et pour quand ? Consignez ici la prochaine étape de travail."
+  },
+  "Keine Aufgaben auf dieser Seite.": {
+    "en": "No tasks on this page.",
+    "fr": "Aucune tâche sur cette page."
+  },
+  "Aufgabe & Zuordnung": {
+    "en": "Task & assignment",
+    "fr": "Tâche et rattachement"
+  },
+  "Öffnen": {
+    "en": "Open",
+    "fr": "Ouvrir"
+  },
+  "Aufgaben mit Fristen, Zuständigkeit und Status": {
+    "en": "Tasks with deadlines, responsibility and status",
+    "fr": "Tâches avec délais, responsable et statut"
+  },
+  "Meine Aufgaben": {
+    "en": "My tasks",
+    "fr": "Mes tâches"
+  },
+  "Teamaufgaben": {
+    "en": "Team tasks",
+    "fr": "Tâches de l’équipe"
+  },
+  "Erledigt oder abgebrochen": {
+    "en": "Completed or cancelled",
+    "fr": "Terminées ou abandonnées"
+  },
+  "· Spalten zeigen die aktuelle Seite": {
+    "en": "· Columns show the current page",
+    "fr": "· Les colonnes affichent la page actuelle"
+  },
+  "Aufgabenliste": {
+    "en": "Task list",
+    "fr": "Liste des tâches"
+  },
+  "Aufgabe öffnen für Beschreibung, Dateien und Verlauf.": {
+    "en": "Open a task for its description, files and history.",
+    "fr": "Ouvrez une tâche pour consulter sa description, ses fichiers et son historique."
+  },
+  "Aufgaben suchen": {
+    "en": "Search tasks",
+    "fr": "Rechercher des tâches"
+  },
+  "Wann Aufgabe, Anliegen oder Unterhalt?": {
+    "en": "When to use a task, request or maintenance?",
+    "fr": "Quand choisir une tâche, une demande ou un entretien ?"
+  },
+  "ein konkreter interner Arbeitsschritt mit Zuständigkeit und Frist.": {
+    "en": "a specific internal work step with a person responsible and deadline.",
+    "fr": "une étape de travail interne précise avec un responsable et un délai."
+  },
+  "die Meldung mit Rückmeldungen und Abschluss.": {
+    "en": "the report with updates and closure.",
+    "fr": "le signalement avec les retours et la clôture."
+  },
+  "die Reparatur oder Wartung mit Firma, Ausführung und Kosten.": {
+    "en": "the repair or service with the company, execution and costs.",
+    "fr": "la réparation ou l’entretien avec l’entreprise, l’exécution et les coûts."
+  },
+  "Beim Warten auf eine Rückmeldung legt ihr eine Wiedervorlage fest. Erledigte und abgebrochene Aufgaben bleiben unter «Abgeschlossen» sichtbar. Fristen erscheinen im Portal und im Kalender; E-Mails und Push-Erinnerungen werden nicht versendet.": {
+    "en": "Set a follow-up when waiting for a response. Completed and cancelled tasks remain visible under “Closed”. Deadlines appear in the portal and calendar; no email or push reminders are sent.",
+    "fr": "Prévoyez un suivi lorsque vous attendez un retour. Les tâches terminées et abandonnées restent visibles sous « Clôturées ». Les échéances figurent dans le portail et le calendrier ; aucun rappel par e-mail ou notification push n’est envoyé."
+  },
+  "Aufgaben für das Team oder für mich": {
+    "en": "Tasks for the team or for me",
+    "fr": "Tâches pour l’équipe ou pour moi"
+  },
+  "Aufgabenansicht": {
+    "en": "Task view",
+    "fr": "Vue des tâches"
+  },
+  "Aufgaben nach Bearbeitungsstand": {
+    "en": "Tasks by processing status",
+    "fr": "Tâches par état de traitement"
+  },
+  "Aufgabe, Liegenschaft oder Stichwort …": {
+    "en": "Task, property or keyword …",
+    "fr": "Tâche, immeuble ou mot-clé…"
+  },
+  "Aufgaben.": {
+    "en": "Tasks.",
+    "fr": "Tâches."
+  },
+  "Nächste Schritte planen, Zuständigkeiten klären und Fristen einhalten.": {
+    "en": "Plan next steps, assign responsibility and meet deadlines.",
+    "fr": "Planifiez les prochaines étapes, définissez les responsabilités et respectez les délais."
+  },
+  "· persönliche Übersicht": {
+    "en": "· Personal overview",
+    "fr": "· Vue personnelle"
+  },
+  "Alexander & Diana · Teamübersicht": {
+    "en": "Alexander & Diana · team overview",
+    "fr": "Alexander et Diana · vue de l’équipe"
+  },
+  "Liste": {
+    "en": "List",
+    "fr": "Liste"
+  },
+  "Spalten": {
+    "en": "Columns",
+    "fr": "Colonnes"
+  },
+  "Heute bis in 7 Tagen": {
+    "en": "Today through the next 7 days",
+    "fr": "D’aujourd’hui aux 7 prochains jours"
+  },
+  "Fälligkeit · älteste zuerst": {
+    "en": "Due date · oldest first",
+    "fr": "Échéance · plus ancienne d’abord"
+  },
+  "Zuletzt abgeschlossen": {
+    "en": "Most recently completed",
+    "fr": "Dernières tâches terminées"
+  },
+  "Ohne Verknüpfung": {
+    "en": "No link",
+    "fr": "Sans lien"
+  },
+  "Mit Anliegen oder Unterhalt verknüpfen": {
+    "en": "Link to request or maintenance",
+    "fr": "Lier à une demande ou à un entretien"
+  },
+  "Grund für den Abbruch *": {
+    "en": "Reason for cancellation *",
+    "fr": "Motif d’abandon *"
+  },
+  "Ergebnis / Abschlussnotiz": {
+    "en": "Result / closing note",
+    "fr": "Résultat / note de clôture"
+  },
+  "Letzte Frist *": {
+    "en": "Last deadline *",
+    "fr": "Dernier délai *"
+  },
+  "Nachfassen am *": {
+    "en": "Follow up on *",
+    "fr": "Relancer le *"
+  },
+  "Bisherige Zuordnung: {0}. Mit einer Liegenschaft verknüpfen oder als interne Aufgabe führen.": {
+    "en": "Previous assignment: {0}. Link to a property or keep as an internal task.",
+    "fr": "Rattachement précédent : {0}. Liez un immeuble ou conservez la tâche comme tâche interne."
+  },
+  "Was ist zu tun? *": {
+    "en": "What needs doing? *",
+    "fr": "Que faut-il faire ? *"
+  },
+  "Welche Rückmeldung fehlt? *": {
+    "en": "Which response is missing? *",
+    "fr": "Quel retour manque-t-il ? *"
+  },
+  "Beschreibung / Arbeitsauftrag": {
+    "en": "Description / work instruction",
+    "fr": "Description / consigne de travail"
+  },
+  "Aufgabe bearbeiten.": {
+    "en": "Edit task.",
+    "fr": "Modifier la tâche."
+  },
+  "Aufgabe erfassen.": {
+    "en": "Add task.",
+    "fr": "Ajouter une tâche."
+  },
+  "Liegenschaft, Einheit & Verknüpfung": {
+    "en": "Property, unit & link",
+    "fr": "Immeuble, lot et lien"
+  },
+  "Ohne Liegenschaft wird die Aufgabe als «MORADA intern» geführt. Verknüpfungen passen zur gewählten Liegenschaft und Einheit.": {
+    "en": "Without a property, the task is filed under “MORADA internal”. Links match the selected property and unit.",
+    "fr": "Sans immeuble, la tâche relève de « MORADA interne ». Les liens correspondent à l’immeuble et au lot sélectionnés."
+  },
+  "Zur Dossiernotiz: {0}. Frist und Bearbeitung werden hier in der Aufgabe geführt.": {
+    "en": "For dossier note: {0}. Deadline and processing are managed here in the task.",
+    "fr": "Pour la note de dossier : {0}. Le délai et le traitement sont gérés ici dans la tâche."
+  },
+  "MORADA · AUFGABEN": {
+    "en": "MORADA · TASKS",
+    "fr": "MORADA · TÂCHES"
+  },
+  "Letzte Frist": {
+    "en": "Last deadline",
+    "fr": "Dernier délai"
+  },
+  "Nachfassen am": {
+    "en": "Follow up on",
+    "fr": "Relancer le"
+  },
+  "Auf Rückmeldung warten": {
+    "en": "Wait for a response",
+    "fr": "Attendre un retour"
+  },
+  "Aufgabe abbrechen": {
+    "en": "Cancel task",
+    "fr": "Abandonner la tâche"
+  },
+  "Fachprüfung öffnen": {
+    "en": "Open specialist review",
+    "fr": "Ouvrir l’examen spécialisé"
+  },
+  "Dossiernotiz öffnen": {
+    "en": "Open dossier note",
+    "fr": "Ouvrir la note de dossier"
+  },
+  "Abnahme / Übergabe öffnen": {
+    "en": "Open inspection / handover",
+    "fr": "Ouvrir l’état des lieux / la remise"
+  },
+  "Arbeitsauftrag & Zuordnung": {
+    "en": "Work instruction & assignment",
+    "fr": "Consigne de travail et rattachement"
+  },
+  "Dateien & Fotos · {12}": {
+    "en": "Files & photos · {12}",
+    "fr": "Fichiers et photos · {12}"
+  },
+  "Verlauf · {17} Einträge": {
+    "en": "History · {17} entries",
+    "fr": "Historique · {17} entrées"
+  },
+  "Nächster Arbeitsschritt": {
+    "en": "Next work step",
+    "fr": "Prochaine étape de travail"
+  },
+  "Aufgabe erledigt.": {
+    "en": "Task completed.",
+    "fr": "Tâche terminée."
+  },
+  "Aufgabe abgebrochen.": {
+    "en": "Task cancelled.",
+    "fr": "Tâche abandonnée."
+  },
+  "Verknüpfte Aufgaben · {0} offen": {
+    "en": "Linked tasks · {0} open",
+    "fr": "Tâches liées · {0} en cours"
+  },
+  "Der Abschluss einer Aufgabe ändert den Status des zugehörigen Vorgangs nicht.": {
+    "en": "Completing a task does not change the status of the related operation.",
+    "fr": "La clôture d’une tâche ne modifie pas le statut de l’opération associée."
+  },
+  "Einzelne Arbeitsschritte könnt ihr hier als Aufgabe zuweisen.": {
+    "en": "You can assign individual work steps here as tasks.",
+    "fr": "Vous pouvez attribuer ici des étapes de travail individuelles sous forme de tâches."
+  },
+  "Aufgaben-ID": {
+    "en": "Task ID",
+    "fr": "ID de tâche"
+  },
+  "Fällig / Nachfassen am": {
+    "en": "Due / follow up on",
+    "fr": "Échéance / relance le"
+  }
+}

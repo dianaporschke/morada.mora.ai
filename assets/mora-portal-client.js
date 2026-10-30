@@ -4,6 +4,7 @@ import {portalNavigation,hasCaseForm} from './mora-portal-map.js';
 import {enablePortalWindow} from './mora-portal-window.js';
 /** No provider credentials, model calls or portal business rules in this UI. */
 export function createPortalClient(document,window,bridge,{fetcher=window.fetch?.bind(window)}={}) {
+  const L=window.MoradaI18n||{t:v=>String(v??''),locale:'de-CH',language:'de',localizeStatic(){}};
   const agent=new URL(window.location.href).searchParams.get('mora')!=='legacy';
   const architecture=agent?'portal_agent_v1':'portal_v1',endpoint=agent?'/api/portal-agent':'/api/portal-chat';
   const greeting='Guten Tag! Ich bin MORA, Ihre digitale Assistenz bei MORADA. Wie kann ich Ihnen heute helfen?';
@@ -31,38 +32,39 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
   window.visualViewport?.addEventListener('resize',fitViewport);window.visualViewport?.addEventListener('scroll',fitViewport);window.addEventListener('resize',fitViewport);
   input.addEventListener('input',sizeInput);fitViewport();
   const windowLayout=enablePortalWindow(panel,window,sizeInput);
+  L.localizeStatic(panel);if(launcher)L.localizeStatic(launcher);
   const blank=()=>({session:null,messages:[{role:'assistant',content:greeting}],data:null,saved:{},pendingReceipt:null});
   const key=()=> (agent?'morada.portal.mora.agent.v1.':'morada.portal.mora.v1.')+activeRole;
   function persist(){try{window.sessionStorage.setItem(key(),JSON.stringify(thread));}catch{storageWarning='Der Chatverlauf kann in diesem Browser nicht behalten werden. Gespeicherte Portaleinträge bleiben davon unabhängig.';}}
   function load(){activeRole=bridge.role();thread=blank();try{const t=JSON.parse(window.sessionStorage.getItem(key())||'null');if(t&&Array.isArray(t.messages)&&t.messages.every(m=>['user','assistant','error','receipt'].includes(m.role)&&typeof m.content==='string')&&t.saved&&typeof t.saved==='object'){thread={...blank(),...t};}}catch{storageWarning='Der frühere Chat konnte nicht geladen werden.';}}
-  function bubble(role,content){const p=document.createElement('p');p.className='mora-portal-message '+role;p.textContent=content;log.append(p);}
+  function bubble(role,content){const p=document.createElement('p');p.className='mora-portal-message '+role;p.textContent=(role==='error'||role==='receipt'||content===greeting)?L.t(content):content;log.append(p);}
   function clearPrivateResult(){log.querySelectorAll('[data-mora-private]').forEach(node=>node.remove());}
   function showPortalResult(result){
     clearPrivateResult();
-    const card=document.createElement('section');card.className='mora-portal-message assistant';card.dataset.moraPrivate='true';card.setAttribute('aria-label','Geprüfte Portalauskunft');
+    const card=document.createElement('section');card.className='mora-portal-message assistant';card.dataset.moraPrivate='true';card.setAttribute('aria-label',L.t('Geprüfte Portalauskunft'));
     const add=text=>{const p=document.createElement('p');p.textContent=text;card.append(p);};
-    if(result.status!=='verified')add(result.message);
+    if(result.status!=='verified')add(L.t(result.message));
     else{
       const statusLabels={received:'Anfrage eingegangen',in_progress:'In Bearbeitung',contractor_contacted:'Handwerker kontaktiert',appointment_agreed:'Termin vereinbart',completed:'Abgeschlossen',cancelled:'Storniert'};
       const equipmentLabels={light:'Lampe / Leuchte',socket:'Steckdose',heater:'Heizung',water:'Wasser',door:'Tür',window:'Fenster',appliance:'Gerät',other:'Anliegen'};
-      const date=value=>new Date(value).toLocaleString('de-CH');
-      add(result.title);
-      for(const row of result.rows.slice(0,50))add(result.kind==='repair-counts'?row.property+' · '+row.count+' offene Reparaturanliegen':
-        [row.property,equipmentLabels[row.equipment],statusLabels[row.status],row.reporter,...(row.appointmentAt?['Termin: '+date(row.appointmentAt)]:[])].filter(Boolean).join(' · '));
-      if(!result.rows.length)add('Im freigegebenen Umfang sind keine entsprechenden Anliegen vorhanden.');
-      if(result.rows.length>50)add('50 von '+result.rows.length+' Einträgen. Weitere Angaben finden Sie im freigegebenen Portalbereich.');
-      add('Datenstand: '+date(result.asOf)+'. Nur für diesen Abruf geprüft.');
+      const date=value=>new Date(value).toLocaleString(L.locale);
+      add(L.t(result.title));
+      for(const row of result.rows.slice(0,50))add(result.kind==='repair-counts'?L.t('{0} · {1} offene Reparaturanliegen',{0:row.property,1:row.count}):
+        [row.property,L.t(equipmentLabels[row.equipment]),L.t(statusLabels[row.status]),row.reporter,...(row.appointmentAt?[L.t('Termin: {0}',{0:date(row.appointmentAt)})]:[])].filter(Boolean).join(' · '));
+      if(!result.rows.length)add(L.t('Im freigegebenen Umfang sind keine entsprechenden Anliegen vorhanden.'));
+      if(result.rows.length>50)add(L.t('50 von {0} Einträgen. Weitere Angaben finden Sie im freigegebenen Portalbereich.',{0:result.rows.length}));
+      add(L.t('Datenstand: {0}. Nur für diesen Abruf geprüft.',{0:date(result.asOf)}));
     }
     log.append(card);scrollEnd();
   }
   function message(role,content){if(role==='user')followEnd=true;thread.messages.push({role,content});thread.messages=thread.messages.slice(-80);bubble(role,content);scrollEnd();persist();}
-  function button(label,run,primary=false,iconName='arrow'){const b=document.createElement('button');b.type='button';b.className='btn mora-portal-action'+(primary?' mora-portal-primary':'');b.innerHTML=uiIcon(iconName);const caption=document.createElement('span');caption.textContent=label;b.append(caption);b.disabled=busy;b.addEventListener('click',()=>{if(!busy)run();});actions.append(b);}
+  function button(label,run,primary=false,iconName='arrow'){const b=document.createElement('button');b.type='button';b.className='btn mora-portal-action'+(primary?' mora-portal-primary':'');b.innerHTML=uiIcon(iconName);const caption=document.createElement('span');caption.textContent=L.t(label);b.append(caption);b.disabled=busy;b.addEventListener('click',()=>{if(!busy)run();});actions.append(b);}
   function showControls(){
     actions.replaceChildren();
     if(thread.pendingReceipt){button('Speicherbestätigung erneut abgleichen',()=>syncReceipt(),true,'restart');scrollEnd();return;}
     const data=thread.data;if(!data){scrollEnd();return;}
     if(data.issues?.length>1){
-      const select=document.createElement('select');select.setAttribute('aria-label','Anliegen auswählen');select.disabled=busy||Boolean(bridge.currentDraft());
+      const select=document.createElement('select');select.setAttribute('aria-label',L.t('Anliegen auswählen'));select.disabled=busy||Boolean(bridge.currentDraft());
       for(const issue of data.issues){const o=document.createElement('option');o.value=issue.id;o.textContent=[draftLabel(issue),issue.location].filter(Boolean).join(' · ');o.selected=issue.id===data.issue?.id;select.append(o);}
       select.addEventListener('change',async()=>{if(busy)return;setBusy(true,'Anliegen wird gewechselt …');try{await request({action:'switch-issue',issueId:select.value});}catch(e){message('error',e.message);}finally{setBusy(false);}});actions.append(select);
     }
@@ -73,20 +75,25 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
     else if(data.controls?.stored)button('Gespeichertes Anliegen öffnen',()=>navigate(()=>bridge.view(data.controls.stored.id)),true,'review');
     if(data.controls?.review&&connected)button('Foto hinzufügen',()=>prepareIssue(true),false,'photo');
     const manual=Boolean(data.controls?.save?.operation==='create'&&bridge.available().includes(manualTarget));
-    if(manual)button(names[manualTarget],()=>navigate(()=>bridge.navigate(manualTarget)));
-    for(const target of data.controls?.navigation || [])if(!(manual&&target===manualTarget)&&bridge.available().includes(target)&&names[target])button(names[target],()=>navigate(()=>bridge.navigate(target)));
+    if(manual)button(L.t(names[manualTarget]),()=>navigate(()=>bridge.navigate(manualTarget)));
+    for(const target of data.controls?.navigation || [])if(!(manual&&target===manualTarget)&&bridge.available().includes(target)&&names[target])button(L.t(names[target]),()=>navigate(()=>bridge.navigate(target)));
 
-    if(!data.issue&&(data.controls?.navigation||[]).includes(manualTarget))button('Mit MORA vorbereiten',()=>send('Ich möchte ein Anliegen mit Ihnen vorbereiten.'),true,'prepare');
+    if(!data.issue&&(data.controls?.navigation||[]).includes(manualTarget))button('Mit MORA vorbereiten',()=>send(L.t('Ich möchte ein Anliegen mit Ihnen vorbereiten.')),true,'prepare');
     scrollEnd();
   }
-  function setBusy(value,label=''){busy=value;form.querySelector('button').disabled=value;input.disabled=value;panel.querySelector('[data-mp="clear"]').disabled=value;panel.setAttribute('aria-busy',String(value));status.textContent=label||storageWarning;showControls();}
+  function setBusy(value,label=''){busy=value;form.querySelector('button').disabled=value;input.disabled=value;panel.querySelector('[data-mp="clear"]').disabled=value;panel.setAttribute('aria-busy',String(value));status.textContent=L.t(label||storageWarning);showControls();}
+  window.addEventListener('morada:languagechange',()=>{
+    if(!thread)return;const offset=scroller.scrollTop;log.replaceChildren();
+    for(const m of thread?.messages||[])bubble(m.role,m.content);
+    status.textContent=L.t(storageWarning);showControls();scroller.scrollTop=offset;sizeInput();
+  });
   function close(){clearPrivateResult();readingOffset=scroller.scrollTop;panel.hidden=true;document.getElementById('moraFab')?.setAttribute('aria-expanded','false');lastFocus?.focus?.();}
-  function navigate(fn){try{const ok=fn();if(ok!==false)close();}catch(e){status.textContent=e.message;}}
+  function navigate(fn){try{const ok=fn();if(ok!==false)close();}catch(e){status.textContent=L.t(e.message);}}
   async function request(payload){
     if(window.location.protocol==='file:')throw Error('Bitte öffnen Sie die bereitgestellte HTTPS-Testversion. Die lokale HTML-Datei enthält absichtlich keinen KI-Schlüssel.');
     if(!fetcher)throw Error('Die Backend-Verbindung ist in diesem Browser nicht verfügbar.');
     const start=window.performance.now(),startedRole=activeRole,startedEpoch=accessEpoch;
-    const response=await fetcher(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...(thread.session?{session:thread.session}:{}),...payload,navigation:bridge.available(),viewRole:startedRole}),signal:window.AbortSignal.timeout(55000)});
+    const response=await fetcher(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...(thread.session?{session:thread.session}:{}),...payload,navigation:bridge.available(),viewRole:startedRole,language:L.language}),signal:window.AbortSignal.timeout(55000)});
     const headers=window.performance.now();let data;
     try{data=await response.json();}catch{throw Error('Das geschützte Backend konnte nicht erreicht werden. Bitte laden Sie die Testversion neu.');}
     const parsed=window.performance.now();
@@ -111,10 +118,10 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
   }
   async function send(text){
     if(busy||!text.trim())return;
-    if(thread.pendingReceipt){status.textContent='Bitte zuerst die noch offene Speicherbestätigung abgleichen.';return;}
+    if(thread.pendingReceipt){status.textContent=L.t('Bitte zuerst die noch offene Speicherbestätigung abgleichen.');return;}
     // A failed attempt must never leave an old action enabled.
     clearPrivateResult();thread.data=null;message('user',text.trim());
-    const hazard=detectHazard(text.trim());if(hazard.hazard!=='none')message('error','Sicherheitshinweis: '+safetyNotice(hazard.hazard));
+    const hazard=detectHazard(text.trim());if(hazard.hazard!=='none')message('error',L.t('Sicherheitshinweis: {0}',{0:L.t(safetyNotice(hazard.hazard))}));
     input.value='';sizeInput();setBusy(true,'MORA antwortet …');
     const start=window.performance.now(),startedEpoch=accessEpoch;
     try{if(thread.pendingClose){await request({action:'draft-closed',issueId:thread.pendingClose});thread.pendingClose=null;persist();}const data=await request({message:text.trim(),messageId:window.crypto.randomUUID()});const performed=data.requestedAction?await prepareIssue(data.requestedAction==='photo',true):true;if(performed&&data.reply)message('assistant',data.reply);if(data.portalResult&&!panel.hidden)showPortalResult(data.portalResult);window.console.info('MORA portal visible response',{answerDomMs:window.performance.now()-start});}
@@ -127,7 +134,7 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
     if(!data.receiptAccepted)throw Error('Der Portalstand ist gespeichert, die Gesprächsbestätigung ist noch offen.');
     thread.saved[pending.receipt.issueId]=pending.fields;thread.pendingReceipt=null;persist();
   }
-  async function syncReceipt(){if(busy)return;setBusy(true,'Speicherbestätigung wird abgeglichen …');try{await acknowledge();status.textContent='Der lokale Speicherstand ist bestätigt.';}catch(e){message('error',e.message);}finally{setBusy(false);}}
+  async function syncReceipt(){if(busy)return;setBusy(true,'Speicherbestätigung wird abgeglichen …');try{await acknowledge();status.textContent=L.t('Der lokale Speicherstand ist bestätigt.');}catch(e){message('error',e.message);}finally{setBusy(false);}}
   const receiptFor=(ticket,extra)=>({...Object.fromEntries(['operationId','issueId','draftId','revision','contentHash'].map(k=>[k,ticket.operation[k]])),...extra});
   async function prepareIssue(photo=false,insideSend=false){
     if(busy&&!insideSend)return;
@@ -160,7 +167,7 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
       },photo);
       close();
       await request({action:'draft-opened',issueId});
-      status.textContent='Die Angaben stehen im Anliegenformular zur Kontrolle bereit. Noch nicht gespeichert.';
+      status.textContent=L.t('Die Angaben stehen im Anliegenformular zur Kontrolle bereit. Noch nicht gespeichert.');
       return true;
     }catch(e){if(currentAccess())message('error',e.message);return false;}
     finally{if(!insideSend&&currentAccess())setBusy(false);}

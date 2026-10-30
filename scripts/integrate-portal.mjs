@@ -21,5 +21,5 @@ const js=modules.map(p=>readFileSync(p,'utf8').replace(/^import .*;\r?\n/gm,'').
 const css=readFileSync('assets/mora-portal.css','utf8');
 const block=start+'\n<style>'+css+'</style>\n<script>\n(()=>{\n'+js+'\nconst bridge=createPortalBridge({managedCaseFields,sameCaseFields});\nwindow.MORAPortal=createPortalClient(document,window,bridge);\nshowMora=()=>{if(portalCloseDialog())window.MORAPortal.open();};\ndocument.getElementById("moraFab").setAttribute("aria-controls","moraPortalChat");\ndocument.getElementById("moraFab").setAttribute("aria-expanded","false");\n})();\n</script>\n'+end;
 if(!html.includes('function showMora()')||!html.includes("const storageKey='morada-portal-clean-20261011-v1'"))throw Error('Unexpected portal source');
-html=html.replace('</body>',block+'\n</body>');writeFileSync(path,html);writeFileSync('portal.html',html);
+html=html.replace('</body>',()=>block+'\n</body>');writeFileSync(path,html);writeFileSync('portal.html',html);
 console.log('Updated the provided HTML and identical Preview source.');

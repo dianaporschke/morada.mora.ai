@@ -10,10 +10,10 @@ export const equipmentCategories = {
 };
 export const categoryLabels = { water:'Wasser / Feuchtigkeit', electricity:'Elektrik / Beleuchtung', heating:'Heizung', access:'Schlüssel / Zugang', neighbours:'Nachbarschaft / Lärm', appliances:'Geräte / Waschküche', general:'Allgemeines Anliegen' };
 const aliases = {
-  socket:['steckdose','steckdosen'], light:['lampe','lampen','leuchte','leuchten','beleuchtung','deckenlampe','stehlampe','tischlampe','deckenleuchte'],
-  switch:['lichtschalter','schalter'], power:['stromversorgung','sicherung'], heater:['heizung','heizkörper','heizkoerper','radiator'],
-  key:['schlüssel','schluessel','wohnungsschlüssel'], washer:['waschmaschine'], dryer:['trockner','tumbler'], dishwasher:['geschirrspüler','geschirrspueler'],
-  tap:['wasserhahn'], drain:['abfluss','siphon'], pipe:['rohr','leitung','rohrbruch'], noise:['lärmstörung','lärm'],
+  socket:['socket','sockets','outlet','outlets','prise','prises','prise électrique','steckdose','steckdosen'], light:['light','lights','lamp','lamps','lampe','lampes','luminaire','luminaires','lampe','lampen','leuchte','leuchten','beleuchtung','deckenlampe','stehlampe','tischlampe','deckenleuchte'],
+  switch:['lichtschalter','schalter'], power:['stromversorgung','sicherung'], heater:['heater','heaters','heating','chauffage','radiateur','radiateurs','heizung','heizkörper','heizkoerper','radiator'],
+  key:['schlüssel','schluessel','wohnungsschlüssel'], washer:['washing machine','lave-linge','waschmaschine'], dryer:['dryer','sèche-linge','trockner','tumbler'], dishwasher:['dishwasher','lave-vaisselle','geschirrspüler','geschirrspueler'],
+  tap:['tap','faucet','robinet','wasserhahn'], drain:['drain','évacuation','abfluss','siphon'], pipe:['rohr','leitung','rohrbruch'], noise:['lärmstörung','lärm'],
 };
 const normal = value => value.toLocaleLowerCase('de-CH').normalize('NFKC').trim();
 /** Exact aliases only. No fuzzy diagnosis, first-match category or guessed count. */
@@ -26,7 +26,7 @@ export function canonicalEquipment(value, evidence = '') {
   if (text && text!=='unknown' && text!=='noch unklar') return value.trim();
   const words=normal(evidence).match(/[\p{L}]+/gu) || [];
   // A negated/retracted object or comparison needs semantic resolution by the LLM.
-  if (/\b(?:nicht die|nicht der|nicht das|keine lampe|statt|sondern|oder)\b/i.test(evidence)) return 'unknown';
+  if (/\b(?:nicht die|nicht der|nicht das|keine lampe|statt|sondern|oder|not|no|instead|rather than|or|pas|sans|plutôt|mais|ou)\b/i.test(evidence)) return 'unknown';
   const candidates=Object.entries(aliases).filter(([,names])=>names.some(name=>words.includes(name))).map(([code])=>code);
   return candidates.length===1 ? candidates[0] : 'unknown';
 }

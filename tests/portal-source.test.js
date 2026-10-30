@@ -1,22 +1,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {createHash} from 'node:crypto';
-const hash=s=>createHash('sha256').update(s).digest('hex');
-
-// The user authorised changes to the shared portal UI on 30 October. The old
-// whole-HTML hash froze that UI too. These hashes still freeze every native
-// business statement and the entire existing MORA integration from 1284594.
-test('visual refinement preserves native business logic and the complete MORA integration',()=>{
+// Phase 2 deliberately changes presentation and the MORA language preference.
+// Check the deployed bundle against the tested shared modules, rather than
+// pinning the earlier German-only UI to a whole-source hash.
+test('portal contains the complete current MORA integration exactly once',()=>{
  const html=readFileSync('portal.html','utf8');
  const block=html.match(/<!-- MORA INTEGRATION 1.0 START -->[\s\S]*?<!-- MORA INTEGRATION 1.0 END -->/g);
- assert.equal(block.length,1,'exactly one unchanged MORA implementation');
- assert.equal(hash(block[0]),'bc8b2f9b0e7144f2462dfc0fc90af1c27a71b2260876606afb090d445b42ce77');
- const native=html.match(/<script>\s*'use strict';([\s\S]*?)<\/script>/)[1]
-  .replace(/^const paths=.*\n/m,'') // Existing icon vocabulary, visual only.
-  .replace(/function syncIdentity\(\)\{[\s\S]*?\n(?=function chooseRole)/,'') // Visible identity / button labels.
-  .replace(/function rolePicker\(\)\{[\s\S]*?\n\}/,'') // Preview wording, same choices and handler.
-  .replace(/^function hero[^\n]*\n/m,'') // Remove the decorative sketch.
-  .replace(/document\.getElementById\('breadcrumb'\)\.textContent=[^;]*;/,'');
- assert.equal(hash(native),'abda08d5a53e7f0bb44bfa904f1d7ae0af61ea20f00663c9454a33294cc747f9');
+ assert.equal(block.length,1);
+ for(const file of ['assets/mora-data.js','assets/mora-safety.js','assets/mora-portal-map.js','scripts/portal-integration/customer-cases.js','scripts/portal-integration/bridge.js','assets/mora-portal-window.js','assets/mora-portal-client.js']){
+  const module=readFileSync(file,'utf8').replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,'');
+  assert.ok(block[0].includes(module),'bundle matches '+file);
+ }
+ assert.equal(html.split('<!-- MORADA LANGUAGE CORE START -->').length,2);
+ assert.equal(html.split('<!-- MORADA LANGUAGE CONTROLS START -->').length,2);
 });

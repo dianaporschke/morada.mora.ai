@@ -1,0 +1,17 @@
+import {readFileSync,writeFileSync,readdirSync} from 'node:fs';
+const directory='assets/i18n';const messages={};
+for(const file of readdirSync(directory).filter(f=>/^(part-\d+|additional)\.json$/.test(f)).sort((a,b)=>a.localeCompare(b,undefined,{numeric:true})))Object.assign(messages,JSON.parse(readFileSync(directory+'/'+file,'utf8')));
+writeFileSync(directory+'/messages.json',JSON.stringify(messages,null,2)+'\n');
+const core=readFileSync('assets/portal-i18n-core.js','utf8').replace(/^export /gm,'');
+const browser=readFileSync('assets/portal-i18n-browser.js','utf8').replace(/^import .*;\r?\n/gm,'');
+const controls=readFileSync('assets/portal-language-controls.js','utf8');
+const marker='<!-- MORADA LANGUAGE CORE START -->',end='<!-- MORADA LANGUAGE CORE END -->';
+const block=marker+'\n<script id="morada-language-core">\n(()=>{\n'+core+'\n'+browser+'\ninstallPortalLanguage('+JSON.stringify(messages).replaceAll('<','\\u003c')+');\nMoradaI18n.localizeStatic(document.body);\n})();\n</script>\n'+end+'\n';
+let html=readFileSync('portal.html','utf8');
+if(html.includes(marker))html=html.slice(0,html.indexOf(marker))+html.slice(html.indexOf(end)+end.length).replace(/^\n/,'');
+html=html.replace(/<script>\s*'use strict';/,()=>block+"<script>\n'use strict';");
+const cm='<!-- MORADA LANGUAGE CONTROLS START -->',ce='<!-- MORADA LANGUAGE CONTROLS END -->';
+if(html.includes(cm))html=html.slice(0,html.indexOf(cm))+html.slice(html.indexOf(ce)+ce.length).replace(/^\n/,'');
+html=html.replace('<!-- MORA INTEGRATION 1.0 START -->',()=>cm+'\n<script>\n'+controls+'\n</script>\n'+ce+'\n<!-- MORA INTEGRATION 1.0 START -->');
+writeFileSync('portal.html',html);
+console.log('Built shared language resources: '+Object.keys(messages).length+' source messages.');

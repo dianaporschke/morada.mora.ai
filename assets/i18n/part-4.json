@@ -1,0 +1,5210 @@
+{
+  "Die bisherige Verknüpfung wurde entfernt. Bitte das passende Anliegen oder den Unterhaltseintrag erneut auswählen.": {
+    "en": "The previous link was removed. Please select the appropriate request or maintenance record again.",
+    "fr": "Le lien précédent a été supprimé. Veuillez sélectionner à nouveau la demande ou l’entrée d’entretien correspondante."
+  },
+  "Keine Aufgaben in dieser Auswahl.": {
+    "en": "No tasks match this selection.",
+    "fr": "Aucune tâche ne correspond à cette sélection."
+  },
+  "Bitte die Aufgabe erneut öffnen.": {
+    "en": "Please reopen the task.",
+    "fr": "Veuillez rouvrir la tâche."
+  },
+  "Aufgabe gestartet.": {
+    "en": "Task started.",
+    "fr": "Tâche démarrée."
+  },
+  "· Ende offen": {
+    "en": "· End not specified",
+    "fr": "· Fin non précisée"
+  },
+  "Vergangene Termine prüfen": {
+    "en": "Review past appointments",
+    "fr": "Vérifier les rendez-vous passés"
+  },
+  "Aufgabe · fällig": {
+    "en": "Task · due",
+    "fr": "Tâche · échéance"
+  },
+  "Anliegen · Wiedervorlage": {
+    "en": "Request · follow-up",
+    "fr": "Demande · suivi"
+  },
+  "Wartung · fällig": {
+    "en": "Servicing · due",
+    "fr": "Maintenance · échéance"
+  },
+  "Unterhalt · fällig": {
+    "en": "Maintenance · due",
+    "fr": "Entretien · échéance"
+  },
+  "Neuvermietung ·": {
+    "en": "Letting ·",
+    "fr": "Mise en location ·"
+  },
+  "Mietinteressent ·": {
+    "en": "Prospective tenant ·",
+    "fr": "Candidat à la location ·"
+  },
+  "Läuft": {
+    "en": "In progress",
+    "fr": "En cours"
+  },
+  "Termine · {0}": {
+    "en": "Appointments · {0}",
+    "fr": "Rendez-vous · {0}"
+  },
+  "Fälligkeiten · {2}": {
+    "en": "Due dates · {2}",
+    "fr": "Échéances · {2}"
+  },
+  "Keine Termine in dieser Auswahl.": {
+    "en": "No appointments match this selection.",
+    "fr": "Aucun rendez-vous ne correspond à cette sélection."
+  },
+  "Keine offenen Fälligkeiten.": {
+    "en": "No outstanding due dates.",
+    "fr": "Aucune échéance en cours."
+  },
+  "TAGESÜBERSICHT": {
+    "en": "DAILY OVERVIEW",
+    "fr": "APERÇU DE LA JOURNÉE"
+  },
+  "Alle {1} Einträge ansehen ↗": {
+    "en": "View all {1} entries ↗",
+    "fr": "Voir les {1} entrées ↗"
+  },
+  "Eintragsarten": {
+    "en": "Entry types",
+    "fr": "Types d’entrées"
+  },
+  "Vertragsfrist": {
+    "en": "Contract deadline",
+    "fr": "Échéance contractuelle"
+  },
+  "Monatskalender": {
+    "en": "Monthly calendar",
+    "fr": "Calendrier mensuel"
+  },
+  "Mo": {
+    "en": "Mon",
+    "fr": "Lun"
+  },
+  "Di": {
+    "en": "Tue",
+    "fr": "Mar"
+  },
+  "Mi": {
+    "en": "Wed",
+    "fr": "Mer"
+  },
+  "Do": {
+    "en": "Thu",
+    "fr": "Jeu"
+  },
+  "Fr": {
+    "en": "Fri",
+    "fr": "Ven"
+  },
+  "Sa": {
+    "en": "Sat",
+    "fr": "Sam"
+  },
+  "So": {
+    "en": "Sun",
+    "fr": "Dim"
+  },
+  "{5}, {6} Einträge": {
+    "en": "{5}, {6} entries",
+    "fr": "{5}, {6} entrées"
+  },
+  "+{1} weitere": {
+    "en": "+{1} more",
+    "fr": "+{1} autres"
+  },
+  "+ Termin": {
+    "en": "+ Appointment",
+    "fr": "+ Rendez-vous"
+  },
+  "{2}, Tagesübersicht öffnen": {
+    "en": "{2}, open daily overview",
+    "fr": "{2}, ouvrir l’aperçu de la journée"
+  },
+  "Termin am {9} erfassen": {
+    "en": "Add an appointment on {9}",
+    "fr": "Ajouter un rendez-vous le {9}"
+  },
+  "+{1} weitere ↗": {
+    "en": "+{1} more ↗",
+    "fr": "+{1} autres ↗"
+  },
+  "Seite {0} von {1}": {
+    "en": "Page {0} of {1}",
+    "fr": "Page {0} sur {1}"
+  },
+  "Termine und Fälligkeiten als Liste": {
+    "en": "Appointments and due dates as a list",
+    "fr": "Rendez-vous et échéances sous forme de liste"
+  },
+  "Keine Einträge in diesem Zeitraum": {
+    "en": "No entries in this period",
+    "fr": "Aucune entrée pour cette période"
+  },
+  "Ändert die Filter oder setzt die Auswahl zurück.": {
+    "en": "Change the filters or reset the selection.",
+    "fr": "Modifiez les filtres ou réinitialisez la sélection."
+  },
+  "Erfasst einen Termin. Offene Aufgaben und weitere Fristen erscheinen automatisch.": {
+    "en": "Add an appointment. Open tasks and other deadlines appear automatically.",
+    "fr": "Ajoutez un rendez-vous. Les tâches ouvertes et les autres échéances apparaissent automatiquement."
+  },
+  "Geplante Termine": {
+    "en": "Scheduled appointments",
+    "fr": "Rendez-vous prévus"
+  },
+  "Diese Woche": {
+    "en": "This week",
+    "fr": "Cette semaine"
+  },
+  "Offene Fälligkeiten": {
+    "en": "Outstanding due dates",
+    "fr": "Échéances en cours"
+  },
+  "Vergangene Termine": {
+    "en": "Past appointments",
+    "fr": "Rendez-vous passés"
+  },
+  "Status noch geplant": {
+    "en": "Status still scheduled",
+    "fr": "Statut toujours prévu"
+  },
+  "Datum auswählen": {
+    "en": "Select date",
+    "fr": "Choisir une date"
+  },
+  "Kalender durchsuchen": {
+    "en": "Search calendar",
+    "fr": "Rechercher dans le calendrier"
+  },
+  "{16} Einträge im Zeitraum{17} · Kennzahlen folgen der Auswahl": {
+    "en": "{16} entries in this period{17} · Figures reflect the selection",
+    "fr": "{16} entrées sur la période{17} · Les indicateurs suivent la sélection"
+  },
+  "Liste (.csv) ↓": {
+    "en": "List (.csv) ↓",
+    "fr": "Liste (.csv) ↓"
+  },
+  "Termine (.ics) ↓": {
+    "en": "Appointments (.ics) ↓",
+    "fr": "Rendez-vous (.ics) ↓"
+  },
+  "Was wird im Kalender angezeigt?": {
+    "en": "What does the calendar show?",
+    "fr": "Que contient le calendrier ?"
+  },
+  "Alle Uhrzeiten gelten für Zürich (Europe/Zurich). Aufgaben, Wiedervorlagen, Unterhalt, Wartungen, Fachprüfungen und erfasste Vertragsfristen werden direkt aus ihren Bereichen angezeigt. Erledigte, stornierte oder inaktive Fälligkeiten sind ausgeblendet. Ein verknüpfter Wartungsauftrag erscheint einmal. Der Terminstatus-Filter gilt nur für Termine.": {
+    "en": "All times are Zurich time (Europe/Zurich). Tasks, follow-ups, maintenance, servicing, specialist reviews and recorded contract deadlines are shown directly from their respective sections. Completed, cancelled or inactive due dates are hidden. A linked servicing order appears once. The appointment status filter applies only to appointments.",
+    "fr": "Toutes les heures correspondent à l’heure de Zurich (Europe/Zurich). Les tâches, suivis, entretiens, maintenances, contrôles spécialisés et échéances contractuelles enregistrées s’affichent directement depuis leurs rubriques. Les échéances terminées, annulées ou inactives sont masquées. Un ordre de maintenance lié n’apparaît qu’une fois. Le filtre de statut ne concerne que les rendez-vous."
+  },
+  "Einträge werden auf diesem Gerät gespeichert. Der ICS-Export ist eine Momentaufnahme für euren Kalender; Änderungen werden nicht automatisch abgeglichen. Es werden keine Einladungen versendet. Gemeinsame Daten, Kalenderabgleich sowie E-Mail- und Push-Erinnerungen sind geplant.": {
+    "en": "Entries are stored on this device. The ICS export is a snapshot for your calendar; changes are not synchronised automatically. No invitations are sent. Shared data, calendar synchronisation and email and push reminders are planned.",
+    "fr": "Les entrées sont enregistrées sur cet appareil. L’export ICS est un instantané pour votre calendrier ; les modifications ne sont pas synchronisées automatiquement. Aucune invitation n’est envoyée. Le partage des données, la synchronisation du calendrier et les rappels par e-mail et notifications push sont prévus."
+  },
+  "Vorheriger {3}": {
+    "en": "Previous {3}",
+    "fr": "{3} précédent"
+  },
+  "Nächster {6}": {
+    "en": "Next {6}",
+    "fr": "{6} suivant"
+  },
+  "Zu Datum wechseln": {
+    "en": "Go to date",
+    "fr": "Aller à une date"
+  },
+  "Kalenderansicht": {
+    "en": "Calendar view",
+    "fr": "Vue calendrier"
+  },
+  "Termin, Liegenschaft oder Person …": {
+    "en": "Appointment, property or person …",
+    "fr": "Rendez-vous, immeuble ou personne…"
+  },
+  "Kalender.": {
+    "en": "Calendar.",
+    "fr": "Calendrier."
+  },
+  "Termine planen. Fälligkeiten im Blick behalten.": {
+    "en": "Plan appointments. Keep track of deadlines.",
+    "fr": "Planifier les rendez-vous. Garder les échéances en vue."
+  },
+  "Woche": {
+    "en": "Week",
+    "fr": "Semaine"
+  },
+  "Ganzes Team": {
+    "en": "Entire team",
+    "fr": "Toute l’équipe"
+  },
+  "Meine Einträge": {
+    "en": "My entries",
+    "fr": "Mes entrées"
+  },
+  "Termine & Fälligkeiten": {
+    "en": "Appointments & due dates",
+    "fr": "Rendez-vous et échéances"
+  },
+  "Nur Termine": {
+    "en": "Appointments only",
+    "fr": "Rendez-vous uniquement"
+  },
+  "Vertragsfristen": {
+    "en": "Contract deadlines",
+    "fr": "Échéances contractuelles"
+  },
+  "Terminstatus": {
+    "en": "Appointment status",
+    "fr": "Statut du rendez-vous"
+  },
+  "Ohne abgesagte Termine": {
+    "en": "Exclude cancelled appointments",
+    "fr": "Sans les rendez-vous annulés"
+  },
+  "Nur geplante Termine": {
+    "en": "Scheduled appointments only",
+    "fr": "Rendez-vous prévus uniquement"
+  },
+  "Nur durchgeführte Termine": {
+    "en": "Completed appointments only",
+    "fr": "Rendez-vous effectués uniquement"
+  },
+  "Nur abgesagte Termine": {
+    "en": "Cancelled appointments only",
+    "fr": "Rendez-vous annulés uniquement"
+  },
+  "Alle Terminstatus": {
+    "en": "All appointment statuses",
+    "fr": "Tous les statuts de rendez-vous"
+  },
+  "Zur Kalenderansicht": {
+    "en": "Back to calendar",
+    "fr": "Revenir au calendrier"
+  },
+  "{0} Einträge{1}": {
+    "en": "{0} entries{1}",
+    "fr": "{0} entrées{1}"
+  },
+  "· aktuelle Filter gelten": {
+    "en": "· Current filters apply",
+    "fr": "· Filtres actuels appliqués"
+  },
+  "MORADA · KALENDER": {
+    "en": "MORADA · CALENDAR",
+    "fr": "MORADA · CALENDRIER"
+  },
+  "Erinnerung": {
+    "en": "Reminder",
+    "fr": "Rappel"
+  },
+  "MORADA · VERTRAGSFRIST": {
+    "en": "MORADA · CONTRACT DEADLINE",
+    "fr": "MORADA · ÉCHÉANCE CONTRACTUELLE"
+  },
+  "Bitte Datum und Uhrzeit prüfen.": {
+    "en": "Please check the date and time.",
+    "fr": "Veuillez vérifier la date et l’heure."
+  },
+  "Diese Uhrzeit kommt bei der Zeitumstellung in Zürich zweimal vor. Bitte eine eindeutige Uhrzeit wählen.": {
+    "en": "This time occurs twice when the clocks change in Zurich. Please choose an unambiguous time.",
+    "fr": "Cette heure se produit deux fois lors du changement d’heure à Zurich. Veuillez choisir une heure sans ambiguïté."
+  },
+  "Diese Uhrzeit existiert wegen der Zeitumstellung in Zürich nicht. Bitte eine andere Uhrzeit wählen.": {
+    "en": "This time does not exist because of the clock change in Zurich. Please choose another time.",
+    "fr": "Cette heure n’existe pas en raison du changement d’heure à Zurich. Veuillez choisir une autre heure."
+  },
+  "Bitte Terminende und Teilnehmende prüfen.": {
+    "en": "Please check the appointment end and participants.",
+    "fr": "Veuillez vérifier la fin du rendez-vous et les participants."
+  },
+  "Ein Termin darf höchstens 366 Tage umfassen.": {
+    "en": "An appointment may last no more than 366 days.",
+    "fr": "Un rendez-vous ne peut pas durer plus de 366 jours."
+  },
+  "Ganztägige Termine haben keine Uhrzeit.": {
+    "en": "All-day appointments have no time.",
+    "fr": "Les rendez-vous sur toute la journée n’ont pas d’horaire."
+  },
+  "Bitte Beginn und Ende als Uhrzeit erfassen.": {
+    "en": "Please enter the start and end times.",
+    "fr": "Veuillez saisir les heures de début et de fin."
+  },
+  "Bei mehrtägigen Terminen bitte die Endzeit erfassen.": {
+    "en": "For appointments spanning several days, please enter an end time.",
+    "fr": "Pour les rendez-vous sur plusieurs jours, veuillez saisir une heure de fin."
+  },
+  "Das Terminende muss nach dem Beginn liegen.": {
+    "en": "The appointment must end after it starts.",
+    "fr": "La fin du rendez-vous doit être postérieure à son début."
+  },
+  "Ein zukünftiger Termin kann noch nicht als durchgeführt markiert werden.": {
+    "en": "A future appointment cannot yet be marked as completed.",
+    "fr": "Un rendez-vous à venir ne peut pas encore être marqué comme effectué."
+  },
+  "Es gibt eine Terminüberschneidung. Bitte den Hinweis prüfen und die Überschneidung bestätigen oder die Zeit ändern.": {
+    "en": "There is a scheduling conflict. Please review the notice and confirm the overlap or change the time.",
+    "fr": "Il existe un chevauchement de rendez-vous. Veuillez vérifier l’avertissement et confirmer le chevauchement ou modifier l’horaire."
+  },
+  "Enddatum": {
+    "en": "End date",
+    "fr": "Date de fin"
+  },
+  "Endzeit": {
+    "en": "End time",
+    "fr": "Heure de fin"
+  },
+  "Alexander & Diana nehmen teil": {
+    "en": "Alexander & Diana attending",
+    "fr": "Alexander et Diana participent"
+  },
+  "Weitere Teilnehmende": {
+    "en": "Other participants",
+    "fr": "Autres participants"
+  },
+  "Termin *": {
+    "en": "Appointment *",
+    "fr": "Rendez-vous *"
+  },
+  "Handwerkertermin": {
+    "en": "Contractor appointment",
+    "fr": "Rendez-vous avec un artisan"
+  },
+  "Abwesenheit": {
+    "en": "Absence",
+    "fr": "Absence"
+  },
+  "Beginn am *": {
+    "en": "Start date *",
+    "fr": "Date de début *"
+  },
+  "Ende am *": {
+    "en": "End date *",
+    "fr": "Date de fin *"
+  },
+  "Beginn *": {
+    "en": "Start *",
+    "fr": "Début *"
+  },
+  "Ende (bisher offen)": {
+    "en": "End (not yet specified)",
+    "fr": "Fin (non encore précisée)"
+  },
+  "Ende *": {
+    "en": "End *",
+    "fr": "Fin *"
+  },
+  "Verantwortlich *": {
+    "en": "Responsible person *",
+    "fr": "Responsable *"
+  },
+  "Teilnahme im Team": {
+    "en": "Team participation",
+    "fr": "Participation de l’équipe"
+  },
+  "Nur verantwortliche Person": {
+    "en": "Responsible person only",
+    "fr": "Responsable uniquement"
+  },
+  "Treffpunkt / Adresse / Gesprächslink": {
+    "en": "Meeting point / address / call link",
+    "fr": "Lieu de rencontre / adresse / lien de visioconférence"
+  },
+  "Weitere Teilnehmende / Kontaktangaben": {
+    "en": "Other participants / contact details",
+    "fr": "Autres participants / coordonnées"
+  },
+  "Notizen / Vorbereitung": {
+    "en": "Notes / preparation",
+    "fr": "Notes / préparation"
+  },
+  "Bisherige Zuordnung: {0}.": {
+    "en": "Previous assignment: {0}.",
+    "fr": "Affectation précédente : {0}."
+  },
+  "Termin bearbeiten.": {
+    "en": "Edit appointment.",
+    "fr": "Modifier le rendez-vous."
+  },
+  "Termin erfassen.": {
+    "en": "Add appointment.",
+    "fr": "Ajouter un rendez-vous."
+  },
+  "Uhrzeiten in Zürich (Europe/Zurich). Bei ganztägigen Terminen zählt das Enddatum mit.": {
+    "en": "Times are Zurich time (Europe/Zurich). For all-day appointments, the end date is inclusive.",
+    "fr": "Les heures correspondent à l’heure de Zurich (Europe/Zurich). Pour les rendez-vous sur toute la journée, la date de fin est incluse."
+  },
+  "Ort & Vorbereitung": {
+    "en": "Location & preparation",
+    "fr": "Lieu et préparation"
+  },
+  "Dateien & Unterlagen{12}": {
+    "en": "Files & documents{12}",
+    "fr": "Fichiers et documents{12}"
+  },
+  "MORADA · TERMIN": {
+    "en": "MORADA · APPOINTMENT",
+    "fr": "MORADA · RENDEZ-VOUS"
+  },
+  "Überschneidung geprüft; trotzdem speichern": {
+    "en": "Conflict reviewed; save anyway",
+    "fr": "Chevauchement vérifié ; enregistrer quand même"
+  },
+  "Terminüberschneidung": {
+    "en": "Scheduling conflict",
+    "fr": "Chevauchement de rendez-vous"
+  },
+  "Terminüberschneidungen": {
+    "en": "Scheduling conflicts",
+    "fr": "Chevauchements de rendez-vous"
+  },
+  "Und {0} weitere Termine.": {
+    "en": "And {0} other appointments.",
+    "fr": "Et {0} autres rendez-vous."
+  },
+  "Weitere Termine an diesem Tag haben noch keine Endzeit. Überschneidungen lassen sich dafür nur am Beginn prüfen.": {
+    "en": "Other appointments on this day have no end time yet. Their overlaps can only be checked at the start.",
+    "fr": "D’autres rendez-vous de cette journée n’ont pas encore d’heure de fin. Les chevauchements ne peuvent donc être vérifiés qu’à leur début."
+  },
+  "Zeit": {
+    "en": "Time",
+    "fr": "Heure"
+  },
+  "Verantwortlich": {
+    "en": "Responsible person",
+    "fr": "Responsable"
+  },
+  "Treffpunkt / Gesprächslink": {
+    "en": "Meeting point / call link",
+    "fr": "Lieu de rencontre / lien de visioconférence"
+  },
+  "Keine erfasst": {
+    "en": "None recorded",
+    "fr": "Aucun renseigné"
+  },
+  "{0} Überschneidung{1} mit geplanten Terminen. Im Bearbeitungsformular prüfen.": {
+    "en": "{0} conflict{1} with scheduled appointments. Review in the editing form.",
+    "fr": "{0} chevauchement{1} avec des rendez-vous prévus. À vérifier dans le formulaire de modification."
+  },
+  "Kopieren": {
+    "en": "Copy",
+    "fr": "Copier"
+  },
+  "Kalenderdatei": {
+    "en": "Calendar file",
+    "fr": "Fichier calendrier"
+  },
+  "Absagen": {
+    "en": "Cancel",
+    "fr": "Annuler"
+  },
+  "Terminart:": {
+    "en": "Appointment type:",
+    "fr": "Type de rendez-vous :"
+  },
+  "Status:": {
+    "en": "Status:",
+    "fr": "Statut :"
+  },
+  "Team:": {
+    "en": "Team:",
+    "fr": "Équipe :"
+  },
+  "Weitere Teilnehmende:": {
+    "en": "Other participants:",
+    "fr": "Autres participants :"
+  },
+  "Absagegrund:": {
+    "en": "Cancellation reason:",
+    "fr": "Motif de l’annulation :"
+  },
+  "Export aus MORADA; kein automatischer Abgleich.": {
+    "en": "Exported from MORADA; no automatic synchronisation.",
+    "fr": "Exporté depuis MORADA ; aucune synchronisation automatique."
+  },
+  "Kalenderdatei heruntergeladen. Änderungen werden nicht automatisch abgeglichen.": {
+    "en": "Calendar file downloaded. Changes are not synchronised automatically.",
+    "fr": "Fichier calendrier téléchargé. Les modifications ne sont pas synchronisées automatiquement."
+  },
+  "Kalenderexport nicht möglich.": {
+    "en": "Calendar export unavailable.",
+    "fr": "Export du calendrier impossible."
+  },
+  "Beginn / Fälligkeit": {
+    "en": "Start / due date",
+    "fr": "Début / échéance"
+  },
+  "Ende": {
+    "en": "End",
+    "fr": "Fin"
+  },
+  "Zuständig / Team": {
+    "en": "Responsible person / team",
+    "fr": "Responsable / équipe"
+  },
+  "Treffpunkt": {
+    "en": "Meeting point",
+    "fr": "Lieu de rencontre"
+  },
+  "Ohne Uhrzeit": {
+    "en": "No time specified",
+    "fr": "Sans horaire"
+  },
+  "Vorbereitung": {
+    "en": "Preparation",
+    "fr": "Préparation"
+  },
+  "Vermarktung": {
+    "en": "Marketing",
+    "fr": "Commercialisation"
+  },
+  "Auswahl": {
+    "en": "Selection",
+    "fr": "Sélection"
+  },
+  "Pausiert": {
+    "en": "Paused",
+    "fr": "En pause"
+  },
+  "Auftrag und Mietkonditionen freigegeben": {
+    "en": "Mandate and rental terms approved",
+    "fr": "Mandat et conditions de location approuvés"
+  },
+  "Verfügbarkeit und Zustand der Einheit geprüft": {
+    "en": "Unit availability and condition checked",
+    "fr": "Disponibilité et état de l’unité vérifiés"
+  },
+  "Fotos, Grundriss und Inseratetext bereit": {
+    "en": "Photos, floor plan and listing text ready",
+    "fr": "Photos, plan et texte de l’annonce prêts"
+  },
+  "Bewerbungen geprüft und Auswahl dokumentiert": {
+    "en": "Applications reviewed and selection documented",
+    "fr": "Candidatures examinées et sélection documentée"
+  },
+  "Mieterauswahl durch Auftraggeber freigegeben": {
+    "en": "Tenant selection approved by the principal",
+    "fr": "Choix du locataire approuvé par le mandant"
+  },
+  "Kaution gemäss Vertrag geklärt": {
+    "en": "Deposit clarified under the lease",
+    "fr": "Garantie de loyer clarifiée conformément au bail"
+  },
+  "Übergabe durchgeführt und protokolliert": {
+    "en": "Handover completed and documented",
+    "fr": "Remise effectuée et consignée"
+  },
+  "Inserate deaktiviert und offene Anfragen beantwortet": {
+    "en": "Listings deactivated and outstanding enquiries answered",
+    "fr": "Annonces désactivées et demandes en cours traitées"
+  },
+  "Unbekannt": {
+    "en": "Unknown",
+    "fr": "Inconnu"
+  },
+  "Einheit nicht verfügbar": {
+    "en": "Unit unavailable",
+    "fr": "Unité indisponible"
+  },
+  "Ungültige Neuvermietungen.": {
+    "en": "Invalid letting records.",
+    "fr": "Dossiers de mise en location non valides."
+  },
+  "Bitte Nummer und Einheitenzuordnung der Neuvermietung prüfen.": {
+    "en": "Please check the letting reference and unit assignment.",
+    "fr": "Veuillez vérifier la référence et l’unité attribuée à la mise en location."
+  },
+  "Bitte Phase, Anlass und Zuständigkeit prüfen.": {
+    "en": "Please check the stage, reason and responsible person.",
+    "fr": "Veuillez vérifier la phase, le motif et le responsable."
+  },
+  "Bitte gültige Daten bis 2100 erfassen.": {
+    "en": "Please enter valid dates up to 2100.",
+    "fr": "Veuillez saisir des dates valides jusqu’en 2100."
+  },
+  "Eine Angabe zur Neuvermietung ist ungültig oder zu lang.": {
+    "en": "A letting detail is invalid or too long.",
+    "fr": "Une information de mise en location est non valide ou trop longue."
+  },
+  "Bitte den Grund für die Pause oder den Abbruch erfassen.": {
+    "en": "Please enter the reason for pausing or cancelling.",
+    "fr": "Veuillez saisir le motif de la pause ou de l’abandon."
+  },
+  "Bitte einen nächsten Schritt mit Wiedervorlage erfassen.": {
+    "en": "Please enter a next step with a follow-up date.",
+    "fr": "Veuillez saisir une prochaine étape avec une date de suivi."
+  },
+  "Für einen offenen Abschlussschritt bitte auch die Wiedervorlage erfassen.": {
+    "en": "Please also enter a follow-up date for an outstanding completion step.",
+    "fr": "Veuillez également saisir une date de suivi pour une étape de clôture encore ouverte."
+  },
+  "Bitte gültige monatliche Mietbeträge erfassen.": {
+    "en": "Please enter valid monthly rental amounts.",
+    "fr": "Veuillez saisir des montants de loyer mensuels valides."
+  },
+  "Der Mietvertrag gehört nicht zur gewählten Einheit.": {
+    "en": "The lease does not belong to the selected unit.",
+    "fr": "Le bail ne correspond pas à l’unité sélectionnée."
+  },
+  "Dieser Mietvertrag ist bereits einem anderen Vermietungsvorgang zugeordnet.": {
+    "en": "This lease is already assigned to another letting process.",
+    "fr": "Ce bail est déjà attribué à une autre mise en location."
+  },
+  "Ungültiges Datum im Vermietungsverlauf.": {
+    "en": "Invalid date in letting history.",
+    "fr": "Date non valide dans l’historique de mise en location."
+  },
+  "Nur vermietete oder abgebrochene Vorgänge können archiviert werden.": {
+    "en": "Only let or cancelled processes can be archived.",
+    "fr": "Seuls les dossiers loués ou abandonnés peuvent être archivés."
+  },
+  "Für diese Einheit besteht bereits eine laufende Neuvermietung.": {
+    "en": "This unit already has an ongoing letting process.",
+    "fr": "Une mise en location est déjà en cours pour cette unité."
+  },
+  "Ungültige Checkliste.": {
+    "en": "Invalid checklist.",
+    "fr": "Liste de contrôle non valide."
+  },
+  "Ungültiger Checklistenstand.": {
+    "en": "Invalid checklist status.",
+    "fr": "État de la liste de contrôle non valide."
+  },
+  "Höchstens 12 Inserate je Neuvermietung.": {
+    "en": "No more than 12 listings per letting process.",
+    "fr": "Au maximum 12 annonces par mise en location."
+  },
+  "Bitte Kanal, Link, Status und Datum des Inserats prüfen.": {
+    "en": "Please check the listing channel, link, status and date.",
+    "fr": "Veuillez vérifier le canal, le lien, le statut et la date de l’annonce."
+  },
+  "Für ein veröffentlichtes Inserat bitte das tatsächliche Veröffentlichungsdatum bis heute erfassen.": {
+    "en": "For a published listing, please enter its actual publication date, no later than today.",
+    "fr": "Pour une annonce publiée, veuillez saisir sa date réelle de publication, au plus tard aujourd’hui."
+  },
+  "Der Vermietungsverlauf ist ungültig oder voll.": {
+    "en": "The letting history is invalid or full.",
+    "fr": "L’historique de mise en location est non valide ou complet."
+  },
+  "Ungültiger Vermietungsverlauf.": {
+    "en": "Invalid letting history.",
+    "fr": "Historique de mise en location non valide."
+  },
+  "Die Zuordnung zur Neuvermietung passt nicht zur Einheit.": {
+    "en": "The letting assignment does not match the unit.",
+    "fr": "L’affectation à la mise en location ne correspond pas à l’unité."
+  },
+  "Liegenschaft oder Einheit ist archiviert.": {
+    "en": "The property or unit is archived.",
+    "fr": "L’immeuble ou l’unité est archivé."
+  },
+  "Gewünschten Mietbeginn noch festlegen.": {
+    "en": "Desired tenancy start still to be set.",
+    "fr": "Le début de location souhaité reste à fixer."
+  },
+  "Angebotsmiete noch vervollständigen.": {
+    "en": "Asking rent still to be completed.",
+    "fr": "Le loyer proposé reste à compléter."
+  },
+  "Der gewünschte Mietbeginn überschneidet sich mit": {
+    "en": "The desired tenancy start overlaps with",
+    "fr": "Le début de location souhaité chevauche"
+  },
+  "Noch kein aktives Inserat erfasst.": {
+    "en": "No active listing recorded yet.",
+    "fr": "Aucune annonce active enregistrée pour le moment."
+  },
+  "Vertragszuordnung prüfen: Bestätigung oder passender Mietbeginn fehlt.": {
+    "en": "Check the lease assignment: confirmation or a matching tenancy start is missing.",
+    "fr": "Vérifiez l’affectation du bail : il manque la confirmation ou un début de location correspondant."
+  },
+  "Unterschriftsdatum im Mietvertrag noch offen.": {
+    "en": "Lease signature date still missing.",
+    "fr": "La date de signature du bail reste à saisir."
+  },
+  "Vermietung nicht mehr durch einen passenden bestätigten Vertrag belegt.": {
+    "en": "The letting is no longer supported by a matching confirmed lease.",
+    "fr": "La location n’est plus justifiée par un bail confirmé correspondant."
+  },
+  "Es sind noch aktive Inserate erfasst.": {
+    "en": "Active listings are still recorded.",
+    "fr": "Des annonces actives sont encore enregistrées."
+  },
+  "Abschlusspunkte in der Checkliste offen.": {
+    "en": "Completion items in the checklist remain open.",
+    "fr": "Des points de clôture restent ouverts dans la liste de contrôle."
+  },
+  "Laufende Vermietungen": {
+    "en": "Ongoing lettings",
+    "fr": "Locations en cours"
+  },
+  "Alle aktiven Vorgänge · inkl. Pausen": {
+    "en": "All active processes · including pauses",
+    "fr": "Tous les dossiers actifs · pauses comprises"
+  },
+  "In Vermarktung": {
+    "en": "Being marketed",
+    "fr": "En commercialisation"
+  },
+  "Aktuelle Phase der Vermietung": {
+    "en": "Current letting stage",
+    "fr": "Phase actuelle de mise en location"
+  },
+  "Überfällige Schritte": {
+    "en": "Overdue steps",
+    "fr": "Étapes en retard"
+  },
+  "Wiedervorlage vor heute": {
+    "en": "Follow-up date before today",
+    "fr": "Date de suivi antérieure à aujourd’hui"
+  },
+  "Abschluss prüfen": {
+    "en": "Review completion",
+    "fr": "Vérifier la clôture"
+  },
+  "Vermietet · mit offenen Punkten": {
+    "en": "Let · with outstanding items",
+    "fr": "Loué · avec des points ouverts"
+  },
+  "Keine passenden Vermietungen": {
+    "en": "No matching lettings",
+    "fr": "Aucune location correspondante"
+  },
+  "Noch keine Neuvermietung": {
+    "en": "No letting process yet",
+    "fr": "Aucune mise en location pour le moment"
+  },
+  "Startet mit einer bestehenden Einheit. Der Vorgang bündelt Inserate, Besichtigungen, Aufgaben und den Vertragsabschluss.": {
+    "en": "Start with an existing unit. The process brings together listings, viewings, tasks and the lease agreement.",
+    "fr": "Partez d’une unité existante. Le dossier réunit les annonces, visites, tâches et la conclusion du bail."
+  },
+  "Neuvermietung starten": {
+    "en": "Start letting process",
+    "fr": "Démarrer une mise en location"
+  },
+  "Phase / Zuständig": {
+    "en": "Stage / responsible person",
+    "fr": "Phase / responsable"
+  },
+  "Angebotsmiete": {
+    "en": "Asking rent",
+    "fr": "Loyer proposé"
+  },
+  "netto / Monat{7}": {
+    "en": "Net / month{7}",
+    "fr": "Net / mois{7}"
+  },
+  "gewünscht": {
+    "en": "Desired",
+    "fr": "Souhaité"
+  },
+  "· NK offen": {
+    "en": "· Charges not specified",
+    "fr": "· Charges non précisées"
+  },
+  "· NK": {
+    "en": "· Charges",
+    "fr": "· Charges"
+  },
+  "Kein offener Schritt": {
+    "en": "No outstanding step",
+    "fr": "Aucune étape ouverte"
+  },
+  "{0} {1} · Seite {2} von {3}": {
+    "en": "{0} {1} · Page {2} of {3}",
+    "fr": "{0} {1} · Page {2} sur {3}"
+  },
+  "Vorgänge": {
+    "en": "Processes",
+    "fr": "Dossiers"
+  },
+  "EIN KLARER ABLAUF": {
+    "en": "A CLEAR PROCESS",
+    "fr": "UN PROCESSUS CLAIR"
+  },
+  "Ein Vorgang pro Einheit. Ein nächster Schritt, damit nichts liegen bleibt.": {
+    "en": "One process per unit. One next step, so nothing is left behind.",
+    "fr": "Un dossier par unité. Une prochaine étape pour ne rien laisser en suspens."
+  },
+  "Vermietungsvorgänge": {
+    "en": "Letting processes",
+    "fr": "Dossiers de mise en location"
+  },
+  "Die Kennzahlen oben gelten für alle Vorgänge ausserhalb des Archivs.": {
+    "en": "The figures above cover all unarchived processes.",
+    "fr": "Les indicateurs ci-dessus portent sur tous les dossiers non archivés."
+  },
+  "Neuvermietungen suchen": {
+    "en": "Search letting processes",
+    "fr": "Rechercher des mises en location"
+  },
+  "Die Angebotsmiete dient der Vermarktung. Bestätigte Mietverträge steuern den Mieterspiegel. Inserate werden hier dokumentiert; eine Veröffentlichung auf Immobilienportalen erfolgt separat.": {
+    "en": "The asking rent is used for marketing. Confirmed leases determine the rent roll. Listings are documented here; publication on property portals takes place separately.",
+    "fr": "Le loyer proposé sert à la commercialisation. Les baux confirmés déterminent l’état locatif. Les annonces sont documentées ici ; leur publication sur les portails immobiliers se fait séparément."
+  },
+  "Vermietungsablauf": {
+    "en": "Letting process",
+    "fr": "Processus de mise en location"
+  },
+  "Einheit, Adresse oder nächster Schritt …": {
+    "en": "Unit, address or next step …",
+    "fr": "Unité, adresse ou prochaine étape…"
+  },
+  "Von der freien Einheit bis zum neuen Mietverhältnis.": {
+    "en": "From a vacant unit to a new tenancy.",
+    "fr": "De l’unité disponible au nouveau bail."
+  },
+  "Vermietet / abgebrochen": {
+    "en": "Let / cancelled",
+    "fr": "Loué / abandonné"
+  },
+  "Phase": {
+    "en": "Stage",
+    "fr": "Phase"
+  },
+  "Alle Phasen": {
+    "en": "All stages",
+    "fr": "Toutes les phases"
+  },
+  "Nächste Wiedervorlage": {
+    "en": "Next follow-up",
+    "fr": "Prochain suivi"
+  },
+  "Gewünschter Mietbeginn": {
+    "en": "Desired tenancy start",
+    "fr": "Début de location souhaité"
+  },
+  "Alle {2} Einträge ansehen ↗": {
+    "en": "View all {2} entries ↗",
+    "fr": "Voir les {2} entrées ↗"
+  },
+  "Noch keine Besichtigung oder Übergabe mit diesem Vorgang verknüpft.": {
+    "en": "No viewing or handover linked to this process yet.",
+    "fr": "Aucune visite ni remise n’est encore liée à ce dossier."
+  },
+  "Noch keine Aufgabe für diesen Vorgang erfasst.": {
+    "en": "No task recorded for this process yet.",
+    "fr": "Aucune tâche enregistrée pour ce dossier pour le moment."
+  },
+  "Noch keine Unterlagen für diesen Vorgang abgelegt.": {
+    "en": "No documents filed for this process yet.",
+    "fr": "Aucun document classé pour ce dossier pour le moment."
+  },
+  "Besichtigungen & Übergabe": {
+    "en": "Viewings & handover",
+    "fr": "Visites et remise"
+  },
+  "{3} Einträge · Seite {4} von {5}": {
+    "en": "{3} entries · Page {4} of {5}",
+    "fr": "{3} entrées · Page {4} sur {5}"
+  },
+  "· Neueste Dokumente zuerst.": {
+    "en": "· Newest documents first.",
+    "fr": "· Documents les plus récents en premier."
+  },
+  "· Offene Einträge zuerst; nächste Fälligkeit zuerst.": {
+    "en": "· Open entries first; earliest due date first.",
+    "fr": "· Entrées ouvertes d’abord ; échéances les plus proches en premier."
+  },
+  "MORADA · NEUVERMIETUNG": {
+    "en": "MORADA · LETTING",
+    "fr": "MORADA · MISE EN LOCATION"
+  },
+  "Vorgang nicht gefunden": {
+    "en": "Process not found",
+    "fr": "Dossier introuvable"
+  },
+  "Öffnet die Übersicht der Neuvermietungen.": {
+    "en": "Open the letting overview.",
+    "fr": "Ouvrez l’aperçu des mises en location."
+  },
+  "Zuständig: {2}": {
+    "en": "Responsible: {2}",
+    "fr": "Responsable : {2}"
+  },
+  "NÄCHSTER SCHRITT": {
+    "en": "NEXT STEP",
+    "fr": "PROCHAINE ÉTAPE"
+  },
+  "Checkliste": {
+    "en": "Checklist",
+    "fr": "Liste de contrôle"
+  },
+  "{13} von {14} Punkten erledigt": {
+    "en": "{13} of {14} items completed",
+    "fr": "{13} points sur {14} terminés"
+  },
+  "Die Checkliste dokumentiert eure Prüfung. Unterschriften, Kaution und Vertragsdaten werden im Mietvertrag geführt.": {
+    "en": "The checklist documents your review. Signatures, deposit and contract details are managed in the lease.",
+    "fr": "La liste de contrôle documente votre vérification. Les signatures, la garantie et les données contractuelles sont gérées dans le bail."
+  },
+  "Inserate": {
+    "en": "Listings",
+    "fr": "Annonces"
+  },
+  "Kanäle, Links und Veröffentlichungsstand": {
+    "en": "Channels, links and publication status",
+    "fr": "Canaux, liens et état de publication"
+  },
+  "Änderungen hier veröffentlichen oder deaktivieren keine externen Inserate.": {
+    "en": "Changes here do not publish or deactivate external listings.",
+    "fr": "Les modifications ici ne publient ni ne désactivent les annonces externes."
+  },
+  "Vermietungsdaten": {
+    "en": "Letting details",
+    "fr": "Données de mise en location"
+  },
+  "Angebotswerte ändern keine bestehenden Vertragsmieten.": {
+    "en": "Asking values do not change existing contractual rents.",
+    "fr": "Les montants proposés ne modifient pas les loyers contractuels existants."
+  },
+  "Unterlagen & Notizen": {
+    "en": "Documents & notes",
+    "fr": "Documents et notes"
+  },
+  "Persönliche Bewerbungsunterlagen führt ihr im jeweiligen Interessentendossier.": {
+    "en": "Keep personal application documents in the respective applicant dossier.",
+    "fr": "Conservez les documents personnels de candidature dans le dossier du candidat concerné."
+  },
+  "Verlauf · {30} {31}": {
+    "en": "History · {30} {31}",
+    "fr": "Historique · {30} {31}"
+  },
+  "Aktuelle Vermietungsphase": {
+    "en": "Current letting stage",
+    "fr": "Phase actuelle de mise en location"
+  },
+  "Vorgang bearbeiten": {
+    "en": "Edit process",
+    "fr": "Modifier le dossier"
+  },
+  "Aus Archiv holen": {
+    "en": "Restore from archive",
+    "fr": "Sortir des archives"
+  },
+  "Der nächste Schritt ist abgeschlossen.": {
+    "en": "The next step is complete.",
+    "fr": "La prochaine étape est terminée."
+  },
+  "Anpassen": {
+    "en": "Adjust",
+    "fr": "Adapter"
+  },
+  "Darauf achten": {
+    "en": "Points to note",
+    "fr": "Points à surveiller"
+  },
+  "Auswahl & Freigabe": {
+    "en": "Selection & approval",
+    "fr": "Sélection et approbation"
+  },
+  "Abschluss & Übergabe": {
+    "en": "Completion & handover",
+    "fr": "Clôture et remise"
+  },
+  "Inserat erfassen": {
+    "en": "Add listing",
+    "fr": "Ajouter une annonce"
+  },
+  "Veröffentlicht": {
+    "en": "Published",
+    "fr": "Publié"
+  },
+  "Deaktiviert": {
+    "en": "Deactivated",
+    "fr": "Désactivé"
+  },
+  "· seit": {
+    "en": "· Since",
+    "fr": "· Depuis"
+  },
+  "Inserat öffnen ↗": {
+    "en": "Open listing ↗",
+    "fr": "Ouvrir l’annonce ↗"
+  },
+  "Noch keine Inserate erfasst. Auch eigene Kanäle oder die Direktvermietung lassen sich dokumentieren.": {
+    "en": "No listings recorded yet. Your own channels or direct letting can also be documented.",
+    "fr": "Aucune annonce enregistrée pour le moment. Vos propres canaux ou une location directe peuvent également être documentés."
+  },
+  "Termin planen": {
+    "en": "Plan appointment",
+    "fr": "Planifier un rendez-vous"
+  },
+  "Anlass": {
+    "en": "Reason",
+    "fr": "Motif"
+  },
+  "Erstvermietung": {
+    "en": "First letting",
+    "fr": "Première location"
+  },
+  "Mieterwechsel": {
+    "en": "Change of tenant",
+    "fr": "Changement de locataire"
+  },
+  "Angebotsmiete netto / Monat": {
+    "en": "Net asking rent / month",
+    "fr": "Loyer net proposé / mois"
+  },
+  "Angebotsmiete brutto / Monat": {
+    "en": "Gross asking rent / month",
+    "fr": "Loyer brut proposé / mois"
+  },
+  "Bestätigung": {
+    "en": "Confirmation",
+    "fr": "Confirmation"
+  },
+  "Noch kein Mietvertrag verknüpft. Bestehenden Vertrag beim Bearbeiten auswählen oder mit dieser Einheit neu erfassen.": {
+    "en": "No lease linked yet. Select an existing lease when editing or create a new one for this unit.",
+    "fr": "Aucun bail n’est encore lié. Sélectionnez un bail existant lors de la modification ou créez-en un pour cette unité."
+  },
+  "Zuordnung ändern": {
+    "en": "Change assignment",
+    "fr": "Modifier l’affectation"
+  },
+  "Vertrag zuordnen": {
+    "en": "Assign lease",
+    "fr": "Attribuer un bail"
+  },
+  "Hinzufügen ↗": {
+    "en": "Add ↗",
+    "fr": "Ajouter ↗"
+  },
+  "Noch keine internen Notizen.": {
+    "en": "No internal notes yet.",
+    "fr": "Aucune note interne pour le moment."
+  },
+  "Die letzten 30 Änderungen. Der vollständige Verlauf ist in der Datensicherung enthalten.": {
+    "en": "The last 30 changes. The full history is included in the backup.",
+    "fr": "Les 30 dernières modifications. L’historique complet est inclus dans la sauvegarde."
+  },
+  "Vorgang archivieren": {
+    "en": "Archive process",
+    "fr": "Archiver le dossier"
+  },
+  "Vorgang speichern": {
+    "en": "Save process",
+    "fr": "Enregistrer le dossier"
+  },
+  "Einheit wählen": {
+    "en": "Select unit",
+    "fr": "Choisir une unité"
+  },
+  "Noch kein Mietvertrag": {
+    "en": "No lease yet",
+    "fr": "Pas encore de bail"
+  },
+  "Beginn offen": {
+    "en": "Start not specified",
+    "fr": "Début non précisé"
+  },
+  "Zuerst eine Einheit erfassen.": {
+    "en": "Add a unit first.",
+    "fr": "Ajoutez d’abord une unité."
+  },
+  "Eine Neuvermietung wird einer bestehenden Einheit zugeordnet. Erfasst zuerst die Liegenschaft und ihre Einheit.": {
+    "en": "A letting process is assigned to an existing unit. First add the property and its unit.",
+    "fr": "Une mise en location est attribuée à une unité existante. Ajoutez d’abord l’immeuble et son unité."
+  },
+  "Zu den Einheiten": {
+    "en": "Go to units",
+    "fr": "Accéder aux unités"
+  },
+  "Verfügbarkeit und Mietkonditionen klären": {
+    "en": "Clarify availability and rental terms",
+    "fr": "Clarifier la disponibilité et les conditions de location"
+  },
+  "Liegenschaft wählen": {
+    "en": "Select property",
+    "fr": "Choisir un immeuble"
+  },
+  "1 · Einheit & Auftrag": {
+    "en": "1 · Unit & mandate",
+    "fr": "1 · Unité et mandat"
+  },
+  "2 · Angebot": {
+    "en": "2 · Offer",
+    "fr": "2 · Offre"
+  },
+  "Mietbeginn und Miete dürfen in der Vorbereitung offen bleiben. CHF 0.00 bedeutet ausdrücklich keinen Betrag; leer bedeutet unbekannt.": {
+    "en": "The tenancy start and rent may remain unspecified during preparation. CHF 0.00 explicitly means no amount; an empty field means unknown.",
+    "fr": "Le début de location et le loyer peuvent rester non précisés pendant la préparation. CHF 0.00 signifie explicitement aucun montant ; un champ vide signifie inconnu."
+  },
+  "3 · Bearbeitung & nächster Schritt": {
+    "en": "3 · Processing & next step",
+    "fr": "3 · Traitement et prochaine étape"
+  },
+  "«Vermietet» erfordert einen bestätigten Vertrag dieser Einheit ab dem gewünschten Mietbeginn. Noch offene Abschlussarbeiten können weiterhin eine Wiedervorlage erhalten.": {
+    "en": "“Let” requires a confirmed lease for this unit starting no earlier than the desired tenancy start. Outstanding completion work can still have a follow-up date.",
+    "fr": "« Loué » nécessite un bail confirmé pour cette unité à partir du début de location souhaité. Les travaux de clôture encore ouverts peuvent toujours avoir une date de suivi."
+  },
+  "Die Einheit bleibt mit diesem Vorgang verbunden. Für eine andere Einheit einen neuen Vorgang starten.": {
+    "en": "The unit remains linked to this process. Start a new process for a different unit.",
+    "fr": "L’unité reste liée à ce dossier. Démarrez un nouveau dossier pour une autre unité."
+  },
+  "Angebotsmiete netto / Monat · CHF": {
+    "en": "Net asking rent / month · CHF",
+    "fr": "Loyer net proposé / mois · CHF"
+  },
+  "Nebenkosten / Monat · CHF": {
+    "en": "Service charges / month · CHF",
+    "fr": "Charges / mois · CHF"
+  },
+  "Nächster Schritt *": {
+    "en": "Next step *",
+    "fr": "Prochaine étape *"
+  },
+  "Grund für Pause / Abbruch *": {
+    "en": "Reason for pause / cancellation *",
+    "fr": "Motif de la pause / de l’abandon *"
+  },
+  "Zugehöriger neuer Mietvertrag": {
+    "en": "Related new lease",
+    "fr": "Nouveau bail correspondant"
+  },
+  "Notizen zum Vermietungsauftrag": {
+    "en": "Notes on the letting mandate",
+    "fr": "Notes sur le mandat de mise en location"
+  },
+  "Neuvermietung bearbeiten.": {
+    "en": "Edit letting process.",
+    "fr": "Modifier la mise en location."
+  },
+  "Neuvermietung starten.": {
+    "en": "Start letting process.",
+    "fr": "Démarrer une mise en location."
+  },
+  "· optional": {
+    "en": "· Optional",
+    "fr": "· Facultatif"
+  },
+  "Für diese Einheit läuft bereits": {
+    "en": "This unit already has an ongoing",
+    "fr": "Pour cette unité, il existe déjà"
+  },
+  "Mietbeginn überschneidet sich mit": {
+    "en": "Tenancy start overlaps with",
+    "fr": "Le début de location chevauche"
+  },
+  "Der Verlauf hat 1000 Einträge erreicht. Bitte vor weiteren Änderungen die Daten sichern.": {
+    "en": "The history has reached 1,000 entries. Please back up the data before making further changes.",
+    "fr": "L’historique a atteint 1 000 entrées. Veuillez sauvegarder les données avant toute autre modification."
+  },
+  "Der Portalstand hat sich geändert. Bitte den Vorgang erneut öffnen.": {
+    "en": "The portal data has changed. Please reopen the process.",
+    "fr": "Les données du portail ont changé. Veuillez rouvrir le dossier."
+  },
+  "Dieser Vorgang ist nicht bearbeitbar.": {
+    "en": "This process cannot be edited.",
+    "fr": "Ce dossier ne peut pas être modifié."
+  },
+  "Bitte eine bestehende Einheit wählen.": {
+    "en": "Please select an existing unit.",
+    "fr": "Veuillez choisir une unité existante."
+  },
+  "Die Einheit gehört nicht zur gewählten Liegenschaft.": {
+    "en": "The unit does not belong to the selected property.",
+    "fr": "L’unité n’appartient pas à l’immeuble sélectionné."
+  },
+  "Bitte eine aktive Einheit wählen.": {
+    "en": "Please select an active unit.",
+    "fr": "Veuillez choisir une unité active."
+  },
+  "Bitte Einheit und Liegenschaft zuerst wieder aktivieren.": {
+    "en": "Please reactivate the unit and property first.",
+    "fr": "Veuillez d’abord réactiver l’unité et l’immeuble."
+  },
+  "«Vermietet» benötigt einen bestätigten Mietvertrag dieser Einheit. Der Vertragsbeginn darf nicht vor dem gewünschten Mietbeginn liegen.": {
+    "en": "“Let” requires a confirmed lease for this unit. The lease start must not precede the desired tenancy start.",
+    "fr": "« Loué » nécessite un bail confirmé pour cette unité. Le début du bail ne doit pas précéder le début de location souhaité."
+  },
+  "Neuvermietung gestartet": {
+    "en": "Letting process started",
+    "fr": "Mise en location démarrée"
+  },
+  "Phase:": {
+    "en": "Stage:",
+    "fr": "Phase :"
+  },
+  "Vermietungsdaten bearbeitet": {
+    "en": "Letting details edited",
+    "fr": "Données de mise en location modifiées"
+  },
+  "Bitte zuerst die verknüpften Abnahmen / Übergaben und ihre Folgeaufgaben abschliessen.": {
+    "en": "Please complete the linked inspections / handovers and their follow-up tasks first.",
+    "fr": "Veuillez d’abord terminer les états des lieux / remises liés et leurs tâches de suivi."
+  },
+  "Bitte den Vorgang zuerst vermieten oder begründet abbrechen.": {
+    "en": "Please first let the unit or cancel the process with a reason.",
+    "fr": "Veuillez d’abord louer l’unité ou abandonner le dossier en indiquant un motif."
+  },
+  "Bitte die zugehörigen Interessentendossiers und offenen Rückmeldungen zuerst abschliessen.": {
+    "en": "Please complete the related applicant dossiers and outstanding responses first.",
+    "fr": "Veuillez d’abord clôturer les dossiers des candidats concernés et les réponses en attente."
+  },
+  "Bitte die aktiven Inserate zuerst deaktivieren und den Stand hier nachführen.": {
+    "en": "Please deactivate the active listings first and update their status here.",
+    "fr": "Veuillez d’abord désactiver les annonces actives et mettre leur statut à jour ici."
+  },
+  "Bitte offene Aufgaben, geplante Termine und die Wiedervorlage zuerst abschliessen.": {
+    "en": "Please complete open tasks, scheduled appointments and the follow-up first.",
+    "fr": "Veuillez d’abord terminer les tâches ouvertes, les rendez-vous prévus et le suivi."
+  },
+  "Bitte zuerst den passenden bestätigten Mietvertrag zuordnen.": {
+    "en": "Please assign the matching confirmed lease first.",
+    "fr": "Veuillez d’abord attribuer le bail confirmé correspondant."
+  },
+  "Bitte zuerst die Abschlusspunkte zu Kaution, Übergabe und Inseraten in der Checkliste klären.": {
+    "en": "Please clarify the checklist completion items for the deposit, handover and listings first.",
+    "fr": "Veuillez d’abord clarifier les points de clôture concernant la garantie, la remise et les annonces dans la liste de contrôle."
+  },
+  "Bitte das tatsächliche Unterschriftsdatum im Mietvertrag ergänzen, bevor ihr die Vermietung archiviert.": {
+    "en": "Please add the actual signature date to the lease before archiving the letting process.",
+    "fr": "Veuillez compléter la date réelle de signature dans le bail avant d’archiver la mise en location."
+  },
+  "Der Portalstand hat sich geändert. Bitte erneut öffnen.": {
+    "en": "The portal data has changed. Please reopen.",
+    "fr": "Les données du portail ont changé. Veuillez rouvrir."
+  },
+  "Vorgang nicht gefunden.": {
+    "en": "Process not found.",
+    "fr": "Dossier introuvable."
+  },
+  "Bitte den Vorgang zuerst aus dem Archiv holen.": {
+    "en": "Please restore the process from the archive first.",
+    "fr": "Veuillez d’abord sortir le dossier des archives."
+  },
+  "Maximal 12 Inserate je Vorgang.": {
+    "en": "No more than 12 listings per process.",
+    "fr": "Au maximum 12 annonces par dossier."
+  },
+  "Inserat bearbeiten.": {
+    "en": "Edit listing.",
+    "fr": "Modifier l’annonce."
+  },
+  "Inserat erfassen.": {
+    "en": "Add listing.",
+    "fr": "Ajouter une annonce."
+  },
+  "Die Veröffentlichung und Deaktivierung nehmt ihr direkt beim jeweiligen Anbieter vor. Hier dokumentiert ihr den Stand.": {
+    "en": "Publish and deactivate listings directly with the respective provider. Document their status here.",
+    "fr": "Publiez et désactivez les annonces directement auprès du fournisseur concerné. Documentez leur statut ici."
+  },
+  "Kanal / Immobilienportal *": {
+    "en": "Channel / property portal *",
+    "fr": "Canal / portail immobilier *"
+  },
+  "Link zum Inserat": {
+    "en": "Listing link",
+    "fr": "Lien vers l’annonce"
+  },
+  "Stand": {
+    "en": "Status",
+    "fr": "État"
+  },
+  "Veröffentlicht am": {
+    "en": "Published on",
+    "fr": "Publié le"
+  },
+  "Inserat speichern": {
+    "en": "Save listing",
+    "fr": "Enregistrer l’annonce"
+  },
+  "Bitte Einheit und Liegenschaft zuerst aktivieren.": {
+    "en": "Please activate the unit and property first.",
+    "fr": "Veuillez d’abord activer l’unité et l’immeuble."
+  },
+  "Besichtigung ·": {
+    "en": "Viewing ·",
+    "fr": "Visite ·"
+  },
+  "Vermietung ·": {
+    "en": "Letting ·",
+    "fr": "Location ·"
+  },
+  "Vorgang wiederherstellen?": {
+    "en": "Restore process?",
+    "fr": "Restaurer le dossier ?"
+  },
+  "Vorgang archivieren?": {
+    "en": "Archive process?",
+    "fr": "Archiver le dossier ?"
+  },
+  "Der Vorgang erscheint wieder unter «Vermietet / abgebrochen».": {
+    "en": "The process will reappear under “Let / cancelled”.",
+    "fr": "Le dossier réapparaîtra sous « Loué / abandonné »."
+  },
+  "Der Vorgang bleibt mit Inseraten, Verknüpfungen und Verlauf im Archiv erhalten.": {
+    "en": "The process, including its listings, links and history, will remain in the archive.",
+    "fr": "Le dossier reste dans les archives avec ses annonces, ses liens et son historique."
+  },
+  "Keine Vorgänge in dieser Auswahl.": {
+    "en": "No processes match this selection.",
+    "fr": "Aucun dossier ne correspond à cette sélection."
+  },
+  "Angebotsmiete netto CHF/Monat": {
+    "en": "Net asking rent CHF/month",
+    "fr": "Loyer net proposé CHF/mois"
+  },
+  "Nebenkosten CHF/Monat": {
+    "en": "Service charges CHF/month",
+    "fr": "Charges CHF/mois"
+  },
+  "Angebotsmiete brutto CHF/Monat": {
+    "en": "Gross asking rent CHF/month",
+    "fr": "Loyer brut proposé CHF/mois"
+  },
+  "Aktive Inserate": {
+    "en": "Active listings",
+    "fr": "Annonces actives"
+  },
+  "Checkliste erledigt": {
+    "en": "Checklist completed",
+    "fr": "Points de contrôle terminés"
+  },
+  "Checkliste gesamt": {
+    "en": "Checklist total",
+    "fr": "Total des points de contrôle"
+  },
+  "Erledigt:": {
+    "en": "Completed:",
+    "fr": "Terminé :"
+  },
+  "Wieder offen:": {
+    "en": "Reopened:",
+    "fr": "À nouveau ouvert :"
+  },
+  "Bitte einen gültigen Link mit https:// oder http:// eingeben.": {
+    "en": "Please enter a valid link starting with https:// or http://.",
+    "fr": "Veuillez saisir un lien valide commençant par https:// ou http://."
+  },
+  "Inserat": {
+    "en": "Listing",
+    "fr": "Annonce"
+  },
+  "Aus Archiv wiederhergestellt": {
+    "en": "Restored from archive",
+    "fr": "Restauré depuis les archives"
+  },
+  "Vorgang archiviert": {
+    "en": "Process archived",
+    "fr": "Dossier archivé"
+  },
+  "Neuvermietung gespeichert.": {
+    "en": "Letting process saved.",
+    "fr": "Mise en location enregistrée."
+  },
+  "Anfrage": {
+    "en": "Enquiry",
+    "fr": "Demande"
+  },
+  "Bewerbung eingegangen": {
+    "en": "Application received",
+    "fr": "Candidature reçue"
+  },
+  "In Prüfung": {
+    "en": "Under review",
+    "fr": "En cours d’examen"
+  },
+  "Zusage": {
+    "en": "Acceptance",
+    "fr": "Acceptation"
+  },
+  "Absage": {
+    "en": "Rejection",
+    "fr": "Refus"
+  },
+  "Zurückgezogen": {
+    "en": "Withdrawn",
+    "fr": "Retiré"
+  },
+  "Mietanmeldung": {
+    "en": "Rental application",
+    "fr": "Formulaire de candidature"
+  },
+  "Betreibungsregisterauszug": {
+    "en": "Debt enforcement register extract",
+    "fr": "Extrait du registre des poursuites"
+  },
+  "Einkommensnachweis": {
+    "en": "Proof of income",
+    "fr": "Justificatif de revenus"
+  },
+  "Weitere Unterlagen": {
+    "en": "Other documents",
+    "fr": "Autres documents"
+  },
+  "Fehlt": {
+    "en": "Missing",
+    "fr": "Manquant"
+  },
+  "Angefordert": {
+    "en": "Requested",
+    "fr": "Demandé"
+  },
+  "Geprüft": {
+    "en": "Reviewed",
+    "fr": "Vérifié"
+  },
+  "Nicht benötigt": {
+    "en": "Not required",
+    "fr": "Non requis"
+  },
+  "Mietvertrag bestätigt": {
+    "en": "Lease confirmed",
+    "fr": "Bail confirmé"
+  },
+  "Vertrag storniert · prüfen": {
+    "en": "Lease cancelled · review",
+    "fr": "Bail annulé · à vérifier"
+  },
+  "Einheit noch zuordnen": {
+    "en": "Unit still to be assigned",
+    "fr": "Unité à attribuer"
+  },
+  "Ungültige Mietinteressenten.": {
+    "en": "Invalid prospective tenants.",
+    "fr": "Candidats à la location non valides."
+  },
+  "Bitte Namen und eindeutige Nummer des Mietinteressenten prüfen.": {
+    "en": "Please check the prospective tenant’s name and unique reference.",
+    "fr": "Veuillez vérifier le nom et la référence unique du candidat à la location."
+  },
+  "Eine Angabe im Interessentendossier ist ungültig oder zu lang.": {
+    "en": "An applicant dossier detail is invalid or too long.",
+    "fr": "Une information du dossier du candidat est non valide ou trop longue."
+  },
+  "Bitte eine gültige E-Mail-Adresse erfassen.": {
+    "en": "Please enter a valid email address.",
+    "fr": "Veuillez saisir une adresse e-mail valide."
+  },
+  "Bitte Kontaktart, Zuständigkeit und Bearbeitungsstand prüfen.": {
+    "en": "Please check the contact type, responsible person and processing status.",
+    "fr": "Veuillez vérifier le type de contact, le responsable et l’état de traitement."
+  },
+  "Bitte gültige Datumsangaben bis 2100 erfassen.": {
+    "en": "Please enter valid dates up to 2100.",
+    "fr": "Veuillez saisir des dates valides jusqu’en 2100."
+  },
+  "Bewerbung und Entscheid dürfen nicht vor dem Eingang der Anfrage liegen.": {
+    "en": "The application and decision cannot precede receipt of the enquiry.",
+    "fr": "La candidature et la décision ne peuvent pas précéder la réception de la demande."
+  },
+  "Einheit, Liegenschaft und Neuvermietung müssen zusammenpassen.": {
+    "en": "The unit, property and letting process must match.",
+    "fr": "L’unité, l’immeuble et la mise en location doivent correspondre."
+  },
+  "Ab einer Bewerbung bitte Einheit und Bewerbungseingang erfassen.": {
+    "en": "Once an application is received, please enter the unit and receipt date.",
+    "fr": "Dès la candidature, veuillez saisir l’unité et la date de réception."
+  },
+  "Bitte Datum, entscheidende Person und kurze Begründung dokumentieren.": {
+    "en": "Please document the date, decision-maker and a brief reason.",
+    "fr": "Veuillez documenter la date, la personne décisionnaire et une brève justification."
+  },
+  "Bitte nächsten Schritt und Wiedervorlage erfassen.": {
+    "en": "Please enter the next step and follow-up date.",
+    "fr": "Veuillez saisir la prochaine étape et la date de suivi."
+  },
+  "Nächster Schritt und Wiedervorlage gehören zusammen.": {
+    "en": "The next step and follow-up date must be entered together.",
+    "fr": "La prochaine étape et la date de suivi doivent être renseignées ensemble."
+  },
+  "Der verknüpfte Mieterkontakt ist ungültig.": {
+    "en": "The linked tenant contact is invalid.",
+    "fr": "Le contact locataire lié est non valide."
+  },
+  "Bitte Mietvertrag, ausgewählten Mieter und Einheit des Dossiers prüfen.": {
+    "en": "Please check the lease, selected tenant and dossier unit.",
+    "fr": "Veuillez vérifier le bail, le locataire sélectionné et l’unité du dossier."
+  },
+  "Interessentendossier und Neuvermietung müssen denselben Mietvertrag führen. Bitte die bestehende Auswahl prüfen.": {
+    "en": "The applicant dossier and letting process must reference the same lease. Please check the existing selection.",
+    "fr": "Le dossier du candidat et la mise en location doivent référencer le même bail. Veuillez vérifier la sélection existante."
+  },
+  "Ungültiger Unterlagenstand.": {
+    "en": "Invalid document status.",
+    "fr": "État des documents non valide."
+  },
+  "Bitte Archivstand des Interessentendossiers prüfen.": {
+    "en": "Please check the applicant dossier’s archive status.",
+    "fr": "Veuillez vérifier l’état d’archivage du dossier du candidat."
+  },
+  "Ungültiger Interessentenverlauf.": {
+    "en": "Invalid applicant history.",
+    "fr": "Historique du candidat non valide."
+  },
+  "Termin, Aufgabe oder Unterlage passt nicht zum zugeordneten Mietinteressenten.": {
+    "en": "The appointment, task or document does not match the assigned prospective tenant.",
+    "fr": "Le rendez-vous, la tâche ou le document ne correspond pas au candidat à la location attribué."
+  },
+  "Mietvertrag vervollständigen und unterzeichnen lassen": {
+    "en": "Complete the lease and arrange signature",
+    "fr": "Compléter le bail et le faire signer"
+  },
+  "Zusage mitteilen und Mietvertrag vorbereiten": {
+    "en": "Communicate acceptance and prepare the lease",
+    "fr": "Communiquer l’acceptation et préparer le bail"
+  },
+  "bestätigt": {
+    "en": "Confirmed",
+    "fr": "Confirmé"
+  },
+  "· Vertragsvorbereitung abgeschlossen": {
+    "en": "· Lease preparation completed",
+    "fr": "· Préparation du bail terminée"
+  },
+  "Weiteres Vorgehen nach Stornierung klären": {
+    "en": "Clarify next steps after cancellation",
+    "fr": "Clarifier la suite après l’annulation"
+  },
+  "storniert · Dossier wieder geöffnet ·": {
+    "en": "Cancelled · dossier reopened ·",
+    "fr": "Annulé · dossier rouvert ·"
+  },
+  "wieder als Entwurf geführt · Dossier wieder geöffnet": {
+    "en": "Reverted to draft · dossier reopened",
+    "fr": "À nouveau en brouillon · dossier rouvert"
+  },
+  "Offene Dossiers": {
+    "en": "Open dossiers",
+    "fr": "Dossiers ouverts"
+  },
+  "Anfragen bis Vertragsabschluss": {
+    "en": "Enquiries through to lease agreement",
+    "fr": "Demandes jusqu’à la conclusion du bail"
+  },
+  "Unterlagen fehlen": {
+    "en": "Documents missing",
+    "fr": "Documents manquants"
+  },
+  "Bewerbungen mit offenen Nachweisen": {
+    "en": "Applications with outstanding evidence",
+    "fr": "Candidatures avec justificatifs manquants"
+  },
+  "Zusagen": {
+    "en": "Acceptances",
+    "fr": "Acceptations"
+  },
+  "Bis zur Vertragsbestätigung": {
+    "en": "Until lease confirmation",
+    "fr": "Jusqu’à la confirmation du bail"
+  },
+  "Keine passenden Mietinteressenten": {
+    "en": "No matching prospective tenants",
+    "fr": "Aucun candidat à la location correspondant"
+  },
+  "Noch keine Mietinteressenten": {
+    "en": "No prospective tenants yet",
+    "fr": "Aucun candidat à la location pour le moment"
+  },
+  "Passt die Suche oder Filter an. Auch abgeschlossene Dossiers bleiben auffindbar.": {
+    "en": "Adjust the search or filters. Completed dossiers remain searchable too.",
+    "fr": "Adaptez la recherche ou les filtres. Les dossiers clôturés restent également consultables."
+  },
+  "Erfasst die erste Anfrage. Eine Einheit könnt ihr später zuordnen, sobald klar ist, welches Objekt infrage kommt.": {
+    "en": "Record the first enquiry. You can assign a unit later, once the relevant property is clear.",
+    "fr": "Enregistrez la première demande. Vous pourrez attribuer une unité plus tard, une fois l’objet concerné déterminé."
+  },
+  "Interessent erfassen": {
+    "en": "Add prospective tenant",
+    "fr": "Ajouter un candidat"
+  },
+  "Interessent / Kontakt": {
+    "en": "Prospective tenant / contact",
+    "fr": "Candidat / contact"
+  },
+  "Einheit / Neuvermietung": {
+    "en": "Unit / letting process",
+    "fr": "Unité / mise en location"
+  },
+  "Kontaktangaben fehlen": {
+    "en": "Contact details missing",
+    "fr": "Coordonnées manquantes"
+  },
+  "Neuvermietung nicht zugeordnet": {
+    "en": "Letting process not assigned",
+    "fr": "Mise en location non attribuée"
+  },
+  "Noch keine Bewerbung": {
+    "en": "No application yet",
+    "fr": "Pas encore de candidature"
+  },
+  "Unterlage fehlt": {
+    "en": "Document missing",
+    "fr": "Document manquant"
+  },
+  "Prüfung offen": {
+    "en": "Review pending",
+    "fr": "Vérification en attente"
+  },
+  "Keine Unterlagen benötigt": {
+    "en": "No documents required",
+    "fr": "Aucun document requis"
+  },
+  "Vollständig geprüft": {
+    "en": "Fully reviewed",
+    "fr": "Vérification complète"
+  },
+  "Eingang": {
+    "en": "Received",
+    "fr": "Réception"
+  },
+  "Eingang noch offen": {
+    "en": "Receipt still pending",
+    "fr": "Réception encore en attente"
+  },
+  "{0} Unterlage(n) fehlen": {
+    "en": "{0} document(s) missing",
+    "fr": "{0} document(s) manquant(s)"
+  },
+  "ANFRAGEN IM BLICK": {
+    "en": "ENQUIRIES AT A GLANCE",
+    "fr": "LES DEMANDES EN UN COUP D’ŒIL"
+  },
+  "Ein Dossier je Anfrage und Einheit. Der nächste Schritt bleibt sichtbar.": {
+    "en": "One dossier per enquiry and unit. The next step stays visible.",
+    "fr": "Un dossier par demande et par unité. La prochaine étape reste visible."
+  },
+  "Interessentendossiers": {
+    "en": "Applicant dossiers",
+    "fr": "Dossiers des candidats"
+  },
+  "Kennzahlen für alle Dossiers ausserhalb des Archivs.": {
+    "en": "Figures for all unarchived dossiers.",
+    "fr": "Indicateurs pour tous les dossiers non archivés."
+  },
+  "Mietinteressenten suchen": {
+    "en": "Search prospective tenants",
+    "fr": "Rechercher des candidats à la location"
+  },
+  "Liegenschaft, Zuständigkeit & Sortierung": {
+    "en": "Property, responsibility & sorting",
+    "fr": "Immeuble, responsable et tri"
+  },
+  "Entscheide werden intern dokumentiert. Zusagen, Absagen und Einladungen versendet ihr separat. Erst ein bestätigter Mietvertrag wirkt sich auf den Mieterspiegel aus.": {
+    "en": "Decisions are documented internally. Send acceptances, rejections and invitations separately. Only a confirmed lease affects the rent roll.",
+    "fr": "Les décisions sont documentées en interne. Envoyez les acceptations, refus et invitations séparément. Seul un bail confirmé a une incidence sur l’état locatif."
+  },
+  "Ablauf für Mietinteressenten": {
+    "en": "Prospective tenant process",
+    "fr": "Processus des candidatures"
+  },
+  "Name, Kontakt oder Einheit …": {
+    "en": "Name, contact or unit …",
+    "fr": "Nom, contact ou unité…"
+  },
+  "Von der ersten Anfrage bis zur Entscheidung und zum Mietvertrag.": {
+    "en": "From the first enquiry to the decision and lease.",
+    "fr": "De la première demande à la décision et au bail."
+  },
+  "Bewerbung": {
+    "en": "Application",
+    "fr": "Candidature"
+  },
+  "Entscheid": {
+    "en": "Decision",
+    "fr": "Décision"
+  },
+  "Vorgang öffnen ↗": {
+    "en": "Open process ↗",
+    "fr": "Ouvrir le dossier ↗"
+  },
+  "Einheit noch offen": {
+    "en": "Unit not yet specified",
+    "fr": "Unité non encore précisée"
+  },
+  "Alle Stände": {
+    "en": "All statuses",
+    "fr": "Tous les états"
+  },
+  "Name A–Z": {
+    "en": "Name A–Z",
+    "fr": "Nom A–Z"
+  },
+  "E-Mail oder Telefonnummer ergänzen.": {
+    "en": "Add an email address or phone number.",
+    "fr": "Ajoutez une adresse e-mail ou un numéro de téléphone."
+  },
+  "Die passende Einheit noch zuordnen.": {
+    "en": "Assign the appropriate unit.",
+    "fr": "Attribuez l’unité correspondante."
+  },
+  "Noch keine Neuvermietung zugeordnet.": {
+    "en": "No letting process assigned yet.",
+    "fr": "Aucune mise en location n’est encore attribuée."
+  },
+  "Die Neuvermietung ist abgeschlossen. Dossier und Rückmeldung prüfen.": {
+    "en": "The letting process is complete. Review the dossier and response.",
+    "fr": "La mise en location est terminée. Vérifiez le dossier et la réponse."
+  },
+  "Fehlende Unterlagen:": {
+    "en": "Missing documents:",
+    "fr": "Documents manquants :"
+  },
+  "eingegangene Unterlage(n) noch prüfen.": {
+    "en": "received document(s) still to be reviewed.",
+    "fr": "document(s) reçu(s) encore à vérifier."
+  },
+  "Der verknüpfte Vertrag wurde storniert. Zuordnung lösen, bevor ihr den weiteren Verlauf festlegt.": {
+    "en": "The linked lease was cancelled. Remove the assignment before deciding the next steps.",
+    "fr": "Le bail lié a été annulé. Supprimez l’affectation avant de définir la suite."
+  },
+  "Für diese Einheit gibt es eine weitere Zusage. Auswahl vor dem Vertragsentwurf abstimmen.": {
+    "en": "There is another acceptance for this unit. Agree the selection before drafting the lease.",
+    "fr": "Une autre acceptation existe pour cette unité. Convenez du choix avant de rédiger le bail."
+  },
+  "Planen": {
+    "en": "Plan",
+    "fr": "Planifier"
+  },
+  "Erfassen": {
+    "en": "Add",
+    "fr": "Ajouter"
+  },
+  "Hinzufügen": {
+    "en": "Add",
+    "fr": "Ajouter"
+  },
+  "Noch keine Besichtigung geplant.": {
+    "en": "No viewing scheduled yet.",
+    "fr": "Aucune visite prévue pour le moment."
+  },
+  "Noch keine zusätzliche Aufgabe erfasst.": {
+    "en": "No additional task recorded yet.",
+    "fr": "Aucune tâche supplémentaire enregistrée pour le moment."
+  },
+  "Noch keine Dateien oder Dokumentnotizen abgelegt.": {
+    "en": "No files or document notes filed yet.",
+    "fr": "Aucun fichier ni note documentaire classé pour le moment."
+  },
+  "PDF oder Bild, bis zu 50 Dateien à 10 MB pro Dokumenteintrag. Der Prüfstand oben wird separat nachgeführt.": {
+    "en": "PDF or image, up to 50 files of 10 MB each per document record. The review status above is updated separately.",
+    "fr": "PDF ou image, jusqu’à 50 fichiers de 10 Mo chacun par entrée documentaire. L’état de vérification ci-dessus est mis à jour séparément."
+  },
+  "Mietinteressent.": {
+    "en": "Prospective tenant.",
+    "fr": "Candidat à la location."
+  },
+  "Dossier nicht gefunden": {
+    "en": "Dossier not found",
+    "fr": "Dossier introuvable"
+  },
+  "Öffnet die Übersicht.": {
+    "en": "Open the overview.",
+    "fr": "Ouvrez l’aperçu."
+  },
+  "Anfrage vom {4}": {
+    "en": "Enquiry dated {4}",
+    "fr": "Demande du {4}"
+  },
+  "Bewerbung & Unterlagen": {
+    "en": "Application & documents",
+    "fr": "Candidature et documents"
+  },
+  "Nur benötigte Nachweise anfordern. «Geprüft» dokumentiert eure manuelle Prüfung; Dateien legt ihr unten ab.": {
+    "en": "Request only necessary evidence. “Reviewed” records your manual review; file the documents below.",
+    "fr": "Ne demandez que les justificatifs nécessaires. « Vérifié » documente votre contrôle manuel ; classez les fichiers ci-dessous."
+  },
+  "Verlauf · {16} Änderungen": {
+    "en": "History · {16} changes",
+    "fr": "Historique · {16} modifications"
+  },
+  "Kontakt & Einzug": {
+    "en": "Contact & move-in",
+    "fr": "Contact et emménagement"
+  },
+  "Einheit & Neuvermietung": {
+    "en": "Unit & letting process",
+    "fr": "Unité et mise en location"
+  },
+  "Entscheid & Mietvertrag": {
+    "en": "Decision & lease",
+    "fr": "Décision et bail"
+  },
+  "Eine erfasste Zusage oder Absage wird nicht automatisch verschickt. Weitere Vertragsparteien ergänzt ihr im Mietvertrag.": {
+    "en": "A recorded acceptance or rejection is not sent automatically. Add other contracting parties in the lease.",
+    "fr": "Une acceptation ou un refus enregistré n’est pas envoyé automatiquement. Ajoutez les autres parties contractantes dans le bail."
+  },
+  "Dossier bearbeiten": {
+    "en": "Edit dossier",
+    "fr": "Modifier le dossier"
+  },
+  "Dossier abgeschlossen": {
+    "en": "Dossier completed",
+    "fr": "Dossier clôturé"
+  },
+  "Keine offene Wiedervorlage.": {
+    "en": "No outstanding follow-up.",
+    "fr": "Aucun suivi en attente."
+  },
+  "Noch zu klären": {
+    "en": "To be clarified",
+    "fr": "À clarifier"
+  },
+  "Bewerbung eingegangen am": {
+    "en": "Application received on",
+    "fr": "Candidature reçue le"
+  },
+  "Bewerbungseingang noch offen": {
+    "en": "Application receipt still pending",
+    "fr": "Réception de la candidature encore en attente"
+  },
+  "Stand bearbeiten": {
+    "en": "Edit status",
+    "fr": "Modifier l’état"
+  },
+  "Besichtigungen & Gespräche": {
+    "en": "Viewings & discussions",
+    "fr": "Visites et échanges"
+  },
+  "Dateien & Dokumentnotizen": {
+    "en": "Files & document notes",
+    "fr": "Fichiers et notes documentaires"
+  },
+  "Letzte 30 Änderungen. Der vollständige Verlauf ist in der Datensicherung enthalten.": {
+    "en": "Last 30 changes. The full history is included in the backup.",
+    "fr": "Les 30 dernières modifications. L’historique complet est inclus dans la sauvegarde."
+  },
+  "Weitere einziehende Personen": {
+    "en": "Other people moving in",
+    "fr": "Autres personnes emménageant"
+  },
+  "Anfrage über": {
+    "en": "Enquiry received via",
+    "fr": "Demande reçue via"
+  },
+  "Mieterkontakt öffnen": {
+    "en": "Open tenant contact",
+    "fr": "Ouvrir le contact locataire"
+  },
+  "Einheit noch zuordnen.": {
+    "en": "Unit still to be assigned.",
+    "fr": "Unité à attribuer."
+  },
+  "{1} · Neuvermietung öffnen ↗": {
+    "en": "{1} · Open letting process ↗",
+    "fr": "{1} · Ouvrir la mise en location ↗"
+  },
+  "Noch keine Neuvermietung verknüpft.": {
+    "en": "No letting process linked yet.",
+    "fr": "Aucune mise en location n’est encore liée."
+  },
+  "Entscheid / Freigabe durch": {
+    "en": "Decision / approval by",
+    "fr": "Décision / approbation par"
+  },
+  "Noch kein Entscheid dokumentiert.": {
+    "en": "No decision documented yet.",
+    "fr": "Aucune décision documentée pour le moment."
+  },
+  "Entscheid erfassen": {
+    "en": "Record decision",
+    "fr": "Enregistrer une décision"
+  },
+  "Zum Mietvertrag": {
+    "en": "Go to lease",
+    "fr": "Accéder au bail"
+  },
+  "· Mietvertrag öffnen": {
+    "en": "· Open lease",
+    "fr": "· Ouvrir le bail"
+  },
+  "Stornierte Vertragszuordnung lösen": {
+    "en": "Remove cancelled lease assignment",
+    "fr": "Supprimer l’affectation du bail annulé"
+  },
+  "Zusätzliche Aufgaben": {
+    "en": "Additional tasks",
+    "fr": "Tâches supplémentaires"
+  },
+  "Dossier archivieren": {
+    "en": "Archive dossier",
+    "fr": "Archiver le dossier"
+  },
+  "Entscheid dokumentieren": {
+    "en": "Document decision",
+    "fr": "Documenter la décision"
+  },
+  "Haltet die tatsächliche Freigabe oder Rückmeldung sachlich fest. Versand erfolgt separat.": {
+    "en": "Record the actual approval or response objectively. Send it separately.",
+    "fr": "Consignez l’approbation ou la réponse réelle de manière factuelle. L’envoi se fait séparément."
+  },
+  "Entscheiddatum *": {
+    "en": "Decision date *",
+    "fr": "Date de décision *"
+  },
+  "Entscheid / Freigabe durch *": {
+    "en": "Decision / approval by *",
+    "fr": "Décision / approbation par *"
+  },
+  "Begründung / Rückmeldung *": {
+    "en": "Reason / response *",
+    "fr": "Justification / réponse *"
+  },
+  "Anfrage beantworten": {
+    "en": "Reply to enquiry",
+    "fr": "Répondre à la demande"
+  },
+  "1 · Kontakt": {
+    "en": "1 · Contact",
+    "fr": "1 · Contact"
+  },
+  "Mindestens eine Kontaktmöglichkeit ist hilfreich. Eine unvollständige Anfrage könnt ihr bereits erfassen.": {
+    "en": "At least one contact method is helpful. You can already record an incomplete enquiry.",
+    "fr": "Au moins un moyen de contact est utile. Vous pouvez déjà enregistrer une demande incomplète."
+  },
+  "2 · Interesse & Zuordnung": {
+    "en": "2 · Interest & assignment",
+    "fr": "2 · Intérêt et affectation"
+  },
+  "3 · Bearbeitung": {
+    "en": "3 · Processing",
+    "fr": "3 · Traitement"
+  },
+  "Weitere Angaben & Notizen": {
+    "en": "Other details & notes",
+    "fr": "Autres informations et notes"
+  },
+  "Bewusste Doppelerfassung": {
+    "en": "Intentional duplicate entry",
+    "fr": "Doublon volontaire"
+  },
+  "Ähnliches Dossier geprüft; separate Anfrage bewusst erfassen": {
+    "en": "Similar dossier reviewed; intentionally record a separate enquiry",
+    "fr": "Dossier similaire vérifié ; enregistrer volontairement une demande distincte"
+  },
+  "Name / Unternehmen *": {
+    "en": "Name / company *",
+    "fr": "Nom / entreprise *"
+  },
+  "Anfrage eingegangen am *": {
+    "en": "Enquiry received on *",
+    "fr": "Demande reçue le *"
+  },
+  "Die Einheit bleibt wegen verknüpfter Einträge fest. Eine fehlende Neuvermietung könnt ihr noch ergänzen. Für eine andere Einheit ein neues Dossier erfassen.": {
+    "en": "The unit is fixed because of linked records. You can still add a missing letting process. Create a new dossier for a different unit.",
+    "fr": "L’unité reste fixe en raison des entrées liées. Vous pouvez encore ajouter une mise en location manquante. Créez un nouveau dossier pour une autre unité."
+  },
+  "Noch unklare Anfragen dürfen ohne Einheit bleiben. Eine Bewerbung wird einer konkreten Einheit zugeordnet.": {
+    "en": "Unclear enquiries may remain without a unit. An application is assigned to a specific unit.",
+    "fr": "Les demandes encore imprécises peuvent rester sans unité. Une candidature est attribuée à une unité précise."
+  },
+  "Mietinteressent bearbeiten.": {
+    "en": "Edit prospective tenant.",
+    "fr": "Modifier le candidat à la location."
+  },
+  "Mietinteressent erfassen.": {
+    "en": "Add prospective tenant.",
+    "fr": "Ajouter un candidat à la location."
+  },
+  "Dossier speichern": {
+    "en": "Save dossier",
+    "fr": "Enregistrer le dossier"
+  },
+  "MORADA · MIETINTERESSENTEN": {
+    "en": "MORADA · PROSPECTIVE TENANTS",
+    "fr": "MORADA · CANDIDATS À LA LOCATION"
+  },
+  "Der Portalstand hat sich geändert. Bitte das Dossier erneut öffnen.": {
+    "en": "The portal data has changed. Please reopen the dossier.",
+    "fr": "Les données du portail ont changé. Veuillez rouvrir le dossier."
+  },
+  "Dieses Dossier ist nicht bearbeitbar.": {
+    "en": "This dossier cannot be edited.",
+    "fr": "Ce dossier ne peut pas être modifié."
+  },
+  "Der Entscheid bleibt mit dem Mietvertrag verbunden. Eine Stornierung zuerst im Mietvertrag erfassen.": {
+    "en": "The decision remains linked to the lease. Record any cancellation in the lease first.",
+    "fr": "La décision reste liée au bail. Enregistrez d’abord toute annulation dans le bail."
+  },
+  "Die vorhandene Zuordnung bleibt wegen verknüpfter Einträge fest. Eine fehlende Neuvermietung kann noch ergänzt werden.": {
+    "en": "The existing assignment is fixed because of linked records. A missing letting process can still be added.",
+    "fr": "L’affectation existante reste fixe en raison des entrées liées. Une mise en location manquante peut encore être ajoutée."
+  },
+  "Eingang und Entscheid bitte mit dem tatsächlichen Datum bis heute erfassen.": {
+    "en": "Please enter the actual receipt and decision dates, no later than today.",
+    "fr": "Veuillez saisir les dates réelles de réception et de décision, au plus tard aujourd’hui."
+  },
+  "Bitte eine aktive Liegenschaft und Einheit wählen.": {
+    "en": "Please select an active property and unit.",
+    "fr": "Veuillez choisir un immeuble et une unité actifs."
+  },
+  "Bitte eine laufende Neuvermietung oder den Vorgang des zugehörigen bestätigten Vertrags wählen.": {
+    "en": "Please select an ongoing letting process or the process for the related confirmed lease.",
+    "fr": "Veuillez choisir une mise en location en cours ou le dossier du bail confirmé correspondant."
+  },
+  "Ähnliches Dossier vorhanden:": {
+    "en": "Similar dossier exists:",
+    "fr": "Dossier similaire existant :"
+  },
+  "Entscheid:": {
+    "en": "Decision:",
+    "fr": "Décision :"
+  },
+  "Anfrage erfasst": {
+    "en": "Enquiry recorded",
+    "fr": "Demande enregistrée"
+  },
+  "Bearbeitungsstand:": {
+    "en": "Processing status:",
+    "fr": "État de traitement :"
+  },
+  "Dossier bearbeitet": {
+    "en": "Dossier edited",
+    "fr": "Dossier modifié"
+  },
+  "Zuordnung aus Interessentendossier aktualisiert": {
+    "en": "Assignment updated from applicant dossier",
+    "fr": "Affectation mise à jour depuis le dossier du candidat"
+  },
+  "Die Neuvermietung hat bereits einen anderen Mietvertrag. Bitte zuerst die Auswahl prüfen.": {
+    "en": "The letting process already has a different lease. Please check the selection first.",
+    "fr": "La mise en location comporte déjà un autre bail. Veuillez d’abord vérifier la sélection."
+  },
+  "Bestehendes Interessentendossier": {
+    "en": "Existing applicant dossier",
+    "fr": "Dossier de candidat existant"
+  },
+  "und Mietvertrag verknüpft": {
+    "en": "and lease linked",
+    "fr": "et bail lié"
+  },
+  "Dossier nicht gefunden.": {
+    "en": "Dossier not found.",
+    "fr": "Dossier introuvable."
+  },
+  "Bitte das Dossier zuerst aus dem Archiv holen.": {
+    "en": "Please restore the dossier from the archive first.",
+    "fr": "Veuillez d’abord sortir le dossier des archives."
+  },
+  "Unterlagenstand bearbeiten.": {
+    "en": "Edit document status.",
+    "fr": "Modifier l’état des documents."
+  },
+  "«Eingegangen» bedeutet erhalten, «Geprüft» bedeutet von euch geprüft. Nicht benötigte Unterlagen ausdrücklich so kennzeichnen.": {
+    "en": "“Received” means received; “Reviewed” means reviewed by you. Explicitly mark documents that are not required.",
+    "fr": "« Reçu » signifie reçu ; « Vérifié » signifie contrôlé par vos soins. Indiquez explicitement les documents non requis."
+  },
+  "Fehlende Angaben / Prüfnotiz": {
+    "en": "Missing details / review note",
+    "fr": "Informations manquantes / note de vérification"
+  },
+  "Unterlagenstand speichern": {
+    "en": "Save document status",
+    "fr": "Enregistrer l’état des documents"
+  },
+  "Entscheid dokumentieren.": {
+    "en": "Document decision.",
+    "fr": "Documenter la décision."
+  },
+  "Eine Zusage benötigt eine konkrete Einheit und einen Bewerbungseingang. Bei einer Absage oder einem Rückzug endet die Wiedervorlage. Bereits geplante Termine separat absagen.": {
+    "en": "An acceptance requires a specific unit and receipt of an application. A rejection or withdrawal ends the follow-up. Cancel previously scheduled appointments separately.",
+    "fr": "Une acceptation nécessite une unité précise et une candidature reçue. Un refus ou un retrait met fin au suivi. Annulez séparément les rendez-vous déjà prévus."
+  },
+  "Entscheid speichern": {
+    "en": "Save decision",
+    "fr": "Enregistrer la décision"
+  },
+  "Die Neuvermietung ist archiviert oder abgebrochen. Bitte zuerst den Vorgang klären.": {
+    "en": "The letting process is archived or cancelled. Please clarify the process first.",
+    "fr": "La mise en location est archivée ou abandonnée. Veuillez d’abord clarifier le dossier."
+  },
+  "Rückmeldung ·": {
+    "en": "Response ·",
+    "fr": "Réponse ·"
+  },
+  "Bewerbung ·": {
+    "en": "Application ·",
+    "fr": "Candidature ·"
+  },
+  "Bitte zuerst die Einheit zuordnen.": {
+    "en": "Please assign the unit first.",
+    "fr": "Veuillez d’abord attribuer l’unité."
+  },
+  "Bei einem neuen Entwurf werden Kontakt, Einheit, Beginn und Mietangebot gemeinsam übernommen. Den Vertragstext, weitere Vertragsparteien, Nebenkostenart und Unterschriften ergänzt ihr im Mietvertrag. Bestehende Kontaktdaten bleiben erhalten.": {
+    "en": "For a new draft, the contact, unit, start and rental offer are transferred together. Complete the lease text, other contracting parties, service charge type and signatures in the lease. Existing contact details are retained.",
+    "fr": "Pour un nouveau brouillon, le contact, l’unité, le début et l’offre de loyer sont repris ensemble. Complétez le texte du bail, les autres parties contractantes, le type de charges et les signatures dans le bail. Les coordonnées existantes sont conservées."
+  },
+  "Bei Zuordnung eines bestehenden Vertrags gelten dessen Vertragsdaten; die Eingaben zu Beginn und Miete werden nicht übernommen.": {
+    "en": "When assigning an existing lease, its contractual details apply; entries for the start and rent are not transferred.",
+    "fr": "Lors de l’attribution d’un bail existant, ses données contractuelles s’appliquent ; les saisies de début et de loyer ne sont pas reprises."
+  },
+  "Die Unterlagen sind noch nicht vollständig geprüft. Prüft die offenen Punkte vor der Vertragsbestätigung.": {
+    "en": "The documents have not yet been fully reviewed. Review outstanding items before confirming the lease.",
+    "fr": "Les documents n’ont pas encore été entièrement vérifiés. Vérifiez les points ouverts avant de confirmer le bail."
+  },
+  "Neuen Mieterkontakt anlegen": {
+    "en": "Create new tenant contact",
+    "fr": "Créer un contact locataire"
+  },
+  "· möglicher Treffer": {
+    "en": "· Possible match",
+    "fr": "· Correspondance possible"
+  },
+  "Neuen Vertragsentwurf erstellen": {
+    "en": "Create new lease draft",
+    "fr": "Créer un brouillon de bail"
+  },
+  "Ähnliche Kontakte gefunden. Bitte einen bestehenden Kontakt prüfen, bevor ihr einen neuen anlegt.": {
+    "en": "Similar contacts found. Please review an existing contact before creating a new one.",
+    "fr": "Des contacts similaires ont été trouvés. Veuillez vérifier un contact existant avant d’en créer un nouveau."
+  },
+  "Mietvertrag vorbereiten.": {
+    "en": "Prepare lease.",
+    "fr": "Préparer le bail."
+  },
+  "Übernehmen & Mietvertrag öffnen": {
+    "en": "Apply & open lease",
+    "fr": "Reprendre et ouvrir le bail"
+  },
+  "Bitte zuerst eine Zusage dokumentieren.": {
+    "en": "Please document an acceptance first.",
+    "fr": "Veuillez d’abord documenter une acceptation."
+  },
+  "Dieses Dossier ist bereits mit einem Mietvertrag verknüpft.": {
+    "en": "This dossier is already linked to a lease.",
+    "fr": "Ce dossier est déjà lié à un bail."
+  },
+  "Bitte eine aktive Einheit und Liegenschaft zuordnen.": {
+    "en": "Please assign an active unit and property.",
+    "fr": "Veuillez attribuer une unité et un immeuble actifs."
+  },
+  "Die Neuvermietung ist nicht mehr offen für einen neuen Vertragsentwurf.": {
+    "en": "The letting process is no longer open for a new lease draft.",
+    "fr": "La mise en location n’est plus ouverte à un nouveau brouillon de bail."
+  },
+  "Bitte einen aktiven Mieterkontakt wählen.": {
+    "en": "Please select an active tenant contact.",
+    "fr": "Veuillez choisir un contact locataire actif."
+  },
+  "Der bestehende Vertrag muss zur Einheit und zum gewählten Mieterkontakt gehören.": {
+    "en": "The existing lease must belong to the unit and selected tenant contact.",
+    "fr": "Le bail existant doit correspondre à l’unité et au contact locataire sélectionné."
+  },
+  "Bitte den Vertragsbeginn erfassen.": {
+    "en": "Please enter the lease start.",
+    "fr": "Veuillez saisir le début du bail."
+  },
+  "Ein ähnlicher Mieterkontakt ist vorhanden. Bitte diesen auswählen oder zuerst im Kontaktbereich prüfen.": {
+    "en": "A similar tenant contact exists. Please select it or review it in the contacts section first.",
+    "fr": "Un contact locataire similaire existe. Veuillez le sélectionner ou le vérifier d’abord dans la rubrique Contacts."
+  },
+  "Aus Interessentendossier": {
+    "en": "From applicant dossier",
+    "fr": "Depuis le dossier du candidat"
+  },
+  "Entwurf aus Interessentendossier": {
+    "en": "Draft from applicant dossier",
+    "fr": "Brouillon issu du dossier du candidat"
+  },
+  "Dieser Vertrag ist bereits einem anderen Interessentendossier zugeordnet.": {
+    "en": "This lease is already assigned to another applicant dossier.",
+    "fr": "Ce bail est déjà attribué à un autre dossier de candidat."
+  },
+  "Die Neuvermietung hat bereits einen anderen Mietvertrag. Bitte zuerst die bestehende Auswahl prüfen.": {
+    "en": "The letting process already has a different lease. Please check the existing selection first.",
+    "fr": "La mise en location comporte déjà un autre bail. Veuillez d’abord vérifier la sélection existante."
+  },
+  "· Mietvertrag": {
+    "en": "· Lease",
+    "fr": "· Bail"
+  },
+  "Bitte das Dossier zuerst mit Absage, Rückzug oder bestätigtem Mietvertrag abschliessen.": {
+    "en": "Please complete the dossier with a rejection, withdrawal or confirmed lease first.",
+    "fr": "Veuillez d’abord clôturer le dossier avec un refus, un retrait ou un bail confirmé."
+  },
+  "Bitte den noch offenen nächsten Schritt zuerst abschliessen.": {
+    "en": "Please complete the outstanding next step first.",
+    "fr": "Veuillez d’abord terminer la prochaine étape encore ouverte."
+  },
+  "Bitte verknüpfte geplante Termine und offene Aufgaben zuerst abschliessen.": {
+    "en": "Please complete linked scheduled appointments and open tasks first.",
+    "fr": "Veuillez d’abord terminer les rendez-vous prévus et les tâches ouvertes liés."
+  },
+  "Dossier wiederherstellen?": {
+    "en": "Restore dossier?",
+    "fr": "Restaurer le dossier ?"
+  },
+  "Dossier archivieren?": {
+    "en": "Archive dossier?",
+    "fr": "Archiver le dossier ?"
+  },
+  "Das abgeschlossene Dossier wird wieder in der Übersicht angezeigt.": {
+    "en": "The completed dossier will reappear in the overview.",
+    "fr": "Le dossier clôturé réapparaîtra dans l’aperçu."
+  },
+  "Das Dossier bleibt mit Unterlagen und Verlauf im Archiv erhalten.": {
+    "en": "The dossier, with its documents and history, will remain in the archive.",
+    "fr": "Le dossier reste dans les archives avec ses documents et son historique."
+  },
+  "Stornierte Vertragszuordnung lösen?": {
+    "en": "Remove cancelled lease assignment?",
+    "fr": "Supprimer l’affectation du bail annulé ?"
+  },
+  "{0} · Der stornierte Mietvertrag bleibt erhalten. Das Dossier erhält wieder den Schritt «Weiteres Vorgehen nach Stornierung klären».": {
+    "en": "{0} · The cancelled lease is retained. The dossier returns to the step “Clarify next steps after cancellation”.",
+    "fr": "{0} · Le bail annulé est conservé. Le dossier revient à l’étape « Clarifier la suite après l’annulation »."
+  },
+  "Zuordnung lösen": {
+    "en": "Remove assignment",
+    "fr": "Supprimer l’affectation"
+  },
+  "{0} Dossiers · {1} offen": {
+    "en": "{0} dossiers · {1} open",
+    "fr": "{0} dossiers · {1} ouverts"
+  },
+  "Alle Dossiers dieser Neuvermietung ↗": {
+    "en": "All dossiers for this letting process ↗",
+    "fr": "Tous les dossiers de cette mise en location ↗"
+  },
+  "Noch keine Interessenten zugeordnet.": {
+    "en": "No prospective tenants assigned yet.",
+    "fr": "Aucun candidat attribué pour le moment."
+  },
+  "Keine Dossiers in dieser Auswahl.": {
+    "en": "No dossiers match this selection.",
+    "fr": "Aucun dossier ne correspond à cette sélection."
+  },
+  "Anfrage eingegangen": {
+    "en": "Enquiry received",
+    "fr": "Demande reçue"
+  },
+  "Fehlende Unterlagen": {
+    "en": "Missing documents",
+    "fr": "Documents manquants"
+  },
+  "Entscheiddatum": {
+    "en": "Decision date",
+    "fr": "Date de décision"
+  },
+  "Entscheid durch": {
+    "en": "Decision by",
+    "fr": "Décision par"
+  },
+  "Unterlagenstand aktualisiert": {
+    "en": "Document status updated",
+    "fr": "État des documents mis à jour"
+  },
+  "Nur eine stornierte Vertragszuordnung kann gelöst werden.": {
+    "en": "Only a cancelled lease assignment can be removed.",
+    "fr": "Seule l’affectation d’un bail annulé peut être supprimée."
+  },
+  "Zuordnung zu storniertem Mietvertrag gelöst": {
+    "en": "Assignment to cancelled lease removed",
+    "fr": "Affectation au bail annulé supprimée"
+  },
+  "Stornierte Vertragszuordnung gelöst": {
+    "en": "Cancelled lease assignment removed",
+    "fr": "Affectation du bail annulé supprimée"
+  },
+  "· Vertragszuordnung gelöst": {
+    "en": "· Lease assignment removed",
+    "fr": "· Affectation du bail supprimée"
+  },
+  "Dossier archiviert": {
+    "en": "Dossier archived",
+    "fr": "Dossier archivé"
+  },
+  "Mietkontakt und Vertragszuordnung gespeichert. Bitte Vertragsangaben prüfen.": {
+    "en": "Tenant contact and lease assignment saved. Please check the lease details.",
+    "fr": "Contact locataire et affectation du bail enregistrés. Veuillez vérifier les données du bail."
+  },
+  "Interessentendossier gespeichert.": {
+    "en": "Applicant dossier saved.",
+    "fr": "Dossier du candidat enregistré."
+  },
+  "Vorabnahme": {
+    "en": "Pre-inspection",
+    "fr": "Pré-état des lieux"
+  },
+  "Abnahme beim Auszug": {
+    "en": "Move-out inspection",
+    "fr": "État des lieux de sortie"
+  },
+  "Übergabe beim Einzug": {
+    "en": "Move-in handover",
+    "fr": "Remise à l’entrée"
+  },
+  "Termin geplant": {
+    "en": "Appointment scheduled",
+    "fr": "Rendez-vous prévu"
+  },
+  "Protokoll abgeschlossen": {
+    "en": "Report completed",
+    "fr": "Procès-verbal clôturé"
+  },
+  "Ohne Beanstandung": {
+    "en": "No issues",
+    "fr": "Sans observation"
+  },
+  "Gebrauchsspuren": {
+    "en": "Signs of wear",
+    "fr": "Traces d’usure"
+  },
+  "Mangel / Schaden": {
+    "en": "Defect / damage",
+    "fr": "Défaut / dommage"
+  },
+  "Nicht geprüft / nicht zugänglich": {
+    "en": "Not inspected / inaccessible",
+    "fr": "Non contrôlé / inaccessible"
+  },
+  "Unterzeichnete Fassung vor Änderung ·": {
+    "en": "Signed version before change ·",
+    "fr": "Version signée avant modification ·"
+  },
+  "Bitte zuerst die zugehörigen Abnahmen / Übergaben und ihre erforderlichen Folgeaufgaben abschliessen.": {
+    "en": "Please complete the related inspections / handovers and their required follow-up tasks first.",
+    "fr": "Veuillez d’abord terminer les états des lieux / remises concernés et leurs tâches de suivi requises."
+  },
+  "Der durchgeführte Termin mit Datum bis heute und Uhrzeit fehlt.": {
+    "en": "A completed appointment with a date no later than today and a time is missing.",
+    "fr": "Il manque un rendez-vous effectué avec une date au plus tard aujourd’hui et un horaire."
+  },
+  "Mietpartei und Vertretung der Verwaltung erfassen.": {
+    "en": "Enter the tenant and property management representative.",
+    "fr": "Saisissez la partie locataire et la représentation de la gérance."
+  },
+  "Alle Räume / Bauteile prüfen und die Vollständigkeit bestätigen.": {
+    "en": "Inspect all rooms / components and confirm completeness.",
+    "fr": "Contrôlez toutes les pièces / éléments et confirmez l’exhaustivité."
+  },
+  "Für erforderliche Folgeaufgaben Vorgehen, Fälligkeit und Zuständigkeit ergänzen.": {
+    "en": "For required follow-up tasks, add the action, due date and responsible person.",
+    "fr": "Pour les tâches de suivi requises, complétez l’action, l’échéance et le responsable."
+  },
+  "Ohne Schlüsselpositionen bitte den Grund dokumentieren.": {
+    "en": "If there are no key entries, please document the reason.",
+    "fr": "En l’absence de positions de clés, veuillez documenter le motif."
+  },
+  "Ohne Zählerstände bitte den Grund dokumentieren.": {
+    "en": "If there are no meter readings, please document the reason.",
+    "fr": "En l’absence de relevés de compteurs, veuillez documenter le motif."
+  },
+  "Schlüssel und Zähler prüfen; fehlende Angaben ausdrücklich dokumentieren.": {
+    "en": "Check keys and meters; explicitly document any missing details.",
+    "fr": "Vérifiez les clés et les compteurs ; documentez explicitement les informations manquantes."
+  },
+  "Den tatsächlichen Unterschriftenstand dokumentieren.": {
+    "en": "Document the actual signature status.",
+    "fr": "Documentez l’état réel des signatures."
+  },
+  "Das vollständig unterzeichnete Protokoll als Datei ablegen.": {
+    "en": "File the fully signed report.",
+    "fr": "Déposez le procès-verbal entièrement signé sous forme de fichier."
+  },
+  "Fehlende Unterschriften mit Person und Grund dokumentieren.": {
+    "en": "Document missing signatures with the person and reason.",
+    "fr": "Documentez les signatures manquantes avec la personne et le motif."
+  },
+  "Ungültige Abnahmen und Übergaben.": {
+    "en": "Invalid inspections and handovers.",
+    "fr": "États des lieux et remises non valides."
+  },
+  "Bitte eindeutige Protokollnummern prüfen.": {
+    "en": "Please check the unique report numbers.",
+    "fr": "Veuillez vérifier les numéros uniques des procès-verbaux."
+  },
+  "Eine Protokollangabe ist ungültig oder zu lang.": {
+    "en": "A report detail is invalid or too long.",
+    "fr": "Une information du procès-verbal est non valide ou trop longue."
+  },
+  "Bitte Vorgangsart, Status und Zuständigkeit prüfen.": {
+    "en": "Please check the process type, status and responsible person.",
+    "fr": "Veuillez vérifier le type de dossier, le statut et le responsable."
+  },
+  "Liegenschaft, Einheit und Vertragszuordnung des Protokolls passen nicht zusammen.": {
+    "en": "The report’s property, unit and lease assignment do not match.",
+    "fr": "L’immeuble, l’unité et l’affectation du bail du procès-verbal ne correspondent pas."
+  },
+  "Für den Einzug bitte den neuen Mietvertrag aus der Neuvermietung wählen.": {
+    "en": "For move-in, please select the new lease from the letting process.",
+    "fr": "Pour l’entrée, veuillez choisir le nouveau bail de la mise en location."
+  },
+  "Bitte Datum, Beginn und eine spätere Endzeit am selben Tag erfassen.": {
+    "en": "Please enter the date, start time and a later end time on the same day.",
+    "fr": "Veuillez saisir la date, l’heure de début et une heure de fin ultérieure le même jour."
+  },
+  "Bitte für den Termin Datum, Beginn und Ende erfassen.": {
+    "en": "Please enter the appointment date, start and end.",
+    "fr": "Veuillez saisir la date, le début et la fin du rendez-vous."
+  },
+  "Bitte Unterschriftenstand und Versanddatum mit Empfängern prüfen.": {
+    "en": "Please check the signature status and dispatch date with recipients.",
+    "fr": "Veuillez vérifier l’état des signatures et la date d’envoi avec les destinataires."
+  },
+  "Ungültiger Prüfstand im Protokoll.": {
+    "en": "Invalid review status in the report.",
+    "fr": "État de vérification non valide dans le procès-verbal."
+  },
+  "Maximal 150 Positionen je Protokollbereich.": {
+    "en": "No more than 150 items per report section.",
+    "fr": "Au maximum 150 positions par rubrique du procès-verbal."
+  },
+  "Bitte Bezeichnung und Beschreibung der Protokollposition prüfen.": {
+    "en": "Please check the report item’s name and description.",
+    "fr": "Veuillez vérifier la désignation et la description de la position du procès-verbal."
+  },
+  "Bitte Raum, Zustand und Nachbearbeitung prüfen.": {
+    "en": "Please check the room, condition and follow-up work.",
+    "fr": "Veuillez vérifier la pièce, l’état et le suivi."
+  },
+  "Bei Mängeln, Gebrauchsspuren oder nicht geprüften Bereichen bitte den Befund beschreiben.": {
+    "en": "For defects, signs of wear or uninspected areas, please describe the findings.",
+    "fr": "En cas de défauts, de traces d’usure ou de zones non contrôlées, veuillez décrire le constat."
+  },
+  "Bei Mängeln und nicht geprüften Bereichen bitte das weitere Vorgehen festhalten.": {
+    "en": "For defects and uninspected areas, please record the next steps.",
+    "fr": "Pour les défauts et les zones non contrôlées, veuillez consigner la suite à donner."
+  },
+  "Bitte die Nachbearbeitung der Position prüfen.": {
+    "en": "Please check the item’s follow-up work.",
+    "fr": "Veuillez vérifier le suivi de la position."
+  },
+  "Eine verknüpfte Folgeaufgabe fehlt.": {
+    "en": "A linked follow-up task is missing.",
+    "fr": "Une tâche de suivi liée est manquante."
+  },
+  "Bitte Schlüsselnummer und ganze Stückzahlen prüfen.": {
+    "en": "Please check the key number and whole-number quantities.",
+    "fr": "Veuillez vérifier le numéro de clé et les quantités entières."
+  },
+  "Bitte Soll- und Ist-Anzahl der Schlüssel erfassen.": {
+    "en": "Please enter the expected and actual number of keys.",
+    "fr": "Veuillez saisir le nombre de clés attendu et réel."
+  },
+  "Fehlende oder abweichende Schlüsselangaben bitte erläutern.": {
+    "en": "Please explain missing or differing key details.",
+    "fr": "Veuillez expliquer les informations manquantes ou divergentes sur les clés."
+  },
+  "Bitte Zählernummer, Stand und Ablesedatum prüfen.": {
+    "en": "Please check the meter number, reading and reading date.",
+    "fr": "Veuillez vérifier le numéro du compteur, le relevé et sa date."
+  },
+  "Für einen abgelesenen Zähler bitte Stand, Einheit und Datum erfassen.": {
+    "en": "For a read meter, please enter the reading, unit and date.",
+    "fr": "Pour un compteur relevé, veuillez saisir l’index, l’unité et la date."
+  },
+  "Bitte begründen, weshalb der Zähler nicht abgelesen wurde.": {
+    "en": "Please explain why the meter was not read.",
+    "fr": "Veuillez expliquer pourquoi le compteur n’a pas été relevé."
+  },
+  "Bitte Dateikategorie und Raumzuordnung prüfen.": {
+    "en": "Please check the file category and room assignment.",
+    "fr": "Veuillez vérifier la catégorie du fichier et l’affectation à la pièce."
+  },
+  "Ungültiges Protokolldatum.": {
+    "en": "Invalid report date.",
+    "fr": "Date du procès-verbal non valide."
+  },
+  "Nur abgeschlossene oder abgesagte Vorgänge können archiviert werden.": {
+    "en": "Only completed or cancelled processes can be archived.",
+    "fr": "Seuls les dossiers terminés ou annulés peuvent être archivés."
+  },
+  "Dieses Protokoll ist noch nicht vollständig.": {
+    "en": "This report is not complete yet.",
+    "fr": "Ce procès-verbal n’est pas encore complet."
+  },
+  "Ungültiger Protokollverlauf.": {
+    "en": "Invalid report history.",
+    "fr": "Historique du procès-verbal non valide."
+  },
+  "Ungültige frühere Protokollfassung.": {
+    "en": "Invalid previous report version.",
+    "fr": "Version précédente du procès-verbal non valide."
+  },
+  "Protokoll und Kalendertermin müssen gemeinsam geändert werden. Bitte das Protokoll öffnen.": {
+    "en": "The report and calendar appointment must be changed together. Please open the report.",
+    "fr": "Le procès-verbal et le rendez-vous du calendrier doivent être modifiés ensemble. Veuillez ouvrir le procès-verbal."
+  },
+  "Die Verknüpfung zu einer Abnahme oder Übergabe ist ungültig.": {
+    "en": "The link to an inspection or handover is invalid.",
+    "fr": "Le lien vers un état des lieux ou une remise est non valide."
+  },
+  "Die Folgeaufgabe gehört nicht zu dieser Protokollposition.": {
+    "en": "The follow-up task does not belong to this report item.",
+    "fr": "La tâche de suivi n’appartient pas à cette position du procès-verbal."
+  },
+  "Kein Mietvertrag zugeordnet": {
+    "en": "No lease assigned",
+    "fr": "Aucun bail attribué"
+  },
+  "· Angaben und Protokoll unter Abnahmen & Übergaben.": {
+    "en": "· Details and report under Inspections & handovers.",
+    "fr": "· Informations et procès-verbal sous États des lieux et remises."
+  },
+  "Der Portalstand hat sich geändert. Bitte den Vorgang erneut öffnen. Eure Eingaben bleiben erhalten.": {
+    "en": "The portal data has changed. Please reopen the process. Your entries are retained.",
+    "fr": "Les données du portail ont changé. Veuillez rouvrir le dossier. Vos saisies sont conservées."
+  },
+  "Bitte Liegenschaft, Einheit und zugeordneten Mietvertrag zuerst aus dem Archiv holen.": {
+    "en": "Please restore the property, unit and assigned lease from the archive first.",
+    "fr": "Veuillez d’abord sortir des archives l’immeuble, l’unité et le bail attribué."
+  },
+  "Das Protokoll konnte nicht gespeichert werden.": {
+    "en": "The report could not be saved.",
+    "fr": "Le procès-verbal n’a pas pu être enregistré."
+  },
+  "Dieses Protokoll ist gesperrt. Zum Korrigieren zuerst mit Begründung wieder öffnen.": {
+    "en": "This report is locked. To make corrections, reopen it with a reason first.",
+    "fr": "Ce procès-verbal est verrouillé. Pour le corriger, rouvrez-le d’abord en indiquant un motif."
+  },
+  "Bitte einen offenen Bearbeitungsstand wählen.": {
+    "en": "Please select an open processing status.",
+    "fr": "Veuillez choisir un état de traitement ouvert."
+  },
+  "Ein geplanter Termin bleibt dokumentiert. Zum Absagen die Funktion «Absagen» verwenden.": {
+    "en": "A scheduled appointment remains documented. To cancel it, use “Cancel”.",
+    "fr": "Un rendez-vous prévu reste documenté. Pour l’annuler, utilisez la fonction « Annuler »."
+  },
+  "Bitte eine aktive Einheit auswählen.": {
+    "en": "Please select an active unit.",
+    "fr": "Veuillez sélectionner une unité active."
+  },
+  "Für diese Einheit und diesen Termin besteht bereits ein gleichartiger offener Vorgang. Bitte diesen zuerst prüfen.": {
+    "en": "An open process of the same type already exists for this unit and appointment. Please review it first.",
+    "fr": "Un dossier ouvert du même type existe déjà pour cette unité et ce rendez-vous. Veuillez d’abord le vérifier."
+  },
+  "Bitte einen vorhandenen gültigen Mietvertrag wählen.": {
+    "en": "Please select an existing valid lease.",
+    "fr": "Veuillez choisir un bail existant valide."
+  },
+  "Bitte eine laufende Neuvermietung wählen.": {
+    "en": "Please select an ongoing letting process.",
+    "fr": "Veuillez choisir une mise en location en cours."
+  },
+  "Terminüberschneidung mit": {
+    "en": "Scheduling conflict with",
+    "fr": "Chevauchement de rendez-vous avec"
+  },
+  "Termin und Angaben bearbeitet": {
+    "en": "Appointment and details edited",
+    "fr": "Rendez-vous et informations modifiés"
+  },
+  "Vorgang erfasst": {
+    "en": "Process recorded",
+    "fr": "Dossier enregistré"
+  },
+  "Das Protokoll ist gesperrt.": {
+    "en": "The report is locked.",
+    "fr": "Le procès-verbal est verrouillé."
+  },
+  "Vorgang nicht verfügbar.": {
+    "en": "Process unavailable.",
+    "fr": "Dossier indisponible."
+  },
+  "Für diese Position besteht bereits eine Folgeaufgabe.": {
+    "en": "A follow-up task already exists for this item.",
+    "fr": "Une tâche de suivi existe déjà pour cette position."
+  },
+  "Diese Position ist als ohne Folgeaufgabe dokumentiert.": {
+    "en": "This item is documented as requiring no follow-up task.",
+    "fr": "Cette position est documentée comme ne nécessitant aucune tâche de suivi."
+  },
+  "Für eine Folgeaufgabe bitte Vorgehen, Fälligkeit und zuständige Person in der Position ergänzen.": {
+    "en": "For a follow-up task, please add the action, due date and responsible person to the item.",
+    "fr": "Pour une tâche de suivi, veuillez compléter l’action, l’échéance et le responsable dans la position."
+  },
+  "Aus Protokoll": {
+    "en": "From report",
+    "fr": "Depuis le procès-verbal"
+  },
+  "Folgeaufgabe erstellt:": {
+    "en": "Follow-up task created:",
+    "fr": "Tâche de suivi créée :"
+  },
+  "Vorgang & Einheit": {
+    "en": "Process & unit",
+    "fr": "Dossier et unité"
+  },
+  "Mietpartei": {
+    "en": "Tenant party",
+    "fr": "Partie locataire"
+  },
+  "· Stand prüfen": {
+    "en": "· Review status",
+    "fr": "· Vérifier l’état"
+  },
+  "offener Schritt": {
+    "en": "Outstanding step",
+    "fr": "Étape ouverte"
+  },
+  "offene Schritte": {
+    "en": "Outstanding steps",
+    "fr": "Étapes ouvertes"
+  },
+  "Abnahmen und Übergaben": {
+    "en": "Inspections and handovers",
+    "fr": "États des lieux et remises"
+  },
+  "Keine passenden Vorgänge": {
+    "en": "No matching processes",
+    "fr": "Aucun dossier correspondant"
+  },
+  "Noch keine Abnahmen oder Übergaben": {
+    "en": "No inspections or handovers yet",
+    "fr": "Aucun état des lieux ni remise pour le moment"
+  },
+  "Die Filter anpassen oder zurücksetzen.": {
+    "en": "Adjust or reset the filters.",
+    "fr": "Adaptez ou réinitialisez les filtres."
+  },
+  "Beginnt mit einer Einheit und der Art des Termins. Das Protokoll ergänzt ihr Schritt für Schritt.": {
+    "en": "Start with a unit and the appointment type. Complete the report step by step.",
+    "fr": "Commencez par une unité et le type de rendez-vous. Complétez le procès-verbal étape par étape."
+  },
+  "Vorgang erfassen": {
+    "en": "Add process",
+    "fr": "Ajouter un dossier"
+  },
+  "VOM TERMIN ZUM PROTOKOLL": {
+    "en": "FROM APPOINTMENT TO REPORT",
+    "fr": "DU RENDEZ-VOUS AU PROCÈS-VERBAL"
+  },
+  "Vorabnahme, Auszug oder Einzug — klar einer Einheit zugeordnet.": {
+    "en": "Pre-inspection, move-out or move-in — clearly assigned to a unit.",
+    "fr": "Pré-état des lieux, sortie ou entrée — clairement attribué à une unité."
+  },
+  "Zustand erfassen": {
+    "en": "Record condition",
+    "fr": "Consigner l’état"
+  },
+  "Protokoll abschliessen": {
+    "en": "Complete report",
+    "fr": "Clôturer le procès-verbal"
+  },
+  "Die Kennzahlen gelten für alle Vorgänge ausserhalb des Archivs.": {
+    "en": "The figures cover all unarchived processes.",
+    "fr": "Les indicateurs portent sur tous les dossiers non archivés."
+  },
+  "Vorgänge suchen": {
+    "en": "Search processes",
+    "fr": "Rechercher des dossiers"
+  },
+  "Weitere Filter": {
+    "en": "More filters",
+    "fr": "Autres filtres"
+  },
+  "Nummer, Einheit, Adresse oder Mietpartei …": {
+    "en": "Reference, unit, address or tenant party …",
+    "fr": "Référence, unité, adresse ou partie locataire…"
+  },
+  "Zustand festhalten. Schlüssel zählen. Den nächsten Schritt klären.": {
+    "en": "Record the condition. Count keys. Clarify the next step.",
+    "fr": "Consigner l’état. Compter les clés. Clarifier la prochaine étape."
+  },
+  "Offene Vorgänge": {
+    "en": "Open processes",
+    "fr": "Dossiers ouverts"
+  },
+  "Vorbereitung bis Protokollabschluss": {
+    "en": "From preparation to completed report",
+    "fr": "De la préparation à la clôture du procès-verbal"
+  },
+  "Nächste 7 Tage": {
+    "en": "Next 7 days",
+    "fr": "7 prochains jours"
+  },
+  "Geplante Abnahmen und Übergaben": {
+    "en": "Scheduled inspections and handovers",
+    "fr": "États des lieux et remises prévus"
+  },
+  "Nachbearbeitung": {
+    "en": "Follow-up work",
+    "fr": "Suivi"
+  },
+  "Offene oder noch zu planende Aufgaben": {
+    "en": "Open tasks or tasks still to be planned",
+    "fr": "Tâches ouvertes ou encore à planifier"
+  },
+  "Termin vergangen": {
+    "en": "Appointment in the past",
+    "fr": "Rendez-vous passé"
+  },
+  "Liste als CSV": {
+    "en": "List as CSV",
+    "fr": "Liste au format CSV"
+  },
+  "Offene Nachbearbeitung": {
+    "en": "Outstanding follow-up work",
+    "fr": "Suivi en cours"
+  },
+  "Abgeschlossen / abgesagt": {
+    "en": "Completed / cancelled",
+    "fr": "Terminé / annulé"
+  },
+  "Abnahme oder Übergabe.": {
+    "en": "Inspection or handover.",
+    "fr": "État des lieux ou remise."
+  },
+  "Räume & Mängel": {
+    "en": "Rooms & defects",
+    "fr": "Pièces et défauts"
+  },
+  "Schlüssel & Zähler": {
+    "en": "Keys & meters",
+    "fr": "Clés et compteurs"
+  },
+  "Dateien & Abschluss": {
+    "en": "Files & completion",
+    "fr": "Fichiers et clôture"
+  },
+  "Abnahmeprotokoll": {
+    "en": "Inspection report",
+    "fr": "Procès-verbal d’état des lieux"
+  },
+  "Protokoll / PDF": {
+    "en": "Report / PDF",
+    "fr": "Procès-verbal / PDF"
+  },
+  "Protokoll abgeschlossen am {0}. Für Korrekturen wird eine neue Fassung begonnen; die bisherige Fassung bleibt erhalten.": {
+    "en": "Report completed on {0}. Corrections start a new version; the previous version is retained.",
+    "fr": "Procès-verbal clôturé le {0}. Les corrections créent une nouvelle version ; la version précédente est conservée."
+  },
+  "Abgesagt: {0}": {
+    "en": "Cancelled: {0}",
+    "fr": "Annulé : {0}"
+  },
+  "Verlauf · {5} Einträge": {
+    "en": "History · {5} entries",
+    "fr": "Historique · {5} entrées"
+  },
+  "Termin & Beteiligte": {
+    "en": "Appointment & participants",
+    "fr": "Rendez-vous et participants"
+  },
+  "Noch nicht vereinbart": {
+    "en": "Not yet agreed",
+    "fr": "Pas encore convenu"
+  },
+  "Vertretung Verwaltung": {
+    "en": "Property management representative",
+    "fr": "Représentation de la gérance"
+  },
+  "Weitere Anwesende / Vertretung": {
+    "en": "Other attendees / representatives",
+    "fr": "Autres personnes présentes / représentants"
+  },
+  "Neue Adresse / Kontakt nach Auszug": {
+    "en": "New address / contact after move-out",
+    "fr": "Nouvelle adresse / contact après le départ"
+  },
+  "Der verknüpfte Kalendertermin wird beim Speichern automatisch nachgeführt. Uhrzeiten: Zürich.": {
+    "en": "The linked calendar appointment is updated automatically when saving. Times: Zurich.",
+    "fr": "Le rendez-vous lié du calendrier est mis à jour automatiquement lors de l’enregistrement. Heures : Zurich."
+  },
+  "Einheit & Verknüpfungen": {
+    "en": "Unit & links",
+    "fr": "Unité et liens"
+  },
+  "Keine verknüpft": {
+    "en": "None linked",
+    "fr": "Aucun lien"
+  },
+  "Neuvermietung öffnen ↗": {
+    "en": "Open letting process ↗",
+    "fr": "Ouvrir la mise en location ↗"
+  },
+  "Position": {
+    "en": "Item",
+    "fr": "Position"
+  },
+  "Positionen": {
+    "en": "Items",
+    "fr": "Positions"
+  },
+  "geprüft": {
+    "en": "Reviewed",
+    "fr": "Vérifié"
+  },
+  "Schlüsselposition": {
+    "en": "Key item",
+    "fr": "Position de clé"
+  },
+  "Schlüsselpositionen": {
+    "en": "Key items",
+    "fr": "Positions de clés"
+  },
+  "Zähler": {
+    "en": "Meter",
+    "fr": "Compteur"
+  },
+  "Dateien ·": {
+    "en": "Files ·",
+    "fr": "Fichiers ·"
+  },
+  "{0} erforderliche Folgeaufgabe(n) noch nicht erstellt. {1}": {
+    "en": "{0} required follow-up task(s) not yet created. {1}",
+    "fr": "{0} tâche(s) de suivi requise(s) pas encore créée(s). {1}"
+  },
+  "Positionen öffnen": {
+    "en": "Open items",
+    "fr": "Ouvrir les positions"
+  },
+  "Aus einer Mängelposition mit Zuständigkeit und Fälligkeit eine Folgeaufgabe erstellen.": {
+    "en": "Create a follow-up task from a defect item with a responsible person and due date.",
+    "fr": "Créez une tâche de suivi à partir d’un défaut avec un responsable et une échéance."
+  },
+  "Die letzten 30 Einträge. Der vollständige Verlauf ist in der Datensicherung enthalten.": {
+    "en": "The last 30 entries. The full history is included in the backup.",
+    "fr": "Les 30 dernières entrées. L’historique complet est inclus dans la sauvegarde."
+  },
+  "Vorgang absagen": {
+    "en": "Cancel process",
+    "fr": "Annuler le dossier"
+  },
+  "Mit Begründung wieder öffnen": {
+    "en": "Reopen with a reason",
+    "fr": "Rouvrir avec un motif"
+  },
+  "Raumprotokoll": {
+    "en": "Room inspection record",
+    "fr": "Relevé des pièces"
+  },
+  "Pro Raum oder Bauteil den tatsächlichen Befund erfassen. Fotos können unter «Dateien & Abschluss» der passenden Position zugeordnet werden.": {
+    "en": "Record the actual findings for each room or component. Photos can be assigned to the appropriate item under “Files & completion”.",
+    "fr": "Consignez le constat réel pour chaque pièce ou élément. Les photos peuvent être attribuées à la position correspondante sous « Fichiers et clôture »."
+  },
+  "Verantwortlichkeit, Kosten und eine allfällige Kostenübernahme separat klären und dokumentieren. Die Erfassung eines Mangels löst keine Verrechnung aus.": {
+    "en": "Clarify and document responsibility, costs and any agreement to cover costs separately. Recording a defect does not trigger a charge.",
+    "fr": "Clarifiez et documentez séparément la responsabilité, les coûts et une éventuelle prise en charge. L’enregistrement d’un défaut ne déclenche aucune facturation."
+  },
+  "Noch keine Positionen": {
+    "en": "No items yet",
+    "fr": "Aucune position pour le moment"
+  },
+  "Eine Raumvorlage übernehmen oder einzelne Bereiche erfassen.": {
+    "en": "Apply a room template or add individual areas.",
+    "fr": "Appliquez un modèle de pièces ou ajoutez des zones individuelles."
+  },
+  "Weiteres Vorgehen": {
+    "en": "Next steps",
+    "fr": "Suite à donner"
+  },
+  "Position bearbeiten": {
+    "en": "Edit item",
+    "fr": "Modifier la position"
+  },
+  "Aufgabe ·": {
+    "en": "Task ·",
+    "fr": "Tâche ·"
+  },
+  "Folgeaufgabe erstellen": {
+    "en": "Create follow-up task",
+    "fr": "Créer une tâche de suivi"
+  },
+  "Position hinzufügen": {
+    "en": "Add item",
+    "fr": "Ajouter une position"
+  },
+  "Raumvorlage": {
+    "en": "Room template",
+    "fr": "Modèle de pièces"
+  },
+  "Erfasste Werte dokumentieren diesen Termin. Ein zentrales Schlüsselregister und Verbrauchsabrechnungen werden dadurch nicht verändert.": {
+    "en": "Recorded values document this appointment. They do not change a central key register or consumption bills.",
+    "fr": "Les valeurs saisies documentent ce rendez-vous. Elles ne modifient ni un registre central des clés ni les décomptes de consommation."
+  },
+  "Schlüssel ·": {
+    "en": "Keys ·",
+    "fr": "Clés ·"
+  },
+  "Rücknahme / Kontrolle": {
+    "en": "Return / check",
+    "fr": "Restitution / contrôle"
+  },
+  "Schlüsselnummer / Kennung": {
+    "en": "Key number / identifier",
+    "fr": "Numéro / identifiant de clé"
+  },
+  "Soll": {
+    "en": "Expected",
+    "fr": "Attendu"
+  },
+  "Nicht bekannt": {
+    "en": "Not known",
+    "fr": "Inconnu"
+  },
+  "Tatsächlich gezählt": {
+    "en": "Actually counted",
+    "fr": "Réellement compté"
+  },
+  "Nicht festgestellt": {
+    "en": "Not established",
+    "fr": "Non constaté"
+  },
+  "Abweichung": {
+    "en": "Difference",
+    "fr": "Écart"
+  },
+  "Nicht berechnet": {
+    "en": "Not calculated",
+    "fr": "Non calculé"
+  },
+  "Schlüsselarten, Nummern und Soll-/Ist-Anzahl einzeln erfassen. Abweichungen erläutern.": {
+    "en": "Record key types, numbers and expected/actual quantities individually. Explain differences.",
+    "fr": "Saisissez séparément les types de clés, leurs numéros et les quantités attendues/réelles. Expliquez les écarts."
+  },
+  "Schlüssel erfassen": {
+    "en": "Add key",
+    "fr": "Ajouter une clé"
+  },
+  "Zählerstände": {
+    "en": "Meter readings",
+    "fr": "Relevés de compteurs"
+  },
+  "Zählernummer": {
+    "en": "Meter number",
+    "fr": "Numéro du compteur"
+  },
+  "Nicht abgelesen": {
+    "en": "Not read",
+    "fr": "Non relevé"
+  },
+  "Ablesedatum": {
+    "en": "Reading date",
+    "fr": "Date du relevé"
+  },
+  "Zum Beispiel Strom, Wasser, Wärme oder Gas. Nicht zugängliche Zähler mit Begründung erfassen.": {
+    "en": "For example electricity, water, heating or gas. Record inaccessible meters with a reason.",
+    "fr": "Par exemple électricité, eau, chaleur ou gaz. Enregistrez les compteurs inaccessibles avec un motif."
+  },
+  "Zähler erfassen": {
+    "en": "Add meter",
+    "fr": "Ajouter un compteur"
+  },
+  "Alle Beteiligten unterzeichnet": {
+    "en": "Signed by all parties",
+    "fr": "Signé par toutes les parties"
+  },
+  "Teilweise unterzeichnet": {
+    "en": "Partially signed",
+    "fr": "Partiellement signé"
+  },
+  "Unterschrift verweigert": {
+    "en": "Signature refused",
+    "fr": "Signature refusée"
+  },
+  "Beteiligte abwesend": {
+    "en": "Parties absent",
+    "fr": "Parties absentes"
+  },
+  "Fotos & Dokumente": {
+    "en": "Photos & documents",
+    "fr": "Photos et documents"
+  },
+  "Foto / Befund": {
+    "en": "Photo / finding",
+    "fr": "Photo / constat"
+  },
+  "Unterzeichnetes Protokoll": {
+    "en": "Signed report",
+    "fr": "Procès-verbal signé"
+  },
+  "Weitere Unterlage": {
+    "en": "Other document",
+    "fr": "Autre document"
+  },
+  "Befundfotos und das tatsächlich unterzeichnete Protokoll hier ablegen.": {
+    "en": "File photos of findings and the actually signed report here.",
+    "fr": "Déposez ici les photos des constats et le procès-verbal effectivement signé."
+  },
+  "Dateien hinzufügen": {
+    "en": "Add files",
+    "fr": "Ajouter des fichiers"
+  },
+  "Prüfung & Abschluss": {
+    "en": "Review & completion",
+    "fr": "Vérification et clôture"
+  },
+  "Vollständigkeit geprüft": {
+    "en": "Completeness checked",
+    "fr": "Exhaustivité vérifiée"
+  },
+  "Noch prüfen": {
+    "en": "Still to be checked",
+    "fr": "À vérifier"
+  },
+  "Schlüssel · Besonderheiten": {
+    "en": "Keys · special notes",
+    "fr": "Clés · particularités"
+  },
+  "Zähler · Besonderheiten": {
+    "en": "Meters · special notes",
+    "fr": "Compteurs · particularités"
+  },
+  "Unterschriften": {
+    "en": "Signatures",
+    "fr": "Signatures"
+  },
+  "Protokollkopie versandt": {
+    "en": "Report copy sent",
+    "fr": "Copie du procès-verbal envoyée"
+  },
+  "Noch nicht dokumentiert": {
+    "en": "Not yet documented",
+    "fr": "Pas encore documenté"
+  },
+  "Unterschriften werden auf dem gedruckten Protokoll geleistet und als Datei abgelegt. «Versand dokumentieren» hält einen bereits erfolgten Versand fest.": {
+    "en": "Signatures are made on the printed report and filed as a document. “Document dispatch” records a dispatch that has already taken place.",
+    "fr": "Les signatures sont apposées sur le procès-verbal imprimé, puis déposées sous forme de fichier. « Documenter l’envoi » consigne un envoi déjà effectué."
+  },
+  "Für den Protokollabschluss fehlt noch:": {
+    "en": "Still required to complete the report:",
+    "fr": "Il manque encore pour clôturer le procès-verbal :"
+  },
+  "Prüfstand bearbeiten": {
+    "en": "Edit review status",
+    "fr": "Modifier l’état de vérification"
+  },
+  "Versand dokumentieren": {
+    "en": "Document dispatch",
+    "fr": "Documenter l’envoi"
+  },
+  "Drucken / als PDF speichern": {
+    "en": "Print / save as PDF",
+    "fr": "Imprimer / enregistrer en PDF"
+  },
+  "Frühere abgeschlossene Fassungen": {
+    "en": "Previous completed versions",
+    "fr": "Versions précédentes clôturées"
+  },
+  "Noch kein Vorgang zugeordnet.": {
+    "en": "No process assigned yet.",
+    "fr": "Aucun dossier attribué pour le moment."
+  },
+  "MORADA · ABNAHMEN & ÜBERGABEN": {
+    "en": "MORADA · INSPECTIONS & HANDOVERS",
+    "fr": "MORADA · ÉTATS DES LIEUX ET REMISES"
+  },
+  "Jede Abnahme und Übergabe gehört zu einer bestehenden Einheit.": {
+    "en": "Every inspection and handover belongs to an existing unit.",
+    "fr": "Chaque état des lieux et remise appartient à une unité existante."
+  },
+  "1 · Vorgang & Einheit": {
+    "en": "1 · Process & unit",
+    "fr": "1 · Dossier et unité"
+  },
+  "Beim Auszug den bisherigen, beim Einzug den neuen Mietvertrag wählen. Eine Vorabnahme ist eine vorgängige Zustandsaufnahme.": {
+    "en": "For move-out, select the previous lease; for move-in, the new lease. A pre-inspection is a preliminary condition assessment.",
+    "fr": "Pour la sortie, choisissez le bail précédent ; pour l’entrée, le nouveau bail. Un pré-état des lieux est un constat préalable de l’état."
+  },
+  "2 · Termin": {
+    "en": "2 · Appointment",
+    "fr": "2 · Rendez-vous"
+  },
+  "In der Vorbereitung darf der Termin offen bleiben. Ein erfasster Termin erscheint im Kalender. Uhrzeiten: Zürich.": {
+    "en": "The appointment may remain unspecified during preparation. A recorded appointment appears in the calendar. Times: Zurich.",
+    "fr": "Le rendez-vous peut rester non défini pendant la préparation. Un rendez-vous saisi apparaît dans le calendrier. Heures : Zurich."
+  },
+  "Terminüberschneidung bewusst zulassen": {
+    "en": "Intentionally allow a scheduling conflict",
+    "fr": "Autoriser volontairement un chevauchement"
+  },
+  "Überschneidung geprüft und mit dem Team abgestimmt": {
+    "en": "Conflict reviewed and agreed with the team",
+    "fr": "Chevauchement vérifié et convenu avec l’équipe"
+  },
+  "3 · Beteiligte": {
+    "en": "3 · Participants",
+    "fr": "3 · Participants"
+  },
+  "Abwesende Personen und fehlende Unterschriften beim Abschluss festhalten.": {
+    "en": "Record absent people and missing signatures at completion.",
+    "fr": "Consignez les personnes absentes et les signatures manquantes lors de la clôture."
+  },
+  "Art des Vorgangs": {
+    "en": "Process type",
+    "fr": "Type de dossier"
+  },
+  "Ende am selben Tag": {
+    "en": "End on the same day",
+    "fr": "Fin le même jour"
+  },
+  "Mietpartei / alle beteiligten Mieter": {
+    "en": "Tenant party / all tenants involved",
+    "fr": "Partie locataire / tous les locataires concernés"
+  },
+  "Vertretung der Verwaltung": {
+    "en": "Property management representative",
+    "fr": "Représentation de la gérance"
+  },
+  "Weitere Anwesende / Vertretung mit Rolle": {
+    "en": "Other attendees / representatives with role",
+    "fr": "Autres personnes présentes / représentants avec leur rôle"
+  },
+  "Interne Notizen · nicht im gedruckten Protokoll": {
+    "en": "Internal notes · not included in the printed report",
+    "fr": "Notes internes · exclues du procès-verbal imprimé"
+  },
+  "Angaben bearbeiten.": {
+    "en": "Edit details.",
+    "fr": "Modifier les informations."
+  },
+  "Abnahme oder Übergabe erfassen.": {
+    "en": "Add inspection or handover.",
+    "fr": "Ajouter un état des lieux ou une remise."
+  },
+  "Keine Neuvermietung": {
+    "en": "No letting process",
+    "fr": "Aucune mise en location"
+  },
+  "Befund / Beschreibung": {
+    "en": "Findings / description",
+    "fr": "Constat / description"
+  },
+  "Bemerkung / Abweichung / Grund": {
+    "en": "Note / difference / reason",
+    "fr": "Remarque / écart / motif"
+  },
+  "Raum / Bereich *": {
+    "en": "Room / area *",
+    "fr": "Pièce / zone *"
+  },
+  "Bauteil / Position *": {
+    "en": "Component / item *",
+    "fr": "Élément / position *"
+  },
+  "Festgestellter Zustand": {
+    "en": "Observed condition",
+    "fr": "État constaté"
+  },
+  "Weiteres Vorgehen / Vereinbarung": {
+    "en": "Next steps / agreement",
+    "fr": "Suite à donner / accord"
+  },
+  "Weitere Bearbeitung": {
+    "en": "Further processing",
+    "fr": "Traitement ultérieur"
+  },
+  "Folgeaufgabe erforderlich": {
+    "en": "Follow-up task required",
+    "fr": "Tâche de suivi requise"
+  },
+  "Keine Folgeaufgabe nötig · Vorgehen dokumentiert": {
+    "en": "No follow-up task required · action documented",
+    "fr": "Aucune tâche de suivi nécessaire · démarche documentée"
+  },
+  "Fällig am · für Folgeaufgabe": {
+    "en": "Due date · for follow-up task",
+    "fr": "Échéance · pour la tâche de suivi"
+  },
+  "Zuständig · für Folgeaufgabe": {
+    "en": "Responsible person · for follow-up task",
+    "fr": "Responsable · pour la tâche de suivi"
+  },
+  "Eine Folgeaufgabe ist verknüpft. Deren Termin und Bearbeitungsstand direkt in der Aufgabe nachführen.": {
+    "en": "A follow-up task is linked. Update its date and processing status directly in the task.",
+    "fr": "Une tâche de suivi est liée. Mettez sa date et son état de traitement à jour directement dans la tâche."
+  },
+  "Mängel konkret beschreiben. Für eine Folgeaufgabe zusätzlich Vorgehen, Fälligkeit und Zuständigkeit erfassen.": {
+    "en": "Describe defects specifically. For a follow-up task, also enter the action, due date and responsible person.",
+    "fr": "Décrivez les défauts précisément. Pour une tâche de suivi, saisissez également l’action, l’échéance et le responsable."
+  },
+  "0 bedeutet ausdrücklich keinen Schlüssel. Leer bedeutet unbekannt. Abweichungen bitte erklären.": {
+    "en": "0 explicitly means no key. Empty means unknown. Please explain differences.",
+    "fr": "0 signifie explicitement aucune clé. Un champ vide signifie inconnu. Veuillez expliquer les écarts."
+  },
+  "Schlüsselart *": {
+    "en": "Key type *",
+    "fr": "Type de clé *"
+  },
+  "Gezählt": {
+    "en": "Counted",
+    "fr": "Compté"
+  },
+  "Nicht feststellbar": {
+    "en": "Cannot be established",
+    "fr": "Impossible à déterminer"
+  },
+  "Soll-Anzahl": {
+    "en": "Expected quantity",
+    "fr": "Quantité attendue"
+  },
+  "Ausgegeben / tatsächlich gezählt": {
+    "en": "Issued / actually counted",
+    "fr": "Remis / réellement compté"
+  },
+  "Zurückgenommen / tatsächlich gezählt": {
+    "en": "Returned / actually counted",
+    "fr": "Restitué / réellement compté"
+  },
+  "Zähler / Medium *": {
+    "en": "Meter / medium *",
+    "fr": "Compteur / fluide *"
+  },
+  "Ablesung": {
+    "en": "Reading",
+    "fr": "Relevé"
+  },
+  "Abgelesen": {
+    "en": "Read",
+    "fr": "Relevé"
+  },
+  "Zählerstand": {
+    "en": "Meter reading",
+    "fr": "Index du compteur"
+  },
+  "Messeinheit": {
+    "en": "Unit of measurement",
+    "fr": "Unité de mesure"
+  },
+  "Abgelesen am": {
+    "en": "Read on",
+    "fr": "Relevé le"
+  },
+  "Diese Position entfernen": {
+    "en": "Remove this item",
+    "fr": "Supprimer cette position"
+  },
+  "Position erfassen": {
+    "en": "Add item",
+    "fr": "Ajouter une position"
+  },
+  "«Alle unterzeichnet» erst wählen, wenn das unterschriebene Protokoll unter Dateien abgelegt ist.": {
+    "en": "Select “All signed” only when the signed report has been filed under Files.",
+    "fr": "Ne choisissez « Tous ont signé » qu’une fois le procès-verbal signé déposé sous Fichiers."
+  },
+  "Alle relevanten Räume sind erfasst; nicht geprüfte Bereiche sind begründet.": {
+    "en": "All relevant rooms are recorded; uninspected areas are explained.",
+    "fr": "Toutes les pièces pertinentes sont enregistrées ; les zones non contrôlées sont justifiées."
+  },
+  "Schlüssel sind gezählt; Abweichungen oder fehlende Angaben sind dokumentiert.": {
+    "en": "Keys are counted; differences or missing details are documented.",
+    "fr": "Les clés sont comptées ; les écarts ou informations manquantes sont documentés."
+  },
+  "Relevante Zähler sind abgelesen oder die Gründe sind dokumentiert.": {
+    "en": "Relevant meters have been read or the reasons documented.",
+    "fr": "Les compteurs pertinents ont été relevés ou les motifs sont documentés."
+  },
+  "Keine Schlüsselpositionen · Grund / Besonderheiten": {
+    "en": "No key entries · reason / special notes",
+    "fr": "Aucune position de clé · motif / particularités"
+  },
+  "Keine Zählerstände · Grund / Besonderheiten": {
+    "en": "No meter readings · reason / special notes",
+    "fr": "Aucun relevé de compteur · motif / particularités"
+  },
+  "Tatsächlicher Unterschriftenstand": {
+    "en": "Actual signature status",
+    "fr": "État réel des signatures"
+  },
+  "Unterschriften / Vorbehalte · Person und Grund angeben": {
+    "en": "Signatures / reservations · specify person and reason",
+    "fr": "Signatures / réserves · préciser la personne et le motif"
+  },
+  "Protokollversand dokumentieren.": {
+    "en": "Document report dispatch.",
+    "fr": "Documenter l’envoi du procès-verbal."
+  },
+  "Prüfstand bearbeiten.": {
+    "en": "Edit review status.",
+    "fr": "Modifier l’état de vérification."
+  },
+  "Bereits erfolgter Versand der Protokollkopie": {
+    "en": "Report copy already sent",
+    "fr": "Copie du procès-verbal déjà envoyée"
+  },
+  "Versandt an": {
+    "en": "Sent to",
+    "fr": "Envoyé à"
+  },
+  "PDF oder Bilder auswählen": {
+    "en": "Select PDF or images",
+    "fr": "Sélectionner un PDF ou des images"
+  },
+  "Bis zu 50 Dateien à 10 MB pro Vorgang. Fotos mit einer kurzen Beschreibung der passenden Position zuordnen.": {
+    "en": "Up to 50 files of 10 MB each per process. Assign photos to the appropriate item with a brief description.",
+    "fr": "Jusqu’à 50 fichiers de 10 Mo chacun par dossier. Attribuez les photos à la position correspondante avec une brève description."
+  },
+  "Zugehörige Position": {
+    "en": "Related item",
+    "fr": "Position correspondante"
+  },
+  "Gesamtes Protokoll": {
+    "en": "Entire report",
+    "fr": "Procès-verbal entier"
+  },
+  "Dateien hinzufügen.": {
+    "en": "Add files.",
+    "fr": "Ajouter des fichiers."
+  },
+  "Maximal 50 Dateien je Vorgang.": {
+    "en": "No more than 50 files per process.",
+    "fr": "Au maximum 50 fichiers par dossier."
+  },
+  "Bestätigen": {
+    "en": "Confirm",
+    "fr": "Confirmer"
+  },
+  "Raumvorlage übernehmen?": {
+    "en": "Apply room template?",
+    "fr": "Appliquer le modèle de pièces ?"
+  },
+  "Entrée, Wohnen, Küche, Bad / WC, Zimmer und Nebenräume werden als ungeprüfte Positionen angelegt. Räume anschliessend passend benennen, ergänzen oder entfernen.": {
+    "en": "Entrance, living room, kitchen, bathroom / WC, bedroom and ancillary rooms will be added as uninspected items. Then rename, add or remove rooms as appropriate.",
+    "fr": "L’entrée, le séjour, la cuisine, la salle de bains / WC, la chambre et les locaux annexes seront créés comme positions non contrôlées. Renommez, ajoutez ou supprimez ensuite les pièces selon les besoins."
+  },
+  "Vorlage übernehmen": {
+    "en": "Apply template",
+    "fr": "Appliquer le modèle"
+  },
+  "Protokoll abschliessen?": {
+    "en": "Complete report?",
+    "fr": "Clôturer le procès-verbal ?"
+  },
+  "Bitte zuerst ergänzen:": {
+    "en": "Please complete first:",
+    "fr": "Veuillez d’abord compléter :"
+  },
+  "Der aktuelle Protokollstand wird gesperrt. Offene Folgeaufgaben bleiben separat in Bearbeitung.": {
+    "en": "The current report version will be locked. Outstanding follow-up tasks remain in progress separately.",
+    "fr": "La version actuelle du procès-verbal sera verrouillée. Les tâches de suivi ouvertes restent en traitement séparément."
+  },
+  "Prüfstand öffnen": {
+    "en": "Open review status",
+    "fr": "Ouvrir l’état de vérification"
+  },
+  "Neue Fassung beginnen?": {
+    "en": "Start new version?",
+    "fr": "Commencer une nouvelle version ?"
+  },
+  "Die bisherige abgeschlossene Druckfassung bleibt erhalten. Prüfbestätigungen und Unterschriftenstand werden für die neue Fassung zurückgesetzt.": {
+    "en": "The previous completed print version is retained. Review confirmations and signature status are reset for the new version.",
+    "fr": "La version imprimable précédemment clôturée est conservée. Les confirmations de vérification et l’état des signatures sont réinitialisés pour la nouvelle version."
+  },
+  "Grund für die Korrektur *": {
+    "en": "Reason for correction *",
+    "fr": "Motif de la correction *"
+  },
+  "Neue Fassung beginnen": {
+    "en": "Start new version",
+    "fr": "Commencer une nouvelle version"
+  },
+  "Vorgang absagen?": {
+    "en": "Cancel process?",
+    "fr": "Annuler le dossier ?"
+  },
+  "Der Kalendertermin wird ebenfalls abgesagt. Bereits erstellte Folgeaufgaben bitte separat prüfen.": {
+    "en": "The calendar appointment will also be cancelled. Please review any follow-up tasks already created separately.",
+    "fr": "Le rendez-vous du calendrier sera également annulé. Veuillez vérifier séparément les tâches de suivi déjà créées."
+  },
+  "Das Protokoll bleibt mit Dateien und Verlauf im Archiv erhalten. Erforderliche Folgeaufgaben müssen vorher erstellt und erledigt sein.": {
+    "en": "The report, with its files and history, remains in the archive. Required follow-up tasks must be created and completed first.",
+    "fr": "Le procès-verbal reste dans les archives avec ses fichiers et son historique. Les tâches de suivi requises doivent d’abord être créées et terminées."
+  },
+  "Vorgang aus Archiv holen?": {
+    "en": "Restore process from archive?",
+    "fr": "Sortir le dossier des archives ?"
+  },
+  "Der Vorgang erscheint wieder bei den abgeschlossenen oder abgesagten Protokollen.": {
+    "en": "The process will reappear among completed or cancelled reports.",
+    "fr": "Le dossier réapparaîtra parmi les procès-verbaux clôturés ou annulés."
+  },
+  "Folgeaufgabe erstellen?": {
+    "en": "Create follow-up task?",
+    "fr": "Créer une tâche de suivi ?"
+  },
+  "Auftrag": {
+    "en": "Assignment",
+    "fr": "Mission"
+  },
+  "Bitte zuerst ergänzen": {
+    "en": "Please complete first",
+    "fr": "Veuillez d’abord compléter"
+  },
+  "Aufgabe erstellen": {
+    "en": "Create task",
+    "fr": "Créer une tâche"
+  },
+  "Datei aus diesem Protokoll entfernen?": {
+    "en": "Remove file from this report?",
+    "fr": "Supprimer le fichier de ce procès-verbal ?"
+  },
+  "Diese Datei wird aus dem Protokoll und aus allen unten aufgeführten Dossieransichten entfernt. Die Dossiers bleiben erhalten. Wiederherstellung nur aus einer früheren Sicherung. Prüft, ob die Datei für den Zustand oder Unterschriftennachweis noch benötigt wird.": {
+    "en": "This file will be removed from the report and all dossier views listed below. The dossiers are retained. Restoration is only possible from an earlier backup. Check whether the file is still needed as evidence of the condition or signatures.",
+    "fr": "Ce fichier sera supprimé du procès-verbal et de toutes les vues de dossiers indiquées ci-dessous. Les dossiers sont conservés. La restauration n’est possible qu’à partir d’une sauvegarde antérieure. Vérifiez si le fichier est encore nécessaire pour attester l’état ou les signatures."
+  },
+  "Datei entfernen": {
+    "en": "Remove file",
+    "fr": "Supprimer le fichier"
+  },
+  "Dieser Vorgang ist nicht archiviert.": {
+    "en": "This process is not archived.",
+    "fr": "Ce dossier n’est pas archivé."
+  },
+  "Aus Archiv zurückgeholt": {
+    "en": "Restored from archive",
+    "fr": "Sorti des archives"
+  },
+  "Bitte zuerst aus dem Archiv holen.": {
+    "en": "Please restore from the archive first.",
+    "fr": "Veuillez d’abord sortir des archives."
+  },
+  "Nur abgeschlossene oder abgesagte Vorgänge ohne offene oder noch zu erstellende Folgeaufgaben können archiviert werden.": {
+    "en": "Only completed or cancelled processes with no open or pending follow-up tasks can be archived.",
+    "fr": "Seuls les dossiers terminés ou annulés sans tâches de suivi ouvertes ou à créer peuvent être archivés."
+  },
+  "Dieser Vorgang ist bereits offen.": {
+    "en": "This process is already open.",
+    "fr": "Ce dossier est déjà ouvert."
+  },
+  "Bitte die Wiedereröffnung begründen.": {
+    "en": "Please explain the reason for reopening.",
+    "fr": "Veuillez justifier la réouverture."
+  },
+  "Maximal 30 frühere Fassungen. Bitte einen neuen Folge-Vorgang erfassen.": {
+    "en": "No more than 30 previous versions. Please create a new follow-up process.",
+    "fr": "Au maximum 30 versions précédentes. Veuillez créer un nouveau dossier de suivi."
+  },
+  "Frühere unterzeichnete Fassung ·": {
+    "en": "Previous signed version ·",
+    "fr": "Version signée précédente ·"
+  },
+  "Neue Fassung / wieder geöffnet:": {
+    "en": "New version / reopened:",
+    "fr": "Nouvelle version / rouvert :"
+  },
+  "Abgesagt:": {
+    "en": "Cancelled:",
+    "fr": "Annulé :"
+  },
+  "Die Raumvorlage ist nur für ein leeres Protokoll vorgesehen.": {
+    "en": "The room template is intended only for an empty report.",
+    "fr": "Le modèle de pièces est réservé à un procès-verbal vide."
+  },
+  "Entrée / Korridor": {
+    "en": "Entrance / corridor",
+    "fr": "Entrée / couloir"
+  },
+  "Wohnzimmer": {
+    "en": "Living room",
+    "fr": "Séjour"
+  },
+  "Bad / WC": {
+    "en": "Bathroom / WC",
+    "fr": "Salle de bains / WC"
+  },
+  "Nebenräume / Keller": {
+    "en": "Ancillary rooms / cellar",
+    "fr": "Locaux annexes / cave"
+  },
+  "Boden, Wände, Decke, Türen, Fenster und Ausstattung": {
+    "en": "Floor, walls, ceiling, doors, windows and fittings",
+    "fr": "Sol, murs, plafond, portes, fenêtres et équipements"
+  },
+  "Raumvorlage übernommen": {
+    "en": "Room template applied",
+    "fr": "Modèle de pièces appliqué"
+  },
+  "Datei nicht gefunden.": {
+    "en": "File not found.",
+    "fr": "Fichier introuvable."
+  },
+  "Datei entfernt:": {
+    "en": "File removed:",
+    "fr": "Fichier supprimé :"
+  },
+  "Aktion nicht verfügbar.": {
+    "en": "Action unavailable.",
+    "fr": "Action indisponible."
+  },
+  "Protokoll nicht verfügbar.": {
+    "en": "Report unavailable.",
+    "fr": "Procès-verbal indisponible."
+  },
+  "Eine verknüpfte Position kann nicht entfernt werden.": {
+    "en": "A linked item cannot be removed.",
+    "fr": "Une position liée ne peut pas être supprimée."
+  },
+  "Dieser Position sind Dateien zugeordnet. Bitte die Dateien zuerst prüfen.": {
+    "en": "Files are assigned to this item. Please review the files first.",
+    "fr": "Des fichiers sont attribués à cette position. Veuillez d’abord vérifier les fichiers."
+  },
+  "Position entfernt:": {
+    "en": "Item removed:",
+    "fr": "Position supprimée :"
+  },
+  "Dokumentierter Stand": {
+    "en": "Documented status",
+    "fr": "État documenté"
+  },
+  "{0} · MORADA": {
+    "en": "{0} · MORADA",
+    "fr": "{0} · MORADA"
+  },
+  "Persönlich nah.": {
+    "en": "Close to you.",
+    "fr": "Proche de vous."
+  },
+  "Alles verbunden.": {
+    "en": "Everything connected.",
+    "fr": "Tout est relié."
+  },
+  "1 · Räume, Bauteile und Feststellungen": {
+    "en": "1 · Rooms, components and findings",
+    "fr": "1 · Pièces, éléments et constats"
+  },
+  "2 · Schlüssel · {7}": {
+    "en": "2 · Keys · {7}",
+    "fr": "2 · Clés · {7}"
+  },
+  "3 · Zählerstände": {
+    "en": "3 · Meter readings",
+    "fr": "3 · Relevés de compteurs"
+  },
+  "4 · Beilagen": {
+    "en": "4 · Attachments",
+    "fr": "4 · Annexes"
+  },
+  "Foto- und Dateibeilagen separat beifügen; sie sind in dieser Druckansicht als Verzeichnis aufgeführt.": {
+    "en": "Attach photos and files separately; they are listed as an index in this print view.",
+    "fr": "Joignez les photos et fichiers séparément ; ils figurent sous forme de répertoire dans cette vue imprimable."
+  },
+  "5 · Prüfstand und Unterschriften": {
+    "en": "5 · Review status and signatures",
+    "fr": "5 · État de vérification et signatures"
+  },
+  "Das Protokoll hält die erfassten Feststellungen und Vereinbarungen fest. Eine Kostenübernahme ist gegebenenfalls separat zu dokumentieren.": {
+    "en": "The report records the findings and agreements entered. Any assumption of costs must be documented separately where applicable.",
+    "fr": "Le procès-verbal consigne les constats et accords saisis. Une éventuelle prise en charge des coûts doit être documentée séparément."
+  },
+  "Ort / Datum · Mietpartei": {
+    "en": "Place / date · tenant party",
+    "fr": "Lieu / date · partie locataire"
+  },
+  "Ort / Datum · Verwaltung / Vertretung": {
+    "en": "Place / date · management / representative",
+    "fr": "Lieu / date · gérance / représentation"
+  },
+  "Weitere Mietpartei / Vertretung": {
+    "en": "Other tenant party / representative",
+    "fr": "Autre partie locataire / représentation"
+  },
+  "Weitere beteiligte Person": {
+    "en": "Other person involved",
+    "fr": "Autre personne concernée"
+  },
+  "MORADA · {14} · {15} · Interne Notizen sind nicht Teil dieser Druckfassung.": {
+    "en": "MORADA · {14} · {15} · Internal notes are not part of this print version.",
+    "fr": "MORADA · {14} · {15} · Les notes internes ne font pas partie de cette version imprimable."
+  },
+  "Abgeschlossenes Protokoll": {
+    "en": "Completed report",
+    "fr": "Procès-verbal clôturé"
+  },
+  "ABGESAGT": {
+    "en": "CANCELLED",
+    "fr": "ANNULÉ"
+  },
+  "ENTWURF · noch nicht abgeschlossen": {
+    "en": "DRAFT · not yet completed",
+    "fr": "BROUILLON · pas encore clôturé"
+  },
+  "Adresse / Kontakt nach Auszug": {
+    "en": "Address / contact after move-out",
+    "fr": "Adresse / contact après le départ"
+  },
+  "Zustand:": {
+    "en": "Condition:",
+    "fr": "État :"
+  },
+  "Weiteres Vorgehen / Vereinbarung:": {
+    "en": "Next steps / agreement:",
+    "fr": "Suite à donner / accord :"
+  },
+  "Keine Positionen erfasst.": {
+    "en": "No items recorded.",
+    "fr": "Aucune position enregistrée."
+  },
+  "Art / Kennung": {
+    "en": "Type / identifier",
+    "fr": "Type / identifiant"
+  },
+  "Soll / Ist": {
+    "en": "Expected / actual",
+    "fr": "Attendu / réel"
+  },
+  "Bemerkung": {
+    "en": "Note",
+    "fr": "Remarque"
+  },
+  "Keine Schlüsselpositionen erfasst.": {
+    "en": "No key items recorded.",
+    "fr": "Aucune position de clé enregistrée."
+  },
+  "Zusatzbemerkung:": {
+    "en": "Additional note:",
+    "fr": "Remarque complémentaire :"
+  },
+  "Zähler / Nummer": {
+    "en": "Meter / number",
+    "fr": "Compteur / numéro"
+  },
+  "Stand / Datum": {
+    "en": "Reading / date",
+    "fr": "Index / date"
+  },
+  "Keine Zählerstände erfasst.": {
+    "en": "No meter readings recorded.",
+    "fr": "Aucun relevé de compteur enregistré."
+  },
+  "Zuordnung / Beschreibung": {
+    "en": "Assignment / description",
+    "fr": "Affectation / description"
+  },
+  "Keine Dateien hinterlegt.": {
+    "en": "No files stored.",
+    "fr": "Aucun fichier déposé."
+  },
+  "Raumprotokoll vollständig geprüft": {
+    "en": "Room inspection record fully reviewed",
+    "fr": "Relevé des pièces entièrement vérifié"
+  },
+  "Schlüsselkontrolle geprüft": {
+    "en": "Key check reviewed",
+    "fr": "Contrôle des clés vérifié"
+  },
+  "Zählerkontrolle geprüft": {
+    "en": "Meter check reviewed",
+    "fr": "Contrôle des compteurs vérifié"
+  },
+  "Dokumentierter Unterschriftenstand": {
+    "en": "Documented signature status",
+    "fr": "État des signatures documenté"
+  },
+  "Vorbehalte / fehlende Unterschriften": {
+    "en": "Reservations / missing signatures",
+    "fr": "Réserves / signatures manquantes"
+  },
+  "Abgeschlossen:": {
+    "en": "Completed:",
+    "fr": "Clôturé :"
+  },
+  "MORADA Protokoll Druckansicht": {
+    "en": "MORADA report print view",
+    "fr": "Vue imprimable du procès-verbal MORADA"
+  },
+  "Die Druckansicht konnte nicht geöffnet werden. Bitte Browser-Druckberechtigung prüfen.": {
+    "en": "The print view could not be opened. Please check browser printing permissions.",
+    "fr": "La vue imprimable n’a pas pu être ouverte. Veuillez vérifier l’autorisation d’impression du navigateur."
+  },
+  "Nummer": {
+    "en": "Number",
+    "fr": "Numéro"
+  },
+  "Offene Schritte": {
+    "en": "Outstanding steps",
+    "fr": "Étapes ouvertes"
+  },
+  "Kopie versandt am": {
+    "en": "Copy sent on",
+    "fr": "Copie envoyée le"
+  },
+  "Protokoll ist nicht abgeschlossen.": {
+    "en": "The report is not completed.",
+    "fr": "Le procès-verbal n’est pas clôturé."
+  },
+  "Versand der Protokollkopie dokumentiert": {
+    "en": "Report copy dispatch documented",
+    "fr": "Envoi de la copie du procès-verbal documenté"
+  },
+  "Prüfstand und Unterschriften dokumentiert": {
+    "en": "Review status and signatures documented",
+    "fr": "État de vérification et signatures documentés"
+  },
+  "Bitte zuerst eine oder mehrere Dateien auswählen und das Einlesen abwarten.": {
+    "en": "Please select one or more files first and wait for them to load.",
+    "fr": "Veuillez d’abord sélectionner un ou plusieurs fichiers et attendre leur lecture."
+  },
+  "Datei(en) hinzugefügt": {
+    "en": "File(s) added",
+    "fr": "Fichier(s) ajouté(s)"
+  },
+  "Änderung gespeichert. Unterschriftenstand und Versand bitte erneut prüfen.": {
+    "en": "Change saved. Please check the signature and dispatch status again.",
+    "fr": "Modification enregistrée. Veuillez vérifier à nouveau l’état des signatures et l’envoi."
+  },
+  "Abnahme / Übergabe gespeichert.": {
+    "en": "Inspection / handover saved.",
+    "fr": "État des lieux / remise enregistré."
+  },
+  "Interne Notiz": {
+    "en": "Internal note",
+    "fr": "Note interne"
+  },
+  "Eingang / erhalten": {
+    "en": "Incoming / received",
+    "fr": "Entrant / reçu"
+  },
+  "Ausgang / von MORADA": {
+    "en": "Outgoing / from MORADA",
+    "fr": "Sortant / de MORADA"
+  },
+  "Intern": {
+    "en": "Internal",
+    "fr": "Interne"
+  },
+  "Ohne Kontakt": {
+    "en": "No contact",
+    "fr": "Sans contact"
+  },
+  "Entwurf verworfen · nicht versandt": {
+    "en": "Draft discarded · not sent",
+    "fr": "Brouillon abandonné · non envoyé"
+  },
+  "Versand dokumentiert ·": {
+    "en": "Dispatch documented ·",
+    "fr": "Envoi documenté ·"
+  },
+  "Noch nicht versandt": {
+    "en": "Not yet sent",
+    "fr": "Pas encore envoyé"
+  },
+  "Eingang dokumentiert": {
+    "en": "Receipt documented",
+    "fr": "Réception documentée"
+  },
+  "Intern festgehalten": {
+    "en": "Recorded internally",
+    "fr": "Consigné en interne"
+  },
+  "Gespräch dokumentiert": {
+    "en": "Conversation documented",
+    "fr": "Échange documenté"
+  },
+  "Ungültige Kommunikationsdaten.": {
+    "en": "Invalid communication data.",
+    "fr": "Données de communication non valides."
+  },
+  "Korrespondenznummern und Kennungen müssen eindeutig sein.": {
+    "en": "Correspondence numbers and identifiers must be unique.",
+    "fr": "Les numéros et identifiants de correspondance doivent être uniques."
+  },
+  "Bitte die Angaben zur Korrespondenz prüfen:": {
+    "en": "Please check the correspondence details:",
+    "fr": "Veuillez vérifier les informations de correspondance :"
+  },
+  "Bitte Art, Richtung, Zuständigkeit und Bearbeitungsstand prüfen.": {
+    "en": "Please check the type, direction, responsibility and processing status.",
+    "fr": "Veuillez vérifier le type, le sens, le responsable et l’état de traitement."
+  },
+  "Ungültige Dossiernotiz.": {
+    "en": "Invalid dossier note.",
+    "fr": "Note de dossier non valide."
+  },
+  "Eine interne Notiz muss als intern gekennzeichnet sein.": {
+    "en": "An internal note must be marked as internal.",
+    "fr": "Une note interne doit être marquée comme interne."
+  },
+  "Bitte ein gültiges Datum und eine gültige Uhrzeit eingeben. Vergangene Kommunikation darf nicht in der Zukunft liegen.": {
+    "en": "Please enter a valid date and time. Past communication cannot be in the future.",
+    "fr": "Veuillez saisir une date et une heure valides. Une communication passée ne peut pas être datée dans le futur."
+  },
+  "Die Wiedervorlage darf nicht vor dem Korrespondenzdatum liegen.": {
+    "en": "The follow-up date must not precede the correspondence date.",
+    "fr": "La date de suivi ne doit pas précéder la date de correspondance."
+  },
+  "Bitte genau eine gültige E-Mail-Adresse ohne Zeilenumbrüche eintragen.": {
+    "en": "Please enter exactly one valid email address without line breaks.",
+    "fr": "Veuillez saisir exactement une adresse e-mail valide sans saut de ligne."
+  },
+  "Kontakt, Liegenschaft oder Einheit sind nicht korrekt zugeordnet.": {
+    "en": "The contact, property or unit is not correctly assigned.",
+    "fr": "Le contact, l’immeuble ou l’unité n’est pas correctement attribué."
+  },
+  "Das Anliegen muss zur gleichen Liegenschaft und Einheit gehören.": {
+    "en": "The request must belong to the same property and unit.",
+    "fr": "La demande doit appartenir au même immeuble et à la même unité."
+  },
+  "Bitte den Gesprächspartner, Absender oder Empfänger angeben.": {
+    "en": "Please specify the person spoken to, sender or recipient.",
+    "fr": "Veuillez préciser l’interlocuteur, l’expéditeur ou le destinataire."
+  },
+  "Der gespeicherte Versandstand des bisherigen Eintrags ist ungültig.": {
+    "en": "The existing record’s saved dispatch status is invalid.",
+    "fr": "L’état d’envoi enregistré de l’entrée précédente est non valide."
+  },
+  "Das Versanddatum darf nicht vor dem Erfassungsdatum liegen.": {
+    "en": "The dispatch date must not precede the record creation date.",
+    "fr": "La date d’envoi ne doit pas précéder la date de création."
+  },
+  "Entwürfe und Versanddaten sind für ausgehende E-Mails und Briefe vorgesehen.": {
+    "en": "Drafts and dispatch details are intended for outgoing emails and letters.",
+    "fr": "Les brouillons et données d’envoi sont prévus pour les e-mails et courriers sortants."
+  },
+  "Bei «Wartet auf Rückmeldung» bitte Wiedervorlage und nächsten Schritt angeben.": {
+    "en": "For “Awaiting response”, please specify a follow-up date and next step.",
+    "fr": "Pour « En attente de réponse », veuillez préciser une date de suivi et une prochaine étape."
+  },
+  "Erledigte Korrespondenz darf keine offene Wiedervorlage haben.": {
+    "en": "Completed correspondence must not have an outstanding follow-up.",
+    "fr": "Une correspondance terminée ne doit pas avoir de suivi en attente."
+  },
+  "Der verworfene Entwurf ist ungültig.": {
+    "en": "The discarded draft is invalid.",
+    "fr": "Le brouillon abandonné est non valide."
+  },
+  "Bitte den Abschluss und Archivierungsstand prüfen.": {
+    "en": "Please check the completion and archive status.",
+    "fr": "Veuillez vérifier l’état de clôture et d’archivage."
+  },
+  "Zu viele Verlaufseinträge in einer Korrespondenz.": {
+    "en": "Too many history entries in a correspondence record.",
+    "fr": "Trop d’entrées d’historique dans une correspondance."
+  },
+  "Ein Gesprächs- oder Nachrichtenverlauf ist ungültig.": {
+    "en": "A conversation or message history is invalid.",
+    "fr": "Un historique d’échange ou de messages est non valide."
+  },
+  "Der Änderungsverlauf einer Korrespondenz ist ungültig.": {
+    "en": "A correspondence change history is invalid.",
+    "fr": "L’historique des modifications d’une correspondance est non valide."
+  },
+  "Eine dokumentierte Änderung ist ungültig.": {
+    "en": "A documented change is invalid.",
+    "fr": "Une modification documentée est non valide."
+  },
+  "Höchstens 20 Dateien pro Korrespondenz.": {
+    "en": "No more than 20 files per correspondence record.",
+    "fr": "Au maximum 20 fichiers par correspondance."
+  },
+  "Die Korrespondenz zu einer Aufgabe fehlt.": {
+    "en": "The correspondence linked to a task is missing.",
+    "fr": "La correspondance liée à une tâche est manquante."
+  },
+  "Die Liegenschaft und Einheit müssen zur verknüpften Dossiernotiz passen.": {
+    "en": "The property and unit must match the linked dossier note.",
+    "fr": "L’immeuble et l’unité doivent correspondre à la note de dossier liée."
+  },
+  "Betreff": {
+    "en": "Subject",
+    "fr": "Objet"
+  },
+  "Kontaktverknüpfung": {
+    "en": "Contact link",
+    "fr": "Lien du contact"
+  },
+  "Kontaktname": {
+    "en": "Contact name",
+    "fr": "Nom du contact"
+  },
+  "Richtung": {
+    "en": "Direction",
+    "fr": "Sens"
+  },
+  "Versanddatum": {
+    "en": "Dispatch date",
+    "fr": "Date d’envoi"
+  },
+  "Der Portalstand wurde geändert. Bitte den Eintrag erneut öffnen. Eure Eingaben bleiben erhalten.": {
+    "en": "The portal data was changed. Please reopen the record. Your entries are retained.",
+    "fr": "Les données du portail ont été modifiées. Veuillez rouvrir l’entrée. Vos saisies sont conservées."
+  },
+  "Korrespondenz konnte nicht gespeichert werden.": {
+    "en": "The correspondence could not be saved.",
+    "fr": "La correspondance n’a pas pu être enregistrée."
+  },
+  "Noch keine Dateien ausgewählt.": {
+    "en": "No files selected yet.",
+    "fr": "Aucun fichier sélectionné pour le moment."
+  },
+  "Höchstens 20 Dateien pro Eintrag.": {
+    "en": "No more than 20 files per record.",
+    "fr": "Au maximum 20 fichiers par entrée."
+  },
+  "Datei ausgewählt.": {
+    "en": "File selected.",
+    "fr": "Fichier sélectionné."
+  },
+  "Dateien ausgewählt.": {
+    "en": "Files selected.",
+    "fr": "Fichiers sélectionnés."
+  },
+  "Mit dem Eintrag speichern.": {
+    "en": "Save with the record.",
+    "fr": "Enregistrer avec l’entrée."
+  },
+  "Notiz / Absprache": {
+    "en": "Note / agreement",
+    "fr": "Note / accord"
+  },
+  "Telefonnotiz": {
+    "en": "Phone note",
+    "fr": "Note téléphonique"
+  },
+  "Gesprächsnotiz": {
+    "en": "Conversation note",
+    "fr": "Note d’entretien"
+  },
+  "Wichtige E-Mail": {
+    "en": "Important email",
+    "fr": "E-mail important"
+  },
+  "Wichtiges Schreiben": {
+    "en": "Important letter",
+    "fr": "Courrier important"
+  },
+  "Zum Dossier": {
+    "en": "Go to dossier",
+    "fr": "Accéder au dossier"
+  },
+  "Bisheriger Entwurf · nicht versandt": {
+    "en": "Previous draft · not sent",
+    "fr": "Brouillon précédent · non envoyé"
+  },
+  "Keine passenden Einträge gefunden.": {
+    "en": "No matching entries found.",
+    "fr": "Aucune entrée correspondante trouvée."
+  },
+  "Keine archivierten Einträge.": {
+    "en": "No archived entries.",
+    "fr": "Aucune entrée archivée."
+  },
+  "Noch keine Notizen oder Absprachen erfasst.": {
+    "en": "No notes or agreements recorded yet.",
+    "fr": "Aucune note ni accord enregistré pour le moment."
+  },
+  "{0} Einträge · Seite {1} / {2}": {
+    "en": "{0} entries · Page {1} / {2}",
+    "fr": "{0} entrées · Page {1} / {2}"
+  },
+  "Einträge durchsuchen": {
+    "en": "Search entries",
+    "fr": "Rechercher des entrées"
+  },
+  "Titel, Text oder Beleg …": {
+    "en": "Title, text or supporting document …",
+    "fr": "Titre, texte ou justificatif…"
+  },
+  "Bisherige Einträge zuordnen.": {
+    "en": "Assign existing entries.",
+    "fr": "Attribuer les entrées existantes."
+  },
+  "Notizen & Absprachen.": {
+    "en": "Notes & agreements.",
+    "fr": "Notes et accords."
+  },
+  "Diese gespeicherten Einträge haben noch kein Dossier. Öffnet einen Eintrag und ergänzt die Zuordnung.": {
+    "en": "These saved entries do not yet have a dossier. Open an entry and add the assignment.",
+    "fr": "Ces entrées enregistrées n’ont pas encore de dossier. Ouvrez une entrée et complétez l’affectation."
+  },
+  "Wichtige Informationen und Belege aus euren Dossiers.": {
+    "en": "Important information and supporting documents from your dossiers.",
+    "fr": "Informations et justificatifs importants de vos dossiers."
+  },
+  "Notiz erfassen": {
+    "en": "Add note",
+    "fr": "Ajouter une note"
+  },
+  "Öffnet die Notiz über das zugehörige Dossier oder die Portalsuche.": {
+    "en": "Open the note through the related dossier or portal search.",
+    "fr": "Ouvrez la note via le dossier correspondant ou la recherche du portail."
+  },
+  "Bisherige Angaben": {
+    "en": "Previous details",
+    "fr": "Informations précédentes"
+  },
+  "Bisherige Wiedervorlage": {
+    "en": "Previous follow-up",
+    "fr": "Suivi précédent"
+  },
+  "Die frühere Angabe bleibt dokumentiert. Weitere Bearbeitung und Fristen führt ihr in der verknüpften Aufgabe.": {
+    "en": "The previous information remains documented. Manage further processing and deadlines in the linked task.",
+    "fr": "L’information précédente reste documentée. Gérez la suite du traitement et les échéances dans la tâche liée."
+  },
+  "Rückmeldung prüfen": {
+    "en": "Review response",
+    "fr": "Vérifier la réponse"
+  },
+  "Schreiben & Belege": {
+    "en": "Letters & supporting documents",
+    "fr": "Courriers et justificatifs"
+  },
+  "Änderungsverlauf · {6} Einträge": {
+    "en": "Change history · {6} entries",
+    "fr": "Historique des modifications · {6} entrées"
+  },
+  "Notiz & Absprache": {
+    "en": "Note & agreement",
+    "fr": "Note et accord"
+  },
+  "Weitere interne Angaben": {
+    "en": "Other internal details",
+    "fr": "Autres informations internes"
+  },
+  "Ergänzungen & bisheriger Verlauf": {
+    "en": "Additions & previous history",
+    "fr": "Compléments et historique précédent"
+  },
+  "Änderungen ansehen": {
+    "en": "View changes",
+    "fr": "Voir les modifications"
+  },
+  "Vorher: {1}": {
+    "en": "Before: {1}",
+    "fr": "Avant : {1}"
+  },
+  "Nachher: {2}": {
+    "en": "After: {2}",
+    "fr": "Après : {2}"
+  },
+  "Die letzten 30 Änderungen. Der vollständige Verlauf bleibt in der Datensicherung erhalten.": {
+    "en": "The last 30 changes. The full history remains in the backup.",
+    "fr": "Les 30 dernières modifications. L’historique complet reste dans la sauvegarde."
+  },
+  "Im Dossier": {
+    "en": "In dossier",
+    "fr": "Dans le dossier"
+  },
+  "Noch keinem Dossier zugeordnet. Über «Bearbeiten» zuordnen.": {
+    "en": "Not assigned to a dossier yet. Assign via “Edit”.",
+    "fr": "Pas encore attribué à un dossier. Attribuez via « Modifier »."
+  },
+  "Rückrufe, Nachfragen und Fristen als Aufgabe festhalten.": {
+    "en": "Record callbacks, enquiries and deadlines as tasks.",
+    "fr": "Consignez les rappels, demandes et échéances sous forme de tâches."
+  },
+  "Offene Aufgabe öffnen": {
+    "en": "Open outstanding task",
+    "fr": "Ouvrir la tâche en cours"
+  },
+  "Eintrag archivieren": {
+    "en": "Archive entry",
+    "fr": "Archiver l’entrée"
+  },
+  "Kein Anliegen verknüpft": {
+    "en": "No request linked",
+    "fr": "Aucune demande liée"
+  },
+  "Liegenschaft und Einheit bleiben wegen der verknüpften Aufgaben erhalten.": {
+    "en": "The property and unit are retained because of linked tasks.",
+    "fr": "L’immeuble et l’unité sont conservés en raison des tâches liées."
+  },
+  "Wichtige Informationen für dieses Dossier. E-Mails bearbeitet ihr in Outlook.": {
+    "en": "Important information for this dossier. Manage emails in Outlook.",
+    "fr": "Informations importantes pour ce dossier. Gérez les e-mails dans Outlook."
+  },
+  "Zuordnung{6}": {
+    "en": "Assignment{6}",
+    "fr": "Affectation{6}"
+  },
+  "Schreiben & Belege{9}": {
+    "en": "Letters & supporting documents{9}",
+    "fr": "Courriers et justificatifs{9}"
+  },
+  "PDF oder Bild hinzufügen": {
+    "en": "Add PDF or image",
+    "fr": "Ajouter un PDF ou une image"
+  },
+  "Bis zu 20 Dateien à 10 MB.": {
+    "en": "Up to 20 files of 10 MB each.",
+    "fr": "Jusqu’à 20 fichiers de 10 Mo chacun."
+  },
+  "Notiz / Absprache *": {
+    "en": "Note / agreement *",
+    "fr": "Note / accord *"
+  },
+  "auswählen": {
+    "en": "Select",
+    "fr": "Sélectionner"
+  },
+  "Notiz bearbeiten.": {
+    "en": "Edit note.",
+    "fr": "Modifier la note."
+  },
+  "Notiz erfassen.": {
+    "en": "Add note.",
+    "fr": "Ajouter une note."
+  },
+  "MORADA · DOSSIER": {
+    "en": "MORADA · DOSSIER",
+    "fr": "MORADA · DOSSIER"
+  },
+  "Eintrag ist nicht bearbeitbar.": {
+    "en": "The entry cannot be edited.",
+    "fr": "L’entrée ne peut pas être modifiée."
+  },
+  "Bitte das Einlesen der Dateien abwarten.": {
+    "en": "Please wait for the files to finish loading.",
+    "fr": "Veuillez attendre la fin de la lecture des fichiers."
+  },
+  "NOTIZ": {
+    "en": "NOTE",
+    "fr": "NOTE"
+  },
+  "Bitte höchstens einen Kontakt auswählen.": {
+    "en": "Please select no more than one contact.",
+    "fr": "Veuillez sélectionner au maximum un contact."
+  },
+  "Bitte eine Liegenschaft, einen Kontakt oder ein Anliegen zuordnen.": {
+    "en": "Please assign a property, contact or request.",
+    "fr": "Veuillez attribuer un immeuble, un contact ou une demande."
+  },
+  "Die Art des bisherigen Eintrags bleibt erhalten.": {
+    "en": "The existing entry’s type is retained.",
+    "fr": "Le type de l’entrée précédente est conservé."
+  },
+  "Bitte ein aktives Dossier auswählen.": {
+    "en": "Please select an active dossier.",
+    "fr": "Veuillez sélectionner un dossier actif."
+  },
+  "Dossiernotiz bearbeitet": {
+    "en": "Dossier note edited",
+    "fr": "Note de dossier modifiée"
+  },
+  "Dossiernotiz erfasst": {
+    "en": "Dossier note recorded",
+    "fr": "Note de dossier enregistrée"
+  },
+  "Zur Dossiernotiz": {
+    "en": "Go to dossier note",
+    "fr": "Accéder à la note de dossier"
+  },
+  "Den Eintrag archivieren? Inhalt und Belege bleiben im Dossierarchiv erhalten. Verknüpfte Aufgaben bleiben bestehen.": {
+    "en": "Archive the entry? Its content and supporting documents remain in the dossier archive. Linked tasks are retained.",
+    "fr": "Archiver l’entrée ? Son contenu et ses justificatifs restent dans les archives du dossier. Les tâches liées sont conservées."
+  },
+  "Dossiernotiz aus Archiv zurückgeholt": {
+    "en": "Dossier note restored from archive",
+    "fr": "Note de dossier sortie des archives"
+  },
+  "Dossiernotiz archiviert": {
+    "en": "Dossier note archived",
+    "fr": "Note de dossier archivée"
+  },
+  "Eintrag wiederhergestellt.": {
+    "en": "Entry restored.",
+    "fr": "Entrée restaurée."
+  },
+  "Notizen & Absprachen{0}": {
+    "en": "Notes & agreements{0}",
+    "fr": "Notes et accords{0}"
+  },
+  "Wichtige Telefonnotizen, Absprachen und Schreiben direkt hier festhalten.": {
+    "en": "Record important phone notes, agreements and letters directly here.",
+    "fr": "Consignez ici les notes téléphoniques, accords et courriers importants."
+  },
+  "Alle Einträge": {
+    "en": "All entries",
+    "fr": "Toutes les entrées"
+  },
+  "& Archiv": {
+    "en": "& archive",
+    "fr": "et archives"
+  },
+  "Bisherige Dossiernotizen": {
+    "en": "Previous dossier notes",
+    "fr": "Notes de dossier précédentes"
+  },
+  "{0} {1} noch keinem Dossier zugeordnet. Inhalte, Belege und Verlauf sind erhalten.": {
+    "en": "{0} {1} not yet assigned to a dossier. Content, supporting documents and history are retained.",
+    "fr": "{0} {1} pas encore attribué à un dossier. Le contenu, les justificatifs et l’historique sont conservés."
+  },
+  "Eintrag ist": {
+    "en": "Entry is",
+    "fr": "entrée n’est"
+  },
+  "Einträge sind": {
+    "en": "Entries are",
+    "fr": "entrées ne sont"
+  },
+  "Speichern fehlgeschlagen.": {
+    "en": "Save failed.",
+    "fr": "Échec de l’enregistrement."
+  },
+  "Notiz gespeichert.": {
+    "en": "Note saved.",
+    "fr": "Note enregistrée."
+  },
+  "Elektro / Sicherheitsnachweis": {
+    "en": "Electrical / safety certificate",
+    "fr": "Électricité / certificat de sécurité"
+  },
+  "Lift / Aufzug": {
+    "en": "Lift / elevator",
+    "fr": "Ascenseur"
+  },
+  "Heizung / Lüftung": {
+    "en": "Heating / ventilation",
+    "fr": "Chauffage / ventilation"
+  },
+  "Wasser / Hygiene": {
+    "en": "Water / hygiene",
+    "fr": "Eau / hygiène"
+  },
+  "Bauzustand / Schadstoff": {
+    "en": "Building condition / pollutants",
+    "fr": "État du bâtiment / polluants"
+  },
+  "Vertragsprüfung": {
+    "en": "Contract review",
+    "fr": "Examen du contrat"
+  },
+  "Offertenprüfung": {
+    "en": "Quotation review",
+    "fr": "Examen des offres"
+  },
+  "Sonstige Fachprüfung": {
+    "en": "Other specialist review",
+    "fr": "Autre contrôle spécialisé"
+  },
+  "Zu organisieren": {
+    "en": "To be arranged",
+    "fr": "À organiser"
+  },
+  "Bericht prüfen": {
+    "en": "Review report",
+    "fr": "Vérifier le rapport"
+  },
+  "Noch kein Ergebnis": {
+    "en": "No result yet",
+    "fr": "Pas encore de résultat"
+  },
+  "Mängel / Auflagen": {
+    "en": "Defects / conditions",
+    "fr": "Défauts / exigences"
+  },
+  "Nicht freigegeben": {
+    "en": "Not approved",
+    "fr": "Non approuvé"
+  },
+  "Ungültige Fachprüfungen.": {
+    "en": "Invalid specialist reviews.",
+    "fr": "Contrôles spécialisés non valides."
+  },
+  "Ungültige Fachprüfung.": {
+    "en": "Invalid specialist review.",
+    "fr": "Contrôle spécialisé non valide."
+  },
+  "Bitte die Angabe zum Prüfgegenstand prüfen.": {
+    "en": "Please check the item to be inspected.",
+    "fr": "Veuillez vérifier l’objet du contrôle."
+  },
+  "Ungültige Angabe in der Fachprüfung:": {
+    "en": "Invalid specialist review detail:",
+    "fr": "Information non valide dans le contrôle spécialisé :"
+  },
+  "Kennung oder Titel der Fachprüfung fehlt oder ist doppelt.": {
+    "en": "The specialist review identifier or title is missing or duplicated.",
+    "fr": "L’identifiant ou le titre du contrôle spécialisé est manquant ou en double."
+  },
+  "Bitte Liegenschaft und passende Einheit auswählen.": {
+    "en": "Please select the property and matching unit.",
+    "fr": "Veuillez sélectionner l’immeuble et l’unité correspondante."
+  },
+  "Bitte Prüfart, Zuständigkeit und Status prüfen.": {
+    "en": "Please check the review type, responsibility and status.",
+    "fr": "Veuillez vérifier le type de contrôle, le responsable et le statut."
+  },
+  "Bitte gültige Datumsangaben erfassen.": {
+    "en": "Please enter valid dates.",
+    "fr": "Veuillez saisir des dates valides."
+  },
+  "Offene Prüfungen benötigen eine Frist und einen nächsten Schritt.": {
+    "en": "Open reviews require a deadline and a next step.",
+    "fr": "Les contrôles ouverts nécessitent une échéance et une prochaine étape."
+  },
+  "Die durchgeführte Prüfung darf nicht in der Zukunft liegen.": {
+    "en": "The completed review cannot be in the future.",
+    "fr": "Le contrôle effectué ne peut pas être daté dans le futur."
+  },
+  "Zum Ergebnis bitte Prüfdatum, Fachperson und Feststellungen erfassen.": {
+    "en": "Please record the review date, specialist and findings with the result.",
+    "fr": "Veuillez saisir la date du contrôle, le spécialiste et les constats avec le résultat."
+  },
+  "Bitte den beauftragten Fachbetrieb oder die Fachperson angeben.": {
+    "en": "Please specify the appointed specialist company or specialist.",
+    "fr": "Veuillez préciser l’entreprise spécialisée ou le spécialiste mandaté."
+  },
+  "Für eine Nachbearbeitung bitte Mängel / Auflagen oder Nicht freigegeben als Ergebnis erfassen.": {
+    "en": "For follow-up work, please select Defects / conditions or Not approved as the result.",
+    "fr": "Pour un suivi, veuillez sélectionner Défauts / exigences ou Non approuvé comme résultat."
+  },
+  "Zum Abschluss fehlen Ergebnis, Prüfdatum oder ein Nachweis (Datei oder eindeutige Berichtsreferenz).": {
+    "en": "A result, review date or evidence (file or unique report reference) is missing for completion.",
+    "fr": "Il manque un résultat, une date de contrôle ou un justificatif (fichier ou référence unique du rapport) pour clôturer."
+  },
+  "Bitte dokumentieren, wie die Mängel, Auflagen oder fehlende Freigabe abschliessend behandelt wurden.": {
+    "en": "Please document how the defects, conditions or missing approval were finally addressed.",
+    "fr": "Veuillez documenter le traitement définitif des défauts, exigences ou de l’absence d’approbation."
+  },
+  "Zuerst die verknüpften Aufgaben abschliessen.": {
+    "en": "Complete the linked tasks first.",
+    "fr": "Terminez d’abord les tâches liées."
+  },
+  "Bitte den Abbruch begründen.": {
+    "en": "Please explain the cancellation.",
+    "fr": "Veuillez justifier l’abandon."
+  },
+  "Eine Folgeprüfung benötigt einen abgeschlossenen Vorgang, ein Datum nach der Prüfung und die Terminbasis.": {
+    "en": "A follow-up review requires a completed process, a date after the review and the scheduling basis.",
+    "fr": "Un contrôle de suivi nécessite un dossier terminé, une date postérieure au contrôle et la base de planification."
+  },
+  "Vor dem Archivieren offene Aufgaben abschliessen und die Folgeprüfung anlegen.": {
+    "en": "Before archiving, complete outstanding tasks and create the follow-up review.",
+    "fr": "Avant l’archivage, terminez les tâches ouvertes et créez le contrôle de suivi."
+  },
+  "Ungültiger Änderungszeitpunkt.": {
+    "en": "Invalid change timestamp.",
+    "fr": "Date de modification non valide."
+  },
+  "Höchstens 20 Belege pro Fachprüfung.": {
+    "en": "No more than 20 supporting documents per specialist review.",
+    "fr": "Au maximum 20 justificatifs par contrôle spécialisé."
+  },
+  "Ungültiger Prüfungsverlauf.": {
+    "en": "Invalid review history.",
+    "fr": "Historique du contrôle non valide."
+  },
+  "Ungültige Änderung im Prüfungsverlauf.": {
+    "en": "Invalid change in review history.",
+    "fr": "Modification non valide dans l’historique du contrôle."
+  },
+  "Die Verknüpfung zur vorherigen Prüfung ist ungültig.": {
+    "en": "The link to the previous review is invalid.",
+    "fr": "Le lien vers le contrôle précédent est non valide."
+  },
+  "Eine Folgeprüfung besteht bereits.": {
+    "en": "A follow-up review already exists.",
+    "fr": "Un contrôle de suivi existe déjà."
+  },
+  "Die Aufgabe muss der Liegenschaft und Einheit ihrer Fachprüfung zugeordnet bleiben.": {
+    "en": "The task must remain assigned to its specialist review’s property and unit.",
+    "fr": "La tâche doit rester attribuée à l’immeuble et à l’unité de son contrôle spécialisé."
+  },
+  "Prüfgegenstand / Anlage": {
+    "en": "Inspection subject / installation",
+    "fr": "Objet du contrôle / installation"
+  },
+  "Prüfart": {
+    "en": "Review type",
+    "fr": "Type de contrôle"
+  },
+  "Fachperson": {
+    "en": "Specialist",
+    "fr": "Spécialiste"
+  },
+  "Prüfumfang": {
+    "en": "Review scope",
+    "fr": "Périmètre du contrôle"
+  },
+  "Prüfdatum": {
+    "en": "Review date",
+    "fr": "Date du contrôle"
+  },
+  "Ergebnis": {
+    "en": "Result",
+    "fr": "Résultat"
+  },
+  "Feststellungen": {
+    "en": "Findings",
+    "fr": "Constats"
+  },
+  "Berichtsreferenz": {
+    "en": "Report reference",
+    "fr": "Référence du rapport"
+  },
+  "Nachbearbeitung / Entscheid": {
+    "en": "Follow-up work / decision",
+    "fr": "Suivi / décision"
+  },
+  "Folgeprüfung": {
+    "en": "Follow-up review",
+    "fr": "Contrôle de suivi"
+  },
+  "Terminbasis": {
+    "en": "Scheduling basis",
+    "fr": "Base de planification"
+  },
+  "Abbruchgrund": {
+    "en": "Cancellation reason",
+    "fr": "Motif de l’abandon"
+  },
+  "Der Portalstand hat sich geändert. Bitte die Fachprüfung erneut öffnen. Eure Eingaben bleiben erhalten.": {
+    "en": "The portal data has changed. Please reopen the specialist review. Your entries are retained.",
+    "fr": "Les données du portail ont changé. Veuillez rouvrir le contrôle spécialisé. Vos saisies sont conservées."
+  },
+  "Aus Archiv zurückgeholt: Folgeprüfung": {
+    "en": "Restored from archive: follow-up review",
+    "fr": "Sorti des archives : contrôle de suivi"
+  },
+  "abgebrochen; Folgefrist wieder offen.": {
+    "en": "cancelled; follow-up deadline reopened.",
+    "fr": "abandonné ; échéance de suivi à nouveau ouverte."
+  },
+  "Keine passenden Prüfungen": {
+    "en": "No matching reviews",
+    "fr": "Aucun contrôle correspondant"
+  },
+  "Noch keine Fachprüfungen erfasst": {
+    "en": "No specialist reviews recorded yet",
+    "fr": "Aucun contrôle spécialisé enregistré pour le moment"
+  },
+  "Ändert die Filter oder erfasst eine Prüfung.": {
+    "en": "Change the filters or add a review.",
+    "fr": "Modifiez les filtres ou ajoutez un contrôle."
+  },
+  "Zum Beispiel einen Sicherheitsnachweis, eine Liftkontrolle oder eine fachliche Vertragsprüfung.": {
+    "en": "For example a safety certificate, lift inspection or specialist contract review.",
+    "fr": "Par exemple un certificat de sécurité, un contrôle d’ascenseur ou un examen spécialisé de contrat."
+  },
+  "Prüfung / Objekt": {
+    "en": "Review / property",
+    "fr": "Contrôle / objet"
+  },
+  "Bearbeitung / Ergebnis": {
+    "en": "Processing / result",
+    "fr": "Traitement / résultat"
+  },
+  "Frist / Nächster Schritt": {
+    "en": "Deadline / next step",
+    "fr": "Échéance / prochaine étape"
+  },
+  "Verantwortung": {
+    "en": "Responsibility",
+    "fr": "Responsabilité"
+  },
+  "Folgeprüfung anlegen": {
+    "en": "Create follow-up review",
+    "fr": "Créer un contrôle de suivi"
+  },
+  "Keine offene Frist": {
+    "en": "No outstanding deadline",
+    "fr": "Aucune échéance ouverte"
+  },
+  "Fachperson noch offen": {
+    "en": "Specialist not yet specified",
+    "fr": "Spécialiste non encore précisé"
+  },
+  "{0} Prüfungen · Seite {1} / {2}": {
+    "en": "{0} reviews · Page {1} / {2}",
+    "fr": "{0} contrôles · Page {1} / {2}"
+  },
+  "Organisieren → Bericht prüfen → Nachbearbeiten → Abschliessen": {
+    "en": "Arrange → Review report → Follow up → Complete",
+    "fr": "Organiser → Vérifier le rapport → Assurer le suivi → Clôturer"
+  },
+  "Hier dokumentiert ihr die Prüfung und das fachliche Ergebnis. Reparaturen führt ihr im Unterhalt, Rückfragen und Abklärungen als verknüpfte Aufgabe.": {
+    "en": "Document the review and specialist findings here. Manage repairs in Maintenance and enquiries and clarifications as a linked task.",
+    "fr": "Documentez ici le contrôle et le résultat spécialisé. Gérez les réparations sous Entretien, et les questions et clarifications sous forme de tâche liée."
+  },
+  "Prüfungsübersicht": {
+    "en": "Review overview",
+    "fr": "Aperçu des contrôles"
+  },
+  "Kennzahlen gelten für alle Prüfungen ausserhalb des Archivs.": {
+    "en": "Figures cover all unarchived reviews.",
+    "fr": "Les indicateurs portent sur tous les contrôles non archivés."
+  },
+  "Fachprüfungen durchsuchen": {
+    "en": "Search specialist reviews",
+    "fr": "Rechercher des contrôles spécialisés"
+  },
+  "Prüfart & Zuständigkeit": {
+    "en": "Review type & responsibility",
+    "fr": "Type de contrôle et responsable"
+  },
+  "Fristen erscheinen im Kalender. Prüfpflicht, Umfang und Folgeintervalle werden aus dem konkreten Auftrag oder Prüfbericht übernommen. Die Ablage eines Ergebnisses ist keine automatisch erteilte behördliche oder Eigentümerfreigabe.": {
+    "en": "Deadlines appear in the calendar. Inspection requirements, scope and follow-up intervals are taken from the specific mandate or inspection report. Filing a result does not automatically grant approval from an authority or owner.",
+    "fr": "Les échéances apparaissent dans le calendrier. Les obligations de contrôle, le périmètre et les intervalles de suivi proviennent du mandat concret ou du rapport de contrôle. Le dépôt d’un résultat ne constitue pas une approbation automatique d’une autorité ou d’un propriétaire."
+  },
+  "Prüfung, Objekt oder Fachperson …": {
+    "en": "Review, property or specialist …",
+    "fr": "Contrôle, objet ou spécialiste…"
+  },
+  "Prüfungen organisieren, Ergebnisse belegen und offene Punkte nachverfolgen.": {
+    "en": "Arrange reviews, substantiate results and track outstanding items.",
+    "fr": "Organiser les contrôles, justifier les résultats et suivre les points ouverts."
+  },
+  "Prüfung erfassen": {
+    "en": "Add review",
+    "fr": "Ajouter un contrôle"
+  },
+  "Offene Prüfungen": {
+    "en": "Open reviews",
+    "fr": "Contrôles ouverts"
+  },
+  "Überfällige Fristen": {
+    "en": "Overdue deadlines",
+    "fr": "Échéances dépassées"
+  },
+  "Inklusive Folgeprüfungen": {
+    "en": "Including follow-up reviews",
+    "fr": "Contrôles de suivi compris"
+  },
+  "Nächste 30 Tage": {
+    "en": "Next 30 days",
+    "fr": "30 prochains jours"
+  },
+  "Heute eingeschlossen": {
+    "en": "Including today",
+    "fr": "Aujourd’hui inclus"
+  },
+  "Mängel, Auflagen oder Entscheide": {
+    "en": "Defects, conditions or decisions",
+    "fr": "Défauts, exigences ou décisions"
+  },
+  "Einheit: {0}": {
+    "en": "Unit: {0}",
+    "fr": "Unité : {0}"
+  },
+  "Offene Prüfungen & Folgefristen": {
+    "en": "Open reviews & follow-up deadlines",
+    "fr": "Contrôles ouverts et échéances de suivi"
+  },
+  "Abgeschlossen / abgebrochen": {
+    "en": "Completed / cancelled",
+    "fr": "Terminé / abandonné"
+  },
+  "Alle Prüfarten": {
+    "en": "All review types",
+    "fr": "Tous les types de contrôle"
+  },
+  "Fachprüfung nicht gefunden.": {
+    "en": "Specialist review not found.",
+    "fr": "Contrôle spécialisé introuvable."
+  },
+  "Öffnet die Prüfung über die Übersicht.": {
+    "en": "Open the review through the overview.",
+    "fr": "Ouvrez le contrôle via l’aperçu."
+  },
+  "Änderungsverlauf · {6}": {
+    "en": "Change history · {6}",
+    "fr": "Historique des modifications · {6}"
+  },
+  "Alle Prüfungen": {
+    "en": "All reviews",
+    "fr": "Tous les contrôles"
+  },
+  "Auftrag & Zuständigkeit": {
+    "en": "Mandate & responsibility",
+    "fr": "Mandat et responsable"
+  },
+  "Siehe Titel / Prüfumfang": {
+    "en": "See title / review scope",
+    "fr": "Voir le titre / le périmètre du contrôle"
+  },
+  "Verantwortlich bei MORADA": {
+    "en": "Responsible at MORADA",
+    "fr": "Responsable chez MORADA"
+  },
+  "Fachbetrieb / Fachperson": {
+    "en": "Specialist company / specialist",
+    "fr": "Entreprise spécialisée / spécialiste"
+  },
+  "Kontakt / Auftragsnummer": {
+    "en": "Contact / order number",
+    "fr": "Contact / numéro de mandat"
+  },
+  "Noch nicht beschrieben.": {
+    "en": "Not yet described.",
+    "fr": "Pas encore décrit."
+  },
+  "Prüfbericht & Ergebnis": {
+    "en": "Review report & result",
+    "fr": "Rapport de contrôle et résultat"
+  },
+  "Berichtsreferenz / Ablageort": {
+    "en": "Report reference / filing location",
+    "fr": "Référence du rapport / lieu de classement"
+  },
+  "Noch kein Ergebnis dokumentiert.": {
+    "en": "No result documented yet.",
+    "fr": "Aucun résultat documenté pour le moment."
+  },
+  "Nachbearbeitung / dokumentierter Entscheid": {
+    "en": "Follow-up work / documented decision",
+    "fr": "Suivi / décision documentée"
+  },
+  "Änderungen anzeigen": {
+    "en": "Show changes",
+    "fr": "Afficher les modifications"
+  },
+  "Abschluss & Folgeprüfung": {
+    "en": "Completion & follow-up review",
+    "fr": "Clôture et contrôle de suivi"
+  },
+  "Folgeprüfung fällig": {
+    "en": "Follow-up review due",
+    "fr": "Échéance du contrôle de suivi"
+  },
+  "Grundlage des Termins": {
+    "en": "Basis for the date",
+    "fr": "Base de la date"
+  },
+  "Kein Folgeintervall erfasst": {
+    "en": "No follow-up interval recorded",
+    "fr": "Aucun intervalle de suivi enregistré"
+  },
+  "Folgeprüfung öffnen": {
+    "en": "Open follow-up review",
+    "fr": "Ouvrir le contrôle de suivi"
+  },
+  "Im Kalender ansehen": {
+    "en": "View in calendar",
+    "fr": "Voir dans le calendrier"
+  },
+  "Verknüpfte Aufgaben": {
+    "en": "Linked tasks",
+    "fr": "Tâches liées"
+  },
+  "Noch keine Aufgabe verknüpft.": {
+    "en": "No task linked yet.",
+    "fr": "Aucune tâche liée pour le moment."
+  },
+  "Nächsten Schritt als Aufgabe anlegen": {
+    "en": "Create a task for the next step",
+    "fr": "Créer une tâche pour la prochaine étape"
+  },
+  "Zum Objekt": {
+    "en": "Go to property",
+    "fr": "Accéder à l’objet"
+  },
+  "Vorherige Prüfung": {
+    "en": "Previous review",
+    "fr": "Contrôle précédent"
+  },
+  "· gespeichert": {
+    "en": "· Saved",
+    "fr": "· Enregistré"
+  },
+  "Noch keine Belege ausgewählt.": {
+    "en": "No supporting documents selected yet.",
+    "fr": "Aucun justificatif sélectionné pour le moment."
+  },
+  "Auftrag & Fachperson": {
+    "en": "Mandate & specialist",
+    "fr": "Mandat et spécialiste"
+  },
+  "Ergebnis, Nachweise & Nachbearbeitung": {
+    "en": "Result, evidence & follow-up work",
+    "fr": "Résultat, justificatifs et suivi"
+  },
+  "Zum Abschluss werden Prüfdatum, Fachperson, Ergebnis, Feststellungen und ein Nachweis benötigt. Offene Aufgaben müssen erledigt sein.": {
+    "en": "Completion requires a review date, specialist, result, findings and evidence. Outstanding tasks must be completed.",
+    "fr": "La clôture nécessite une date de contrôle, un spécialiste, un résultat, des constats et un justificatif. Les tâches ouvertes doivent être terminées."
+  },
+  "Das Ergebnis stammt von der prüfenden Fachperson. «Abgeschlossen» beschreibt die Bearbeitung bei MORADA.": {
+    "en": "The result comes from the inspecting specialist. “Completed” describes processing at MORADA.",
+    "fr": "Le résultat provient du spécialiste chargé du contrôle. « Terminé » décrit le traitement chez MORADA."
+  },
+  "Prüfberichte & Belege hinzufügen": {
+    "en": "Add review reports & supporting documents",
+    "fr": "Ajouter des rapports de contrôle et des justificatifs"
+  },
+  "Bis zu 20 Dateien à 10 MB. Bereits gespeicherte Belege bleiben erhalten.": {
+    "en": "Up to 20 files of 10 MB each. Previously saved supporting documents are retained.",
+    "fr": "Jusqu’à 20 fichiers de 10 Mo chacun. Les justificatifs déjà enregistrés sont conservés."
+  },
+  "Folgeprüfung (optional)": {
+    "en": "Follow-up review (optional)",
+    "fr": "Contrôle de suivi (facultatif)"
+  },
+  "Nur für abgeschlossene Prüfungen. Beim Wiederöffnen einen noch nicht verwendeten Folgetermin zuerst leeren.": {
+    "en": "Only for completed reviews. When reopening, clear any unused follow-up date first.",
+    "fr": "Uniquement pour les contrôles terminés. Lors de la réouverture, effacez d’abord toute date de suivi non encore utilisée."
+  },
+  "Datum aus Prüfbericht, Vertrag oder bestätigter Vorgabe übernehmen. Es wird kein Intervall automatisch berechnet.": {
+    "en": "Use the date from the review report, contract or confirmed requirement. No interval is calculated automatically.",
+    "fr": "Reprenez la date du rapport de contrôle, du contrat ou de la consigne confirmée. Aucun intervalle n’est calculé automatiquement."
+  },
+  "Prüfgegenstand / Anlage (optional)": {
+    "en": "Inspection subject / installation (optional)",
+    "fr": "Objet du contrôle / installation (facultatif)"
+  },
+  "Frist / Wiedervorlage": {
+    "en": "Deadline / follow-up",
+    "fr": "Échéance / suivi"
+  },
+  "Fachbetrieb / Fachperson (Freitext)": {
+    "en": "Specialist company / specialist (free text)",
+    "fr": "Entreprise spécialisée / spécialiste (texte libre)"
+  },
+  "Was soll geprüft werden?": {
+    "en": "What needs to be inspected?",
+    "fr": "Que faut-il contrôler ?"
+  },
+  "Fachliches Ergebnis": {
+    "en": "Specialist result",
+    "fr": "Résultat spécialisé"
+  },
+  "Feststellungen / Auflagen": {
+    "en": "Findings / conditions",
+    "fr": "Constats / exigences"
+  },
+  "Berichtsreferenz / eindeutiger Ablageort": {
+    "en": "Report reference / unique filing location",
+    "fr": "Référence du rapport / lieu de classement précis"
+  },
+  "Nächste Prüfung fällig am": {
+    "en": "Next review due on",
+    "fr": "Prochain contrôle prévu le"
+  },
+  "Grund für den Abbruch": {
+    "en": "Reason for cancellation",
+    "fr": "Motif de l’abandon"
+  },
+  "Prüfung speichern": {
+    "en": "Save review",
+    "fr": "Enregistrer le contrôle"
+  },
+  "Fachprüfung bearbeiten.": {
+    "en": "Edit specialist review.",
+    "fr": "Modifier le contrôle spécialisé."
+  },
+  "Fachprüfung erfassen.": {
+    "en": "Add specialist review.",
+    "fr": "Ajouter un contrôle spécialisé."
+  },
+  "MORADA · FACHPRÜFUNGEN": {
+    "en": "MORADA · SPECIALIST REVIEWS",
+    "fr": "MORADA · CONTRÔLES SPÉCIALISÉS"
+  },
+  "Diese Prüfung ist nicht bearbeitbar.": {
+    "en": "This review cannot be edited.",
+    "fr": "Ce contrôle ne peut pas être modifié."
+  },
+  "Bitte zuerst die Liegenschaft und Einheit aus dem Archiv holen.": {
+    "en": "Please restore the property and unit from the archive first.",
+    "fr": "Veuillez d’abord sortir l’immeuble et l’unité des archives."
+  },
+  "Die bereits angelegte Folgeprüfung bleibt verknüpft. Deren Termin bitte im Folgedossier bearbeiten.": {
+    "en": "The follow-up review already created remains linked. Please edit its date in the follow-up dossier.",
+    "fr": "Le contrôle de suivi déjà créé reste lié. Veuillez modifier sa date dans le dossier de suivi."
+  },
+  "Fachprüfung bearbeitet": {
+    "en": "Specialist review edited",
+    "fr": "Contrôle spécialisé modifié"
+  },
+  "Fachprüfung erfasst": {
+    "en": "Specialist review recorded",
+    "fr": "Contrôle spécialisé enregistré"
+  },
+  "Höchstens 20 Dateien pro Prüfung.": {
+    "en": "No more than 20 files per review.",
+    "fr": "Au maximum 20 fichiers par contrôle."
+  },
+  "Belege bereit. Zusammen mit der Prüfung speichern.": {
+    "en": "Supporting documents ready. Save together with the review.",
+    "fr": "Justificatifs prêts. Enregistrez-les avec le contrôle."
+  },
+  "Aus Fachprüfung": {
+    "en": "From specialist review",
+    "fr": "Depuis le contrôle spécialisé"
+  },
+  "Aufgabe aus nächstem Schritt erstellt": {
+    "en": "Task created from next step",
+    "fr": "Tâche créée à partir de la prochaine étape"
+  },
+  "Noch keine Fachprüfung erfasst.": {
+    "en": "No specialist review recorded yet.",
+    "fr": "Aucun contrôle spécialisé enregistré pour le moment."
+  },
+  "Alle Prüfungen dieses Objekts": {
+    "en": "All reviews for this property",
+    "fr": "Tous les contrôles de cet objet"
+  },
+  "Folgeprüfung ·": {
+    "en": "Follow-up review ·",
+    "fr": "Contrôle de suivi ·"
+  },
+  "Fachprüfung ·": {
+    "en": "Specialist review ·",
+    "fr": "Contrôle spécialisé ·"
+  },
+  "Folgeprüfung beauftragen": {
+    "en": "Commission follow-up review",
+    "fr": "Mandater le contrôle de suivi"
+  },
+  "Fachprüfung archivieren? Berichte und Verlauf bleiben erhalten.": {
+    "en": "Archive specialist review? Reports and history are retained.",
+    "fr": "Archiver le contrôle spécialisé ? Les rapports et l’historique sont conservés."
+  },
+  "Fachprüfung archiviert": {
+    "en": "Specialist review archived",
+    "fr": "Contrôle spécialisé archivé"
+  },
+  "Fachprüfung wiederhergestellt": {
+    "en": "Specialist review restored",
+    "fr": "Contrôle spécialisé restauré"
+  },
+  "Keine Prüfungen in dieser Auswahl.": {
+    "en": "No reviews match this selection.",
+    "fr": "Aucun contrôle ne correspond à cette sélection."
+  },
+  "Fachprüfung gespeichert.": {
+    "en": "Specialist review saved.",
+    "fr": "Contrôle spécialisé enregistré."
+  },
+  "Schreinerei": {
+    "en": "Joinery",
+    "fr": "Menuiserie"
+  },
+  "Maler / Gipser": {
+    "en": "Painting / plastering",
+    "fr": "Peinture / plâtrerie"
+  },
+  "Bodenbeläge": {
+    "en": "Floor coverings",
+    "fr": "Revêtements de sol"
+  },
+  "Dach / Fassade": {
+    "en": "Roof / façade",
+    "fr": "Toiture / façade"
+  },
+  "Fenster / Storen": {
+    "en": "Windows / blinds",
+    "fr": "Fenêtres / stores"
+  },
+  "Schloss / Sicherheit": {
+    "en": "Locks / security",
+    "fr": "Serrurerie / sécurité"
+  },
+  "Garten / Umgebung": {
+    "en": "Garden / grounds",
+    "fr": "Jardin / espaces extérieurs"
+  },
+  "Umzug / Transport": {
+    "en": "Removals / transport",
+    "fr": "Déménagement / transport"
+  },
+  "Bau / Allround": {
+    "en": "Construction / general trades",
+    "fr": "Construction / travaux divers"
+  },
+  "Prüfung / Beratung": {
+    "en": "Inspection / consultancy",
+    "fr": "Contrôle / conseil"
+  },
+  "Bitte eine gültige Website angeben, z. B. https://firma.ch.": {
+    "en": "Please provide a valid website, e.g. https://company.ch.",
+    "fr": "Veuillez indiquer un site web valide, par exemple https://entreprise.ch."
+  },
+  "Ungültiges Firmenverzeichnis.": {
+    "en": "Invalid company directory.",
+    "fr": "Répertoire des entreprises non valide."
+  },
+  "Ungültige Firma.": {
+    "en": "Invalid company.",
+    "fr": "Entreprise non valide."
+  },
+  "Ungültige Firmenangabe:": {
+    "en": "Invalid company detail:",
+    "fr": "Information d’entreprise non valide :"
+  },
+  "Firmenname oder eindeutige Kennung fehlt.": {
+    "en": "The company name or unique identifier is missing.",
+    "fr": "Le nom de l’entreprise ou l’identifiant unique est manquant."
+  },
+  "Bitte Fachgebiet und Status prüfen.": {
+    "en": "Please check the trade and status.",
+    "fr": "Veuillez vérifier le domaine d’activité et le statut."
+  },
+  "Bitte die E-Mail-Adresse der Firma prüfen.": {
+    "en": "Please check the company’s email address.",
+    "fr": "Veuillez vérifier l’adresse e-mail de l’entreprise."
+  },
+  "Bitte eine vollständige Website-Adresse angeben.": {
+    "en": "Please provide a complete website address.",
+    "fr": "Veuillez indiquer une adresse de site web complète."
+  },
+  "UID im Format CHE-123.456.789 erfassen.": {
+    "en": "Enter the UID in the format CHE-123.456.789.",
+    "fr": "Saisissez l’IDE au format CHE-123.456.789."
+  },
+  "Bitte die bestätigte Erreichbarkeit des Notfalldienstes angeben.": {
+    "en": "Please specify the confirmed availability of the emergency service.",
+    "fr": "Veuillez préciser la disponibilité confirmée du service d’urgence."
+  },
+  "Bitte gültige Liegenschaften zuordnen.": {
+    "en": "Please assign valid properties.",
+    "fr": "Veuillez attribuer des immeubles valides."
+  },
+  "Höchstens zehn Ansprechpersonen pro Firma.": {
+    "en": "No more than ten contacts per company.",
+    "fr": "Au maximum dix personnes de contact par entreprise."
+  },
+  "Bitte die Ansprechperson prüfen.": {
+    "en": "Please check the contact person.",
+    "fr": "Veuillez vérifier la personne de contact."
+  },
+  "Jede Ansprechperson benötigt einen Namen und gültige Kontaktangaben.": {
+    "en": "Each contact requires a name and valid contact details.",
+    "fr": "Chaque personne de contact nécessite un nom et des coordonnées valides."
+  },
+  "Ungültiger Änderungszeitpunkt der Firma.": {
+    "en": "Invalid company change timestamp.",
+    "fr": "Date de modification de l’entreprise non valide."
+  },
+  "Höchstens 20 Dokumente pro Firma.": {
+    "en": "No more than 20 documents per company.",
+    "fr": "Au maximum 20 documents par entreprise."
+  },
+  "Der Firmenverlauf ist ungültig oder voll.": {
+    "en": "The company history is invalid or full.",
+    "fr": "L’historique de l’entreprise est non valide ou complet."
+  },
+  "Ungültiger Firmenverlauf.": {
+    "en": "Invalid company history.",
+    "fr": "Historique de l’entreprise non valide."
+  },
+  "Ungültige Änderung im Firmenverlauf.": {
+    "en": "Invalid change in company history.",
+    "fr": "Modification non valide dans l’historique de l’entreprise."
+  },
+  "Eine verknüpfte Firma wurde nicht gefunden.": {
+    "en": "A linked company was not found.",
+    "fr": "Une entreprise liée est introuvable."
+  },
+  "Laufender Plan": {
+    "en": "Ongoing plan",
+    "fr": "Plan en cours"
+  },
+  "Keine passenden Firmen": {
+    "en": "No matching companies",
+    "fr": "Aucune entreprise correspondante"
+  },
+  "Noch keine Firmen erfasst": {
+    "en": "No companies recorded yet",
+    "fr": "Aucune entreprise enregistrée pour le moment"
+  },
+  "Filter anpassen oder eine weitere Firma erfassen.": {
+    "en": "Adjust the filters or add another company.",
+    "fr": "Adaptez les filtres ou ajoutez une autre entreprise."
+  },
+  "Erfasst eure Handwerker, Hauswartungen und Dienstleister mit ihren Kontaktdaten.": {
+    "en": "Add your contractors, caretakers and service providers with their contact details.",
+    "fr": "Enregistrez vos artisans, conciergeries et prestataires avec leurs coordonnées."
+  },
+  "Firma / Fachgebiet": {
+    "en": "Company / trade",
+    "fr": "Entreprise / domaine d’activité"
+  },
+  "Einsatz / Zuordnung": {
+    "en": "Service area / assignment",
+    "fr": "Zone d’intervention / affectation"
+  },
+  "{8} {9} zugeordnet": {
+    "en": "{8} {9} assigned",
+    "fr": "Affectation : {8} {9}"
+  },
+  "· Bevorzugt": {
+    "en": "· Preferred",
+    "fr": "· Privilégiée"
+  },
+  "Region noch offen": {
+    "en": "Region not yet specified",
+    "fr": "Région non encore précisée"
+  },
+  "Notfallkontakt hinterlegt": {
+    "en": "Emergency contact recorded",
+    "fr": "Contact d’urgence enregistré"
+  },
+  "{0} {1} · Seite {2} / {3}": {
+    "en": "{0} {1} · Page {2} / {3}",
+    "fr": "{0} {1} · Page {2} / {3}"
+  },
+  "Firmen": {
+    "en": "Companies",
+    "fr": "Entreprises"
+  },
+  "Firmenverzeichnis": {
+    "en": "Company directory",
+    "fr": "Répertoire des entreprises"
+  },
+  "Suche auch nach Fachgebiet, Einsatzregion oder Ansprechperson.": {
+    "en": "Also search by trade, service region or contact person.",
+    "fr": "Recherchez aussi par domaine d’activité, région d’intervention ou personne de contact."
+  },
+  "Firmen durchsuchen": {
+    "en": "Search companies",
+    "fr": "Rechercher des entreprises"
+  },
+  "Firma, Kontakt oder Region …": {
+    "en": "Company, contact or region …",
+    "fr": "Entreprise, contact ou région…"
+  },
+  "Die passende Firma finden. Kontakte und Zusammenarbeit an einem Ort.": {
+    "en": "Find the right company. Contacts and collaboration in one place.",
+    "fr": "Trouver la bonne entreprise. Contacts et collaboration au même endroit."
+  },
+  "Firma erfassen": {
+    "en": "Add company",
+    "fr": "Ajouter une entreprise"
+  },
+  "Aktive Firmen": {
+    "en": "Active companies",
+    "fr": "Entreprises actives"
+  },
+  "Für neue Arbeiten verfügbar": {
+    "en": "Available for new work",
+    "fr": "Disponibles pour de nouveaux travaux"
+  },
+  "Bevorzugte Firmen": {
+    "en": "Preferred companies",
+    "fr": "Entreprises privilégiées"
+  },
+  "Aktive Zusammenarbeit": {
+    "en": "Active collaboration",
+    "fr": "Collaboration active"
+  },
+  "Notfallkontakte": {
+    "en": "Emergency contacts",
+    "fr": "Contacts d’urgence"
+  },
+  "Erreichbarkeit im Firmendossier": {
+    "en": "Availability in the company dossier",
+    "fr": "Disponibilité dans le dossier de l’entreprise"
+  },
+  "Unterhalt, Pläne & Fachprüfungen": {
+    "en": "Maintenance, plans & specialist reviews",
+    "fr": "Entretien, plans et contrôles spécialisés"
+  },
+  "Pausierte Firmen": {
+    "en": "Paused companies",
+    "fr": "Entreprises en pause"
+  },
+  "Alle Fachgebiete": {
+    "en": "All trades",
+    "fr": "Tous les domaines d’activité"
+  },
+  "Alle Firmen": {
+    "en": "All companies",
+    "fr": "Toutes les entreprises"
+  },
+  "Mit Notfallkontakt": {
+    "en": "With emergency contact",
+    "fr": "Avec contact d’urgence"
+  },
+  "Arbeiten & Fachprüfungen": {
+    "en": "Work & specialist reviews",
+    "fr": "Travaux et contrôles spécialisés"
+  },
+  "{0} verknüpfte Vorgänge · einschliesslich archivierter Einträge.": {
+    "en": "{0} linked processes · including archived entries.",
+    "fr": "{0} dossiers liés · entrées archivées comprises."
+  },
+  "Noch keine Vorgänge verknüpft. Wählt diese Firma beim Erfassen oder Bearbeiten von Unterhalt, Wartungsplänen und Fachprüfungen aus.": {
+    "en": "No processes linked yet. Select this company when adding or editing maintenance, servicing plans and specialist reviews.",
+    "fr": "Aucun dossier lié pour le moment. Sélectionnez cette entreprise lors de l’ajout ou de la modification d’entretiens, de plans de maintenance et de contrôles spécialisés."
+  },
+  "Firma nicht gefunden.": {
+    "en": "Company not found.",
+    "fr": "Entreprise introuvable."
+  },
+  "Öffnet die Firma über das Verzeichnis.": {
+    "en": "Open the company through the directory.",
+    "fr": "Ouvrez l’entreprise via le répertoire."
+  },
+  "Zum Verzeichnis": {
+    "en": "Go to directory",
+    "fr": "Accéder au répertoire"
+  },
+  "Änderungsverlauf · {8}": {
+    "en": "Change history · {8}",
+    "fr": "Historique des modifications · {8}"
+  },
+  "Bevorzugte Firma": {
+    "en": "Preferred company",
+    "fr": "Entreprise privilégiée"
+  },
+  "Firma & Kontakt": {
+    "en": "Company & contact",
+    "fr": "Entreprise et contact"
+  },
+  "Website öffnen ↗": {
+    "en": "Open website ↗",
+    "fr": "Ouvrir le site web ↗"
+  },
+  "Einsatzregion": {
+    "en": "Service region",
+    "fr": "Région d’intervention"
+  },
+  "Weitere Leistungen": {
+    "en": "Other services",
+    "fr": "Autres prestations"
+  },
+  "UID": {
+    "en": "UID",
+    "fr": "IDE"
+  },
+  "Ansprechpersonen": {
+    "en": "Contact people",
+    "fr": "Personnes de contact"
+  },
+  "Noch keine persönliche Ansprechperson hinterlegt.": {
+    "en": "No personal contact recorded yet.",
+    "fr": "Aucune personne de contact enregistrée pour le moment."
+  },
+  "Interne Notizen & Absprachen": {
+    "en": "Internal notes & agreements",
+    "fr": "Notes internes et accords"
+  },
+  "Noch keine Notizen erfasst.": {
+    "en": "No notes recorded yet.",
+    "fr": "Aucune note enregistrée pour le moment."
+  },
+  "Hier können Preislisten, Vereinbarungen und weitere Firmenunterlagen hinterlegt werden.": {
+    "en": "Price lists, agreements and other company documents can be filed here.",
+    "fr": "Les listes de prix, accords et autres documents de l’entreprise peuvent être déposés ici."
+  },
+  "Notfallkontakt": {
+    "en": "Emergency contact",
+    "fr": "Contact d’urgence"
+  },
+  "Kein separater Notfallkontakt hinterlegt.": {
+    "en": "No separate emergency contact recorded.",
+    "fr": "Aucun contact d’urgence distinct enregistré."
+  },
+  "Zugeordnete Liegenschaften": {
+    "en": "Assigned properties",
+    "fr": "Immeubles attribués"
+  },
+  "Als zuständige / bevorzugte Firma hinterlegt": {
+    "en": "Recorded as the responsible / preferred company",
+    "fr": "Enregistrée comme entreprise responsable / privilégiée"
+  },
+  "Noch keiner Liegenschaft zugeordnet. Die Zuordnung erfolgt über «Bearbeiten».": {
+    "en": "Not assigned to a property yet. Assign via “Edit”.",
+    "fr": "Pas encore attribuée à un immeuble. L’affectation se fait via « Modifier »."
+  },
+  "Nächste Arbeit": {
+    "en": "Next job",
+    "fr": "Prochain travail"
+  },
+  "Der Vorgang wird intern erfasst. Die Beauftragung erfolgt über euren üblichen Kontaktweg.": {
+    "en": "The process is recorded internally. Commissioning takes place through your usual contact channel.",
+    "fr": "Le dossier est enregistré en interne. Le mandat est confié par votre canal de contact habituel."
+  },
+  "Fachprüfung erfassen": {
+    "en": "Add specialist review",
+    "fr": "Ajouter un contrôle spécialisé"
+  },
+  "Verzeichnis verwalten": {
+    "en": "Manage directory",
+    "fr": "Gérer le répertoire"
+  },
+  "Frühere Arbeiten und Dokumente bleiben mit dieser Firma verbunden.": {
+    "en": "Previous work and documents remain linked to this company.",
+    "fr": "Les travaux et documents précédents restent liés à cette entreprise."
+  },
+  "Pausierte und archivierte Firmen stehen für neue Zuordnungen nicht zur Auswahl.": {
+    "en": "Paused and archived companies are not available for new assignments.",
+    "fr": "Les entreprises en pause ou archivées ne sont pas proposées pour de nouvelles affectations."
+  },
+  "Einträge zuordnen": {
+    "en": "Assign entries",
+    "fr": "Attribuer les entrées"
+  }
+}

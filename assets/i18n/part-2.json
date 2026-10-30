@@ -1,0 +1,5074 @@
+{
+  "Bitte die Nebenkostenart prüfen.": {
+    "en": "Please check the type of service charges.",
+    "fr": "Veuillez vérifier le type de charges."
+  },
+  "Die Summe der Nebenkosten ist zu hoch.": {
+    "en": "The total service charges are too high.",
+    "fr": "Le total des charges est trop élevé."
+  },
+  "Ungültige Nebenkostenart.": {
+    "en": "Invalid type of service charges.",
+    "fr": "Type de charges non valide."
+  },
+  "Akonto und Pauschale müssen gültige CHF-Beträge sein.": {
+    "en": "Advance and flat-rate charges must be valid CHF amounts.",
+    "fr": "Les acomptes et forfaits doivent être des montants valides en CHF."
+  },
+  "Die Nebenkostensumme stimmt nicht mit Akonto und Pauschale überein.": {
+    "en": "The service charge total does not match the advance and flat-rate charges.",
+    "fr": "Le total des charges ne correspond pas aux acomptes et forfaits."
+  },
+  "Nicht aufgeteilte Nebenkosten dürfen keine Teilbeträge enthalten.": {
+    "en": "Unallocated service charges cannot contain partial amounts.",
+    "fr": "Les charges non réparties ne peuvent pas contenir de montants partiels."
+  },
+  "Höchstens 1’000 Leerstandsabschnitte pro Einheit.": {
+    "en": "A maximum of 1’000 vacancy periods per unit.",
+    "fr": "Au maximum 1’000 périodes de vacance par unité."
+  },
+  "Leerstand: Beginn, Ende, Zielmiete und Begründung prüfen.": {
+    "en": "Vacancy: check the start, end, target rent and reason.",
+    "fr": "Vacance : vérifier le début, la fin, le loyer cible et le motif."
+  },
+  "Leerstand überschneidet sich mit einem bestätigten Mietvertrag bei": {
+    "en": "Vacancy overlaps with a confirmed lease for",
+    "fr": "La vacance chevauche un bail confirmé pour"
+  },
+  "Leerstandsabschnitte dürfen sich nicht überschneiden. Für eine neue Zielmiete «Zielmiete ändern» verwenden.": {
+    "en": "Vacancy periods must not overlap. Use “Change target rent” to set a new target rent.",
+    "fr": "Les périodes de vacance ne doivent pas se chevaucher. Pour définir un nouveau loyer cible, utiliser « Modifier le loyer cible »."
+  },
+  "Der Mietbeginn überschneidet sich mit erfasstem Leerstand. Den Leerstandsabschnitt anpassen oder das Schliessen des offenen Leerstands bestätigen.": {
+    "en": "The lease start overlaps with a recorded vacancy. Adjust the vacancy period or confirm that the open vacancy should end.",
+    "fr": "Le début du bail chevauche une vacance enregistrée. Adapter la période de vacance ou confirmer la clôture de la vacance en cours."
+  },
+  "Die Einheit wurde nicht gefunden.": {
+    "en": "The unit was not found.",
+    "fr": "L’unité est introuvable."
+  },
+  "Der Leerstandsabschnitt wurde nicht gefunden.": {
+    "en": "The vacancy period was not found.",
+    "fr": "La période de vacance est introuvable."
+  },
+  "Die neue Zielmiete muss innerhalb des Abschnitts und nach dessen Beginn gelten.": {
+    "en": "The new target rent must take effect within the period and after its start.",
+    "fr": "Le nouveau loyer cible doit prendre effet pendant la période et après son début."
+  },
+  "Zielmiete geändert:": {
+    "en": "Target rent changed:",
+    "fr": "Loyer cible modifié :"
+  },
+  "Leerstand gespeichert:": {
+    "en": "Vacancy saved:",
+    "fr": "Vacance enregistrée :"
+  },
+  "Leerstandsabschnitt berichtigt:": {
+    "en": "Vacancy period corrected:",
+    "fr": "Période de vacance corrigée :"
+  },
+  "Offen oder 0": {
+    "en": "Unspecified or 0",
+    "fr": "Non renseigné ou 0"
+  },
+  "Nebenkosten erfassen": {
+    "en": "Enter service charges",
+    "fr": "Saisir les charges"
+  },
+  "Akonto und Pauschale getrennt": {
+    "en": "Separate advance and flat-rate charges",
+    "fr": "Acomptes et forfaits séparés"
+  },
+  "Gesamtbetrag · Aufteilung unbekannt": {
+    "en": "Total amount · breakdown unknown",
+    "fr": "Montant total · répartition inconnue"
+  },
+  "Akonto / Monat · CHF": {
+    "en": "Advance charges / month · CHF",
+    "fr": "Acompte / mois · CHF"
+  },
+  "Pauschale / Monat · CHF": {
+    "en": "Flat-rate charges / month · CHF",
+    "fr": "Forfait / mois · CHF"
+  },
+  "Nebenkosten gesamt / Monat · CHF": {
+    "en": "Total service charges / month · CHF",
+    "fr": "Total des charges / mois · CHF"
+  },
+  "Fehlende Beträge offen lassen; 0 bestätigt, dass kein Betrag anfällt. Frühere Gesamtbeträge bleiben ohne erfundene Aufteilung erhalten.": {
+    "en": "Leave unknown amounts blank; 0 confirms that no amount is due. Existing totals are retained without inventing a breakdown.",
+    "fr": "Laisser les montants inconnus vides ; 0 confirme qu’aucun montant n’est dû. Les anciens totaux sont conservés sans inventer de répartition."
+  },
+  "Leerstand & Zielmieten": {
+    "en": "Vacancies & target rents",
+    "fr": "Vacances et loyers cibles"
+  },
+  "Belegte Zeiträume und die jeweils gültigen Monatsbeträge": {
+    "en": "Documented periods and their applicable monthly amounts",
+    "fr": "Périodes documentées et montants mensuels applicables"
+  },
+  "Ein Abschnitt endet einschliesslich seines Enddatums. «Zielmiete ändern» erhält den bisherigen Betrag bis zum Vortag. Leerstandssoll bleibt von Vertragsmieten getrennt.": {
+    "en": "A period includes its end date. “Change target rent” retains the previous amount until the preceding day. Target rent for vacancies remains separate from contractual rent.",
+    "fr": "Une période inclut sa date de fin. « Modifier le loyer cible » conserve l’ancien montant jusqu’à la veille. Le loyer cible des vacances reste distinct des loyers contractuels."
+  },
+  "Leerstand erfassen": {
+    "en": "Record vacancy",
+    "fr": "Saisir une vacance"
+  },
+  "Leerstandsabschnitt": {
+    "en": "Vacancy period",
+    "fr": "Période de vacance"
+  },
+  "Zielmiete netto / Monat": {
+    "en": "Net target rent / month",
+    "fr": "Loyer cible net / mois"
+  },
+  "Nebenkosten / Monat": {
+    "en": "Service charges / month",
+    "fr": "Charges / mois"
+  },
+  "Grund / Referenz": {
+    "en": "Reason / reference",
+    "fr": "Motif / référence"
+  },
+  "Zielmiete ändern": {
+    "en": "Change target rent",
+    "fr": "Modifier le loyer cible"
+  },
+  "Akonto": {
+    "en": "Advance charges",
+    "fr": "Acompte"
+  },
+  "· Pauschale": {
+    "en": "· Flat-rate charges",
+    "fr": "· Forfait"
+  },
+  "Aufteilung unbekannt": {
+    "en": "Breakdown unknown",
+    "fr": "Répartition inconnue"
+  },
+  "Datierte Leerstände": {
+    "en": "Dated vacancies",
+    "fr": "Vacances datées"
+  },
+  "Noch keine datierten Leerstände erfasst. Ohne vorherigen Mietvertrag bleibt der historische Beginn offen.": {
+    "en": "No dated vacancies have been recorded. Without a preceding lease, the historical start date remains unspecified.",
+    "fr": "Aucune vacance datée n’a encore été saisie. Sans bail précédent, la date de début historique reste inconnue."
+  },
+  "Leerstand & Zielmieten.": {
+    "en": "Vacancies & target rents.",
+    "fr": "Vacances et loyers cibles."
+  },
+  "Neue Zielmiete gültig ab *": {
+    "en": "New target rent effective from *",
+    "fr": "Nouveau loyer cible dès le *"
+  },
+  "Leerstand ab *": {
+    "en": "Vacant from *",
+    "fr": "Vacant dès le *"
+  },
+  "Ende: {0}": {
+    "en": "End: {0}",
+    "fr": "Fin : {0}"
+  },
+  "Letzter Leerstandstag": {
+    "en": "Last vacant day",
+    "fr": "Dernier jour de vacance"
+  },
+  "Zielmiete netto / Monat · CHF": {
+    "en": "Net target rent / month · CHF",
+    "fr": "Loyer cible net / mois · CHF"
+  },
+  "Zielmiete ändern.": {
+    "en": "Change target rent.",
+    "fr": "Modifier le loyer cible."
+  },
+  "Leerstand bearbeiten.": {
+    "en": "Edit vacancy.",
+    "fr": "Modifier la vacance."
+  },
+  "Leerstand erfassen.": {
+    "en": "Record vacancy.",
+    "fr": "Saisir une vacance."
+  },
+  "Nur belegte Daten erfassen. Ohne Betrag bleibt die Zielmiete offen. Der Zeitraum darf sich weder mit einem anderen Leerstandsabschnitt noch mit einem bestätigten Mietvertrag überschneiden.": {
+    "en": "Only enter documented information. Without an amount, the target rent remains unspecified. The period must not overlap with another vacancy period or a confirmed lease.",
+    "fr": "Saisir uniquement des données documentées. Sans montant, le loyer cible reste non renseigné. La période ne doit chevaucher ni une autre vacance ni un bail confirmé."
+  },
+  "Historie oder Vertragsangaben offen": {
+    "en": "History or lease details unspecified",
+    "fr": "Historique ou données du bail incomplets"
+  },
+  "Vertragsmiete unvollständig": {
+    "en": "Contractual rent incomplete",
+    "fr": "Loyer contractuel incomplet"
+  },
+  "Zielmiete nicht vollständig belegt": {
+    "en": "Target rent not fully documented",
+    "fr": "Loyer cible partiellement documenté"
+  },
+  "Nettosoll ist null": {
+    "en": "Net rent due is zero",
+    "fr": "Le loyer net dû est nul"
+  },
+  "Leerstandssoll netto / {0}": {
+    "en": "Net target rent for vacancies / {0}",
+    "fr": "Loyer cible net des vacances / {0}"
+  },
+  "Nettosoll inkl. Leerstand / {3}": {
+    "en": "Net rent due incl. vacancies / {3}",
+    "fr": "Loyer net théorique, vacances comprises / {3}"
+  },
+  "Vertragsmieten + belegte Leerstandszielmieten": {
+    "en": "Contractual rents + documented vacancy target rents",
+    "fr": "Loyers contractuels + loyers cibles documentés des vacances"
+  },
+  "Vermietet nach Nettomietwert": {
+    "en": "Let by net rental value",
+    "fr": "Taux de location selon la valeur locative nette"
+  },
+  "Mietpotenzial und Mietwertquote": {
+    "en": "Rental potential and rental value ratio",
+    "fr": "Potentiel locatif et taux selon la valeur locative"
+  },
+  "Zielmieten teilweise offen": {
+    "en": "Some target rents unspecified",
+    "fr": "Loyers cibles partiellement renseignés"
+  },
+  "Separater Sollwert, kein Vertragsertrag": {
+    "en": "Separate target amount, not contractual income",
+    "fr": "Montant cible distinct, hors revenus contractuels"
+  },
+  "% Leerstand nach Mietwert": {
+    "en": "% vacancy by rental value",
+    "fr": "% de vacance selon la valeur locative"
+  },
+  "Keine berechenbare Auswahl": {
+    "en": "Selection cannot be calculated",
+    "fr": "Sélection non calculable"
+  },
+  "Akonto Vertrag CHF": {
+    "en": "Contractual advance charges CHF",
+    "fr": "Acompte contractuel CHF"
+  },
+  "/ Abschnitt": {
+    "en": "/ period",
+    "fr": "/ période"
+  },
+  "Pauschale Vertrag CHF": {
+    "en": "Contractual flat-rate charges CHF",
+    "fr": "Forfait contractuel CHF"
+  },
+  "Zielmiete netto Leerstand CHF": {
+    "en": "Net vacancy target rent CHF",
+    "fr": "Loyer cible net des vacances CHF"
+  },
+  "Akonto Leerstand CHF": {
+    "en": "Vacancy advance charges CHF",
+    "fr": "Acompte des vacances CHF"
+  },
+  "Pauschale Leerstand CHF": {
+    "en": "Vacancy flat-rate charges CHF",
+    "fr": "Forfait des vacances CHF"
+  },
+  "NK gesamt Leerstand CHF": {
+    "en": "Total vacancy charges CHF",
+    "fr": "Total des charges des vacances CHF"
+  },
+  "Brutto Leerstand CHF": {
+    "en": "Gross vacancy rent CHF",
+    "fr": "Loyer brut des vacances CHF"
+  },
+  "Nebenkostenaufteilung": {
+    "en": "Service charge breakdown",
+    "fr": "Répartition des charges"
+  },
+  "Leerstand erfasst ab": {
+    "en": "Vacancy recorded from",
+    "fr": "Vacance enregistrée dès le"
+  },
+  "Leerstand erfasst bis": {
+    "en": "Vacancy recorded until",
+    "fr": "Vacance enregistrée jusqu’au"
+  },
+  "Akonto und Pauschale bekannt": {
+    "en": "Advance and flat-rate charges known",
+    "fr": "Acompte et forfait connus"
+  },
+  "Gesamtbetrag; Aufteilung unbekannt": {
+    "en": "Total amount; breakdown unknown",
+    "fr": "Montant total ; répartition inconnue"
+  },
+  "Erfasster Leerstand": {
+    "en": "Recorded vacancy",
+    "fr": "Vacance enregistrée"
+  },
+  "Alle Einheiten": {
+    "en": "All units",
+    "fr": "Toutes les unités"
+  },
+  "Leerstand": {
+    "en": "Vacancy",
+    "fr": "Vacance"
+  },
+  "Vertragsende ≤ 90 Tage": {
+    "en": "Lease end ≤ 90 days",
+    "fr": "Fin du bail ≤ 90 jours"
+  },
+  "Mietbeginn ≤ 90 Tage": {
+    "en": "Lease start ≤ 90 days",
+    "fr": "Début du bail ≤ 90 jours"
+  },
+  "Mietzinsänderung ≤ 90 Tage": {
+    "en": "Rent change ≤ 90 days",
+    "fr": "Modification du loyer ≤ 90 jours"
+  },
+  "Angaben prüfen": {
+    "en": "Check details",
+    "fr": "Vérifier les données"
+  },
+  "Berechnete Vertragsmieten für {4} · Teilmonate nach Kalendertagen{5}. Keine Zahlungseingänge.": {
+    "en": "Calculated contractual rents for {4} · partial months based on calendar days{5}. No rent receipts.",
+    "fr": "Loyers contractuels calculés pour {4} · mois partiels selon les jours calendaires{5}. Hors encaissements."
+  },
+  "Kennzahlen der gefilterten Auswahl": {
+    "en": "Key figures for the filtered selection",
+    "fr": "Indicateurs de la sélection filtrée"
+  },
+  "Liegenschaften ·": {
+    "en": "Properties ·",
+    "fr": "Immeubles ·"
+  },
+  "Abschnitte": {
+    "en": "Periods",
+    "fr": "Périodes"
+  },
+  "Leerstand / Vertragslücken": {
+    "en": "Vacancy / gaps between leases",
+    "fr": "Vacance / périodes sans bail"
+  },
+  "vertragsfreie Einheitentage": {
+    "en": "unit-days without a lease",
+    "fr": "jours-unités sans bail"
+  },
+  "Nettomiete / Zeitraum": {
+    "en": "Net rent / period",
+    "fr": "Loyer net / période"
+  },
+  "Vertragsbeträge unvollständig": {
+    "en": "Contractual amounts incomplete",
+    "fr": "Montants contractuels incomplets"
+  },
+  "bestätigte Mietverträge": {
+    "en": "confirmed leases",
+    "fr": "baux confirmés"
+  },
+  "Bruttomiete / Zeitraum": {
+    "en": "Gross rent / period",
+    "fr": "Loyer brut / période"
+  },
+  "Inkl.": {
+    "en": "Incl.",
+    "fr": "Y compris"
+  },
+  "Nebenkosten": {
+    "en": "Service charges",
+    "fr": "Charges"
+  },
+  "Netto + vertragliche Nebenkosten": {
+    "en": "Net rent + contractual service charges",
+    "fr": "Loyer net + charges contractuelles"
+  },
+  "· Historie bei": {
+    "en": "· History for",
+    "fr": "· Historique pour"
+  },
+  "Einheiten teilweise offen": {
+    "en": "units partly unspecified",
+    "fr": "unités partiellement renseignées"
+  },
+  "Kennzahlen der aktuellen Auswahl · Monatsmieten aus bestätigten Verträgen{4}.": {
+    "en": "Key figures for the current selection · monthly rents from confirmed leases{4}.",
+    "fr": "Indicateurs de la sélection actuelle · loyers mensuels des baux confirmés{4}."
+  },
+  "Leerstehend": {
+    "en": "Vacant",
+    "fr": "Vacant"
+  },
+  "Vermietungsstände offen": {
+    "en": "Letting statuses unspecified",
+    "fr": "États locatifs non renseignés"
+  },
+  "nicht vermietbar": {
+    "en": "not lettable",
+    "fr": "non louable"
+  },
+  "Zum gewählten Stichtag": {
+    "en": "On the selected reference date",
+    "fr": "À la date de référence choisie"
+  },
+  "Nettomiete / Monat": {
+    "en": "Net rent / month",
+    "fr": "Loyer net / mois"
+  },
+  "Bruttomiete / Monat": {
+    "en": "Gross rent / month",
+    "fr": "Loyer brut / mois"
+  },
+  "vermietete Einheiten mit manuellen Angaben separat ausgewiesen": {
+    "en": "let units with manual details shown separately",
+    "fr": "unités louées avec données manuelles présentées séparément"
+  },
+  "Mieterspiegel eingrenzen": {
+    "en": "Filter rent roll",
+    "fr": "Filtrer l’état locatif"
+  },
+  "Nicht mehr vorhanden": {
+    "en": "No longer available",
+    "fr": "N’existe plus"
+  },
+  "Mandat:": {
+    "en": "Mandate:",
+    "fr": "Mandat :"
+  },
+  "Stockwerk:": {
+    "en": "Floor:",
+    "fr": "Étage :"
+  },
+  "Zimmer": {
+    "en": "Rooms",
+    "fr": "Pièces"
+  },
+  "Vertragslücke": {
+    "en": "Gap between leases",
+    "fr": "Période sans bail"
+  },
+  "Bestätigter Vertrag": {
+    "en": "Confirmed lease",
+    "fr": "Bail confirmé"
+  },
+  "Manuelle Angaben / ohne Historie": {
+    "en": "Manual details / no history",
+    "fr": "Données manuelles / sans historique"
+  },
+  "Historie offen": {
+    "en": "History unspecified",
+    "fr": "Historique non renseigné"
+  },
+  "von {1} Einheiten{2} ·": {
+    "en": "of {1} units{2} ·",
+    "fr": "sur {1} unités{2} ·"
+  },
+  "Gesamte Auswahl ohne weitere Filter": {
+    "en": "Entire selection without additional filters",
+    "fr": "Sélection complète sans filtre supplémentaire"
+  },
+  "Zi.": {
+    "en": "rms",
+    "fr": "p."
+  },
+  "Leerstand & Zielmieten ↗": {
+    "en": "Vacancies & target rents ↗",
+    "fr": "Vacances et loyers cibles ↗"
+  },
+  "Kontakt prüfen": {
+    "en": "Check contact",
+    "fr": "Vérifier le contact"
+  },
+  "· Mietvertrag ↗": {
+    "en": "· Lease ↗",
+    "fr": "· Bail ↗"
+  },
+  "Nicht vermietbar": {
+    "en": "Not lettable",
+    "fr": "Non louable"
+  },
+  "Mieter noch nicht verknüpft": {
+    "en": "Tenant not linked yet",
+    "fr": "Locataire pas encore associé"
+  },
+  "Mietverhältnis offen": {
+    "en": "Tenancy unspecified",
+    "fr": "Location non renseignée"
+  },
+  "Leerstand und Zielmiete gemäss Verlauf": {
+    "en": "Vacancy and target rent according to history",
+    "fr": "Vacance et loyer cible selon l’historique"
+  },
+  "Kein bestätigter Vertrag in diesem Abschnitt": {
+    "en": "No confirmed lease in this period",
+    "fr": "Aucun bail confirmé durant cette période"
+  },
+  "Keine belegte Vertragshistorie": {
+    "en": "No documented lease history",
+    "fr": "Aucun historique de bail documenté"
+  },
+  "Ohne bestätigte Vertragshistorie": {
+    "en": "Without confirmed lease history",
+    "fr": "Sans historique de bail confirmé"
+  },
+  "Kein Vertrag am Stichtag": {
+    "en": "No lease on the reference date",
+    "fr": "Aucun bail à la date de référence"
+  },
+  "Mietvertrag erfassen ↗": {
+    "en": "Record lease ↗",
+    "fr": "Saisir un bail ↗"
+  },
+  "{2} Kalendertage · inklusive Endtag": {
+    "en": "{2} calendar days · including the end date",
+    "fr": "{2} jours calendaires · date de fin comprise"
+  },
+  "Vertrag ab {0}{1}": {
+    "en": "Lease from {0}{1}",
+    "fr": "Bail dès le {0}{1}"
+  },
+  "· bis": {
+    "en": "· until",
+    "fr": "· jusqu’au"
+  },
+  "· unbefristet": {
+    "en": "· open-ended",
+    "fr": "· durée indéterminée"
+  },
+  "Ab {0}": {
+    "en": "From {0}",
+    "fr": "Dès le {0}"
+  },
+  "· letzter Miettag": {
+    "en": "· last rental day",
+    "fr": "· dernier jour de location"
+  },
+  "Unbefristet": {
+    "en": "Open-ended",
+    "fr": "Durée indéterminée"
+  },
+  "Kündigung erhalten {0}": {
+    "en": "Termination notice received {0}",
+    "fr": "Résiliation reçue le {0}"
+  },
+  "Mietbeginn": {
+    "en": "Lease start",
+    "fr": "Début du bail"
+  },
+  "Anschlussvermietung bestätigt": {
+    "en": "Follow-on lease confirmed",
+    "fr": "Location suivante confirmée"
+  },
+  "Vertragslücke ab": {
+    "en": "Gap between leases from",
+    "fr": "Période sans bail dès le"
+  },
+  "Anschlussvermietung offen": {
+    "en": "Follow-on lease unspecified",
+    "fr": "Location suivante non renseignée"
+  },
+  "Netto {1} · NK {2}": {
+    "en": "Net {1} · charges {2}",
+    "fr": "Net {1} · charges {2}"
+  },
+  "Mietzins ab": {
+    "en": "Rent from",
+    "fr": "Loyer dès le"
+  },
+  "Keine Vertragsdaten": {
+    "en": "No lease details",
+    "fr": "Aucune donnée de bail"
+  },
+  "Vertraglich vermietet": {
+    "en": "Let under a lease",
+    "fr": "Loué avec bail"
+  },
+  "Keine Annahme zur Vermietung": {
+    "en": "No assumption about letting status",
+    "fr": "Aucune hypothèse sur l’état locatif"
+  },
+  "Datierter Leerstand": {
+    "en": "Dated vacancy",
+    "fr": "Vacance datée"
+  },
+  "Manuelle Basis": {
+    "en": "Manual basis",
+    "fr": "Base manuelle"
+  },
+  "Vertrag / Abschnitt": {
+    "en": "Lease / period",
+    "fr": "Bail / période"
+  },
+  "Vertrag / Monat": {
+    "en": "Lease / month",
+    "fr": "Bail / mois"
+  },
+  "Belegtes Leerstandssoll": {
+    "en": "Documented vacancy target rent",
+    "fr": "Loyer cible documenté des vacances"
+  },
+  "Zielmiete · aktueller Stand": {
+    "en": "Target rent · current status",
+    "fr": "Loyer cible · état actuel"
+  },
+  "Netto · manuell": {
+    "en": "Net · manual",
+    "fr": "Net · manuel"
+  },
+  "Basis {0} / Mt.": {
+    "en": "Basis {0} / mo.",
+    "fr": "Base {0} / mois"
+  },
+  "Vertragsbrutto": {
+    "en": "Contractual gross rent",
+    "fr": "Loyer brut contractuel"
+  },
+  "Sollbrutto": {
+    "en": "Gross rent due",
+    "fr": "Loyer brut théorique"
+  },
+  "Nicht berechenbar": {
+    "en": "Not calculable",
+    "fr": "Non calculable"
+  },
+  "Vertragsmieten · gesamte Auswahl": {
+    "en": "Contractual rents · entire selection",
+    "fr": "Loyers contractuels · sélection complète"
+  },
+  "Separat: Leerstandssoll": {
+    "en": "Separate: vacancy target rent",
+    "fr": "Séparément : loyer cible des vacances"
+  },
+  "Soll inkl. Leerstand · gesamte Auswahl": {
+    "en": "Rent due incl. vacancies · entire selection",
+    "fr": "Loyer théorique, vacances comprises · sélection complète"
+  },
+  "Mieterspiegel · {0} · alle Beträge in CHF {1}": {
+    "en": "Rent roll · {0} · all amounts in CHF {1}",
+    "fr": "État locatif · {0} · tous les montants en CHF {1}"
+  },
+  "je Abschnitt": {
+    "en": "per period",
+    "fr": "par période"
+  },
+  "pro Monat": {
+    "en": "per month",
+    "fr": "par mois"
+  },
+  "Einheit / Nutzung": {
+    "en": "Unit / use",
+    "fr": "Unité / affectation"
+  },
+  "Mieter / Mietvertrag": {
+    "en": "Tenant / lease",
+    "fr": "Locataire / bail"
+  },
+  "Abschnitt / Vertragslaufzeit": {
+    "en": "Period / lease term",
+    "fr": "Période / durée du bail"
+  },
+  "Laufzeit / nächste Änderung": {
+    "en": "Term / next change",
+    "fr": "Durée / prochaine modification"
+  },
+  "Vermietungsstand": {
+    "en": "Letting status",
+    "fr": "État locatif"
+  },
+  "Netto · CHF": {
+    "en": "Net · CHF",
+    "fr": "Net · CHF"
+  },
+  "Akonto · CHF": {
+    "en": "Advance charges · CHF",
+    "fr": "Acompte · CHF"
+  },
+  "Pauschale · CHF": {
+    "en": "Flat-rate charges · CHF",
+    "fr": "Forfait · CHF"
+  },
+  "NK gesamt · CHF": {
+    "en": "Total charges · CHF",
+    "fr": "Total des charges · CHF"
+  },
+  "Brutto · CHF": {
+    "en": "Gross · CHF",
+    "fr": "Brut · CHF"
+  },
+  "NK gesamt": {
+    "en": "Total charges",
+    "fr": "Total des charges"
+  },
+  "Akonto {8}": {
+    "en": "Advance charges {8}",
+    "fr": "Acompte {8}"
+  },
+  "Pauschale {9}": {
+    "en": "Flat-rate charges {9}",
+    "fr": "Forfait {9}"
+  },
+  "Zielmiete / Abschnitt": {
+    "en": "Target rent / period",
+    "fr": "Loyer cible / période"
+  },
+  "Netto / Abschnitt": {
+    "en": "Net / period",
+    "fr": "Net / période"
+  },
+  "Zielmiete netto": {
+    "en": "Net target rent",
+    "fr": "Loyer cible net"
+  },
+  "Nettomiete": {
+    "en": "Net rent",
+    "fr": "Loyer net"
+  },
+  "Bruttomiete": {
+    "en": "Gross rent",
+    "fr": "Loyer brut"
+  },
+  "Monatsbasis: netto {0} · NK {1}": {
+    "en": "Monthly basis: net {0} · charges {1}",
+    "fr": "Base mensuelle : net {0} · charges {1}"
+  },
+  "Vertragsmieten und Leerstandssoll sind getrennte Summen.": {
+    "en": "Contractual rents and vacancy target rents are separate totals.",
+    "fr": "Les loyers contractuels et les loyers cibles des vacances sont totalisés séparément."
+  },
+  "Akonto und Pauschale werden bei bekannter Aufteilung einzeln ausgewiesen. Frühere Gesamtbeträge bleiben unter «NK gesamt» erhalten; ein Strich bedeutet fehlend oder nicht anwendbar.": {
+    "en": "Advance and flat-rate charges are shown separately when the breakdown is known. Earlier totals remain under “Total charges”; a dash means missing or not applicable.",
+    "fr": "Les acomptes et forfaits sont présentés séparément lorsque la répartition est connue. Les anciens totaux restent sous « Total des charges » ; un tiret signifie manquant ou sans objet."
+  },
+  "Leerstandssoll stammt ausschliesslich aus datierten Leerstandsabschnitten. Heutige Zielmieten werden nicht rückwirkend hochgerechnet.": {
+    "en": "Vacancy target rent comes exclusively from dated vacancy periods. Current target rents are not extrapolated retrospectively.",
+    "fr": "Le loyer cible des vacances provient exclusivement des périodes de vacance datées. Les loyers cibles actuels ne sont pas extrapolés rétroactivement."
+  },
+  "Zielmieten ohne datierten Verlauf gelten nur als aktueller Stand.": {
+    "en": "Target rents without a dated history apply only to the current situation.",
+    "fr": "Les loyers cibles sans historique daté valent uniquement pour la situation actuelle."
+  },
+  "{0} vertraglich belegte Einheitentage · {1} vertragsfreie Einheitentage{2}. Eine Einheit kann mehrere Zustände durchlaufen.": {
+    "en": "{0} unit-days covered by leases · {1} unit-days without a lease{2}. A unit may pass through several statuses.",
+    "fr": "{0} jours-unités couverts par un bail · {1} jours-unités sans bail{2}. Une unité peut connaître plusieurs états successifs."
+  },
+  "Einheitentage mit offener Historie": {
+    "en": "unit-days with unspecified history",
+    "fr": "jours-unités à l’historique non renseigné"
+  },
+  "Mietwertquote offen: {0}.": {
+    "en": "Rental value ratio unavailable: {0}.",
+    "fr": "Taux selon la valeur locative non disponible : {0}."
+  },
+  "{0} manuell vermietete Einheiten separat: {1} netto / Monat. In der Vertragssumme und Mietwertquote nicht als bestätigte Verträge enthalten.": {
+    "en": "{0} manually recorded let units shown separately: {1} net / month. Not included as confirmed leases in the contractual total or rental value ratio.",
+    "fr": "{0} unités louées saisies manuellement, présentées séparément : {1} net / mois. Elles ne figurent pas comme baux confirmés dans le total contractuel ni dans le taux selon la valeur locative."
+  },
+  "Vertragsbeträge unvollständig; die betroffenen Summen bleiben offen.": {
+    "en": "Contractual amounts incomplete; the affected totals remain unspecified.",
+    "fr": "Montants contractuels incomplets ; les totaux concernés restent non renseignés."
+  },
+  "Keine Einheiten für dieses Datum vorhanden.": {
+    "en": "No units exist for this date.",
+    "fr": "Aucune unité disponible à cette date."
+  },
+  "Keine Einheiten in dieser Auswahl.": {
+    "en": "No units in this selection.",
+    "fr": "Aucune unité dans cette sélection."
+  },
+  "Erfasst zuerst die Liegenschaft und ihre Einheiten. Die Mietverträge verbinden danach Mieter und Mietzinse.": {
+    "en": "First record the property and its units. Leases then link tenants and rents.",
+    "fr": "Saisir d’abord l’immeuble et ses unités. Les baux relient ensuite les locataires aux loyers."
+  },
+  "Passt die Suche, den Stichtag oder die Filter an.": {
+    "en": "Adjust the search, reference date or filters.",
+    "fr": "Adapter la recherche, la date de référence ou les filtres."
+  },
+  "Einheit erfassen": {
+    "en": "Add unit",
+    "fr": "Ajouter une unité"
+  },
+  "Liegenschaft erfassen": {
+    "en": "Add property",
+    "fr": "Ajouter un immeuble"
+  },
+  "Mieterspiegel · Tabelle horizontal verschiebbar": {
+    "en": "Rent roll · table scrolls horizontally",
+    "fr": "État locatif · tableau à défilement horizontal"
+  },
+  "VERMIETUNG IM ÜBERBLICK": {
+    "en": "LETTINGS AT A GLANCE",
+    "fr": "VUE D’ENSEMBLE DES LOCATIONS"
+  },
+  "Stichtag": {
+    "en": "Reference date",
+    "fr": "Date de référence"
+  },
+  "Mietverhältnisse & Vertragslücken": {
+    "en": "Tenancies & gaps between leases",
+    "fr": "Locations et périodes sans bail"
+  },
+  "Die Datumsauswahl bleibt erhalten. Stockwerk, Zimmer und Zuständigkeit entsprechen dem heutigen Stand.": {
+    "en": "The selected dates are retained. Floor, rooms and responsibility reflect the current situation.",
+    "fr": "Les dates choisies sont conservées. L’étage, les pièces et la personne responsable correspondent à la situation actuelle."
+  },
+  "So wird der Mieterspiegel berechnet": {
+    "en": "How the rent roll is calculated",
+    "fr": "Comment l’état locatif est calculé"
+  },
+  "Bestätigte Mietverträge und Mietzinsänderungen gelten ab ihrem erfassten Datum. Das Vertragsende zählt als letzter Miettag. Entwürfe und stornierte Verträge werden nicht berücksichtigt. Archivierte Verträge und Mandate bleiben für ihre erfasste Laufzeit auswertbar.": {
+    "en": "Confirmed leases and rent changes apply from their recorded date. The lease end date counts as the last rental day. Draft and cancelled leases are excluded. Archived leases and mandates remain available for analysis during their recorded term.",
+    "fr": "Les baux confirmés et modifications de loyer s’appliquent dès leur date enregistrée. La date de fin du bail est le dernier jour de location. Les projets et baux annulés sont exclus. Les baux et mandats archivés restent analysables pendant leur durée enregistrée."
+  },
+  "Im Zeitraum entsteht bei jedem Mieterwechsel, jeder Mietzins- oder Zielmietänderung, jeder Leerstandsgrenze und jeder Mandatsgrenze ein Abschnitt. Ganze Kalendermonate zählen mit der vollen Monatsmiete. Für Teilmonate werden die Kalendertage des jeweiligen Monats verwendet. Pro Betrag wird der gerundete Tagesstand vor Abschnittsbeginn vom gerundeten Tagesstand am Abschnittsende abgezogen. So bleiben Teilsummen centgenau addierbar. Das ist die Berechnung dieser Auswertung, keine Rechnung und kein Zahlungseingang.": {
+    "en": "A new period starts at each tenant change, rent or target rent change, vacancy boundary or mandate boundary. Full calendar months count at the full monthly rent. Partial months use the calendar days of the relevant month. For each amount, the rounded daily balance before the period starts is subtracted from the rounded daily balance at its end. Subtotals therefore add up to the cent. This is the calculation used for this report, not an invoice or a rent receipt.",
+    "fr": "Une période est créée à chaque changement de locataire, de loyer ou de loyer cible, ainsi qu’à chaque limite de vacance ou de mandat. Les mois calendaires complets comptent pour le loyer mensuel entier. Les mois partiels utilisent les jours calendaires du mois concerné. Pour chaque montant, le cumul journalier arrondi avant le début de la période est soustrait de celui à la fin de la période. Les sous-totaux restent ainsi additionnables au centime près. Il s’agit du calcul de ce rapport, et non d’une facture ou d’un encaissement."
+  },
+  "Historische Verträge bleiben auch bei inzwischen archivierten Einheiten oder Liegenschaften sichtbar. Ohne Vertrag endet der ausgewertete Bestand am Archivtag. Ein historischer Bestandsbeginn und frühere manuelle Sperren sind nicht erfasst; solche Stammdaten lassen sich nicht vollständig rekonstruieren. Angaben vor dem ersten bekannten Vertrag bleiben offen. Objektangaben und Zielmieten entsprechen dem aktuellen Stammdatenstand.": {
+    "en": "Historical leases remain visible even if their units or properties have since been archived. Without a lease, the analysed inventory ends on the archive date. Historical inventory start dates and earlier manual restrictions were not recorded; these master data cannot be fully reconstructed. Details before the first known lease remain unspecified. Property details and target rents reflect the current master data.",
+    "fr": "Les anciens baux restent visibles même si les unités ou immeubles ont depuis été archivés. Sans bail, le parc analysé s’arrête à la date d’archivage. Le début historique du parc et les anciennes restrictions manuelles n’ont pas été enregistrés ; ces données de base ne peuvent pas être entièrement reconstituées. Les données antérieures au premier bail connu restent non renseignées. Les données des biens et loyers cibles correspondent aux données de base actuelles."
+  },
+  "Vertragsfreie Tage ergeben sich aus der erfassten Vertragshistorie und belegen nicht, ob eine Einheit tatsächlich bewohnbar war. Datierte Leerstandsabschnitte belegen Beginn, Ende und Zielmiete. Änderungen erhalten den alten Betrag bis zum Vortag. Ohne erfassten Abschnitt oder vorherigen Vertrag bleibt der Beginn offen. Heutige Zielmieten werden nicht rückwirkend hochgerechnet.": {
+    "en": "Days without a lease are derived from the recorded lease history and do not establish whether a unit was actually habitable. Dated vacancy periods document the start, end and target rent. Changes retain the old amount until the preceding day. Without a recorded period or preceding lease, the start remains unspecified. Current target rents are not extrapolated retrospectively.",
+    "fr": "Les jours sans bail découlent de l’historique enregistré et ne prouvent pas qu’une unité était effectivement habitable. Les périodes de vacance datées documentent le début, la fin et le loyer cible. Les modifications conservent l’ancien montant jusqu’à la veille. Sans période enregistrée ni bail précédent, le début reste non renseigné. Les loyers cibles actuels ne sont pas extrapolés rétroactivement."
+  },
+  "Die Vertragssummen enthalten die gefilterten bestätigten Verträge. Leerstandssoll und Soll inklusive Leerstand werden gesondert ausgewiesen. Die Nettomietwertquote ist Vertragsnetto geteilt durch Vertragsnetto plus belegtes Leerstandssoll netto. Bei fehlender Historie oder unvollständigen Nettoangaben bleibt sie offen. Akonto und Pauschale werden getrennt erfasst. Frühere Gesamtbeträge bleiben ohne erfundene Aufteilung unter «NK gesamt» erhalten. Bei Teilmonaten werden bekannte Komponenten einzeln gerundet und anschliessend addiert. CHF 0.00 ist eine erfasste Null; ein Strich bedeutet fehlend oder nicht anwendbar. Die Stichtagsvorschau zeigt erfasste Änderungen innerhalb von 90 Tagen. CSV und Druck enthalten sämtliche gefilterten Abschnitte, auch auf weiteren Bildschirmseiten.": {
+    "en": "Contractual totals include the filtered confirmed leases. Vacancy target rent and total rent due including vacancies are shown separately. The net rental value ratio is contractual net rent divided by contractual net rent plus documented net vacancy target rent. It remains unspecified if history or net amounts are incomplete. Advance and flat-rate charges are recorded separately. Earlier totals remain under “Total charges” without an invented breakdown. For partial months, known components are rounded individually and then added. CHF 0.00 is a recorded zero; a dash means missing or not applicable. The reference-date preview shows recorded changes within 90 days. CSV and printouts include all filtered periods, including those on subsequent screen pages.",
+    "fr": "Les totaux contractuels incluent les baux confirmés filtrés. Le loyer cible des vacances et le total théorique vacances comprises sont présentés séparément. Le taux selon la valeur locative nette correspond au loyer net contractuel divisé par la somme de celui-ci et du loyer cible net documenté des vacances. Il reste non renseigné si l’historique ou les montants nets sont incomplets. Acomptes et forfaits sont saisis séparément. Les anciens totaux restent sous « Total des charges » sans répartition inventée. Pour les mois partiels, les composantes connues sont arrondies séparément, puis additionnées. CHF 0.00 est un zéro saisi ; un tiret signifie manquant ou sans objet. L’aperçu à la date de référence affiche les modifications enregistrées dans les 90 jours. Les exports CSV et impressions incluent toutes les périodes filtrées, y compris celles des pages suivantes."
+  },
+  "Auswertungsart": {
+    "en": "Report type",
+    "fr": "Type de rapport"
+  },
+  "Mieterspiegel.": {
+    "en": "Rent roll.",
+    "fr": "État locatif."
+  },
+  "Mieter, Mietzinse und Vertragslücken. Zum Stichtag oder über einen Zeitraum.": {
+    "en": "Tenants, rents and gaps between leases. On a reference date or over a period.",
+    "fr": "Locataires, loyers et périodes sans bail. À une date de référence ou sur une période."
+  },
+  "Mietvertrag erfassen": {
+    "en": "Record lease",
+    "fr": "Saisir un bail"
+  },
+  "Bis · inklusive": {
+    "en": "Until · inclusive",
+    "fr": "Jusqu’au · inclus"
+  },
+  "Dieses Jahr": {
+    "en": "This year",
+    "fr": "Cette année"
+  },
+  "Vorjahr": {
+    "en": "Previous year",
+    "fr": "Année précédente"
+  },
+  "Berechnete Vertragsmieten je Abschnitt · CHF": {
+    "en": "Calculated contractual rents per period · CHF",
+    "fr": "Loyers contractuels calculés par période · CHF"
+  },
+  "Alle Mietbeträge pro Monat · CHF": {
+    "en": "All rent amounts per month · CHF",
+    "fr": "Tous les loyers par mois · CHF"
+  },
+  "Drucken / PDF": {
+    "en": "Print / PDF",
+    "fr": "Imprimer / PDF"
+  },
+  "Mieter, Vertrag, Einheit oder Adresse …": {
+    "en": "Tenant, lease, unit or address …",
+    "fr": "Locataire, bail, unité ou adresse…"
+  },
+  "Vermietung": {
+    "en": "Lettings",
+    "fr": "Location"
+  },
+  "Alle Vermietungsstände": {
+    "en": "All letting statuses",
+    "fr": "Tous les états locatifs"
+  },
+  "Nutzung": {
+    "en": "Use",
+    "fr": "Affectation"
+  },
+  "Alle Nutzungen": {
+    "en": "All uses",
+    "fr": "Toutes les affectations"
+  },
+  "Stockwerk / Lage": {
+    "en": "Floor / location",
+    "fr": "Étage / emplacement"
+  },
+  "Alle Stockwerke": {
+    "en": "All floors",
+    "fr": "Tous les étages"
+  },
+  "Alle Zimmerzahlen": {
+    "en": "All room counts",
+    "fr": "Tous les nombres de pièces"
+  },
+  "Zuständig · Liegenschaft": {
+    "en": "Responsible · property",
+    "fr": "Responsable · immeuble"
+  },
+  "Datengrundlage": {
+    "en": "Data basis",
+    "fr": "Base de données utilisée"
+  },
+  "Alle Datengrundlagen": {
+    "en": "All data bases",
+    "fr": "Toutes les bases de données utilisées"
+  },
+  "Sortierung": {
+    "en": "Sort order",
+    "fr": "Tri"
+  },
+  "Liegenschaft / Einheit": {
+    "en": "Property / unit",
+    "fr": "Immeuble / unité"
+  },
+  "Mieter A–Z": {
+    "en": "Tenant A–Z",
+    "fr": "Locataire A–Z"
+  },
+  "Nächstes Vertragsende": {
+    "en": "Next lease end",
+    "fr": "Prochaine fin de bail"
+  },
+  "Höchster Abschnittsbetrag": {
+    "en": "Highest period amount",
+    "fr": "Montant de période le plus élevé"
+  },
+  "Höchste Vertragsmiete": {
+    "en": "Highest contractual rent",
+    "fr": "Loyer contractuel le plus élevé"
+  },
+  "Objektnummer": {
+    "en": "Property number",
+    "fr": "Numéro d’immeuble"
+  },
+  "Mandate am Stichtag": {
+    "en": "Mandates on the reference date",
+    "fr": "Mandats à la date de référence"
+  },
+  "Einheitennummer": {
+    "en": "Unit number",
+    "fr": "Numéro d’unité"
+  },
+  "Fläche m²": {
+    "en": "Area m²",
+    "fr": "Surface m²"
+  },
+  "Letzter Miettag": {
+    "en": "Last rental day",
+    "fr": "Dernier jour de location"
+  },
+  "Kündigung erhalten bis Stichtag": {
+    "en": "Termination received by reference date",
+    "fr": "Résiliation reçue à la date de référence"
+  },
+  "Nettomiete vertraglich CHF/Monat": {
+    "en": "Contractual net rent CHF/month",
+    "fr": "Loyer net contractuel CHF/mois"
+  },
+  "Nebenkosten vertraglich CHF/Monat": {
+    "en": "Contractual service charges CHF/month",
+    "fr": "Charges contractuelles CHF/mois"
+  },
+  "Bruttomiete vertraglich CHF/Monat": {
+    "en": "Contractual gross rent CHF/month",
+    "fr": "Loyer brut contractuel CHF/mois"
+  },
+  "Manuelle Nettomiete CHF/Monat": {
+    "en": "Manual net rent CHF/month",
+    "fr": "Loyer net manuel CHF/mois"
+  },
+  "Zielmiete Leerstand CHF/Monat (datierter oder aktueller Stand)": {
+    "en": "Vacancy target rent CHF/month (dated or current status)",
+    "fr": "Loyer cible des vacances CHF/mois (état daté ou actuel)"
+  },
+  "Nächster Mietbeginn": {
+    "en": "Next lease start",
+    "fr": "Prochain début de bail"
+  },
+  "Nächster Mieter": {
+    "en": "Next tenant",
+    "fr": "Prochain locataire"
+  },
+  "Nächster Mietvertrag": {
+    "en": "Next lease",
+    "fr": "Prochain bail"
+  },
+  "Nächste Mietzinsänderung": {
+    "en": "Next rent change",
+    "fr": "Prochaine modification du loyer"
+  },
+  "Neue Nettomiete CHF/Monat": {
+    "en": "New net rent CHF/month",
+    "fr": "Nouveau loyer net CHF/mois"
+  },
+  "Neue Nebenkosten CHF/Monat": {
+    "en": "New service charges CHF/month",
+    "fr": "Nouvelles charges CHF/mois"
+  },
+  "Vertragsfrei seit": {
+    "en": "Without a lease since",
+    "fr": "Sans bail depuis le"
+  },
+  "Vertragsfreie Tage bis Stichtag": {
+    "en": "Days without a lease up to reference date",
+    "fr": "Jours sans bail jusqu’à la date de référence"
+  },
+  "Zuständig (heutiger Stand)": {
+    "en": "Responsible (current status)",
+    "fr": "Responsable (situation actuelle)"
+  },
+  "Bitte gültige Daten zwischen 1900 und 2200 wählen.": {
+    "en": "Please select valid dates between 1900 and 2200.",
+    "fr": "Veuillez choisir des dates valides entre 1900 et 2200."
+  },
+  "Der Beginn muss vor oder am Ende des Zeitraums liegen.": {
+    "en": "The start must be on or before the end of the period.",
+    "fr": "Le début doit précéder ou correspondre à la fin de la période."
+  },
+  "Bitte höchstens zehn Jahre auf einmal auswerten.": {
+    "en": "Please analyse no more than ten years at a time.",
+    "fr": "Veuillez analyser au maximum dix ans à la fois."
+  },
+  "Vertragshistorie für diesen Abschnitt offen": {
+    "en": "Lease history unspecified for this period",
+    "fr": "Historique de bail non renseigné pour cette période"
+  },
+  "Vermietungsstand offen": {
+    "en": "Letting status unspecified",
+    "fr": "État locatif non renseigné"
+  },
+  "Keine belegte Vermietung am Stichtag": {
+    "en": "No documented letting on the reference date",
+    "fr": "Aucune location documentée à la date de référence"
+  },
+  "Bestätigten Mietvertrag ergänzen": {
+    "en": "Add confirmed lease",
+    "fr": "Ajouter un bail confirmé"
+  },
+  "Nettomiete ergänzen": {
+    "en": "Add net rent",
+    "fr": "Ajouter le loyer net"
+  },
+  "Nebenkosten ergänzen": {
+    "en": "Add service charges",
+    "fr": "Ajouter les charges"
+  },
+  "Historische Zielmiete ergänzen": {
+    "en": "Add historical target rent",
+    "fr": "Ajouter le loyer cible historique"
+  },
+  "Zielmiete ergänzen": {
+    "en": "Add target rent",
+    "fr": "Ajouter le loyer cible"
+  },
+  "Kündigung erfasst · Vertragsende offen": {
+    "en": "Termination recorded · lease end unspecified",
+    "fr": "Résiliation enregistrée · fin du bail non renseignée"
+  },
+  "Alle Abschnitte": {
+    "en": "All periods",
+    "fr": "Toutes les périodes"
+  },
+  "Vertragslücken": {
+    "en": "Gaps between leases",
+    "fr": "Périodes sans bail"
+  },
+  "Vertragsende im Zeitraum": {
+    "en": "Lease end within period",
+    "fr": "Fin du bail dans la période"
+  },
+  "Mietbeginn im Zeitraum": {
+    "en": "Lease start within period",
+    "fr": "Début du bail dans la période"
+  },
+  "Mietzinsänderung im Zeitraum": {
+    "en": "Rent change within period",
+    "fr": "Modification du loyer dans la période"
+  },
+  "Leerstand seit": {
+    "en": "Vacant since",
+    "fr": "Vacant depuis le"
+  },
+  "Tage": {
+    "en": "Days",
+    "fr": "Jours"
+  },
+  "bis Abschnittsbeginn": {
+    "en": "up to the period start",
+    "fr": "jusqu’au début de la période"
+  },
+  "Leerstandsbeginn nicht belegt": {
+    "en": "Vacancy start not documented",
+    "fr": "Début de vacance non documenté"
+  },
+  "Alle {4}": {
+    "en": "All {4}",
+    "fr": "Tous les {4}"
+  },
+  "ausgewählt": {
+    "en": "selected",
+    "fr": "sélectionnés"
+  },
+  "· archiviert": {
+    "en": "· archived",
+    "fr": "· archivé"
+  },
+  "Keine Einträge vorhanden.": {
+    "en": "No entries available.",
+    "fr": "Aucune entrée disponible."
+  },
+  "Auswertung von": {
+    "en": "Analysis from",
+    "fr": "Analyse du"
+  },
+  "Auswertung bis": {
+    "en": "Analysis until",
+    "fr": "Analyse jusqu’au"
+  },
+  "Abschnitt von": {
+    "en": "Period from",
+    "fr": "Période du"
+  },
+  "Abschnitt bis (inklusive)": {
+    "en": "Period until (inclusive)",
+    "fr": "Période jusqu’au (inclus)"
+  },
+  "Kalendertage": {
+    "en": "Calendar days",
+    "fr": "Jours calendaires"
+  },
+  "Mandate im Abschnitt": {
+    "en": "Mandates within period",
+    "fr": "Mandats dans la période"
+  },
+  "Stockwerk / Lage (heutiger Stand)": {
+    "en": "Floor / location (current status)",
+    "fr": "Étage / emplacement (situation actuelle)"
+  },
+  "Zimmer (heutiger Stand)": {
+    "en": "Rooms (current status)",
+    "fr": "Pièces (situation actuelle)"
+  },
+  "Fläche m² (heutiger Stand)": {
+    "en": "Area m² (current status)",
+    "fr": "Surface m² (situation actuelle)"
+  },
+  "Nettomiete Basis CHF/Monat": {
+    "en": "Base net rent CHF/month",
+    "fr": "Loyer net de base CHF/mois"
+  },
+  "Nebenkosten Basis CHF/Monat": {
+    "en": "Base service charges CHF/month",
+    "fr": "Charges de base CHF/mois"
+  },
+  "Nettomiete Abschnitt CHF": {
+    "en": "Period net rent CHF",
+    "fr": "Loyer net de la période CHF"
+  },
+  "Nebenkosten Abschnitt CHF": {
+    "en": "Period service charges CHF",
+    "fr": "Charges de la période CHF"
+  },
+  "Bruttomiete Abschnitt CHF": {
+    "en": "Period gross rent CHF",
+    "fr": "Loyer brut de la période CHF"
+  },
+  "Vertragsfreie Tage bis Abschnittsbeginn": {
+    "en": "Days without a lease up to period start",
+    "fr": "Jours sans bail jusqu’au début de la période"
+  },
+  "Kalendermonate; Teilmonate nach Kalendertagen, Differenz gerundeter Tagesstände; keine Zahlungseingänge": {
+    "en": "Calendar months; partial months by calendar days, difference of rounded daily balances; no rent receipts",
+    "fr": "Mois calendaires ; mois partiels selon les jours calendaires, différence des cumuls journaliers arrondis ; hors encaissements"
+  },
+  "Mieter nicht verknüpft": {
+    "en": "Tenant not linked",
+    "fr": "Locataire non associé"
+  },
+  "Zielmiete netto · Leerstandssoll": {
+    "en": "Net target rent · vacancy target rent",
+    "fr": "Loyer cible net · loyer théorique des vacances"
+  },
+  "Nettomiete manuell": {
+    "en": "Manual net rent",
+    "fr": "Loyer net manuel"
+  },
+  "Kein belegter Betrag": {
+    "en": "No documented amount",
+    "fr": "Aucun montant documenté"
+  },
+  "· Beginn": {
+    "en": "· Start",
+    "fr": "· Début"
+  },
+  "Kündigung erhalten": {
+    "en": "Termination received",
+    "fr": "Résiliation reçue"
+  },
+  ": Netto": {
+    "en": ": Net",
+    "fr": ": Net"
+  },
+  "/ NK": {
+    "en": "/ charges",
+    "fr": "/ charges"
+  },
+  "Leerstand:": {
+    "en": "Vacancy:",
+    "fr": "Vacance :"
+  },
+  "{0} / Mt.": {
+    "en": "{0} / mo.",
+    "fr": "{0} / mois"
+  },
+  "Aufteilung offen": {
+    "en": "Breakdown unspecified",
+    "fr": "Répartition non renseignée"
+  },
+  "Weitere Mietparteien · Fortsetzung": {
+    "en": "Other tenants · continued",
+    "fr": "Autres parties locataires · suite"
+  },
+  "{0} Tage": {
+    "en": "{0} days",
+    "fr": "{0} jours"
+  },
+  "Vertragsmieten": {
+    "en": "Contractual rents",
+    "fr": "Loyers contractuels"
+  },
+  "im Zeitraum": {
+    "en": "during the period",
+    "fr": "pendant la période"
+  },
+  "Separat: Zielmieten im Leerstand": {
+    "en": "Separate: vacancy target rents",
+    "fr": "Séparément : loyers cibles des vacances"
+  },
+  "Soll inkl. Leerstand · ohne manuelle Vermietung": {
+    "en": "Rent due incl. vacancies · excluding manual lettings",
+    "fr": "Loyer théorique, vacances comprises · hors locations manuelles"
+  },
+  "Separat: manuelle Vermietung ·": {
+    "en": "Separate: manual lettings ·",
+    "fr": "Séparément : locations manuelles ·"
+  },
+  "Mietwertquote offen:": {
+    "en": "Rental value ratio unavailable:",
+    "fr": "Taux selon la valeur locative non disponible :"
+  },
+  "Nach Nettomietwert:": {
+    "en": "By net rental value:",
+    "fr": "Selon la valeur locative nette :"
+  },
+  "% vermietet ·": {
+    "en": "% let ·",
+    "fr": "% loué ·"
+  },
+  "% Leerstand": {
+    "en": "% vacant",
+    "fr": "% vacant"
+  },
+  "Abschnitte ·": {
+    "en": "Periods ·",
+    "fr": "Périodes ·"
+  },
+  "vertraglich belegte Einheitentage ·": {
+    "en": "unit-days covered by leases ·",
+    "fr": "jours-unités couverts par un bail ·"
+  },
+  "Einheitenquote offen ·": {
+    "en": "Unit ratio unavailable ·",
+    "fr": "Taux selon le nombre d’unités non disponible ·"
+  },
+  "Vermietungsstände ungeklärt": {
+    "en": "Letting statuses unresolved",
+    "fr": "États locatifs non clarifiés"
+  },
+  "% vermietet · nach Anzahl vermietbarer Einheiten": {
+    "en": "% let · by number of lettable units",
+    "fr": "% loué · selon le nombre d’unités louables"
+  },
+  "Keine vermietbaren Einheiten": {
+    "en": "No lettable units",
+    "fr": "Aucune unité louable"
+  },
+  "{0} Einheiten{1}{2}": {
+    "en": "{0} units{1}{2}",
+    "fr": "{0} unités{1}{2}"
+  },
+  "vermietet ·": {
+    "en": "let ·",
+    "fr": "loué ·"
+  },
+  "Summe ·": {
+    "en": "Total ·",
+    "fr": "Total ·"
+  },
+  "Gesamtauswertung ·": {
+    "en": "Overall analysis ·",
+    "fr": "Analyse globale ·"
+  },
+  "Berechnete Vertragsmieten und separat belegtes Leerstandssoll im gewählten Zeitraum; keine Zahlungseingänge oder Rechnung. Ganze Monate zählen voll, Teilmonate nach Kalendertagen. Centbeträge entsprechen der Differenz gerundeter Tagesstände. Bei bekannter Nebenkostenaufteilung werden Akonto und Pauschale einzeln gerundet und addiert. Die Monatsbasis netto steht klein unter den Abschnittsbeträgen.": {
+    "en": "Calculated contractual rents and separately documented vacancy target rent for the selected period; not rent receipts or an invoice. Full months count in full, partial months by calendar days. Cent amounts equal the difference of rounded daily balances. Where the service charge breakdown is known, advance and flat-rate charges are rounded separately and added. The net monthly basis appears in small text below the period amounts.",
+    "fr": "Loyers contractuels calculés et loyer cible documenté des vacances présenté séparément pour la période choisie ; il ne s’agit ni d’encaissements ni d’une facture. Les mois complets comptent intégralement, les mois partiels selon les jours calendaires. Les centimes correspondent à la différence des cumuls journaliers arrondis. Si la répartition des charges est connue, acomptes et forfaits sont arrondis séparément puis additionnés. La base mensuelle nette apparaît en petit sous les montants de la période."
+  },
+  "Monatsmieten zum Stichtag, keine Zahlungseingänge oder anteilige Periodenabrechnung. Vertragsmieten, manuelle Angaben und Zielmieten sind getrennt ausgewiesen.": {
+    "en": "Monthly rents on the reference date, not rent receipts or a prorated period settlement. Contractual rents, manual details and target rents are shown separately.",
+    "fr": "Loyers mensuels à la date de référence, hors encaissements et décompte proportionnel de période. Loyers contractuels, données manuelles et loyers cibles sont présentés séparément."
+  },
+  "{0} «NK gesamt» enthält auch ältere Beträge ohne bekannte Aufteilung; diese werden nicht zusätzlich zu Akonto/Pauschale addiert. Ein Strich bedeutet fehlend oder nicht anwendbar; 0.00 ist eine erfasste Null. Die Nettomietwertquote verwendet Vertragsnetto / (Vertragsnetto + Leerstandssoll netto); bei offenen Angaben bleibt sie offen.": {
+    "en": "{0} “Total charges” also includes older amounts with an unknown breakdown; these are not added on top of advance/flat-rate charges. A dash means missing or not applicable; 0.00 is a recorded zero. The net rental value ratio uses contractual net rent / (contractual net rent + net vacancy target rent); it remains unspecified when details are missing.",
+    "fr": "{0} « Total des charges » inclut aussi les anciens montants sans répartition connue ; ils ne s’ajoutent pas aux acomptes et forfaits. Un tiret signifie manquant ou sans objet ; 0.00 est un zéro saisi. Le taux selon la valeur locative nette utilise le loyer net contractuel / (loyer net contractuel + loyer cible net des vacances) ; il reste non renseigné en cas de données manquantes."
+  },
+  "Historische Zielmieten gelten nur innerhalb erfasster Leerstandsabschnitte. Vertragslücken ohne solchen Nachweis belegen keinen tatsächlichen physischen Leerstand. Archivierte Verträge zählen innerhalb ihrer Laufzeit; vertragsfreie Bestandsabschnitte enden am Archivtag. Ein historischer Bestandsbeginn ist nicht erfasst. Objektangaben und Zuständigkeit entsprechen dem aktuellen Stammdatenstand.": {
+    "en": "Historical target rents apply only within recorded vacancy periods. Gaps between leases without this evidence do not establish actual physical vacancy. Archived leases count during their term; inventory periods without a lease end on the archive date. Historical inventory start dates are not recorded. Property details and responsibility reflect the current master data.",
+    "fr": "Les loyers cibles historiques s’appliquent uniquement aux périodes de vacance enregistrées. Sans ce justificatif, une période sans bail ne prouve pas une vacance physique réelle. Les baux archivés comptent pendant leur durée ; les périodes du parc sans bail se terminent à la date d’archivage. Le début historique du parc n’est pas enregistré. Les données des biens et la personne responsable correspondent aux données de base actuelles."
+  },
+  "Mieter / Vermietungsstand": {
+    "en": "Tenant / letting status",
+    "fr": "Locataire / état locatif"
+  },
+  "Verhältnis ab": {
+    "en": "Tenancy from",
+    "fr": "Location dès le"
+  },
+  "Betrag ab": {
+    "en": "Amount from",
+    "fr": "Montant dès le"
+  },
+  "Netto": {
+    "en": "Net",
+    "fr": "Net"
+  },
+  "Pauschale": {
+    "en": "Flat-rate charges",
+    "fr": "Forfait"
+  },
+  "Brutto": {
+    "en": "Gross",
+    "fr": "Brut"
+  },
+  "Auswertung": {
+    "en": "Analysis",
+    "fr": "Analyse"
+  },
+  "Ausführliche Übersicht": {
+    "en": "Detailed overview",
+    "fr": "Vue d’ensemble détaillée"
+  },
+  "Kompakte Übersicht": {
+    "en": "Compact overview",
+    "fr": "Vue d’ensemble compacte"
+  },
+  "IMMOBILIEN": {
+    "en": "PROPERTIES",
+    "fr": "IMMEUBLES"
+  },
+  "{2} · {3} in CHF": {
+    "en": "{2} · {3} in CHF",
+    "fr": "{2} · {3} en CHF"
+  },
+  "Seite": {
+    "en": "Page",
+    "fr": "Page"
+  },
+  "{7} Einheiten · {8} Liegenschaften{9}": {
+    "en": "{7} units · {8} properties{9}",
+    "fr": "{7} unités · {8} immeubles{9}"
+  },
+  "MORADA · {12}": {
+    "en": "MORADA · {12}",
+    "fr": "MORADA · {12}"
+  },
+  "Erstellt {14}": {
+    "en": "Created {14}",
+    "fr": "Créé le {14}"
+  },
+  "Mieterspiegel, Seite {0}": {
+    "en": "Rent roll, page {0}",
+    "fr": "État locatif, page {0}"
+  },
+  "Zeitraumbeträge": {
+    "en": "Period amounts",
+    "fr": "Montants de la période"
+  },
+  "Monatsmieten": {
+    "en": "Monthly rents",
+    "fr": "Loyers mensuels"
+  },
+  "Vertragsmieten und Leerstandssoll separat · Kalendertage": {
+    "en": "Contractual rents and vacancy target rent separate · calendar days",
+    "fr": "Loyers contractuels et loyer cible des vacances séparés · jours calendaires"
+  },
+  "Monatsbeträge · Vertragsmieten und Zielmieten separat": {
+    "en": "Monthly amounts · contractual and target rents separate",
+    "fr": "Montants mensuels · loyers contractuels et cibles séparés"
+  },
+  "Ein Eintrag ist für eine Druckseite zu lang. Bitte die kompakte Darstellung wählen oder sehr lange Stammdaten prüfen.": {
+    "en": "An entry is too long for one printed page. Please select the compact layout or check very long master data.",
+    "fr": "Une entrée dépasse une page imprimée. Veuillez choisir la présentation compacte ou vérifier les données de base très longues."
+  },
+  "Mieterspiegel · Druckvorschau": {
+    "en": "Rent roll · print preview",
+    "fr": "État locatif · aperçu avant impression"
+  },
+  "A4 quer · als PDF speichern oder drucken ·": {
+    "en": "A4 landscape · save as PDF or print ·",
+    "fr": "A4 paysage · enregistrer en PDF ou imprimer ·"
+  },
+  "Wird vorbereitet …": {
+    "en": "Preparing …",
+    "fr": "Préparation en cours…"
+  },
+  "Darstellung": {
+    "en": "Appearance",
+    "fr": "Présentation"
+  },
+  "Kompakt": {
+    "en": "Compact",
+    "fr": "Compacte"
+  },
+  "Ausführlich": {
+    "en": "Detailed",
+    "fr": "Détaillée"
+  },
+  "Neue Seite pro Liegenschaft": {
+    "en": "New page per property",
+    "fr": "Nouvelle page par immeuble"
+  },
+  "Die Ausgabeoptionen werden auf diesem Gerät gemerkt. Für die PDF-Ausgabe im Druckdialog «Als PDF speichern» wählen und zusätzliche Browser-Kopf-/Fusszeilen ausschalten.": {
+    "en": "Output options are remembered on this device. For PDF output, select “Save as PDF” in the print dialog and disable additional browser headers/footers.",
+    "fr": "Les options de sortie sont mémorisées sur cet appareil. Pour un PDF, choisir « Enregistrer au format PDF » dans la boîte d’impression et désactiver les en-têtes et pieds de page du navigateur."
+  },
+  "Seiten": {
+    "en": "Pages",
+    "fr": "Pages"
+  },
+  "Die Druckvorschau konnte nicht erstellt werden. Der CSV-Export bleibt verfügbar.": {
+    "en": "The print preview could not be created. CSV export remains available.",
+    "fr": "L’aperçu avant impression n’a pas pu être créé. L’export CSV reste disponible."
+  },
+  "Vorschau prüfen": {
+    "en": "Check preview",
+    "fr": "Vérifier l’aperçu"
+  },
+  "Der Druckdialog konnte nicht geöffnet werden. Bitte den CSV-Export verwenden.": {
+    "en": "The print dialog could not be opened. Please use CSV export.",
+    "fr": "La boîte d’impression n’a pas pu être ouverte. Veuillez utiliser l’export CSV."
+  },
+  "Die Ausgabeoptionen werden auf diesem Gerät gemerkt. Für die PDF-Ausgabe «Als PDF speichern» wählen und zusätzliche Browser-Kopf-/Fusszeilen ausschalten.": {
+    "en": "Output options are remembered on this device. For PDF output, select “Save as PDF” and disable additional browser headers/footers.",
+    "fr": "Les options de sortie sont mémorisées sur cet appareil. Pour un PDF, choisir « Enregistrer au format PDF » et désactiver les en-têtes et pieds de page du navigateur."
+  },
+  "Die Ausgabeoptionen gelten für diese Vorschau. Sie konnten auf diesem Gerät nicht gespeichert werden.": {
+    "en": "Output options apply to this preview. They could not be saved on this device.",
+    "fr": "Les options de sortie s’appliquent à cet aperçu. Elles n’ont pas pu être enregistrées sur cet appareil."
+  },
+  "Tab": {
+    "en": "Tab",
+    "fr": "Tabulation"
+  },
+  "Alle Liegenschaften": {
+    "en": "All properties",
+    "fr": "Tous les immeubles"
+  },
+  "Bitte ein gültiges Datum zwischen 1900 und 2200 wählen.": {
+    "en": "Please select a valid date between 1900 and 2200.",
+    "fr": "Veuillez choisir une date valide entre 1900 et 2200."
+  },
+  "Vertragsende": {
+    "en": "Lease end",
+    "fr": "Fin du bail"
+  },
+  "Aus Archiv zurückholen": {
+    "en": "Restore from archive",
+    "fr": "Restaurer depuis les archives"
+  },
+  "Archivieren": {
+    "en": "Archive",
+    "fr": "Archiver"
+  },
+  "Fehlerhafte Erfassung stornieren": {
+    "en": "Cancel incorrect entry",
+    "fr": "Annuler la saisie erronée"
+  },
+  "· Archiviert": {
+    "en": "· Archived",
+    "fr": "· Archivé"
+  },
+  "Kontakt nicht gefunden.": {
+    "en": "Contact not found.",
+    "fr": "Contact introuvable."
+  },
+  "Mandat nicht gefunden.": {
+    "en": "Mandate not found.",
+    "fr": "Mandat introuvable."
+  },
+  "Auftrag & Laufzeit": {
+    "en": "Scope & term",
+    "fr": "Mission et durée"
+  },
+  "Vertragsunterlagen & Notizen": {
+    "en": "Contract documents & notes",
+    "fr": "Documents contractuels et notes"
+  },
+  "Kein Enddatum erfasst": {
+    "en": "No end date recorded",
+    "fr": "Aucune date de fin saisie"
+  },
+  "Vertragsreferenz": {
+    "en": "Contract reference",
+    "fr": "Référence du contrat"
+  },
+  "Stornogrund: {0}": {
+    "en": "Cancellation reason: {0}",
+    "fr": "Motif d’annulation : {0}"
+  },
+  "Leistungsumfang noch ergänzen.": {
+    "en": "Scope of services still to be added.",
+    "fr": "Étendue des prestations à compléter."
+  },
+  "Die Vereinbarung wird hier dokumentiert. Rechnungen und Unternehmensumsätze werden separat erfasst.": {
+    "en": "The agreement is documented here. Invoices and company revenue are recorded separately.",
+    "fr": "L’accord est documenté ici. Les factures et le chiffre d’affaires de l’entreprise sont saisis séparément."
+  },
+  "Diesem Mandat sind noch keine Liegenschaften zugeordnet.": {
+    "en": "No properties have been assigned to this mandate yet.",
+    "fr": "Aucun immeuble n’est encore associé à ce mandat."
+  },
+  "Gültig ab": {
+    "en": "Effective from",
+    "fr": "Valable dès le"
+  },
+  "Mietzinsverlauf": {
+    "en": "Rent history",
+    "fr": "Historique des loyers"
+  },
+  "Mietzinsstände": {
+    "en": "Rent levels",
+    "fr": "États des loyers"
+  },
+  "Rollen": {
+    "en": "Roles",
+    "fr": "Rôles"
+  },
+  "Adresse": {
+    "en": "Address",
+    "fr": "Adresse"
+  },
+  "Ja": {
+    "en": "Yes",
+    "fr": "Oui"
+  },
+  "Nein": {
+    "en": "No",
+    "fr": "Non"
+  },
+  "Mandatsbezeichnung": {
+    "en": "Mandate name",
+    "fr": "Intitulé du mandat"
+  },
+  "Noch ergänzen": {
+    "en": "To be added",
+    "fr": "À compléter"
+  },
+  "Kündigungsvereinbarung": {
+    "en": "Termination agreement",
+    "fr": "Accord de résiliation"
+  },
+  "Verlängerungsvereinbarung": {
+    "en": "Renewal agreement",
+    "fr": "Accord de prolongation"
+  },
+  "Beginn": {
+    "en": "Start",
+    "fr": "Début"
+  },
+  "Keine Einträge in dieser Auswahl.": {
+    "en": "No entries in this selection.",
+    "fr": "Aucune entrée dans cette sélection."
+  },
+  "Bitte einen gültigen Stichtag zwischen 1900 und 2200 wählen.": {
+    "en": "Please select a valid reference date between 1900 and 2200.",
+    "fr": "Veuillez choisir une date de référence valide entre 1900 et 2200."
+  },
+  "Zuordnungen pro Auswahl.": {
+    "en": "assignments per selection.",
+    "fr": "affectations par sélection."
+  },
+  "Frist wieder geöffnet. Die Stornierung bleibt im Verlauf erhalten.": {
+    "en": "Deadline reopened. The cancellation remains in the history.",
+    "fr": "Échéance rouverte. L’annulation reste dans l’historique."
+  },
+  "Frist wieder geöffnet.": {
+    "en": "Deadline reopened.",
+    "fr": "Échéance rouverte."
+  },
+  "Frist als erledigt markiert.": {
+    "en": "Deadline marked as completed.",
+    "fr": "Échéance marquée comme terminée."
+  },
+  "Aus Archiv zurückholen?": {
+    "en": "Restore from archive?",
+    "fr": "Restaurer depuis les archives ?"
+  },
+  "Eintrag archivieren?": {
+    "en": "Archive entry?",
+    "fr": "Archiver l’entrée ?"
+  },
+  "Alle Angaben und Verknüpfungen bleiben erhalten. Historische Mietverträge bleiben für den Mietzinsverlauf wirksam.": {
+    "en": "All details and links are retained. Historical leases continue to apply to the rent history.",
+    "fr": "Toutes les données et associations sont conservées. Les anciens baux restent pris en compte dans l’historique des loyers."
+  },
+  "Zurückholen": {
+    "en": "Restore",
+    "fr": "Restaurer"
+  },
+  "Eintrag archiviert.": {
+    "en": "Entry archived.",
+    "fr": "Entrée archivée."
+  },
+  "Eintrag aus dem Archiv zurückgeholt.": {
+    "en": "Entry restored from archive.",
+    "fr": "Entrée restaurée depuis les archives."
+  },
+  "Mietzinsänderung entfernen?": {
+    "en": "Remove rent change?",
+    "fr": "Supprimer la modification du loyer ?"
+  },
+  "{0} · Änderung ab {1}": {
+    "en": "{0} · change from {1}",
+    "fr": "{0} · modification dès le {1}"
+  },
+  "Der zuvor gültige Mietzins gilt danach weiter bis zur nächsten Änderung. Die Berichtigung wird im Aktivitätslog vermerkt.": {
+    "en": "The previously applicable rent will then continue until the next change. The correction is recorded in the activity log.",
+    "fr": "Le loyer précédent reste ensuite applicable jusqu’à la prochaine modification. La correction est inscrite dans le journal d’activité."
+  },
+  "Änderung entfernen": {
+    "en": "Remove change",
+    "fr": "Supprimer la modification"
+  },
+  "Mietzinsverlauf berichtigt.": {
+    "en": "Rent history corrected.",
+    "fr": "Historique des loyers corrigé."
+  },
+  "Bitte warten, bis die Vertragsunterlagen eingelesen sind.": {
+    "en": "Please wait until the contract documents have been read.",
+    "fr": "Veuillez attendre la fin de la lecture des documents contractuels."
+  },
+  "Der Datenstand hat sich seit dem Öffnen geändert. Eure Eingaben bleiben erhalten. Bitte den aktuellen Stand prüfen und das Formular neu öffnen.": {
+    "en": "The data has changed since this was opened. Your entries are retained. Please check the current data and reopen the form.",
+    "fr": "Les données ont changé depuis l’ouverture. Vos saisies sont conservées. Veuillez vérifier les données actuelles et rouvrir le formulaire."
+  },
+  "Ein ähnlicher Kontakt": {
+    "en": "A similar contact",
+    "fr": "Un contact similaire"
+  },
+  "Frist storniert. Begründung und Verlauf sind gespeichert.": {
+    "en": "Deadline cancelled. The reason and history have been saved.",
+    "fr": "Échéance annulée. Le motif et l’historique sont enregistrés."
+  },
+  "Frist und Erinnerung gespeichert.": {
+    "en": "Deadline and reminder saved.",
+    "fr": "Échéance et rappel enregistrés."
+  },
+  "Leerstand und Zielmiete gespeichert.": {
+    "en": "Vacancy and target rent saved.",
+    "fr": "Vacance et loyer cible enregistrés."
+  },
+  "Gespeichert. Verknüpfungen und Kennzahlen sind aktualisiert.": {
+    "en": "Saved. Links and key figures have been updated.",
+    "fr": "Enregistré. Les associations et indicateurs sont actualisés."
+  },
+  "Objekt- und Einheitennummern müssen gültig und eindeutig sein (maximal 40 Zeichen).": {
+    "en": "Property and unit numbers must be valid and unique (maximum 40 characters).",
+    "fr": "Les numéros d’immeuble et d’unité doivent être valides et uniques (40 caractères au maximum)."
+  },
+  "Der Einheitenbestand im Mandat muss eine ganze Zahl zwischen 1 und 20’000 sein.": {
+    "en": "The number of units in the mandate must be an integer between 1 and 20’000.",
+    "fr": "Le nombre d’unités du mandat doit être un entier compris entre 1 et 20’000."
+  },
+  "Einheitenbestand im Mandat noch offen": {
+    "en": "Number of units in the mandate still unspecified",
+    "fr": "Nombre d’unités du mandat encore non renseigné"
+  },
+  "Einheiten erfasst": {
+    "en": "units recorded",
+    "fr": "unités saisies"
+  },
+  "Noch keine Einheiten erfasst": {
+    "en": "No units recorded yet",
+    "fr": "Aucune unité encore saisie"
+  },
+  "Eigentümer mit zentralem Kontakt verknüpfen": {
+    "en": "Link owner to central contact",
+    "fr": "Associer le propriétaire au contact central"
+  },
+  "Eigentümerkontakt fehlt": {
+    "en": "Owner contact missing",
+    "fr": "Contact du propriétaire manquant"
+  },
+  "Mandatsangabe als eigenen Vertrag erfassen": {
+    "en": "Record mandate details as a separate contract",
+    "fr": "Saisir les données du mandat comme contrat distinct"
+  },
+  "Kein aktives oder geplantes Mandat zugeordnet": {
+    "en": "No active or planned mandate assigned",
+    "fr": "Aucun mandat actif ou prévu associé"
+  },
+  "vermietete Einheiten ohne bestätigten Mietvertrag": {
+    "en": "let units without a confirmed lease",
+    "fr": "unités louées sans bail confirmé"
+  },
+  "Zuständigkeit fehlt": {
+    "en": "Responsible person missing",
+    "fr": "Responsable non renseigné"
+  },
+  "Vermietungsangaben offen": {
+    "en": "Letting details unspecified",
+    "fr": "Données locatives non renseignées"
+  },
+  "Nettomietzinse fehlen": {
+    "en": "Net rents missing",
+    "fr": "Loyers nets manquants"
+  },
+  "{1}–{2} von {3}": {
+    "en": "{1}–{2} of {3}",
+    "fr": "{1}–{2} sur {3}"
+  },
+  "Seite {8} / {9}": {
+    "en": "Page {8} / {9}",
+    "fr": "Page {8} / {9}"
+  },
+  "Vorherige Seite": {
+    "en": "Previous page",
+    "fr": "Page précédente"
+  },
+  "Nächste Seite": {
+    "en": "Next page",
+    "fr": "Page suivante"
+  },
+  "durchblättern": {
+    "en": "browse",
+    "fr": "parcourir"
+  },
+  "Pro Seite": {
+    "en": "Per page",
+    "fr": "Par page"
+  },
+  "pro Seite": {
+    "en": "per page",
+    "fr": "par page"
+  },
+  "Strasse": {
+    "en": "Street",
+    "fr": "Rue"
+  },
+  "PLZ": {
+    "en": "Postcode",
+    "fr": "NPA"
+  },
+  "Ort": {
+    "en": "Town / city",
+    "fr": "Localité"
+  },
+  "Einheiten im Mandat": {
+    "en": "Units in mandate",
+    "fr": "Unités du mandat"
+  },
+  "Stockwerk": {
+    "en": "Floor",
+    "fr": "Étage"
+  },
+  "Flaeche": {
+    "en": "Area",
+    "fr": "Surface"
+  },
+  "Die CSV darf höchstens 2 MB gross sein. Bitte den Bestand in kleinere Dateien aufteilen.": {
+    "en": "The CSV must be no larger than 2 MB. Please split the records into smaller files.",
+    "fr": "Le CSV ne doit pas dépasser 2 Mo. Veuillez répartir les données en fichiers plus petits."
+  },
+  "Bitte höchstens 5’000 Datensätze pro Import verwenden.": {
+    "en": "Please use no more than 5’000 records per import.",
+    "fr": "Veuillez utiliser au maximum 5’000 enregistrements par import."
+  },
+  "Ungültige Anführungszeichen in der CSV.": {
+    "en": "Invalid quotation marks in the CSV.",
+    "fr": "Guillemets non valides dans le CSV."
+  },
+  "Nach einem geschlossenen Anführungszeichen fehlt ein Trennzeichen.": {
+    "en": "A delimiter is missing after a closing quotation mark.",
+    "fr": "Un séparateur manque après un guillemet fermant."
+  },
+  "Ein Anführungszeichen in der CSV wurde nicht geschlossen.": {
+    "en": "A quotation mark in the CSV was not closed.",
+    "fr": "Un guillemet n’a pas été fermé dans le CSV."
+  },
+  "Die CSV enthält noch keine Datensätze. Bitte die Vorlage ausfüllen.": {
+    "en": "The CSV contains no records yet. Please fill in the template.",
+    "fr": "Le CSV ne contient encore aucune donnée. Veuillez remplir le modèle."
+  },
+  "Unbekannte Importart.": {
+    "en": "Unknown import type.",
+    "fr": "Type d’import inconnu."
+  },
+  "Diese CSV ist eine Auswertung und keine Importvorlage. Bitte die leere CSV-Vorlage ausfüllen. Für die vollständige Übernahme mit Mietverträgen und Dokumenten verwendet ihr die Datensicherung unter Einstellungen.": {
+    "en": "This CSV is a report, not an import template. Please fill in the empty CSV template. To transfer everything, including leases and documents, use the backup under Settings.",
+    "fr": "Ce CSV est un rapport et non un modèle d’import. Veuillez remplir le modèle CSV vide. Pour tout transférer, y compris les baux et documents, utiliser la sauvegarde dans les paramètres."
+  },
+  "Die Spaltenüberschriften müssen eindeutig sein.": {
+    "en": "Column headings must be unique.",
+    "fr": "Les en-têtes de colonnes doivent être uniques."
+  },
+  "Spalte fehlt:": {
+    "en": "Missing column:",
+    "fr": "Colonne manquante :"
+  },
+  "Ungültige Objekt- oder Einheitennummer.": {
+    "en": "Invalid property or unit number.",
+    "fr": "Numéro d’immeuble ou d’unité non valide."
+  },
+  "Nummer «": {
+    "en": "Number “",
+    "fr": "Le numéro «"
+  },
+  "» ist bereits vorhanden.": {
+    "en": "” already exists.",
+    "fr": "» existe déjà."
+  },
+  "ist ungültig:": {
+    "en": "is invalid:",
+    "fr": "n’est pas valide :"
+  },
+  "Die Anzahl der Spalten stimmt nicht mit der Kopfzeile überein.": {
+    "en": "The number of columns does not match the header row.",
+    "fr": "Le nombre de colonnes ne correspond pas à la ligne d’en-tête."
+  },
+  "Archivierte Datensätze bitte über eine vollständige Sicherung übernehmen.": {
+    "en": "Please transfer archived records using a full backup.",
+    "fr": "Veuillez transférer les enregistrements archivés à l’aide d’une sauvegarde complète."
+  },
+  "Diese Adresse ist bereits vorhanden; bitte auch das Archiv prüfen.": {
+    "en": "This address already exists; please also check the archive.",
+    "fr": "Cette adresse existe déjà ; veuillez aussi vérifier les archives."
+  },
+  "Objektnummer «": {
+    "en": "Property number “",
+    "fr": "Le numéro d’immeuble «"
+  },
+  "» gehört zu keiner aktiven Liegenschaft.": {
+    "en": "” does not belong to an active property.",
+    "fr": "» ne correspond à aucun immeuble actif."
+  },
+  "Nettomiete ist ungültig.": {
+    "en": "The net rent is invalid.",
+    "fr": "Le loyer net n’est pas valide."
+  },
+  "Diese Einheitenbezeichnung ist bei der Liegenschaft bereits vorhanden.": {
+    "en": "This unit name already exists for this property.",
+    "fr": "Cette désignation d’unité existe déjà pour cet immeuble."
+  },
+  "Der lokale Bestand unterstützt höchstens 20’000 Einträge je Register.": {
+    "en": "Local storage supports a maximum of 20’000 entries per register.",
+    "fr": "Le stockage local permet au maximum 20’000 entrées par registre."
+  },
+  "Liegenschaften importieren.": {
+    "en": "Import properties.",
+    "fr": "Importer des immeubles."
+  },
+  "Einheiten importieren.": {
+    "en": "Import units.",
+    "fr": "Importer des unités."
+  },
+  "Übernehmt neue {1} mit einer CSV-Datei. Ihr prüft die Vorschau vor dem Speichern. Bestehende Einträge werden nicht überschrieben. Maximal 5’000 Zeilen und 2 MB pro Datei.": {
+    "en": "Import new {1} using a CSV file. Review the preview before saving. Existing entries will not be overwritten. Maximum 5’000 rows and 2 MB per file.",
+    "fr": "Importer de nouveaux {1} avec un fichier CSV. Vérifier l’aperçu avant l’enregistrement. Les entrées existantes ne seront pas écrasées. Au maximum 5’000 lignes et 2 Mo par fichier."
+  },
+  "{3}Leere CSV-Vorlage": {
+    "en": "{3}Empty CSV template",
+    "fr": "{3}Modèle CSV vide"
+  },
+  "Nummern sind eindeutig; eine leere {5}nummer wird automatisch vergeben. Fehlende Zahlen bleiben offen. Nettomieten sind Monatsbeträge in CHF. UTF-8, Semikolon oder Komma als Trennzeichen. Für einen vollständigen Umzug verwendet ihr die Sicherung unter Einstellungen.": {
+    "en": "Numbers are unique; a blank {5} number is assigned automatically. Missing numbers remain unspecified. Net rents are monthly amounts in CHF. UTF-8, semicolon or comma as delimiter. For a full transfer, use the backup under Settings.",
+    "fr": "Les numéros sont uniques ; un numéro {5} vide est attribué automatiquement. Les valeurs numériques manquantes restent non renseignées. Les loyers nets sont mensuels, en CHF. UTF-8, séparateur point-virgule ou virgule. Pour un transfert complet, utiliser la sauvegarde dans les paramètres."
+  },
+  "CSV-Datei auswählen": {
+    "en": "Select CSV file",
+    "fr": "Choisir un fichier CSV"
+  },
+  "Mandatsart: Bewirtschaftung, Neuvermietung, Living · Interim, Living · Corporate oder Einzelauftrag. Zuständig: Alexander, Diana oder leer.": {
+    "en": "Mandate type: property management, reletting, Living · Interim, Living · Corporate or individual assignment. Responsible: Alexander, Diana or blank.",
+    "fr": "Type de mandat : gestion immobilière, relocation, Living · Interim, Living · Corporate ou mission ponctuelle. Responsable : Alexander, Diana ou vide."
+  },
+  "Die Objektnummer ordnet jede Einheit einer bereits erfassten Liegenschaft zu. Nutzung: Wohnung, Gewerbe, Parkplatz, Lager oder Sonstiges. Vermietungsstand: Vermietet, Leerstehend, Nicht vermietbar oder Noch offen. Die exportierte Auswertung ist keine Importvorlage.": {
+    "en": "The property number assigns each unit to an existing property. Use: residential, commercial, parking, storage or other. Letting status: let, vacant, not lettable or unspecified. The exported report is not an import template.",
+    "fr": "Le numéro d’immeuble associe chaque unité à un immeuble déjà saisi. Affectation : logement, commerce, parking, dépôt ou autre. État locatif : loué, vacant, non louable ou non renseigné. Le rapport exporté n’est pas un modèle d’import."
+  },
+  "Geprüfte Einträge importieren": {
+    "en": "Import verified entries",
+    "fr": "Importer les entrées vérifiées"
+  },
+  "Bitte eine CSV-Datei mit höchstens 2 MB auswählen.": {
+    "en": "Please select a CSV file no larger than 2 MB.",
+    "fr": "Veuillez choisir un fichier CSV de 2 Mo au maximum."
+  },
+  "{0} Fehler · noch nichts importiert": {
+    "en": "{0} errors · nothing imported yet",
+    "fr": "{0} erreurs · rien n’a encore été importé"
+  },
+  "Bitte korrigiert die CSV und wählt sie erneut aus. Die ganze Datei wird erst nach erfolgreicher Prüfung übernommen.": {
+    "en": "Please correct the CSV and select it again. The entire file will only be imported after successful validation.",
+    "fr": "Veuillez corriger le CSV puis le sélectionner à nouveau. L’ensemble du fichier sera importé uniquement après validation."
+  },
+  "Datensatz": {
+    "en": "Record",
+    "fr": "Enregistrement"
+  },
+  "Weitere Fehler werden nach der Korrektur angezeigt.": {
+    "en": "Further errors will be displayed after correction.",
+    "fr": "D’autres erreurs seront affichées après correction."
+  },
+  "{0} {1} bereit zum Import": {
+    "en": "{0} {1} ready to import",
+    "fr": "{0} {1} prêts à importer"
+  },
+  "Vorschau der ersten {2} Einträge": {
+    "en": "Preview of the first {2} entries",
+    "fr": "Aperçu des {2} premières entrées"
+  },
+  "{4} · Angaben könnt ihr nach dem Import ergänzen.": {
+    "en": "{4} · You can add details after importing.",
+    "fr": "{4} · Les données peuvent être complétées après l’import."
+  },
+  "Einheitenbestände noch offen": {
+    "en": "Unit counts still unspecified",
+    "fr": "Nombre d’unités encore non renseigné"
+  },
+  "Vermietungsstände noch offen": {
+    "en": "Letting statuses still unspecified",
+    "fr": "États locatifs encore non renseignés"
+  },
+  "Die CSV konnte nicht gelesen werden.": {
+    "en": "The CSV could not be read.",
+    "fr": "Le CSV n’a pas pu être lu."
+  },
+  "Der Datenstand hat sich geändert. Bitte die CSV erneut auswählen und prüfen.": {
+    "en": "The data has changed. Please select and validate the CSV again.",
+    "fr": "Les données ont changé. Veuillez sélectionner et vérifier à nouveau le CSV."
+  },
+  "per CSV importiert": {
+    "en": "imported via CSV",
+    "fr": "importé par CSV"
+  },
+  "Living · Interim": {
+    "en": "Living · Interim",
+    "fr": "Living · Interim"
+  },
+  "Living · Corporate": {
+    "en": "Living · Corporate",
+    "fr": "Living · Corporate"
+  },
+  "Einzelauftrag": {
+    "en": "Individual assignment",
+    "fr": "Mission ponctuelle"
+  },
+  "Vermietet": {
+    "en": "Let",
+    "fr": "Loué"
+  },
+  "Wohnung": {
+    "en": "Apartment",
+    "fr": "Appartement"
+  },
+  "Gewerbe": {
+    "en": "Commercial premises",
+    "fr": "Local commercial"
+  },
+  "Parkplatz": {
+    "en": "Parking space",
+    "fr": "Place de parc"
+  },
+  "Lager": {
+    "en": "Storage",
+    "fr": "Dépôt"
+  },
+  "Sonstiges": {
+    "en": "Other",
+    "fr": "Autre"
+  },
+  "Noch nicht erfasst": {
+    "en": "Not recorded yet",
+    "fr": "Pas encore saisi"
+  },
+  "Mehrfamilienhaus": {
+    "en": "Apartment building",
+    "fr": "Immeuble d’habitation"
+  },
+  "Einfamilienhaus": {
+    "en": "Single-family house",
+    "fr": "Maison individuelle"
+  },
+  "Wohn- und Geschäftshaus": {
+    "en": "Residential and commercial building",
+    "fr": "Immeuble mixte"
+  },
+  "Geschäftsliegenschaft": {
+    "en": "Commercial property",
+    "fr": "Immeuble commercial"
+  },
+  "Wohnüberbauung": {
+    "en": "Residential development",
+    "fr": "Ensemble résidentiel"
+  },
+  "Parkierungsanlage": {
+    "en": "Parking facility",
+    "fr": "Installation de stationnement"
+  },
+  "Weitere Liegenschaft": {
+    "en": "Other property",
+    "fr": "Autre immeuble"
+  },
+  "Bitte die zusätzlichen Objektangaben prüfen.": {
+    "en": "Please check the additional property details.",
+    "fr": "Veuillez vérifier les données complémentaires du bien."
+  },
+  "Bitte eine gültige Liegenschaftsart auswählen.": {
+    "en": "Please select a valid property type.",
+    "fr": "Veuillez choisir un type d’immeuble valide."
+  },
+  "Bitte ein gültiges Baujahr zwischen 1000 und 2200 eingeben.": {
+    "en": "Please enter a valid year of construction between 1000 and 2200.",
+    "fr": "Veuillez saisir une année de construction valide entre 1000 et 2200."
+  },
+  "Bitte die E-Mail-Adresse der Hauswartung prüfen.": {
+    "en": "Please check the caretaker’s email address.",
+    "fr": "Veuillez vérifier l’adresse e-mail de la conciergerie."
+  },
+  "Bitte das Baujahr vierstellig eingeben oder das Feld leer lassen.": {
+    "en": "Please enter the year of construction using four digits or leave the field blank.",
+    "fr": "Veuillez saisir l’année de construction sur quatre chiffres ou laisser le champ vide."
+  },
+  "1 aktives Mandat": {
+    "en": "1 active mandate",
+    "fr": "1 mandat actif"
+  },
+  "aktive Mandate": {
+    "en": "active mandates",
+    "fr": "mandats actifs"
+  },
+  "Mandatsbeginn": {
+    "en": "Mandate start",
+    "fr": "Début du mandat"
+  },
+  "Mandat im Entwurf": {
+    "en": "Draft mandate",
+    "fr": "Mandat en projet"
+  },
+  "Mandat beendet": {
+    "en": "Mandate ended",
+    "fr": "Mandat terminé"
+  },
+  "Ohne Mandat": {
+    "en": "No mandate",
+    "fr": "Sans mandat"
+  },
+  "Mandatsangabe verknüpfen": {
+    "en": "Link mandate details",
+    "fr": "Associer les données du mandat"
+  },
+  "Im Bestand": {
+    "en": "In portfolio",
+    "fr": "Dans le parc"
+  },
+  "Mit Leerstand": {
+    "en": "With vacancies",
+    "fr": "Avec vacances"
+  },
+  "Mit offenen Pendenzen": {
+    "en": "With open tasks",
+    "fr": "Avec tâches en suspens"
+  },
+  "Angaben offen": {
+    "en": "Details unspecified",
+    "fr": "Données non renseignées"
+  },
+  "Ort / Adresse": {
+    "en": "Town / address",
+    "fr": "Localité / adresse"
+  },
+  "Meiste Einheiten": {
+    "en": "Most units",
+    "fr": "Le plus d’unités"
+  },
+  "Meiste Leerstände": {
+    "en": "Most vacancies",
+    "fr": "Le plus de vacances"
+  },
+  "Meiste offene Pendenzen": {
+    "en": "Most open tasks",
+    "fr": "Le plus de tâches en suspens"
+  },
+  "Zuletzt geändert": {
+    "en": "Recently changed",
+    "fr": "Modification récente"
+  },
+  "Im Archiv": {
+    "en": "In archive",
+    "fr": "Dans les archives"
+  },
+  "Inklusive Archiv": {
+    "en": "Including archive",
+    "fr": "Archives comprises"
+  },
+  "Arbeitsüberblick": {
+    "en": "Work overview",
+    "fr": "Vue d’ensemble du travail"
+  },
+  "Liegenschaften{5}": {
+    "en": "Properties{5}",
+    "fr": "Immeubles{5}"
+  },
+  "· gefiltert": {
+    "en": "· filtered",
+    "fr": "· filtré"
+  },
+  "Ansicht:": {
+    "en": "View:",
+    "fr": "Vue :"
+  },
+  "Eigentümer:": {
+    "en": "Owner:",
+    "fr": "Propriétaire :"
+  },
+  "Ort:": {
+    "en": "Town:",
+    "fr": "Localité :"
+  },
+  "Mandatsart:": {
+    "en": "Mandate type:",
+    "fr": "Type de mandat :"
+  },
+  "Sortierung:": {
+    "en": "Sort order:",
+    "fr": "Tri :"
+  },
+  "Ansicht zurücksetzen": {
+    "en": "Reset view",
+    "fr": "Réinitialiser la vue"
+  },
+  "im Archiv": {
+    "en": "in archive",
+    "fr": "dans les archives"
+  },
+  "inklusive Archiv": {
+    "en": "including archive",
+    "fr": "archives comprises"
+  },
+  "im Bestand": {
+    "en": "in portfolio",
+    "fr": "dans le parc"
+  },
+  "Noch kein Bestand erfasst": {
+    "en": "No portfolio recorded yet",
+    "fr": "Aucun parc encore saisi"
+  },
+  "Keine archivierten Liegenschaften": {
+    "en": "No archived properties",
+    "fr": "Aucun immeuble archivé"
+  },
+  "Keine Liegenschaften im Bestand": {
+    "en": "No properties in portfolio",
+    "fr": "Aucun immeuble dans le parc"
+  },
+  "Keine Treffer ·": {
+    "en": "No results ·",
+    "fr": "Aucun résultat ·"
+  },
+  "{0}–{1} von {2}": {
+    "en": "{0}–{1} of {2}",
+    "fr": "{0}–{1} sur {2}"
+  },
+  "Liegenschaften durchblättern": {
+    "en": "Browse properties",
+    "fr": "Parcourir les immeubles"
+  },
+  "Liegenschaften pro Seite": {
+    "en": "Properties per page",
+    "fr": "Immeubles par page"
+  },
+  "Noch keine Einheiten": {
+    "en": "No units yet",
+    "fr": "Aucune unité pour le moment"
+  },
+  "{0} leerstehend": {
+    "en": "{0} vacant",
+    "fr": "{0} vacantes"
+  },
+  "Einheitenzahl offen": {
+    "en": "Unit count unspecified",
+    "fr": "Nombre d’unités non renseigné"
+  },
+  "Einheitenzahl prüfen": {
+    "en": "Check unit count",
+    "fr": "Vérifier le nombre d’unités"
+  },
+  "Voll vermietet": {
+    "en": "Fully let",
+    "fr": "Entièrement loué"
+  },
+  "Erste Liegenschaft erfassen.": {
+    "en": "Add the first property.",
+    "fr": "Ajouter le premier immeuble."
+  },
+  "Keine passenden Liegenschaften": {
+    "en": "No matching properties",
+    "fr": "Aucun immeuble correspondant"
+  },
+  "Das Archiv ist leer.": {
+    "en": "The archive is empty.",
+    "fr": "Les archives sont vides."
+  },
+  "Keine Liegenschaften im Bestand.": {
+    "en": "No properties in the portfolio.",
+    "fr": "Aucun immeuble dans le parc."
+  },
+  "Beginnt mit Adresse, Eigentümer und Zuständigkeit. Einheiten, Mandate und Unterlagen ergänzt ihr anschliessend im Dossier.": {
+    "en": "Start with the address, owner and responsible person. Add units, mandates and documents in the dossier afterwards.",
+    "fr": "Commencer par l’adresse, le propriétaire et la personne responsable. Ajouter ensuite les unités, mandats et documents dans le dossier."
+  },
+  "Für diese Suche und Filter wurden keine Liegenschaften gefunden. Setzt die Ansicht zurück oder passt eure Auswahl an.": {
+    "en": "No properties match this search and these filters. Reset the view or adjust your selection.",
+    "fr": "Aucun immeuble ne correspond à cette recherche et à ces filtres. Réinitialiser la vue ou adapter la sélection."
+  },
+  "Archivierte Liegenschaften erscheinen hier. Ihre Angaben und Unterlagen bleiben erhalten.": {
+    "en": "Archived properties appear here. Their details and documents are retained.",
+    "fr": "Les immeubles archivés apparaissent ici. Leurs données et documents sont conservés."
+  },
+  "Eure erfassten Liegenschaften sind archiviert. Öffnet das Archiv, um ein Objekt wieder in den Bestand aufzunehmen.": {
+    "en": "Your recorded properties are archived. Open the archive to return a property to the portfolio.",
+    "fr": "Les immeubles saisis sont archivés. Ouvrir les archives pour réintégrer un bien dans le parc."
+  },
+  "Bestand importieren": {
+    "en": "Import portfolio",
+    "fr": "Importer le parc"
+  },
+  "Bestand anzeigen": {
+    "en": "Show portfolio",
+    "fr": "Afficher le parc"
+  },
+  "Archiv öffnen": {
+    "en": "Open archive",
+    "fr": "Ouvrir les archives"
+  },
+  "Liegenschaft / Eigentümer": {
+    "en": "Property / owner",
+    "fr": "Immeuble / propriétaire"
+  },
+  "Zuständig / Mandat": {
+    "en": "Responsible / mandate",
+    "fr": "Responsable / mandat"
+  },
+  "Pendenzen": {
+    "en": "Pending tasks",
+    "fr": "Tâches en suspens"
+  },
+  "1 offenes Anliegen": {
+    "en": "1 open request",
+    "fr": "1 demande ouverte"
+  },
+  "offene Anliegen": {
+    "en": "open requests",
+    "fr": "demandes ouvertes"
+  },
+  "1 offene Aufgabe": {
+    "en": "1 open task",
+    "fr": "1 tâche ouverte"
+  },
+  "offene Aufgaben": {
+    "en": "open tasks",
+    "fr": "tâches ouvertes"
+  },
+  "1 Unterhaltsarbeit": {
+    "en": "1 maintenance job",
+    "fr": "1 intervention d’entretien"
+  },
+  "Unterhaltsarbeiten": {
+    "en": "Maintenance jobs",
+    "fr": "Interventions d’entretien"
+  },
+  "1 geplante Wartung": {
+    "en": "1 scheduled maintenance visit",
+    "fr": "1 maintenance planifiée"
+  },
+  "geplante Wartungen": {
+    "en": "scheduled maintenance visits",
+    "fr": "maintenances planifiées"
+  },
+  "Eigentümer nicht zugeordnet": {
+    "en": "Owner not assigned",
+    "fr": "Propriétaire non associé"
+  },
+  "Liegenschaft archiviert": {
+    "en": "Property archived",
+    "fr": "Immeuble archivé"
+  },
+  "Gespeichert": {
+    "en": "Saved",
+    "fr": "Enregistré"
+  },
+  "Einheitenzahl noch offen": {
+    "en": "Unit count still unspecified",
+    "fr": "Nombre d’unités encore non renseigné"
+  },
+  "öffnen": {
+    "en": "open",
+    "fr": "ouvrir"
+  },
+  "Liegenschaftsbestand": {
+    "en": "Property portfolio",
+    "fr": "Parc immobilier"
+  },
+  "Liegenschaften suchen": {
+    "en": "Search properties",
+    "fr": "Rechercher des immeubles"
+  },
+  "Objektnummer, Adresse, Ort oder Eigentümer …": {
+    "en": "Property number, address, town or owner …",
+    "fr": "Numéro d’immeuble, adresse, localité ou propriétaire…"
+  },
+  "Liegenschaften.": {
+    "en": "Properties.",
+    "fr": "Immeubles."
+  },
+  "Liegenschaften, Zuständigkeiten und Pendenzen im Überblick.": {
+    "en": "Properties, responsibilities and pending tasks at a glance.",
+    "fr": "Vue d’ensemble des immeubles, responsabilités et tâches en suspens."
+  },
+  "CSV importieren": {
+    "en": "Import CSV",
+    "fr": "Importer un CSV"
+  },
+  "Ansicht": {
+    "en": "View",
+    "fr": "Vue"
+  },
+  "Alle Eigentümer": {
+    "en": "All owners",
+    "fr": "Tous les propriétaires"
+  },
+  "Alle Orte": {
+    "en": "All towns",
+    "fr": "Toutes les localités"
+  },
+  "«Im Bestand» enthält alle nicht archivierten Liegenschaften, auch ohne laufendes Mandat.": {
+    "en": "“In portfolio” includes all non-archived properties, including those without a current mandate.",
+    "fr": "« Dans le parc » inclut tous les immeubles non archivés, même sans mandat en cours."
+  },
+  "{0}Erfassen": {
+    "en": "{0}Add",
+    "fr": "{0}Ajouter"
+  },
+  "{3}Einheit": {
+    "en": "{3}Unit",
+    "fr": "{3}Unité"
+  },
+  "Dokument / Datei": {
+    "en": "Document / file",
+    "fr": "Document / fichier"
+  },
+  "Keine Pendenzen in dieser Ansicht": {
+    "en": "No pending tasks in this view",
+    "fr": "Aucune tâche en suspens dans cette vue"
+  },
+  "Hier erscheinen Aufgaben, Anliegen, Unterhalt und Wartungen dieser Liegenschaft. Prüft bei Bedarf eure Filter.": {
+    "en": "Tasks, requests, maintenance jobs and scheduled maintenance for this property appear here. Check your filters if necessary.",
+    "fr": "Les tâches, demandes, interventions d’entretien et maintenances de cet immeuble apparaissent ici. Vérifier les filtres si nécessaire."
+  },
+  "Pendenzen dieser Liegenschaft": {
+    "en": "Pending tasks for this property",
+    "fr": "Tâches en suspens de cet immeuble"
+  },
+  "Abgesagt": {
+    "en": "Cancelled",
+    "fr": "Annulé"
+  },
+  "Durchgeführt": {
+    "en": "Completed",
+    "fr": "Effectué"
+  },
+  "Keine Termine in dieser Ansicht": {
+    "en": "No appointments in this view",
+    "fr": "Aucun rendez-vous dans cette vue"
+  },
+  "Prüft den gewählten Zeitraum oder erfasst einen Termin für diese Liegenschaft.": {
+    "en": "Check the selected period or add an appointment for this property.",
+    "fr": "Vérifier la période choisie ou ajouter un rendez-vous pour cet immeuble."
+  },
+  "Datum / Uhrzeit": {
+    "en": "Date / time",
+    "fr": "Date / heure"
+  },
+  "Termine dieser Liegenschaft": {
+    "en": "Appointments for this property",
+    "fr": "Rendez-vous de cet immeuble"
+  },
+  "Pendenzen suchen": {
+    "en": "Search pending tasks",
+    "fr": "Rechercher des tâches en suspens"
+  },
+  "Verknüpfte Anliegen und Unterhaltsaufträge erscheinen einmal gemeinsam.": {
+    "en": "Linked requests and maintenance orders appear together once.",
+    "fr": "Les demandes et ordres d’entretien associés sont regroupés et affichés une seule fois."
+  },
+  "Titel, Einheit, Zuständigkeit oder Beschreibung …": {
+    "en": "Title, unit, responsible person or description …",
+    "fr": "Titre, unité, responsable ou description…"
+  },
+  "Aufgabe erfassen": {
+    "en": "Add task",
+    "fr": "Ajouter une tâche"
+  },
+  "Anliegen erfassen": {
+    "en": "Submit request",
+    "fr": "Saisir une demande"
+  },
+  "Vorgangsart": {
+    "en": "Record type",
+    "fr": "Type d’opération"
+  },
+  "Alle Pendenzen": {
+    "en": "All pending tasks",
+    "fr": "Toutes les tâches en suspens"
+  },
+  "Unterhalt & Wartungen": {
+    "en": "Maintenance & servicing",
+    "fr": "Entretien et maintenance"
+  },
+  "Geplante Wartungen": {
+    "en": "Scheduled maintenance",
+    "fr": "Maintenances planifiées"
+  },
+  "Bearbeitungsstand": {
+    "en": "Processing status",
+    "fr": "État de traitement"
+  },
+  "Abgeschlossen / storniert": {
+    "en": "Completed / cancelled",
+    "fr": "Terminé / annulé"
+  },
+  "Termin erfassen": {
+    "en": "Add appointment",
+    "fr": "Ajouter un rendez-vous"
+  },
+  "Heute & bevorstehend": {
+    "en": "Today & upcoming",
+    "fr": "Aujourd’hui et à venir"
+  },
+  "Vergangen / durchgeführt": {
+    "en": "Past / completed",
+    "fr": "Passé / effectué"
+  },
+  "Alle Termine": {
+    "en": "All appointments",
+    "fr": "Tous les rendez-vous"
+  },
+  "Datei": {
+    "en": "File",
+    "fr": "Fichier"
+  },
+  "Dateien": {
+    "en": "Files",
+    "fr": "Fichiers"
+  },
+  "Vertragsablagen": {
+    "en": "Contract files",
+    "fr": "Dossiers contractuels"
+  },
+  "Noch keine Dateien bei den verknüpften Mandaten und Mietverträgen hinterlegt.": {
+    "en": "No files have been stored for the linked mandates and leases yet.",
+    "fr": "Aucun fichier n’est encore déposé pour les mandats et baux associés."
+  },
+  "Objektdaten": {
+    "en": "Property details",
+    "fr": "Données du bien"
+  },
+  "Erfasst: {2}": {
+    "en": "Created: {2}",
+    "fr": "Créé le : {2}"
+  },
+  "Zuletzt geändert: {3}": {
+    "en": "Last changed: {3}",
+    "fr": "Dernière modification : {3}"
+  },
+  "Hauswartung & Objektkontakte": {
+    "en": "Caretaker & property contacts",
+    "fr": "Conciergerie et contacts du bien"
+  },
+  "Liegenschaftsart": {
+    "en": "Property type",
+    "fr": "Type d’immeuble"
+  },
+  "Baujahr": {
+    "en": "Year of construction",
+    "fr": "Année de construction"
+  },
+  "Betreute Einheiten": {
+    "en": "Managed units",
+    "fr": "Unités gérées"
+  },
+  "Bestand": {
+    "en": "Portfolio",
+    "fr": "Parc"
+  },
+  "Hauswartung": {
+    "en": "Caretaker",
+    "fr": "Conciergerie"
+  },
+  "Hauswartung anrufen ↗": {
+    "en": "Call caretaker ↗",
+    "fr": "Appeler la conciergerie ↗"
+  },
+  "E-Mail schreiben ↗": {
+    "en": "Write email ↗",
+    "fr": "Écrire un e-mail ↗"
+  },
+  "Noch keine internen Notizen hinterlegt.": {
+    "en": "No internal notes have been added yet.",
+    "fr": "Aucune note interne n’a encore été ajoutée."
+  },
+  "Wieder in den Bestand aufnehmen": {
+    "en": "Return to portfolio",
+    "fr": "Réintégrer dans le parc"
+  },
+  "Liegenschaft archivieren": {
+    "en": "Archive property",
+    "fr": "Archiver l’immeuble"
+  },
+  "Nächste Schritte": {
+    "en": "Next steps",
+    "fr": "Prochaines étapes"
+  },
+  "Alle anzeigen ↗": {
+    "en": "Show all ↗",
+    "fr": "Tout afficher ↗"
+  },
+  "Offene Pendenzen": {
+    "en": "Open pending tasks",
+    "fr": "Tâches en suspens"
+  },
+  "Davon Unterhalt / Wartung": {
+    "en": "Of which maintenance / servicing",
+    "fr": "Dont entretien / maintenance"
+  },
+  "Laufend & bevorstehend": {
+    "en": "Current & upcoming",
+    "fr": "En cours et à venir"
+  },
+  "Keine offenen Pendenzen.": {
+    "en": "No open pending tasks.",
+    "fr": "Aucune tâche en suspens."
+  },
+  "Nächster Termin · {1}": {
+    "en": "Next appointment · {1}",
+    "fr": "Prochain rendez-vous · {1}"
+  },
+  "Einheiten & Mietverträge": {
+    "en": "Units & leases",
+    "fr": "Unités et baux"
+  },
+  "Auswahl exportieren ↓": {
+    "en": "Export selection ↓",
+    "fr": "Exporter la sélection ↓"
+  },
+  "Nicht archivierte anzeigen": {
+    "en": "Show non-archived",
+    "fr": "Afficher les éléments non archivés"
+  },
+  "Archivierte anzeigen": {
+    "en": "Show archived",
+    "fr": "Afficher les éléments archivés"
+  },
+  "Liegenschaft nicht gefunden.": {
+    "en": "Property not found.",
+    "fr": "Immeuble introuvable."
+  },
+  "Öffnet ein Objekt über den Liegenschaftsbestand.": {
+    "en": "Open a property from the property portfolio.",
+    "fr": "Ouvrir un bien depuis le parc immobilier."
+  },
+  "Liegenschaften öffnen": {
+    "en": "Open properties",
+    "fr": "Ouvrir les immeubles"
+  },
+  "Pendenzen & Termine": {
+    "en": "Pending tasks & appointments",
+    "fr": "Tâches en suspens et rendez-vous"
+  },
+  "Stammdaten & Technik": {
+    "en": "Master data & technical details",
+    "fr": "Données de base et technique"
+  },
+  "· Zuständig: {4}": {
+    "en": "· Responsible: {4}",
+    "fr": "· Responsable : {4}"
+  },
+  "Liegenschaftsdossier": {
+    "en": "Property dossier",
+    "fr": "Dossier de l’immeuble"
+  },
+  "Mandat geplant": {
+    "en": "Planned mandate",
+    "fr": "Mandat prévu"
+  },
+  "Diese Liegenschaft ist archiviert. Gespeicherte Einträge und Unterlagen bleiben im Dossier erhalten.": {
+    "en": "This property is archived. Saved entries and documents remain in the dossier.",
+    "fr": "Cet immeuble est archivé. Les entrées et documents enregistrés restent dans le dossier."
+  },
+  "Ungültige Portfolio-Daten.": {
+    "en": "Invalid portfolio data.",
+    "fr": "Données du portefeuille non valides."
+  },
+  "Eine Liegenschaft enthält ungültige Angaben.": {
+    "en": "A property contains invalid details.",
+    "fr": "Un immeuble contient des données non valides."
+  },
+  "Eine Einheit enthält ungültige Angaben oder keine gültige Liegenschaft.": {
+    "en": "A unit contains invalid details or has no valid property.",
+    "fr": "Une unité contient des données non valides ou n’est associée à aucun immeuble valide."
+  },
+  "Ein Mietzins ist ungültig.": {
+    "en": "A rent amount is invalid.",
+    "fr": "Un montant de loyer n’est pas valide."
+  },
+  "Zimmerzahl oder Fläche ist ungültig.": {
+    "en": "The room count or area is invalid.",
+    "fr": "Le nombre de pièces ou la surface n’est pas valide."
+  },
+  "Eine Liegenschaftszuordnung ist ungültig.": {
+    "en": "A property assignment is invalid.",
+    "fr": "Une affectation d’immeuble n’est pas valide."
+  },
+  "Keine aktuelle Auswertung": {
+    "en": "No current analysis",
+    "fr": "Aucune analyse actuelle"
+  },
+  "Keine Bestandsmandate in der Auswahl": {
+    "en": "No portfolio mandates in the selection",
+    "fr": "Aucun mandat de gestion du parc dans la sélection"
+  },
+  ": Einheitenbestand offen": {
+    "en": ": unit count unspecified",
+    "fr": ": nombre d’unités non renseigné"
+  },
+  "vermietbaren Einheiten": {
+    "en": "lettable units",
+    "fr": "unités louables"
+  },
+  "Unvollständig · CHF": {
+    "en": "Incomplete · CHF",
+    "fr": "Incomplet · CHF"
+  },
+  "Vermietete Einheiten · ohne Nebenkosten": {
+    "en": "Let units · excluding service charges",
+    "fr": "Unités louées · hors charges"
+  },
+  "Kennzahlen der gewählten Auswahl": {
+    "en": "Key figures for the selected entries",
+    "fr": "Indicateurs de la sélection"
+  },
+  "Gespeicherter Bestand": {
+    "en": "Saved portfolio",
+    "fr": "Parc enregistré"
+  },
+  "Erfasste aktive Einheiten": {
+    "en": "Recorded active units",
+    "fr": "Unités actives saisies"
+  },
+  "Archivierte Liegenschaften": {
+    "en": "Archived properties",
+    "fr": "Immeubles archivés"
+  },
+  "In der aktuellen Auswahl": {
+    "en": "In the current selection",
+    "fr": "Dans la sélection actuelle"
+  },
+  "Als leerstehend erfasste Einheiten": {
+    "en": "Units recorded as vacant",
+    "fr": "Unités saisies comme vacantes"
+  },
+  "Erfasste Einheiten der Auswahl": {
+    "en": "Recorded units in the selection",
+    "fr": "Unités saisies de la sélection"
+  },
+  "Nettosollmiete / Monat": {
+    "en": "Net rent due / month",
+    "fr": "Loyer net théorique / mois"
+  },
+  "Im Fokus": {
+    "en": "In focus",
+    "fr": "À suivre"
+  },
+  "Handlungsbedarf in der aktuellen Auswahl": {
+    "en": "Action needed in the current selection",
+    "fr": "Actions requises dans la sélection actuelle"
+  },
+  "Alles bleibt nachvollziehbar.": {
+    "en": "Everything remains traceable.",
+    "fr": "Tout reste traçable."
+  },
+  "Öffnet ein Objekt, um gespeicherte Angaben anzusehen oder es wieder zu aktivieren. Archivierte Objekte zählen nicht zum laufenden Bestand.": {
+    "en": "Open a property to view saved details or reactivate it. Archived properties are not included in the current portfolio.",
+    "fr": "Ouvrir un bien pour consulter les données enregistrées ou le réactiver. Les biens archivés ne comptent pas dans le parc courant."
+  },
+  "Leerstehende Einheiten": {
+    "en": "Vacant units",
+    "fr": "Unités vacantes"
+  },
+  "Liegenschaften mit Leerstand anzeigen": {
+    "en": "Show properties with vacancies",
+    "fr": "Afficher les immeubles avec vacances"
+  },
+  "Bestandsumfang, Zuständigkeit und Mietangaben": {
+    "en": "Portfolio size, responsibility and rental details",
+    "fr": "Étendue du parc, responsabilité et données locatives"
+  },
+  "Den Liegenschaften zugeordnete Anliegen": {
+    "en": "Requests assigned to the properties",
+    "fr": "Demandes associées aux immeubles"
+  },
+  "Mit eurer ersten Liegenschaft entsteht hier der Überblick.": {
+    "en": "This overview takes shape when you add your first property.",
+    "fr": "Cette vue d’ensemble prend forme dès le premier immeuble saisi."
+  },
+  "Euer Portfolio beginnt hier.": {
+    "en": "Your portfolio starts here.",
+    "fr": "Votre portefeuille commence ici."
+  },
+  "Eure Liegenschaften sind im Archiv.": {
+    "en": "Your properties are in the archive.",
+    "fr": "Vos immeubles sont dans les archives."
+  },
+  "Keine passenden archivierten Liegenschaften": {
+    "en": "No matching archived properties",
+    "fr": "Aucun immeuble archivé correspondant"
+  },
+  "Erfasst eine Liegenschaft oder übernehmt euren Bestand per CSV.": {
+    "en": "Add a property or import your portfolio via CSV.",
+    "fr": "Ajouter un immeuble ou importer le parc par CSV."
+  },
+  "Die Liegenschaft bleibt dort erhalten und kann wieder aktiviert werden.": {
+    "en": "The property remains there and can be reactivated.",
+    "fr": "L’immeuble y est conservé et peut être réactivé."
+  },
+  "Liegenschaften bleiben dort erhalten und können wieder aktiviert werden.": {
+    "en": "Properties remain there and can be reactivated.",
+    "fr": "Les immeubles y sont conservés et peuvent être réactivés."
+  },
+  "Passt die Suche oder die Auswahl an.": {
+    "en": "Adjust the search or selection.",
+    "fr": "Adapter la recherche ou la sélection."
+  },
+  "Erste Liegenschaft erfassen": {
+    "en": "Add first property",
+    "fr": "Ajouter le premier immeuble"
+  },
+  "Mandat / Zuständig": {
+    "en": "Mandate / responsible",
+    "fr": "Mandat / responsable"
+  },
+  "Nettosoll / Monat": {
+    "en": "Net rent due / month",
+    "fr": "Loyer net théorique / mois"
+  },
+  "Einheiten fehlen": {
+    "en": "Units missing",
+    "fr": "Unités manquantes"
+  },
+  "Ohne Einheiten": {
+    "en": "No units",
+    "fr": "Sans unités"
+  },
+  "Bestand unvollständig": {
+    "en": "Portfolio incomplete",
+    "fr": "Parc incomplet"
+  },
+  "Nettosoll / Monat · CHF": {
+    "en": "Net rent due / month · CHF",
+    "fr": "Loyer net théorique / mois · CHF"
+  },
+  "Betreuter Bestand noch offen": {
+    "en": "Managed portfolio still unspecified",
+    "fr": "Parc géré encore non renseigné"
+  },
+  "Kein Bestandsmandat": {
+    "en": "No portfolio mandate",
+    "fr": "Aucun mandat de gestion du parc"
+  },
+  "CHF · ohne Nebenkosten": {
+    "en": "CHF · excluding service charges",
+    "fr": "CHF · hors charges"
+  },
+  "Angaben unvollständig": {
+    "en": "Details incomplete",
+    "fr": "Données incomplètes"
+  },
+  "Kennzahlen und Diagramm folgen der gesamten Auswahl, unabhängig von der angezeigten Listenseite. Der Export enthält alle Treffer.": {
+    "en": "Key figures and the chart reflect the entire selection, regardless of the list page displayed. The export includes all results.",
+    "fr": "Les indicateurs et le graphique portent sur toute la sélection, quelle que soit la page affichée. L’export inclut tous les résultats."
+  },
+  "Auswahl exportieren": {
+    "en": "Export selection",
+    "fr": "Exporter la sélection"
+  },
+  "So werden die Kennzahlen berechnet": {
+    "en": "How key figures are calculated",
+    "fr": "Comment les indicateurs sont calculés"
+  },
+  "Vermietungsquote und Nettosollmiete beziehen sich auf die ausgewählten Bestandsmandate: Bewirtschaftung, Interim und Corporate. Neuvermietungen und Einzelaufträge sind darin nicht enthalten. Die Liste und der Einheitenzähler enthalten alle ausgewählten Mandatsarten.": {
+    "en": "The letting rate and net rent due relate to the selected portfolio mandates: property management, Interim and Corporate. Relettings and individual assignments are excluded. The list and unit counter include all selected mandate types.",
+    "fr": "Le taux de location et le loyer net théorique concernent les mandats du parc sélectionnés : gestion immobilière, Interim et Corporate. Les relocations et missions ponctuelles sont exclues. La liste et le compteur d’unités incluent tous les types de mandat sélectionnés."
+  },
+  "Die Nettosollmiete summiert die aktuell erfassten Nettomietzinse vermieteter Einheiten ohne Nebenkosten. Leerstehende Einheiten haben eine Zielmiete. Gesperrte Einheiten zählen nicht zur Vermietungsquote. Bei unbekanntem oder unvollständigem Einheitenbestand bzw. fehlenden Vermietungsangaben bleiben die betroffenen Kennzahlen offen.": {
+    "en": "Net rent due totals the currently recorded net rents of let units, excluding service charges. Vacant units have a target rent. Blocked units are excluded from the letting rate. If the unit inventory is unknown or incomplete, or letting details are missing, the affected key figures remain unspecified.",
+    "fr": "Le loyer net théorique additionne les loyers nets actuellement saisis des unités louées, hors charges. Les unités vacantes ont un loyer cible. Les unités bloquées sont exclues du taux de location. Si le parc d’unités est inconnu ou incomplet, ou si les données locatives manquent, les indicateurs concernés restent non renseignés."
+  },
+  "Bestätigte Mietverträge und datierte Mietzinsänderungen bestimmen die heutigen Vertragswerte. Vor dem ersten bestätigten Vertragsbeginn bleiben bestehende manuelle Angaben erhalten. Historische Vertragswerte findet ihr im Mieterspiegel. Zahlungseingänge und anteilige Monatsabrechnungen werden hier nicht berechnet. Alte Mandatsarten bleiben bis zur Verknüpfung eines bestätigten Mandats als bisherige Einordnung sichtbar.": {
+    "en": "Confirmed leases and dated rent changes determine today’s contractual values. Before the first confirmed lease starts, existing manual details are retained. Historical contractual values are available in the rent roll. Rent receipts and prorated monthly settlements are not calculated here. Old mandate types remain visible as the previous classification until a confirmed mandate is linked.",
+    "fr": "Les baux confirmés et modifications de loyer datées déterminent les valeurs contractuelles actuelles. Avant le début du premier bail confirmé, les données manuelles existantes sont conservées. Les valeurs contractuelles historiques figurent dans l’état locatif. Les encaissements et décomptes mensuels proportionnels ne sont pas calculés ici. Les anciens types de mandat restent visibles comme classification antérieure jusqu’à l’association d’un mandat confirmé."
+  },
+  "Portfolio.": {
+    "en": "Portfolio.",
+    "fr": "Portefeuille."
+  },
+  "Liegenschaften, Vermietung und Handlungsbedarf im Überblick.": {
+    "en": "Properties, lettings and action needed at a glance.",
+    "fr": "Vue d’ensemble des immeubles, locations et actions requises."
+  },
+  "Keine Einheiten in dieser Ansicht": {
+    "en": "No units in this view",
+    "fr": "Aucune unité dans cette vue"
+  },
+  "Prüft eure Filter oder erfasst eine weitere Einheit.": {
+    "en": "Check your filters or add another unit.",
+    "fr": "Vérifier les filtres ou ajouter une unité."
+  },
+  "Einheiten mit Vermietungsstand und Mietvertrag": {
+    "en": "Units with letting status and lease",
+    "fr": "Unités avec état locatif et bail"
+  },
+  "Einheit{0}": {
+    "en": "Unit{0}",
+    "fr": "Unité{0}"
+  },
+  "Angaben": {
+    "en": "Details",
+    "fr": "Données"
+  },
+  "Vermietung / Mieter": {
+    "en": "Letting / tenant",
+    "fr": "Location / locataire"
+  },
+  "/ Liegenschaft": {
+    "en": "/ property",
+    "fr": "/ immeuble"
+  },
+  "Einheit bearbeiten": {
+    "en": "Edit unit",
+    "fr": "Modifier l’unité"
+  },
+  "Fläche nicht erfasst": {
+    "en": "Area not recorded",
+    "fr": "Surface non saisie"
+  },
+  "Kein laufender Vertrag": {
+    "en": "No current lease",
+    "fr": "Aucun bail en cours"
+  },
+  "Manuell erfasst": {
+    "en": "Recorded manually",
+    "fr": "Saisi manuellement"
+  },
+  "Zielmiete · ohne Nebenkosten": {
+    "en": "Target rent · excluding service charges",
+    "fr": "Loyer cible · hors charges"
+  },
+  "Ohne Nebenkosten": {
+    "en": "Excluding service charges",
+    "fr": "Hors charges"
+  },
+  "Strasse & Hausnummer *": {
+    "en": "Street & house number *",
+    "fr": "Rue et numéro *"
+  },
+  "PLZ *": {
+    "en": "Postcode *",
+    "fr": "NPA *"
+  },
+  "Ort *": {
+    "en": "Town / city *",
+    "fr": "Localité *"
+  },
+  "Hauswartung · Name / Firma": {
+    "en": "Caretaker · name / company",
+    "fr": "Conciergerie · nom / entreprise"
+  },
+  "Hauswartung · Telefon": {
+    "en": "Caretaker · telephone",
+    "fr": "Conciergerie · téléphone"
+  },
+  "Hauswartung · E-Mail": {
+    "en": "Caretaker · email",
+    "fr": "Conciergerie · e-mail"
+  },
+  "Weitere Objektkontakte": {
+    "en": "Other property contacts",
+    "fr": "Autres contacts du bien"
+  },
+  "Bisherige Eigentümerangabe: {0}. Bitte mit einem zentralen Kontakt verknüpfen. Die Angabe bleibt bis dahin erhalten.": {
+    "en": "Previous owner details: {0}. Please link to a central contact. The details are retained until then.",
+    "fr": "Anciennes données du propriétaire : {0}. Veuillez les associer à un contact central. Elles sont conservées entre-temps."
+  },
+  "Liegenschaft bearbeiten.": {
+    "en": "Edit property.",
+    "fr": "Modifier l’immeuble."
+  },
+  "Liegenschaft erfassen.": {
+    "en": "Add property.",
+    "fr": "Ajouter un immeuble."
+  },
+  "* Pflichtangaben · Eigentümer werden zentral geführt. «Betreute Einheiten» umfasst auch Parkplätze und nicht vermietbare Räume. Mandatsart, Honorar und Laufzeit erfasst ihr beim zugehörigen Mandat.": {
+    "en": "* Required details · Owners are managed centrally. “Managed units” includes parking spaces and non-lettable rooms. Record the mandate type, fee and term in the associated mandate.",
+    "fr": "* Données obligatoires · Les propriétaires sont gérés de manière centralisée. Les « Unités gérées » incluent les places de parc et locaux non louables. Saisir le type de mandat, les honoraires et la durée dans le mandat associé."
+  },
+  "Gebäude & Objektkontakte · optional": {
+    "en": "Building & property contacts · optional",
+    "fr": "Bâtiment et contacts du bien · facultatif"
+  },
+  "Liegenschaft speichern": {
+    "en": "Save property",
+    "fr": "Enregistrer l’immeuble"
+  },
+  "MORADA · LIEGENSCHAFT": {
+    "en": "MORADA · PROPERTY",
+    "fr": "MORADA · IMMEUBLE"
+  },
+  "Bitte zuerst die Liegenschaft wieder aktivieren.": {
+    "en": "Please reactivate the property first.",
+    "fr": "Veuillez d’abord réactiver l’immeuble."
+  },
+  "Liegenschaft suchen": {
+    "en": "Search property",
+    "fr": "Rechercher un immeuble"
+  },
+  "Bis zu 50 Treffer. Wählt die passende Liegenschaft unten aus.": {
+    "en": "Up to 50 results. Select the appropriate property below.",
+    "fr": "Jusqu’à 50 résultats. Choisir l’immeuble correspondant ci-dessous."
+  },
+  "Objektnummer, Adresse oder Eigentümer …": {
+    "en": "Property number, address or owner …",
+    "fr": "Numéro d’immeuble, adresse ou propriétaire…"
+  },
+  "Liegenschaft *": {
+    "en": "Property *",
+    "fr": "Immeuble *"
+  },
+  "Fläche in m²": {
+    "en": "Area in m²",
+    "fr": "Surface en m²"
+  },
+  "Status ohne laufenden Vertrag": {
+    "en": "Status without a current lease",
+    "fr": "État sans bail en cours"
+  },
+  "Zielmiete bei Leerstand · CHF": {
+    "en": "Target rent when vacant · CHF",
+    "fr": "Loyer cible en cas de vacance · CHF"
+  },
+  "Nettomiete / Zielmiete pro Monat · CHF": {
+    "en": "Net rent / target rent per month · CHF",
+    "fr": "Loyer net / loyer cible par mois · CHF"
+  },
+  "Vermietung aus Mietverträgen": {
+    "en": "Lettings from leases",
+    "fr": "Locations issues des baux"
+  },
+  "Mietverträge dieser Einheit": {
+    "en": "Leases for this unit",
+    "fr": "Baux de cette unité"
+  },
+  "Aktuell:": {
+    "en": "Current:",
+    "fr": "Actuellement :"
+  },
+  "Einheit bearbeiten.": {
+    "en": "Edit unit.",
+    "fr": "Modifier l’unité."
+  },
+  "Einheit erfassen.": {
+    "en": "Add unit.",
+    "fr": "Ajouter une unité."
+  },
+  "* Pflichtangaben · Ohne bestätigten Mietvertrag werden Vermietungsstand und Mietzins manuell geführt. Bei Leerstand ist der Betrag eine aktuelle Zielmiete. Datierte Leerstände und historische Zielmieten erfasst ihr im Einheitenverlauf unter «Leerstand & Zielmieten».": {
+    "en": "* Required details · Without a confirmed lease, the letting status and rent are managed manually. When vacant, the amount is a current target rent. Record dated vacancies and historical target rents in the unit history under “Vacancies & target rents”.",
+    "fr": "* Données obligatoires · Sans bail confirmé, l’état locatif et le loyer sont gérés manuellement. En cas de vacance, le montant est un loyer cible actuel. Saisir les vacances datées et loyers cibles historiques dans l’historique de l’unité, sous « Vacances et loyers cibles »."
+  },
+  "Einheit wieder aktivieren": {
+    "en": "Reactivate unit",
+    "fr": "Réactiver l’unité"
+  },
+  "Einheit archivieren": {
+    "en": "Archive unit",
+    "fr": "Archiver l’unité"
+  },
+  "Speichern & weitere": {
+    "en": "Save & add another",
+    "fr": "Enregistrer et ajouter une autre unité"
+  },
+  "Einheit speichern": {
+    "en": "Save unit",
+    "fr": "Enregistrer l’unité"
+  },
+  "Zimmerzahl und Fläche müssen positive Zahlen sein. Bitte höchstens zwei Nachkommastellen verwenden.": {
+    "en": "Room count and area must be positive numbers. Please use no more than two decimal places.",
+    "fr": "Le nombre de pièces et la surface doivent être positifs. Veuillez utiliser au maximum deux décimales."
+  },
+  "Der Eintrag wurde nicht gefunden. Bitte den aktuellen Stand laden.": {
+    "en": "The entry was not found. Please load the current data.",
+    "fr": "L’entrée est introuvable. Veuillez charger les données actuelles."
+  },
+  "Diese Liegenschaft ist bereits erfasst. Bitte den vorhandenen Eintrag öffnen; prüft auch das Archiv.": {
+    "en": "This property is already recorded. Please open the existing entry; also check the archive.",
+    "fr": "Cet immeuble est déjà saisi. Veuillez ouvrir l’entrée existante ; vérifier aussi les archives."
+  },
+  "Bitte eine aktive Liegenschaft auswählen.": {
+    "en": "Please select an active property.",
+    "fr": "Veuillez choisir un immeuble actif."
+  },
+  "Diese Bezeichnung wird bei der Liegenschaft bereits verwendet. Bitte eine eindeutige Nummer oder Bezeichnung wählen.": {
+    "en": "This name is already used for this property. Please choose a unique number or name.",
+    "fr": "Cette désignation est déjà utilisée pour cet immeuble. Veuillez choisir un numéro ou une désignation unique."
+  },
+  "Bitte zuerst die zugehörige Liegenschaft wieder aktivieren.": {
+    "en": "Please reactivate the associated property first.",
+    "fr": "Veuillez d’abord réactiver l’immeuble associé."
+  },
+  "Wieder aktivieren?": {
+    "en": "Reactivate?",
+    "fr": "Réactiver ?"
+  },
+  "Archivieren?": {
+    "en": "Archive?",
+    "fr": "Archiver ?"
+  },
+  "Der Eintrag wird wieder in den aktiven Listen und Kennzahlen berücksichtigt.": {
+    "en": "The entry will be included in active lists and key figures again.",
+    "fr": "L’entrée sera de nouveau prise en compte dans les listes actives et les indicateurs."
+  },
+  "Die Liegenschaft und ihre Einheiten werden aus dem aktiven Portfolio ausgeblendet. Alle Angaben und Zuordnungen bleiben erhalten.": {
+    "en": "The property and its units will be hidden from the active portfolio. All details and assignments are retained.",
+    "fr": "L’immeuble et ses unités seront masqués dans le portefeuille actif. Toutes les données et affectations sont conservées."
+  },
+  "Die Einheit wird aus den aktiven Listen und Kennzahlen ausgeblendet. Ihr könnt sie später wieder aktivieren.": {
+    "en": "The unit will be hidden from active lists and key figures. You can reactivate it later.",
+    "fr": "L’unité sera masquée dans les listes actives et les indicateurs. Elle pourra être réactivée ultérieurement."
+  },
+  "Wieder aktivieren": {
+    "en": "Reactivate",
+    "fr": "Réactiver"
+  },
+  "Keine Liegenschaften in dieser Auswahl.": {
+    "en": "No properties in this selection.",
+    "fr": "Aucun immeuble dans cette sélection."
+  },
+  "Nettosollmiete CHF / Monat": {
+    "en": "Net rent due CHF / month",
+    "fr": "Loyer net théorique CHF / mois"
+  },
+  "Angaben vollständig": {
+    "en": "Details complete",
+    "fr": "Données complètes"
+  },
+  "Hauswartung Telefon": {
+    "en": "Caretaker telephone",
+    "fr": "Téléphone de la conciergerie"
+  },
+  "Hauswartung E-Mail": {
+    "en": "Caretaker email",
+    "fr": "E-mail de la conciergerie"
+  },
+  "EGID / Gebäude-ID": {
+    "en": "EGID / building ID",
+    "fr": "EGID / identifiant du bâtiment"
+  },
+  "Parzelle": {
+    "en": "Plot",
+    "fr": "Parcelle"
+  },
+  "Heizung": {
+    "en": "Heating",
+    "fr": "Chauffage"
+  },
+  "Baujahr Heizung": {
+    "en": "Heating installation year",
+    "fr": "Année de l’installation de chauffage"
+  },
+  "Gebäudeversicherung": {
+    "en": "Building insurance",
+    "fr": "Assurance bâtiment"
+  },
+  "Police": {
+    "en": "Policy",
+    "fr": "Police"
+  },
+  "Versicherungskontakt": {
+    "en": "Insurance contact",
+    "fr": "Contact de l’assurance"
+  },
+  "Technische Hinweise": {
+    "en": "Technical notes",
+    "fr": "Notes techniques"
+  },
+  "Anlagen aktiv": {
+    "en": "Active installations",
+    "fr": "Installations actives"
+  },
+  "Aktivierung nicht möglich: Die Liegenschaft ist archiviert oder eine aktive Einheit hat bereits dieselbe Bezeichnung.": {
+    "en": "Cannot activate: the property is archived or an active unit already has the same name.",
+    "fr": "Activation impossible : l’immeuble est archivé ou une unité active porte déjà la même désignation."
+  },
+  "wieder aktiviert:": {
+    "en": "reactivated:",
+    "fr": "réactivé :"
+  },
+  "Eintrag wieder aktiviert.": {
+    "en": "Entry reactivated.",
+    "fr": "Entrée réactivée."
+  },
+  "Eintrag archiviert. Alle Angaben bleiben erhalten.": {
+    "en": "Entry archived. All details are retained.",
+    "fr": "Entrée archivée. Toutes les données sont conservées."
+  },
+  "Einträge importiert.": {
+    "en": "Entries imported.",
+    "fr": "Entrées importées."
+  },
+  "Liegenschaft gespeichert. Ihr könnt jetzt Einheiten ergänzen.": {
+    "en": "Property saved. You can now add units.",
+    "fr": "Immeuble enregistré. Des unités peuvent maintenant être ajoutées."
+  },
+  "Einheit gespeichert. Die nächste kann erfasst werden.": {
+    "en": "Unit saved. You can add the next one.",
+    "fr": "Unité enregistrée. La suivante peut être saisie."
+  },
+  "Einheit gespeichert. Portfolio-Kennzahlen aktualisiert.": {
+    "en": "Unit saved. Portfolio key figures updated.",
+    "fr": "Unité enregistrée. Indicateurs du portefeuille actualisés."
+  },
+  "Archiv · keine aktuelle Auswertung": {
+    "en": "Archive · no current analysis",
+    "fr": "Archives · aucune analyse actuelle"
+  },
+  "Erfasste Einheiten der ausgewählten Bestandsmandate": {
+    "en": "Recorded units of the selected portfolio mandates",
+    "fr": "Unités saisies des mandats du parc sélectionnés"
+  },
+  "Archivierte Objekte": {
+    "en": "Archived properties",
+    "fr": "Biens archivés"
+  },
+  "Noch keine Einheiten in dieser Auswahl": {
+    "en": "No units in this selection yet",
+    "fr": "Aucune unité encore dans cette sélection"
+  },
+  "Bewirtschaftung, Interim & Corporate · ohne gesperrte Einheiten in der Quote.": {
+    "en": "Property management, Interim & Corporate · blocked units excluded from the ratio.",
+    "fr": "Gestion immobilière, Interim et Corporate · unités bloquées exclues du taux."
+  },
+  "Der erfasste Einheitenbestand ist bei {0} {1} noch nicht bestätigt oder vollständig.": {
+    "en": "The recorded unit inventory is not yet confirmed or complete for {0} {1}.",
+    "fr": "Le parc d’unités saisi n’est pas encore confirmé ou complet pour {0} {1}."
+  },
+  "nicht archivierten": {
+    "en": "non-archived",
+    "fr": "non archivés"
+  },
+  "Auswahl zurücksetzen": {
+    "en": "Reset selection",
+    "fr": "Réinitialiser la sélection"
+  },
+  "Portfolio auswählen": {
+    "en": "Select portfolio",
+    "fr": "Sélectionner le portefeuille"
+  },
+  "Im Bestand (": {
+    "en": "In portfolio (",
+    "fr": "Dans le parc ("
+  },
+  "Mit offenen Anliegen": {
+    "en": "With open requests",
+    "fr": "Avec demandes ouvertes"
+  },
+  "Archiv (": {
+    "en": "Archive (",
+    "fr": "Archives ("
+  },
+  "Eigentümerfilter aufheben": {
+    "en": "Clear owner filter",
+    "fr": "Retirer le filtre propriétaire"
+  },
+  "Einheiten suchen": {
+    "en": "Search units",
+    "fr": "Rechercher des unités"
+  },
+  "Einheitennummer, Bezeichnung oder Adresse …": {
+    "en": "Unit number, name or address …",
+    "fr": "Numéro d’unité, désignation ou adresse…"
+  },
+  "Alle aktiven Einheiten": {
+    "en": "All active units",
+    "fr": "Toutes les unités actives"
+  },
+  "Höchste Nettomiete": {
+    "en": "Highest net rent",
+    "fr": "Loyer net le plus élevé"
+  },
+  "{0} {1} offen": {
+    "en": "{0} {1} unresolved",
+    "fr": "{0} {1} à compléter"
+  },
+  "Angaben für diese Liegenschaft prüfen": {
+    "en": "Check details for this property",
+    "fr": "Vérifier les données de cet immeuble"
+  },
+  "Stammdaten ergänzen": {
+    "en": "Complete master data",
+    "fr": "Compléter les données de base"
+  },
+  "Einheiten prüfen ↓": {
+    "en": "Check units ↓",
+    "fr": "Vérifier les unités ↓"
+  },
+  "Punkt": {
+    "en": "Item",
+    "fr": "Point"
+  },
+  "Punkte": {
+    "en": "Items",
+    "fr": "Points"
+  },
+  "Keine offenen Anliegen": {
+    "en": "No open requests",
+    "fr": "Aucune demande ouverte"
+  },
+  "Neue Anliegen könnt ihr direkt dieser Liegenschaft zuordnen.": {
+    "en": "You can assign new requests directly to this property.",
+    "fr": "Les nouvelles demandes peuvent être directement associées à cet immeuble."
+  },
+  "Bitte Liegenschaft auswählen": {
+    "en": "Please select a property",
+    "fr": "Veuillez choisir un immeuble"
+  },
+  "Bitte für den Einheitenbestand eine ganze Zahl von 1 bis 20’000 eingeben oder das Feld leer lassen.": {
+    "en": "Please enter an integer from 1 to 20’000 for the number of units, or leave the field blank.",
+    "fr": "Veuillez saisir un nombre entier de 1 à 20’000 pour le nombre d’unités, ou laisser le champ vide."
+  },
+  "Detail": {
+    "en": "Detail",
+    "fr": "Détail"
+  },
+  "Eigentümer & Mandate": {
+    "en": "Owners & mandates",
+    "fr": "Propriétaires et mandats"
+  },
+  "Bisherige Eigentümerangabe:": {
+    "en": "Previous owner details:",
+    "fr": "Anciennes données du propriétaire :"
+  },
+  "· noch nicht mit einem Kontakt verknüpft.": {
+    "en": "· not yet linked to a contact.",
+    "fr": "· pas encore associé à un contact."
+  },
+  "Noch kein Eigentümer verknüpft.": {
+    "en": "No owner linked yet.",
+    "fr": "Aucun propriétaire encore associé."
+  },
+  "Eigentümerkontakt anlegen & zuordnen ↗": {
+    "en": "Create & assign owner contact ↗",
+    "fr": "Créer et associer le contact propriétaire ↗"
+  },
+  "Noch kein Mandat zugeordnet.": {
+    "en": "No mandate assigned yet.",
+    "fr": "Aucun mandat encore associé."
+  },
+  "Bisherige Mandatsart:": {
+    "en": "Previous mandate type:",
+    "fr": "Ancien type de mandat :"
+  },
+  "Alle {1} Mandate anzeigen ↗": {
+    "en": "Show all {1} mandates ↗",
+    "fr": "Afficher les {1} mandats ↗"
+  },
+  "{0} · {1} Angabe{2} offen": {
+    "en": "{0} · {1} detail(s){2} missing",
+    "fr": "{0} · {1} donnée(s){2} à compléter"
+  },
+  "Betrag noch nicht erfasst": {
+    "en": "Amount not recorded yet",
+    "fr": "Montant pas encore saisi"
+  },
+  "Erfasster Teil:": {
+    "en": "Recorded portion:",
+    "fr": "Partie saisie :"
+  },
+  "Keine Betragsgrundlage": {
+    "en": "No amount basis",
+    "fr": "Aucune base de montant"
+  },
+  "Seite {4} / {5}": {
+    "en": "Page {4} / {5}",
+    "fr": "Page {4} / {5}"
+  },
+  "← Zurück": {
+    "en": "← Back",
+    "fr": "← Retour"
+  },
+  "Weiter →": {
+    "en": "Next →",
+    "fr": "Suivant →"
+  },
+  "Keine bestätigten Mietverträge in dieser Auswahl.": {
+    "en": "No confirmed leases in this selection.",
+    "fr": "Aucun bail confirmé dans cette sélection."
+  },
+  "Ohne passende Vertragsbeträge wird kein Mietzins-Soll angenommen. Prüft den Zeitraum, die Zuordnung und den Mieterspiegel.": {
+    "en": "No rent due is assumed without matching contractual amounts. Check the period, assignment and rent roll.",
+    "fr": "Aucun loyer dû n’est supposé sans montants contractuels correspondants. Vérifier la période, l’affectation et l’état locatif."
+  },
+  "Mieterspiegel mit diesen Filtern öffnen ↗": {
+    "en": "Open rent roll with these filters ↗",
+    "fr": "Ouvrir l’état locatif avec ces filtres ↗"
+  },
+  "Vertragliche Mietzinse je Abschnitt. Beträge in CHF. {0}": {
+    "en": "Contractual rents per period. Amounts in CHF. {0}",
+    "fr": "Loyers contractuels par période. Montants en CHF. {0}"
+  },
+  "Mietvertrag / Abschnitt": {
+    "en": "Lease / period",
+    "fr": "Bail / période"
+  },
+  "Nebenkosten · CHF": {
+    "en": "Service charges · CHF",
+    "fr": "Charges · CHF"
+  },
+  "Nachweis": {
+    "en": "Evidence",
+    "fr": "Justificatif"
+  },
+  "Gesamte Auswahl · {2} Abschnitte": {
+    "en": "Entire selection · {2} periods",
+    "fr": "Sélection complète · {2} périodes"
+  },
+  "Mietzins-Soll · Tabelle horizontal verschiebbar": {
+    "en": "Rent due · table scrolls horizontally",
+    "fr": "Loyers dus · tableau à défilement horizontal"
+  },
+  "Berechnung & Dossier ↗": {
+    "en": "Calculation & dossier ↗",
+    "fr": "Calcul et dossier ↗"
+  },
+  "Keine Unterhaltseinträge in dieser Auswahl.": {
+    "en": "No maintenance entries in this selection.",
+    "fr": "Aucune entrée d’entretien dans cette sélection."
+  },
+  "Es liegt keine Kostenbasis vor. Dies ist keine Bestätigung, dass keine Kosten entstanden sind.": {
+    "en": "No cost basis is available. This does not confirm that no costs were incurred.",
+    "fr": "Aucune base de coûts n’est disponible. Cela ne confirme pas l’absence de frais."
+  },
+  "Unterhalt öffnen ↗": {
+    "en": "Open maintenance ↗",
+    "fr": "Ouvrir l’entretien ↗"
+  },
+  "In": {
+    "en": "In",
+    "fr": "Dans"
+  },
+  "Über Rechnungen": {
+    "en": "Through invoices",
+    "fr": "Via les factures"
+  },
+  "Nicht erfasst ·": {
+    "en": "Not recorded ·",
+    "fr": "Non saisi ·"
+  },
+  "Ausserhalb der Auswahl ·": {
+    "en": "Outside the selection ·",
+    "fr": "Hors sélection ·"
+  },
+  "Unterhalt. Schätzungen und effektive Kosten sind getrennte Werte und keine Zahlungen.": {
+    "en": "Maintenance. Estimates and actual costs are separate values and are not payments.",
+    "fr": "Entretien. Les estimations et coûts effectifs sont des valeurs distinctes et ne sont pas des paiements."
+  },
+  "Unterhalt / Status": {
+    "en": "Maintenance / status",
+    "fr": "Entretien / état"
+  },
+  "Geschätzt · CHF": {
+    "en": "Estimated · CHF",
+    "fr": "Estimé · CHF"
+  },
+  "Effektiv · CHF": {
+    "en": "Actual · CHF",
+    "fr": "Effectif · CHF"
+  },
+  "Beleg / Zahlung": {
+    "en": "Receipt / payment",
+    "fr": "Justificatif / paiement"
+  },
+  "Getrennte Summen · gesamte Auswahl": {
+    "en": "Separate totals · entire selection",
+    "fr": "Totaux distincts · sélection complète"
+  },
+  "Keine Zahlungssumme": {
+    "en": "Not a payment total",
+    "fr": "Il ne s’agit pas d’un total de paiements"
+  },
+  "Unterhaltskosten · Tabelle horizontal verschiebbar": {
+    "en": "Maintenance costs · table scrolls horizontally",
+    "fr": "Coûts d’entretien · tableau à défilement horizontal"
+  },
+  "Rechnung(en) ↗": {
+    "en": "Invoice(s) ↗",
+    "fr": "Facture(s) ↗"
+  },
+  "Keine Belegreferenz": {
+    "en": "No receipt reference",
+    "fr": "Aucune référence de justificatif"
+  },
+  "Zahlungsdetails im Rechnungsdossier": {
+    "en": "Payment details in the invoice dossier",
+    "fr": "Détails du paiement dans le dossier de facture"
+  },
+  "Zahlungsstand ungeklärt": {
+    "en": "Payment status unclear",
+    "fr": "État du paiement non clarifié"
+  },
+  "Unterlagen öffnen ↗": {
+    "en": "Open documents ↗",
+    "fr": "Ouvrir les documents ↗"
+  },
+  "Alle · auch ohne Mandat": {
+    "en": "All · including without a mandate",
+    "fr": "Tous · même sans mandat"
+  },
+  "Finanzübersicht filtern": {
+    "en": "Filter financial overview",
+    "fr": "Filtrer la vue financière"
+  },
+  "Dieser Monat": {
+    "en": "This month",
+    "fr": "Ce mois"
+  },
+  "Jahr bis heute": {
+    "en": "Year to date",
+    "fr": "Depuis le début de l’année"
+  },
+  "Alle Filter zurücksetzen": {
+    "en": "Reset all filters",
+    "fr": "Réinitialiser tous les filtres"
+  },
+  "Datengrundlage prüfen{0}": {
+    "en": "Check data basis{0}",
+    "fr": "Vérifier les données sources{0}"
+  },
+  "· Vertragsbeträge unvollständig": {
+    "en": "· Contractual amounts incomplete",
+    "fr": "· Montants contractuels incomplets"
+  },
+  "{0} Vertragsabschnitt(e) ohne vollständige Mietzinsangabe. Der Bruttogesamtbetrag bleibt offen; bekannte Teilbeträge stehen in der Tabelle.": {
+    "en": "{0} lease period(s) without complete rent details. The gross total remains unspecified; known partial amounts are shown in the table.",
+    "fr": "{0} période(s) de bail avec loyers incomplets. Le total brut reste non renseigné ; les montants partiels connus figurent dans le tableau."
+  },
+  "{0} Einheit(en) mit Abschnitten ohne bestätigten Vertrag oder datierten Leerstand. Für diese Abschnitte wird keine Miete angenommen.": {
+    "en": "{0} unit(s) with periods without a confirmed lease or dated vacancy. No rent is assumed for these periods.",
+    "fr": "{0} unité(s) avec des périodes sans bail confirmé ni vacance datée. Aucun loyer n’est supposé pour ces périodes."
+  },
+  "{0} Vertragsabschnitt(e) ohne zeitlich passendes bestätigtes Mandat. Nur in «Alle · auch ohne Mandat» enthalten.": {
+    "en": "{0} lease period(s) without a confirmed mandate covering the period. Included only under “All · including without a mandate”.",
+    "fr": "{0} période(s) de bail sans mandat confirmé correspondant dans le temps. Incluses uniquement sous « Tous · même sans mandat »."
+  },
+  "Ohne erfasste Einheiten: {0}.": {
+    "en": "Without recorded units: {0}.",
+    "fr": "Sans unités saisies : {0}."
+  },
+  "Der Einheitenbestand ist bei {0} Liegenschaft(en) nicht vollständig bestätigt. Die Summe bildet ausschliesslich erfasste Verträge ab.": {
+    "en": "The unit inventory is not fully confirmed for {0} property/properties. The total reflects recorded leases only.",
+    "fr": "Le parc d’unités n’est pas entièrement confirmé pour {0} immeuble(s). Le total reflète uniquement les baux saisis."
+  },
+  "Zu den Vertragsgrundlagen ↗": {
+    "en": "View contractual basis ↗",
+    "fr": "Voir les bases contractuelles ↗"
+  },
+  "· {1} Liegenschaft(en) · {2} bestätigte Mietverträge{3}": {
+    "en": "· {1} property/properties · {2} confirmed leases{3}",
+    "fr": "· {1} immeuble(s) · {2} baux confirmés{3}"
+  },
+  "CHF · aus erfassten Dossiers": {
+    "en": "CHF · from recorded dossiers",
+    "fr": "CHF · issus des dossiers saisis"
+  },
+  "Mietzins-Soll im Detail": {
+    "en": "Rent due in detail",
+    "fr": "Détail des loyers dus"
+  },
+  "Vertragsmieten je Abschnitt · ohne Leerstandssoll und Kautionen": {
+    "en": "Contractual rents per period · excluding vacancy target rent and deposits",
+    "fr": "Loyers contractuels par période · hors loyers cibles des vacances et garanties"
+  },
+  "Berechnete Vertragswerte, keine gebuchten Forderungen. Teilmonate werden wie im Mieterspiegel nach Kalendertagen berechnet. {12}": {
+    "en": "Calculated contractual values, not recorded receivables. Partial months are calculated by calendar days, as in the rent roll. {12}",
+    "fr": "Valeurs contractuelles calculées, hors créances comptabilisées. Les mois partiels sont calculés selon les jours calendaires, comme dans l’état locatif. {12}"
+  },
+  "Unterhaltsgrundlagen": {
+    "en": "Maintenance cost basis",
+    "fr": "Bases des coûts d’entretien"
+  },
+  "Schätzungen und effektive Kosten getrennt · kein Nachweis einer Zahlung": {
+    "en": "Estimates and actual costs separate · not proof of payment",
+    "fr": "Estimations et coûts effectifs séparés · ne constitue pas une preuve de paiement"
+  },
+  "Geschätzte Kosten": {
+    "en": "Estimated costs",
+    "fr": "Coûts estimés"
+  },
+  "Effektive Unterhaltskosten ohne Rechnung": {
+    "en": "Actual maintenance costs without an invoice",
+    "fr": "Coûts d’entretien effectifs sans facture"
+  },
+  "Zeitraum für Schätzungen: Fälligkeit, sonst Erfassungsdatum. Für effektive Kosten: Ausführungsende, sonst Erfassungsdatum. Das sind keine Rechnungs- oder Zahlungsdaten. Beide Spalten werden unabhängig gefiltert und niemals addiert. Sobald ein Unterhaltsauftrag mindestens eine nicht stornierte Rechnung hat, wird seine effektive Kostenangabe vollständig aus der Summe ausgeschlossen – auch wenn die Rechnung ausserhalb dieses Zeitraums liegt. Teilrechnungen können die Gesamtkosten noch unvollständig abdecken.{16}": {
+    "en": "Period for estimates: due date, otherwise creation date. For actual costs: completion date, otherwise creation date. These are not invoice or payment dates. Both columns are filtered independently and never added together. Once a maintenance order has at least one non-cancelled invoice, its actual cost amount is fully excluded from the total—even if the invoice falls outside this period. Partial invoices may not yet cover the total costs.{16}",
+    "fr": "Période des estimations : échéance, sinon date de saisie. Pour les coûts effectifs : fin d’exécution, sinon date de saisie. Il ne s’agit pas des dates de facture ou de paiement. Les deux colonnes sont filtrées indépendamment et ne sont jamais additionnées. Dès qu’un ordre d’entretien comporte au moins une facture non annulée, son coût effectif est entièrement exclu du total, même si la facture est hors période. Les factures partielles peuvent ne pas encore couvrir l’ensemble des coûts.{16}"
+  },
+  "Verfügbare Erfassung & weitere Grenzen": {
+    "en": "Available entries & further limitations",
+    "fr": "Saisies disponibles et autres limites"
+  },
+  "Manuelle Erfassung ist möglich; Bankabgleich und vollständige Abrechnung fehlen weiterhin.": {
+    "en": "Manual entry is available; bank reconciliation and full accounting are still unavailable.",
+    "fr": "La saisie manuelle est disponible ; le rapprochement bancaire et le décompte complet ne le sont pas encore."
+  },
+  "Mietforderungen & manuelle Eingänge": {
+    "en": "Rent receivables & manual receipts",
+    "fr": "Créances de loyers et encaissements manuels"
+  },
+  "Im Debitorenbereich verfügbar. Ohne Bankabgleich, automatische Mahnversendung oder Zahlungsabwicklung.": {
+    "en": "Available under Receivables. No bank reconciliation, automatic reminder sending or payment processing.",
+    "fr": "Disponible dans les débiteurs. Sans rapprochement bancaire, envoi automatique de rappels ni traitement des paiements."
+  },
+  "Debitoren ansehen ↗": {
+    "en": "View receivables ↗",
+    "fr": "Voir les débiteurs ↗"
+  },
+  "Buchungen & vollständige Abrechnung": {
+    "en": "Journal entries & full accounting",
+    "fr": "Écritures et comptabilité complète"
+  },
+  "Unter «Buchungen» steht ein Journal der vorhandenen Forderungen, Rechnungen, Zahlungen und Barrückflüsse bereit. Vollständige Kontierung, Gutschriften und Abschlüsse fehlen weiterhin. Ein Beleg allein bestätigt keine Zahlung.": {
+    "en": "“Journal entries” provides a journal of existing receivables, invoices, payments and cash returns. Full account allocation, credit notes and closing statements are still unavailable. A receipt alone does not confirm payment.",
+    "fr": "La rubrique « Écritures » propose un journal des créances, factures, paiements et retours d’espèces existants. L’imputation complète, les notes de crédit et les clôtures ne sont pas encore disponibles. Un justificatif seul ne confirme pas un paiement."
+  },
+  "Buchungen ansehen ↗": {
+    "en": "View journal entries ↗",
+    "fr": "Voir les écritures ↗"
+  },
+  "Konten & Abrechnungen": {
+    "en": "Accounts & statements",
+    "fr": "Comptes et décomptes"
+  },
+  "Keine Bankanbindung, bestätigten Kontosalden, Budgets oder Nebenkostenabrechnungen. Ein Ergebnis oder verfügbarer Geldbestand lässt sich noch nicht bestimmen.": {
+    "en": "No bank connection, confirmed account balances, budgets or service charge statements. A result or available cash balance cannot yet be determined.",
+    "fr": "Aucune connexion bancaire, aucun solde de compte confirmé, budget ou décompte de charges. Le résultat et les liquidités disponibles ne peuvent pas encore être déterminés."
+  },
+  "Mandatskonten ansehen ↗": {
+    "en": "View mandate accounts ↗",
+    "fr": "Voir les comptes de mandat ↗"
+  },
+  "Nebenkosten ansehen ↗": {
+    "en": "View service charges ↗",
+    "fr": "Voir les charges ↗"
+  },
+  "Berechnung, Zuordnung & Grenzen": {
+    "en": "Calculation, assignment & limitations",
+    "fr": "Calcul, affectation et limites"
+  },
+  "Die Vertragsabschnitte und Beträge stammen direkt aus dem Mieterspiegel. Bestätigte Mietverträge und deren Mietzinsverlauf werden berücksichtigt; Entwürfe, stornierte Verträge, Zielmieten und Leerstände ergeben keine Mietforderung. Eine fehlende Betragsangabe bleibt unbekannt. CHF 0.00 erscheint nur bei ausdrücklich erfassten Nullbeträgen.": {
+    "en": "Lease periods and amounts come directly from the rent roll. Confirmed leases and their rent histories are included; drafts, cancelled leases, target rents and vacancies do not create rent receivables. A missing amount remains unknown. CHF 0.00 appears only for explicitly recorded zero amounts.",
+    "fr": "Les périodes et montants des baux proviennent directement de l’état locatif. Les baux confirmés et leur historique de loyers sont pris en compte ; les projets, baux annulés, loyers cibles et vacances ne génèrent aucune créance de loyer. Un montant manquant reste inconnu. CHF 0.00 apparaît uniquement pour un zéro explicitement saisi."
+  },
+  "Ein Mandatsfilter zeigt die zugeordneten Liegenschaften während der bestätigten Mandatslaufzeit. Mehrere Mandate vervielfachen einen Vertrag oder Unterhaltseintrag nicht. Es gibt keine Aufteilung nach Eigentumsquoten oder Mandatshonorar. «Alle» umfasst auch Einträge ohne passendes Mandat.": {
+    "en": "A mandate filter shows the assigned properties during the confirmed mandate term. Multiple mandates do not duplicate a lease or maintenance entry. There is no allocation by ownership share or mandate fee. “All” also includes entries without a matching mandate.",
+    "fr": "Un filtre de mandat affiche les immeubles associés pendant la durée confirmée du mandat. Plusieurs mandats ne multiplient pas un bail ou une entrée d’entretien. Aucune répartition selon les quotes-parts de propriété ou les honoraires n’est appliquée. « Tous » inclut aussi les entrées sans mandat correspondant."
+  },
+  "Archivierte Dossiers bleiben für ihre dokumentierte Laufzeit und erfasste Unterhaltsdaten auswertbar. Die Auswertung verwendet den heutigen Stand der historischen Angaben; frühere Bearbeitungsstände werden nicht rekonstruiert. Schätzungen sind gespeicherte Planwerte und kein zusätzliches Restbudget.": {
+    "en": "Archived dossiers remain analysable for their documented term and recorded maintenance data. The analysis uses the current version of historical details; earlier editing states are not reconstructed. Estimates are saved planned values, not an additional remaining budget.",
+    "fr": "Les dossiers archivés restent analysables pour leur durée documentée et leurs données d’entretien saisies. L’analyse utilise l’état actuel des données historiques ; les versions précédentes ne sont pas reconstituées. Les estimations sont des valeurs prévisionnelles enregistrées, et non un budget résiduel supplémentaire."
+  },
+  "Die Zahlen sind eine Arbeitsübersicht. Erfasste Forderungen und Zahlungseingänge stehen separat oben. Vollständige Buchhaltung, Gutschriften, Bankabgleich und Eigentümerabrechnung fehlen weiterhin. Die Daten werden auf diesem Gerät gespeichert.": {
+    "en": "These figures are a working overview. Recorded receivables and rent receipts appear separately above. Full accounting, credit notes, bank reconciliation and owner statements are still unavailable. The data is saved on this device.",
+    "fr": "Ces chiffres constituent une vue de travail. Les créances et encaissements saisis figurent séparément ci-dessus. La comptabilité complète, les notes de crédit, le rapprochement bancaire et les décomptes propriétaires ne sont pas encore disponibles. Les données sont enregistrées sur cet appareil."
+  },
+  "· enthält zukünftige Vertragstage": {
+    "en": "· includes future lease days",
+    "fr": "· comprend des jours de bail futurs"
+  },
+  "Mietzins-Soll netto": {
+    "en": "Net rent due",
+    "fr": "Loyer net dû"
+  },
+  "Unvollständig · bekannte Teilbeträge unten": {
+    "en": "Incomplete · known partial amounts below",
+    "fr": "Incomplet · montants partiels connus ci-dessous"
+  },
+  "Erfasste Verträge · gewählter Zeitraum": {
+    "en": "Recorded leases · selected period",
+    "fr": "Baux saisis · période choisie"
+  },
+  "Mietzins-Soll brutto": {
+    "en": "Gross rent due",
+    "fr": "Loyer brut dû"
+  },
+  "Nebenkosten oder Nettomiete fehlen": {
+    "en": "Service charges or net rent missing",
+    "fr": "Charges ou loyer net manquants"
+  },
+  "Netto + vereinbarte Nebenkosten": {
+    "en": "Net rent + agreed service charges",
+    "fr": "Loyer net + charges convenues"
+  },
+  "Vertragsgrundlage": {
+    "en": "Contractual basis",
+    "fr": "Base contractuelle"
+  },
+  "Berechnet": {
+    "en": "Calculated",
+    "fr": "Calculé"
+  },
+  "Keine erfasste Forderung oder Zahlung": {
+    "en": "No recorded receivable or payment",
+    "fr": "Aucune créance ni aucun paiement saisi"
+  },
+  "Mietforderungen": {
+    "en": "Rent receivables",
+    "fr": "Créances de loyers"
+  },
+  "Separat": {
+    "en": "Separate",
+    "fr": "Séparément"
+  },
+  "Erfasste Forderungen und Eingänge unten": {
+    "en": "Recorded receivables and receipts below",
+    "fr": "Créances et encaissements saisis ci-dessous"
+  },
+  "Mieterspiegel ↗": {
+    "en": "Rent roll ↗",
+    "fr": "État locatif ↗"
+  },
+  "Zukünftige Beträge sind eine Vertragsvorschau.": {
+    "en": "Future amounts are a contractual preview.",
+    "fr": "Les montants futurs constituent un aperçu contractuel."
+  },
+  "stornierte Einträge ausgeschlossen.": {
+    "en": "cancelled entries excluded.",
+    "fr": "entrées annulées exclues."
+  },
+  "Die eigenen Einnahmen und Ausgaben von MORADA werden separat unter «Unternehmen» geführt.": {
+    "en": "MORADA’s own income and expenses are managed separately under “Company”.",
+    "fr": "Les revenus et dépenses propres à MORADA sont gérés séparément sous « Entreprise »."
+  },
+  "Mandatsfinanzen.": {
+    "en": "Mandate finances.",
+    "fr": "Finances des mandats."
+  },
+  "Vertragsmieten, Lieferantenrechnungen und Unterhaltsgrundlagen der betreuten Liegenschaften.": {
+    "en": "Contractual rents, supplier invoices and maintenance cost bases for managed properties.",
+    "fr": "Loyers contractuels, factures fournisseurs et bases des coûts d’entretien des immeubles gérés."
+  },
+  "Unternehmensfinanzen ↗": {
+    "en": "Company finances ↗",
+    "fr": "Finances de l’entreprise ↗"
+  },
+  "Mietzins-Soll nachvollziehen.": {
+    "en": "Understand rent due.",
+    "fr": "Comprendre les loyers dus."
+  },
+  "Pro Kalendermonat wird der gültige Monatsbetrag auf die belegten Tage verteilt. Die Rundung erfolgt in Rappen wie im Mieterspiegel; bekannte Nebenkostenbestandteile werden einzeln berechnet. Vertrags- und Mietzinswechsel teilen den Zeitraum in Abschnitte.": {
+    "en": "For each calendar month, the applicable monthly amount is allocated across documented days. Rounding is in centimes, as in the rent roll; known service charge components are calculated individually. Lease and rent changes divide the period into sections.",
+    "fr": "Pour chaque mois calendaire, le montant mensuel applicable est réparti sur les jours documentés. L’arrondi se fait au centime, comme dans l’état locatif ; les composantes connues des charges sont calculées séparément. Les changements de bail et de loyer divisent la période en sections."
+  },
+  "Mietvertrag & Einheit": {
+    "en": "Lease & unit",
+    "fr": "Bail et unité"
+  },
+  "Zur Übersicht": {
+    "en": "Back to overview",
+    "fr": "Retour à la vue d’ensemble"
+  },
+  "Abschnitt": {
+    "en": "Period",
+    "fr": "Période"
+  },
+  "Vertragstage": {
+    "en": "Lease days",
+    "fr": "Jours de bail"
+  },
+  "Netto im Abschnitt": {
+    "en": "Net rent in period",
+    "fr": "Loyer net de la période"
+  },
+  "Nebenkosten im Abschnitt": {
+    "en": "Service charges in period",
+    "fr": "Charges de la période"
+  },
+  "Brutto im Abschnitt": {
+    "en": "Gross rent in period",
+    "fr": "Loyer brut de la période"
+  },
+  "Keine Eigentümer zugeordnet": {
+    "en": "No owners assigned",
+    "fr": "Aucun propriétaire associé"
+  },
+  "Kein bestätigtes Mandat in diesem Abschnitt": {
+    "en": "No confirmed mandate in this period",
+    "fr": "Aucun mandat confirmé dans cette période"
+  },
+  "Vertragsunterlagen öffnen ↗": {
+    "en": "Open contract documents ↗",
+    "fr": "Ouvrir les documents contractuels ↗"
+  },
+  "MORADA · MANDATSFINANZEN": {
+    "en": "MORADA · MANDATE FINANCES",
+    "fr": "MORADA · FINANCES DES MANDATS"
+  },
+  "Unser Team.": {
+    "en": "Our team.",
+    "fr": "Notre équipe."
+  },
+  "Gemeinsam erreichbar": {
+    "en": "Shared contact",
+    "fr": "Contact commun"
+  },
+  "Das gemeinsame Postfach von MORADA.": {
+    "en": "MORADA’s shared mailbox.",
+    "fr": "La boîte e-mail commune de MORADA."
+  },
+  "Partner & Fachbetriebe": {
+    "en": "Partners & specialists",
+    "fr": "Partenaires et entreprises spécialisées"
+  },
+  "Kontakte für Unterhalt, Reinigung, Transporte und weitere Dienstleistungen.": {
+    "en": "Contacts for maintenance, cleaning, transport and other services.",
+    "fr": "Contacts pour l’entretien, le nettoyage, les transports et d’autres services."
+  },
+  "MORADA Living.": {
+    "en": "MORADA Living.",
+    "fr": "MORADA Living."
+  },
+  "Interim & Corporate · Wohnen auf Zeit.": {
+    "en": "Interim & Corporate · Temporary living.",
+    "fr": "Interim et Corporate · Logement temporaire."
+  },
+  "Raum für die nächste Phase.": {
+    "en": "Space for the next chapter.",
+    "fr": "Un espace pour la prochaine étape."
+  },
+  "Leerstand temporär nutzen. Wohnraum für Firmen, Projekte und Übergänge organisieren.": {
+    "en": "Make temporary use of vacant properties. Arrange accommodation for companies, projects and transitions.",
+    "fr": "Utiliser temporairement les biens vacants. Organiser des logements pour les entreprises, les projets et les transitions."
+  },
+  "Interim": {
+    "en": "Interim",
+    "fr": "Interim"
+  },
+  "Leerstand sinnvoll nutzen.": {
+    "en": "Make good use of vacancies.",
+    "fr": "Valoriser les biens vacants."
+  },
+  "Temporäre Wohnnutzung vor Sanierung, Umbau oder Rückbau.": {
+    "en": "Temporary residential use before renovation, conversion or demolition.",
+    "fr": "Usage résidentiel temporaire avant rénovation, transformation ou démolition."
+  },
+  "Keine Interim-Projekte": {
+    "en": "No Interim projects",
+    "fr": "Aucun projet Interim"
+  },
+  "Im Projektbestand sind keine Objekte erfasst.": {
+    "en": "No properties have been added to the project portfolio.",
+    "fr": "Aucun bien n’est saisi dans le portefeuille de projets."
+  },
+  "Corporate": {
+    "en": "Corporate",
+    "fr": "Corporate"
+  },
+  "Wohnen auf Zeit.": {
+    "en": "Temporary living.",
+    "fr": "Logement temporaire."
+  },
+  "Möbliertes Firmen-, Projekt- und Übergangswohnen.": {
+    "en": "Furnished accommodation for companies, projects and transitions.",
+    "fr": "Logements meublés pour entreprises, projets et transitions."
+  },
+  "Keine Corporate-Projekte": {
+    "en": "No Corporate projects",
+    "fr": "Aucun projet Corporate"
+  },
+  "Informationen.": {
+    "en": "Information.",
+    "fr": "Informations."
+  },
+  "Unser Angebot": {
+    "en": "Our services",
+    "fr": "Nos prestations"
+  },
+  "Immobilien. Persönlich betreut.": {
+    "en": "Property. Personally managed.",
+    "fr": "L’immobilier. Un accompagnement personnel."
+  },
+  "Immobilienbewirtschaftung und Neuvermietung": {
+    "en": "Property management and reletting",
+    "fr": "Gestion immobilière et relocation"
+  },
+  "Besichtigungen, Abnahmen und Übergaben": {
+    "en": "Viewings, inspections and handovers",
+    "fr": "Visites, états des lieux et remises"
+  },
+  "Koordination von Unterhalt und Dienstleistern": {
+    "en": "Coordination of maintenance and service providers",
+    "fr": "Coordination de l’entretien et des prestataires"
+  },
+  "MORADA Living · Interim & Corporate": {
+    "en": "MORADA Living · Interim & Corporate",
+    "fr": "MORADA Living · Interim et Corporate"
+  },
+  "Arbeitsbereiche": {
+    "en": "Workspaces",
+    "fr": "Espaces de travail"
+  },
+  "Administration · Unternehmen und Organisation": {
+    "en": "Administration · Company and organisation",
+    "fr": "Administration · Entreprise et organisation"
+  },
+  "Bewirtschaftung · Mandate und operative Arbeit": {
+    "en": "Property management · Mandates and operations",
+    "fr": "Gestion immobilière · Mandats et activités opérationnelles"
+  },
+  "Eigentümer · Liegenschaften, Finanzen und Freigaben": {
+    "en": "Owners · Properties, finances and approvals",
+    "fr": "Propriétaires · Immeubles, finances et validations"
+  },
+  "Mieter · Wohnung, Unterlagen und Anliegen": {
+    "en": "Tenants · Home, documents and requests",
+    "fr": "Locataires · Logement, documents et demandes"
+  },
+  "Bereich wechseln": {
+    "en": "Switch area",
+    "fr": "Changer d’espace"
+  },
+  "Unternehmensfinanzen und Mandatsfinanzen werden in eigenen Bereichen geführt.": {
+    "en": "Company finances and mandate finances are managed in separate areas.",
+    "fr": "Les finances de l’entreprise et celles des mandats sont gérées dans des espaces distincts."
+  },
+  "Team & Kontakte": {
+    "en": "Team & contacts",
+    "fr": "Équipe et contacts"
+  },
+  "Hilfe & Zusammenarbeit.": {
+    "en": "Help & collaboration.",
+    "fr": "Aide et collaboration."
+  },
+  "Kurze Wege im MORADA-Portal.": {
+    "en": "Find your way around the MORADA portal.",
+    "fr": "Des accès directs dans le portail MORADA."
+  },
+  "MORA Assistenz": {
+    "en": "MORA assistance",
+    "fr": "Assistance MORA"
+  },
+  "Direkt zum nächsten Schritt.": {
+    "en": "Straight to the next step.",
+    "fr": "Directement à l’étape suivante."
+  },
+  "Anliegen oder Aufgaben erfassen und die wichtigsten Bereiche direkt öffnen.": {
+    "en": "Add requests or tasks and open the main areas directly.",
+    "fr": "Saisir des demandes ou des tâches et accéder directement aux espaces principaux."
+  },
+  "MORA öffnen": {
+    "en": "Open MORA",
+    "fr": "Ouvrir MORA"
+  },
+  "Fragen gemeinsam klären.": {
+    "en": "Find answers together.",
+    "fr": "Trouver des réponses ensemble."
+  },
+  "Orientierung": {
+    "en": "Finding your way",
+    "fr": "Repères"
+  },
+  "Die Seitenleiste führt zu den einzelnen Arbeitsbereichen.": {
+    "en": "The sidebar leads to the individual workspaces.",
+    "fr": "La barre latérale donne accès aux différents espaces de travail."
+  },
+  "Die Suche findet Dossiers, Liegenschaften, Kontakte, Rechnungen, Anliegen, Aufgaben, Termine und Dokumente.": {
+    "en": "Search finds dossiers, properties, contacts, invoices, requests, tasks, appointments and documents.",
+    "fr": "La recherche trouve les dossiers, immeubles, contacts, factures, demandes, tâches, rendez-vous et documents."
+  },
+  "Zusammengehörige Einträge sind über ihre Dossiers verbunden. Mit «Zurück» gelangt ihr zur vorherigen Ansicht.": {
+    "en": "Related entries are linked through their dossiers. Use “Back” to return to the previous view.",
+    "fr": "Les entrées liées sont reliées par leurs dossiers. « Retour » permet de revenir à la vue précédente."
+  },
+  "Einträge sichern": {
+    "en": "Back up entries",
+    "fr": "Sauvegarder les entrées"
+  },
+  "Die Einträge werden auf diesem Gerät gespeichert. Eine Sicherung lässt sich unter Einstellungen herunterladen.": {
+    "en": "Entries are saved on this device. You can download a backup under Settings.",
+    "fr": "Les entrées sont enregistrées sur cet appareil. Une sauvegarde peut être téléchargée dans les paramètres."
+  },
+  "Einstellungen öffnen": {
+    "en": "Open settings",
+    "fr": "Ouvrir les paramètres"
+  },
+  "Einstellungen.": {
+    "en": "Settings.",
+    "fr": "Paramètres."
+  },
+  "Arbeitsbereich und gespeicherte Einträge.": {
+    "en": "Workspace and saved entries.",
+    "fr": "Espace de travail et entrées enregistrées."
+  },
+  "Arbeitsbereich": {
+    "en": "Workspace",
+    "fr": "Espace de travail"
+  },
+  "Person": {
+    "en": "Person",
+    "fr": "Personne"
+  },
+  "Datenspeicherung": {
+    "en": "Data storage",
+    "fr": "Stockage des données"
+  },
+  "Speicherort": {
+    "en": "Storage location",
+    "fr": "Emplacement de stockage"
+  },
+  "Dieses Gerät": {
+    "en": "This device",
+    "fr": "Cet appareil"
+  },
+  "Aktuelle Sitzung": {
+    "en": "Current session",
+    "fr": "Session actuelle"
+  },
+  "Diese lokale Arbeitsversion hat keine zentrale Benutzeranmeldung oder gemeinsame Datenbank. Einträge werden nicht zwischen Geräten synchronisiert.": {
+    "en": "This local working version has no central user sign-in or shared database. Entries are not synchronised between devices.",
+    "fr": "Cette version de travail locale ne dispose ni d’une connexion utilisateur centralisée ni d’une base de données partagée. Les entrées ne sont pas synchronisées entre appareils."
+  },
+  "Persönliche Konten & gemeinsame Daten": {
+    "en": "Personal accounts & shared data",
+    "fr": "Comptes personnels et données partagées"
+  },
+  "Eigene Anmeldungen, passende Berechtigungen und derselbe Datenstand auf beiden Geräten.": {
+    "en": "Individual sign-ins, appropriate permissions and the same data on both devices.",
+    "fr": "Des accès personnels, des autorisations adaptées et les mêmes données sur les deux appareils."
+  },
+  "Einträge entfernen": {
+    "en": "Remove entries",
+    "fr": "Supprimer les entrées"
+  },
+  "Ihr Eigentümerportal.": {
+    "en": "Your owner portal.",
+    "fr": "Votre portail propriétaire."
+  },
+  "Ihr Mieterportal.": {
+    "en": "Your tenant portal.",
+    "fr": "Votre portail locataire."
+  },
+  "Portfolio, Finanzen und Freigaben im Überblick.": {
+    "en": "Portfolio, finances and approvals at a glance.",
+    "fr": "Vue d’ensemble du portefeuille, des finances et des validations."
+  },
+  "Ihre Wohnung, Unterlagen und Anliegen an einem Ort.": {
+    "en": "Your home, documents and requests in one place.",
+    "fr": "Votre logement, vos documents et vos demandes au même endroit."
+  },
+  "Ein direkter Einblick in Ihre Liegenschaften und die Zusammenarbeit mit MORADA.": {
+    "en": "A direct view of your properties and your collaboration with MORADA.",
+    "fr": "Un aperçu direct de vos immeubles et de votre collaboration avec MORADA."
+  },
+  "Ein einfacher Zugang zu Ihrem Mietverhältnis und Ihrer Betreuung.": {
+    "en": "Easy access to your tenancy and support.",
+    "fr": "Un accès simple à votre location et à votre accompagnement."
+  },
+  "Keine Zuordnung": {
+    "en": "No assignment",
+    "fr": "Aucune affectation"
+  },
+  "Keine Einheiten": {
+    "en": "No units",
+    "fr": "Aucune unité"
+  },
+  "Keine Mietzinsdaten": {
+    "en": "No rental data",
+    "fr": "Aucune donnée de loyer"
+  },
+  "Offene Freigaben": {
+    "en": "Pending approvals",
+    "fr": "Validations en attente"
+  },
+  "Keine Entscheide": {
+    "en": "No decisions",
+    "fr": "Aucune décision"
+  },
+  "Keine Wohnung zugeordnet": {
+    "en": "No home assigned",
+    "fr": "Aucun logement associé"
+  },
+  "Miete inkl. Nebenkosten": {
+    "en": "Rent including service charges",
+    "fr": "Loyer charges comprises"
+  },
+  "Kein Mietverhältnis": {
+    "en": "No tenancy",
+    "fr": "Aucune location"
+  },
+  "Keine Zahlungsdaten": {
+    "en": "No payment data",
+    "fr": "Aucune donnée de paiement"
+  },
+  "Laufende Anliegen": {
+    "en": "Ongoing requests",
+    "fr": "Demandes en cours"
+  },
+  "Keine Anliegen": {
+    "en": "No requests",
+    "fr": "Aucune demande"
+  },
+  "Ihre Liegenschaften": {
+    "en": "Your properties",
+    "fr": "Vos immeubles"
+  },
+  "Ihre Wohnung": {
+    "en": "Your home",
+    "fr": "Votre logement"
+  },
+  "Keine Liegenschaft zugeordnet": {
+    "en": "No property assigned",
+    "fr": "Aucun immeuble associé"
+  },
+  "Ihrem Bereich ist keine Liegenschaft zugeordnet.": {
+    "en": "No property is assigned to your area.",
+    "fr": "Aucun immeuble n’est associé à votre espace."
+  },
+  "Ihrem Bereich ist keine Wohnung zugeordnet.": {
+    "en": "No home is assigned to your area.",
+    "fr": "Aucun logement n’est associé à votre espace."
+  },
+  "Ihre Freigaben": {
+    "en": "Your approvals",
+    "fr": "Vos validations"
+  },
+  "Ihre Anliegen": {
+    "en": "Your requests",
+    "fr": "Vos demandes"
+  },
+  "Keine Freigaben": {
+    "en": "No approvals",
+    "fr": "Aucune validation"
+  },
+  "Es stehen keine Entscheidungen zur Freigabe an.": {
+    "en": "No decisions are awaiting approval.",
+    "fr": "Aucune décision n’est en attente de validation."
+  },
+  "Es sind keine Anliegen erfasst.": {
+    "en": "No requests have been recorded.",
+    "fr": "Aucune demande n’a été saisie."
+  },
+  "Mietzinse und Unterhalt": {
+    "en": "Rents and maintenance",
+    "fr": "Loyers et entretien"
+  },
+  "Ihre Einheiten": {
+    "en": "Your units",
+    "fr": "Vos unités"
+  },
+  "Ihre Unterlagen": {
+    "en": "Your documents",
+    "fr": "Vos documents"
+  },
+  "Ihre Betreuung": {
+    "en": "Your support",
+    "fr": "Votre accompagnement"
+  },
+  "Die wichtigsten Angaben": {
+    "en": "Key details",
+    "fr": "Les informations essentielles"
+  },
+  "Zahlungen": {
+    "en": "Payments",
+    "fr": "Paiements"
+  },
+  "Ihr Zahlungsverlauf": {
+    "en": "Your payment history",
+    "fr": "Votre historique de paiements"
+  },
+  "MORADA erreichen": {
+    "en": "Contact MORADA",
+    "fr": "Contacter MORADA"
+  },
+  "Ihre Liegenschaft.": {
+    "en": "Your property.",
+    "fr": "Votre immeuble."
+  },
+  "Ihre Wohnung.": {
+    "en": "Your home.",
+    "fr": "Votre logement."
+  },
+  "Die Ihnen zugeordneten Mandate.": {
+    "en": "Your assigned mandates.",
+    "fr": "Les mandats qui vous sont associés."
+  },
+  "Informationen rund um Ihr Zuhause.": {
+    "en": "Information about your home.",
+    "fr": "Informations concernant votre logement."
+  },
+  "Für Ihre Liegenschaft ist keine Zuordnung hinterlegt. Bei Fragen wenden Sie sich an MORADA.": {
+    "en": "No assignment has been recorded for your property. Please contact MORADA with any questions.",
+    "fr": "Aucune affectation n’est enregistrée pour votre immeuble. Pour toute question, veuillez contacter MORADA."
+  },
+  "Für Ihre Wohnung ist keine Zuordnung hinterlegt. Bei Fragen wenden Sie sich an MORADA.": {
+    "en": "No assignment has been recorded for your home. Please contact MORADA with any questions.",
+    "fr": "Aucune affectation n’est enregistrée pour votre logement. Pour toute question, veuillez contacter MORADA."
+  },
+  "Ihre Finanzen.": {
+    "en": "Your finances.",
+    "fr": "Vos finances."
+  },
+  "Mietzinse und Unterhalt Ihrer Liegenschaften.": {
+    "en": "Rents and maintenance for your properties.",
+    "fr": "Loyers et entretien de vos immeubles."
+  },
+  "Nettosollmiete": {
+    "en": "Net rent due",
+    "fr": "Loyer net théorique"
+  },
+  "Keine Zahlungen": {
+    "en": "No payments",
+    "fr": "Aucun paiement"
+  },
+  "Offene Mietzinse": {
+    "en": "Outstanding rents",
+    "fr": "Loyers impayés"
+  },
+  "Keine Forderungen": {
+    "en": "No receivables",
+    "fr": "Aucune créance"
+  },
+  "Kein Budget": {
+    "en": "No budget",
+    "fr": "Aucun budget"
+  },
+  "Unterhaltskosten": {
+    "en": "Maintenance costs",
+    "fr": "Coûts d’entretien"
+  },
+  "Ausgaben nach Kategorie": {
+    "en": "Expenses by category",
+    "fr": "Dépenses par catégorie"
+  },
+  "Ihr Mietverhältnis.": {
+    "en": "Your tenancy.",
+    "fr": "Votre location."
+  },
+  "Miete, Vertragsdaten und Kaution im Überblick.": {
+    "en": "Rent, lease details and deposit at a glance.",
+    "fr": "Vue d’ensemble du loyer, du bail et de la garantie."
+  },
+  "Miete & Nebenkosten": {
+    "en": "Rent & service charges",
+    "fr": "Loyer et charges"
+  },
+  "Nebenkosten-Akonto / Monat": {
+    "en": "Service charge advance / month",
+    "fr": "Acompte de charges / mois"
+  },
+  "Total / Monat": {
+    "en": "Total / month",
+    "fr": "Total / mois"
+  },
+  "Vertragsübersicht": {
+    "en": "Lease overview",
+    "fr": "Vue d’ensemble du bail"
+  },
+  "Es sind keine Vertragsdaten hinterlegt.": {
+    "en": "No lease details have been recorded.",
+    "fr": "Aucune donnée de bail n’a été enregistrée."
+  },
+  "Ihr Mieterspiegel.": {
+    "en": "Your rent roll.",
+    "fr": "Votre état locatif."
+  },
+  "Einheiten und Mietverhältnisse Ihrer Liegenschaften.": {
+    "en": "Units and tenancies in your properties.",
+    "fr": "Unités et locations de vos immeubles."
+  },
+  "Keine Mietverhältnisse": {
+    "en": "No tenancies",
+    "fr": "Aucune location"
+  },
+  "Ihre Mietzinseingänge.": {
+    "en": "Your rent receipts.",
+    "fr": "Vos encaissements de loyers."
+  },
+  "Erfasste Mietzinse Ihrer Liegenschaften.": {
+    "en": "Recorded rents for your properties.",
+    "fr": "Loyers saisis de vos immeubles."
+  },
+  "Nettosoll": {
+    "en": "Net amount due",
+    "fr": "Montant net théorique"
+  },
+  "Erfasst": {
+    "en": "Recorded",
+    "fr": "Saisi"
+  },
+  "Keine Mietzinseingänge": {
+    "en": "No rent receipts",
+    "fr": "Aucun encaissement de loyer"
+  },
+  "Keine Berichte": {
+    "en": "No reports",
+    "fr": "Aucun rapport"
+  },
+  "Ihre Freigaben.": {
+    "en": "Your approvals.",
+    "fr": "Vos validations."
+  },
+  "Anstehende Entscheidungen und deren Bearbeitungsstand.": {
+    "en": "Upcoming decisions and their processing status.",
+    "fr": "Décisions à venir et état de leur traitement."
+  },
+  "Entscheidung": {
+    "en": "Decision",
+    "fr": "Décision"
+  },
+  "Anliegen & Unterhalt.": {
+    "en": "Requests & maintenance.",
+    "fr": "Demandes et entretien."
+  },
+  "Vorgänge Ihrer Liegenschaften.": {
+    "en": "Activities relating to your properties.",
+    "fr": "Opérations concernant vos immeubles."
+  },
+  "Ihre Dokumente.": {
+    "en": "Your documents.",
+    "fr": "Vos documents."
+  },
+  "Ihre freigegebenen Unterlagen.": {
+    "en": "Documents shared with you.",
+    "fr": "Les documents mis à votre disposition."
+  },
+  "Dokument": {
+    "en": "Document",
+    "fr": "Document"
+  },
+  "Aktualisiert": {
+    "en": "Updated",
+    "fr": "Actualisé"
+  },
+  "Keine Dokumente": {
+    "en": "No documents",
+    "fr": "Aucun document"
+  },
+  "Ihre Zahlungen.": {
+    "en": "Your payments.",
+    "fr": "Vos paiements."
+  },
+  "Der Zahlungsverlauf Ihres Mietverhältnisses.": {
+    "en": "The payment history for your tenancy.",
+    "fr": "L’historique des paiements de votre location."
+  },
+  "Geschuldet": {
+    "en": "Due",
+    "fr": "Dû"
+  },
+  "Ihre Anliegen.": {
+    "en": "Your requests.",
+    "fr": "Vos demandes."
+  },
+  "Meldungen zu Ihrer Wohnung und deren Bearbeitungsstand.": {
+    "en": "Reports about your home and their processing status.",
+    "fr": "Signalements concernant votre logement et état de leur traitement."
+  },
+  "Ihre Termine.": {
+    "en": "Your appointments.",
+    "fr": "Vos rendez-vous."
+  },
+  "Termine zu Ihrem Mietverhältnis und Ihren Anliegen.": {
+    "en": "Appointments relating to your tenancy and requests.",
+    "fr": "Rendez-vous liés à votre location et à vos demandes."
+  },
+  "Uhrzeit": {
+    "en": "Time",
+    "fr": "Heure"
+  },
+  "Keine Termine": {
+    "en": "No appointments",
+    "fr": "Aucun rendez-vous"
+  },
+  "Unterlagen zu Ihrem Mietverhältnis.": {
+    "en": "Documents relating to your tenancy.",
+    "fr": "Documents relatifs à votre location."
+  },
+  "Ihr Kontakt zu MORADA.": {
+    "en": "Your contact with MORADA.",
+    "fr": "Votre contact chez MORADA."
+  },
+  "Persönlich für Sie da.": {
+    "en": "Here for you personally.",
+    "fr": "À vos côtés personnellement."
+  },
+  "Wir sind für Sie da.": {
+    "en": "We are here for you.",
+    "fr": "Nous sommes à votre disposition."
+  },
+  "Schreiben Sie uns zu Ihrer Liegenschaft, Ihrem Mietverhältnis oder einem Anliegen.": {
+    "en": "Write to us about your property, tenancy or a request.",
+    "fr": "Écrivez-nous au sujet de votre immeuble, de votre location ou d’une demande."
+  },
+  "{1}E-Mail schreiben": {
+    "en": "{1}Write email",
+    "fr": "{1}Écrire un e-mail"
+  },
+  "Ihre Ansprechpersonen": {
+    "en": "Your contacts",
+    "fr": "Vos interlocuteurs"
+  },
+  "Ihr Profil.": {
+    "en": "Your profile.",
+    "fr": "Votre profil."
+  },
+  "Ihre persönlichen Angaben und Zuordnungen.": {
+    "en": "Your personal details and assignments.",
+    "fr": "Vos données personnelles et affectations."
+  },
+  "Persönliche Angaben": {
+    "en": "Personal details",
+    "fr": "Données personnelles"
+  },
+  "Es sind noch keine persönlichen Angaben hinterlegt.": {
+    "en": "No personal details have been added yet.",
+    "fr": "Aucune donnée personnelle n’a encore été enregistrée."
+  },
+  "Portalansicht": {
+    "en": "Portal view",
+    "fr": "Vue du portail"
+  },
+  "Noch nicht zugeordnet": {
+    "en": "Not assigned yet",
+    "fr": "Pas encore associé"
+  },
+  "· Mietperiode": {
+    "en": "· Rental period",
+    "fr": "· Période locative"
+  },
+  "Mietforderung · Storno": {
+    "en": "Rent receivable · cancelled",
+    "fr": "Créance de loyer · annulée"
+  },
+  "Mietforderung · Archiv": {
+    "en": "Rent receivable · archived",
+    "fr": "Créance de loyer · archivée"
+  },
+  "Mietforderung": {
+    "en": "Rent receivable",
+    "fr": "Créance de loyer"
+  },
+  "· Zahlungseingang": {
+    "en": "· Payment received",
+    "fr": "· Encaissement"
+  },
+  "Zahlung · Fehlerfassung zurückgenommen": {
+    "en": "Payment · incorrect entry reversed",
+    "fr": "Paiement · saisie erronée annulée"
+  },
+  "Dokumentierter Eingang": {
+    "en": "Documented receipt",
+    "fr": "Encaissement documenté"
+  },
+  "Rechnung · Storniert": {
+    "en": "Invoice · cancelled",
+    "fr": "Facture · annulée"
+  },
+  "Mandatsrechnung": {
+    "en": "Mandate invoice",
+    "fr": "Facture de mandat"
+  },
+  "Firma · Archiv": {
+    "en": "Company · archived",
+    "fr": "Entreprise · archivée"
+  },
+  "Handwerker / Dienstleister": {
+    "en": "Contractor / service provider",
+    "fr": "Artisan / prestataire"
+  },
+  "Fachprüfung · Archiv": {
+    "en": "Specialist review · archived",
+    "fr": "Contrôle spécialisé · archivé"
+  },
+  "Dossiernotiz · Archiv": {
+    "en": "Dossier note · archived",
+    "fr": "Note de dossier · archivée"
+  },
+  "Abnahme / Übergabe": {
+    "en": "Inspection / handover",
+    "fr": "État des lieux / remise"
+  },
+  "Mietinteressent": {
+    "en": "Prospective tenant",
+    "fr": "Candidat locataire"
+  },
+  "· Archiv": {
+    "en": "· Archive",
+    "fr": "· Archives"
+  },
+  "In Ihrem Bereich suchen.": {
+    "en": "Search your area.",
+    "fr": "Rechercher dans votre espace."
+  },
+  "Im Portal suchen.": {
+    "en": "Search the portal.",
+    "fr": "Rechercher dans le portail."
+  },
+  "Treffer für „": {
+    "en": "Results for “",
+    "fr": "Résultats pour «"
+  },
+  "Oben einen Suchbegriff eingeben und Enter drücken.": {
+    "en": "Enter a search term above and press Enter.",
+    "fr": "Saisir un terme de recherche ci-dessus, puis appuyer sur Entrée."
+  },
+  "Keine Suche": {
+    "en": "No search",
+    "fr": "Aucune recherche"
+  },
+  "Bitte einen anderen Suchbegriff verwenden.": {
+    "en": "Please use a different search term.",
+    "fr": "Veuillez utiliser un autre terme de recherche."
+  },
+  "Suchen Sie nach Objektnummern, Liegenschaften, Einheiten, Anliegen, Aufgaben, Unterhalt, Terminen oder Dokumenten.": {
+    "en": "Search for property numbers, properties, units, requests, tasks, maintenance, appointments or documents.",
+    "fr": "Rechercher des numéros d’immeuble, immeubles, unités, demandes, tâches, entretiens, rendez-vous ou documents."
+  },
+  "Suchtreffer": {
+    "en": "Search results",
+    "fr": "Résultats de recherche"
+  },
+  "MORADA · Portal": {
+    "en": "MORADA · Portal",
+    "fr": "MORADA · Portail"
+  },
+  "Profile": {
+    "en": "Profile",
+    "fr": "Profil"
+  },
+  "Für Ihr Mietverhältnis liegen keine Einträge in diesem Bereich vor.": {
+    "en": "There are no entries for your tenancy in this area.",
+    "fr": "Aucune entrée concernant votre location dans cet espace."
+  },
+  "Für Ihre Liegenschaften liegen keine Einträge in diesem Bereich vor.": {
+    "en": "There are no entries for your properties in this area.",
+    "fr": "Aucune entrée concernant vos immeubles dans cet espace."
+  },
+  "Mietverhältnisse und Nettomietzinse.": {
+    "en": "Tenancies and net rents.",
+    "fr": "Locations et loyers nets."
+  },
+  "Mieter.": {
+    "en": "Tenants.",
+    "fr": "Locataires."
+  },
+  "Kontakte und zugeordnete Mietverhältnisse.": {
+    "en": "Contacts and assigned tenancies.",
+    "fr": "Contacts et locations associées."
+  },
+  "Keine Mieter": {
+    "en": "No tenants",
+    "fr": "Aucun locataire"
+  },
+  "Aktivitäten.": {
+    "en": "Activities.",
+    "fr": "Activités."
+  },
+  "Erfasste Vorgänge und Änderungen im Team.": {
+    "en": "Recorded activities and team changes.",
+    "fr": "Opérations et modifications saisies dans l’équipe."
+  },
+  "Zeitpunkt": {
+    "en": "Date and time",
+    "fr": "Date et heure"
+  },
+  "Aktivität": {
+    "en": "Activity",
+    "fr": "Activité"
+  },
+  "Keine Aktivitäten": {
+    "en": "No activities",
+    "fr": "Aucune activité"
+  },
+  "Es wurden keine Änderungen erfasst.": {
+    "en": "No changes have been recorded.",
+    "fr": "Aucune modification n’a été saisie."
+  },
+  "MORADA ·": {
+    "en": "MORADA ·",
+    "fr": "MORADA ·"
+  },
+  "In Arbeit": {
+    "en": "In progress",
+    "fr": "En cours"
+  },
+  "Abgebrochen": {
+    "en": "Aborted",
+    "fr": "Abandonné"
+  },
+  "Allgemein": {
+    "en": "General",
+    "fr": "Général"
+  },
+  "Protokolle": {
+    "en": "Minutes",
+    "fr": "Procès-verbaux"
+  },
+  "Pläne": {
+    "en": "Plans",
+    "fr": "Plans"
+  },
+  "Versicherungen": {
+    "en": "Insurance",
+    "fr": "Assurances"
+  },
+  "Fotos": {
+    "en": "Photos",
+    "fr": "Photos"
+  },
+  "Vertragsunterlage": {
+    "en": "Contract document",
+    "fr": "Document contractuel"
+  },
+  "Zu viele oder ungültige Vorgänge.": {
+    "en": "Too many or invalid records.",
+    "fr": "Enregistrements trop nombreux ou non valides."
+  },
+  "Bitte Titel, Kennung und Datum des Vorgangs prüfen.": {
+    "en": "Please check the record’s title, identifier and date.",
+    "fr": "Veuillez vérifier le titre, l’identifiant et la date de l’enregistrement."
+  },
+  "Eine Angabe im Vorgang ist ungültig oder zu lang.": {
+    "en": "A detail in the record is invalid or too long.",
+    "fr": "Une donnée de l’enregistrement n’est pas valide ou est trop longue."
+  },
+  "Die Liegenschaftszuordnung ist ungültig.": {
+    "en": "The property assignment is invalid.",
+    "fr": "L’affectation à l’immeuble n’est pas valide."
+  },
+  "Die ausgewählte Einheit gehört nicht zur Liegenschaft.": {
+    "en": "The selected unit does not belong to the property.",
+    "fr": "L’unité choisie n’appartient pas à l’immeuble."
+  },
+  "Die Anlage gehört nicht zur Liegenschaft.": {
+    "en": "The installation does not belong to the property.",
+    "fr": "L’installation n’appartient pas à l’immeuble."
+  },
+  "Bitte einen gültigen Bearbeitungsstand auswählen.": {
+    "en": "Please select a valid processing status.",
+    "fr": "Veuillez choisir un état de traitement valide."
+  },
+  "Normal": {
+    "en": "Normal",
+    "fr": "Normale"
+  },
+  "Bitte eine gültige Priorität auswählen.": {
+    "en": "Please select a valid priority.",
+    "fr": "Veuillez choisir une priorité valide."
+  },
+  "Bitte Uhrzeit und Terminart prüfen.": {
+    "en": "Please check the time and appointment type.",
+    "fr": "Veuillez vérifier l’heure et le type de rendez-vous."
+  },
+  "Bitte die Absage begründen.": {
+    "en": "Please provide a reason for cancellation.",
+    "fr": "Veuillez indiquer un motif d’annulation."
+  },
+  "Ein Änderungsdatum ist ungültig.": {
+    "en": "A modification date is invalid.",
+    "fr": "Une date de modification n’est pas valide."
+  },
+  "Die Person im Änderungsverlauf ist ungültig.": {
+    "en": "The person in the change history is invalid.",
+    "fr": "La personne indiquée dans l’historique des modifications n’est pas valide."
+  },
+  "Eine Anliegennummer ist mehrfach vergeben.": {
+    "en": "A request number has been assigned more than once.",
+    "fr": "Un numéro de demande a été attribué plusieurs fois."
+  },
+  "Ein Vorgang darf höchstens 1000 Verlaufseinträge enthalten.": {
+    "en": "A record may contain no more than 1000 history entries.",
+    "fr": "Un enregistrement ne peut pas contenir plus de 1000 entrées d’historique."
+  },
+  "Ein Verlaufseintrag ist ungültig.": {
+    "en": "A history entry is invalid.",
+    "fr": "Une entrée d’historique n’est pas valide."
+  },
+  "Eine Änderung im Verlauf ist ungültig.": {
+    "en": "A change in the history is invalid.",
+    "fr": "Une modification dans l’historique n’est pas valide."
+  },
+  "Gesamte Liegenschaft / Allgemein": {
+    "en": "Entire property / general",
+    "fr": "Ensemble de l’immeuble / général"
+  },
+  "Bisherige Freitextzuordnung": {
+    "en": "Previous free-text assignment",
+    "fr": "Ancienne affectation en texte libre"
+  },
+  "Keine feste Einheit": {
+    "en": "No fixed unit",
+    "fr": "Aucune unité définie"
+  },
+  "Ort / Zusatzangabe": {
+    "en": "Location / additional details",
+    "fr": "Lieu / précisions"
+  },
+  "Anlage": {
+    "en": "Installation",
+    "fr": "Installation"
+  },
+  "Priorität": {
+    "en": "Priority",
+    "fr": "Priorité"
+  },
+  "Fälligkeit / Wiedervorlage": {
+    "en": "Due date / follow-up",
+    "fr": "Échéance / suivi"
+  },
+  "Terminart": {
+    "en": "Appointment type",
+    "fr": "Type de rendez-vous"
+  },
+  "Gemeldet von": {
+    "en": "Reported by",
+    "fr": "Signalé par"
+  },
+  "Beschreibung": {
+    "en": "Description",
+    "fr": "Description"
+  },
+  "Inhalt": {
+    "en": "Content",
+    "fr": "Contenu"
+  },
+  "Absagegrund": {
+    "en": "Cancellation reason",
+    "fr": "Motif d’annulation"
+  },
+  "Bytes)": {
+    "en": "Bytes)",
+    "fr": "octets)"
+  },
+  "Der Verlauf hat 1000 Einträge erreicht. Bitte eine Folgeaufgabe anlegen; der bisherige Verlauf bleibt erhalten.": {
+    "en": "The history has reached 1000 entries. Please create a follow-up task; the existing history is retained.",
+    "fr": "L’historique a atteint 1000 entrées. Veuillez créer une tâche de suivi ; l’historique existant est conservé."
+  },
+  "Kein Zugriff auf diese Einträge.": {
+    "en": "No access to these entries.",
+    "fr": "Aucun accès à ces entrées."
+  },
+  "Der Portalstand hat sich geändert. Bitte den Eintrag erneut öffnen; eure Eingaben wurden nicht gespeichert.": {
+    "en": "The portal data has changed. Please reopen the entry; your changes were not saved.",
+    "fr": "Les données du portail ont changé. Veuillez rouvrir l’entrée ; vos modifications n’ont pas été enregistrées."
+  },
+  "Unbekannter Vorgang.": {
+    "en": "Unknown record.",
+    "fr": "Enregistrement inconnu."
+  },
+  "Bitte diesen Termin im verknüpften Abnahmeprotokoll bearbeiten.": {
+    "en": "Please edit this appointment in the linked inspection report.",
+    "fr": "Veuillez modifier ce rendez-vous dans le procès-verbal d’état des lieux associé."
+  },
+  "Bitte das Dokument zuerst aus dem Archiv wiederherstellen.": {
+    "en": "Please restore the document from the archive first.",
+    "fr": "Veuillez d’abord restaurer le document depuis les archives."
+  },
+  "Bitte eine Liegenschaft im Bestand auswählen.": {
+    "en": "Please select a property in the portfolio.",
+    "fr": "Veuillez choisir un immeuble du parc."
+  },
+  "Bitte eine aktive Einheit dieser Liegenschaft auswählen.": {
+    "en": "Please select an active unit of this property.",
+    "fr": "Veuillez choisir une unité active de cet immeuble."
+  },
+  "Bitte einen Inhalt erfassen oder mindestens eine Datei anhängen.": {
+    "en": "Please enter content or attach at least one file.",
+    "fr": "Veuillez saisir un contenu ou joindre au moins un fichier."
+  },
+  "Bitte eine zuständige Person auswählen.": {
+    "en": "Please select a responsible person.",
+    "fr": "Veuillez choisir une personne responsable."
+  },
+  "Besprechung": {
+    "en": "Meeting",
+    "fr": "Réunion"
+  },
+  "Dieses Anliegen ist mit Unterhalt verknüpft. Die Zuordnung zuerst beim Unterhalt anpassen.": {
+    "en": "This request is linked to maintenance. Please adjust the assignment in Maintenance first.",
+    "fr": "Cette demande est liée à un entretien. Veuillez d’abord adapter l’affectation dans l’entretien."
+  },
+  "Bitte das Anliegen beschreiben.": {
+    "en": "Please describe the request.",
+    "fr": "Veuillez décrire la demande."
+  },
+  "Bitte Liegenschaft und Einheit zuerst aktivieren, bevor ihr den Vorgang wieder öffnet.": {
+    "en": "Please activate the property and unit before reopening the record.",
+    "fr": "Veuillez activer l’immeuble et l’unité avant de rouvrir l’enregistrement."
+  },
+  "Die Zuordnung muss zum Interessentendossier passen.": {
+    "en": "The assignment must match the prospective tenant’s dossier.",
+    "fr": "L’affectation doit correspondre au dossier du candidat locataire."
+  },
+  "Das Interessentendossier ist archiviert.": {
+    "en": "The prospective tenant’s dossier is archived.",
+    "fr": "Le dossier du candidat locataire est archivé."
+  },
+  "Dieser Eintrag gehört zu einer Neuvermietung. Die Liegenschaft und Einheit müssen damit übereinstimmen.": {
+    "en": "This entry belongs to a reletting. The property and unit must match it.",
+    "fr": "Cette entrée appartient à une relocation. L’immeuble et l’unité doivent y correspondre."
+  },
+  "Die Neuvermietung ist nicht mehr offen für neue Einträge.": {
+    "en": "The reletting is no longer open for new entries.",
+    "fr": "La relocation n’accepte plus de nouvelles entrées."
+  },
+  "Die verknüpfte Anlage gehört nicht zur Liegenschaft.": {
+    "en": "The linked installation does not belong to the property.",
+    "fr": "L’installation associée n’appartient pas à l’immeuble."
+  },
+  "Bitte die Anlage zuerst aktivieren, bevor ihr dafür einen Vorgang öffnet.": {
+    "en": "Please activate the installation before opening a record for it.",
+    "fr": "Veuillez activer l’installation avant d’ouvrir un enregistrement la concernant."
+  },
+  "Bitte eine aktive Dossiernotiz auswählen.": {
+    "en": "Please select an active dossier note.",
+    "fr": "Veuillez choisir une note de dossier active."
+  },
+  "Liegenschaft und Einheit müssen zur Dossiernotiz gehören.": {
+    "en": "The property and unit must belong to the dossier note.",
+    "fr": "L’immeuble et l’unité doivent correspondre à la note de dossier."
+  },
+  "Bitte einen Titel mit höchstens 180 Zeichen eingeben.": {
+    "en": "Please enter a title of no more than 180 characters.",
+    "fr": "Veuillez saisir un titre de 180 caractères au maximum."
+  },
+  "Der Stand hat sich geändert. Bitte den Vorgang erneut öffnen.": {
+    "en": "The data has changed. Please reopen the record.",
+    "fr": "Les données ont changé. Veuillez rouvrir l’enregistrement."
+  },
+  "Eintrag nicht gefunden.": {
+    "en": "Entry not found.",
+    "fr": "Entrée introuvable."
+  },
+  "Bitte das Dokument zuerst wiederherstellen.": {
+    "en": "Please restore the document first.",
+    "fr": "Veuillez d’abord restaurer le document."
+  },
+  "Bitte eine Rückmeldung mit 1 bis 3000 Zeichen erfassen.": {
+    "en": "Please enter feedback containing 1 to 3000 characters.",
+    "fr": "Veuillez saisir un retour de 1 à 3000 caractères."
+  },
+  "Rückmeldung zu": {
+    "en": "Feedback on",
+    "fr": "Retour concernant"
+  },
+  "Der Stand hat sich geändert. Bitte den Eintrag erneut öffnen.": {
+    "en": "The data has changed. Please reopen the entry.",
+    "fr": "Les données ont changé. Veuillez rouvrir l’entrée."
+  },
+  "Dokument nicht gefunden.": {
+    "en": "Document not found.",
+    "fr": "Document introuvable."
+  },
+  "Noch keine Dateien hinterlegt.": {
+    "en": "No files have been added yet.",
+    "fr": "Aucun fichier n’a encore été ajouté."
+  },
+  "PDF oder Bild auswählen": {
+    "en": "Select PDF or image",
+    "fr": "Choisir un PDF ou une image"
+  },
+  "Bis zu 3 Dateien à 1 MB pro Eintrag. Dateien werden auf diesem Gerät und in der Datensicherung gespeichert.": {
+    "en": "Up to 3 files of 1 MB each per entry. Files are saved on this device and in the backup.",
+    "fr": "Jusqu’à 3 fichiers de 1 Mo par entrée. Les fichiers sont enregistrés sur cet appareil et dans la sauvegarde."
+  },
+  "Bitte die Liegenschaft zuerst aktivieren.": {
+    "en": "Please activate the property first.",
+    "fr": "Veuillez d’abord activer l’immeuble."
+  },
+  "Titel *": {
+    "en": "Title *",
+    "fr": "Titre *"
+  },
+  "Dokumentdatum *": {
+    "en": "Document date *",
+    "fr": "Date du document *"
+  },
+  "Inhalt / Beschreibung": {
+    "en": "Content / description",
+    "fr": "Contenu / description"
+  },
+  "Zuständig *": {
+    "en": "Responsible *",
+    "fr": "Responsable *"
+  },
+  "Datum *": {
+    "en": "Date *",
+    "fr": "Date *"
+  },
+  "Uhrzeit *": {
+    "en": "Time *",
+    "fr": "Heure *"
+  },
+  "Telefonat": {
+    "en": "Phone call",
+    "fr": "Appel téléphonique"
+  },
+  "Besichtigung": {
+    "en": "Viewing",
+    "fr": "Visite"
+  },
+  "Abnahme": {
+    "en": "Inspection",
+    "fr": "État des lieux"
+  },
+  "Absagegrund *": {
+    "en": "Cancellation reason *",
+    "fr": "Motif d’annulation *"
+  },
+  "Nächste Bearbeitung *": {
+    "en": "Next action *",
+    "fr": "Prochaine action *"
+  },
+  "Fällig am *": {
+    "en": "Due on *",
+    "fr": "Échéance le *"
+  },
+  "Beschreibung *": {
+    "en": "Description *",
+    "fr": "Description *"
+  },
+  "Bisherige Zuordnung: {0}. Bitte mit einer Liegenschaft verknüpfen oder ausdrücklich als internen Eintrag führen.": {
+    "en": "Previous assignment: {0}. Please link to a property or explicitly mark it as an internal entry.",
+    "fr": "Ancienne affectation : {0}. Veuillez l’associer à un immeuble ou la définir explicitement comme entrée interne."
+  },
+  "Bisherige Freitextzuordnung entfernen": {
+    "en": "Remove previous free-text assignment",
+    "fr": "Supprimer l’ancienne affectation en texte libre"
+  },
+  "Bitte höchstens 3 Dateien pro Eintrag anhängen.": {
+    "en": "Please attach no more than 3 files per entry.",
+    "fr": "Veuillez joindre au maximum 3 fichiers par entrée."
+  },
+  "Dateien werden eingelesen …": {
+    "en": "Reading files …",
+    "fr": "Lecture des fichiers…"
+  },
+  "ausgewählt.": {
+    "en": "selected.",
+    "fr": "sélectionné(s)."
+  },
+  "Sie wird": {
+    "en": "It will be",
+    "fr": "L’enregistrement se fera"
+  },
+  "Sie werden": {
+    "en": "They will be",
+    "fr": "L’enregistrement se fera"
+  },
+  "mit dem Eintrag gespeichert.": {
+    "en": "saved with the entry.",
+    "fr": "avec l’entrée."
+  },
+  "Bearbeitet": {
+    "en": "Edited",
+    "fr": "Modifié"
+  },
+  "Interne Notiz / Rückmeldung": {
+    "en": "Internal note / feedback",
+    "fr": "Note interne / retour"
+  },
+  "Rückmeldung": {
+    "en": "Feedback",
+    "fr": "Retour"
+  },
+  "Wiederhergestellt": {
+    "en": "Restored",
+    "fr": "Restauré"
+  },
+  "Frühere Änderungen wurden vor Einführung des Verlaufs nicht erfasst.": {
+    "en": "Earlier changes were not recorded before history tracking was introduced.",
+    "fr": "Les anciennes modifications n’étaient pas enregistrées avant la mise en place de l’historique."
+  },
+  "{0} {1} ansehen": {
+    "en": "View {0} {1}",
+    "fr": "Voir {0} {1}"
+  },
+  "Änderung": {
+    "en": "Change",
+    "fr": "Modification"
+  },
+  "Änderungen": {
+    "en": "Changes",
+    "fr": "Modifications"
+  },
+  "Vorher": {
+    "en": "Before",
+    "fr": "Avant"
+  },
+  "Nachher": {
+    "en": "After",
+    "fr": "Après"
+  },
+  "Noch keine Rückmeldungen oder Änderungen erfasst.": {
+    "en": "No feedback or changes have been recorded yet.",
+    "fr": "Aucun retour ni aucune modification n’a encore été saisi."
+  },
+  "Seite {0} / {1}": {
+    "en": "Page {0} / {1}",
+    "fr": "Page {0} / {1}"
+  },
+  "Weiter": {
+    "en": "Next",
+    "fr": "Suivant"
+  },
+  "Ablage": {
+    "en": "Files",
+    "fr": "Classement"
+  },
+  "Rückmeldungen & Verlauf": {
+    "en": "Feedback & history",
+    "fr": "Retours et historique"
+  },
+  "Text herunterladen": {
+    "en": "Download text",
+    "fr": "Télécharger le texte"
+  },
+  "Neue Rückmeldung": {
+    "en": "New feedback",
+    "fr": "Nouveau retour"
+  },
+  "Rückmeldung speichern": {
+    "en": "Save feedback",
+    "fr": "Enregistrer le retour"
+  },
+  "geplante Laufend & bevorstehend": {
+    "en": "scheduled Current & upcoming",
+    "fr": "planifiés En cours et à venir"
+  },
+  "Vor dem Archivieren bearbeiten:": {
+    "en": "Address before archiving:",
+    "fr": "À traiter avant l’archivage :"
+  },
+  "Archivierung noch nicht möglich": {
+    "en": "Archiving not possible yet",
+    "fr": "Archivage pas encore possible"
+  },
+  "Pendenzen öffnen": {
+    "en": "Open pending tasks",
+    "fr": "Ouvrir les tâches en suspens"
+  },
+  "Keine Dokumente in dieser Ansicht": {
+    "en": "No documents in this view",
+    "fr": "Aucun document dans cette vue"
+  },
+  "Erfasst eine Unterlage oder prüft Suche, Kategorie und Archivfilter.": {
+    "en": "Add a document or check the search, category and archive filters.",
+    "fr": "Ajouter un document ou vérifier la recherche, la catégorie et le filtre d’archives."
+  },
+  "Dokumentdatum": {
+    "en": "Document date",
+    "fr": "Date du document"
+  },
+  "Textnotiz": {
+    "en": "Text note",
+    "fr": "Note textuelle"
+  },
+  "Dokumente und Dateien": {
+    "en": "Documents and files",
+    "fr": "Documents et fichiers"
+  },
+  "Dokumente durchsuchen": {
+    "en": "Search documents",
+    "fr": "Rechercher des documents"
+  },
+  "Titel, Datei, Kategorie oder Inhalt …": {
+    "en": "Title, file, category or content …",
+    "fr": "Titre, fichier, catégorie ou contenu…"
+  },
+  "Aktuelle Dokumente": {
+    "en": "Current documents",
+    "fr": "Documents actuels"
+  },
+  "Archivierte Dokumente": {
+    "en": "Archived documents",
+    "fr": "Documents archivés"
+  },
+  "Alle Dokumente": {
+    "en": "All documents",
+    "fr": "Tous les documents"
+  },
+  "Alle Kategorien": {
+    "en": "All categories",
+    "fr": "Toutes les catégories"
+  },
+  "Dokumente.": {
+    "en": "Documents.",
+    "fr": "Documents."
+  },
+  "Dateien und Notizen mit Liegenschaften und Einheiten verbinden.": {
+    "en": "Link files and notes to properties and units.",
+    "fr": "Associer les fichiers et notes aux immeubles et unités."
+  },
+  "Dokument erfassen": {
+    "en": "Add document",
+    "fr": "Ajouter un document"
+  },
+  "Keine Termine in dieser Ansicht.": {
+    "en": "No appointments in this view.",
+    "fr": "Aucun rendez-vous dans cette vue."
+  },
+  "Datei entfernt. Die Änderung wird beim Speichern übernommen.": {
+    "en": "File removed. The change will take effect when saved.",
+    "fr": "Fichier supprimé. La modification sera appliquée lors de l’enregistrement."
+  },
+  "Dokument wiederherstellen?": {
+    "en": "Restore document?",
+    "fr": "Restaurer le document ?"
+  },
+  "Dokument archivieren?": {
+    "en": "Archive document?",
+    "fr": "Archiver le document ?"
+  },
+  "Alexander und Diana · MORADA.": {
+    "en": "Alexander and Diana · MORADA.",
+    "fr": "Alexander et Diana · MORADA."
+  }
+}

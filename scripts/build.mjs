@@ -1,3 +1,4 @@
+import './build-i18n.mjs';
 import './check.mjs';
 import { cpSync, mkdirSync, readdirSync, rmSync, existsSync } from 'node:fs';
 rmSync('dist', { recursive:true, force:true });
