@@ -10,6 +10,7 @@ import {hydrateSimple,beginPreparation,acceptReceipt} from '../lib/mora/simple/s
 import {portalCaseFields} from '../assets/mora-portal-map.js';
 import {portalActionState} from '../lib/mora/portal/action-state.js';
 import {AGENT_MODEL} from '../lib/mora/portal/budget.js';
+import {MORA_REPLY_STYLE} from '../lib/mora/portal/reply-style.js';
 
 const empty=()=>hydrateSimple(null);
 const plan=(reply,updates=[],extra={})=>({reply,topic:updates.length?'issue':'information',updates,focus:null,next:{type:'none'},...extra});
@@ -155,6 +156,19 @@ test('unconnected document claims are reviewed against the actual view and repai
   assert.deepEqual(r.navigation,['ownerDocuments']);assert.equal(r.state.issues.length,0);assert.equal(r.requestedAction,null);
   const review=a.model.doGenerateCalls[1].prompt.find(m=>m.role==='user').content[0].text;
   const context=JSON.parse(review);assert.equal(context.context.capabilities.navigation[0].recordConnection,false);assert.equal(context.context.audience.role,'owner');
+});
+
+test('the existing reply repair shares the conversation style and receives history instead of copying the rejected answer',async()=>{
+  const s=await lamp();s.issue.draftOfferShown=true;
+  s.portalJournal=[{role:'user',content:'Die Angaben reichen.'},{role:'assistant',content:'Der Button zum Vorbereiten ist verfügbar.'}];
+  const a=sdk([plan('Das Anliegen wurde bereits gespeichert.'),{allowed:false},{reply:'Die Angaben sind noch nicht gespeichert. Sie können den Entwurf über den vorhandenen Button prüfen.'}]);
+  const r=await a.converse('Ist das schon gespeichert?',s,['cases']);
+  assert.equal(r.modelCalls,3);assert.equal(r.state.issue.id,s.issue.id);
+  for(const index of [0,2])assert.ok(a.model.doGenerateCalls[index].prompt.some(m=>m.role==='system'&&m.content.includes(MORA_REPLY_STYLE)));
+  const payload=JSON.parse(a.model.doGenerateCalls[2].prompt.find(m=>m.role==='user').content[0].text);
+  assert.deepEqual(payload.recentConversation,s.portalJournal);assert.equal(payload.confirmed.offerAlreadyShown,true);
+  assert.equal(payload.customerMessage,'Ist das schon gespeichert?');assert.equal(Object.hasOwn(payload,'rejectedReply'),false);
+  assert.equal(payload.confirmed.localStorageConfirmed,false);assert.equal(r.requestedAction,null);
 });
 
 test('a repaired modal offer is not mistaken for an executed form action',async()=>{

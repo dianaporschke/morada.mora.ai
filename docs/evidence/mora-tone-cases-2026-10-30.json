@@ -1,0 +1,10 @@
+{
+  "criteria": ["Freundliche direkte Antwort zur Frage", "Jeder Satz trägt etwas Neues bei", "Keine feste Satzanzahl; ausreichende Erklärung bei mehreren Aspekten", "Keine wiederholten Formularangebote oder Erfassungsberichte", "Keine Briefanrede oder Grussformel", "Wahrheitsgemässe Portalgrenzen; bekannte Angaben erhalten"],
+  "cases": [
+    {"id":"owner-documents-baden","role":"owner","messages":["Wo liegen die Dokumente zur Liegenschaft in Baden?","Sind die Unterlagen hier also noch nicht verfügbar?"]},
+    {"id":"tenant-handover-documents","role":"tenant","messages":["Ich suche die Unterlagen zur letzten Wohnungsübergabe.","Wo muss ich dafür klicken?"]},
+    {"id":"lamp-short-correction","role":"tenant","messages":["Meine Lampe geht nicht.","Wohnzimmer.","Nein, ich meinte Schlafzimmer."]},
+    {"id":"manual-and-mora","role":"tenant","messages":["Wie kann ich einen Defekt melden? Geht das selbst und auch mit dir?","Und kann ich ein Foto ergänzen und die Angaben vor dem Speichern prüfen?"]},
+    {"id":"feedback","role":"tenant","messages":["Das nervt mich. Du wiederholst dich ständig, ich möchte einfach eine verständliche Antwort."]}
+  ]
+}
