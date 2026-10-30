@@ -3124,17 +3124,20 @@ button,input,select,textarea{font-family:var(--morada-font-body)}
 #portalPreview .sidebar .nav summary::after{content:'';width:6px;height:6px;border:0;border-right:1.65px solid currentColor;border-bottom:1.65px solid currentColor;transform:rotate(-45deg);margin-right:3px}
 #portalPreview .sidebar .nav details[open]>summary::after{transform:rotate(45deg);margin-top:-3px}
 #portalPreview .sidebar .nav a[aria-current=page]::after{display:none}
-#portalPreview .sidebar .account{position:relative;flex:none;padding:16px 16px max(16px,env(safe-area-inset-bottom));gap:10px;border-color:var(--sidebar-line)}
-#portalPreview .sidebar .account .avatar{width:40px;height:40px;background:var(--sidebar-hover);border:1px solid var(--sidebar-line);color:var(--ink)}
+/* A warm, quiet personal panel; menu behaviour and sidebar structure stay native. */
+#portalPreview .sidebar .account{--profile-panel-tint:rgba(238,214,191,.10);--profile-panel-line:rgba(231,205,178,.20);position:relative;flex:none;margin:auto 12px max(12px,env(safe-area-inset-bottom));padding:12px 10px;gap:10px;background:var(--profile-panel-tint);border:1px solid var(--profile-panel-line);border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,245,232,.04),0 3px 10px rgba(24,16,11,.06);transition:border-color .16s ease}
+#portalPreview .sidebar .account:focus-within{border-color:rgba(231,205,178,.32)}
+#portalPreview .sidebar .account .avatar{width:40px;height:40px;background:rgba(244,224,203,.06);border:1px solid var(--profile-panel-line);color:var(--ink)}
 #portalPreview .sidebar .account>div:not(.portal-profile-menu){min-width:0;flex:1}
 #portalPreview .sidebar .account strong{font-size:12px;line-height:1.5;overflow-wrap:anywhere}
 #portalPreview .sidebar .account small{display:block;margin-top:3px;line-height:1.5;font-size:10px;color:var(--muted)}
-#portalPreview #profileMenuButton{display:grid;place-items:center;width:40px;height:44px;padding:8px;border-radius:9px;color:var(--ink);flex:none}
-#portalPreview #profileMenuButton:hover,#portalPreview #profileMenuButton[aria-expanded=true]{background:var(--sidebar-hover)}
-#portalPreview .sidebar .account>.portal-profile-menu{position:absolute;bottom:calc(100% + 8px);left:12px;right:12px;z-index:45;padding:6px;background:var(--sidebar-bg);border:1px solid var(--sidebar-line);border-radius:12px;box-shadow:0 12px 30px var(--shadow-dialog);max-height:min(240px,60dvh);overflow-y:auto}
-#portalPreview .portal-profile-menu button{display:flex;align-items:center;justify-content:flex-start;gap:10px;width:100%;min-height:46px;height:auto;padding:11px 10px;margin:0;border:0;border-radius:7px;background:transparent;text-align:left;color:var(--ink);font-size:12px;line-height:1.4}
-#portalPreview .portal-profile-menu button:hover{background:var(--sidebar-hover)}
-#portalPreview .portal-profile-menu .profile-menu-copy{flex:1;min-width:0}
+#portalPreview #profileMenuButton{display:grid;place-items:center;width:40px;height:44px;padding:8px;border:1px solid rgba(231,205,178,.12);border-radius:9px;background:rgba(244,224,203,.04);color:var(--ink);flex:none;transition:background-color .16s ease,border-color .16s ease}
+#portalPreview #profileMenuButton:hover,#portalPreview #profileMenuButton[aria-expanded=true]{background:rgba(244,224,203,.12);border-color:rgba(231,205,178,.26)}
+#portalPreview .sidebar .account>.portal-profile-menu{position:absolute;bottom:calc(100% + 7px);left:-1px;right:-1px;z-index:45;padding:6px;background:linear-gradient(var(--profile-panel-tint),var(--profile-panel-tint)),var(--sidebar-bg);border:1px solid var(--profile-panel-line);border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,245,232,.04),0 5px 14px rgba(24,16,11,.12);max-height:min(240px,60dvh);overflow-y:auto}
+#portalPreview .portal-profile-menu button{display:flex;align-items:center;justify-content:flex-start;gap:10px;width:100%;min-height:46px;height:auto;padding:11px 10px;margin:0;border:0;border-radius:7px;background:transparent;text-align:left;color:var(--ink);font-size:12px;line-height:1.4;transition:background-color .16s ease}
+#portalPreview .portal-profile-menu button:hover{background:rgba(244,224,203,.08)}
+#portalPreview .portal-profile-menu button:active,#portalPreview #profileMenuButton:active{background:rgba(244,224,203,.16)}
+#portalPreview .portal-profile-menu .profile-menu-copy{display:block;flex:1;min-width:0;white-space:normal}
 #portalPreview .portal-profile-menu small{font-size:10px;font-weight:400;color:var(--muted);margin-top:3px}
 #portalPreview .portal-role-current{font-size:11px;color:var(--copper);font-weight:600}
 #portalPreview :is(.sidebar,.topbar) :is(button,a,summary):focus-visible{outline:2px solid var(--mora-symbol);outline-offset:2px}
