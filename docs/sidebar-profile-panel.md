@@ -4,7 +4,7 @@ The account row has no outer panel. Only the menu above it retains the warm tran
 
 Hovering the gear with a mouse opens the menu without moving keyboard focus. A hover-only opening closes when the pointer leaves the gear/menu; a short 180 ms grace period allows crossing the gap between them. Clicking a menu opened by hover keeps it open and focuses the first action. Moving the pointer away after an explicit click keeps the menu open. A further click on the gear, Escape or a click elsewhere dismisses it. Touch and keyboard navigation retain their existing click/arrow behaviour.
 
-The first navigation group is labelled Mein MORADA / My MORADA / Mon MORADA for all four roles. This affects only the sidebar: page headings and section breadcrumbs are unchanged. The extra separator beneath the language options is removed.
+The first navigation group is labelled Mein MORADA / My MORADA / Mon MORADA for all four roles. The small label to the right of MORADA beneath the logo also uses this wording for every role, replacing TEAM/OWNER/TENANT. This affects only the sidebar: page headings and section breadcrumbs are unchanged. The extra separator beneath the language options is removed.
 
 The overview date follows Europe/Zurich and updates at the minute boundary at midnight. Focus, visibility and page restoration refresh it after a suspended tab resumes. Only the date node changes; forms, focus, records and MORA history are retained.
 
