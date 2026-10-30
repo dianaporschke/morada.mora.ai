@@ -7,6 +7,7 @@
  document.getElementById('bellIcon').before(host);
  const toggle=host.querySelector('button'),menu=/** @type {HTMLElement} */ (host.querySelector('[role=menu]')),languages=[['de','Deutsch (Schweiz)'],['en','English'],['fr','Français']];
  function sync(){
+  document.querySelector('#moradaEntry .entry-art').setAttribute('data-tagline',L.t('PERSÖNLICH NAH. ALLES VERBUNDEN.'));
   toggle.setAttribute('aria-label',L.t('Sprache wählen')+' · '+languages.find(l=>l[0]===L.language)[1]);toggle.title=L.t('Portalsprache');
   menu.setAttribute('aria-label',L.t('Portalsprache'));
   menu.innerHTML=languages.map(([code,name])=>'<button type="button" role="menuitemradio" data-language="'+code+'" aria-checked="'+(L.language===code)+'"><span class="language-code" aria-hidden="true">'+code.toUpperCase()+'</span><span lang="'+code+'">'+name+'</span><span class="language-check" aria-hidden="true">'+(L.language===code?'✓':'')+'</span></button>').join('');

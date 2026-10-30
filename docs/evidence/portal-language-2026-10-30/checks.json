@@ -2,7 +2,7 @@
   "date": "2026-10-30",
   "branch": "codex/mora-ai-2.0",
   "base": "84c0be5a6cf2dbbdc101c9750cc404853fa84eff",
-  "resources": 8123,
+  "resources": 8125,
   "tests": 492,
   "passed": 492,
   "failed": 0,
@@ -20,5 +20,18 @@
     "scrollWidth": 261,
     "height": 624,
     "scrollHeight": 956
+  },
+  "tabletWidth": 768,
+  "freshEntryLanguages": [
+    "en",
+    "fr"
+  ],
+  "liveModelChecks": {
+    "de": "passed",
+    "en": "passed",
+    "frAfterGermanInput": "passed",
+    "explicitEnglishOverrideUnderFrenchPreference": "passed",
+    "languageControlRegression": "passed",
+    "modelCodeCommit": "283e277ae3e9d257afb7538079153ddf20b1f1a5"
   }
 }

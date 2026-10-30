@@ -6,7 +6,7 @@ Stand: 30. Oktober 2026. Ausgangsstand: `84c0be5a6cf2dbbdc101c9750cc404853fa84ef
 
 Eine gemeinsame Sprachverwaltung steuert Deutsch (Schweiz), Englisch und Französisch. Sie umfasst die Einstiegsvorschau, Hauptnavigation, alle vorhandenen Menüziele der vier Vorschaurollen, Dashboard, Portfolio, Bewirtschaftung, Dokumente, Finanzen, Organisation, Formulare, Dialoge, Filter, Leerzustände, MORADA-Systemmeldungen und die MORA-Oberfläche. Vorhandene geplante Ansichten bleiben als solche gekennzeichnet.
 
-Die Ressourcen enthalten 8’123 MORADA-Oberflächentexte. Deutsch ist die Quellsprache und der kontrollierte Rückfall für zukünftige fehlende Schlüssel. Englisch und Französisch besitzen jeweils dieselben Platzhalter wie der deutsche Ausgangstext. Eigennamen, Eingaben, hochgeladene Dateinamen, Dokumentinhalte, Vertragsoriginale und vorhandene Chatnachrichten werden nicht nachträglich übersetzt.
+Die Ressourcen enthalten 8’125 MORADA-Oberflächentexte. Deutsch ist die Quellsprache und der kontrollierte Rückfall für zukünftige fehlende Schlüssel. Englisch und Französisch besitzen jeweils dieselben Platzhalter wie der deutsche Ausgangstext. Eigennamen, Eingaben, hochgeladene Dateinamen, Dokumentinhalte, Vertragsoriginale und vorhandene Chatnachrichten werden nicht nachträglich übersetzt.
 
 ## Technik und Erweiterung
 
@@ -35,7 +35,11 @@ Modellwahl, Gateway-Zugang, vorhandene Kostengrenzen, Rollenprüfung, bestehende
 - Originaleingaben, Dateinamen und MORA-Eingaben bleiben erhalten; Sprachpräferenz durch Client/API und Modellanweisung geprüft.
 - Bestehende MORA-, Speicher-, Berechtigungs- und Sicherheitsprüfungen bestehen.
 - `npm run build` und `npm run typecheck`: bestanden.
-- Browserkontrolle: Desktop sowie schmale 390-/320-Pixel-Ansichten. Bei 320 Pixeln wurde das Dropdown korrigiert und mit linkem Rand 12 px/rechtem Rand 242 px verifiziert. Der lange Zugangsbereich scrollt intern ohne horizontalen Überlauf.
+- Browserkontrolle: Desktop, Tablet mit 768 Pixeln sowie schmale 390-/320-Pixel-Ansichten. Bei 320 Pixeln wurde das Dropdown korrigiert und mit linkem Rand 12 px/rechtem Rand 242 px verifiziert. Der lange Zugangsbereich scrollt intern ohne horizontalen Überlauf.
+
+Zusätzlich geprüft: gespeicherte EN-/FR-Sprache auf einer frisch geladenen Einstiegsseite, vollständiger Vorschauhinweis, Einstiegsschaltfläche und Sprachwechsel der MORA-Fensterhinweise auch nach Resize.
+
+Browsernachweis: `docs/evidence/portal-language-2026-10-30/language-settings.jpg`.
 
 Maschinenlesbare Ergebnisse: `docs/evidence/portal-language-2026-10-30/checks.json`.
 
@@ -43,6 +47,6 @@ Maschinenlesbare Ergebnisse: `docs/evidence/portal-language-2026-10-30/checks.js
 
 Persönliche Anmeldung, Kontospeicherung der Sprache, echte Eigentümer-/Mieterzuordnungen sowie E-Mail-/Push-Einstellungen bleiben spätere Aufgaben. Es wurden keine Kundendaten erfunden und keine neuen kostenpflichtigen Dienste eingerichtet. Bestehende lokale Freitexte und historische Inhalte werden bewusst in ihrer Originalsprache erhalten. Browser-eigene Meldungen richten sich weiterhin nach dem Browser.
 
-Die automatisierten Tests prüfen deterministische Anwendungsabläufe; sie sind keine Garantie für jede frei formulierte KI-Antwort. Der Live-KI-Check und die endgültige Preview werden nach dem Deployment separat festgehalten.
+Die automatisierten Tests prüfen deterministische Anwendungsabläufe; sie sind keine Garantie für jede frei formulierte KI-Antwort. Live-KI-Prüfung auf geschützten Vercel-Previews: deutsche und englische Antworten bestätigt. Nach Präzisierung der Sprachvorgabe direkt im strukturierten Antwortfeld antwortete MORA bei französischer Portalsprache auf eine deutsche Frage ausschliesslich auf Französisch. Ein anschliessender ausdrücklicher Wunsch nach Englisch wurde auf Englisch beantwortet. Modelle, Gateway und Kostengrenzen wurden dabei nicht verändert. Die endgültige Preview-Adresse steht in der Abschlussnachricht.
 
 Es werden keine Branches zusammengeführt. `main`, `alex-portal` und Produktion bleiben unverändert.

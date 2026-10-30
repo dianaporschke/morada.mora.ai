@@ -46,7 +46,15 @@ test('header and settings synchronize; preferences survive roles, reopening and 
   assert.equal(d.getElementById('dialogTitle').textContent,messages['Profil & Einstellungen'].fr);
   w.eval('portalCloseDialog()');for(const role of ['owner','tenant']){w.MoradaRoles.select(role);assert.equal(L.language,'fr');}
   assert.equal(w.localStorage.getItem('morada.portal.language.v1'),'fr');assert.equal(w.eval('JSON.stringify(state)'),before);
-  const fresh=await setup(false,'fr');try{assert.equal(fresh.MoradaI18n.language,'fr');assert.equal(fresh.document.documentElement.lang,'fr-CH');}finally{fresh.close();}
+  for(const lang of ['en','fr']){
+   const fresh=await setup(false,lang);try{
+    assert.equal(fresh.MoradaI18n.language,lang);
+    assert.equal(fresh.document.documentElement.lang,lang==='fr'?'fr-CH':'en-GB');
+    assert.ok(fresh.document.querySelector('.entry-submit').textContent.includes(messages['Arbeitsbereich öffnen'][lang]));
+    assert.doesNotMatch(fresh.document.querySelector('#entry-note').textContent,/Ohne Anmeldung|Einträge werden|Eigentümer-/);
+    assert.equal(fresh.document.querySelector('.entry-art').getAttribute('data-tagline'),messages['PERSÖNLICH NAH. ALLES VERBUNDEN.'][lang]);
+   }finally{fresh.close();}
+  }
   L.setLanguage('de');assert.equal(d.documentElement.lang,'de-CH');
  }finally{w.close();}
 });
