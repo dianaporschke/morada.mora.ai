@@ -50,7 +50,7 @@ test('invalid view roles are rejected before inference',async()=>{
 
 for(const role of portalRoles)test('compact model gets only the active '+role+' profile on every turn in one call',async()=>{
  let calls=0;const instructions=[];
- const converse=createCompactPortalAgent({resolve:async()=>({ready:true,provider:'gateway',model:AGENT_MODEL,createModel:()=>({})}),guard:async()=>{},generate:async o=>{calls++;instructions.push(o.instructions);return {output:{reply:'Testantwort',topic:'information',updates:[],focus:null,next:{type:'none'}},usage:{},finalStep:{}};}});
+ const converse=createCompactPortalAgent({resolve:async()=>({ready:true,provider:'gateway',model:AGENT_MODEL,createModel:()=>({})}),guard:async()=>{},generate:async o=>{calls++;instructions.push(o.instructions);return {output:{reply:{answer:'Testantwort',explanation:null,nextStep:null},topic:'information',updates:[],focus:null,next:{type:'none'}},usage:{},finalStep:{}};}});
  const context={...unavailable,audience:{role,source:'preview_view'}};
  let state=hydrateSimple(null);
  for(const message of ['hey','Wobei können Sie mir hier helfen?'])state=(await converse(message,state,[],45000,context)).state;

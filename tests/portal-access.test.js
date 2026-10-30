@@ -113,7 +113,7 @@ test('API refuses identity and financial query parameters supplied directly in r
 });
 test('compact agent selects a typed query with one test generation; no model-authored result is returned',async()=>{
  const message='Welche meiner Liegenschaften haben am meisten offene Reparaturen?';let calls=0,instructions;
- const wire={reply:'Invented private result',topic:'information',updates:[],focus:null,next:{type:'portal-query',query:'repair-counts',requestQuote:message}};
+ const wire={reply:{answer:'Invented private result',explanation:null,nextStep:null},topic:'information',updates:[],focus:null,next:{type:'portal-query',query:'repair-counts',requestQuote:message}};
  const converse=createCompactPortalAgent({resolve:async()=>({ready:true,provider:'gateway',model:AGENT_MODEL,createModel:()=>({})}),guard:async()=>{},generate:async options=>{calls++;instructions=options.instructions;return {output:wire,usage:{},finalStep:{}};}});
  const r=await converse(message,hydrateSimple(null),['ownerCases','ownerFinance'],45000,{status:'verified',personalQueries:['repair-counts']});
  assert.equal(calls,1);assert.equal(r.reply,'');assert.equal(r.portalQuery,'repair-counts');assert.match(instructions,/financial_navigation_only/);assert.match(instructions,/Finanzdaten bleiben immer reine Navigation/);

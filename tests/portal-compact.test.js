@@ -10,17 +10,25 @@ import {hydrateSimple,beginPreparation,acceptReceipt} from '../lib/mora/simple/s
 import {portalCaseFields} from '../assets/mora-portal-map.js';
 import {portalActionState} from '../lib/mora/portal/action-state.js';
 import {AGENT_MODEL} from '../lib/mora/portal/budget.js';
-import {MORA_REPLY_STYLE} from '../lib/mora/portal/reply-style.js';
+import {MORA_REPLY_STYLE,renderConversationReply} from '../lib/mora/portal/reply-style.js';
 
 const empty=()=>hydrateSimple(null);
 const plan=(reply,updates=[],extra={})=>({reply,topic:updates.length?'issue':'information',updates,focus:null,next:{type:'none'},...extra});
-const wirePlan=p=>p?.updates?{...p,updates:p.updates.map(u=>{
+const replyParts=reply=>typeof reply==='string'?{answer:reply,explanation:null,nextStep:null}:reply;
+const wirePlan=p=>p?.updates?{...p,reply:replyParts(p.reply),updates:p.updates.map(u=>{
  const changes=new Map();
  for(const field of ['equipment','defect','location','count','since','extent','details','cause'])if(u[field]!=null)changes.set(field,{field,status:'known',value:String(u[field]),quote:u.quote});
  for(const status of ['unknown','uncertain'])for(const x of u[status]||[])changes.set(x.field,{field:x.field,status,value:status==='uncertain'&&u[x.field]!=null?String(u[x.field]):null,quote:x.quote});
  for(const field of u.clearFields||[])changes.set(field,{field,status:'clear',value:null,quote:u.quote});
  return {ref:u.ref,quote:u.quote,correction:u.correction||false,risk:u.risk||'none',changes:[...changes.values()]};
-}),next:p.next.type==='form'?{type:p.next.action,ref:p.next.ref||null,requestQuote:p.next.requestQuote}:p.next}:p;
+}),next:p.next.type==='form'?{type:p.next.action,ref:p.next.ref||null,requestQuote:p.next.requestQuote}:p.next}:p?.reply?{...p,reply:replyParts(p.reply)}:p;
+
+test('optional answer parts add no canned wording and cannot carry executable actions',()=>{
+  assert.equal(renderConversationReply({answer:'Alles klar.',explanation:null,nextStep:null}),'Alles klar.');
+  const parts={answer:'Die Dokumentenansicht ist verfügbar.',explanation:'Persönliche Dateien stehen hier noch nicht bereit.',nextStep:'Über den Button können Sie die Ansicht öffnen.'};
+  assert.equal(renderConversationReply(parts),Object.values(parts).join(' '));
+  assert.throws(()=>renderConversationReply({...parts,action:'send'}));
+});
 function sdk(outputs,guard=async()=>{}) {
   let n=0;
   const model=new MockLanguageModelV4({modelId:AGENT_MODEL,doGenerate:async()=>{
@@ -305,13 +313,13 @@ test('navigation grammar only admits current portal destinations for each access
   const json=JSON.stringify(z.toJSONSchema(schema));
   for(const target of available){
    const p=plan('Über diesen Button gelangen Sie zur Ansicht.',[],{next:{type:'view',target}});
-   assert.equal(schema.safeParse(p).success,true);
+   assert.equal(schema.safeParse(wirePlan(p)).success,true);
    const a=sdk([p]);const result=await a.converse('Wo sehe ich meine Anliegen?',empty(),available);
    assert.deepEqual(result.navigation,[target]);assert.equal(result.modelCalls,1);
    assert.equal(t.schemas.show_view.safeParse({target}).success,true);
   }
   for(const target of ['tenantSupport','ownerCases','cases','missing-view'].filter(x=>!available.includes(x))){
-   assert.equal(schema.safeParse(plan('Ansicht',[],{next:{type:'view',target}})).success,false);
+   assert.equal(schema.safeParse(wirePlan(plan('Ansicht',[],{next:{type:'view',target}}))).success,false);
    assert.equal(t.schemas.show_view.safeParse({target}).success,false);
    assert.ok(!json.includes('"'+target+'"'));
    assert.equal((await t.tools.show_view.execute({target},{})).ok,false);
@@ -323,8 +331,8 @@ test('no available navigation omits view action without blocking an ordinary ans
  const t=createAgentTurn(empty(),'Hallo',[]);
  const schema=compactSchema(t);
  assert.doesNotThrow(()=>z.toJSONSchema(schema));
- assert.equal(schema.safeParse(plan('Guten Tag.')).success,true);
- assert.equal(schema.safeParse(plan('Ansicht',[],{next:{type:'view',target:'cases'}})).success,false);
+ assert.equal(schema.safeParse(wirePlan(plan('Guten Tag.'))).success,true);
+ assert.equal(schema.safeParse(wirePlan(plan('Ansicht',[],{next:{type:'view',target:'cases'}}))).success,false);
  const r=await sdk([plan('Guten Tag.')]).converse('Hallo',empty(),[]);
  assert.deepEqual(r.navigation,[]);assert.equal(r.modelCalls,1);
 });
