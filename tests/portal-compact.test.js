@@ -191,6 +191,8 @@ test('a repaired modal offer is not mistaken for an executed form action',async(
 test('provider reply envelopes decode as text without interpreting nested actions or arbitrary JSON',()=>{
   assert.equal(readableCompactReply('{"reply":"Persönliche Dokumente stehen hier noch nicht zur Verfügung."}'),'Persönliche Dokumente stehen hier noch nicht zur Verfügung.');
   assert.equal(readableCompactReply('Normaler Text.'),'Normaler Text.');
+  const parts={answer:'Die Ansicht steht im Menü.',explanation:'Persönliche Dokumente sind noch nicht angebunden.',nextStep:null};
+  for(const payload of [parts,{reply:parts},{reply:JSON.stringify(parts)}])assert.equal(readableCompactReply(JSON.stringify(payload)),renderConversationReply(parts));
   for(const text of ['{"reply":"Text","action":"prepare"}','{"count":2}','{"reply":42}','{"allowed":false,"note":"internal review"}'])assert.throws(()=>readableCompactReply(text),e=>e.diagnostic.reason==='invalid_reply_format');
 });
 test('rare ambiguous success claim is reviewed at most once with the same low-cost model',async()=>{
