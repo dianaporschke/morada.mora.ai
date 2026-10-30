@@ -4,10 +4,15 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {JSDOM,VirtualConsole} from 'jsdom';
 import {indexedDB} from 'fake-indexeddb';
-async function setup(narrow=false){
+async function setup(narrow=false,clock=null){
  const errors=[],vc=new VirtualConsole();vc.on('jsdomError',e=>{if(e.type!=='css-parsing'&&e.type!=='not-implemented')errors.push(e);});
  const d=new JSDOM(readFileSync('portal.html','utf8'),{url:'https://ui.example/portal.html',runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){
-  w.matchMedia=()=>({matches:narrow,addEventListener(){},removeEventListener(){}});w.structuredClone=structuredClone;w.fetch=()=>{throw Error('No inference in a UI test');};w.scrollTo=()=>{};w.confirm=()=>true;w.indexedDB=indexedDB;
+  w.matchMedia=query=>({matches:query.includes('any-hover')?!narrow:narrow,addEventListener(){},removeEventListener(){}});w.structuredClone=structuredClone;w.fetch=()=>{throw Error('No inference in a UI test');};w.scrollTo=()=>{};w.confirm=()=>true;w.indexedDB=indexedDB;
+  if(clock){
+   const NativeDate=w.Date,nativeTimeout=w.setTimeout.bind(w);
+   w.Date=class extends NativeDate{constructor(...args){super(...(args.length?args:[clock.now]));}static now(){return clock.now;}};
+   w.setTimeout=(fn,delay,...args)=>{if(fn.name==='refreshCurrentDate'){clock.tick=fn;clock.delay=delay;return 0;}return nativeTimeout(fn,delay,...args);};
+  }
   Object.defineProperty(w.navigator,'locks',{value:{request:async(_n,_o,fn)=>typeof _o==='function'?_o({}):fn({})}});
   w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;this.dispatchEvent(new w.Event('close'));};
  }});
@@ -88,5 +93,54 @@ test('personal settings keyboard navigation, mobile back and MORA handoff preser
   w.MORAPortal.close();
   d.getElementById('profileMenuButton').click();d.getElementById('personalSettingsButton').click();
   dialog.dispatchEvent(new w.Event('cancel',{cancelable:true}));assert.equal(dialog.open,false);assert.equal(d.activeElement,d.getElementById('profileMenuButton'));
+ }finally{w.close();}
+});
+
+test('mouse hover reveals profile actions without stealing focus; click pins and outside click dismisses',async()=>{
+ const w=await setup();try{
+  const d=w.document,gear=d.getElementById('profileMenuButton'),menu=d.getElementById('profileMenu'),search=d.getElementById('searchInput');
+  const pointer=type=>{const e=new w.Event('pointerenter');Object.defineProperty(e,'pointerType',{value:type});gear.dispatchEvent(e);};
+  search.focus();search.value='Unsent search';const before=w.eval('JSON.stringify(state)');
+  pointer('touch');assert.equal(menu.hidden,true,'touch must not trigger hover');
+  pointer('mouse');assert.equal(menu.hidden,false);assert.equal(gear.getAttribute('aria-expanded'),'true');assert.equal(d.activeElement,search);
+  gear.click();assert.equal(menu.hidden,false,'click must not close a menu just opened by hover');assert.equal(d.activeElement,d.getElementById('personalSettingsButton'));
+  gear.click();assert.equal(menu.hidden,true);
+  pointer('mouse');d.querySelector('.account .avatar').click();assert.equal(menu.hidden,true,'clicking elsewhere in the account row dismisses');
+  pointer('mouse');d.getElementById('main').click();assert.equal(menu.hidden,true);
+  pointer('mouse');gear.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true,cancelable:true}));assert.equal(menu.hidden,true);assert.equal(d.activeElement,gear);
+  assert.equal(search.value,'Unsent search');assert.equal(w.eval('JSON.stringify(state)'),before);
+ }finally{w.close();}
+});
+
+test('overview date rolls over at Swiss midnight and catches up after sleep without resetting inputs',async()=>{
+ const clock={now:Date.parse('2026-10-30T22:59:59.900Z')},w=await setup(false,clock);try{
+  const d=w.document,time=d.querySelector('.today-date time'),search=d.getElementById('searchInput');
+  assert.equal(time.dateTime,'2026-10-30');assert.equal(clock.delay,100);
+  search.value='Unsaved text';search.focus();const before=w.eval('JSON.stringify(state)');
+  clock.now+=100;clock.tick();
+  assert.equal(time.dateTime,'2026-10-31');assert.match(time.textContent,/Samstag, 31\. Oktober 2026/);assert.equal(clock.delay,60000);
+  assert.equal(d.querySelector('.today-date time'),time);assert.equal(search.value,'Unsaved text');assert.equal(d.activeElement,search);
+  // Summer time and the nights on which the UTC offset changes.
+  for(const [instant,day] of [['2026-03-28T23:00:00Z','2026-03-29'],['2026-03-29T22:00:00Z','2026-03-30'],['2026-10-24T22:00:00Z','2026-10-25'],['2026-10-25T23:00:00Z','2026-10-26'],['2026-12-31T23:00:00Z','2027-01-01']]){
+   clock.now=Date.parse(instant);w.dispatchEvent(new w.Event('focus'));assert.equal(time.dateTime,day);
+  }
+  for(const lang of ['en','fr','de']){
+   w.MoradaI18n.setLanguage(lang);assert.equal(d.querySelector('.today-date time').textContent,new Intl.DateTimeFormat(w.MoradaI18n.locale,{timeZone:'Europe/Zurich',weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(clock.now));
+  }
+  assert.equal(w.eval('JSON.stringify(state)'),before);
+ }finally{w.close();}
+});
+
+test('all roles share the translated My MORADA sidebar title without changing page headings',async()=>{
+ const w=await setup();try{
+  const d=w.document;
+  for(const [lang,title] of [['de','Mein MORADA'],['en','My MORADA'],['fr','Mon MORADA']]){
+   w.MoradaI18n.setLanguage(lang);
+   for(const role of ['admin','manager','owner','tenant']){
+    w.MoradaRoles.select(role);
+    assert.equal(d.querySelector('#nav details summary').textContent,title);
+    assert.notEqual(d.querySelector('#main h1').textContent,title);
+   }
+  }
  }finally{w.close();}
 });

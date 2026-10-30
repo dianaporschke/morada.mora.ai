@@ -1,14 +1,18 @@
-# Sidebar profile panel refinement
+# Sidebar profile refinement
 
-Warm, subtly lighter profile surfaces use the existing MORADA brown/beige palette. The account row and profile menu share aligned edges, a fine translucent border, restrained depth and gentle hover/active states. Existing keyboard focus indication remains visible. The role-switch caption stays visible on mobile, overriding the old compact topbar rule only inside the profile menu.
+The account row has no outer panel. Only the menu above it retains the warm translucent surface and fine border. The role-switch caption remains visible on mobile.
 
-Only the existing profile CSS in `portal.html` changed. Markup, text, icons, scripts, roles, language behaviour and portal functions are unchanged.
+Hovering the gear with a mouse opens the menu without moving keyboard focus. Clicking a menu opened by hover keeps it open and focuses the first action. A further click on the gear, Escape or a click elsewhere dismisses it. Touch and keyboard navigation retain their existing click/arrow behaviour.
+
+The first navigation group is labelled Mein MORADA / My MORADA / Mon MORADA for all four roles. This affects only the sidebar: page headings and section breadcrumbs are unchanged. The extra separator beneath the language options is removed.
+
+The overview date follows Europe/Zurich and updates at the minute boundary at midnight. Focus, visibility and page restoration refresh it after a suspended tab resumes. Only the date node changes; forms, focus, records and MORA history are retained.
 
 Validation:
-- `npm run build`: pass (165 script/assets checked).
-- `node --test tests/portal-profile.test.js`: 4/4 pass.
-- Browser layout check: 48 combinations of four roles, DE/EN/FR, and widths 320, 390, 768 and 1280 px (568 px height at 320 px width; 780 px otherwise); no panel overflow, text overflow or alignment issues.
-- Visual inspection on desktop and mobile; settings and workspace selector open correctly.
-- Source comparison confirms all non-style content is byte-for-byte unchanged.
+- `npm run build`: pass (165 script/assets checked; 8194 messages).
+- `node --test tests/portal-profile.test.js tests/portal-i18n.test.js`: 12/12 pass, including hover/click dismissal, keyboard/touch behaviour, Swiss midnight, DST, year change and resuming after sleep; language coverage includes 306 routes and 285 forms.
+- Browser layout matrix: 36 combinations of four roles, DE/EN/FR, and widths 320, 768 and 1280 px; no panel or text overflow.
+- Desktop and mobile visual inspection; profile settings and outside-click dismissal verified. Computed account border is 0, background transparent, shadow none. Language footnote border is 0.
+- No role permissions, record storage, page titles or MORA behaviour changed.
 
-Evidence: [Desktop](evidence/sidebar-profile-panel/desktop.jpg), [Mobile](evidence/sidebar-profile-panel/mobile.jpg).
+Evidence: [Desktop](evidence/sidebar-profile-panel/desktop.jpg), [Mobile](evidence/sidebar-profile-panel/mobile.jpg), [Language settings](evidence/sidebar-profile-panel/language-settings.jpg).
