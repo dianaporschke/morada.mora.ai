@@ -11561,13 +11561,23 @@ void portalLoadExtended();
  switcher.setAttribute('role','menuitem');menu.append(switcher);
  // All four areas belong to the existing local preview, not to an authenticated account.
  switcher.hidden=Object.keys(profiles).length<2;
- let openedByHover=false;
+ let openedByHover=false,hoverCloseTimer;
  const hoverPointer=window.matchMedia('(any-hover:hover) and (any-pointer:fine)');
- const close=(restore=false)=>{openedByHover=false;menu.hidden=true;toggle.setAttribute('aria-expanded','false');if(restore)toggle.focus();};
+ const cancelHoverClose=()=>clearTimeout(hoverCloseTimer);
+ const close=(restore=false)=>{cancelHoverClose();openedByHover=false;menu.hidden=true;toggle.setAttribute('aria-expanded','false');if(restore)toggle.focus();};
  const items=()=>[...menu.querySelectorAll('[role="menuitem"]')].filter(b=>!b.hidden);
- const open=(focus=true)=>{openedByHover=!focus;menu.hidden=false;toggle.setAttribute('aria-expanded','true');if(focus)items()[0]?.focus();};
+ const open=(focus=true)=>{cancelHoverClose();openedByHover=!focus;menu.hidden=false;toggle.setAttribute('aria-expanded','true');if(focus)items()[0]?.focus();};
  // Hover reveals the actions without interrupting typing or keyboard navigation.
  toggle.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'&&hoverPointer.matches&&menu.hidden&&!dialog.open)open(false);});
+ for(const surface of [toggle,menu]){
+  surface.addEventListener('pointerenter',cancelHoverClose);
+  surface.addEventListener('pointerleave',e=>{
+   if(e.pointerType!=='mouse'||!openedByHover)return;
+   cancelHoverClose();
+   // Allow the pointer to cross the small gap between the gear and its menu.
+   hoverCloseTimer=setTimeout(()=>{if(openedByHover)close();},180);
+  });
+ }
  // A click on a hover-opened menu keeps it open; the next click toggles it closed.
  toggle.addEventListener('click',()=>menu.hidden||openedByHover?open():close());
  toggle.addEventListener('keydown',e=>{if(MoradaI18n.registerLabels(['ArrowDown','ArrowUp']).includes(e.key)){e.preventDefault();open();if(e.key==='ArrowUp')items().at(-1)?.focus();}});

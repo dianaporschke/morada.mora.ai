@@ -96,14 +96,21 @@ test('personal settings keyboard navigation, mobile back and MORA handoff preser
  }finally{w.close();}
 });
 
-test('mouse hover reveals profile actions without stealing focus; click pins and outside click dismisses',async()=>{
+test('hover closes on pointer leave, crossing into the menu keeps it open, and click pins it until dismissal',async()=>{
  const w=await setup();try{
   const d=w.document,gear=d.getElementById('profileMenuButton'),menu=d.getElementById('profileMenu'),search=d.getElementById('searchInput');
-  const pointer=type=>{const e=new w.Event('pointerenter');Object.defineProperty(e,'pointerType',{value:type});gear.dispatchEvent(e);};
+  const pointer=(type,event='pointerenter',target=gear)=>{const e=new w.Event(event);Object.defineProperty(e,'pointerType',{value:type});target.dispatchEvent(e);};
+  const afterHoverDelay=()=>new Promise(resolve=>setTimeout(resolve,240));
   search.focus();search.value='Unsent search';const before=w.eval('JSON.stringify(state)');
   pointer('touch');assert.equal(menu.hidden,true,'touch must not trigger hover');
   pointer('mouse');assert.equal(menu.hidden,false);assert.equal(gear.getAttribute('aria-expanded'),'true');assert.equal(d.activeElement,search);
+  pointer('mouse','pointerleave');await afterHoverDelay();assert.equal(menu.hidden,true);assert.equal(gear.getAttribute('aria-expanded'),'false');assert.equal(d.activeElement,search);
+  pointer('mouse');pointer('mouse','pointerleave');pointer('mouse','pointerenter',menu);await afterHoverDelay();assert.equal(menu.hidden,false,'crossing the gap into the menu cancels dismissal');
+  pointer('mouse','pointerleave',menu);await afterHoverDelay();assert.equal(menu.hidden,true,'leaving the menu dismisses a hover-only opening');
+  pointer('mouse');pointer('mouse','pointerleave');
   gear.click();assert.equal(menu.hidden,false,'click must not close a menu just opened by hover');assert.equal(d.activeElement,d.getElementById('personalSettingsButton'));
+  await afterHoverDelay();assert.equal(menu.hidden,false,'click cancels pending hover dismissal');
+  pointer('mouse','pointerleave',menu);await afterHoverDelay();assert.equal(menu.hidden,false,'a clicked menu stays open after pointer leave');
   gear.click();assert.equal(menu.hidden,true);
   pointer('mouse');d.querySelector('.account .avatar').click();assert.equal(menu.hidden,true,'clicking elsewhere in the account row dismisses');
   pointer('mouse');d.getElementById('main').click();assert.equal(menu.hidden,true);
