@@ -1,20 +1,21 @@
 # Architectural entry animation
 
-The existing city illustration is retained byte for byte. A lightweight SVG contour layer follows its street perspective, building silhouettes, roofs, windows and balconies. Staggered line drawing starts at the foundations, progresses through the buildings and finishes with façade details. The original illustration fades in from 2.5 to 5.7 seconds; the contour layer fades out by 6.2 seconds.
+The entry scene reveals the fine pencil marks of the existing illustration itself. Its raster source is unchanged. SVG paths are invisible reveal masks, not replacement building outlines. A colour matrix separates warm sepia ink from the paper; a very small blur softens the raster edges. This avoids the broad beige bands that would otherwise follow the masks. A faint, stationary paper tint sits beneath the drawing.
 
-After the reveal, only the illustration moves. A 32-second eased pan travels 1.4% horizontally and 0.55% vertically, then reverses smoothly. At a 1366 px desktop viewport this is approximately 12 px horizontally and 3 px vertically. There is no zoom. Logo, copy and workspace form remain stationary. The right-hand form markup and illustration image bytes are unchanged.
+The street perspective, building edges, windows, balconies and vegetation appear in overlapping, softly eased passes. The remaining fine background details settle in between 5.2 and 6.8 seconds. The same filtered artwork remains on screen throughout: there is no handoff to a different image, crossfade between illustrations, camera movement or continuous loop. After completion the animations are removed and the pause control disappears.
 
-The original responsive layout is retained, including its compact 100 px mobile header. No additional images, video, framework, network service or JavaScript frame loop is introduced. The two new animation assets total about 13 KB before compression. After the reveal the SVG layer is hidden; continued movement uses a CSS transform.
+The right-hand form, logo, copy, original illustration bytes and responsive layout are unchanged. The compact 100 px mobile header is retained. There is no new image download, video, framework or JavaScript frame loop. The SVG reuses the image already embedded in the page.
 
-Motion stops when the tab or entry page is hidden or the artwork leaves the viewport. A small keyboard-accessible pause/resume control is provided in the artwork, with labels in the existing DE/EN/FR catalogue. Reduced-motion preferences display the finished illustration immediately with no movement. Returning from the portal does not replay the reveal. Without the script the original static illustration remains visible.
+The animation pauses when the tab or entry page is hidden or the artwork leaves the viewport. Its keyboard-accessible pause/resume control uses the existing DE/EN/FR catalogue. Reduced-motion preferences show the finished scene. Returning from the portal does not replay the reveal. Without JavaScript the original static illustration remains visible.
 
 Validation:
 
 - Build passes: 8200 messages; 170 script/assets checked.
-- 15/15 entry-animation, profile and language integration tests pass. These cover decode timing, pause/resume, visibility, reduced motion, language changes, disposal, portal entry/exit and existing profile/i18n behaviour.
-- Browser inspected at 0.9/2.4/4.2/6.4-second stages and during the continuing pan. Pause produces a stable computed transform; resume and portal entry/exit work.
-- Desktop/mobile checks at 320, 390, 768, 1024, 1366 and 1920 px. No horizontal page overflow introduced; role selection remains usable. Existing vertical scrolling on shorter devices is retained.
-- No application errors observed during local browser checks. Browser-extension logging is unrelated to the portal.
-- No production deployment, merge, role/access or user-data changes.
+- 16/16 entry-animation, profile and language integration tests pass, including matching source artwork, completion, decode timing, pause/resume, visibility, reduced motion, language changes and disposal.
+- Local browser inspection at 0.9, 2.4, 4.2 and 7.2 seconds. Fine original lines remain visible throughout; no coarse substitute contours or broad tinted mask bands.
+- A real pause held the same computed stroke offset across observations. Resume, workspace entry and logout work. The completed scene reports no camera transform, a fully revealed mask and no running animation.
+- Browser layout measurements at 320, 390, 768, 1024, 1366 and 1920 px show no horizontal page overflow. Mobile workspace choices and the open action remain readable.
+- No application errors observed; browser-extension metadata errors are unrelated to the portal. No device-level frame-rate benchmark was performed.
+- Changes stay on the integration development branch. No merge, production deployment, role/access or user-data changes.
 
 Evidence: [Desktop](evidence/entry-animation/desktop.jpg), [Sketch phase](evidence/entry-animation/sketch-phase.jpg), [Mobile](evidence/entry-animation/mobile.jpg), [Responsive measurements](evidence/entry-animation/responsive.json).

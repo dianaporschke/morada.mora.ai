@@ -1,5 +1,6 @@
-/* Architectural contours follow the existing 1620 × 971 illustration.
- * No canvas, video, animation framework, frame loop or additional image request.
+/* Invisible reveal masks follow the original pencil drawing.
+ * Every visible line belongs to the same warm raster illustration, from the
+ * first stroke to the finished scene. No substitute outline or image crossfade.
  */
 const drawing = [
  // Perspective and foundations establish the street before the façades.
@@ -101,37 +102,68 @@ export function installEntryScene(root, win = window) {
  const image = root.querySelector('.entry-city-image');
  if (!art || !entry || !image) return;
  const reduced = win.matchMedia('(prefers-reduced-motion: reduce)');
- const ns = 'http://www.w3.org/2000/svg', svg = doc.createElementNS(ns, 'svg');
- svg.setAttribute('viewBox', '0 0 1620 971');
- svg.setAttribute('aria-hidden', 'true');svg.setAttribute('focusable', 'false');
- svg.classList.add('entry-city-lines');
+ const ns = 'http://www.w3.org/2000/svg';
+ const node = (tag, attributes = {}) => {
+  const element = doc.createElementNS(ns, tag);
+  for (const [key, value] of Object.entries(attributes)) element.setAttribute(key, String(value));
+  return element;
+ };
+ const svg = node('svg', {viewBox:'0 0 1620 971', 'aria-hidden':'true', focusable:'false', class:'entry-city-reveal'});
+ const defs = node('defs');
+ // Separate the fine sepia ink from the paper, so the invisible reveal strokes
+ // cannot leave broad beige bands. The original drawing supplies every detail.
+ const ink = node('filter', {id:'entry-pencil-ink',x:0,y:0,width:'100%',height:'100%', 'color-interpolation-filters':'sRGB'});
+ ink.append(node('feColorMatrix', {type:'matrix',values:'0 0 0 0 .52  0 0 0 0 .35  0 0 0 0 .22  0 0 -3.4 0 2.83'}));
+ ink.append(node('feGaussianBlur', {stdDeviation:.18}));
+ const softness = node('filter', {id:'entry-pencil-softness',x:'-5%',y:'-5%',width:'110%',height:'110%','color-interpolation-filters':'sRGB'});
+ softness.append(node('feGaussianBlur', {stdDeviation:2.2}));
+ const mask = node('mask', {id:'entry-pencil-mask',maskUnits:'userSpaceOnUse',x:0,y:0,width:1620,height:971,style:'mask-type:alpha'});
+ const pencil = node('g', {fill:'none',stroke:'white','stroke-linecap':'round','stroke-linejoin':'round',filter:'url(#entry-pencil-softness)'});
  for (const [kind, delay, duration, paths] of drawing) {
   paths.forEach((d, i) => {
-   const path = doc.createElementNS(ns, 'path');
-   path.setAttribute('d', d);path.setAttribute('pathLength', '1');
-   path.classList.add('entry-city-' + kind);
+   const path = node('path', {d,pathLength:1,'stroke-width':kind === 'ground' ? 23 : kind === 'detail' ? 16 : 12,class:'entry-pencil-stroke'});
    path.style.setProperty('--draw-delay', (delay + i * .035) + 's');
-   path.style.setProperty('--draw-duration', duration + 's');svg.append(path);
+   path.style.setProperty('--draw-duration', duration + 's');pencil.append(path);
   });
  }
- root.querySelector('.entry-city-camera').append(svg);
+ // Overlapping soft passes gradually fill in the original hatching, small
+ // windows and vegetation. They reveal pixels, never paint visible broad lines.
+ const detailPasses = [
+  [.8,2.7, 'M324 685 L340 562 L391 565 L389 694 L444 699 L459 558 L488 690',66],
+  [1.1,3.0,'M513 702 L537 484 L586 486 L582 712 L635 716 L653 493 L681 707',74],
+  [1.5,3.0,'M706 719 L733 448 L769 416 L791 722 L842 726 L859 445 L878 709',70],
+  [1.9,3.1,'M887 732 L908 428 L957 419 L975 742 L1001 727',69],
+  [2.1,3.2,'M1008 755 L1038 338 L1082 332 L1090 758 L1140 755 L1162 328 L1190 745',76],
+  [2.35,3.1,'M1198 792 L1228 261 L1278 250 L1282 794 L1330 801 L1360 240 L1397 755 L1445 739 L1461 306 L1493 714',80],
+  [2.7,2.8,'M415 688 C600 697 757 726 914 763 S1213 829 1583 904',128],
+  [2.9,2.8,'M14 698 C401 742 744 860 1281 970 M4 821 C268 830 437 897 608 966',140],
+ ];
+ for (const [delay,duration,d,width] of detailPasses) {
+  const path=node('path',{d,pathLength:1,'stroke-width':width,class:'entry-pencil-stroke entry-pencil-details'});
+  path.style.setProperty('--draw-delay',delay+'s');path.style.setProperty('--draw-duration',duration+'s');pencil.append(path);
+ }
+ const finish=node('rect',{x:0,y:0,width:1620,height:971,fill:'white',class:'entry-pencil-finish'});
+ mask.append(pencil,finish);defs.append(ink,softness,mask);
+ const artwork=node('image',{href:image.getAttribute('src') || '',x:0,y:0,width:1620,height:971,filter:'url(#entry-pencil-ink)'});
+ const revealed = node('g',{mask:'url(#entry-pencil-mask)'});revealed.append(artwork);
+ svg.append(defs,revealed);root.querySelector('.entry-city-camera').append(svg);
  const toggle = doc.createElement('button');
  toggle.type = 'button';toggle.className = 'entry-motion-toggle';toggle.hidden = true;
  art.append(toggle);
  let userPaused = false, visible = true, prepared = false, disposed = false;
  const t = text => win.MoradaI18n?.t(text) || text;
- const complete = () => root.classList.add('is-complete');
+ const complete = () => {root.classList.add('is-complete');toggle.hidden=true;};
  function sync() {
   if (disposed) return;
   if (reduced.matches || entry.hidden) complete();
-  root.dataset.paused = String(userPaused || reduced.matches || doc.hidden || entry.hidden || !visible);
-  toggle.hidden = reduced.matches || !prepared;
+  root.dataset.paused = String(userPaused || reduced.matches || root.classList.contains('is-complete') || doc.hidden || entry.hidden || !visible);
+  toggle.hidden = reduced.matches || !prepared || root.classList.contains('is-complete');
   const label = t(userPaused ? 'Animation fortsetzen' : 'Animation pausieren');
   toggle.setAttribute('aria-label', label);toggle.title = label;
   toggle.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="' + (userPaused ? 'M5 3 12 8 5 13Z' : 'M5 3v10M11 3v10') + '"/></svg>';
  }
  const onToggle = () => {userPaused = !userPaused;sync();};
- const onAnimationEnd = event => {if(event.animationName === 'morada-city-ink') complete();};
+ const onAnimationEnd = event => {if(event.animationName === 'morada-pencil-finish'){complete();sync();}};
  toggle.addEventListener('click', onToggle);
  svg.addEventListener('animationend', onAnimationEnd);
  doc.addEventListener('visibilitychange', sync);
