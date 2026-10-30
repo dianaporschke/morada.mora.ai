@@ -35,7 +35,7 @@ test('profile menu uses the native preview switcher in all four areas and never 
    const tabs=[...dialog.querySelectorAll('[data-ps-tab]')];assert.equal(tabs.length,6);
    for(const tab of tabs){tab.click();assert.equal(tab.getAttribute('aria-selected'),'true');assert.equal(dialog.querySelector('#ps-panel').getAttribute('aria-labelledby'),tab.id);assert.equal(dialog.querySelectorAll('[aria-selected="true"]').length,1);}
    dialog.querySelector('[data-ps-tab="appearance"]').click();assert.match(dialog.querySelector('#ps-panel').textContent,/Deutsch \(Schweiz\)/);assert.match(dialog.textContent,/English/);assert.match(dialog.textContent,/Français/);
-   dialog.querySelector('[data-ps-tab="access"]').click();assert.match(dialog.querySelector('#ps-panel').textContent,/Noch keine Zuordnungen/);assert.doesNotMatch(dialog.querySelector('#ps-panel').textContent,/Alexander|Diana/);
+   dialog.querySelector('[data-ps-tab="access"]').click();assert.match(dialog.querySelector('#ps-panel').textContent,/Noch keine Immobilien zugeordnet/);assert.doesNotMatch(dialog.querySelector('#ps-panel').textContent,/Alexander|Diana/);
    assert.equal(dialog.querySelectorAll('input,select,textarea').length,0,'no unconnected preference controls');
    assert.equal(w.eval('JSON.stringify(state)'),before);w.eval('portalCloseDialog()');
    toggle.click();doc.getElementById('roleSwitch').click();assert.equal(menu.hidden,true);

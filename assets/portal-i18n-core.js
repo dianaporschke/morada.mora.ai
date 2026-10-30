@@ -12,10 +12,11 @@ export function createPortalTranslator(messages={},initial='de'){
  }
  function t(source,args,selected=language){
   const raw=String(source??''),key=normalize(raw),lang=normalizeLanguage(selected);let entry=messages[key],params=args;
-  if(!entry&&lang!=='de'&&args===undefined){
+  if(!entry&&args===undefined){
    for(const p of patterns){const match=key.match(p.re);if(match){entry=messages[p.key];params=Object.fromEntries(p.indices.map((n,i)=>[n,match[i+1]]));break;}}
   }
-  let value=lang==='de'?key:entry?.[lang]||key;
+  // German copy can be refined without changing stable source keys or saved values.
+  let value=entry?.[lang]||key;
   if(lang!=='de'&&!entry&&/[A-Za-zÄÖÜäöü]{2}/.test(key))missing.add(key);
   if(params)value=value.replace(/\{(\d+)\}/g,(whole,id)=>Object.hasOwn(params,id)?String(params[id]):whole);
   const lead=raw.match(/^\s*/)[0],tail=raw.match(/\s*$/)[0];return lead+value+tail;

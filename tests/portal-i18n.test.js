@@ -4,9 +4,10 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {JSDOM,VirtualConsole} from 'jsdom';
 import {indexedDB} from 'fake-indexeddb';
-async function setup(narrow=false,language=null){
+async function setup(narrow=false,language=null,thread=null){
  const errors=[],vc=new VirtualConsole();vc.on('jsdomError',e=>{if(e.type!=='css-parsing'&&e.type!=='not-implemented')errors.push(e);});
  const d=new JSDOM(readFileSync('portal.html','utf8'),{url:'https://ui.example/portal.html',runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){
+  if(thread)w.sessionStorage.setItem('morada.portal.mora.agent.v1.admin',JSON.stringify(thread));
   if(language)w.localStorage.setItem('morada.portal.language.v1',language);w.matchMedia=()=>({matches:narrow,addEventListener(){},removeEventListener(){}});w.structuredClone=structuredClone;w.fetch=()=>{throw Error('No inference in a UI test');};w.scrollTo=()=>{};w.confirm=()=>true;w.indexedDB=indexedDB;
   Object.defineProperty(w.navigator,'locks',{value:{request:async(_n,_o,fn)=>typeof _o==='function'?_o({}):fn({})}});
   w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;this.dispatchEvent(new w.Event('close'));};
@@ -19,8 +20,8 @@ async function setup(narrow=false,language=null){
 import {createPortalTranslator} from '../assets/portal-i18n-core.js';
 const messages=JSON.parse(readFileSync('assets/i18n/messages.json','utf8'));
 const placeholders=s=>[...s.matchAll(/\{\d+\}/g)].map(m=>m[0]).sort();
-test('all source messages have EN/FR resources with identical interpolation slots',()=>{
- for(const [source,values] of Object.entries(messages))for(const lang of ['en','fr']){assert.ok(values[lang],source+' '+lang);assert.deepEqual(placeholders(values[lang]),placeholders(source),source+' '+lang);}
+test('all DE/EN/FR messages preserve interpolation slots and Swiss spelling',()=>{
+ for(const [source,values] of Object.entries(messages))for(const lang of ['de','en','fr']){const value=values[lang]??(lang==='de'?source:null);assert.ok(value,source+' '+lang);assert.deepEqual(placeholders(value),placeholders(source),source+' '+lang);if(lang==='de')assert.ok(!value.includes('ß'),source);}
  const L=createPortalTranslator(messages,'en');
  assert.equal(L.t('Unknown future label'),'Unknown future label');
  assert.match(L.html`<p>Details zu ${'Meine Wohnung'} öffnen</p>`,/Meine Wohnung/);
@@ -29,6 +30,30 @@ test('all source messages have EN/FR resources with identical interpolation slot
  assert.equal(L.number(1234.5),new Intl.NumberFormat('en-GB').format(1234.5));
  L.setLanguage('fr');assert.equal(L.date('2026-10-30'),new Intl.DateTimeFormat('fr-CH').format(new Date('2026-10-30')));
  L.setLanguage('invalid');assert.equal(L.language,'de');
+ assert.equal(L.t('Mein Mietverhältnis'),'Mein Mietvertrag');
+ assert.equal(L.t('Speicherbestätigung erneut abgleichen'),'Speicherung erneut prüfen');
+ assert.equal(L.html`<option>Mein Mietverhältnis</option>`, '<option value="Mein Mietverhältnis">Mein Mietvertrag</option>');
+});
+test('populated charts, count summaries and rent-roll filters localise without changing original values',async()=>{
+ const w=await setup();try{
+  w.eval(`state.companyEntries=[{id:'income',kind:'income',category:companyServices[0][0],date:companyPeriod().to,amountCents:125000,paidCents:125000,party:'Meine Wohnung',description:'Keine Einträge'},{id:'expense',kind:'expense',category:companyCosts[0][0],date:companyPeriod().to,amountCents:25000,paidCents:0,party:'',description:'Offene Anliegen'}];crmUI.rentrollQuery='Meine Wohnung';crmUI.rentrollRooms='3.5';crmUI.rentrollType='Wohnung';crmUI.rentrollFloor='Keine Einträge';crmUI.rentrollSource='manual'`);
+  const original=w.eval('JSON.stringify(state)');
+  for(const lang of ['en','fr','de']){
+   w.MoradaI18n.setLanguage(lang);
+   const labels=Array.from(w.eval('rentrollFilterLabels()'));
+   assert.ok(labels.some(v=>v.includes('Meine Wohnung')));
+   assert.ok(labels.some(v=>v.includes('Keine Einträge')));
+   assert.ok(labels.includes(messages['Wohnung'][lang]??'Wohnung'));
+   const result=w.eval('portfolioResultText([])');
+   assert.ok(result.includes(lang==='en'?'Properties in portfolio':lang==='fr'?'Immeubles du parc':'Liegenschaften im Bestand'));
+   const host=w.document.createElement('div');host.innerHTML=w.eval('companyCharts()+companyTimeline(companyPeriod(),companyRecords())');
+   for(const key of ['Umsatz','Aufwand','Betriebsergebnis'])assert.ok(host.textContent.includes(messages[key][lang]??key),lang+' '+key);
+   if(lang!=='de')assert.doesNotMatch(host.textContent,/Betriebsergebnis|Personalaufwand|Weitere Kunden|Noch keine Einträge/);
+   const vacancy=w.eval("rentrollVacancyText({status:'vacant',rentroll:{vacancy:{since:'2026-10-01',days:1},vacancyRecord:{},period:false}})");
+   assert.ok(vacancy.includes(lang==='en'?'Vacant':lang==='fr'?'Vacant':'Leerstand'));
+   assert.equal(w.eval('JSON.stringify(state)'),original);
+  }
+ }finally{w.close();}
 });
 test('header and settings synchronize; preferences survive roles, reopening and a fresh page',async()=>{
  const w=await setup();try{
@@ -47,6 +72,12 @@ test('header and settings synchronize; preferences survive roles, reopening and 
   w.eval('portalCloseDialog()');for(const role of ['owner','tenant']){w.MoradaRoles.select(role);assert.equal(L.language,'fr');}
   assert.equal(w.localStorage.getItem('morada.portal.language.v1'),'fr');assert.equal(w.eval('JSON.stringify(state)'),before);
   for(const lang of ['en','fr']){
+   L.setLanguage(lang);d.getElementById('profileMenuButton').click();d.getElementById('roleSwitch').click();
+   const choices=d.getElementById('dialog').textContent;
+   assert.doesNotMatch(choices,/Geschäftsleitung|Bewirtschaftung/);
+   assert.ok(choices.includes('Alexander'));assert.ok(choices.includes('Diana'));
+   assert.equal(d.querySelector('[data-role-select=tenant] strong').textContent,messages['Mieterrolle'][lang]);
+   w.eval('portalCloseDialog()');
    const fresh=await setup(false,lang);try{
     assert.equal(fresh.MoradaI18n.language,lang);
     assert.equal(fresh.document.documentElement.lang,lang==='fr'?'fr-CH':'en-GB');
@@ -58,12 +89,12 @@ test('header and settings synchronize; preferences survive roles, reopening and 
   L.setLanguage('de');assert.equal(d.documentElement.lang,'de-CH');
  }finally{w.close();}
 });
-test('all role routes and create dialogs render in EN/FR without missing known UI labels',async()=>{
+test('all role routes and create dialogs render in DE/EN/FR without missing known UI labels',async()=>{
  const w=await setup();try{
   const d=w.document,before=w.eval('JSON.stringify(state)'),misses=[];
   let routes=0,forms=0;
-  for(const lang of ['en','fr']){
-   const translated=new Set(Object.values(messages).map(m=>m[lang]));w.MoradaI18n.setLanguage(lang);
+  for(const lang of ['de','en','fr']){
+   const translated=new Set(Object.entries(messages).map(([k,m])=>m[lang]??k));w.MoradaI18n.setLanguage(lang);
    const inspect=(root,where)=>{const walker=d.createTreeWalker(root,w.NodeFilter.SHOW_TEXT);let node;
     while(node=walker.nextNode()){if(node.parentElement.closest('script,style,textarea,[data-user-content],[translate="no"]'))continue;
      const value=node.nodeValue.trim().replace(/\s+/g,' ');if(messages[value]&&messages[value][lang]!==value&&!translated.has(value))misses.push(where+': '+value);}
@@ -71,6 +102,7 @@ test('all role routes and create dialogs render in EN/FR without missing known U
    for(const role of ['admin','manager','owner','tenant']){w.MoradaRoles.select(role);
     for(const id of w.eval('roleGroups().flatMap(g=>g[1].map(i=>i[0]))')){w.eval('go('+JSON.stringify(id)+')');routes++;
      for(const root of d.querySelectorAll('#main,#nav,header,.account'))inspect(root,lang+'/'+role+'/'+id);
+     if(lang!=='de')for(const node of d.querySelectorAll('.portal-history-bar [aria-label]'))assert.doesNotMatch(node.getAttribute('aria-label'),/Übersicht|Mein Portfolio|Meine Wohnung|Bewirtschaftung/);
      const actions=[...d.querySelectorAll('#main button')].filter(b=>b.hasAttribute('data-new')||[...b.attributes].some(a=>a.name.endsWith('-action')&&['new','create','new-account','new-box','new-entry','new-property','new-unit','new-contact','new-mandate','new-lease','upload','plan-new'].includes(a.value)));
      for(const b of actions){b.click();const dialog=d.getElementById('dialog');if(!dialog.open)continue;forms++;inspect(dialog,lang+'/'+role+'/'+id+' dialog');w.eval('portalCloseDialog()');}
     }
@@ -81,7 +113,8 @@ test('all role routes and create dialogs render in EN/FR without missing known U
  }finally{w.close();}
 });
 test('language changes preserve original user text, field values and MORA transcript',async()=>{
- const w=await setup();try{
+ const thread={session:null,saved:{},pendingReceipt:null,messages:[{role:'user',content:'Meine Wohnung'},{role:'assistant',content:'Keine Einträge'}],data:{issues:[{id:'known',equipment:'light',location:'Meine Wohnung'},{id:'custom',equipment:'Meine Wohnung',location:'Keine Einträge'}],controls:{navigation:[]}}};
+ const w=await setup(false,null,thread);try{
   const d=w.document;w.MoradaI18n.setLanguage('en');
   w.eval("openModal('Prüfung', '<form><input name=note value=\"Meine Wohnung\"><textarea name=body>Keine Einträge</textarea></form>')");
   const input=d.querySelector('[name=note]');input.value='Offene Anliegen';w.MoradaI18n.setLanguage('fr');
@@ -94,8 +127,12 @@ test('language changes preserve original user text, field values and MORA transc
   const header=d.querySelector('#moraPortalChat header');
   for(const lang of ['en','fr','de']){
    w.MoradaI18n.setLanguage(lang);w.dispatchEvent(new w.Event('resize'));
+   assert.deepEqual(Array.from(d.querySelectorAll('.mora-portal-log p'),p=>p.textContent),['Meine Wohnung','Keine Einträge']);
+   const options=Array.from(d.querySelectorAll('.mora-portal-actions select option'),o=>o.textContent);
+   assert.deepEqual(options,[(messages['Lampe / Leuchte'][lang]??'Lampe / Leuchte')+' · Meine Wohnung','Meine Wohnung · Keine Einträge']);
+   assert.equal(w.sessionStorage.getItem('morada.portal.mora.agent.v1.admin'),JSON.stringify(thread));
    const source='MORA-Fenster verschieben. Pfeiltasten zum Verschieben, Pos1 für die Ausgangsgrösse.';
-   assert.equal(header.getAttribute('aria-label'),lang==='de'?source:messages[source][lang]);
+   assert.equal(header.getAttribute('aria-label'),messages[source][lang]??source);
   }
  }finally{w.close();}
 });

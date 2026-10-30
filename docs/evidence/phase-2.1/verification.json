@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-30",
+  "branch": "codex/mora-ai-2.0",
+  "baselineCommit": "dd89bb4c79341abd1aed756cd80dfe6101ab712c",
+  "messages": 8193,
+  "changedEntries": 3195,
+  "changedValues": {
+    "de": 374,
+    "en": 2590,
+    "fr": 2228
+  },
+  "tests": {
+    "passed": 493,
+    "failed": 0,
+    "routes": 306,
+    "createDialogs": 285,
+    "typecheck": "passed",
+    "build": "passed"
+  },
+  "cssBlocksUnchanged": 63,
+  "rolesAndPermissionsChanged": false,
+  "storedDataChanged": false,
+  "merge": false,
+  "productionDeployment": false
+}

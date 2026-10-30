@@ -1,5 +1,5 @@
 import {detectHazard,safetyNotice} from './mora-safety.js';
-import {draftLabel} from './mora-data.js';
+import {draftLabel,equipmentLabels} from './mora-data.js';
 import {portalNavigation,hasCaseForm} from './mora-portal-map.js';
 import {enablePortalWindow} from './mora-portal-window.js';
 /** No provider credentials, model calls or portal business rules in this UI. */
@@ -65,7 +65,7 @@ export function createPortalClient(document,window,bridge,{fetcher=window.fetch?
     const data=thread.data;if(!data){scrollEnd();return;}
     if(data.issues?.length>1){
       const select=document.createElement('select');select.setAttribute('aria-label',L.t('Anliegen auswählen'));select.disabled=busy||Boolean(bridge.currentDraft());
-      for(const issue of data.issues){const o=document.createElement('option');o.value=issue.id;o.textContent=[draftLabel(issue),issue.location].filter(Boolean).join(' · ');o.selected=issue.id===data.issue?.id;select.append(o);}
+      for(const issue of data.issues){const o=document.createElement('option'),label=draftLabel(issue),custom=issue.equipment&&issue.equipment!=='unknown'&&!Object.hasOwn(equipmentLabels,issue.equipment);o.value=issue.id;o.textContent=[custom?label:L.t(label),issue.location].filter(Boolean).join(' · ');o.selected=issue.id===data.issue?.id;select.append(o);}
       select.addEventListener('change',async()=>{if(busy)return;setBusy(true,'Anliegen wird gewechselt …');try{await request({action:'switch-issue',issueId:select.value});}catch(e){message('error',e.message);}finally{setBusy(false);}});actions.append(select);
     }
     const connected=hasCaseForm(bridge.available());

@@ -1,0 +1,32 @@
+{
+  "routes": 612,
+  "settings": 24,
+  "mora": 12,
+  "languages": [
+    "de-CH",
+    "en-GB",
+    "fr-CH"
+  ],
+  "routeWidths": [
+    390,
+    1280
+  ],
+  "additionalWidths": [
+    320,
+    390,
+    768,
+    1280
+  ],
+  "roles": [
+    "admin",
+    "manager",
+    "owner",
+    "tenant"
+  ],
+  "issues": [],
+  "errors": [],
+  "notes": [
+    "Existing horizontally scrollable maintenance tabs are intentional and all labels remain accessible.",
+    "Twenty initially clipped breadcrumb instances were corrected by shortening their display labels; no CSS changes."
+  ]
+}
