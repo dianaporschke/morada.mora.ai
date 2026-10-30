@@ -18,3 +18,5 @@ Validation:
 Evidence: [Desktop](evidence/sidebar-profile-panel/desktop.jpg), [Mobile](evidence/sidebar-profile-panel/mobile.jpg), [Language settings](evidence/sidebar-profile-panel/language-settings.jpg).
 
 Hover follow-up: all seven profile tests pass, including pointer leave, crossing the menu gap, cancelling a pending dismissal by clicking, pinned-menu persistence, touch, keyboard and outside-click dismissal.
+
+Typography follow-up: Schnellzugriff now shares the existing Space Grotesk section font with Mein MORADA. Browser-computed styles match: 11 px, weight 600, line-height 15.4 px and letter-spacing 0.66 px. Build and visual preview pass. [Evidence](evidence/sidebar-profile-panel/sidebar-typography.jpg).
