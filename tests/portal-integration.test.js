@@ -98,7 +98,7 @@ test('full HTML: MORA covers every actual sidebar route in all four roles and ex
   for(const role of ['admin','manager','owner','tenant']){
    w.MoradaRoles.select(role);await settle();
    assert.notEqual(w.getComputedStyle(w.document.getElementById('moraFab')).display,'none','MORA launcher must remain visible despite native portal CSS');
-   const topbarMora=w.document.querySelector('.ux-assist[data-action="mora"]');assert.ok(topbarMora,'new portal header launcher');topbarMora.click();assert.equal(w.MORAPortal.element.hidden,false);
+   assert.equal(w.document.querySelectorAll('.topbar [data-action="mora"]').length,0,'only the floating launcher remains');w.document.getElementById('moraFab').click();assert.equal(w.MORAPortal.element.hidden,false);
    w.MORAPortal.element.querySelector('[data-mp="close"]').click();assert.equal(w.MORAPortal.element.hidden,true);w.document.getElementById('moraFab').click();assert.equal(w.MORAPortal.element.hidden,false);
    target=role==='admin'?'invoices':role==='manager'?'maintenance':role==='owner'?'ownerFinance':'tenantPayments';
    await w.MORAPortal.send('Lokaler Navigationstest');

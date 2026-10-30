@@ -2,23 +2,21 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
+const hash=s=>createHash('sha256').update(s).digest('hex');
 
-test('29 October deposits portal: all supplied design and business logic survives the MORA integration',()=>{
-  const html=readFileSync('portal.html','utf8');
-  const start='<!-- MORA INTEGRATION 1.0 START -->';
-  const end='<!-- MORA INTEGRATION 1.0 END -->';
-  assert.equal(html.split(start).length,2,'exactly one MORA client');
-  assert.equal(html.split(end).length,2,'complete MORA integration');
-  let native=html.replace(/<!-- MORA INTEGRATION 1.0 START -->[\s\S]*?<!-- MORA INTEGRATION 1.0 END -->\n/,'');
-  // These four optional arguments are the only changes inside the native code.
-  for(const [patched,original] of [
-    ['source=state,moraIdentity=null','source=state'],
-    ["id:old?.id||(kind==='case'&&moraIdentity?.id)||uid(kind.toUpperCase())","id:old?.id||uid(kind.toUpperCase())"],
-    ["record=opsWithEvent(record,'created',moraIdentity?.note||'');","record=opsWithEvent(record,'created');"],
-    ["record=opsWithEvent(record,'edited',moraIdentity?.note||'',changes);","record=opsWithEvent(record,'edited','',changes);"],
-  ]) {
-    assert.equal(native.split(patched).length,2);
-    native=native.replace(patched,original);
-  }
-  assert.equal(createHash('sha256').update(native).digest('hex'),'6af8c190fafc2ee94b8a8cfdba904226d8a0c3d7f3303b8e1e7a6cbace162ef5');
+// The user authorised changes to the shared portal UI on 30 October. The old
+// whole-HTML hash froze that UI too. These hashes still freeze every native
+// business statement and the entire existing MORA integration from 1284594.
+test('visual refinement preserves native business logic and the complete MORA integration',()=>{
+ const html=readFileSync('portal.html','utf8');
+ const block=html.match(/<!-- MORA INTEGRATION 1.0 START -->[\s\S]*?<!-- MORA INTEGRATION 1.0 END -->/g);
+ assert.equal(block.length,1,'exactly one unchanged MORA implementation');
+ assert.equal(hash(block[0]),'bc8b2f9b0e7144f2462dfc0fc90af1c27a71b2260876606afb090d445b42ce77');
+ const native=html.match(/<script>\s*'use strict';([\s\S]*?)<\/script>/)[1]
+  .replace(/^const paths=.*\n/m,'') // Existing icon vocabulary, visual only.
+  .replace(/function syncIdentity\(\)\{[\s\S]*?\n(?=function chooseRole)/,'') // Visible identity / button labels.
+  .replace(/function rolePicker\(\)\{[\s\S]*?\n\}/,'') // Preview wording, same choices and handler.
+  .replace(/^function hero[^\n]*\n/m,'') // Remove the decorative sketch.
+  .replace(/document\.getElementById\('breadcrumb'\)\.textContent=[^;]*;/,'');
+ assert.equal(hash(native),'abda08d5a53e7f0bb44bfa904f1d7ae0af61ea20f00663c9454a33294cc747f9');
 });
