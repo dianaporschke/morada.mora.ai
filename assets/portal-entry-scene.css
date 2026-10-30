@@ -1,0 +1,31 @@
+/* The existing illustration stays intact. Only its decorative layer moves. */
+#moradaEntry .entry-scene{aspect-ratio:1620/971}
+#moradaEntry .entry-city-camera{position:absolute;inset:0;transform:translate3d(0,0,0)}
+#moradaEntry .entry-city-image{display:block;width:100%;height:100%;object-fit:contain}
+#moradaEntry .entry-city-lines{position:absolute;inset:0;width:100%;height:100%;opacity:0;overflow:visible;fill:none;stroke:#88715c;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+#moradaEntry .entry-city-lines .entry-city-detail{stroke-width:1.15;opacity:.75}
+#moradaEntry .entry-city-lines .entry-city-ground{stroke-width:1.2;opacity:.5}
+#moradaEntry .entry-scene.is-preparing .entry-city-image{opacity:0}
+#moradaEntry .entry-scene.is-ready .entry-city-image{animation:morada-city-paper 3.2s 2.5s ease-in-out both}
+#moradaEntry .entry-scene.is-ready .entry-city-lines{animation:morada-city-ink 6.2s linear both}
+#moradaEntry .entry-scene.is-ready .entry-city-lines path{stroke-dasharray:1;stroke-dashoffset:1;animation:morada-city-draw var(--draw-duration,2s) var(--draw-delay,0s) cubic-bezier(.38,.05,.22,1) both}
+#moradaEntry .entry-scene.is-ready .entry-city-camera{animation:morada-city-drift 32s 6.2s cubic-bezier(.45,0,.55,1) infinite alternate both;will-change:transform}
+#moradaEntry .entry-scene.is-complete .entry-city-image{animation:none;opacity:1}
+#moradaEntry .entry-scene.is-complete .entry-city-lines{display:none}
+#moradaEntry .entry-scene[data-paused="true"] *,#moradaEntry .entry-scene[data-paused="true"]{animation-play-state:paused!important}
+#moradaEntry .entry-motion-toggle{position:absolute;bottom:30px;right:28px;z-index:3;display:grid;place-items:center;width:32px;height:32px;padding:7px;border:1px solid #b3a49466;border-radius:50%;background:#f0ede8b8;color:#806b5c;opacity:.65;transition:opacity .2s,background .2s}
+#moradaEntry .entry-motion-toggle:hover,#moradaEntry .entry-motion-toggle:focus-visible{opacity:1;background:#f7f3ec}
+#moradaEntry .entry-motion-toggle svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+#moradaEntry .entry-motion-toggle[hidden]{display:none}
+@keyframes morada-city-draw{to{stroke-dashoffset:0}}
+@keyframes morada-city-paper{from{opacity:0}to{opacity:1}}
+@keyframes morada-city-ink{0%{opacity:.9}68%{opacity:.9}100%{opacity:0}}
+@keyframes morada-city-drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-1.4%,-.55%,0)}}
+@media(max-width:760px){
+ #moradaEntry .entry-motion-toggle{bottom:8px;right:10px;width:28px;height:28px;padding:6px;background:#eee8dfb8}
+}
+@media(prefers-reduced-motion:reduce){
+ #moradaEntry .entry-scene .entry-city-image{animation:none!important;opacity:1!important}
+ #moradaEntry .entry-scene .entry-city-lines,#moradaEntry .entry-motion-toggle{display:none!important}
+ #moradaEntry .entry-scene .entry-city-camera{animation:none!important;transform:none!important;will-change:auto}
+}

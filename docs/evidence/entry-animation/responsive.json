@@ -1,0 +1,170 @@
+[
+  {
+    "panel": {
+      "bottom": 878.96875,
+      "height": 778.96875,
+      "left": 0,
+      "right": 305,
+      "top": 100,
+      "width": 305,
+      "x": 0,
+      "y": 100
+    },
+    "roles": [
+      {
+        "scroll": 128,
+        "width": 128
+      },
+      {
+        "scroll": 137,
+        "width": 137
+      },
+      {
+        "scroll": 128,
+        "width": 128
+      },
+      {
+        "scroll": 137,
+        "width": 137
+      }
+    ],
+    "scene": {
+      "bottom": 121.5390625,
+      "height": 124.296875,
+      "left": 147.609375,
+      "right": 355,
+      "top": -2.7578125,
+      "width": 207.390625,
+      "x": 147.609375,
+      "y": -2.7578125
+    },
+    "scrollWidth": 305,
+    "width": 320
+  },
+  {
+    "panel": {
+      "bottom": 1024,
+      "height": 1024,
+      "left": 384,
+      "right": 768,
+      "top": 0,
+      "width": 384,
+      "x": 384,
+      "y": 0
+    },
+    "roles": [
+      {
+        "scroll": 156,
+        "width": 156
+      },
+      {
+        "scroll": 156,
+        "width": 156
+      },
+      {
+        "scroll": 156,
+        "width": 156
+      },
+      {
+        "scroll": 156,
+        "width": 156
+      }
+    ],
+    "scene": {
+      "bottom": 979,
+      "height": 266.28125,
+      "left": -30.6328125,
+      "right": 413.6328125,
+      "top": 712.71875,
+      "width": 444.265625,
+      "x": -30.6328125,
+      "y": 712.71875
+    },
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "panel": {
+      "bottom": 820,
+      "height": 820,
+      "left": 504.5,
+      "right": 1009,
+      "top": 0,
+      "width": 504.5,
+      "x": 504.5,
+      "y": 0
+    },
+    "roles": [
+      {
+        "scroll": 212,
+        "width": 212
+      },
+      {
+        "scroll": 212,
+        "width": 212
+      },
+      {
+        "scroll": 212,
+        "width": 212
+      },
+      {
+        "scroll": 212,
+        "width": 212
+      }
+    ],
+    "scene": {
+      "bottom": 775,
+      "height": 350.0625,
+      "left": -40.2734375,
+      "right": 543.7734375,
+      "top": 424.9375,
+      "width": 584.046875,
+      "x": -40.2734375,
+      "y": 424.9375
+    },
+    "scrollWidth": 1009,
+    "width": 1024
+  },
+  {
+    "panel": {
+      "bottom": 1080,
+      "height": 1080,
+      "left": 1075.1875,
+      "right": 1919.984375,
+      "top": 0,
+      "width": 844.796875,
+      "x": 1075.1875,
+      "y": 0
+    },
+    "roles": [
+      {
+        "scroll": 227,
+        "width": 227
+      },
+      {
+        "scroll": 227,
+        "width": 227
+      },
+      {
+        "scroll": 227,
+        "width": 227
+      },
+      {
+        "scroll": 227,
+        "width": 227
+      }
+    ],
+    "scene": {
+      "bottom": 1035,
+      "height": 746.84375,
+      "left": -85.9296875,
+      "right": 1160.1171875,
+      "top": 288.15625,
+      "width": 1246.046875,
+      "x": -85.9296875,
+      "y": 288.15625
+    },
+    "scrollWidth": 1920,
+    "width": 1920
+  }
+]
