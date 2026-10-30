@@ -3153,14 +3153,6 @@ button,input,select,textarea{font-family:var(--morada-font-body)}
 #portalPreview .ux-customer-home .customer-hero{background:var(--active);border:1px solid var(--line);box-shadow:none}
 #portalPreview .ux-customer-home .customer-hero-copy{max-width:none;padding:22px 24px}
 #portalPreview .content{padding-bottom:110px}
-#portalPreview .portal-personal-settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:22px}
-#portalPreview .portal-personal-settings section{border-top:1px solid var(--line);padding-top:18px;min-width:0}
-#portalPreview .portal-personal-settings h3{display:flex;align-items:center;gap:9px;font-size:17px;margin:0 0 10px}
-#portalPreview .portal-personal-settings h3 .icon{width:19px;height:19px;color:var(--copper)}
-#portalPreview .portal-personal-settings p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}
-#portalPreview .portal-personal-settings .profile-setting-value{font-size:14px;color:var(--ink);margin-bottom:5px}
-#portalPreview .portal-personal-scope{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:0;color:var(--muted);font-size:13px}
-#portalPreview .dialog:has(.portal-personal-settings){width:min(700px,calc(100% - 32px));max-height:calc(100dvh - 32px)}
 @media(max-width:1024px){
  #portalPreview .topbar .mobile-menu{display:flex;align-items:center;justify-content:center;min-width:44px;height:44px;padding:8px}
  #portalPreview .sidebar{height:100dvh;padding-bottom:env(safe-area-inset-bottom)}
@@ -3182,10 +3174,109 @@ button,input,select,textarea{font-family:var(--morada-font-body)}
  #portalPreview .ux-customer-home .stat{padding:17px 15px}
  #portalPreview .ux-customer-home .stat-label{align-items:flex-start;font-size:11px;line-height:1.5}
  #portalPreview .ux-customer-home .stat-label .icon{width:18px;height:18px}
- #portalPreview .portal-personal-settings{grid-template-columns:1fr;gap:16px}
 }
 @media(prefers-reduced-motion:reduce){#portalPreview .ux-customer-action{transition:none}}
 </style>
+<style id="morada-personal-settings-2">
+/* Personal settings, phase 1. Uses existing portal colours, fonts and native dialog. */
+#portalPreview .dialog:has(.portal-settings){width:min(1040px,calc(100% - 48px));height:min(738px,calc(100dvh - 56px));max-height:calc(100dvh - 56px);border-radius:18px;overflow:hidden}
+#portalPreview .dialog[open]:has(.portal-settings){display:flex;flex-direction:column}
+#portalPreview .dialog:has(.portal-settings)>.dialog-head{flex:none;align-items:center;padding:24px 30px 22px;background:var(--card)}
+#portalPreview .dialog:has(.portal-settings) #dialogTitle{font-size:27px;line-height:1.25;margin-top:5px}
+#portalPreview .dialog:has(.portal-settings)>.dialog-head .close{display:grid;place-items:center;flex:none;width:44px;height:44px;padding:0;border:1px solid var(--line);border-radius:10px;color:var(--brown)}
+#portalPreview .dialog:has(.portal-settings)>.dialog-body{display:flex;flex-direction:column;flex:1;min-height:0;padding:0;overflow:hidden}
+#portalPreview .dialog:has(.portal-settings)>.dialog-body>.portal-storage-notice{flex:none;margin:12px}
+#portalPreview .portal-settings{display:grid;grid-template-columns:255px minmax(0,1fr);flex:1;min-height:0;overflow:hidden;font-size:14px;line-height:1.6}
+#portalPreview .ps-sidebar{display:flex;flex-direction:column;gap:24px;background:var(--active);border-right:1px solid var(--line);padding:25px 16px 20px;overflow-y:auto;min-height:0}
+#portalPreview .ps-nav-label{margin:0 12px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+#portalPreview .ps-nav{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+#portalPreview .ps-nav button{position:relative;display:flex;align-items:center;gap:12px;min-height:51px;padding:12px;border:1px solid transparent;border-radius:9px;text-align:left;color:var(--muted);font-size:13px;line-height:1.45;transition:background-color .16s,color .16s,border-color .16s}
+#portalPreview .ps-nav button>.icon{flex:none;width:20px;height:20px}
+#portalPreview .ps-nav button:hover{background:var(--soft);color:var(--ink)}
+#portalPreview .ps-nav button[aria-selected=true]{background:var(--card);border-color:var(--line);color:var(--copper);box-shadow:0 2px 7px var(--shadow-soft);font-weight:600}
+#portalPreview .ps-nav button[aria-selected=true]::before{content:'';position:absolute;left:-1px;top:14px;bottom:14px;width:3px;border-radius:3px;background:var(--copper)}
+#portalPreview .ps-context{margin:auto 12px 0;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+#portalPreview .ps-context p{margin:10px 0 0;line-height:1.6}
+#portalPreview .ps-badge{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border:1px solid var(--line);border-radius:20px;background:var(--active);color:var(--muted);font-size:10px;line-height:1.6;font-weight:500;white-space:nowrap}
+#portalPreview .ps-badge.current{color:var(--copper);background:var(--soft);border-color:var(--soft)}
+#portalPreview .ps-panel{min-width:0;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:30px 34px 32px;scrollbar-width:thin;scrollbar-color:var(--line) transparent;outline-offset:-4px}
+#portalPreview .ps-content{animation:ps-enter .18s ease-out}
+#portalPreview .ps-heading{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+#portalPreview .ps-heading>.icon{width:23px;height:23px;color:var(--copper)}
+#portalPreview .ps-heading h3{font:500 26px/1.25 var(--morada-font-heading);letter-spacing:-.02em;margin:0;color:var(--ink);overflow-wrap:anywhere}
+#portalPreview .ps-intro{margin:0 0 26px;color:var(--muted);font-size:14px;line-height:1.65;max-width:490px}
+#portalPreview .ps-card{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:22px;margin:0 0 18px;min-width:0}
+#portalPreview .ps-card h4{font-size:14px;line-height:1.5;font-weight:600;margin:0 0 6px;color:var(--ink)}
+#portalPreview .ps-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}
+#portalPreview .ps-card-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+#portalPreview .ps-card-title h4{margin:0}
+#portalPreview .ps-identity{display:flex;align-items:center;gap:16px;background:var(--active)}
+#portalPreview .ps-symbol{display:grid;place-items:center;flex:none;width:48px;height:48px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--copper)}
+#portalPreview .ps-symbol .icon{width:23px;height:23px}
+#portalPreview .ps-details{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 28px}
+#portalPreview .ps-details div{min-width:0}
+#portalPreview .ps-details dt{font-size:12px;color:var(--muted);margin-bottom:5px}
+#portalPreview .ps-details dd{margin:0;font-size:14px;color:var(--ink);overflow-wrap:anywhere}
+#portalPreview .ps-details dd.ps-unset{color:var(--muted)}
+#portalPreview .ps-footnote{margin:18px 0 0;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.7}
+#portalPreview .ps-row{display:flex;align-items:center;gap:14px;min-width:0;padding:17px 0;border-top:1px solid var(--line)}
+#portalPreview .ps-row:first-of-type{padding-top:0;border-top:0}
+#portalPreview .ps-row:last-child{padding-bottom:0}
+#portalPreview .ps-row>.icon{color:var(--copper);width:20px;height:20px;flex:none}
+#portalPreview .ps-row>div{flex:1;min-width:0}
+#portalPreview .ps-row strong{display:block;font-size:13px;line-height:1.5;font-weight:500;color:var(--ink)}
+#portalPreview .ps-row p{font-size:12px;margin-top:4px}
+#portalPreview .ps-language{font-size:12px;letter-spacing:.06em;color:var(--copper);width:28px;flex:none}
+#portalPreview .ps-empty{padding:25px 20px;text-align:center;background:var(--active);border-radius:9px}
+#portalPreview .ps-empty>.icon{color:var(--copper);width:26px;height:26px;margin-bottom:12px}
+#portalPreview .ps-empty strong{display:block;font-size:14px;font-weight:500;margin-bottom:7px}
+#portalPreview .ps-support{background:var(--active)}
+#portalPreview .ps-support .ps-symbol{margin-bottom:16px}
+#portalPreview .ps-support .btn{margin-top:20px}
+#portalPreview .ps-contact-link{display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-top:10px;color:var(--copper);font-size:14px;overflow-wrap:anywhere}
+#portalPreview .ps-contact-link:hover{text-decoration:underline}
+#portalPreview .ps-contact-link .icon{flex:none}
+#portalPreview .ps-back{display:none}
+#portalPreview .portal-settings :is(button,a):focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+@keyframes ps-enter{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){
+ #portalPreview .portal-settings{grid-template-columns:230px minmax(0,1fr)}
+ #portalPreview .ps-sidebar{padding-left:12px;padding-right:12px}
+ #portalPreview .ps-panel{padding:26px 24px}
+ #portalPreview .ps-card{padding:20px}
+ #portalPreview .ps-details{column-gap:16px}
+}
+@media(max-width:640px){
+ #portalPreview .dialog:has(.portal-settings){width:calc(100% - 16px);max-width:none;height:calc(100dvh - 24px);max-height:calc(100dvh - 24px);margin:auto;border-radius:14px}
+ #portalPreview .dialog:has(.portal-settings)>.dialog-head{padding:18px 18px 16px;gap:8px}
+ #portalPreview .dialog:has(.portal-settings) #dialogTitle{font-size:22px}
+ #portalPreview .dialog:has(.portal-settings) .dialog-head .eyebrow{font-size:9px;letter-spacing:.1em}
+ #portalPreview .portal-settings{display:flex;flex-direction:column}
+ #portalPreview .ps-sidebar{border-right:0;flex:1;padding:24px 18px max(24px,env(safe-area-inset-bottom))}
+ #portalPreview .ps-nav{gap:8px;margin-top:16px}
+ #portalPreview .ps-nav button{min-height:58px;padding:15px 12px;font-size:14px;border-color:var(--line);background:var(--card);color:var(--ink)}
+ #portalPreview .ps-nav button::after{content:'';width:7px;height:7px;border-right:1.5px solid var(--copper);border-top:1.5px solid var(--copper);transform:rotate(45deg);margin-left:auto;flex:none}
+ #portalPreview .ps-context{margin-top:16px}
+ #portalPreview .ps-panel{flex:1;padding:16px 20px max(24px,env(safe-area-inset-bottom))}
+ #portalPreview .portal-settings[data-mobile-view=menu] .ps-panel{display:none}
+ #portalPreview .portal-settings[data-mobile-view=content] .ps-sidebar{display:none}
+ #portalPreview .ps-back{display:flex;align-items:center;gap:9px;min-height:44px;margin:0 0 20px;padding:0;font-size:13px;color:var(--copper)}
+ #portalPreview .ps-back .icon{transform:rotate(180deg);width:17px;height:17px}
+ #portalPreview .ps-heading{gap:10px}
+ #portalPreview .ps-heading h3{font-size:24px}
+ #portalPreview .ps-intro{font-size:13px;margin-bottom:22px}
+ #portalPreview .ps-identity{align-items:flex-start;gap:12px}
+ #portalPreview .ps-identity .ps-symbol{width:40px;height:40px;border-radius:11px}
+ #portalPreview .ps-card{padding:18px;margin-bottom:16px}
+ #portalPreview .ps-details{grid-template-columns:1fr;gap:18px}
+ #portalPreview .ps-row{gap:10px;flex-wrap:wrap}
+ #portalPreview .ps-row>div{flex-basis:calc(100% - 65px)}
+ #portalPreview .ps-row>.ps-badge{margin-left:30px}
+ #portalPreview .ps-contact-link{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){#portalPreview .ps-content{animation:none}#portalPreview .ps-nav button{transition:none}}
+</style>
+
 </head><body>
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;pointer-events:none">
   <defs>
@@ -11343,16 +11434,99 @@ void portalLoadExtended();
  document.addEventListener('click',e=>{if(!account.contains(e.target))close();});
  document.addEventListener('focusin',e=>{if(!account.contains(e.target))close();});
  switcher.addEventListener('click',()=>{close();if(dialog.open)lastFocus=toggle;});
+ const sections=[
+  {id:'profile',label:'Mein Profil',symbol:'person',description:'Ihre persönlichen Angaben und Kontaktdaten an einem Ort.'},
+  {id:'appearance',label:'Sprache & Darstellung',symbol:'globe',description:'Sprache und Erscheinungsbild Ihres Portals.'},
+  {id:'notifications',label:'Benachrichtigungen',symbol:'bell',description:'Neuigkeiten und Erinnerungen über Ihre bevorzugten Kanäle.'},
+  {id:'access',label:'Meine Zugänge',symbol:'key',description:'Ihre Rollen und die Ihnen zugeordneten Immobilien im Überblick.'},
+  {id:'security',label:'Sicherheit & Datenschutz',symbol:'shield',description:'Ihr Zugang und der Umgang mit Ihren persönlichen Angaben.'},
+  {id:'support',label:'Hilfe & Support',symbol:'help',description:'Digitale Unterstützung und persönlicher Kontakt zu MORADA.'}
+ ];
+ const settingsPaths={
+  globe:'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM3 12h18M12 3c-4 5-4 13 0 18 4-5 4-13 0-18Z',
+  display:'M3 4h18v13H3zM12 17v4M8 21h8',
+  help:'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.5 8.5a2.5 2.5 0 0 1 5 .5c0 2-2.5 2-2.5 4M12 17h.01',
+  spark:'m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4Z'
+ };
+ const psIcon=name=>settingsPaths[name]?`<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="${settingsPaths[name]}"/></svg>`:icon(name);
+ const badge=(text='Geplant',current=false)=>`<span class="ps-badge${current?' current':''}">${text}</span>`;
+ const row=(symbol,title,description,status=badge())=>`<div class="ps-row">${psIcon(symbol)}<div><strong>${title}</strong><p>${description}</p></div>${status}</div>`;
+ const card=(title,body,status='')=>`<section class="ps-card"><div class="ps-card-title"><h4>${title}</h4>${status}</div>${body}</section>`;
+ const empty=(symbol,title,copy)=>`<div class="ps-empty">${psIcon(symbol)}<strong>${title}</strong><p>${copy}</p></div>`;
+ function sectionBody(id){
+  switch(id){
+   case 'profile':return `<div class="ps-card ps-identity"><span class="ps-symbol">${psIcon('person')}</span><div><h4>Kein persönliches Profil zugeordnet</h4><p>Sie erkunden das Portal im Vorschaumodus.</p></div></div>`+
+    card('Persönliche Angaben',`<dl class="ps-details">${['Vor- und Nachname','E-Mail-Adresse','Telefon','Korrespondenzadresse'].map(label=>`<div><dt>${label}</dt><dd class="ps-unset">Nicht hinterlegt</dd></div>`).join('')}</dl><div class="ps-footnote">Die Bearbeitung Ihrer Angaben wird mit dem persönlichen Zugang verfügbar.</div>`);
+   case 'appearance':return card('Portalsprache',[
+    ['DE','Deutsch (Schweiz)','Aktuelle Portalsprache',badge('Aktiv',true)],
+    ['EN','English','Englisch',badge('Phase 2')],
+    ['FR','Français','Französisch',badge('Phase 2')]
+   ].map(([code,title,copy,status])=>`<div class="ps-row"><span class="ps-language" aria-hidden="true">${code}</span><div><strong>${title}</strong><p>${copy}</p></div>${status}</div>`).join(''))+
+    card('Darstellung',row('display','MORADA Design','Die aktuelle Farbwelt und Schrift bleiben erhalten.',badge('Aktiv',true))+'<div class="ps-footnote">Persönliche Darstellungsoptionen sind für später vorgesehen.</div>');
+   case 'notifications':return card('Benachrichtigungskanäle',row('mail','E-Mail','Hinweise zu Nachrichten, Anliegen und Terminen.')+row('bell','Push-Mitteilungen','Kurze Hinweise direkt auf Ihrem Gerät.'))+
+    card('Ihre Auswahl',`<p>Mit Ihrem persönlichen Zugang können Sie später festlegen, welche Mitteilungen Sie erhalten möchten.</p><div class="ps-footnote">In dieser Vorschau werden keine E-Mail- oder Push-Mitteilungen versendet.</div>`);
+   case 'access':return card('Aktuelle Vorschau',`<div class="ps-row">${psIcon(profiles[role].ico)}<div><strong>${esc(profiles[role].label)}</strong><p>Diese Ansicht ist keinem persönlichen Konto zugeordnet.</p></div>${badge('Vorschau')}</div>`)+
+    card('Eigentümer- & Mieterzugänge',row('building','Eigentümer','Kein persönlicher Eigentümerzugang zugeordnet.','')+row('key','Mieter','Kein persönlicher Mieterzugang zugeordnet.',''))+
+    card('Zugeordnete Immobilien',empty('building','Keine Immobilien zugeordnet','Hier erscheinen später die für Sie freigegebenen Liegenschaften und Wohnungen.'));
+   case 'security':return card('Anmeldung & Sicherheit',row('key','Persönliche Anmeldung','Noch kein persönliches Konto verbunden.',badge('Nicht verbunden'))+row('shield','Passwort & Anmeldeschutz','Mit dem persönlichen Zugang verfügbar.')+row('display','Angemeldete Geräte','Ihre Sitzungen später an einem Ort verwalten.'))+
+    card('Datenschutz',`<p>Portaleinträge bleiben in dieser Vorschau auf diesem Gerät. Chatnachrichten an MORA werden zur KI-Verarbeitung übermittelt.</p><div class="ps-footnote">Persönliche Daten- und Kontoeinstellungen folgen mit der Kontoanbindung.</div>`);
+   case 'support':return `<section class="ps-card ps-support"><span class="ps-symbol">${psIcon('spark')}</span><h4>MORA AI</h4><p>Fragen zum Portal oder ein Anliegen? MORA unterstützt Sie direkt im Gespräch.</p><button type="button" class="btn primary" data-ps-action="mora">MORA öffnen ${psIcon('arrow')}</button></section>`+
+    card('Persönlicher Kontakt',`<p>Unser Team hilft Ihnen bei Fragen zu MORADA und Ihrer Immobilie.</p><a class="ps-contact-link" href="mailto:${esc(morada.email)}">${psIcon('mail')}<span>${esc(morada.email)}</span>${psIcon('arrow')}</a><div class="ps-footnote">Öffnet Ihr E-Mail-Programm.</div>`);
+  }
+ }
+ let activeSection='profile';
+ const narrowSettings=window.matchMedia('(max-width:640px)');
+ function selectSection(id,focus=false){
+  const section=sections.find(s=>s.id===id),root=dialog.querySelector('.portal-settings');
+  if(!section||!root)return;
+  activeSection=id;root.dataset.mobileView='content';
+  for(const tab of root.querySelectorAll('[data-ps-tab]')){const selected=tab.dataset.psTab===id;tab.setAttribute('aria-selected',String(selected));tab.tabIndex=selected?0:-1;}
+  const panel=root.querySelector('.ps-panel');
+  panel.setAttribute('aria-labelledby','ps-tab-'+id);
+  panel.innerHTML=`<button type="button" class="ps-back" data-ps-action="back">${psIcon('arrow')}Alle Einstellungen</button><div class="ps-content"><div class="ps-heading">${psIcon(section.symbol)}<h3 id="ps-section-title" tabindex="-1">${section.label}</h3></div><p class="ps-intro">${section.description}</p>${sectionBody(id)}</div>`;
+  panel.scrollTop=0;
+  if(focus){if(narrowSettings.matches)panel.querySelector('h3').focus({preventScroll:true});else root.querySelector('[aria-selected="true"]').focus({preventScroll:true});}
+ }
  settings.addEventListener('click',()=>{
   close();
-  const customer=isCustomer();
-  const body=`<p class="portal-personal-scope"><span class="tag neutral">${esc(profiles[role].label)}</span><span>${customer?'Kundenbereich · Vorschau':'Lokaler Arbeitsbereich'}</span></p><div class="portal-personal-settings">
-  <section><h3>${icon('person')}Persönliche Angaben</h3><p class="profile-setting-value">Kein persönliches Profil zugeordnet</p><p>Kontaktdaten können hier noch nicht sicher bearbeitet werden. Wohnungen, Rollen und Vertragsdaten werden nicht über diese Ansicht geändert.</p></section>
-  <section><h3>${icon('bell')}Benachrichtigungen</h3><p class="profile-setting-value">Noch nicht einstellbar</p><p>Persönliche Hinweise zu Nachrichten, Anliegen und Terminen sind noch nicht angebunden. E-Mail- und Push-Einstellungen folgen mit der Kontoanbindung.</p></section>
-  <section><h3>${icon('file')}Sprache</h3><p class="profile-setting-value">Deutsch (Schweiz)</p><p>Dies ist die derzeit verfügbare Portalsprache.</p></section>
-  <section><h3>${icon('shield')}Anmeldung &amp; Sicherheit</h3><p class="profile-setting-value">Lokale Arbeitsversion ohne Anmeldung</p><p>Es gibt hier noch kein persönliches Passwort oder Kundenkonto. Ihre Einträge bleiben auf diesem Gerät; eine gemeinsame Datenhaltung ist noch nicht eingerichtet.</p></section>
-  </div><div class="dialog-actions">${btn('Schliessen','type="button" data-action="close"',false,'close')}</div>`;
-  if(openModal('Profil & Einstellungen',body,'MORADA · PERSÖNLICHER BEREICH'))lastFocus=toggle;
+  const body=`<div class="portal-settings" data-mobile-view="menu"><aside class="ps-sidebar"><div><p class="ps-nav-label">Ihr Portal</p><div class="ps-nav" role="tablist" aria-label="Einstellungsbereiche" aria-orientation="vertical">${sections.map(s=>`<button type="button" id="ps-tab-${s.id}" role="tab" aria-controls="ps-panel" aria-selected="${s.id==='profile'}" tabindex="${s.id==='profile'?'0':'-1'}" data-ps-tab="${s.id}">${psIcon(s.symbol)}<span>${s.label}</span></button>`).join('')}</div></div><div class="ps-context">${badge('Vorschaumodus')}<p>Persönliche Einstellungen werden mit Ihrem Zugang verfügbar.</p></div></aside><div id="ps-panel" class="ps-panel" role="tabpanel" aria-labelledby="ps-tab-profile" tabindex="0"></div></div>`;
+  if(openModal('Profil & Einstellungen',body,'MORADA · PERSÖNLICHER BEREICH')){
+   lastFocus=toggle;
+   selectSection('profile');
+   dialog.querySelector('.portal-settings').dataset.mobileView='menu';
+   dialog.querySelector('[data-ps-tab="profile"]').focus({preventScroll:true});
+  }
+ });
+ dialog.addEventListener('click',event=>{
+  if(!dialog.querySelector('.portal-settings'))return;
+  const tab=event.target.closest('[data-ps-tab]');
+  if(tab){selectSection(tab.dataset.psTab,true);return;}
+  const action=event.target.closest('[data-ps-action]')?.dataset.psAction;
+  if(action==='back'){
+   dialog.querySelector('.portal-settings').dataset.mobileView='menu';
+   dialog.querySelector('[data-ps-tab="'+activeSection+'"]').focus({preventScroll:true});
+  }
+  if(action==='mora'){
+   // Native dialog close restores focus asynchronously; open MORA afterwards.
+   const launchMora=()=>{closeMenu();showMora();};
+   dialog.addEventListener('close',launchMora,{once:true});
+   if(!portalCloseDialog())dialog.removeEventListener('close',launchMora);
+  }
+ });
+ dialog.addEventListener('keydown',event=>{
+  const tab=event.target.closest('[data-ps-tab]');
+  if(!tab||!['ArrowDown','ArrowUp','Home','End'].includes(event.key))return;
+  event.preventDefault();
+  const at=sections.findIndex(s=>s.id===tab.dataset.psTab),next=event.key==='Home'?0:event.key==='End'?sections.length-1:(at+(event.key==='ArrowDown'?1:sections.length-1))%sections.length;
+  // Arrow keys browse the list; Enter/Space activates the selected section.
+  for(const button of dialog.querySelectorAll('[data-ps-tab]'))button.tabIndex=-1;
+  const nextTab=dialog.querySelector('[data-ps-tab="'+sections[next].id+'"]');nextTab.tabIndex=0;nextTab.focus();
+ });
+ narrowSettings.addEventListener('change',()=>{
+  const root=dialog.querySelector('.portal-settings');if(!dialog.open||!root)return;
+  // Resizing must not leave keyboard focus in the now-hidden mobile list/back link.
+  if(narrowSettings.matches&&root.dataset.mobileView==='content'&&root.querySelector('.ps-sidebar').contains(document.activeElement))root.querySelector('h3').focus({preventScroll:true});
+  if(!narrowSettings.matches&&document.activeElement?.classList.contains('ps-back'))root.querySelector('[data-ps-tab="'+activeSection+'"]').focus({preventScroll:true});
  });
  window.addEventListener('hashchange',()=>close());
  document.getElementById('portalSignout').addEventListener('click',()=>close());
