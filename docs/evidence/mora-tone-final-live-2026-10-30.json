@@ -1,0 +1,87 @@
+{
+  "url": "https://morada-mora-1n46pdrqa-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "source": "Real deployed /api/portal-agent responses; no mock wording",
+  "model": "anthropic/claude-haiku-5.5",
+  "runCeilingUsd": 0.06,
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.528624868,
+    "totalUsedUsd": 3.471375132,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "id": "owner-documents-baden",
+      "role": "owner",
+      "turns": [
+        {
+          "customer": "Wo liegen die Dokumente zur Liegenschaft in Baden?",
+          "status": 503,
+          "httpMs": 11796.7,
+          "reply": null,
+          "navigation": [],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 3,
+          "usage": null,
+          "timingMs": {
+            "total": 5847
+          },
+          "code": "MODEL_UNAVAILABLE",
+          "diagnostic": {
+            "reason": "invalid_reply_format"
+          },
+          "availability": {
+            "provider": "gateway",
+            "model": "anthropic/claude-haiku-5.5",
+            "status": null,
+            "reason": "unavailable"
+          },
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            },
+            {
+              "tool": "effect_review",
+              "ok": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "stopped": "HTTP_503",
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.526874768,
+    "totalUsedUsd": 3.473125232,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "observedAccountDeltaUsd": 0.0017501000000001987
+}

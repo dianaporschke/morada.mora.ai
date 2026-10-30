@@ -1,0 +1,1307 @@
+{
+  "url": "https://morada-mora-75obs2drf-dianaporschke-1255s-projects.vercel.app/portal.html",
+  "source": "Real deployed /api/portal-agent responses; no mock wording",
+  "model": "anthropic/claude-haiku-5.5",
+  "runCeilingUsd": 0.06,
+  "before": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.542037068,
+    "totalUsedUsd": 3.457962932,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "conversations": [
+    {
+      "id": "owner-documents-baden",
+      "role": "owner",
+      "turns": [
+        {
+          "customer": "Wo liegen die Dokumente zur Liegenschaft in Baden?",
+          "status": 200,
+          "httpMs": 8552.7,
+          "reply": "Die Dokumente zur Liegenschaft in Baden kann ich Ihnen über dieses Portal leider nicht anzeigen, weil hier keine persönlichen Dateien angebunden sind. Die Dokumentenansicht, die Sie hier öffnen können, ist bisher nur eine vorbereitete Tabelle ohne Inhalte.",
+          "navigation": [
+            "ownerDocuments"
+          ],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "ownerDocuments"
+            ]
+          },
+          "modelCalls": 3,
+          "usage": [
+            {
+              "inputTokens": 7446,
+              "outputTokens": 357,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 3635,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 2122,
+              "outputTokens": 155,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 4031,
+            "creditGuard": 602,
+            "total": 4658
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            },
+            {
+              "tool": "effect_review",
+              "ok": false
+            },
+            {
+              "tool": "effect_repair",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "customer": "Sind die Unterlagen hier also noch nicht verfügbar?",
+          "status": 200,
+          "httpMs": 7783.1,
+          "reply": "Ja, die Unterlagen zur Liegenschaft in Baden sind über dieses Portal im Moment nicht einsehbar. Die Dokumentenansicht ist bisher nur eine vorbereitete Tabelle ohne angebundene persönliche Dateien, deshalb kann ich Ihnen dort keine Inhalte zeigen.",
+          "navigation": [
+            "ownerDocuments"
+          ],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "ownerDocuments"
+            ]
+          },
+          "modelCalls": 3,
+          "usage": [
+            {
+              "inputTokens": 7596,
+              "outputTokens": 317,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 3593,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 2293,
+              "outputTokens": 153,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 3610,
+            "creditGuard": 528,
+            "total": 4148
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            },
+            {
+              "tool": "effect_review",
+              "ok": false
+            },
+            {
+              "tool": "effect_repair",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tenant-handover-documents",
+      "role": "tenant",
+      "turns": [
+        {
+          "customer": "Ich suche die Unterlagen zur letzten Wohnungsübergabe.",
+          "status": 200,
+          "httpMs": 8352.0,
+          "reply": "Die Unterlagen zur letzten Wohnungsübergabe kann ich Ihnen hier leider nicht direkt anzeigen, weil dieses Portal aktuell keinen Zugriff auf Ihre persönlichen Dokumente hat. Die Dokumentenansicht, die ich Ihnen öffnen könnte, ist nur eine vorbereitete Tabelle ohne angebundene Dateien. Dass dort nichts steht, heisst also nicht, dass bei MORADA keine Unterlagen vorhanden sind.",
+          "navigation": [
+            "tenantDocuments"
+          ],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "tenantDocuments"
+            ]
+          },
+          "modelCalls": 3,
+          "usage": [
+            {
+              "inputTokens": 7384,
+              "outputTokens": 322,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 3555,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 2172,
+              "outputTokens": 220,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 3901,
+            "creditGuard": 512,
+            "total": 4457
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            },
+            {
+              "tool": "effect_review",
+              "ok": false
+            },
+            {
+              "tool": "effect_repair",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "customer": "Wo muss ich dafür klicken?",
+          "status": 200,
+          "httpMs": 7752.3,
+          "reply": "Die Dokumentenansicht finden Sie im Portal unter dem Eintrag „Dokumentenansicht öffnen“. Dort sehen Sie aber nur eine vorbereitete Tabelle, in der noch keine persönlichen Dateien hinterlegt sind. Die Unterlagen zur Wohnungsübergabe können Sie deshalb darüber nicht herunterladen. Das liegt an der aktuellen Anbindung des Portals, nicht daran, dass bei MORADA nichts vorhanden wäre.",
+          "navigation": [
+            "tenantDocuments"
+          ],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": [
+              "tenantDocuments"
+            ]
+          },
+          "modelCalls": 3,
+          "usage": [
+            {
+              "inputTokens": 7589,
+              "outputTokens": 272,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 3491,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 2397,
+              "outputTokens": 217,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 3535,
+            "creditGuard": 539,
+            "total": 4086
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "show_view",
+              "ok": true
+            },
+            {
+              "tool": "effect_review",
+              "ok": false
+            },
+            {
+              "tool": "effect_repair",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lamp-short-correction",
+      "role": "tenant",
+      "turns": [
+        {
+          "customer": "Meine Lampe geht nicht.",
+          "status": 200,
+          "httpMs": 6299.0,
+          "reply": "Das tut mir leid, dass Ihre Lampe nicht funktioniert. In welchem Raum befindet sich die Lampe? Sobald ich das weiss, können wir die Meldung vorbereiten.",
+          "navigation": [],
+          "issue": {
+            "id": "8ca79005-16e5-46a1-9e24-5ff22a383218",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\ngeht nicht\nDringlichkeit: Normal",
+            "defect": "geht nicht",
+            "count": null,
+            "location": null,
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Meine Lampe geht nicht."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "equipment": {
+                    "from": "Lampe",
+                    "to": "light"
+                  },
+                  "defect": {
+                    "from": null,
+                    "to": "geht nicht"
+                  }
+                },
+                "source": "Meine Lampe geht nicht.",
+                "at": "2026-10-30T07:47:40.105Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\ngeht nicht\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 2,
+            "fieldFacts": {
+              "equipment": {
+                "status": "corrected",
+                "value": "light",
+                "source": "Meine Lampe geht nicht."
+              },
+              "defect": {
+                "status": "known",
+                "value": "geht nicht",
+                "source": "Meine Lampe geht nicht."
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\ngeht nicht\nDringlichkeit: Normal",
+                "source": "Meine Lampe geht nicht."
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-30T07:47:40.103Z",
+            "updatedAt": "2026-10-30T07:47:40.120Z",
+            "shortLabel": "Lampe / Leuchte"
+          },
+          "issues": [
+            {
+              "id": "8ca79005-16e5-46a1-9e24-5ff22a383218",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\ngeht nicht\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": null,
+              "location": null,
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe geht nicht."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Lampe",
+                      "to": "light"
+                    },
+                    "defect": {
+                      "from": null,
+                      "to": "geht nicht"
+                    }
+                  },
+                  "source": "Meine Lampe geht nicht.",
+                  "at": "2026-10-30T07:47:40.105Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\ngeht nicht\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 2,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "light",
+                  "source": "Meine Lampe geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "Meine Lampe geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\ngeht nicht\nDringlichkeit: Normal",
+                  "source": "Meine Lampe geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-30T07:47:40.103Z",
+              "updatedAt": "2026-10-30T07:47:40.120Z",
+              "shortLabel": "Lampe / Leuchte"
+            }
+          ],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 7369,
+              "outputTokens": 350,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1451,
+            "creditGuard": 134,
+            "total": 1616
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "record_issues",
+              "ok": true
+            },
+            {
+              "tool": "use_issue",
+              "ok": true
+            },
+            {
+              "tool": "open_form",
+              "ok": false
+            },
+            {
+              "tool": "rejected_action_retained_facts",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "customer": "Wohnzimmer.",
+          "status": 200,
+          "httpMs": 7980.5,
+          "reply": "Danke, dann ist klar, wo die Lampe steht: im Wohnzimmer. Ich kann die Meldung dazu vorbereiten, sobald Sie mögen; sagen Sie mir einfach Bescheid.",
+          "navigation": [],
+          "issue": {
+            "id": "8ca79005-16e5-46a1-9e24-5ff22a383218",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\ngeht nicht\nDringlichkeit: Normal",
+            "defect": "geht nicht",
+            "count": null,
+            "location": "Wohnzimmer",
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Meine Lampe geht nicht."
+              },
+              {
+                "question": "description",
+                "answer": "Wohnzimmer."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "equipment": {
+                    "from": "Lampe",
+                    "to": "light"
+                  },
+                  "defect": {
+                    "from": null,
+                    "to": "geht nicht"
+                  }
+                },
+                "source": "Meine Lampe geht nicht.",
+                "at": "2026-10-30T07:47:40.105Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\ngeht nicht\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 3,
+            "fieldFacts": {
+              "equipment": {
+                "status": "corrected",
+                "value": "light",
+                "source": "Meine Lampe geht nicht."
+              },
+              "defect": {
+                "status": "known",
+                "value": "geht nicht",
+                "source": "Meine Lampe geht nicht."
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "known",
+                "value": "Wohnzimmer",
+                "source": "Wohnzimmer."
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\ngeht nicht\nDringlichkeit: Normal",
+                "source": "Meine Lampe geht nicht."
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-30T07:47:40.103Z",
+            "updatedAt": "2026-10-30T07:47:51.900Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Lampe / Leuchte\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 3
+            }
+          },
+          "issues": [
+            {
+              "id": "8ca79005-16e5-46a1-9e24-5ff22a383218",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\ngeht nicht\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": null,
+              "location": "Wohnzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe geht nicht."
+                },
+                {
+                  "question": "description",
+                  "answer": "Wohnzimmer."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Lampe",
+                      "to": "light"
+                    },
+                    "defect": {
+                      "from": null,
+                      "to": "geht nicht"
+                    }
+                  },
+                  "source": "Meine Lampe geht nicht.",
+                  "at": "2026-10-30T07:47:40.105Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\ngeht nicht\nBereich: Wohnzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 3,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "light",
+                  "source": "Meine Lampe geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "Meine Lampe geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "known",
+                  "value": "Wohnzimmer",
+                  "source": "Wohnzimmer."
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\ngeht nicht\nDringlichkeit: Normal",
+                  "source": "Meine Lampe geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-30T07:47:40.103Z",
+              "updatedAt": "2026-10-30T07:47:51.900Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\ngeht nicht\\nDringlichkeit: Normal\",\"geht nicht\",null,\"Wohnzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Lampe / Leuchte\\ngeht nicht\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"known\",\"Wohnzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 3
+              }
+            }
+          ],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": {
+              "operation": "create",
+              "issueId": "8ca79005-16e5-46a1-9e24-5ff22a383218"
+            },
+            "prepared": null,
+            "review": {
+              "issueId": "8ca79005-16e5-46a1-9e24-5ff22a383218"
+            },
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 7573,
+              "outputTokens": 285,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 4002,
+            "creditGuard": 120,
+            "total": 4134
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "record_issues",
+              "ok": true
+            },
+            {
+              "tool": "use_issue",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "customer": "Nein, ich meinte Schlafzimmer.",
+          "status": 200,
+          "httpMs": 5579.1,
+          "reply": "Danke für die Korrektur, ich habe den Raum auf Schlafzimmer geändert. Die Lampe im Schlafzimmer geht also nicht. Wenn Sie die Meldung vorbereiten möchten, sagen Sie mir einfach Bescheid.",
+          "navigation": [],
+          "issue": {
+            "id": "8ca79005-16e5-46a1-9e24-5ff22a383218",
+            "category": "electricity",
+            "equipment": "light",
+            "subcategory": null,
+            "description": "Lampe / Leuchte\ngeht nicht\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+            "defect": "geht nicht",
+            "count": null,
+            "location": "Schlafzimmer",
+            "since": null,
+            "extent": null,
+            "details": null,
+            "cause": null,
+            "urgency": "normal",
+            "hazard": "none",
+            "attachments": [],
+            "answers": [
+              {
+                "question": "description",
+                "answer": "Meine Lampe geht nicht."
+              },
+              {
+                "question": "description",
+                "answer": "Wohnzimmer."
+              },
+              {
+                "question": "description",
+                "answer": "Nein, ich meinte Schlafzimmer."
+              }
+            ],
+            "corrections": [
+              {
+                "changes": {
+                  "equipment": {
+                    "from": "Lampe",
+                    "to": "light"
+                  },
+                  "defect": {
+                    "from": null,
+                    "to": "geht nicht"
+                  }
+                },
+                "source": "Meine Lampe geht nicht.",
+                "at": "2026-10-30T07:47:40.105Z"
+              },
+              {
+                "changes": {
+                  "location": {
+                    "from": "Wohnzimmer",
+                    "to": "Schlafzimmer"
+                  }
+                },
+                "source": "Nein, ich meinte Schlafzimmer.",
+                "at": "2026-10-30T07:48:01.224Z"
+              }
+            ],
+            "unknownFields": [],
+            "summary": "Lampe / Leuchte\ngeht nicht\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+            "pendingKey": null,
+            "clarification": null,
+            "attempts": {},
+            "revision": 4,
+            "fieldFacts": {
+              "equipment": {
+                "status": "corrected",
+                "value": "light",
+                "source": "Meine Lampe geht nicht."
+              },
+              "defect": {
+                "status": "known",
+                "value": "geht nicht",
+                "source": "Meine Lampe geht nicht."
+              },
+              "count": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "location": {
+                "status": "corrected",
+                "value": "Schlafzimmer",
+                "source": "Nein, ich meinte Schlafzimmer."
+              },
+              "since": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "extent": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "details": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "cause": {
+                "status": "not_provided",
+                "value": null,
+                "source": null
+              },
+              "category": {
+                "status": "known",
+                "value": "electricity",
+                "source": null
+              },
+              "description": {
+                "status": "known",
+                "value": "Lampe / Leuchte\ngeht nicht\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+                "source": "Meine Lampe geht nicht."
+              }
+            },
+            "preparation": {
+              "status": "not_prepared",
+              "revision": 1
+            },
+            "status": "draft",
+            "createdAt": "2026-10-30T07:47:40.103Z",
+            "updatedAt": "2026-10-30T07:48:01.224Z",
+            "shortLabel": "Lampe / Leuchte",
+            "draftOfferShown": true,
+            "draftOffer": {
+              "operation": "create",
+              "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\ngeht nicht\\nBereich: Schlafzimmer\\nDringlichkeit: Normal\",\"geht nicht\",null,\"Schlafzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Lampe / Leuchte\\ngeht nicht\\nBereich: Schlafzimmer\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+              "revision": 4
+            }
+          },
+          "issues": [
+            {
+              "id": "8ca79005-16e5-46a1-9e24-5ff22a383218",
+              "category": "electricity",
+              "equipment": "light",
+              "subcategory": null,
+              "description": "Lampe / Leuchte\ngeht nicht\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+              "defect": "geht nicht",
+              "count": null,
+              "location": "Schlafzimmer",
+              "since": null,
+              "extent": null,
+              "details": null,
+              "cause": null,
+              "urgency": "normal",
+              "hazard": "none",
+              "attachments": [],
+              "answers": [
+                {
+                  "question": "description",
+                  "answer": "Meine Lampe geht nicht."
+                },
+                {
+                  "question": "description",
+                  "answer": "Wohnzimmer."
+                },
+                {
+                  "question": "description",
+                  "answer": "Nein, ich meinte Schlafzimmer."
+                }
+              ],
+              "corrections": [
+                {
+                  "changes": {
+                    "equipment": {
+                      "from": "Lampe",
+                      "to": "light"
+                    },
+                    "defect": {
+                      "from": null,
+                      "to": "geht nicht"
+                    }
+                  },
+                  "source": "Meine Lampe geht nicht.",
+                  "at": "2026-10-30T07:47:40.105Z"
+                },
+                {
+                  "changes": {
+                    "location": {
+                      "from": "Wohnzimmer",
+                      "to": "Schlafzimmer"
+                    }
+                  },
+                  "source": "Nein, ich meinte Schlafzimmer.",
+                  "at": "2026-10-30T07:48:01.224Z"
+                }
+              ],
+              "unknownFields": [],
+              "summary": "Lampe / Leuchte\ngeht nicht\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+              "pendingKey": null,
+              "clarification": null,
+              "attempts": {},
+              "revision": 4,
+              "fieldFacts": {
+                "equipment": {
+                  "status": "corrected",
+                  "value": "light",
+                  "source": "Meine Lampe geht nicht."
+                },
+                "defect": {
+                  "status": "known",
+                  "value": "geht nicht",
+                  "source": "Meine Lampe geht nicht."
+                },
+                "count": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "location": {
+                  "status": "corrected",
+                  "value": "Schlafzimmer",
+                  "source": "Nein, ich meinte Schlafzimmer."
+                },
+                "since": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "extent": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "details": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "cause": {
+                  "status": "not_provided",
+                  "value": null,
+                  "source": null
+                },
+                "category": {
+                  "status": "known",
+                  "value": "electricity",
+                  "source": null
+                },
+                "description": {
+                  "status": "known",
+                  "value": "Lampe / Leuchte\ngeht nicht\nBereich: Schlafzimmer\nDringlichkeit: Normal",
+                  "source": "Meine Lampe geht nicht."
+                }
+              },
+              "preparation": {
+                "status": "not_prepared",
+                "revision": 1
+              },
+              "status": "draft",
+              "createdAt": "2026-10-30T07:47:40.103Z",
+              "updatedAt": "2026-10-30T07:48:01.224Z",
+              "shortLabel": "Lampe / Leuchte",
+              "draftOfferShown": true,
+              "draftOffer": {
+                "operation": "create",
+                "content": "[\"electricity\",\"light\",\"Lampe / Leuchte\\ngeht nicht\\nBereich: Schlafzimmer\\nDringlichkeit: Normal\",\"geht nicht\",null,\"Schlafzimmer\",null,null,null,null,\"normal\",\"none\",[],[],[[\"category\",\"known\",\"electricity\",null],[\"cause\",\"not_provided\",null,null],[\"count\",\"not_provided\",null,null],[\"defect\",\"known\",\"geht nicht\",null],[\"description\",\"known\",\"Lampe / Leuchte\\ngeht nicht\\nBereich: Schlafzimmer\\nDringlichkeit: Normal\",null],[\"details\",\"not_provided\",null,null],[\"equipment\",\"corrected\",\"light\",null],[\"extent\",\"not_provided\",null,null],[\"location\",\"corrected\",\"Schlafzimmer\",null],[\"since\",\"not_provided\",null,null]]]",
+                "revision": 4
+              }
+            }
+          ],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": {
+              "operation": "create",
+              "issueId": "8ca79005-16e5-46a1-9e24-5ff22a383218"
+            },
+            "prepared": null,
+            "review": {
+              "issueId": "8ca79005-16e5-46a1-9e24-5ff22a383218"
+            },
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 7696,
+              "outputTokens": 319,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1621,
+            "creditGuard": 141,
+            "total": 1770
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "record_issues",
+              "ok": true
+            },
+            {
+              "tool": "use_issue",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manual-and-mora",
+      "role": "tenant",
+      "turns": [
+        {
+          "customer": "Wie kann ich einen Defekt melden? Geht das selbst und auch mit dir?",
+          "status": 200,
+          "httpMs": 7851.9,
+          "reply": "Sie können einen Defekt sowohl selbst melden als auch mit meiner Unterstützung. Am einfachsten geht es, wenn Sie mir kurz schildern, was genau nicht funktioniert und wo das Problem auftritt. Dann können wir gemeinsam Schritt für Schritt festhalten, was zu tun ist.",
+          "navigation": [],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 3,
+          "usage": [
+            {
+              "inputTokens": 7387,
+              "outputTokens": 367,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 3614,
+              "outputTokens": 35,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            },
+            {
+              "inputTokens": 1990,
+              "outputTokens": 150,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 3809,
+            "creditGuard": 332,
+            "total": 4150
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": [
+            {
+              "tool": "effect_review",
+              "ok": false
+            },
+            {
+              "tool": "effect_repair",
+              "ok": true
+            }
+          ]
+        },
+        {
+          "customer": "Und kann ich ein Foto ergänzen und die Angaben vor dem Speichern prüfen?",
+          "status": 200,
+          "httpMs": 5647.3,
+          "reply": "Ja, das ist möglich. Sobald Sie einen Defekt beschreiben, können Sie im Formular ein Foto anhängen und die Angaben vor dem Speichern noch einmal prüfen und ergänzen. Ich kann dabei helfen, die Angaben vorzubereiten. Bitte beachten Sie: Das Speichern erstellt zunächst einen lokalen Entwurf im Portal. Eine Meldung wird damit noch nicht an die Verwaltung geschickt, und ich kann Fotos nicht inhaltlich analysieren.",
+          "navigation": [],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 7543,
+              "outputTokens": 323,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1660,
+            "creditGuard": 124,
+            "total": 1791
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": []
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "role": "tenant",
+      "turns": [
+        {
+          "customer": "Das nervt mich. Du wiederholst dich ständig, ich möchte einfach eine verständliche Antwort.",
+          "status": 200,
+          "httpMs": 5521.3,
+          "reply": "Das verstehe ich, und es tut mir leid, dass meine Antworten so repetitiv waren. Ich fasse mich ab jetzt kurz und sage nur, was Sie wirklich wissen müssen. Worum geht es Ihnen gerade? Dann helfe ich Ihnen direkt weiter.",
+          "navigation": [],
+          "issue": null,
+          "issues": [],
+          "requestedAction": null,
+          "safety": null,
+          "controls": {
+            "save": null,
+            "prepared": null,
+            "review": null,
+            "stored": null,
+            "navigation": []
+          },
+          "modelCalls": 1,
+          "usage": [
+            {
+              "inputTokens": 7396,
+              "outputTokens": 236,
+              "reasoningTokens": 0,
+              "cachedInputTokens": 0
+            }
+          ],
+          "timingMs": {
+            "model": 1607,
+            "creditGuard": 130,
+            "total": 1742
+          },
+          "code": null,
+          "diagnostic": null,
+          "availability": null,
+          "toolEvents": []
+        }
+      ]
+    }
+  ],
+  "after": {
+    "architecture": "portal_agent_v1",
+    "inferenceStarted": false,
+    "balanceUsd": 21.529543968,
+    "totalUsedUsd": 3.470456032,
+    "maxUsedUsd": 4.338856132,
+    "budgetMode": "bounded_paid_preview",
+    "testAllowanceUsd": 3,
+    "model": "anthropic/claude-haiku-5.5",
+    "pricing": {
+      "input": 1e-07,
+      "output": 5e-07
+    }
+  },
+  "observedAccountDeltaUsd": 0.012493099999999924
+}
