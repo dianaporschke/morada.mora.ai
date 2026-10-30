@@ -20,3 +20,5 @@ Evidence: [Desktop](evidence/sidebar-profile-panel/desktop.jpg), [Mobile](eviden
 Hover follow-up: all seven profile tests pass, including pointer leave, crossing the menu gap, cancelling a pending dismissal by clicking, pinned-menu persistence, touch, keyboard and outside-click dismissal.
 
 Typography follow-up: Schnellzugriff now shares the existing Space Grotesk section font with Mein MORADA. Browser-computed styles match: 11 px, weight 600, line-height 15.4 px and letter-spacing 0.66 px. Build and visual preview pass. [Evidence](evidence/sidebar-profile-panel/sidebar-typography.jpg).
+
+Sidebar colour follow-up: the sidebar uses the exact MORA launcher gradient (135deg, #4c3b2d to #2b241d). Brand and navigation surfaces are transparent so the gradient remains continuous. Existing light text, active navigation and hover styles are retained. Build passes; browser-computed gradients match. [Evidence](evidence/sidebar-profile-panel/sidebar-dark-brown.jpg).
