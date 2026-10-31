@@ -2,7 +2,7 @@
 
 The entry scene reveals the fine pencil marks of the existing illustration itself. Its raster source is unchanged. SVG paths are invisible reveal masks, not replacement building outlines. A colour matrix separates warm sepia ink from the paper; a very small blur softens the raster edges. This avoids the broad beige bands that would otherwise follow the masks. Both entry columns share the lighter warm beige #f5eee4 through one background token. The former column borders and local paper tint are removed, so the background runs uninterrupted behind the left-only drawing and the right-hand selection card.
 
-The decorative bottom tagline is no longer rendered. On desktop and tablet the scene is anchored at `bottom: 0`; its lower mask stays visible through 92% before a short soft fade at the page edge. This fills the space previously reserved for the tagline without changing the source image, drawing order or duration. The compact mobile header keeps its existing placement.
+The decorative bottom tagline and the sentence beneath the main title are no longer rendered. The original desktop scene placement (`bottom: 45px`) and broad lower fade (78–100%) are restored to match the selected reference. The foreground dissolves gently around the lower edge of the workspace card rather than extending strongly to the page bottom. The source image, drawing order, duration and compact mobile header placement are unchanged.
 
 The street perspective, building edges, windows, balconies and vegetation appear in overlapping, softly eased passes. The remaining fine background details settle in between 6.76 and 8.84 seconds. A shared CSS pace factor stretches every delay and duration equally by 30%, preserving the approved drawing sequence. The same filtered artwork remains on screen throughout: there is no handoff to a different image, crossfade between illustrations, camera movement or continuous loop. After completion the animations are removed and the pause control disappears.
 
@@ -12,7 +12,7 @@ The animation pauses when the tab or entry page is hidden or the artwork leaves 
 
 Validation:
 
-- Bottom-edge refinement: build and all four entry-animation tests pass. The desktop browser reports both the scene and art panel ending at y=936, no rendered tagline, and the unchanged pace factor 1.3.
+- Soft-fade refinement: build passes. Browser inspection confirms the original lower fade and scene placement, hidden subtitle and tagline, and unchanged pace factor 1.3. The four animation lifecycle tests passed before this CSS-only adjustment.
 
 - Build passes: 8200 messages; 170 script/assets checked. The four entry-animation lifecycle tests also pass after the beige/pacing refinement. The animation retains a 6.76 s delay plus 2.08 s finish (8.84 s total).
 - 16/16 entry-animation, profile and language integration tests pass, including matching source artwork, completion, decode timing, pause/resume, visibility, reduced motion, language changes and disposal.

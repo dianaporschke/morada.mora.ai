@@ -31,8 +31,3 @@
  #moradaEntry .entry-scene .entry-pencil-details,#moradaEntry .entry-scene .entry-pencil-finish{animation:none;opacity:1}
  #moradaEntry .entry-motion-toggle{display:none!important}
 }
-
-/* Let the architectural foreground fill the space freed by the former tagline. */
-@media(min-width:761px){
- #moradaEntry .entry-sketch{bottom:0;mask-image:linear-gradient(to bottom,transparent 0%,#000 24%,#000 92%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 24%,#000 92%,transparent 100%)}
-}
