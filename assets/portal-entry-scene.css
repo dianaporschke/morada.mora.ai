@@ -1,6 +1,7 @@
 /* Reveal the fine, warm pencil marks of the original artwork itself. */
 #moradaEntry{--entry-background:#f5eee4;background:var(--entry-background)}
 #moradaEntry .entry-art{background:var(--entry-background);border-right:0;border-bottom:0}
+#moradaEntry .entry-art::after{content:none;display:none}
 #moradaEntry .entry-scene{--entry-draw-pace:1.3;aspect-ratio:1620/971;filter:none;background:none}
 #moradaEntry .entry-city-camera{position:absolute;inset:0}
 #moradaEntry .entry-city-image{display:block;width:100%;height:100%;object-fit:contain}
@@ -29,4 +30,9 @@
  #moradaEntry .entry-scene .entry-pencil-stroke{animation:none;stroke-dashoffset:0}
  #moradaEntry .entry-scene .entry-pencil-details,#moradaEntry .entry-scene .entry-pencil-finish{animation:none;opacity:1}
  #moradaEntry .entry-motion-toggle{display:none!important}
+}
+
+/* Let the architectural foreground fill the space freed by the former tagline. */
+@media(min-width:761px){
+ #moradaEntry .entry-sketch{bottom:0;mask-image:linear-gradient(to bottom,transparent 0%,#000 24%,#000 92%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 24%,#000 92%,transparent 100%)}
 }

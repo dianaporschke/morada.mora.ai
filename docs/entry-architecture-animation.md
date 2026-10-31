@@ -2,6 +2,8 @@
 
 The entry scene reveals the fine pencil marks of the existing illustration itself. Its raster source is unchanged. SVG paths are invisible reveal masks, not replacement building outlines. A colour matrix separates warm sepia ink from the paper; a very small blur softens the raster edges. This avoids the broad beige bands that would otherwise follow the masks. Both entry columns share the lighter warm beige #f5eee4 through one background token. The former column borders and local paper tint are removed, so the background runs uninterrupted behind the left-only drawing and the right-hand selection card.
 
+The decorative bottom tagline is no longer rendered. On desktop and tablet the scene is anchored at `bottom: 0`; its lower mask stays visible through 92% before a short soft fade at the page edge. This fills the space previously reserved for the tagline without changing the source image, drawing order or duration. The compact mobile header keeps its existing placement.
+
 The street perspective, building edges, windows, balconies and vegetation appear in overlapping, softly eased passes. The remaining fine background details settle in between 6.76 and 8.84 seconds. A shared CSS pace factor stretches every delay and duration equally by 30%, preserving the approved drawing sequence. The same filtered artwork remains on screen throughout: there is no handoff to a different image, crossfade between illustrations, camera movement or continuous loop. After completion the animations are removed and the pause control disappears.
 
 The animation refinement retained the right-hand form, logo, copy, original illustration bytes and responsive layout. The subsequent [entry card refinement](entry-card-refinement.md) changes only the workspace selection card and sidebar colour; the drawing sequence and source illustration remain unchanged. The compact 100 px mobile header is retained. There is no new image download, video, framework or JavaScript frame loop. The SVG reuses the image already embedded in the page.
@@ -9,6 +11,8 @@ The animation refinement retained the right-hand form, logo, copy, original illu
 The animation pauses when the tab or entry page is hidden or the artwork leaves the viewport. Its keyboard-accessible pause/resume control uses the existing DE/EN/FR catalogue. Reduced-motion preferences show the finished scene. Returning from the portal does not replay the reveal. Without JavaScript the original static illustration remains visible.
 
 Validation:
+
+- Bottom-edge refinement: build and all four entry-animation tests pass. The desktop browser reports both the scene and art panel ending at y=936, no rendered tagline, and the unchanged pace factor 1.3.
 
 - Build passes: 8200 messages; 170 script/assets checked. The four entry-animation lifecycle tests also pass after the beige/pacing refinement. The animation retains a 6.76 s delay plus 2.08 s finish (8.84 s total).
 - 16/16 entry-animation, profile and language integration tests pass, including matching source artwork, completion, decode timing, pause/resume, visibility, reduced motion, language changes and disposal.
