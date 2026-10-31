@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {JSDOM,VirtualConsole} from 'jsdom';
 import {indexedDB} from 'fake-indexeddb';
-async function setup(narrow=false,clock=null){
+async function setup(narrow=false,clock={now:Date.UTC(2026,9,31,12)}){
  const errors=[],vc=new VirtualConsole();vc.on('jsdomError',e=>{if(e.type!=='css-parsing'&&e.type!=='not-implemented')errors.push(e);});
  const d=new JSDOM(readFileSync('portal.html','utf8'),{url:'https://ui.example/portal.html',runScripts:'dangerously',pretendToBeVisual:true,virtualConsole:vc,beforeParse(w){
   w.matchMedia=query=>({matches:query.includes('any-hover')?!narrow:narrow,addEventListener(){},removeEventListener(){}});w.structuredClone=structuredClone;w.fetch=()=>{throw Error('No inference in a UI test');};w.scrollTo=()=>{};w.confirm=()=>true;w.indexedDB=indexedDB;
@@ -107,7 +107,7 @@ test('property, unit and contact edit forms expose deletion and protect their re
 });
 test('financial and finalised records retain their existing cancellation/archive workflow',async()=>{
  const w=await setup();try{
-  const cases=[['mandates',{stage:'confirmed'}],['leases',{stage:'confirmed'}],['serviceContracts',{stage:'confirmed'}],['inspections',{status:'finalized'}],['mandateInvoices',{processing:'approved'}],['mandateInvoices',{processing:'captured',payments:[{id:'payment'}]}],['costBudgets',{activeVersionId:'live',versions:[{status:'draft'}]}],['costBudgets',{versions:[{status:'external'}]}]];
+  const cases=[['mandates',{stage:'confirmed'}],['leases',{stage:'confirmed'}],['leases',{stage:'cancelled',contractHistory:[{snapshot:{stage:'confirmed'}}]}],['serviceContracts',{stage:'confirmed'}],['inspections',{status:'finalized'}],['mandateInvoices',{processing:'approved'}],['mandateInvoices',{processing:'captured',payments:[{id:'payment'}]}],['costBudgets',{activeVersionId:'live',versions:[{status:'draft'}]}],['costBudgets',{versions:[{status:'external'}]}]];
   for(const [key,record] of cases){w.eval(`state={...cleanState(),${key}:[${JSON.stringify({id:'protected',...record})}]}`);assert.ok(w.eval(`portalDeletePlan('${key}','protected','').error`),key);}
   for(const [key,record] of [['mandateInvoices',{processing:'captured',payments:[]}],['costBudgets',{versions:[{status:'draft'}]}]]){w.eval(`state={...cleanState(),${key}:[${JSON.stringify({id:'draft',...record})}]}`);assert.equal(w.eval(`portalDeletePlan('${key}','draft','').error`),undefined);}
  }finally{w.close();}

@@ -4713,7 +4713,7 @@ function portalDeleteReferences(value,id){
 function portalDeletePlan(key,id,parentId,data=state){
  const target=portalDeleteTarget(key,id,parentId,data),r=target?.record;
  if(!r)return {error:MoradaI18n.t('Dieser Eintrag ist nicht mehr vorhanden.')};
- if(['mandates','leases','serviceContracts'].includes(key)&&r.stage==='confirmed')return {error:MoradaI18n.t('Bestätigte Verträge bleiben im Dossier. Bitte bei einer Fehlerfassung stornieren oder nach Vertragsende archivieren.')};
+ if(['mandates','leases','serviceContracts'].includes(key)&&(r.stage==='confirmed'||r.contractHistory?.some(h=>h.snapshot?.stage==='confirmed')))return {error:MoradaI18n.t('Bestätigte Verträge bleiben im Dossier. Bitte bei einer Fehlerfassung stornieren oder nach Vertragsende archivieren.')};
  if(key==='inspections'&&r.status==='finalized')return {error:MoradaI18n.t('Abgeschlossene Protokolle bleiben im Dossier. Bitte diesen Eintrag archivieren.')};
  if(key==='mandateInvoices'&&(r.payments?.length||r.processing==='approved'))return {error:MoradaI18n.t('Rechnungen mit Freigabe oder Zahlungen bleiben nachvollziehbar. Bitte die Rechnung stornieren.')};
  if(key==='costBudgets'&&(r.activeVersionId||r.versions?.some(v=>v.status!=='draft')))return {error:MoradaI18n.t('Aktive oder abgeschlossene Budgets bleiben erhalten. Nur Entwürfe können gelöscht werden.')};
