@@ -147,27 +147,16 @@ export function installEntryScene(root, win = window) {
  const artwork=node('image',{href:image.getAttribute('src') || '',x:0,y:0,width:1620,height:971,filter:'url(#entry-pencil-ink)'});
  const revealed = node('g',{mask:'url(#entry-pencil-mask)'});revealed.append(artwork);
  svg.append(defs,revealed);root.querySelector('.entry-city-camera').append(svg);
- const toggle = doc.createElement('button');
- toggle.type = 'button';toggle.className = 'entry-motion-toggle';toggle.hidden = true;
- art.append(toggle);
- let userPaused = false, visible = true, prepared = false, disposed = false;
- const t = text => win.MoradaI18n?.t(text) || text;
- const complete = () => {root.classList.add('is-complete');toggle.hidden=true;};
+ let visible = true, disposed = false;
+ const complete = () => {root.classList.add('is-complete');};
  function sync() {
   if (disposed) return;
   if (reduced.matches || entry.hidden) complete();
-  root.dataset.paused = String(userPaused || reduced.matches || root.classList.contains('is-complete') || doc.hidden || entry.hidden || !visible);
-  toggle.hidden = reduced.matches || !prepared || root.classList.contains('is-complete');
-  const label = t(userPaused ? 'Animation fortsetzen' : 'Animation pausieren');
-  toggle.setAttribute('aria-label', label);toggle.title = label;
-  toggle.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="' + (userPaused ? 'M5 3 12 8 5 13Z' : 'M5 3v10M11 3v10') + '"/></svg>';
+  root.dataset.paused = String(reduced.matches || root.classList.contains('is-complete') || doc.hidden || entry.hidden || !visible);
  }
- const onToggle = () => {userPaused = !userPaused;sync();};
  const onAnimationEnd = event => {if(event.animationName === 'morada-pencil-finish'){complete();sync();}};
- toggle.addEventListener('click', onToggle);
  svg.addEventListener('animationend', onAnimationEnd);
  doc.addEventListener('visibilitychange', sync);
- win.addEventListener('morada:languagechange', sync);
  reduced.addEventListener('change', sync);
  const mutation = new win.MutationObserver(sync);
  mutation.observe(entry, {attributes:true, attributeFilter:['hidden']});
@@ -180,12 +169,12 @@ export function installEntryScene(root, win = window) {
  // Decode only the image already embedded in the page; no network prerequisite.
  Promise.resolve(image.decode?.()).catch(() => {}).then(() => {
   if (disposed) return;
-  prepared = true;root.classList.remove('is-preparing');root.classList.add('is-ready');sync();
+  root.classList.remove('is-preparing');root.classList.add('is-ready');sync();
  });
  return () => {
   disposed = true;mutation.disconnect();intersection?.disconnect();
-  doc.removeEventListener('visibilitychange', sync);win.removeEventListener('morada:languagechange', sync);
-  reduced.removeEventListener('change', sync);toggle.remove();svg.remove();
+  doc.removeEventListener('visibilitychange', sync);
+  reduced.removeEventListener('change', sync);svg.remove();
   root.classList.remove('is-preparing','is-ready','is-complete');delete root.dataset.paused;delete root.dataset.sceneInstalled;
  };
 }

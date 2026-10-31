@@ -4,13 +4,15 @@ The entry scene reveals the fine pencil marks of the existing illustration itsel
 
 The decorative bottom tagline and the sentence beneath the main title are no longer rendered. The original desktop scene placement (`bottom: 45px`) and broad lower fade (78–100%) are restored to match the selected reference. The foreground dissolves gently around the lower edge of the workspace card rather than extending strongly to the page bottom. The source image, drawing order, duration and compact mobile header placement are unchanged.
 
-The street perspective, building edges, windows, balconies and vegetation appear in overlapping, softly eased passes. The remaining fine background details settle in between 6.76 and 8.84 seconds. A shared CSS pace factor stretches every delay and duration equally by 30%, preserving the approved drawing sequence. The same filtered artwork remains on screen throughout: there is no handoff to a different image, crossfade between illustrations, camera movement or continuous loop. After completion the animations are removed and the pause control disappears.
+The street perspective, building edges, windows, balconies and vegetation appear in overlapping, softly eased passes. The remaining fine background details settle in between 6.76 and 8.84 seconds. A shared CSS pace factor stretches every delay and duration equally by 30%, preserving the approved drawing sequence. The same filtered artwork remains on screen throughout: there is no handoff to a different image, crossfade between illustrations, camera movement or continuous loop. After completion the animations are removed. The scene has no visible pause control.
 
 The animation refinement retained the right-hand form, logo, copy, original illustration bytes and responsive layout. The subsequent [entry card refinement](entry-card-refinement.md) changes only the workspace selection card and sidebar colour; the drawing sequence and source illustration remain unchanged. The compact 100 px mobile header is retained. There is no new image download, video, framework or JavaScript frame loop. The SVG reuses the image already embedded in the page.
 
-The animation pauses when the tab or entry page is hidden or the artwork leaves the viewport. Its keyboard-accessible pause/resume control uses the existing DE/EN/FR catalogue. Reduced-motion preferences show the finished scene. Returning from the portal does not replay the reveal. Without JavaScript the original static illustration remains visible.
+The animation pauses when the tab or entry page is hidden or the artwork leaves the viewport. The former pause/resume button has been removed at the user’s request; automatic visibility handling remains in place. Reduced-motion preferences show the finished scene. Returning from the portal does not replay the reveal. Without JavaScript the original static illustration remains visible.
 
 Validation:
+
+- Pause-button removal: the four existing animation lifecycle tests cover loading without the control, background visibility, reduced motion, completed artwork and disposal.
 
 - Soft-fade refinement: build passes. Browser inspection confirms the original lower fade and scene placement, hidden subtitle and tagline, and unchanged pace factor 1.3. The four animation lifecycle tests passed before this CSS-only adjustment.
 
