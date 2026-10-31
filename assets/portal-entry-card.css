@@ -1,0 +1,51 @@
+/* Workspace selection: the existing city scene and its animation stay intact. */
+#moradaEntry .entry-panel{padding:40px clamp(24px,3vw,54px);background:#f6f1ea}
+#moradaEntry .entry-card{width:100%;max-width:540px;padding:clamp(28px,3vw,44px);border:1px solid #ffffffb3;border-radius:24px;background:#fffdfbf5;box-shadow:0 16px 48px #4e382412}
+#moradaEntry .entry-welcome-label{font-size:10px;letter-spacing:.17em;margin-bottom:22px}
+#moradaEntry .entry-card h2{font-size:clamp(35px,3vw,46px);line-height:1.15;margin-bottom:12px}
+#moradaEntry .entry-intro{font-size:14px;line-height:1.6;margin-bottom:28px}
+#moradaEntry .entry-roles{margin:0;padding:0;border:0;min-width:0}
+#moradaEntry .entry-roles legend{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+#moradaEntry .entry-role-grid{grid-template-columns:minmax(0,1fr);gap:11px}
+#moradaEntry .entry-role{display:grid;grid-template-columns:48px minmax(0,1fr) 22px;align-items:center;gap:17px;width:100%;min-height:88px;margin:0;padding:16px;border:1px solid #e5dfd7;border-radius:14px;background:#fffdfb;text-align:left;cursor:pointer;box-shadow:0 1px 2px #49332704;transition:background .18s,border-color .18s,box-shadow .18s}
+#moradaEntry .entry-role-icon{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#f1ebe2;color:#9a7652}
+#moradaEntry .entry-role-icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#moradaEntry .entry-role-copy{display:block;min-width:0}
+#moradaEntry .entry-role b{display:block;font-size:16px;font-weight:600;line-height:1.35;color:#382d24}
+#moradaEntry .entry-role small{display:block;font-size:12px;font-weight:400;line-height:1.5;margin-top:4px;color:#79716a}
+#moradaEntry .entry-role-arrow{width:22px;height:22px;fill:none;stroke:#a37a51;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .18s}
+#moradaEntry .entry-role:hover{background:#faf6ef;border-color:#cdb79e;box-shadow:0 3px 12px #49332708}
+#moradaEntry .entry-role:hover .entry-role-arrow{transform:translateX(2px)}
+#moradaEntry .entry-role:focus-visible{outline:2px solid #9a7652;outline-offset:3px}
+#moradaEntry .entry-role:active{background:#f3ebdf}
+#moradaEntry .entry-note{display:flex;align-items:flex-start;gap:12px;margin-top:28px;padding-top:22px;border:0;border-top:1px solid #e8e1d8;color:#80766c;font-size:11px;line-height:1.6}
+#moradaEntry .entry-note p{margin:0}
+#moradaEntry .entry-note-icon{width:18px;height:18px;flex:none;margin-top:1px;fill:none;stroke:#9a7652;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#moradaEntry .entry-help{margin:12px 0 0;font-size:10px;line-height:1.6}
+#moradaEntry .entry-help a{margin-inline-start:.3em}
+@media(min-width:761px) and (max-width:1100px){
+ #moradaEntry .entry-panel{padding:32px 22px}
+ #moradaEntry .entry-card{padding:28px 24px}
+ #moradaEntry .entry-role{gap:12px;padding:14px;grid-template-columns:44px minmax(0,1fr) 20px}
+ #moradaEntry .entry-role-icon{width:44px;height:44px}
+ #moradaEntry .entry-role b{font-size:15px}
+}
+@media(max-width:760px){
+ #moradaEntry .entry-panel{padding:24px 16px}
+ #moradaEntry .entry-card{max-width:480px;padding:28px 24px;border-radius:20px}
+ #moradaEntry .entry-card h2{font-size:36px}
+ #moradaEntry .entry-intro{font-size:13px;margin-bottom:24px}
+ #moradaEntry .entry-role{gap:12px;grid-template-columns:44px minmax(0,1fr) 18px;padding:14px 12px;min-height:86px}
+ #moradaEntry .entry-role-icon{width:44px;height:44px}
+ #moradaEntry .entry-role b{font-size:15px}
+ #moradaEntry .entry-role small{font-size:11px}
+ #moradaEntry .entry-role-arrow{width:18px;height:18px}
+}
+@media(max-width:360px){
+ #moradaEntry .entry-panel{padding:20px 12px}
+ #moradaEntry .entry-card{padding:25px 18px}
+ #moradaEntry .entry-role{grid-template-columns:38px minmax(0,1fr) 16px;gap:10px;padding:12px 10px}
+ #moradaEntry .entry-role-icon{width:38px;height:38px}
+ #moradaEntry .entry-role-icon svg{width:22px;height:22px}
+ #moradaEntry .entry-role b{font-size:14px}
+}

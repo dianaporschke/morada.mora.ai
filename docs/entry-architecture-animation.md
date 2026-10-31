@@ -4,7 +4,7 @@ The entry scene reveals the fine pencil marks of the existing illustration itsel
 
 The street perspective, building edges, windows, balconies and vegetation appear in overlapping, softly eased passes. The remaining fine background details settle in between 6.76 and 8.84 seconds. A shared CSS pace factor stretches every delay and duration equally by 30%, preserving the approved drawing sequence. The same filtered artwork remains on screen throughout: there is no handoff to a different image, crossfade between illustrations, camera movement or continuous loop. After completion the animations are removed and the pause control disappears.
 
-The right-hand form, logo, copy, original illustration bytes and responsive layout are unchanged. The compact 100 px mobile header is retained. There is no new image download, video, framework or JavaScript frame loop. The SVG reuses the image already embedded in the page.
+The animation refinement retained the right-hand form, logo, copy, original illustration bytes and responsive layout. The subsequent [entry card refinement](entry-card-refinement.md) changes only the workspace selection card and sidebar colour; the animation assets and source illustration remain unchanged. The compact 100 px mobile header is retained. There is no new image download, video, framework or JavaScript frame loop. The SVG reuses the image already embedded in the page.
 
 The animation pauses when the tab or entry page is hidden or the artwork leaves the viewport. Its keyboard-accessible pause/resume control uses the existing DE/EN/FR catalogue. Reduced-motion preferences show the finished scene. Returning from the portal does not replay the reveal. Without JavaScript the original static illustration remains visible.
 

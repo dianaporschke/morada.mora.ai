@@ -81,7 +81,9 @@ test('header and settings synchronize; preferences survive roles, reopening and 
    const fresh=await setup(false,lang);try{
     assert.equal(fresh.MoradaI18n.language,lang);
     assert.equal(fresh.document.documentElement.lang,lang==='fr'?'fr-CH':'en-GB');
-    assert.ok(fresh.document.querySelector('.entry-submit').textContent.includes(messages['Arbeitsbereich öffnen'][lang]));
+    assert.equal(fresh.document.querySelectorAll('.entry-role[data-entry-role]').length,4);
+    assert.equal(fresh.document.querySelector('#entry-heading').textContent,messages['Willkommen.'][lang]);
+    assert.equal(fresh.document.querySelector('.entry-intro').textContent,messages['Wählen Sie Ihren Bereich, um fortzufahren.'][lang]);
     assert.doesNotMatch(fresh.document.querySelector('#entry-note').textContent,/Ohne Anmeldung|Einträge werden|Eigentümer-/);
     assert.equal(fresh.document.querySelector('.entry-art').getAttribute('data-tagline'),messages['PERSÖNLICH NAH. ALLES VERBUNDEN.'][lang]);
    }finally{fresh.close();}
@@ -133,6 +135,30 @@ test('language changes preserve original user text, field values and MORA transc
    assert.equal(w.sessionStorage.getItem('morada.portal.mora.agent.v1.admin'),JSON.stringify(thread));
    const source='MORA-Fenster verschieben. Pfeiltasten zum Verschieben, Pos1 für die Ausgangsgrösse.';
    assert.equal(header.getAttribute('aria-label'),messages[source][lang]??source);
+  }
+ }finally{w.close();}
+});
+
+
+test('entry cards open each existing workspace directly in every language without changing records',async()=>{
+ const w=await setup();try{
+  const d=w.document,before=w.eval('JSON.stringify(state)');
+  for(const lang of ['de','en','fr']){
+   w.MoradaI18n.setLanguage(lang);
+   for(const role of ['admin','manager','owner','tenant']){
+    d.getElementById('portalSignout').click();
+    assert.equal(d.getElementById('moradaEntry').hidden,false);
+    assert.equal(d.getElementById('entry-heading').textContent,messages['Willkommen.'][lang]);
+    assert.ok(d.getElementById('entry-note').textContent.includes(messages['Lokale Arbeitsversion · Auf diesem Gerät gespeichert.'][lang]));
+    const button=d.querySelector(`[data-entry-role="${role}"]`);
+    assert.equal(button.tagName,'BUTTON');assert.equal(button.type,'submit');
+    button.click();
+    assert.equal(d.getElementById('moradaEntry').hidden,true);
+    assert.equal(d.getElementById('portalPreview').hidden,false);
+    assert.equal(w.eval('role'),role);
+    assert.equal(w.MoradaI18n.language,lang);
+    assert.equal(w.eval('JSON.stringify(state)'),before);
+   }
   }
  }finally{w.close();}
 });
