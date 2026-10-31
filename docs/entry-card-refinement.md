@@ -2,7 +2,7 @@
 
 The entry page now uses the supplied reference for its right-hand card: a short welcome heading, four vertically stacked workspace actions, warm circular line icons and a subtle arrow on each row. Selecting a row calls the existing workspace entry handler directly; native submit buttons retain Enter/Space keyboard behaviour. The former radio selection and separate open button are replaced by these four actions. No access rights or workspace data are changed.
 
-The existing city artwork, its bytes, animation JavaScript and 8.84-second reveal are untouched. Both columns now share the lighter warm beige `#f5eee4`, with no dividing line or separate paper tint. The illustration remains confined to the left column. The reference image is not bundled or used as artwork. The portal sidebar is a flat dark warm brown, `#503c2e`, without a gradient.
+The existing city artwork, its bytes, animation JavaScript and 8.84-second reveal are untouched. A single horizontal background gradient keeps the existing light beige `#f5eee4` across the left 36%, then warms through `#eaded0` to the soft brown `#d2bba6` at the right edge. Both columns have transparent backgrounds so the transition is continuous, without a dividing line. The illustration remains confined to the left column. The reference image is not bundled or used as artwork. The portal sidebar is a flat dark warm brown, `#503c2e`, without a gradient.
 
 The new heading, introduction, short role descriptions and local-workspace notice use the existing DE/EN/FR catalogue. Owner and tenant areas remain clearly marked as previews. The reference's secure-account claim is not copied: the current app stores local workspace data on the device and does not provide personal authenticated accounts. The contact link remains available.
 
@@ -10,7 +10,7 @@ Validation:
 
 - Positioning follow-up: the desktop art column now uses the viewport height instead of a fixed 820 px minimum, and the entire title block starts at `clamp(145px, 19svh, 220px)`. At desktop heights up to 850 px, modestly reduced card spacing keeps it fully visible and centred. Desktop measurements from 1024×768 through 1920×1080 show equal top/bottom margins within 0.02 px, no horizontal overflow and no page-height overflow. The mobile layout is retained. Build passes.
 
-- Background-only follow-up: the build passes, and desktop/mobile browser measurements confirm `rgb(245, 238, 228)` on the root and both columns, no dividing borders, and a transparent scene surface. Artwork, timing, JavaScript and layout are unchanged.
+- Background follow-up: build passes. Browser inspection confirms one horizontal beige-to-brown gradient, transparent column backgrounds, the unchanged warm-white card, no horizontal overflow and the completed scene at pace factor 1.3. Artwork, timing, JavaScript and layout are unchanged.
 
 - Production build passes: 8205 messages; 171 scripts/assets checked.
 - 17/17 entry-animation, profile and language integration tests pass. The new native-button test opens all four workspaces in each of the three languages and verifies that portal records do not change. Existing coverage exercises 306 role/language routes and 285 forms.

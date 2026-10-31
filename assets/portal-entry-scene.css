@@ -1,6 +1,6 @@
 /* Reveal the fine, warm pencil marks of the original artwork itself. */
-#moradaEntry{--entry-background:#f5eee4;background:var(--entry-background)}
-#moradaEntry .entry-art{background:var(--entry-background);border-right:0;border-bottom:0}
+#moradaEntry{--entry-background:#f5eee4;background:linear-gradient(90deg,var(--entry-background) 0%,var(--entry-background) 36%,#eaded0 68%,#d2bba6 100%)}
+#moradaEntry .entry-art{background:transparent;border-right:0;border-bottom:0}
 #moradaEntry .entry-art::after{content:none;display:none}
 #moradaEntry .entry-scene{--entry-draw-pace:1.3;aspect-ratio:1620/971;filter:none;background:none}
 #moradaEntry .entry-city-camera{position:absolute;inset:0}
