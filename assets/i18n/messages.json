@@ -128,6 +128,39 @@
     "en": "Local workspace · Saved on this device.",
     "fr": "Version locale · Enregistrée sur cet appareil."
   },
+  "Der Eintrag mit seinen Anhängen und seinem Verlauf wird dauerhaft entfernt. Dies kann nicht rückgängig gemacht werden.": {
+    "en": "This entry, its attachments and its history will be permanently removed. This cannot be undone."
+  },
+  "Dieser Eintrag ist nicht mehr vorhanden.": {
+    "en": "This entry no longer exists."
+  },
+  "Bestätigte Verträge bleiben im Dossier. Bitte bei einer Fehlerfassung stornieren oder nach Vertragsende archivieren.": {
+    "en": "Confirmed agreements remain on file. Cancel an agreement entered in error, or archive it after it ends."
+  },
+  "Abgeschlossene Protokolle bleiben im Dossier. Bitte diesen Eintrag archivieren.": {
+    "en": "Finalised reports remain on file. Please archive this entry."
+  },
+  "Rechnungen mit Freigabe oder Zahlungen bleiben nachvollziehbar. Bitte die Rechnung stornieren.": {
+    "en": "Approved invoices and invoices with payments must remain on record. Please cancel the invoice."
+  },
+  "Aktive oder abgeschlossene Budgets bleiben erhalten. Nur Entwürfe können gelöscht werden.": {
+    "en": "Active and completed budgets remain on record. Only drafts can be deleted."
+  },
+  "Noch verknüpft mit «{0}». Bitte zuerst die Zuordnung lösen oder den verknüpften Eintrag löschen.": {
+    "en": "Still linked to “{0}”. Remove the link or delete the linked entry first."
+  },
+  "Der Datenstand hat sich geändert. Bitte den Eintrag erneut öffnen und prüfen.": {
+    "en": "The data has changed. Please reopen and review this entry."
+  },
+  "Eintrag gelöscht: {0}": {
+    "en": "Entry deleted: {0}"
+  },
+  "Eintrag gelöscht.": {
+    "en": "Entry deleted."
+  },
+  "Der Eintrag konnte nicht gelöscht werden. Bitte erneut versuchen.": {
+    "en": "The entry could not be deleted. Please try again."
+  },
   "Überblick": {
     "en": "Overview",
     "fr": "Vue d’ensemble"
