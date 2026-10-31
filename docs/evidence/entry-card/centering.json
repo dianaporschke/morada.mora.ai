@@ -1,0 +1,197 @@
+[
+  {
+    "width": 1366,
+    "height": 768,
+    "pageWidth": 1366,
+    "pageHeight": 768,
+    "card": {
+      "x": 805.921875,
+      "y": 67.734375,
+      "width": 519.109375,
+      "height": 632.515625,
+      "top": 67.734375,
+      "right": 1325.03125,
+      "bottom": 700.25,
+      "left": 805.921875
+    },
+    "panel": {
+      "x": 764.953125,
+      "y": 0,
+      "width": 601.046875,
+      "height": 768,
+      "top": 0,
+      "right": 1366,
+      "bottom": 768,
+      "left": 764.953125
+    },
+    "copy": {
+      "x": 61.46875,
+      "y": 145.90625,
+      "width": 673.484375,
+      "height": 187.8125,
+      "top": 145.90625,
+      "right": 734.953125,
+      "bottom": 333.71875,
+      "left": 61.46875
+    },
+    "topGap": 67.734375,
+    "bottomGap": 67.75,
+    "centerOffset": 0
+  },
+  {
+    "width": 1366,
+    "height": 936,
+    "pageWidth": 1366,
+    "pageHeight": 936,
+    "card": {
+      "x": 805.921875,
+      "y": 111.265625,
+      "width": 519.109375,
+      "height": 713.453125,
+      "top": 111.265625,
+      "right": 1325.03125,
+      "bottom": 824.71875,
+      "left": 805.921875
+    },
+    "panel": {
+      "x": 764.953125,
+      "y": 0,
+      "width": 601.046875,
+      "height": 936,
+      "top": 0,
+      "right": 1366,
+      "bottom": 936,
+      "left": 764.953125
+    },
+    "copy": {
+      "x": 61.46875,
+      "y": 177.828125,
+      "width": 673.484375,
+      "height": 187.8125,
+      "top": 177.828125,
+      "right": 734.953125,
+      "bottom": 365.640625,
+      "left": 61.46875
+    },
+    "topGap": 111.265625,
+    "bottomGap": 111.28125,
+    "centerOffset": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "pageWidth": 1920,
+    "pageHeight": 1080,
+    "card": {
+      "x": 1227.578125,
+      "y": 177.359375,
+      "width": 540,
+      "height": 725.28125,
+      "top": 177.359375,
+      "right": 1767.578125,
+      "bottom": 902.640625,
+      "left": 1227.578125
+    },
+    "panel": {
+      "x": 1075.1875,
+      "y": 0,
+      "width": 844.796875,
+      "height": 1080,
+      "top": 0,
+      "right": 1919.984375,
+      "bottom": 1080,
+      "left": 1075.1875
+    },
+    "copy": {
+      "x": 86,
+      "y": 205.1875,
+      "width": 959.1875,
+      "height": 223.09375,
+      "top": 205.1875,
+      "right": 1045.1875,
+      "bottom": 428.28125,
+      "left": 86
+    },
+    "topGap": 177.359375,
+    "bottomGap": 177.359375,
+    "centerOffset": -0.0078125
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "pageWidth": 1024,
+    "pageHeight": 768,
+    "card": {
+      "x": 534,
+      "y": 71.171875,
+      "width": 468,
+      "height": 625.640625,
+      "top": 71.171875,
+      "right": 1002,
+      "bottom": 696.8125,
+      "left": 534
+    },
+    "panel": {
+      "x": 512,
+      "y": 0,
+      "width": 512,
+      "height": 768,
+      "top": 0,
+      "right": 1024,
+      "bottom": 768,
+      "left": 512
+    },
+    "copy": {
+      "x": 30,
+      "y": 145.90625,
+      "width": 457,
+      "height": 175.625,
+      "top": 145.90625,
+      "right": 487,
+      "bottom": 321.53125,
+      "left": 30
+    },
+    "topGap": 71.171875,
+    "bottomGap": 71.1875,
+    "centerOffset": 0
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "pageWidth": 390,
+    "pageHeight": 844,
+    "card": {
+      "x": 16,
+      "y": 124,
+      "width": 358,
+      "height": 670.6875,
+      "top": 124,
+      "right": 374,
+      "bottom": 794.6875,
+      "left": 16
+    },
+    "panel": {
+      "x": 0,
+      "y": 100,
+      "width": 390,
+      "height": 744,
+      "top": 100,
+      "right": 390,
+      "bottom": 844,
+      "left": 0
+    },
+    "copy": {
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0,
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "topGap": 124,
+    "bottomGap": 49.3125,
+    "centerOffset": 0
+  }
+]

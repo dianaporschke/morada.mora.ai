@@ -49,3 +49,19 @@
  #moradaEntry .entry-role-icon svg{width:22px;height:22px}
  #moradaEntry .entry-role b{font-size:14px}
 }
+
+/* Centre the card in the actual desktop viewport, including shorter laptops. */
+@media(min-width:761px){
+ #moradaEntry .entry-art{min-height:100svh}
+ #moradaEntry .entry-copy{top:clamp(145px,19svh,220px)}
+ #moradaEntry .entry-panel{align-items:center;justify-content:center}
+}
+@media(min-width:761px) and (max-height:850px){
+ #moradaEntry .entry-panel{padding-top:24px;padding-bottom:24px}
+ #moradaEntry .entry-card{padding-top:28px;padding-bottom:28px}
+ #moradaEntry .entry-welcome-label{margin-bottom:18px}
+ #moradaEntry .entry-intro{margin-bottom:22px}
+ #moradaEntry .entry-role-grid{gap:10px}
+ #moradaEntry .entry-role{min-height:80px;padding-top:12px;padding-bottom:12px}
+ #moradaEntry .entry-note{margin-top:22px;padding-top:18px}
+}

@@ -8,6 +8,8 @@ The new heading, introduction, short role descriptions and local-workspace notic
 
 Validation:
 
+- Positioning follow-up: the desktop art column now uses the viewport height instead of a fixed 820 px minimum, and the entire title block starts at `clamp(145px, 19svh, 220px)`. At desktop heights up to 850 px, modestly reduced card spacing keeps it fully visible and centred. Desktop measurements from 1024×768 through 1920×1080 show equal top/bottom margins within 0.02 px, no horizontal overflow and no page-height overflow. The mobile layout is retained. Build passes.
+
 - Background-only follow-up: the build passes, and desktop/mobile browser measurements confirm `rgb(245, 238, 228)` on the root and both columns, no dividing borders, and a transparent scene surface. Artwork, timing, JavaScript and layout are unchanged.
 
 - Production build passes: 8205 messages; 171 scripts/assets checked.
@@ -18,4 +20,4 @@ Validation:
 - No portal application errors observed. Browser-extension metadata errors are unrelated to the portal.
 - Integration branch only: no main/alex-portal changes, merge or production deployment.
 
-Evidence: [Desktop](evidence/entry-card/desktop.jpg), [Mobile EN](evidence/entry-card/mobile-en.jpg), [Sidebar](evidence/entry-card/sidebar.jpg), [Responsive measurements](evidence/entry-card/responsive.json).
+Evidence: [Desktop](evidence/entry-card/desktop.jpg), [Mobile EN](evidence/entry-card/mobile-en.jpg), [Sidebar](evidence/entry-card/sidebar.jpg), [Responsive measurements](evidence/entry-card/responsive.json), [Card positioning](evidence/entry-card/centering.json).
