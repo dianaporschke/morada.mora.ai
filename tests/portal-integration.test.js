@@ -303,13 +303,25 @@ test('portal language crosses the client/API boundary without translating custom
  const handler=createPortalChatHandler({converse:async(message,previous,navigation,timeout,context)=>{seen.push({message,language:context.language});return {state:previous,reply:'Test response',navigation:[],modelCalls:0};}});
  const d=await dom(async(_u,o)=>{const response=await call(handler,JSON.parse(o.body));return {ok:response.status===200,json:async()=>response.body};});
  try{const w=d.window;w.MORAPortal.open();for(const language of ['de','en','fr']){w.MoradaI18n.setLanguage(language);await w.MORAPortal.send('Meine Wohnung');}
-  assert.deepEqual(seen,[{message:'Meine Wohnung',language:'de'},{message:'Meine Wohnung',language:'en'},{message:'Meine Wohnung',language:'fr'}]);
+  assert.deepEqual(seen,[{message:'Meine Wohnung',language:'de'},{message:'Meine Wohnung',language:'en'},{message:'Meine Wohnung',language:'de'}]);
  }finally{d.window.close();}
 });
 
 test('model and reply instruction path includes the normalized language preference',async()=>{
- for(const [language,name] of [['de','German'],['en','English'],['fr','French']]){
+ for(const [language,name] of [['de','German'],['en','English'],['fr','German']]){
   let instructions;const service=createPortalService({resolve:async()=>({ready:true,provider:'gateway',model:MODEL,createModel:()=>({})}),guard:async()=>{},generate:async o=>{instructions=o.instructions;return {output:plan([],{reply:'Test response',intent:'general',activeIssueRef:null}),usage:{},finalStep:{providerMetadata:{}}};}});
   await service('Hello',hydrateSimple(null),['support'],45000,{language});assert.ok(instructions.includes('Preferred portal language: '+name));assert.ok(instructions.includes('explicitly requests a different language'));
  }
+});
+
+
+test('legacy French API requests use German while retaining the original message',async()=>{
+ let seen;
+ const handler=createPortalChatHandler({converse:async(message,previous,navigation,timeout,context)=>{
+  seen={message,language:context.language};
+  return {state:previous,reply:'Test response',navigation:[],modelCalls:0};
+ }});
+ const response=await call(handler,{language:'fr',message:'Mon chauffage ne fonctionne pas.',messageId:randomUUID(),navigation:[]});
+ assert.equal(response.status,200);
+ assert.deepEqual(seen,{message:'Mon chauffage ne fonctionne pas.',language:'de'});
 });

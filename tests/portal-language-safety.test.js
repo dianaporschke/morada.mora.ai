@@ -27,5 +27,5 @@ test('equipment aliases preserve original evidence and reject negated comparison
  for(const [value,code] of [['lamp','light'],['lampe','light'],['socket','socket'],['prise','socket'],['chauffage','heater']])assert.equal(canonicalEquipment(value),code);
  for(const text of ['Not the lamp, the socket.','Pas la lampe, la prise.'])assert.equal(canonicalEquipment('unknown',text),'unknown');
  assert.equal(canonicalEquipment('mon appareil spécial'),'mon appareil spécial');
- assert.match(portalLanguageInstructions('fr'),/French/);assert.match(portalLanguageInstructions('en'),/English/);assert.match(portalLanguageInstructions('invalid'),/German/);
+ assert.match(portalLanguageInstructions('fr'),/German/);assert.match(portalLanguageInstructions('en'),/English/);assert.match(portalLanguageInstructions('invalid'),/German/);
 });

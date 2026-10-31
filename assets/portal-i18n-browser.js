@@ -2,7 +2,12 @@ import {createPortalTranslator,normalizeLanguage} from './portal-i18n-core.js';
 /** Browser preference and presentation lifecycle; no account or record writes. */
 function installPortalLanguage(messages){
  const key='morada.portal.language.v1';let persistence={load:()=>localStorage.getItem(key),save:value=>localStorage.setItem(key,value)};
- let initial='de',storageAvailable=true;try{initial=persistence.load()||'de';}catch{storageAvailable=false;}
+ let initial='de',storageAvailable=true;
+ try{
+  const saved=persistence.load();
+  initial=normalizeLanguage(saved);
+  if(saved&&saved!==initial)persistence.save(initial);
+ }catch{storageAvailable=false;}
  const api=/** @type {import('./portal-i18n-types.js').PortalI18n} */ (createPortalTranslator(messages,initial)),setCoreLanguage=api.setLanguage,bindings=[];
  const setDocumentLanguage=()=>{document.documentElement.lang=api.locale;};setDocumentLanguage();
  api.localizeStatic=(root,localized=false)=>{

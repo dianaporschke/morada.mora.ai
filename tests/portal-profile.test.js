@@ -39,7 +39,7 @@ test('profile menu uses the native preview switcher in all four areas and never 
    assert.match(dialog.querySelector('.ps-context').textContent,/Vorschaumodus/);assert.equal(dialog.querySelectorAll('.ps-context').length,1);assert.doesNotMatch(dialog.querySelector('.ps-panel').textContent,/Kein persönliches Profil zugeordnet/);
    const tabs=[...dialog.querySelectorAll('[data-ps-tab]')];assert.equal(tabs.length,6);
    for(const tab of tabs){tab.click();assert.equal(tab.getAttribute('aria-selected'),'true');assert.equal(dialog.querySelector('#ps-panel').getAttribute('aria-labelledby'),tab.id);assert.equal(dialog.querySelectorAll('[aria-selected="true"]').length,1);}
-   dialog.querySelector('[data-ps-tab="appearance"]').click();assert.match(dialog.querySelector('#ps-panel').textContent,/Deutsch \(Schweiz\)/);assert.match(dialog.textContent,/English/);assert.match(dialog.textContent,/Français/);
+   dialog.querySelector('[data-ps-tab="appearance"]').click();assert.match(dialog.querySelector('#ps-panel').textContent,/Deutsch \(Schweiz\)/);assert.match(dialog.textContent,/English/);assert.doesNotMatch(dialog.textContent,/Français/);
    dialog.querySelector('[data-ps-tab="access"]').click();assert.match(dialog.querySelector('#ps-panel').textContent,/Noch keine Immobilien zugeordnet/);assert.doesNotMatch(dialog.querySelector('#ps-panel').textContent,/Alexander|Diana/);
    assert.equal(dialog.querySelectorAll('input,select,textarea').length,0,'no unconnected preference controls');
    assert.equal(w.eval('JSON.stringify(state)'),before);w.eval('portalCloseDialog()');
@@ -131,7 +131,7 @@ test('overview date rolls over at Swiss midnight and catches up after sleep with
   for(const [instant,day] of [['2026-03-28T23:00:00Z','2026-03-29'],['2026-03-29T22:00:00Z','2026-03-30'],['2026-10-24T22:00:00Z','2026-10-25'],['2026-10-25T23:00:00Z','2026-10-26'],['2026-12-31T23:00:00Z','2027-01-01']]){
    clock.now=Date.parse(instant);w.dispatchEvent(new w.Event('focus'));assert.equal(time.dateTime,day);
   }
-  for(const lang of ['en','fr','de']){
+  for(const lang of ['en','de']){
    w.MoradaI18n.setLanguage(lang);assert.equal(d.querySelector('.today-date time').textContent,new Intl.DateTimeFormat(w.MoradaI18n.locale,{timeZone:'Europe/Zurich',weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(clock.now));
   }
   assert.equal(w.eval('JSON.stringify(state)'),before);
@@ -141,7 +141,7 @@ test('overview date rolls over at Swiss midnight and catches up after sleep with
 test('all roles share the translated My MORADA sidebar title without changing page headings',async()=>{
  const w=await setup();try{
   const d=w.document;
-  for(const [lang,title] of [['de','Mein MORADA'],['en','My MORADA'],['fr','Mon MORADA']]){
+  for(const [lang,title] of [['de','Mein MORADA'],['en','My MORADA']]){
    w.MoradaI18n.setLanguage(lang);
    for(const role of ['admin','manager','owner','tenant']){
     w.MoradaRoles.select(role);

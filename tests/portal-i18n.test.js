@@ -20,15 +20,15 @@ async function setup(narrow=false,language=null,thread=null){
 import {createPortalTranslator} from '../assets/portal-i18n-core.js';
 const messages=JSON.parse(readFileSync('assets/i18n/messages.json','utf8'));
 const placeholders=s=>[...s.matchAll(/\{\d+\}/g)].map(m=>m[0]).sort();
-test('all DE/EN/FR messages preserve interpolation slots and Swiss spelling',()=>{
- for(const [source,values] of Object.entries(messages))for(const lang of ['de','en','fr']){const value=values[lang]??(lang==='de'?source:null);assert.ok(value,source+' '+lang);assert.deepEqual(placeholders(value),placeholders(source),source+' '+lang);if(lang==='de')assert.ok(!value.includes('ß'),source);}
+test('all DE/EN messages preserve interpolation slots and Swiss spelling',()=>{
+ for(const [source,values] of Object.entries(messages))for(const lang of ['de','en']){const value=values[lang]??(lang==='de'?source:null);assert.ok(value,source+' '+lang);assert.deepEqual(placeholders(value),placeholders(source),source+' '+lang);if(lang==='de')assert.ok(!value.includes('ß'),source);}
  const L=createPortalTranslator(messages,'en');
  assert.equal(L.t('Unknown future label'),'Unknown future label');
  assert.match(L.html`<p>Details zu ${'Meine Wohnung'} öffnen</p>`,/Meine Wohnung/);
  const form=L.html`<label>Bezeichnung<input value="${'Meine Wohnung'}"></label><option value="Reparatur">Reparatur</option>`;
  assert.match(form,/value="Meine Wohnung"/);assert.match(form,/value="Reparatur"/);
  assert.equal(L.number(1234.5),new Intl.NumberFormat('en-GB').format(1234.5));
- L.setLanguage('fr');assert.equal(L.date('2026-10-30'),new Intl.DateTimeFormat('fr-CH').format(new Date('2026-10-30')));
+ L.setLanguage('de');assert.equal(L.date('2026-10-30'),new Intl.DateTimeFormat('de-CH').format(new Date('2026-10-30')));
  L.setLanguage('invalid');assert.equal(L.language,'de');
  assert.equal(L.t('Mein Mietverhältnis'),'Mein Mietvertrag');
  assert.equal(L.t('Speicherbestätigung erneut abgleichen'),'Speicherung erneut prüfen');
@@ -38,19 +38,19 @@ test('populated charts, count summaries and rent-roll filters localise without c
  const w=await setup();try{
   w.eval(`state.companyEntries=[{id:'income',kind:'income',category:companyServices[0][0],date:companyPeriod().to,amountCents:125000,paidCents:125000,party:'Meine Wohnung',description:'Keine Einträge'},{id:'expense',kind:'expense',category:companyCosts[0][0],date:companyPeriod().to,amountCents:25000,paidCents:0,party:'',description:'Offene Anliegen'}];crmUI.rentrollQuery='Meine Wohnung';crmUI.rentrollRooms='3.5';crmUI.rentrollType='Wohnung';crmUI.rentrollFloor='Keine Einträge';crmUI.rentrollSource='manual'`);
   const original=w.eval('JSON.stringify(state)');
-  for(const lang of ['en','fr','de']){
+  for(const lang of ['en','de']){
    w.MoradaI18n.setLanguage(lang);
    const labels=Array.from(w.eval('rentrollFilterLabels()'));
    assert.ok(labels.some(v=>v.includes('Meine Wohnung')));
    assert.ok(labels.some(v=>v.includes('Keine Einträge')));
    assert.ok(labels.includes(messages['Wohnung'][lang]??'Wohnung'));
    const result=w.eval('portfolioResultText([])');
-   assert.ok(result.includes(lang==='en'?'Properties in portfolio':lang==='fr'?'Immeubles du parc':'Liegenschaften im Bestand'));
+   assert.ok(result.includes(lang==='en'?'Properties in portfolio':'Liegenschaften im Bestand'));
    const host=w.document.createElement('div');host.innerHTML=w.eval('companyCharts()+companyTimeline(companyPeriod(),companyRecords())');
    for(const key of ['Umsatz','Aufwand','Betriebsergebnis'])assert.ok(host.textContent.includes(messages[key][lang]??key),lang+' '+key);
    if(lang!=='de')assert.doesNotMatch(host.textContent,/Betriebsergebnis|Personalaufwand|Weitere Kunden|Noch keine Einträge/);
    const vacancy=w.eval("rentrollVacancyText({status:'vacant',rentroll:{vacancy:{since:'2026-10-01',days:1},vacancyRecord:{},period:false}})");
-   assert.ok(vacancy.includes(lang==='en'?'Vacant':lang==='fr'?'Vacant':'Leerstand'));
+   assert.ok(vacancy.includes(lang==='en'?'Vacant':'Leerstand'));
    assert.equal(w.eval('JSON.stringify(state)'),original);
   }
  }finally{w.close();}
@@ -62,16 +62,20 @@ test('header and settings synchronize; preferences survive roles, reopening and 
   d.getElementById('portalLanguageButton').click();assert.equal(d.getElementById('portalLanguageMenu').hidden,false);
   d.querySelector('[data-language="en"]').click();assert.equal(d.documentElement.lang,'en-GB');
   d.getElementById('profileMenuButton').click();d.getElementById('personalSettingsButton').click();
-  d.querySelector('[data-ps-tab="appearance"]').click();d.querySelector('[data-ps-language="fr"]').click();
-  assert.equal(d.querySelector('[data-language="fr"]').getAttribute('aria-checked'),'true');
-  assert.equal(d.querySelector('[data-ps-language="fr"]').getAttribute('aria-pressed'),'true');
-  assert.equal(d.querySelector('[data-ps-tab="profile"]').textContent,messages['Mein Profil'].fr);
+  d.querySelector('[data-ps-tab="appearance"]').click();
+  assert.deepEqual(Array.from(d.querySelectorAll('[data-language]'),b=>b.dataset.language),['de','en']);
+  assert.deepEqual(Array.from(d.querySelectorAll('[data-ps-language]'),b=>b.dataset.psLanguage),['de','en']);
+  d.querySelector('[data-ps-language="de"]').click();assert.equal(d.documentElement.lang,'de-CH');
+  d.querySelector('[data-ps-language="en"]').click();
+  assert.equal(d.querySelector('[data-language="en"]').getAttribute('aria-checked'),'true');
+  assert.equal(d.querySelector('[data-ps-language="en"]').getAttribute('aria-pressed'),'true');
+  assert.equal(d.querySelector('[data-ps-tab="profile"]').textContent,messages['Mein Profil'].en);
   assert.equal(d.querySelectorAll('.ps-context').length,1);assert.doesNotMatch(d.querySelector('#ps-panel').textContent,/MORADA Design|Phase 2/);
   w.eval('portalCloseDialog()');d.getElementById('profileMenuButton').click();d.getElementById('personalSettingsButton').click();
-  assert.equal(d.getElementById('dialogTitle').textContent,messages['Profil & Einstellungen'].fr);
-  w.eval('portalCloseDialog()');for(const role of ['owner','tenant']){w.MoradaRoles.select(role);assert.equal(L.language,'fr');}
-  assert.equal(w.localStorage.getItem('morada.portal.language.v1'),'fr');assert.equal(w.eval('JSON.stringify(state)'),before);
-  for(const lang of ['en','fr']){
+  assert.equal(d.getElementById('dialogTitle').textContent,messages['Profil & Einstellungen'].en);
+  w.eval('portalCloseDialog()');for(const role of ['owner','tenant']){w.MoradaRoles.select(role);assert.equal(L.language,'en');}
+  assert.equal(w.localStorage.getItem('morada.portal.language.v1'),'en');assert.equal(w.eval('JSON.stringify(state)'),before);
+  for(const lang of ['en']){
    L.setLanguage(lang);d.getElementById('profileMenuButton').click();d.getElementById('roleSwitch').click();
    const choices=d.getElementById('dialog').textContent;
    assert.doesNotMatch(choices,/Geschäftsleitung|Bewirtschaftung/);
@@ -80,7 +84,7 @@ test('header and settings synchronize; preferences survive roles, reopening and 
    w.eval('portalCloseDialog()');
    const fresh=await setup(false,lang);try{
     assert.equal(fresh.MoradaI18n.language,lang);
-    assert.equal(fresh.document.documentElement.lang,lang==='fr'?'fr-CH':'en-GB');
+    assert.equal(fresh.document.documentElement.lang,'en-GB');
     assert.equal(fresh.document.querySelectorAll('.entry-role[data-entry-role]').length,4);
     assert.equal(fresh.document.querySelector('#entry-heading').textContent,messages['Willkommen.'][lang]);
     assert.equal(fresh.document.querySelector('.entry-intro').textContent,messages['Wählen Sie Ihren Bereich, um fortzufahren.'][lang]);
@@ -91,11 +95,11 @@ test('header and settings synchronize; preferences survive roles, reopening and 
   L.setLanguage('de');assert.equal(d.documentElement.lang,'de-CH');
  }finally{w.close();}
 });
-test('all role routes and create dialogs render in DE/EN/FR without missing known UI labels',async()=>{
+test('all role routes and create dialogs render in DE/EN without missing known UI labels',async()=>{
  const w=await setup();try{
   const d=w.document,before=w.eval('JSON.stringify(state)'),misses=[];
   let routes=0,forms=0;
-  for(const lang of ['de','en','fr']){
+  for(const lang of ['de','en']){
    const translated=new Set(Object.entries(messages).map(([k,m])=>m[lang]??k));w.MoradaI18n.setLanguage(lang);
    const inspect=(root,where)=>{const walker=d.createTreeWalker(root,w.NodeFilter.SHOW_TEXT);let node;
     while(node=walker.nextNode()){if(node.parentElement.closest('script,style,textarea,[data-user-content],[translate="no"]'))continue;
@@ -119,7 +123,7 @@ test('language changes preserve original user text, field values and MORA transc
  const w=await setup(false,null,thread);try{
   const d=w.document;w.MoradaI18n.setLanguage('en');
   w.eval("openModal('Prüfung', '<form><input name=note value=\"Meine Wohnung\"><textarea name=body>Keine Einträge</textarea></form>')");
-  const input=d.querySelector('[name=note]');input.value='Offene Anliegen';w.MoradaI18n.setLanguage('fr');
+  const input=d.querySelector('[name=note]');input.value='Offene Anliegen';w.MoradaI18n.setLanguage('de');
   assert.equal(input.value,'Offene Anliegen');
   const files=w.eval(`opsDraft={items:[{id:'file',name:'Meine Wohnung',size:100}],savedIds:[]};docDraftFiles()`);
   assert.match(files,/Meine Wohnung/);assert.doesNotMatch(files,/Mon logement/);w.eval('opsDraft=null');assert.equal(d.querySelector('[name=body]').value,'Keine Einträge');
@@ -127,7 +131,7 @@ test('language changes preserve original user text, field values and MORA transc
   const textarea=d.getElementById('moraPortalInput');textarea.value='Meine Wohnung';w.MoradaI18n.setLanguage('en');assert.equal(textarea.value,'Meine Wohnung');
   assert.equal(d.querySelector('#moraPortalChat [data-mp=clear]').getAttribute('aria-label'),messages['Neues Gespräch'].en);
   const header=d.querySelector('#moraPortalChat header');
-  for(const lang of ['en','fr','de']){
+  for(const lang of ['en','de']){
    w.MoradaI18n.setLanguage(lang);w.dispatchEvent(new w.Event('resize'));
    assert.deepEqual(Array.from(d.querySelectorAll('.mora-portal-log p'),p=>p.textContent),['Meine Wohnung','Keine Einträge']);
    const options=Array.from(d.querySelectorAll('.mora-portal-actions select option'),o=>o.textContent);
@@ -143,7 +147,7 @@ test('language changes preserve original user text, field values and MORA transc
 test('entry cards open each existing workspace directly in every language without changing records',async()=>{
  const w=await setup();try{
   const d=w.document,before=w.eval('JSON.stringify(state)');
-  for(const lang of ['de','en','fr']){
+  for(const lang of ['de','en']){
    w.MoradaI18n.setLanguage(lang);
    for(const role of ['admin','manager','owner','tenant']){
     d.getElementById('portalSignout').click();
@@ -160,5 +164,24 @@ test('entry cards open each existing workspace directly in every language withou
     assert.equal(w.eval('JSON.stringify(state)'),before);
    }
   }
+ }finally{w.close();}
+});
+
+
+test('retired French preference falls back to German and preserves the saved conversation',async()=>{
+ const thread={session:null,saved:{},pendingReceipt:null,messages:[{role:'user',content:'Mon chauffage ne fonctionne pas.'},{role:'assistant',content:'Dans quelle pièce se trouve le chauffage ?'}],data:{issues:[],controls:{navigation:[]}}};
+ const w=await setup(false,'fr',thread);
+ try{
+  const d=w.document;
+  assert.equal(w.MoradaI18n.language,'de');
+  assert.equal(d.documentElement.lang,'de-CH');
+  assert.equal(w.localStorage.getItem('morada.portal.language.v1'),'de');
+  assert.deepEqual(Array.from(d.querySelectorAll('[data-language]'),b=>b.dataset.language),['de','en']);
+  assert.equal(w.sessionStorage.getItem('morada.portal.mora.agent.v1.admin'),JSON.stringify(thread));
+  w.MORAPortal.open();
+  assert.deepEqual(Array.from(d.querySelectorAll('.mora-portal-log p'),p=>p.textContent),thread.messages.map(m=>m.content));
+  w.MoradaI18n.setLanguage('en');
+  assert.equal(w.localStorage.getItem('morada.portal.language.v1'),'en');
+  assert.equal(w.sessionStorage.getItem('morada.portal.mora.agent.v1.admin'),JSON.stringify(thread));
  }finally{w.close();}
 });

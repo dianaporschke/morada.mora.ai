@@ -5,7 +5,7 @@
  const host=document.createElement('div');host.className='portal-language';
  host.innerHTML='<button type="button" class="portal-language-toggle" id="portalLanguageButton" aria-haspopup="menu" aria-controls="portalLanguageMenu" aria-expanded="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-4 5-4 13 0 18 4-5 4-13 0-18Z"/></svg></button><div class="portal-language-menu" id="portalLanguageMenu" role="menu" hidden></div>';
  document.getElementById('bellIcon').before(host);
- const toggle=host.querySelector('button'),menu=/** @type {HTMLElement} */ (host.querySelector('[role=menu]')),languages=[['de','Deutsch (Schweiz)'],['en','English'],['fr','Français']];
+ const toggle=host.querySelector('button'),menu=/** @type {HTMLElement} */ (host.querySelector('[role=menu]')),languages=L.languages;
  function sync(){
   document.querySelector('#moradaEntry .entry-art').setAttribute('data-tagline',L.t('PERSÖNLICH NAH. ALLES VERBUNDEN.'));
   toggle.setAttribute('aria-label',L.t('Sprache wählen')+' · '+languages.find(l=>l[0]===L.language)[1]);toggle.title=L.t('Portalsprache');

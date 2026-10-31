@@ -1,5 +1,6 @@
 /** Source-keyed UI messages. Never pass customer content to t(). */
-export const portalLocales={de:'de-CH',en:'en-GB',fr:'fr-CH'};
+export const portalLocales={de:'de-CH',en:'en-GB'};
+export const portalLanguageOptions=[['de','Deutsch (Schweiz)'],['en','English']];
 export const normalizeLanguage=value=>Object.hasOwn(portalLocales,value)?value:'de';
 export function createPortalTranslator(messages={},initial='de'){
  let language=normalizeLanguage(initial);const missing=new Set(),patterns=[],labelSources=new WeakMap(),objectSources=new WeakMap();
@@ -31,7 +32,7 @@ export function createPortalTranslator(messages={},initial='de'){
   const html=chunks.map(part=>part.startsWith('<')?part.replace(/\b(placeholder|title|aria-label|alt|data-label)=("([^"]*)"|'([^']*)')/g,(all,name,quoted,a,b)=>name+'='+quoted[0]+convert(a??b).replace(/"/g,'&quot;').replace(/'/g,'&#39;')+quoted[0]):convert(part)).join('');
   return html.replace(/\uE000(\d+)\uE001/g,(_,i)=>String(values[i]??''));
  }
- return {t,fragment,missing,
+ return {t,fragment,missing,languages:portalLanguageOptions,
   registerObject:(object,keys)=>{objectSources.set(object,new Set(keys));return object;},
   entries:object=>Object.entries(object).map(pair=>{if(objectSources.get(object)?.has(pair[0]))labelSources.set(pair,new Set([1]));return pair;}),
   values:object=>{const keys=Object.keys(object),array=Object.values(object);labelSources.set(array,new Set(keys.map((k,i)=>objectSources.get(object)?.has(k)?i:-1).filter(i=>i>=0)));return array;},registerLabels:(array,indices=array.map((_,i)=>i))=>{labelSources.set(array,new Set(indices));return array;},label:(array,index)=>labelSources.get(array)?.has(index)&&typeof array[index]==='string'?t(array[index]):array[index], get language(){return language;},setLanguage(value){language=normalizeLanguage(value);},get locale(){return portalLocales[language];},

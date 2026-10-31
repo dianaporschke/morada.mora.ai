@@ -68,10 +68,10 @@ test('date navigation, filters, week/list views and creation actions retain thei
  }finally{w.close();}
 });
 
-test('day overview and its controls use the shared DE/EN/FR catalogue',async()=>{
+test('day overview and its controls use the shared DE/EN catalogue',async()=>{
  const w=await setup();try{
   seed(w);const d=w.document;
-  for(const [lang,title,prev] of [['en','Daily overview','Previous day'],['fr','Aperçu de la journée','Jour précédent'],['de','Tagesübersicht','Vorheriger Tag']]){
+  for(const [lang,title,prev] of [['en','Daily overview','Previous day'],['de','Tagesübersicht','Vorheriger Tag']]){
    w.MoradaI18n.setLanguage(lang);
    assert.equal(d.getElementById('calDayTitle').textContent,title);
    assert.equal(d.querySelector('.cal-day-nav button').getAttribute('aria-label'),prev);
