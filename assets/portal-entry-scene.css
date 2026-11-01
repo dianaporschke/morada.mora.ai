@@ -23,14 +23,17 @@
  #moradaEntry .entry-scene .entry-pencil-stroke{animation:none;stroke-dashoffset:0}
  #moradaEntry .entry-scene .entry-pencil-details,#moradaEntry .entry-scene .entry-pencil-finish{animation:none;opacity:1}
 }
-/* On iOS the SVG image filter can hide the drawn scene. Reveal the same original
-   pencil artwork on the small layout while the SVG timeline completes behind it. */
+/* Draw the original city through the same staggered architectural stroke mask
+   on phones. The unfiltered artwork is revealed at the end, without a wipe. */
 @media(max-width:760px){
- #moradaEntry .entry-scene.is-ready .entry-city-image{visibility:visible;animation:morada-mobile-city-reveal 8.4s cubic-bezier(.2,.05,.2,1) both}
- #moradaEntry .entry-scene.is-complete .entry-city-image{visibility:visible;animation:none;clip-path:none}
- #moradaEntry .entry-scene.is-ready .entry-city-reveal{visibility:hidden}
- @keyframes morada-mobile-city-reveal{from{clip-path:inset(0 100% 0 0);opacity:.6}to{clip-path:inset(0 0 0 0);opacity:1}}
+ #moradaEntry .entry-scene{--entry-draw-pace:1.45}
+ #moradaEntry .entry-scene.is-ready .entry-city-reveal{visibility:visible;mix-blend-mode:multiply}
+ #moradaEntry .entry-scene.is-ready .entry-city-image{visibility:hidden}
+ #moradaEntry .entry-scene.is-complete .entry-city-image{visibility:visible;animation:morada-city-settle .75s ease-out both}
+ #moradaEntry .entry-scene.is-complete .entry-city-reveal{visibility:hidden}
+ @keyframes morada-city-settle{from{opacity:.85}to{opacity:1}}
 }
 @media(max-width:760px) and (prefers-reduced-motion:reduce){
- #moradaEntry .entry-scene.is-ready .entry-city-image{animation:none;clip-path:none;opacity:1}
+ #moradaEntry .entry-scene.is-ready .entry-city-image{visibility:visible;animation:none;opacity:1}
+ #moradaEntry .entry-scene.is-ready .entry-city-reveal{visibility:hidden}
 }

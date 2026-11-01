@@ -144,7 +144,10 @@ export function installEntryScene(root, win = window) {
  }
  const finish=node('rect',{x:0,y:0,width:1620,height:971,fill:'white',class:'entry-pencil-finish'});
  mask.append(pencil,finish);defs.append(ink,softness,mask);
- const artwork=node('image',{href:image.getAttribute('src') || '',x:0,y:0,width:1620,height:971,filter:'url(#entry-pencil-ink)'});
+ // Mobile Safari can drop the SVG filter entirely. The original drawing still
+ // follows the same hand-drawn mask there, without relying on that filter.
+ const mobile = win.matchMedia('(max-width:760px)').matches;
+ const artwork=node('image',{href:image.getAttribute('src') || '',x:0,y:0,width:1620,height:971,...(mobile ? {} : {filter:'url(#entry-pencil-ink)'})});
  const revealed = node('g',{mask:'url(#entry-pencil-mask)'});revealed.append(artwork);
  svg.append(defs,revealed);root.querySelector('.entry-city-camera').append(svg);
  let visible = true, disposed = false;
