@@ -28,6 +28,18 @@
  #portalPreview #main .today-card .today-scope{max-width:100%}
  #portalPreview #main .today-card :is(.today-work-row,.today-event-row){min-width:0}
  #portalPreview #main .today-card .today-row-copy{min-width:0;overflow-wrap:anywhere}
+ #portalPreview #main .mandate-kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ #portalPreview #main .mandate-kpi{min-width:0;padding:14px;min-height:128px}
+ #portalPreview #main .mandate-kpi .stat-label{font-size:12px;line-height:1.35;min-height:34px;overflow-wrap:anywhere}
+ #portalPreview #main .mandate-kpi .stat-value{margin:7px 0 4px}
+ #portalPreview #main .mandate-kpi .stat-foot{min-height:0;font-size:11px;line-height:1.35;overflow-wrap:anywhere}
+ #portalPreview #main .mandate-register>.portfolio-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:16px}
+ #portalPreview #main .mandate-register>.portfolio-filters .field-search{grid-column:1/-1;min-width:0;width:100%;margin:0}
+ #portalPreview #main .mandate-register>.portfolio-filters>.portfolio-filter-label{min-width:0;width:100%}
+ #portalPreview #main .mandate-register>.portfolio-filters :is(input,select){min-width:0;width:100%;max-width:100%;font-size:16px}
+ #portalPreview #main .mandate-register>.portfolio-filters .link{grid-column:1/-1;justify-self:start}
+ #portalPreview #main .mandate-register .card-head{flex-wrap:wrap;gap:12px}
+ #portalPreview #main .mandate-register .card-head .btn{max-width:100%}
  #portalPreview #main .cal-filters{grid-template-columns:minmax(0,1fr);gap:10px}
  #portalPreview #main .cal-filters :is(input,select){width:100%;max-width:100%;min-width:0}
  #portalPreview #main .cal-toolbar{min-width:0}
@@ -41,7 +53,8 @@
  #portalPreview .ux-form-scroll{padding:16px;scrollbar-gutter:auto}
  #portalPreview .ux-form-dialog .dialog-actions{padding:12px 16px max(12px,env(safe-area-inset-bottom));flex-wrap:wrap}
  #portalPreview .ux-form-dialog .dialog-actions .btn{min-height:44px;flex:1 1 auto}
- #portalPreview .mora-fab{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));max-width:calc(100vw - 24px)}
+ #portalPreview .mora-fab{right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));width:52px;height:52px;min-width:52px;padding:0;justify-content:center;border-radius:50%;font-size:22px}
+ #portalPreview .mora-fab span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 }
 @media(max-width:359px){
  #portalPreview #main .today-stats{grid-template-columns:1fr 1fr}
