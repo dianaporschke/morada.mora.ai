@@ -42,11 +42,12 @@ test('late image decoding after disposal cannot restart a removed animation',asy
  assert.equal(s.root.querySelector('svg'),null);assert.equal(s.toggle(),null);assert.equal(s.root.className,'entry-scene');s.w.close();
 });
 
-test('the original artwork is revealed through a mask and becomes still at completion',async()=>{
+test('transparent pencil artwork is revealed through a mask and becomes still at completion',async()=>{
  const s=setup();try{
   s.decoded();await tick();
   const svg=s.root.querySelector('.entry-city-reveal');
-  assert.equal(svg.querySelector('image').getAttribute('href'),'/city.png');
+  assert.equal(svg.querySelector('image').getAttribute('href'),'assets/entry-city-ink.png');
+  assert.equal(s.root.querySelector('.entry-city-image').getAttribute('src'),'assets/entry-city-ink.png');
   assert.ok(svg.querySelectorAll('mask path').length>0);
   assert.equal(svg.querySelectorAll(':scope > path').length,0);
   const ended=new s.w.Event('animationend',{bubbles:true});

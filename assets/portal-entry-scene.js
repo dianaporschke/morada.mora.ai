@@ -101,6 +101,7 @@ export function installEntryScene(root, win = window) {
  const doc = root.ownerDocument, art = root.closest('.entry-art'), entry = root.closest('#moradaEntry');
  const image = root.querySelector('.entry-city-image');
  if (!art || !entry || !image) return;
+ image.src = 'assets/entry-city-ink.png';
  const reduced = win.matchMedia('(prefers-reduced-motion: reduce)');
  const ns = 'http://www.w3.org/2000/svg';
  const node = (tag, attributes = {}) => {
@@ -110,11 +111,8 @@ export function installEntryScene(root, win = window) {
  };
  const svg = node('svg', {viewBox:'0 0 1620 971', 'aria-hidden':'true', focusable:'false', class:'entry-city-reveal'});
  const defs = node('defs');
- // Separate the fine sepia ink from the paper, so the invisible reveal strokes
- // cannot leave broad beige bands. The original drawing supplies every detail.
- const ink = node('filter', {id:'entry-pencil-ink',x:0,y:0,width:'100%',height:'100%', 'color-interpolation-filters':'sRGB'});
- ink.append(node('feColorMatrix', {type:'matrix',values:'0 0 0 0 .52  0 0 0 0 .35  0 0 0 0 .22  0 0 -3.4 0 2.83'}));
- ink.append(node('feGaussianBlur', {stdDeviation:.18}));
+ // The image already contains only transparent sepia pencil marks. No raster
+ // paper or SVG color filter can create rectangular patches on mobile Safari.
  const softness = node('filter', {id:'entry-pencil-softness',x:'-5%',y:'-5%',width:'110%',height:'110%','color-interpolation-filters':'sRGB'});
  softness.append(node('feGaussianBlur', {stdDeviation:2.2}));
  const mask = node('mask', {id:'entry-pencil-mask',maskUnits:'userSpaceOnUse',x:0,y:0,width:1620,height:971,style:'mask-type:alpha'});
@@ -143,11 +141,8 @@ export function installEntryScene(root, win = window) {
   path.style.setProperty('--draw-delay',delay+'s');path.style.setProperty('--draw-duration',duration+'s');pencil.append(path);
  }
  const finish=node('rect',{x:0,y:0,width:1620,height:971,fill:'white',class:'entry-pencil-finish'});
- mask.append(pencil,finish);defs.append(ink,softness,mask);
- // Mobile Safari can drop the SVG filter entirely. The original drawing still
- // follows the same hand-drawn mask there, without relying on that filter.
- const mobile = win.matchMedia('(max-width:760px)').matches;
- const artwork=node('image',{href:image.getAttribute('src') || '',x:0,y:0,width:1620,height:971,...(mobile ? {} : {filter:'url(#entry-pencil-ink)'})});
+ mask.append(pencil,finish);defs.append(softness,mask);
+ const artwork=node('image',{href:image.getAttribute('src') || '',x:0,y:0,width:1620,height:971});
  const revealed = node('g',{mask:'url(#entry-pencil-mask)'});revealed.append(artwork);
  svg.append(defs,revealed);root.querySelector('.entry-city-camera').append(svg);
  let visible = true, disposed = false;
@@ -169,7 +164,7 @@ export function installEntryScene(root, win = window) {
  intersection?.observe(art);
  if (!reduced.matches) root.classList.add('is-preparing');
  sync();
- // Decode only the image already embedded in the page; no network prerequisite.
+ // Wait for the lightweight transparent line-art asset before drawing.
  Promise.resolve(image.decode?.()).catch(() => {}).then(() => {
   if (disposed) return;
   root.classList.remove('is-preparing');root.classList.add('is-ready');sync();

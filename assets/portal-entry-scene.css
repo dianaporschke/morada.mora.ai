@@ -26,8 +26,9 @@
 /* Draw the original city through the same staggered architectural stroke mask
    on phones. The unfiltered artwork is revealed at the end, without a wipe. */
 @media(max-width:760px){
+ #moradaEntry{background:#f5eee4}
  #moradaEntry .entry-scene{--entry-draw-pace:1.45}
- #moradaEntry .entry-scene.is-ready .entry-city-reveal{visibility:visible;mix-blend-mode:multiply}
+ #moradaEntry .entry-scene.is-ready .entry-city-reveal{visibility:visible}
  #moradaEntry .entry-scene.is-ready .entry-city-image{visibility:hidden}
  #moradaEntry .entry-scene.is-complete .entry-city-image{visibility:visible;animation:morada-city-settle .75s ease-out both}
  #moradaEntry .entry-scene.is-complete .entry-city-reveal{visibility:hidden}
