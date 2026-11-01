@@ -1,0 +1,11 @@
+/* The same opening mark and timing as the MORADA website. */
+#portalBrandIntro{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;background:#f7f2eb;pointer-events:none;animation:portal-brand-depart .55s cubic-bezier(.4,0,.2,1) 1.65s both}
+#portalBrandIntro .portal-brand-symbol{width:64px;height:auto;display:block;overflow:visible}
+#portalBrandIntro .portal-brand-left,#portalBrandIntro .portal-brand-right,#portalBrandIntro .portal-brand-door{transform-box:view-box;transform-origin:50%;animation:portal-brand-assemble .8s cubic-bezier(.22,.61,.36,1) both}
+#portalBrandIntro .portal-brand-left{--from-x:-6px;animation-delay:.12s}
+#portalBrandIntro .portal-brand-right{--from-x:6px;animation-delay:.36s}
+#portalBrandIntro .portal-brand-door{--from-x:0px;animation-duration:.65s;animation-delay:.7s}
+@keyframes portal-brand-assemble{0%{opacity:0;transform:translate(var(--from-x),20px)}to{opacity:1;transform:translate(0)}}
+@keyframes portal-brand-depart{0%{opacity:1;visibility:visible}to{opacity:0;visibility:hidden}}
+@media(max-width:600px){#portalBrandIntro .portal-brand-symbol{width:54px}}
+@media(prefers-reduced-motion:reduce){#portalBrandIntro{animation:none;display:none}}
