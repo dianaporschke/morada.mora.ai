@@ -419,24 +419,3 @@ export function createMora(document, window, fetcher = window.fetch.bind(window)
 }
 
 if (typeof document !== 'undefined' && document.getElementById('moraForm')) createMora(document, window,undefined,{mode:new URLSearchParams(window.location.search).get('mora')==='c'?'simple':'legacy'});
-
-// iOS substitutes a blue emoji tile for the diagonal arrow, even with a text selector.
-if (typeof document !== 'undefined') {
-  const portalMain = document.querySelector('#portalPreview #main');
-  if (portalMain) {
-    const useTextArrows = root => {
-      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-      while (walker.nextNode()) {
-        const node = walker.currentNode;
-        if (node.nodeValue.includes('↗')) node.nodeValue = node.nodeValue.replace(/↗[\uFE0E\uFE0F]?/g, '→');
-      }
-    };
-    useTextArrows(portalMain);
-    new MutationObserver(records => {
-      for (const record of records) for (const node of record.addedNodes) {
-        if (node.nodeType === Node.TEXT_NODE && node.nodeValue.includes('↗')) node.nodeValue = node.nodeValue.replace(/↗[\uFE0E\uFE0F]?/g, '→');
-        else if (node.nodeType === Node.ELEMENT_NODE) useTextArrows(node);
-      }
-    }).observe(portalMain, {childList:true, subtree:true});
-  }
-}

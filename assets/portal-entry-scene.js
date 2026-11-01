@@ -1,3 +1,5 @@
+import './portal-text-arrows.js';
+
 /* Invisible reveal masks follow the original pencil drawing.
  * Every visible line belongs to the same warm raster illustration, from the
  * first stroke to the finished scene. No substitute outline or image crossfade.
