@@ -90,10 +90,15 @@ test('appointment colour follows create, edit, copy, views and validation',async
   w.eval("state={...state,appointments:[]};calendarSetDate('2026-11-02');go('calendar');calendarOpenForm() ");
   const d=w.document,f=d.getElementById('opsEntryForm');
   assert.equal(d.querySelectorAll('[name=calendarColor]').length,6);
+  assert.match(d.querySelector('.cal-color-menu summary').textContent,/Blau – Besprechungen & Kommunikation/);
+  assert.match(d.querySelector('.cal-color-option:has([value=green])').textContent,/Vermietung & Besichtigungen/);
+  assert.match(d.querySelector('.cal-color-option:has([value=gold])').textContent,/Kündigungsfristen/);
   f.elements.title.value='Wohnungsabnahme';f.elements.title.dispatchEvent(new w.Event('input',{bubbles:true}));
+  d.querySelector('.cal-color-menu').open=true;
   d.querySelector('[name=calendarColor][value=purple]').click();
+  assert.match(d.querySelector('.cal-color-menu summary').textContent,/Violett – Administration & Finanzen/);
   assert.equal(d.getElementById('calPreviewTitle').textContent,'Wohnungsabnahme');
-  assert.equal(d.getElementById('calEventPreview').style.getPropertyValue('--cal-event-color'),'#706587');
+  assert.equal(d.getElementById('calEventPreview').style.getPropertyValue('--cal-event-color'),'#6f667f');
   f.dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));
   for(let i=0;i<100&&w.eval('state.appointments.length===0||portalSaving');i++)await new Promise(r=>setTimeout(r,10));
   assert.equal(w.eval('state.appointments[0].calendarInfo.color'),'purple');
@@ -101,7 +106,7 @@ test('appointment colour follows create, edit, copy, views and validation',async
   for(const view of ['month','week','list']){
    w.eval(`calendarUI.view='${view}';calendarRefresh()`);
    const items=d.querySelectorAll('.cal-appointment[style]');assert.ok(items.length);
-   for(const item of items)assert.equal(item.style.getPropertyValue('--cal-event-color'),'#706587');
+   for(const item of items)assert.equal(item.style.getPropertyValue('--cal-event-color'),'#6f667f');
   }
   w.eval('calendarOpenForm(state.appointments[0].id)');
   assert.equal(d.querySelector('[name=calendarColor]:checked').value,'purple');

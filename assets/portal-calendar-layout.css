@@ -202,3 +202,20 @@
  #portalPreview #dialog .cal-form .ux-form-scroll{padding:14px 16px}
  #portalPreview #dialog .cal-form .dialog-actions{padding-left:16px;padding-right:16px}
 }
+/* Show the category alongside its exact reference swatch in a compact chooser. */
+#portalPreview #dialog .cal-color-menu{border:1px solid var(--line);border-radius:8px;background:var(--card);overflow:hidden}
+#portalPreview #dialog .cal-color-menu>summary{display:flex;align-items:center;gap:10px;padding:12px;min-height:48px;cursor:pointer;list-style:none;color:var(--ink);font-size:13px;line-height:1.4}
+#portalPreview #dialog .cal-color-menu>summary::-webkit-details-marker{display:none}
+#portalPreview #dialog .cal-color-menu>summary::after{content:'⌄';font-size:18px;margin-left:auto;flex:none}
+#portalPreview #dialog .cal-color-menu[open]>summary::after{content:'⌃'}
+#portalPreview #dialog .cal-color-menu>summary i{height:14px;width:14px;flex:none;border-radius:50%}
+#portalPreview #dialog .cal-color-menu>summary span{min-width:0;overflow-wrap:anywhere}
+#portalPreview #dialog .cal-color-menu .cal-color-options{grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
+#portalPreview #dialog .cal-color-menu .cal-color-option{border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px;gap:10px;align-items:flex-start}
+#portalPreview #dialog .cal-color-menu .cal-color-option:last-child{border-bottom:0}
+#portalPreview #dialog .cal-color-menu .cal-color-option i{margin-top:3px}
+#portalPreview #dialog .cal-color-menu .cal-color-copy{display:block;flex:1;min-width:0;overflow-wrap:anywhere}
+#portalPreview #dialog .cal-color-menu .cal-color-copy strong{display:block;font-size:13px;font-weight:500;line-height:1.5;color:var(--ink)}
+#portalPreview #dialog .cal-color-menu .cal-color-copy small{display:block;font-size:11px;line-height:1.5;color:var(--muted);margin-top:3px}
+#portalPreview #dialog .cal-color-menu .cal-color-option b{margin-top:1px}
+#portalPreview #dialog .cal-color-menu .cal-color-option:has(input:focus-visible){outline-offset:-3px}
