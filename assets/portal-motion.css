@@ -7,7 +7,7 @@
 #portalPreview :is(input,select,textarea,.field-search,.searchbar){transition:border-color var(--portal-motion-fast) ease,box-shadow var(--portal-motion-fast) ease,outline-color var(--portal-motion-fast) ease}
 #portalPreview :is(.form-field input,.form-field select,.form-field textarea):focus-visible{box-shadow:0 0 0 3px var(--shadow-soft)}
 #portalPreview :is(.field-search,.searchbar):focus-within{box-shadow:0 0 0 3px var(--shadow-soft)}
-#portalPreview :is(.cal-cell,.cal-day-number,.cal-switch button){transition:background-color var(--portal-motion-open) ease,border-color var(--portal-motion-open) ease,box-shadow var(--portal-motion-open) ease,color var(--portal-motion-fast) ease}
+#portalPreview :is(.cal-cell,.cal-day-number,.cal-switch button){transition:background-color var(--portal-motion-open) ease,border-color var(--portal-motion-open) ease,outline-color var(--portal-motion-fast) ease,box-shadow var(--portal-motion-open) ease,color var(--portal-motion-fast) ease}
 #portalPreview .sidebar{transition:transform var(--portal-motion-open) var(--portal-motion-ease)}
 #portalPreview #dialog[open],#portalPreview :is(#profileMenu,#portalLanguageMenu,.today-create-menu,#moraPortalChat):not([hidden]){animation:morada-surface-open var(--portal-motion-open) var(--portal-motion-ease)}
 #portalPreview #dialog::backdrop{animation:morada-backdrop-open var(--portal-motion-open) ease}
@@ -16,9 +16,20 @@
 #portalPreview .toggle{transition:background-color var(--portal-motion-fast) ease}
 #portalPreview .toggle::before{transition:left var(--portal-motion-fast) ease}
 #portalPreview #toast:not([hidden]){animation:morada-notice-open var(--portal-motion-open) var(--portal-motion-ease)}
+/* Match the setup cards: a copper contour identifies the actual hit target.
+   Inset outlines never change dimensions or replace calendar category colours. */
+#portalPreview :is(.ux-setup-step,.ps-language-option,.result-card,.mandate-kpi,.today-work-row,.today-event-row,.portfolio-focus-row,.portfolio-case,.cal-chip,.cal-item,.portal-back,.today-scope button){transition:background-color var(--portal-motion-fast) ease,border-color var(--portal-motion-fast) ease,outline-color var(--portal-motion-fast) ease,box-shadow var(--portal-motion-open) ease}
+#portalPreview .cal-cell:not(.is-selected):focus-within{outline:1px solid var(--copper);outline-offset:-1px;background:color-mix(in srgb,var(--copper) 5%,var(--card))}
 @media(hover:hover) and (pointer:fine){
  #portalPreview :is(.btn,.cal-arrow,.top-icon,.close,.quick button,.ux-customer-action):not(:disabled):hover{transform:translateY(-1px);box-shadow:0 2px 8px var(--shadow-soft)}
- #portalPreview :is(.task-card,.property-card,.stat,.cal-kpi,.card:not(.cal-board,.cal-day-panel,.portfolio-register,.table-card)):hover{transform:translateY(-2px);box-shadow:0 4px 12px var(--shadow-soft)}
+ #portalPreview :is(.task-card,.cal-kpi,.card:is(a[href],button),.property-card:is(a[href],button)):not(:disabled):not([aria-disabled=true]):hover{transform:translateY(-2px);box-shadow:0 4px 12px var(--shadow-soft)}
+ #portalPreview :is(.ux-setup-step,.ux-customer-action,.task-card,.cal-kpi,.card:is(a[href],button),.property-card:is(a[href],button),.quick button,.role-option,.ps-nav button,.ps-language-option,.result-card,.mandate-kpi):not(:disabled):not([aria-disabled=true]):hover{border-color:var(--copper)}
+ #portalPreview :is(.btn:not(.primary,.dark),.cal-arrow,.top-icon,.close,.portal-back,.page-tabs a,.cal-switch button,.today-scope button,.nav a,.nav summary,.today-work-row,.today-event-row,.portfolio-focus-row,.portfolio-case,.cal-chip,.cal-item):not(:disabled):not([aria-disabled=true]):hover{outline:1px solid var(--copper);outline-offset:-1px}
+ #portalPreview :is(.today-stat-link,.company-kpi-button):hover .stat{border-color:var(--copper)}
+ #portalPreview .cal-cell:not(.is-selected):hover{outline:1px solid var(--copper);outline-offset:-1px;background:color-mix(in srgb,var(--copper) 5%,var(--card))}
+}
+@media(hover:none){
+ #portalPreview :is(.ux-setup-step,.ux-customer-action,.task-card,.cal-kpi,.quick button,.role-option,.ps-nav button,.ps-language-option,.result-card,.mandate-kpi,.cal-chip,.cal-item):not(:disabled):not([aria-disabled=true]):active{outline:1px solid var(--copper);outline-offset:-1px}
 }
 /* Native discrete transitions preserve immediate close(), focus return and saving.
    Older browsers retain the enter animation and close immediately. */
