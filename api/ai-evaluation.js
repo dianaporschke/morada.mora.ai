@@ -7,6 +7,7 @@ import { generateText, Output } from 'ai';
 import { resolveProvider, modelUnavailable, classifyModelError, safeUsage, logModelUsage } from '../lib/mora/provider.js';
 import { modelFailure } from '../lib/mora/availability.js';
 import { CONVERSATION_INSTRUCTIONS } from '../lib/mora/instructions.js';
+import {guardApiRequest} from '../lib/http-security.js';
 
 // Evaluation only: never a customer-selectable model, arbitrary-prompt proxy,
 // fallback model, portal data access or production endpoint.
@@ -19,7 +20,7 @@ const inputSchema=z.object({
 
 export function createEvaluationHandler({env=process.env,makeUnderstanding=createUnderstandingService,generate=generateText}={}) {
   return async(req,res)=>{
-    res.setHeader('Cache-Control','private, no-store');
+    if(!guardApiRequest(req,res))return;
     if (env.VERCEL_ENV!=='preview' || env.VERCEL_GIT_COMMIT_REF!=='codex/mora-ai-2.0' || env.MORA_AI_CREDIT_CHECK!=='true')
       return res.status(404).json({code:'NOT_FOUND'});
     if (req.method!=='POST') {res.setHeader('Allow','POST');return res.status(405).json({code:'METHOD_NOT_ALLOWED'});}

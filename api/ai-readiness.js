@@ -1,5 +1,6 @@
 import { createGateway } from 'ai';
 import { classifyModelError, resolveProvider } from '../lib/mora/provider.js';
+import {guardApiRequest} from '../lib/http-security.js';
 
 /** Preview diagnostic only. Credit amounts stay in private runtime logs, never HTTP. */
 export function createReadinessHandler({env=process.env, readCredits=async () => createGateway({
@@ -15,7 +16,7 @@ export function createReadinessHandler({env=process.env, readCredits=async () =>
   let last = null;
   let pending = null;
   return async (req, res) => {
-    res.setHeader('Cache-Control', 'private, no-store');
+    if(!guardApiRequest(req,res))return;
     if (env.VERCEL_ENV !== 'preview' || env.VERCEL_GIT_COMMIT_REF !== 'codex/mora-ai-2.0' || env.MORA_AI_CREDIT_CHECK !== 'true') {
       return res.status(404).json({code:'NOT_FOUND'});
     }

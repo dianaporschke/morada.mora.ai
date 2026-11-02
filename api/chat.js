@@ -8,13 +8,14 @@ import { modelFailure } from '../lib/mora/availability.js';
 import { readPortalContext } from '../lib/mora/portal-context.js';
 import { safeUsage } from '../lib/mora/provider.js';
 import { acceptPreparationProposal } from '../lib/mora/actions.js';
+import {guardApiRequest} from '../lib/http-security.js';
 
 const sumUsage=(first,second)=>Object.fromEntries(['inputTokens','outputTokens','reasoningTokens','cachedInputTokens'].map(key=>[key,
   Number.isSafeInteger(first?.[key]) && Number.isSafeInteger(second?.[key])?first[key]+second[key]:null]));
 
 export function createChatHandler(understand = extractUnderstanding, { compose = composeNaturalReply, env = process.env, loadPortalContext=undefined } = {}) {
   return async function handler(req, res) {
-    res.setHeader('Cache-Control', 'no-store');
+    if(!guardApiRequest(req,res))return;
     if (req.method !== 'POST') {
       res.setHeader('Allow', 'POST');
       return res.status(405).json({ error: 'Nur POST-Anfragen sind erlaubt.' });
@@ -73,7 +74,7 @@ export function createChatHandler(understand = extractUnderstanding, { compose =
     } catch (error) {
       if (error.code === 'MODEL_UNAVAILABLE') {
         const failure = modelFailure(error.availability);
-        console.warn('MORA model unavailable', {...failure.modelAvailability,category:failure.category,retryable:failure.retryable,validation:error.validation || null});
+        console.warn('MORA model unavailable', {...failure.modelAvailability,category:failure.category,retryable:failure.retryable});
         const total=Date.now()-startedAt;
         return res.status(503).json({...failure,timingMs:{total,model:modelMs,application:Math.max(0,total-modelMs)},
           modelCalls,modelUsage:error.modelUsage || null});

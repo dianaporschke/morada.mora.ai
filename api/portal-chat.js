@@ -9,6 +9,8 @@ import {portalCaseFields,portalCaseEvidence} from '../assets/mora-portal-map.js'
 import {portalControls} from '../lib/mora/portal/action-state.js';
 import {readPortalAccess,allowedPortalNavigation,accessCapabilities,readAuthorizedCases,portalServerAdapter} from '../lib/mora/portal/access.js';
 import {portalRoles,resolvePortalAudience} from '../lib/mora/portal/audience.js';
+import {guardApiRequest} from '../lib/http-security.js';
+import {modelFailure} from '../lib/mora/availability.js';
 
 const receipt=z.object({operationId:z.string().uuid(),issueId:z.string().uuid(),draftId:z.string().uuid(),revision:z.number().int().positive(),contentHash:z.string().regex(/^[a-f0-9]{64}$/),status:z.enum(['portal_received','error']),attachmentCount:z.number().int().min(0).max(3).optional(),conflictFields:z.array(z.enum(['title','description','unit','category'])).max(4).optional()}).strict();
 // Older open tabs may still submit the retired French preference.
@@ -19,11 +21,11 @@ const schema=z.object({language:languageSchema,session:z.string().max(180000).op
 export const controls=portalControls;
 export function createPortalChatHandler({converse=createPortalService(),preflight=createPreviewCreditGuard(),integration='portal_v1',portalAdapter=portalServerAdapter}={}) {
  return async function handler(req,res){
-  res.setHeader('Cache-Control','private, no-store');
+  if(!guardApiRequest(req,res))return;
   // An isolated Preview route; never activate this integration on production.
   if(process.env.VERCEL_ENV==='production')return res.status(404).json({code:'NOT_FOUND'});
   if(req.method==='GET'){
-    try{return res.status(200).json({architecture:integration,inferenceStarted:false,...await preflight()});}
+    try{await preflight();return res.status(200).json({architecture:integration,inferenceStarted:false,preflightPassed:true});}
     catch(error){return res.status(503).json({code:'PREVIEW_CREDIT_BOUNDARY',reason:error.boundaryReason || 'credit_lookup_failed',error:'Das freigegebene KI-Testbudget konnte nicht bestätigt werden.'});}
   }
   if(req.method!=='POST')return res.status(405).json({code:'METHOD_NOT_ALLOWED'});
@@ -104,8 +106,10 @@ export function createPortalChatHandler({converse=createPortalService(),prefligh
     const factsAccepted=integration==='portal_agent_v1'&&Boolean(error.conversationState&&error.toolEvents?.some(e=>e.tool==='record_issues'&&e.ok))&&!state?.portalPending?.length;
     // Isolated Preview diagnostics return only to this conversation's caller;
     // never log customer text or display rejected model text as an answer.
-    const diagnostic=integration==='portal_agent_v1'?{toolEvents:error.toolEvents || [],...(error.diagnostic?{diagnostic:error.diagnostic}:{})}:{};
-    return reply(conflict?409:limited?429:503,{code:limited?'MODEL_RATE_LIMIT':code,factsAccepted,error:conflict?'Diese Aktion ist nicht mehr verfügbar. Ihre gespeicherten Angaben bleiben erhalten.':code==='PREVIEW_CREDIT_BOUNDARY'?'Das freigegebene KI-Testbudget erlaubt gerade keine weitere Modellanfrage. Ihre Angaben bleiben erhalten.':limited?'Die KI-Anbindung hat gerade ihr Anfragelimit erreicht. Bitte versuchen Sie es später erneut. Ihre Nachricht bleibt erhalten.':factsAccepted?'Ihre Angaben wurden im Gespräch übernommen. Die Antwort konnte nicht bestätigt werden.':'MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.',...diagnostic,availability:error.availability || null,modelCalls:error.modelCalls||0,generationIds:error.generationIds || []});
+    // Rejected model replies, provider bodies and validation details are never
+    // part of a public error response, including in the protected Preview.
+    const diagnostic=integration==='portal_agent_v1'?{toolEvents:(Array.isArray(error.toolEvents)?error.toolEvents:[]).filter(e=>e&&typeof e.tool==='string'&&/^[a-z_]{1,64}$/.test(e.tool)&&typeof e.ok==='boolean').slice(0,12).map(({tool,ok})=>({tool,ok}))}:{};
+    return reply(conflict?409:limited?429:503,{code:limited?'MODEL_RATE_LIMIT':code,factsAccepted,error:conflict?'Diese Aktion ist nicht mehr verfügbar. Ihre gespeicherten Angaben bleiben erhalten.':code==='PREVIEW_CREDIT_BOUNDARY'?'Das freigegebene KI-Testbudget erlaubt gerade keine weitere Modellanfrage. Ihre Angaben bleiben erhalten.':limited?'Die KI-Anbindung hat gerade ihr Anfragelimit erreicht. Bitte versuchen Sie es später erneut. Ihre Nachricht bleibt erhalten.':factsAccepted?'Ihre Angaben wurden im Gespräch übernommen. Die Antwort konnte nicht bestätigt werden.':'MORA konnte gerade keine verlässliche Antwort geben. Ihre Nachricht bleibt für den nächsten Versuch erhalten.',...diagnostic,availability:error.availability?modelFailure(error.availability).modelAvailability:null,modelCalls:error.modelCalls||0,generationIds:error.generationIds || []});
   }
  };
 }

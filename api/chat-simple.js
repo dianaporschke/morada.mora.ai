@@ -5,6 +5,7 @@ import {portalCapabilities} from '../lib/portal/adapter.js';
 import {modelFailure} from '../lib/mora/availability.js';
 import {createSimpleService} from '../lib/mora/simple/service.js';
 import {operationalTurn,safetyContext} from '../lib/mora/simple/state.js';
+import {guardApiRequest} from '../lib/http-security.js';
 
 const receipt=z.object({operationId:z.string().uuid(),issueId:z.string().uuid(),draftId:z.string().uuid(),
   revision:z.number().int().min(1),contentHash:z.string().regex(/^[a-f0-9]{64}$/),status:z.enum(['portal_received','error']),
@@ -18,7 +19,7 @@ const inputSchema=z.object({...chatInputSchema.shape,draftReceipt:receipt.option
 
 export function createSimpleChatHandler({converse=createSimpleService()}={}) {
   return async function handler(req,res){
-    res.setHeader('Cache-Control','no-store');
+    if(!guardApiRequest(req,res))return;
     if(req.method!=='POST')return res.status(405).json({error:'Nur POST-Anfragen sind erlaubt.'});
     const parsed=inputSchema.safeParse(req.body);
     if(!parsed.success)return res.status(400).json({error:'Bitte geben Sie eine gültige Nachricht oder Aktion ein.'});

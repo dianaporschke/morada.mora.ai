@@ -1,11 +1,12 @@
 import { requestInputSchema } from '../lib/mora/schema.js';
 import { readSession } from '../lib/mora/session.js';
 import { submitRequest, portalCapabilities } from '../lib/portal/adapter.js';
+import {guardApiRequest} from '../lib/http-security.js';
 
 /** Phase 2 boundary. The production adapter is disconnected; tests inject a simulated authorised backend. */
 export function createRequestsHandler({ connected = portalCapabilities.submitRequest, authorize = async (_req, _draft) => null, submit = submitRequest } = {}) {
   return async function handler(req, res) {
-    res.setHeader('Cache-Control', 'no-store');
+    if(!guardApiRequest(req,res))return;
     if (req.method !== 'POST') {
       res.setHeader('Allow', 'POST');
       return res.status(405).json({ error:'Nur POST-Anfragen sind erlaubt.' });

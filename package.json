@@ -27,7 +27,7 @@
     "@ai-sdk/openai": "^4.0.86",
     "@vercel/oidc": "^4.0.0",
     "ai": "^7.0.130",
-    "zod": "^4.6.5"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/node": "^26.6.4",
@@ -37,5 +37,10 @@
   },
   "engines": {
     "node": ">=24"
+  },
+  "overrides": {
+    "@vercel/cli-config": {
+      "zod": "$zod"
+    }
   }
 }
