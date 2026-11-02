@@ -1,3 +1,4 @@
+import './build-feedback.mjs';
 import './build-i18n.mjs';
 import './check.mjs';
 import { cpSync, mkdirSync, readdirSync, rmSync, existsSync } from 'node:fs';

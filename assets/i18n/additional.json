@@ -232,5 +232,73 @@
   },
   "Kündigungsfristen, Vertragsabläufe, wichtige Projekttermine": {
     "en": "Notice deadlines, contract expiry dates, key project dates"
+  },
+  "Änderungen gespeichert": {
+    "en": "Changes saved",
+    "fr": "Modifications enregistrées"
+  },
+  "Ihre Anpassungen wurden übernommen.": {
+    "en": "Your changes have been applied.",
+    "fr": "Vos modifications ont été prises en compte."
+  },
+  "Änderungen verwerfen?": {
+    "en": "Discard changes?",
+    "fr": "Ignorer les modifications ?"
+  },
+  "Sie haben ungespeicherte Änderungen. Möchten Sie diese verwerfen?": {
+    "en": "You have unsaved changes. Do you want to discard them?",
+    "fr": "Vous avez des modifications non enregistrées. Voulez-vous les ignorer ?"
+  },
+  "Weiter bearbeiten": {
+    "en": "Keep editing",
+    "fr": "Continuer la modification"
+  },
+  "Verwerfen": {
+    "en": "Discard",
+    "fr": "Ignorer"
+  },
+  "Speichern fehlgeschlagen": {
+    "en": "Could not save",
+    "fr": "Échec de l’enregistrement"
+  },
+  "Ihre Eingaben bleiben erhalten. Bitte versuchen Sie es erneut.": {
+    "en": "Your entries have been kept. Please try again.",
+    "fr": "Vos saisies sont conservées. Veuillez réessayer."
+  },
+  "Termin gelöscht": {
+    "en": "Appointment deleted",
+    "fr": "Rendez-vous supprimé"
+  },
+  "Rückgängig": {
+    "en": "Undo",
+    "fr": "Annuler"
+  },
+  "Termin wiederhergestellt": {
+    "en": "Appointment restored",
+    "fr": "Rendez-vous rétabli"
+  },
+  "Termin wiederhergestellt: {0}": {
+    "en": "Appointment restored: {0}",
+    "fr": "Rendez-vous rétabli : {0}"
+  },
+  "Wiederherstellung fehlgeschlagen": {
+    "en": "Could not restore",
+    "fr": "Échec du rétablissement"
+  },
+  "Bitte versuchen Sie es erneut.": {
+    "en": "Please try again.",
+    "fr": "Veuillez réessayer."
+  },
+  "Der Datenstand hat sich geändert. Bitte erneut versuchen.": {
+    "en": "The data has changed. Please try again.",
+    "fr": "Les données ont changé. Veuillez réessayer."
+  },
+  "Ein Termin mit dieser Kennung ist bereits vorhanden. Es wurde nichts überschrieben.": {
+    "en": "An appointment with this ID already exists. Nothing was overwritten.",
+    "fr": "Un rendez-vous avec cet identifiant existe déjà. Aucune donnée n’a été écrasée."
+  },
+  "Der Termin konnte nicht wiederhergestellt werden. Bitte die Zuordnungen und den Gerätespeicher prüfen.": {
+    "en": "The appointment could not be restored. Please check its linked records and device storage.",
+    "fr": "Le rendez-vous n’a pas pu être rétabli. Veuillez vérifier ses liens et le stockage de l’appareil."
   }
 }

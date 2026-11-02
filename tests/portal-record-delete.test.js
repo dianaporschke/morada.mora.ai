@@ -27,9 +27,9 @@ async function entry(w,kind,title=kind){
  assert.ok(result.persisted,JSON.stringify(result));return result.record.id;
 }
 const open=(w,kind,id)=>w.eval(`opsDetail(${JSON.stringify(kind)},${JSON.stringify(id)})`);
-test('calendar, tasks and cases delete only after confirmation, persist and leave other records intact',async()=>{
+test('tasks and cases delete only after confirmation, persist and leave other records intact',async()=>{
  const w=await setup();try{
-  for(const [kind,key] of [['appointment','appointments'],['task','tasks'],['case','cases']]){
+  for(const [kind,key] of [['task','tasks'],['case','cases']]){
    const keep=await entry(w,kind,'Behalten'),id=await entry(w,kind,'Löschen');w.eval("go('calendar')");open(w,kind,id);
    const d=w.document;d.querySelector('[data-record-delete]').click();
    assert.equal(w.eval(`state.${key}.length`),2);d.querySelector('[data-delete-cancel]').click();
@@ -45,11 +45,11 @@ test('calendar, tasks and cases delete only after confirmation, persist and leav
 test('cancel preserves an edited form and unsaved text; new forms have no delete action',async()=>{
  const w=await setup();try{
   w.eval("newEntry('appointment')");assert.equal(w.document.querySelector('[data-record-delete]'),null);
-  const id=await entry(w,'appointment');w.eval(`calendarOpenForm('${id}')`);
+  const id=await entry(w,'task');w.eval(`taskOpenForm('${id}')`);
   const title=w.document.querySelector('[name="title"]');title.value='Noch nicht gespeichert';
   w.document.querySelector('[data-record-delete]').click();w.document.querySelector('[data-delete-cancel]').click();
-  assert.equal(title.value,'Noch nicht gespeichert');assert.equal(w.eval('state.appointments[0].title'),'appointment');
-  assert.equal(w.eval('opsDraft.id'),id);assert.equal(w.document.activeElement.dataset.recordDelete,'appointments');
+  assert.equal(title.value,'Noch nicht gespeichert');assert.equal(w.eval('state.tasks[0].title'),'task');
+  assert.equal(w.eval('opsDraft.id'),id);assert.equal(w.document.activeElement.dataset.recordDelete,'tasks');
  }finally{w.close();}
 });
 test('failed storage keeps the record and allows a retry; a stale tab cannot delete newer data',async()=>{
@@ -114,9 +114,9 @@ test('financial and finalised records retain their existing cancellation/archive
 });
 test('DE and EN delete controls have translated confirmation and safely render record titles',async()=>{
  const w=await setup();try{
-  const id=await entry(w,'appointment','<img src=x onerror=alert(1)>');
+  const id=await entry(w,'case','<img src=x onerror=alert(1)>');
   for(const lang of ['de','en']){
-   w.MoradaI18n.setLanguage(lang);open(w,'appointment',id);
+   w.MoradaI18n.setLanguage(lang);open(w,'case',id);
    const b=w.document.querySelector('[data-record-delete]');assert.equal(b.textContent.trim(),lang==='de'?'Löschen':'Delete');b.click();
    const panel=w.document.querySelector('.record-delete-confirm');assert.equal(panel.querySelector('img'),null);
    assert.equal(panel.querySelector('h3').textContent,lang==='de'?'Eintrag löschen?':'Delete entry?');
