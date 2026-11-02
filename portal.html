@@ -7939,7 +7939,7 @@ const titlesForLog=t=>(MoradaI18n.registerObject({case:'Anliegen',task:'Aufgabe'
 document.addEventListener('input',e=>{if(e.target.id==='filterInput'){filterText=e.target.value.toLowerCase().trim();filterRows();}});
 document.addEventListener('change',e=>{if(e.target.id==='statusFilter'){filterStatus=e.target.value;filterRows();}});
 document.addEventListener('keydown',e=>{if(previewOpen&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();document.getElementById('searchInput').focus();}if(e.key==='Escape')closeMenu();});
-dialog.addEventListener('close',()=>{if(dialog.open)return;if(lastFocus?.isConnected)lastFocus.focus();});dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)portalCloseDialog();}});
+dialog.addEventListener('close',()=>{if(dialog.open)return;if(lastFocus?.isConnected)lastFocus.focus({preventScroll:true});});dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)portalCloseDialog();}});
 document.getElementById('menuToggle').innerHTML=icon('menu');document.getElementById('searchIcon').innerHTML=icon('search');document.getElementById('bellIcon').innerHTML=icon('bell');document.getElementById('moraFab').innerHTML=icon('mora')+MoradaI18n.fragment('<span>MORA Assistenz</span>');
 document.getElementById('menuToggle').addEventListener('click',()=>{const open=!document.getElementById('sidebar').classList.contains('open');document.getElementById('sidebar').classList.toggle('open',open);document.getElementById('scrim').classList.toggle('visible',open);document.getElementById('menuToggle').setAttribute('aria-expanded',String(open));});document.getElementById('scrim').addEventListener('click',closeMenu);
 // MORADA Mietverträge: factual contract records; HEV documents remain external.
@@ -9093,7 +9093,7 @@ document.addEventListener('change',event=>{if(!crmWritable())return;const el=eve
 document.addEventListener('click',event=>{
  const b=event.target.closest?.('[data-calendar-action]');if(!b||b.disabled||!crmWritable())return;event.preventDefault();const a=b.dataset.calendarAction,f=calendarUI;
  if(a==='new'||a==='new-task'){const day=b.dataset.day||f.selected||crmToday(),propertyId=f.propertyId==='internal'?'':f.propertyId;if(a==='new')calendarOpenForm('',propertyId,day);else{taskOpenForm('',propertyId,day);const form=document.getElementById('opsEntryForm');if(form?.dataset.kind==='task')form.dataset.returnTo='calendar';}return;}
- if(a==='select-day'){calendarSetDate(b.dataset.date);calendarRefresh();document.getElementById('calDayTitle')?.focus({preventScroll:true});if(matchMedia('(max-width:1100px)').matches)document.getElementById('calDayTitle')?.scrollIntoView({block:'nearest'});return;}
+ if(a==='select-day'){calendarSetDate(b.dataset.date);calendarRefresh();document.getElementById('calDayTitle')?.focus({preventScroll:true});if(matchMedia('(max-width:1100px)').matches)document.getElementById('calDayTitle')?.scrollIntoView({block:'start'});return;}
  if(a==='day-modal'||a==='day-page'){calendarDayModal(b.dataset.day,b.dataset.page||1);return;}
  if(a==='deadline'){calendarDeadlineDetail(b.dataset.parentId,b.dataset.id);return;}
  if(a==='copy'){const r=state.appointments.find(r=>r.id===b.dataset.id);if(r){const copy=MoradaI18n.registerObject({...r,id:undefined,title:r.title,status:'Geplant',cancelReason:'',attachments:[],history:[],createdAt:undefined,updatedAt:undefined},["status"]);calendarOpenForm('',r.propertyId,r.date,copy);}return;}
@@ -12019,10 +12019,63 @@ void portalLoadExtended();
   const error=form.querySelector('[role=alert]');
   if(error){new MutationObserver(()=>{if(error.textContent.trim()&&!error.hidden){error.scrollIntoView({block:'nearest'});}}).observe(error,{childList:true,subtree:true,attributes:true,attributeFilter:['hidden']});}
  }
+ // Fit the existing dialogs to the visual viewport; keep one page scroll lock
+ // across the drawer, an editor and its nested unsaved-changes warning.
+ const mobileSurface=window.matchMedia('(max-width:1024px)');
+ const mobileRoot=document.getElementById('portalPreview'),mobileSidebar=document.getElementById('sidebar');
+ const mobileDiscard=document.getElementById('portalDiscardDialog');
+ let mobilePagePosition=null,mobileFrame=0;
+ function keepMobileFieldVisible(){
+  const field=document.activeElement;
+  if(!mobileSurface.matches||!dialog.open||(window.visualViewport?.scale||1)!==1||!field?.matches('input,select,textarea')||!dialog.contains(field))return;
+  const region=field.closest('.ux-form-scroll,.ps-panel,.dialog-body');if(!region)return;
+  const rect=field.getBoundingClientRect(),bounds=region.getBoundingClientRect();
+  if(!rect.height||!bounds.height)return;
+  const gap=12,delta=rect.bottom>bounds.bottom-gap?rect.bottom-bounds.bottom+gap:rect.top<bounds.top+gap?rect.top-bounds.top-gap:0;
+  if(delta)region.scrollTop+=delta;
+ }
+ function syncMobileSurface(position){
+  const html=document.documentElement,body=document.body;
+  const overlay=mobileSurface.matches&&(dialog.open||mobileDiscard?.open||mobileSidebar.classList.contains('open'));
+  if(overlay&&!mobilePagePosition){
+   mobilePagePosition=position||{left:window.scrollX,top:window.scrollY};
+   body.style.setProperty('--portal-page-top',-mobilePagePosition.top+'px');
+   body.style.setProperty('--portal-page-left',-mobilePagePosition.left+'px');
+   html.classList.add('portal-mobile-locked');
+  }else if(!overlay&&mobilePagePosition){
+   const previous=mobilePagePosition;mobilePagePosition=null;
+   html.classList.remove('portal-mobile-locked');
+   body.style.removeProperty('--portal-page-top');body.style.removeProperty('--portal-page-left');
+   window.scrollTo({...previous,behavior:'instant'});
+  }
+  if(!mobileSurface.matches)return;
+  const viewport=window.visualViewport;
+  // At pinch zoom, leave the browser's own panning and magnification intact.
+  if(!viewport||!viewport.scale||viewport.scale===1){
+   mobileRoot.style.setProperty('--portal-viewport-height',(viewport?.height||window.innerHeight)+'px');
+   mobileRoot.style.setProperty('--portal-viewport-top',(viewport?.offsetTop||0)+'px');
+  }
+  mobileRoot.style.setProperty('--portal-header-height',(mobileRoot.querySelector('.topbar')?.getBoundingClientRect().height||116)+'px');
+  cancelAnimationFrame(mobileFrame);mobileFrame=requestAnimationFrame(keepMobileFieldVisible);
+ }
+ const mobileObserver=new MutationObserver(()=>syncMobileSurface());
+ mobileObserver.observe(dialog,{attributes:true,attributeFilter:['open']});
+ mobileObserver.observe(mobileSidebar,{attributes:true,attributeFilter:['class']});
+ if(mobileDiscard)mobileObserver.observe(mobileDiscard,{attributes:true,attributeFilter:['open']});
+ dialog.addEventListener('close',()=>syncMobileSurface());
+ mobileDiscard?.addEventListener('close',()=>syncMobileSurface());
+ document.addEventListener('focusin',()=>{cancelAnimationFrame(mobileFrame);mobileFrame=requestAnimationFrame(keepMobileFieldVisible);});
+ window.addEventListener('resize',()=>syncMobileSurface());
+ window.visualViewport?.addEventListener('resize',()=>syncMobileSurface());
+ window.visualViewport?.addEventListener('scroll',()=>syncMobileSurface());
+ mobileSurface.addEventListener?.('change',()=>syncMobileSurface());
+ syncMobileSurface();
  openModal=function(...args){
   // Do not alter the currently open form if its unsaved-change guard declines navigation.
+  const position={left:window.scrollX,top:window.scrollY};
   const previous=dialog.querySelector('.dialog-body');const result=baseModal(...args);
   if(result!==false&&dialog.querySelector('.dialog-body')!==previous){dialog.classList.remove('ux-form-dialog');refineModal();}
+  syncMobileSurface(position);
   return result;
  };
  // Enter advances the visible section; it must never save an unfinished wizard.
