@@ -307,6 +307,54 @@
     "en": "The appointment could not be restored. Please check its linked records and device storage.",
     "fr": "Le rendez-vous n’a pas pu être rétabli. Veuillez vérifier ses liens et le stockage de l’appareil."
   },
+  "Termin erstellt": {
+    "en": "Appointment created",
+    "fr": "Rendez-vous créé"
+  },
+  "Termin bearbeitet": {
+    "en": "Appointment updated",
+    "fr": "Rendez-vous modifié"
+  },
+  "Einstellungen aktualisiert": {
+    "en": "Settings updated",
+    "fr": "Paramètres mis à jour"
+  },
+  "Meldung schliessen": {
+    "en": "Dismiss notification",
+    "fr": "Fermer la notification"
+  },
+  "Erneut versuchen": {
+    "en": "Try again",
+    "fr": "Réessayer"
+  },
+  "Aktion fehlgeschlagen": {
+    "en": "Action failed",
+    "fr": "Échec de l’action"
+  },
+  "Verbindung unterbrochen": {
+    "en": "Connection interrupted",
+    "fr": "Connexion interrompue"
+  },
+  "Bitte prüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.": {
+    "en": "Please check your internet connection and try again.",
+    "fr": "Vérifiez votre connexion Internet et réessayez."
+  },
+  "Die Aktion konnte nicht abgeschlossen werden. Bitte versuchen Sie es erneut.": {
+    "en": "The action could not be completed. Please try again.",
+    "fr": "L’action n’a pas pu être terminée. Veuillez réessayer."
+  },
+  "Ihre Eingaben bleiben erhalten. Laden Sie zuerst den aktuellen Datenstand.": {
+    "en": "Your entries have been kept. Please load the latest data first.",
+    "fr": "Vos saisies sont conservées. Chargez d’abord les dernières données."
+  },
+  "Der Termin konnte nicht wiederhergestellt werden. Bitte versuchen Sie es erneut.": {
+    "en": "The appointment could not be restored. Please try again.",
+    "fr": "Le rendez-vous n’a pas pu être rétabli. Veuillez réessayer."
+  },
+  "Bitte prüfen": {
+    "en": "Please check",
+    "fr": "Veuillez vérifier"
+  },
   "Überblick": {
     "en": "Overview",
     "fr": "Vue d’ensemble"

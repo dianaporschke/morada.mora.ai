@@ -15,7 +15,6 @@
 #portalPreview .ps-content{animation:morada-surface-open var(--portal-motion-open) var(--portal-motion-ease)}
 #portalPreview .toggle{transition:background-color var(--portal-motion-fast) ease}
 #portalPreview .toggle::before{transition:left var(--portal-motion-fast) ease}
-#portalPreview #toast:not([hidden]){animation:morada-notice-open var(--portal-motion-open) var(--portal-motion-ease)}
 /* Match the setup cards: a copper contour identifies the actual hit target.
    Inset outlines never change dimensions or replace calendar category colours. */
 #portalPreview :is(.ux-setup-step,.ps-language-option,.result-card,.mandate-kpi,.today-work-row,.today-event-row,.portfolio-focus-row,.portfolio-case,.cal-chip,.cal-item,.portal-back,.today-scope button){transition:background-color var(--portal-motion-fast) ease,border-color var(--portal-motion-fast) ease,outline-color var(--portal-motion-fast) ease,box-shadow var(--portal-motion-open) ease}
@@ -34,20 +33,17 @@
 /* Native discrete transitions preserve immediate close(), focus return and saving.
    Older browsers retain the enter animation and close immediately. */
 @supports (transition-behavior:allow-discrete){
- #portalPreview #dialog,#portalPreview :is(#profileMenu,#portalLanguageMenu,.today-create-menu,#moraPortalChat,#toast){
+ #portalPreview #dialog,#portalPreview :is(#profileMenu,#portalLanguageMenu,.today-create-menu,#moraPortalChat){
   animation:none;opacity:0;translate:0 4px;pointer-events:none;
   transition:opacity var(--portal-motion-open) ease,translate var(--portal-motion-open) var(--portal-motion-ease),display var(--portal-motion-open) allow-discrete,overlay var(--portal-motion-open) allow-discrete;
  }
- #portalPreview #dialog[open],#portalPreview :is(#profileMenu,#portalLanguageMenu,.today-create-menu,#moraPortalChat,#toast):not([hidden]){animation:none;opacity:1;translate:0 0;pointer-events:auto}
+ #portalPreview #dialog[open],#portalPreview :is(#profileMenu,#portalLanguageMenu,.today-create-menu,#moraPortalChat):not([hidden]){animation:none;opacity:1;translate:0 0;pointer-events:auto}
  #portalPreview #dialog::backdrop{animation:none;opacity:0;transition:opacity var(--portal-motion-open) ease,display var(--portal-motion-open) allow-discrete,overlay var(--portal-motion-open) allow-discrete}
  #portalPreview #dialog[open]::backdrop{opacity:1}
- #portalPreview #toast{translate:0 6px}
- #portalPreview #toast:not([hidden]){translate:0 0}
  #portalPreview #scrim{opacity:0;transition:opacity var(--portal-motion-open) ease,display var(--portal-motion-open) allow-discrete}
  #portalPreview #scrim.visible{opacity:1}
  @starting-style{
   #portalPreview #dialog[open],#portalPreview :is(#profileMenu,#portalLanguageMenu,.today-create-menu,#moraPortalChat):not([hidden]){opacity:0;translate:0 4px}
-  #portalPreview #toast:not([hidden]){opacity:0;translate:0 6px}
   #portalPreview #dialog[open]::backdrop,#portalPreview #scrim.visible{opacity:0}
  }
 }

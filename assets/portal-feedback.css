@@ -1,26 +1,42 @@
 /* Save, discard and undo feedback uses the portal's existing brand tokens. */
-#portalPreview .portal-feedback-stack{position:fixed;right:24px;bottom:24px;z-index:90;display:grid;gap:10px;width:min(410px,calc(100vw - 32px));pointer-events:none}
-#portalPreview .portal-undo-list{display:grid;gap:10px;max-height:40dvh;overflow:auto;pointer-events:auto}
-#portalPreview .portal-feedback{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);box-shadow:0 6px 24px var(--shadow-widget);pointer-events:auto}
-#portalPreview #toast{position:relative;inset:auto;transform:none;width:100%;max-width:none;margin:0;font-size:13px}
-#portalPreview .portal-feedback[hidden]{display:none}
-#portalPreview .portal-feedback-symbol{display:grid;place-items:center;flex:none;width:27px;height:27px;border-radius:50%;background:var(--soft);color:var(--copper);font-size:16px}
+#portalPreview #toast.portal-feedback-stack{position:fixed;top:var(--portal-notice-top,82px);right:24px;bottom:auto;left:auto;z-index:90;display:grid;gap:10px;width:min(380px,calc(100vw - 32px));max-width:none;max-height:min(45dvh,calc(100dvh - var(--portal-notice-top,82px) - 90px));overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;pointer-events:none;transform:none;translate:none;opacity:1;margin:0;padding:2px;background:none;border:0;box-shadow:none;animation:none;transition:none;font-size:13px}
+#portalPreview #toast.portal-feedback-stack[hidden]{display:none}
+#portalPreview #toast.is-dialog{position:relative;inset:auto;align-self:stretch;width:auto;max-height:min(32dvh,300px);flex:none;margin:0 0 16px;overflow-y:auto}
+#portalPreview .ux-form-dialog .dialog-body>#toast.is-dialog{margin:16px 24px 0}
+#portalPreview .portal-feedback{display:flex;align-items:flex-start;gap:10px;padding:13px 12px 13px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);box-shadow:0 4px 16px var(--shadow-widget);pointer-events:auto;animation:morada-feedback-enter 200ms ease-out}
+#portalPreview .portal-feedback[data-notice-state=leaving]{animation:morada-feedback-exit 200ms ease-in forwards;pointer-events:none}
+#portalPreview .portal-feedback-symbol{display:grid;place-items:center;flex:none;width:27px;height:27px;border-radius:50%;background:var(--soft);color:var(--muted)}
+#portalPreview .portal-feedback-symbol svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
 #portalPreview .portal-feedback-copy{min-width:0;flex:1;overflow-wrap:anywhere}
 #portalPreview .portal-feedback-copy strong{display:block;font-size:13px;line-height:1.4;font-weight:600}
 #portalPreview .portal-feedback-copy p{font-size:12px;line-height:1.5;color:var(--muted);margin:4px 0 0}
 #portalPreview .portal-feedback[data-kind=error]{border-color:var(--danger-text)}
 #portalPreview .portal-feedback[data-kind=error] .portal-feedback-symbol{color:var(--danger-text);background:var(--danger-bg)}
+#portalPreview .portal-feedback[data-kind=success] .portal-feedback-symbol{color:var(--success-text);background:var(--success-bg)}
+#portalPreview .portal-feedback[data-kind=warning] .portal-feedback-symbol{color:var(--warning-text);background:var(--warning-bg)}
+#portalPreview .portal-feedback[data-kind=success]{border-left:3px solid var(--green)}
+#portalPreview .portal-feedback[data-kind=warning]{border-left:3px solid var(--copper)}
 #portalPreview .portal-save-error{margin:0 0 16px;box-shadow:none}
-#portalPreview .portal-undo-action{flex:none;min-height:44px;padding:8px 4px;color:var(--copper);text-decoration:underline;text-underline-offset:3px;font-size:12px;font-weight:600}
+#portalPreview .portal-feedback-action{flex:none;align-self:center;max-width:110px;min-height:44px;padding:6px 4px;color:var(--copper);text-decoration:underline;text-underline-offset:3px;font-size:12px;font-weight:600;white-space:normal}
+#portalPreview .portal-feedback-close{display:grid;place-items:center;flex:none;width:32px;height:32px;margin:-3px -4px 0 0;padding:0;border-radius:6px;color:var(--muted)}
+#portalPreview .portal-feedback-close .portal-feedback-symbol{background:none;width:24px;height:24px;color:inherit}
+#portalPreview .portal-feedback-close .portal-feedback-symbol svg{width:14px;height:14px}
+#portalPreview .portal-feedback-close:hover{background:var(--soft)}
+#portalPreview .portal-feedback-action:focus-visible,#portalPreview .portal-feedback-close:focus-visible{outline:2px solid var(--copper);outline-offset:1px}
+#portalPreview .portal-inline-warning{position:relative;padding-left:50px!important}
+#portalPreview .portal-inline-warning>.portal-feedback-symbol{position:absolute;top:14px;left:12px;color:var(--warning-text);background:var(--warning-bg)}
+#portalPreview .portal-discard-dialog h2{display:flex;align-items:center;gap:10px}
+#portalPreview .portal-discard-dialog h2>.portal-feedback-symbol{color:var(--warning-text);background:var(--warning-bg)}
 #portalPreview .portal-discard-dialog{width:min(430px,calc(100vw - 32px));padding:25px;border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);box-shadow:0 16px 60px var(--shadow-dialog)}
 #portalPreview .portal-discard-dialog h2{font:400 25px/1.25 var(--morada-font-heading);margin:0 0 12px}
 #portalPreview .portal-discard-dialog p{font-size:13px;line-height:1.7;margin:0;color:var(--muted)}
 #portalPreview .portal-discard-dialog::backdrop{background:var(--scrim);backdrop-filter:blur(3px)}
 #portalPreview .portal-discard-dialog .dialog-actions{margin:22px 0 0;gap:9px}
-#portalPreview .portal-discard-dialog[open],#portalPreview .portal-undo{animation:morada-feedback-enter 200ms ease-out}
+#portalPreview .portal-discard-dialog[open]{animation:morada-feedback-enter 200ms ease-out}
 #portalPreview .portal-discard-dialog::backdrop{animation:morada-feedback-fade 200ms ease}
 @keyframes morada-feedback-enter{from{opacity:0;translate:0 4px}to{opacity:1;translate:0 0}}
 @keyframes morada-feedback-fade{from{opacity:0}to{opacity:1}}
+@keyframes morada-feedback-exit{from{opacity:1;translate:0 0}to{opacity:0;translate:0 -3px}}
 @supports(transition-behavior:allow-discrete){
  #portalPreview #portalDiscardDialog{animation:none;opacity:0;translate:0 4px;pointer-events:none;transition:opacity 200ms ease,translate 200ms ease,display 200ms allow-discrete,overlay 200ms allow-discrete}
  #portalPreview #portalDiscardDialog[open]{opacity:1;translate:0 0;pointer-events:auto}
@@ -29,9 +45,13 @@
  @starting-style{#portalPreview #portalDiscardDialog[open]{opacity:0;translate:0 4px}#portalPreview #portalDiscardDialog[open]::backdrop{opacity:0}}
 }
 @media(max-width:760px){
- #portalPreview .portal-feedback-stack{right:16px;bottom:calc(80px + env(safe-area-inset-bottom))}
+ #portalPreview #toast.portal-feedback-stack{top:var(--portal-notice-top,82px);right:12px;width:calc(100% - 24px);box-sizing:border-box}
+ #portalPreview #toast.is-dialog{inset:auto;width:auto;max-height:min(30dvh,260px)}
+ #portalPreview .ux-form-dialog .dialog-body>#toast.is-dialog{margin:12px 14px 0}
  #portalPreview .portal-feedback{padding:12px;gap:9px}
+ #portalPreview .portal-feedback-action{max-width:90px;font-size:12px}
+ #portalPreview .portal-feedback-close{width:36px;min-height:36px}
  #portalPreview .portal-discard-dialog{padding:22px}
  #portalPreview .portal-discard-dialog .dialog-actions{display:grid;grid-template-columns:1fr 1fr}
 }
-@media(prefers-reduced-motion:reduce){#portalPreview .portal-discard-dialog,#portalPreview .portal-discard-dialog::backdrop,#portalPreview .portal-undo{animation:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){#portalPreview .portal-discard-dialog,#portalPreview .portal-discard-dialog::backdrop,#portalPreview .portal-feedback{animation:none!important;transition:none!important}}
