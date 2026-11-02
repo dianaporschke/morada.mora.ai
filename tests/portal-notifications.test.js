@@ -108,3 +108,14 @@ test('inline conflict warnings preserve the existing decision checkbox and reduc
   ui.notice('Erfolg','',3000,'success');clock.advance(3000);assert.equal(active().length,0);assert.equal(d.querySelectorAll('#toast>.portal-feedback').length,0);
  }finally{s.close();}
 });
+
+test('reset removes queued private notices and old exit timers cannot remove a new-session notice',()=>{
+ const s=setup();try{
+  const {ui,clock,active,d}=s;
+  for(const title of ['Alt A','Alt B','Alt C','Alt D'])ui.notice(title,'',0,'error');
+  active()[0].querySelector('[data-notice-close]').click();ui.reset();
+  assert.equal(d.getElementById('toast').textContent,'');assert.equal(d.getElementById('toast').hidden,true);
+  ui.notice('Neue Sitzung','',3000,'success');clock.advance(200);
+  assert.equal(active().length,1);assert.match(active()[0].textContent,/Neue Sitzung/);clock.advance(3000);assert.equal(active().length,0);
+ }finally{s.close();}
+});

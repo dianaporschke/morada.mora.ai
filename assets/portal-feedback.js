@@ -117,6 +117,7 @@ window.createPortalFeedback = function ({document, window, translate: t, busy}) 
     host.append(close);
   }
   function finish(entry, parked = false) {
+    if (entry.state === 'closed' || !entries.includes(entry)) return;
     entry.element.remove();
     if (parked) { entry.state = 'queued'; entry.pauses.delete('parked'); }
     else { entry.state = 'closed'; entries.splice(entries.indexOf(entry), 1); recent.set(entry.key, Date.now()); if(recent.size>100)for(const [key,at]of recent)if(Date.now()-at>1200)recent.delete(key); }
@@ -288,10 +289,17 @@ window.createPortalFeedback = function ({document, window, translate: t, busy}) 
     if (!host || host.hidden || host.querySelector('.portal-feedback-symbol')) return;
     host.dataset.kind='warning'; host.classList.add('portal-inline-warning'); host.prepend(symbol('warning'));
   }
+  function reset() {
+    window.clearTimeout(savedTimer);savedPending=false;saveFailure=null;
+    for(const entry of entries){window.clearTimeout(entry.timer);entry.state='closed';}
+    entries.length=0;recent.clear();pendingDiscard=null;lastOutsideFocus=null;
+    if(discardDialog.open)discardDialog.close();
+    stack.replaceChildren();syncHost();
+  }
   window.addEventListener('morada:languagechange',()=>{for(const entry of entries)if(entry.state==='visible')contents(entry);pump();});
   syncHost();
   return {
-    saved, failed, clearFailure, beginSave, notice, undo, confirmDiscard,
+    saved, failed, clearFailure, beginSave, notice, undo, confirmDiscard, reset,
     decorateWarning,
     publicMessage:safe,
     handlesFailure(detail) { return saveFailure?.entry?.state !== 'closed' && saveFailure?.detail === String(detail); },

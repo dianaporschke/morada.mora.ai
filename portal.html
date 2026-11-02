@@ -3516,6 +3516,7 @@ window.createPortalFeedback = function ({document, window, translate: t, busy}) 
     host.append(close);
   }
   function finish(entry, parked = false) {
+    if (entry.state === 'closed' || !entries.includes(entry)) return;
     entry.element.remove();
     if (parked) { entry.state = 'queued'; entry.pauses.delete('parked'); }
     else { entry.state = 'closed'; entries.splice(entries.indexOf(entry), 1); recent.set(entry.key, Date.now()); if(recent.size>100)for(const [key,at]of recent)if(Date.now()-at>1200)recent.delete(key); }
@@ -3687,10 +3688,17 @@ window.createPortalFeedback = function ({document, window, translate: t, busy}) 
     if (!host || host.hidden || host.querySelector('.portal-feedback-symbol')) return;
     host.dataset.kind='warning'; host.classList.add('portal-inline-warning'); host.prepend(symbol('warning'));
   }
+  function reset() {
+    window.clearTimeout(savedTimer);savedPending=false;saveFailure=null;
+    for(const entry of entries){window.clearTimeout(entry.timer);entry.state='closed';}
+    entries.length=0;recent.clear();pendingDiscard=null;lastOutsideFocus=null;
+    if(discardDialog.open)discardDialog.close();
+    stack.replaceChildren();syncHost();
+  }
   window.addEventListener('morada:languagechange',()=>{for(const entry of entries)if(entry.state==='visible')contents(entry);pump();});
   syncHost();
   return {
-    saved, failed, clearFailure, beginSave, notice, undo, confirmDiscard,
+    saved, failed, clearFailure, beginSave, notice, undo, confirmDiscard, reset,
     decorateWarning,
     publicMessage:safe,
     handlesFailure(detail) { return saveFailure?.entry?.state !== 'closed' && saveFailure?.detail === String(detail); },
@@ -3751,8 +3759,9 @@ function createPortalTranslator(messages={},initial='de'){
 
 /** Browser preference and presentation lifecycle; no account or record writes. */
 function installPortalLanguage(messages){
- const key='morada.portal.language.v1';let persistence={load:()=>localStorage.getItem(key),save:value=>localStorage.setItem(key,value)};
- let initial='de',storageAvailable=true;
+ const key='morada.portal.language.v1';
+ const browserPersistence={load:()=>localStorage.getItem(key),save:value=>localStorage.setItem(key,value)};
+ let persistence=browserPersistence,initial='de',storageAvailable=true,pendingPreference=false;
  try{
   const saved=persistence.load();
   initial=normalizeLanguage(saved);
@@ -3772,17 +3781,36 @@ function installPortalLanguage(messages){
    const value=el.getAttribute(name),source=sourceKey(value)||value;el.setAttribute(name,api.t(source));bindings.push({node:el,name,source,last:el.getAttribute(name)});
   }
  };
- api.setLanguage=value=>{
-  const next=normalizeLanguage(value);if(next===api.language)return;
+ function applyLanguage(next,source){
   const previous=api.language;
   setCoreLanguage(next);
-  try{persistence.save(next);storageAvailable=true;}catch{storageAvailable=false;}
   setDocumentLanguage();
   for(const b of bindings){if(!b.node.isConnected)continue;const value=b.name?b.node.getAttribute(b.name):b.node.nodeValue;if(value!==b.last)continue;
    b.last=api.t(b.source);if(b.name)b.node.setAttribute(b.name,b.last);else b.node.nodeValue=b.last;
   }
-  window.dispatchEvent(new CustomEvent('morada:languagechange',{detail:{language:next,previous,storageAvailable}}));
+  window.dispatchEvent(new CustomEvent('morada:languagechange',{detail:{language:next,previous,storageAvailable,source}}));
+ }
+ api.setLanguage=value=>{
+  const next=normalizeLanguage(value);
+  // An already selected session-only choice must remain a working retry target.
+  if(next===api.language&&storageAvailable){try{if(persistence.load()===next)return;}catch{}}
+  try{
+   persistence.save(next);
+   if(persistence.load()!==next)throw new Error('Language preference was not retained');
+   storageAvailable=true;pendingPreference=false;
+  }catch{storageAvailable=false;pendingPreference=true;}
+  applyLanguage(next,'user');
  };
+ // Only browser preferences are shared between tabs. Re-read the latest value
+ // rather than applying an old event; never overwrite an unsaved local choice.
+ window.addEventListener('storage',event=>{
+  if(persistence!==browserPersistence||pendingPreference||event.key!==key)return;
+  try{
+   const saved=persistence.load();
+   if(!api.languages.some(([code])=>code===saved)||saved===api.language)return;
+   storageAvailable=true;applyLanguage(saved,'storage');
+  }catch{ /* Keep the current language and all form entries on a failed read. */ }
+ });
  // The adapter is the only seam a later signed-in account preference needs.
  api.setPersistenceAdapter=adapter=>{if(typeof adapter?.save!=='function'||typeof adapter?.load!=='function')throw new TypeError('Language adapter requires load and save');persistence=adapter;};
  Object.defineProperty(api,'storageAvailable',{get:()=>storageAvailable});
@@ -4047,7 +4075,17 @@ document.addEventListener('submit',event=>{if(portalSaving&&dialog.contains(even
 
 function logAction(title){state.activity.unshift({id:uid('LOG'),date:new Date().toLocaleString('de-CH'),title,owner:profiles[role].name});}
 function notify(text){portalFeedback.notify(MoradaI18n.t(text));}
-window.addEventListener('morada:languagechange',event=>{if(!previewOpen)return;if(event.detail.storageAvailable)portalFeedback.saved('Einstellungen aktualisiert');else portalSaveFailure('Die Sprache gilt für diese Sitzung. Ihr Browser erlaubt derzeit keine dauerhafte Speicherung.');});
+let portalLanguageSaveError='';
+window.addEventListener('morada:languagechange',event=>{
+ if(!previewOpen||event.detail.source==='storage')return;
+ if(event.detail.storageAvailable){
+  if(portalLanguageSaveError&&portalFeedback.handlesFailure(portalLanguageSaveError))portalFeedback.clearFailure();
+  portalLanguageSaveError='';portalFeedback.saved('Einstellungen aktualisiert');
+ }else{
+  portalLanguageSaveError=MoradaI18n.t('Die Sprache gilt für diese Sitzung. Ihr Browser erlaubt derzeit keine dauerhafte Speicherung.');
+  portalSaveFailure(portalLanguageSaveError);
+ }
+});
 function openModal(title,body,eyebrow='MORADA'){if(!portalCanLeaveDialog())return false;mdDraft=null;miDraft=null;docEdit=null;docFreePreview();vendorDraft=null;approvalDraft=null;crmAttachmentDraft=null;crmFormSource=null;opsDraft=null;inspectionFileDraft=null;commDraft=null;commSource=null;opsDetailSource=null;opsAssetSource=null;lastFocus=document.activeElement;dialog.innerHTML=MoradaI18n.html`<div class="dialog-head"><div><span class="eyebrow">${esc(MoradaI18n.t(eyebrow))}</span><h2 id="dialogTitle">${esc(title)}</h2></div><button class="close" data-action="close" aria-label="Schliessen">×</button></div><div class="dialog-body">${portalStorageNotice()}${body}</div>`;if(!dialog.open)dialog.showModal();portalInstallDeleteActions();portalMarkDialogClean();queueMicrotask(()=>{if(dialog.open)docEnhanceFiles(dialog);});return true;}
 function closeMenu(){document.getElementById('sidebar').classList.remove('open');document.getElementById('scrim').classList.remove('visible');document.getElementById('menuToggle').setAttribute('aria-expanded','false');}
 function renderNav(){const selected=({contractDetail:'contracts',serviceChargeDetail:'servicecharges',budgetDetail:'budgets',cashDetail:'cash',cashMovementDetail:'cash',accountDetail:'bank',bankPaymentDetail:'bank',claimDetail:'debtors',rentReceiptDetail:'debtors',invoiceDetail:'invoices',vendorDetail:'vendors',approvalDetail:'approvals',communication:commNavRoute(),communicationDetail:commNavRoute(),inspectionDetail:'inspections',applicantDetail:'applicants',relettingDetail:'reletting',propertyDetail:'properties',unitDetail:'units',mandateDetail:'mandates',leaseDetail:'leases',contactDetail:crmUI.contactKind==='tenant'?'tenants':'owners'})[current]||current;document.getElementById('nav').innerHTML=roleGroups().map((__uiLabels3,i)=>{const [label,items]=__uiLabels3;return MoradaI18n.html`<details name="morada-navigation" ${items.some(a=>a[0]===selected)||(current==='searchPage'&&i===0)?'open':''}><summary>${esc(MoradaI18n.t(i===0?'Mein MORADA':label))}</summary>${items.map((__uiLabels4)=>{const [id,ic,name]=__uiLabels4;return MoradaI18n.html`<a href="#${id}" ${id===selected?'aria-current="page"':''}>${icon(ic)}<span class="nav-label">${esc(MoradaI18n.t(name))}${portalPlannedCopy(id)?MoradaI18n.fragment('<small class="nav-state">Geplant</small>'):''}</span></a>`;}).join('')}</details>`;}).join('');}
@@ -8114,7 +8152,7 @@ function leaseDeadlinePicker(label,name,ids){return crmPicker(label,name,'deadli
 const entryForm=document.getElementById('entry-form'),password=document.getElementById('entry-pass'),reveal=document.getElementById('entry-reveal');
 reveal.addEventListener('click',()=>{const visible=password.type==='password';password.type=visible?'text':'password';reveal.textContent=visible?MoradaI18n.t('Verbergen'):MoradaI18n.t('Anzeigen');reveal.setAttribute('aria-label',visible?MoradaI18n.t('Passwort verbergen'):MoradaI18n.t('Passwort anzeigen'));reveal.setAttribute('aria-pressed',String(visible));});
 entryForm.addEventListener('submit',e=>{e.preventDefault();if(!entryForm.reportValidity())return;if(portalLoading){notify(MoradaI18n.t('Die gespeicherten Daten werden noch geladen. Bitte kurz warten.'));return;}previewOpen=true;entry.hidden=true;entry.inert=true;app.hidden=false;app.inert=false;chooseRole(e.submitter?.dataset.entryRole||new FormData(entryForm).get('entryRole')||'admin');password.value='';document.getElementById('entry-email').value='';});
-document.getElementById('portalSignout').addEventListener('click',()=>{if(!portalCloseDialog())return;closeMenu();portalNavigation.entries=[];portalNavigation.index=-1;portalNavigation.restore=null;history.scrollRestoration='auto';previewOpen=false;app.hidden=true;app.inert=true;entry.hidden=false;entry.inert=false;entryForm.reset();password.type='password';reveal.textContent=MoradaI18n.t('Anzeigen');reveal.setAttribute('aria-label',MoradaI18n.t('Passwort anzeigen'));reveal.setAttribute('aria-pressed','false');history.replaceState(null,'',location.pathname+location.search);document.title=MoradaI18n.t('MORADA · Portal');window.scrollTo(0,0);document.getElementById('entry-heading').focus({preventScroll:true});});
+document.getElementById('portalSignout').addEventListener('click',()=>{if(!portalCloseDialog())return;closeMenu();portalNavigation.entries=[];portalNavigation.index=-1;portalNavigation.restore=null;history.scrollRestoration='auto';previewOpen=false;portalFeedback.reset();portalLanguageSaveError='';window.dispatchEvent(new CustomEvent('mora:access-changed'));app.hidden=true;app.inert=true;entry.hidden=false;entry.inert=false;entryForm.reset();password.type='password';reveal.textContent=MoradaI18n.t('Anzeigen');reveal.setAttribute('aria-label',MoradaI18n.t('Passwort anzeigen'));reveal.setAttribute('aria-pressed','false');history.replaceState(null,'',location.pathname+location.search);document.title=MoradaI18n.t('MORADA · Portal');window.scrollTo(0,0);document.getElementById('entry-heading').focus({preventScroll:true});});
 window.MoradaRoles={select:chooseRole,profiles,get current(){return role;}};
 document.title=MoradaI18n.t('MORADA · Portal');
 
@@ -11825,8 +11863,17 @@ void portalLoadExtended();
  'use strict';
  const ui={contractMore:false,prefs:{}};
  const prefsKey='morada-interface-preferences-v3';
- try {const v=JSON.parse(localStorage.getItem(prefsKey)||'{}');if(v&&typeof v==='object'&&!Array.isArray(v))ui.prefs=v;}catch{}
- const savePrefs=()=>{try{localStorage.setItem(prefsKey,JSON.stringify(ui.prefs));}catch{notify(MoradaI18n.t('Die Ansicht gilt für diese Sitzung. Einstellungen konnten nicht dauerhaft gespeichert werden.'));}};
+ const readPrefs=()=>{const value=JSON.parse(localStorage.getItem(prefsKey)||'{}');if(!value||typeof value!=='object'||Array.isArray(value))throw Error('Invalid interface preferences');return value;};
+ try{ui.prefs=readPrefs();}catch{}
+ const savePrefs=chosen=>{
+  try{
+   // Merge only this workspace's selection into the latest stored preferences.
+   const next={...readPrefs(),[role]:chosen},stored=JSON.stringify(next);
+   localStorage.setItem(prefsKey,stored);
+   if(localStorage.getItem(prefsKey)!==stored)throw Error('Interface preferences were not retained');
+   ui.prefs=next;return true;
+  }catch{return false;}
+ };
  const make=(tag,cls,html='')=>{const e=document.createElement(tag);if(cls)e.className=cls;if(html)e.innerHTML=html;return e;};
  const baseRender=render,baseNav=renderNav,baseModal=openModal;
  const baseOperational=operationalCharts,baseCompanyCharts=companyCharts;
@@ -11834,6 +11881,7 @@ void portalLoadExtended();
  companyCharts=function(){return companyRecords().length?baseCompanyCharts():'';};
 
  function favorites(){
+  try{ui.prefs=readPrefs();}catch{}
   const permitted=new Set(roleGroups().flatMap(([,items])=>items.map(([id])=>id)));
   const stored=ui.prefs[role];
   return (Array.isArray(stored)?stored:['today','tasks','calendar','properties']).filter((id,i,a)=>typeof id==='string'&&a.indexOf(id)===i&&permitted.has(id)&&!portalPlannedCopy(id)).slice(0,6);
@@ -12116,8 +12164,8 @@ void portalLoadExtended();
    setWizardStep(f,index+(action==='next-step'?1:-1));return;
   }
   if(action==='favorites'){
-   const ids=favorites();const choices=roleGroups().flatMap(([,items])=>items).filter(([id])=>!portalPlannedCopy(id)).map(([id,ic,label])=>[id,ic,id==='finance'?'Mandatsfinanzen':label]);
-   openModal(MoradaI18n.t('Euer Schnellzugriff.'),MoradaI18n.html`<form id="uxFavorites"><p class="subtitle">Bis zu sechs häufig genutzte Bereiche für ${esc(profiles[role].name)} auswählen.</p><div class="ux-fav-options">${choices.map((__uiLabels3)=>{const [id,,label]=__uiLabels3;return MoradaI18n.html`<label><input type="checkbox" name="favorite" value="${id}" ${ids.includes(id)?'checked':''}><span>${esc(MoradaI18n.label(__uiLabels3,2))}</span></label>`;}).join('')}</div><p class="form-error" id="uxFavoritesError" role="alert" hidden></p><div class="dialog-actions">${btn(MoradaI18n.t('Abbrechen'),'type="button" data-action="close"')}${btn(MoradaI18n.t('Auswahl speichern'),'type="submit"',true,'check')}</div></form>`,'MORADA · ANSICHT');
+   const ids=favorites();const choices=roleGroups().flatMap(([,items])=>items).filter(([id])=>!portalPlannedCopy(id)).map(([id,ic,label])=>MoradaI18n.registerLabels([id,ic,id==='finance'?'Mandatsfinanzen':label],[2]));
+   openModal(MoradaI18n.t('Euer Schnellzugriff.'),MoradaI18n.html`<form id="uxFavorites" data-role="${role}"><p class="subtitle">Bis zu sechs häufig genutzte Bereiche für ${esc(profiles[role].name)} auswählen.</p><div class="ux-fav-options">${choices.map((__uiLabels3)=>{const [id,,label]=__uiLabels3;return MoradaI18n.html`<label><input type="checkbox" name="favorite" value="${id}" ${ids.includes(id)?'checked':''}><span>${esc(MoradaI18n.label(__uiLabels3,2))}</span></label>`;}).join('')}</div><p class="form-error" id="uxFavoritesError" role="alert" hidden></p><div class="dialog-actions">${btn(MoradaI18n.t('Abbrechen'),'type="button" data-action="close"')}${btn(MoradaI18n.t('Auswahl speichern'),'type="submit"',true,'check')}</div></form>`,'MORADA · ANSICHT');
   }
  });
  document.addEventListener('keydown',e=>{
@@ -12129,9 +12177,15 @@ void portalLoadExtended();
   }
  });
  document.addEventListener('submit',e=>{
-  if(e.target.id!=='uxFavorites')return;e.preventDefault();const chosen=new FormData(e.target).getAll('favorite');
+  if(e.target.id!=='uxFavorites')return;e.preventDefault();const form=e.target;
+  if(!dialog.open||!dialog.contains(form)||form.dataset.saving||form.dataset.role!==role)return;
+  const chosen=[...new Set(new FormData(form).getAll('favorite'))];
   const err=document.getElementById('uxFavoritesError');if(chosen.length>6){err.textContent=MoradaI18n.t('Bitte höchstens sechs Bereiche auswählen.');err.hidden=false;return;}
-  ui.prefs[role]=chosen;savePrefs();portalMarkDialogClean();portalCloseDialog();renderNav();notify(MoradaI18n.t('Schnellzugriff aktualisiert.'));
+  const permitted=new Set(roleGroups().flatMap(([,items])=>items.map(([id])=>id)));
+  if(chosen.some(id=>!permitted.has(id)||portalPlannedCopy(id))){err.textContent=MoradaI18n.t('Bitte die Angaben prüfen.');err.hidden=false;return;}
+  err.hidden=true;form.dataset.saving='true';portalFeedback.beginSave();
+  if(!savePrefs(chosen)){delete form.dataset.saving;portalFeedback.failed();return;}
+  portalMarkDialogClean();portalCloseDialog();renderNav();portalFeedback.saved('Einstellungen aktualisiert');
  });
  document.addEventListener('click',e=>{for(const menu of document.querySelectorAll('.ux-create-menu[open]'))if(!menu.contains(e.target))menu.open=false;});
  entryRefine();prepareDrawer();if(previewOpen)render();
@@ -12228,7 +12282,7 @@ void portalLoadExtended();
  const empty=(symbol,title,copy)=>MoradaI18n.html`<div class="ps-empty">${psIcon(symbol)}<strong>${MoradaI18n.t(title)}</strong><p>${MoradaI18n.t(copy)}</p></div>`;
  function sectionBody(id){
   switch(id){
-   case 'profile':return card(MoradaI18n.t('Persönliche Angaben'),MoradaI18n.html`<dl class="ps-details">${MoradaI18n.registerLabels(['Vor- und Nachname','E-Mail-Adresse','Telefon','Korrespondenzadresse']).map(label=>MoradaI18n.html`<div><dt>${MoradaI18n.t(label)}</dt><dd class="ps-unset">Nicht hinterlegt</dd></div>`).join('')}</dl><div class="ps-footnote">Mit Ihrem persönlichen Zugang verfügbar.</div>`);
+   case 'profile':return card(MoradaI18n.t('Persönliche Angaben'),MoradaI18n.html`<dl class="ps-details">${MoradaI18n.registerLabels(['Vor- und Nachname','E-Mail-Adresse','Telefon','Korrespondenzadresse']).map(label=>MoradaI18n.html`<div><dt>${MoradaI18n.t(label)}</dt><dd class="ps-unset">Nicht hinterlegt</dd></div>`).join('')}</dl><div class="ps-footnote">Mit Ihrem persönlichen Zugang verfügbar.</div>`,badge());
    case 'appearance':return card(MoradaI18n.t('Portalsprache'),MoradaI18n.html`<div class="ps-language-options" role="group" aria-label="Portalsprache">${MoradaI18n.languages.map((__uiLabels1)=>{const [code,name]=__uiLabels1;return MoradaI18n.html`<button type="button" class="ps-language-option" data-ps-language="${code}" aria-pressed="${MoradaI18n.language===code}"><span class="ps-language" aria-hidden="true">${code.toUpperCase()}</span><strong lang="${code}">${MoradaI18n.t(name)}</strong><span class="ps-language-check" aria-hidden="true">${MoradaI18n.language===code?'✓':''}</span></button>`;}).join('')}</div><p class="ps-footnote">${MoradaI18n.storageAvailable?MoradaI18n.t('Ihre Auswahl wird auf diesem Gerät gespeichert.'):MoradaI18n.t('Die Sprache gilt für diese Sitzung. Ihr Browser erlaubt derzeit keine dauerhafte Speicherung.')}</p>`);
    case 'notifications':return card(MoradaI18n.t('Benachrichtigungskanäle'),row('mail',MoradaI18n.t('E-Mail'),MoradaI18n.t('Hinweise zu Nachrichten, Anliegen und Terminen.'))+row('bell',MoradaI18n.t('Push-Mitteilungen'),MoradaI18n.t('Kurze Hinweise direkt auf Ihrem Gerät.')));
    case 'access':return card(MoradaI18n.t('Ansicht & Berechtigungen'),MoradaI18n.html`<div class="ps-row">${psIcon(profiles[role].ico)}<div><strong>${MoradaI18n.t(profiles[role].label)}</strong><p>Aktuell ausgewählter Portalbereich</p></div>${badge(MoradaI18n.t('Vorschau'))}</div><div class="ps-footnote">Ein Bereichswechsel erteilt keine Zugriffsrechte.</div>`)+
@@ -12299,7 +12353,7 @@ void portalLoadExtended();
   settings.querySelector('span').textContent=MoradaI18n.t('Profil & Einstellungen');
   const caption=menu.querySelector('.profile-menu-copy small');if(caption){caption.textContent=MoradaI18n.t('Vorschauansichten');caption.parentElement.firstChild.nodeValue=MoradaI18n.t('Bereich wechseln');}
   const root=dialog.querySelector('.portal-settings');if(!root)return;
-  const view=root.dataset.mobileView,scroll=root.querySelector('.ps-panel').scrollTop;
+  const view=root.dataset.mobileView,scroll=root.querySelector('.ps-panel').scrollTop,languageFocus=document.activeElement?.dataset.psLanguage;
   for(const section of sections)root.querySelector('[data-ps-tab="'+section.id+'"] span').textContent=MoradaI18n.t(MoradaI18n.t(section.label));
   root.querySelector('.ps-nav-label').textContent=MoradaI18n.t('Ihr Portal');
   root.querySelector('.ps-nav').setAttribute('aria-label',MoradaI18n.t('Einstellungsbereiche'));
@@ -12308,7 +12362,7 @@ void portalLoadExtended();
   dialog.querySelector('.eyebrow').textContent=MoradaI18n.t('MORADA · PERSÖNLICHER BEREICH');
   dialog.querySelector('.close').setAttribute('aria-label',MoradaI18n.t('Schliessen'));
   selectSection(activeSection);root.dataset.mobileView=view;root.querySelector('.ps-panel').scrollTop=scroll;
-  root.querySelector('[data-ps-language="'+MoradaI18n.language+'"]')?.focus({preventScroll:true});
+  if(languageFocus)root.querySelector('[data-ps-language="'+languageFocus+'"]')?.focus({preventScroll:true});
  });
  window.addEventListener('hashchange',()=>close());
  document.getElementById('portalSignout').addEventListener('click',()=>close());
