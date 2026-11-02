@@ -1,0 +1,17 @@
+/* A single quiet motion vocabulary; interactions are never animation-gated. */
+#portalPreview,#moradaEntry{--portal-motion-fast:140ms;--portal-motion-open:160ms;--portal-motion-ease:cubic-bezier(.2,.6,.3,1)}
+#portalPreview :is(.btn,.nav a,.cal-arrow,.cal-switch button,.page-tabs a,.role-option,.ps-nav button,.top-icon,.close,.cal-color-option),#moradaEntry .entry-role{transition:background-color var(--portal-motion-fast) ease,border-color var(--portal-motion-fast) ease,color var(--portal-motion-fast) ease,box-shadow var(--portal-motion-fast) ease}
+#portalPreview #dialog[open],#portalPreview :is(#profileMenu,#portalLanguageMenu,.today-create-menu):not([hidden]){animation:morada-surface-open var(--portal-motion-open) var(--portal-motion-ease) both}
+#portalPreview #dialog::backdrop{animation:morada-backdrop-open var(--portal-motion-open) ease both}
+#portalPreview .cal-color-menu[open] .cal-color-options{animation:morada-content-open var(--portal-motion-fast) ease both}
+#portalPreview .sidebar{transition:transform var(--portal-motion-open) var(--portal-motion-ease)}
+@media(hover:hover) and (pointer:fine){
+ #portalPreview :is(.btn,.cal-arrow,.top-icon,.close):hover{box-shadow:0 2px 8px rgba(72,50,34,.07)}
+ #portalPreview :is(.card,.stat,.cal-kpi):not(button):hover{transform:none}
+}
+@keyframes morada-surface-open{from{opacity:.94;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+@keyframes morada-backdrop-open{from{opacity:0}to{opacity:1}}
+@keyframes morada-content-open{from{opacity:.94}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+ #portalPreview *,#portalPreview *::before,#portalPreview *::after,#moradaEntry *,#moradaEntry *::before,#moradaEntry *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}

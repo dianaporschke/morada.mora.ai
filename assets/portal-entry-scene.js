@@ -103,7 +103,7 @@ export function installEntryScene(root, win = window) {
  const doc = root.ownerDocument, art = root.closest('.entry-art'), entry = root.closest('#moradaEntry');
  const image = root.querySelector('.entry-city-image');
  if (!art || !entry || !image) return;
- image.src = 'assets/entry-city-ink.png';
+ const artworkSource = 'assets/entry-city-ink.png';
  const reduced = win.matchMedia('(prefers-reduced-motion: reduce)');
  const ns = 'http://www.w3.org/2000/svg';
  const node = (tag, attributes = {}) => {
@@ -144,10 +144,11 @@ export function installEntryScene(root, win = window) {
  }
  const finish=node('rect',{x:0,y:0,width:1620,height:971,fill:'white',class:'entry-pencil-finish'});
  mask.append(pencil,finish);defs.append(softness,mask);
- const artwork=node('image',{href:image.getAttribute('src') || '',x:0,y:0,width:1620,height:971});
+ const artwork=node('image',{href:artworkSource,x:0,y:0,width:1620,height:971});
  const revealed = node('g',{mask:'url(#entry-pencil-mask)'});revealed.append(artwork);
  svg.append(defs,revealed);root.querySelector('.entry-city-camera').append(svg);
- let visible = true, disposed = false;
+ let visible = true, disposed = false, fallbackTimer;
+ const loader = new win.Image();loader.decoding = 'async';
  const complete = () => {root.classList.add('is-complete');};
  function sync() {
   if (disposed) return;
@@ -166,13 +167,27 @@ export function installEntryScene(root, win = window) {
  intersection?.observe(art);
  if (!reduced.matches) root.classList.add('is-preparing');
  sync();
- // Wait for the lightweight transparent line-art asset before drawing.
- Promise.resolve(image.decode?.()).catch(() => {}).then(() => {
+ // Decorative loading has a deadline and never touches the workspace form.
+ // Keep the inline outline visible while slow or failed image requests settle.
+ const fallback = () => {
   if (disposed) return;
-  root.classList.remove('is-preparing');root.classList.add('is-ready');sync();
+  complete();root.classList.remove('is-preparing');sync();
+ };
+ const loaded = new Promise((resolve,reject) => {
+  loader.addEventListener('load',resolve,{once:true});
+  loader.addEventListener('error',reject,{once:true});
  });
+ loader.src = artworkSource;
+ fallbackTimer = win.setTimeout(fallback,1500);
+ Promise.resolve(loader.decode ? loader.decode() : loaded).then(() => {
+  if (disposed) return;
+  win.clearTimeout(fallbackTimer);image.src = artworkSource;
+  root.classList.remove('is-preparing');root.classList.add('is-ready');sync();
+ }, () => {win.clearTimeout(fallbackTimer);fallback();});
+ // decode() and load/error are independent in some browsers.
+ loaded.catch(() => {});
  return () => {
-  disposed = true;mutation.disconnect();intersection?.disconnect();
+  disposed = true;win.clearTimeout(fallbackTimer);mutation.disconnect();intersection?.disconnect();
   doc.removeEventListener('visibilitychange', sync);
   reduced.removeEventListener('change', sync);svg.remove();
   root.classList.remove('is-preparing','is-ready','is-complete');delete root.dataset.paused;delete root.dataset.sceneInstalled;

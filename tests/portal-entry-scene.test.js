@@ -10,9 +10,11 @@ function setup(reduce=false) {
  const media={matches:reduce,addEventListener(_t,fn){this.listener=fn;},removeEventListener(){}};
  w.matchMedia=()=>media;let intersection;
  w.IntersectionObserver=class{constructor(fn){intersection=fn;}observe(){}disconnect(){}};
- let decoded;root.querySelector('img').decode=()=>new Promise(resolve=>{decoded=resolve;});
+ let decoded,failed,fallback;const nativeTimeout=w.setTimeout.bind(w);
+ w.setTimeout=(fn,delay,...args)=>{if(delay===1500){fallback=fn;return 0;}return nativeTimeout(fn,delay,...args);};
+ w.Image=function(){const image=w.document.createElement('img');image.decode=()=>new Promise((resolve,reject)=>{decoded=resolve;failed=reject;});return image;};
  const dispose=installEntryScene(root,w);
- return {w,root,media,dispose,decoded,intersect:value=>intersection([{isIntersecting:value}]),toggle:()=>w.document.querySelector('.entry-motion-toggle')};
+ return {w,root,media,dispose,decoded,failed,fallback:()=>fallback(),intersect:value=>intersection([{isIntersecting:value}]),toggle:()=>w.document.querySelector('.entry-motion-toggle')};
 }
 test('decode and background visibility preserve the workspace form without a visible animation control',async()=>{
  const s=setup();try{
@@ -56,5 +58,25 @@ test('transparent pencil artwork is revealed through a mask and becomes still at
   assert.ok(s.root.classList.contains('is-complete'));
   assert.equal(s.root.dataset.paused,'true');assert.equal(s.toggle(),null);
   s.intersect(false);s.intersect(true);assert.equal(s.root.dataset.paused,'true');
+ }finally{s.dispose();s.w.close();}
+});
+
+test('a stalled decorative image cannot hold the entry form and falls back without late replay',async()=>{
+ const s=setup();try{
+  const form=s.w.document.querySelector('form');let submits=0;
+  form.addEventListener('submit',event=>{event.preventDefault();submits++;});
+  form.dispatchEvent(new s.w.Event('submit',{bubbles:true,cancelable:true}));assert.equal(submits,1);
+  assert.equal(form.hidden,false);assert.equal(form.querySelector('button').disabled,false);
+  s.fallback();assert.ok(s.root.classList.contains('is-complete'));assert.equal(s.root.classList.contains('is-preparing'),false);
+  s.decoded();await tick();assert.ok(s.root.classList.contains('is-ready'));assert.ok(s.root.classList.contains('is-complete'));assert.equal(s.root.dataset.paused,'true');
+  form.dispatchEvent(new s.w.Event('submit',{bubbles:true,cancelable:true}));assert.equal(submits,2);
+ }finally{s.dispose();s.w.close();}
+});
+
+test('a failed decorative image leaves an immediate still fallback and the form enabled',async()=>{
+ const s=setup();try{
+  s.failed(new Error('Network unavailable'));await tick();
+  assert.ok(s.root.classList.contains('is-complete'));assert.equal(s.root.classList.contains('is-preparing'),false);
+  assert.equal(s.w.document.querySelector('form button').disabled,false);
  }finally{s.dispose();s.w.close();}
 });
