@@ -84,3 +84,31 @@ test('day overview and its controls use the shared DE/EN catalogue',async()=>{
   }
  }finally{w.close();}
 });
+
+test('appointment colour follows create, edit, copy, views and validation',async()=>{
+ const w=await setup(true);try{
+  w.eval("state={...state,appointments:[]};calendarSetDate('2026-11-02');go('calendar');calendarOpenForm() ");
+  const d=w.document,f=d.getElementById('opsEntryForm');
+  assert.equal(d.querySelectorAll('[name=calendarColor]').length,6);
+  f.elements.title.value='Wohnungsabnahme';f.elements.title.dispatchEvent(new w.Event('input',{bubbles:true}));
+  d.querySelector('[name=calendarColor][value=purple]').click();
+  assert.equal(d.getElementById('calPreviewTitle').textContent,'Wohnungsabnahme');
+  assert.equal(d.getElementById('calEventPreview').style.getPropertyValue('--cal-event-color'),'#706587');
+  f.dispatchEvent(new w.Event('submit',{bubbles:true,cancelable:true}));
+  for(let i=0;i<100&&w.eval('state.appointments.length===0||portalSaving');i++)await new Promise(r=>setTimeout(r,10));
+  assert.equal(w.eval('state.appointments[0].calendarInfo.color'),'purple');
+  assert.match(w.localStorage.getItem(w.eval('storageKey')),/"color":"purple"/);
+  for(const view of ['month','week','list']){
+   w.eval(`calendarUI.view='${view}';calendarRefresh()`);
+   const items=d.querySelectorAll('.cal-appointment[style]');assert.ok(items.length);
+   for(const item of items)assert.equal(item.style.getPropertyValue('--cal-event-color'),'#706587');
+  }
+  w.eval('calendarOpenForm(state.appointments[0].id)');
+  assert.equal(d.querySelector('[name=calendarColor]:checked').value,'purple');
+  w.eval('portalMarkDialogClean();portalCloseDialog();calendarOpenForm("","","2026-11-03",state.appointments[0])');
+  assert.equal(d.querySelector('[name=calendarColor]:checked').value,'purple');
+  assert.throws(()=>w.eval("calendarValidateRecord({...state.appointments[0],calendarInfo:{...state.appointments[0].calendarInfo,color:'red;display:none'}})"),/Terminfarbe/);
+  w.eval('portalMarkDialogClean();portalCloseDialog();calendarOpenForm()');
+  assert.equal(d.querySelector('[name=calendarColor]:checked').value,'blue');
+ }finally{w.close();}
+});

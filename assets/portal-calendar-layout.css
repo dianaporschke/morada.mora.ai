@@ -144,3 +144,61 @@
  #portalPreview #main .cal-more{font-size:9px}
  #portalPreview #main .cal-legend{gap:4px 8px;padding:7px}
 }
+/* Appointment editor: constrain native iOS date/time controls to their grid cells. */
+#portalPreview #dialog:has(.cal-form){width:min(660px,calc(100% - 24px));max-width:calc(100% - 24px);max-height:calc(100dvh - 24px);overflow:hidden}
+#portalPreview #dialog:has(.cal-form)[open]{display:flex;flex-direction:column}
+#portalPreview #dialog:has(.cal-form) .dialog-head{flex:none;padding:18px 20px 14px}
+#portalPreview #dialog:has(.cal-form) .dialog-head h2{font-size:25px;margin-bottom:0}
+#portalPreview #dialog:has(.cal-form) .dialog-body{min-height:0;overflow:auto;overscroll-behavior:contain;padding:16px 20px 0;scroll-padding-bottom:90px}
+#portalPreview #dialog .cal-form{min-width:0}
+#portalPreview #dialog .cal-form .form-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#portalPreview #dialog .cal-form .form-grid>*{min-width:0;max-width:100%}
+#portalPreview #dialog .cal-form .form-field{min-width:0;gap:5px;font-size:12px}
+#portalPreview #dialog .cal-form input:not([type=checkbox]):not([type=radio]),#portalPreview #dialog .cal-form select,#portalPreview #dialog .cal-form textarea{box-sizing:border-box;display:block;min-width:0;max-width:100%;width:100%;min-height:44px;padding:10px;font-size:16px;line-height:1.35}
+#portalPreview #dialog .cal-form input[type=date],#portalPreview #dialog .cal-form input[type=time]{appearance:none;-webkit-appearance:none;inline-size:100%;min-inline-size:0;height:44px;max-height:44px;text-align:left}
+#portalPreview #dialog .cal-form input::-webkit-date-and-time-value{min-width:0;text-align:left;margin:0}
+#portalPreview #dialog .cal-form input::-webkit-datetime-edit{padding:0;min-width:0;display:inline-flex}
+#portalPreview #dialog .cal-form input[type=checkbox]{width:22px;height:22px;min-height:22px;flex:none;margin:0;accent-color:var(--copper)}
+#portalPreview #dialog .cal-form .cal-check{display:flex;align-items:center;gap:9px;min-height:32px;margin:0}
+#portalPreview #dialog .cal-form .dialog-actions{position:sticky;bottom:0;z-index:2;background:var(--card);display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px -20px 0;padding:12px 20px max(12px,env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+#portalPreview #dialog .cal-form .dialog-actions .btn{min-height:44px;margin:0;padding:10px}
+#portalPreview #dialog .cal-form .cal-location{padding:14px 0;border-top:1px solid var(--line);margin-top:14px}
+#portalPreview #dialog .cal-form .cal-location summary{font-size:14px;font-weight:500;padding:2px 0;cursor:pointer}
+#portalPreview #dialog .cal-form .cal-location[open] summary{margin-bottom:14px}
+#portalPreview #dialog .cal-color-picker{grid-column:1/-1;border:0;padding:0;margin:2px 0 4px;min-width:0}
+#portalPreview #dialog .cal-color-picker legend{font-size:12px;color:var(--muted);margin-bottom:7px}
+#portalPreview #dialog .cal-color-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+#portalPreview #dialog .cal-color-option{position:relative;display:flex;align-items:center;gap:8px;min-height:44px;min-width:0;padding:8px;border:1px solid var(--line);border-radius:8px;font-size:12px;cursor:pointer}
+#portalPreview #dialog .cal-color-option input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+#portalPreview #dialog .cal-color-option i,.cal-color-detail i{display:inline-block;width:13px;height:13px;border-radius:50%;flex:none}
+#portalPreview #dialog .cal-color-option b{visibility:hidden;margin-left:auto;font-weight:500}
+#portalPreview #dialog .cal-color-option:has(input:checked){border-color:var(--brown);background:var(--active)}
+#portalPreview #dialog .cal-color-option input:checked~b{visibility:visible}
+#portalPreview #dialog .cal-color-option:has(input:focus-visible){outline:2px solid var(--copper);outline-offset:2px}
+#portalPreview #dialog .cal-event-preview{border-radius:8px;background:var(--cal-event-color);color:#fff;padding:10px 12px;margin-top:8px;overflow-wrap:anywhere}
+#portalPreview #dialog .cal-event-preview strong,#portalPreview #dialog .cal-event-preview small{display:block;font-size:12px;line-height:1.5}
+#portalPreview #dialog .cal-event-preview small{font-size:11px}
+.cal-color-detail{display:flex;align-items:center;gap:8px;font-size:12px}
+/* The exact selected swatch is used across month, week, list and day views. */
+#portalPreview #main .cal-chip.cal-appointment[style]{background:var(--cal-event-color);border-color:var(--cal-event-color);color:#fff}
+#portalPreview #main .cal-item.cal-appointment[style],#portalPreview #dialog .cal-item.cal-appointment[style]{--cal-color:var(--cal-event-color);border-left:3px solid var(--cal-event-color);background:color-mix(in srgb,var(--cal-event-color) 9%,var(--card))}
+#portalPreview #main .cal-item.cal-appointment[style] .cal-item-time,#portalPreview #dialog .cal-item.cal-appointment[style] .cal-item-time{color:var(--cal-event-color)}
+@media(max-width:480px){
+ #portalPreview #dialog:has(.cal-form) .dialog-head{padding:16px 16px 12px}
+ #portalPreview #dialog:has(.cal-form) .dialog-body{padding:14px 16px 0}
+ #portalPreview #dialog .cal-form .form-grid{gap:12px 10px}
+ #portalPreview #dialog .cal-form .form-grid>.form-field:has(select[name=owner]),#portalPreview #dialog .cal-form .form-grid>.form-field:has(select[name=teamBoth]){grid-column:1/-1}
+ #portalPreview #dialog .cal-form .dialog-actions{margin-left:-16px;margin-right:-16px;padding-left:16px;padding-right:16px}
+ #portalPreview #dialog .cal-form-hint{font-size:11px;line-height:1.5}
+ #portalPreview #dialog .cal-color-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* Use the existing single scroll region and fixed action row. */
+#portalPreview #dialog:has(.cal-form) .dialog-body{padding:0;overflow:hidden;display:flex;flex-direction:column;min-height:0}
+#portalPreview #dialog .cal-form{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+#portalPreview #dialog .cal-form .ux-form-scroll{padding:16px 20px;min-height:0;overflow-y:auto;overflow-x:hidden;scrollbar-gutter:auto}
+#portalPreview #dialog .cal-form .dialog-actions{position:static;flex:none;margin:0;padding:12px 20px max(12px,env(safe-area-inset-bottom))}
+@media(max-width:480px){
+ #portalPreview #dialog .cal-form .ux-form-scroll{padding:14px 16px}
+ #portalPreview #dialog .cal-form .dialog-actions{padding-left:16px;padding-right:16px}
+}
