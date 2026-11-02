@@ -8618,9 +8618,37 @@ function calendarDayPanel(){
 }
 function calendarHasFilters(){const f=calendarUI;return !!(f.query||f.owner||f.propertyId||f.kind||f.status!=='active');}
 function calendarLegend(){return MoradaI18n.html`<div class="cal-legend" aria-label="Eintragsarten">${[MoradaI18n.registerLabels(['appointment','Termin']),MoradaI18n.registerLabels(['task','Aufgabe']),MoradaI18n.registerLabels(['case','Anliegen']),MoradaI18n.registerLabels(['maintenance','Unterhalt']),MoradaI18n.registerLabels(['deadline','Vertragsfrist']),MoradaI18n.registerLabels(['reletting','Neuvermietung']),MoradaI18n.registerLabels(['applicant','Mietinteressenten']),MoradaI18n.registerLabels(['approval','Fachprüfungen'])].map((__uiLabels43)=>{const [k,l]=__uiLabels43;return MoradaI18n.html`<span class="cal-${k}"><i class="cal-dot" aria-hidden="true"></i>${MoradaI18n.t(l)}</span>`;}).join('')}</div>`;}
+// Prioritise today's live/next appointment only in the compact month cells.
+// Agenda rows, record status and historical/future days keep their original order.
+function calendarClock(now=new Date()){
+ calendarClock.formatter??=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Zurich',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+ const p=Object.fromEntries(calendarClock.formatter.formatToParts(now).map(p=>[p.type,p.value])),day=p.year+'-'+p.month+'-'+p.day;
+ return {day,stamp:day+'T'+p.hour+':'+p.minute};
+}
+function calendarMonthCellRows(day,rows,clock=calendarClock()){
+ if(day!==clock.day)return rows;
+ const rank=r=>{
+  if(r.kind!=='appointment')return 3;
+  if(!opsPlanned(r))return 6;
+  const d=calendarInfo(r);if(d.allDay)return 2;
+  const start=r.date+'T'+r.time,end=d.endTime?(d.endDate||r.date)+'T'+d.endTime:'';
+  if(end&&end<=clock.stamp)return 5;
+  if(start>clock.stamp)return 1;
+  return end||start===clock.stamp?0:4;
+ };
+ return rows.slice().sort((a,b)=>rank(a)-rank(b)||calendarSort(a,b));
+}
+function calendarRefreshCurrentCell(){
+ if(!previewOpen||current!=='calendar'||dialog.open||calendarUI.focus||calendarUI.view!=='month')return;
+ const day=crmToday(),cell=document.querySelector('#calContent .cal-day-number[data-date="'+day+'"]')?.parentElement;
+ if(!cell||cell.contains(document.activeElement))return;
+ const template=document.createElement('template');template.innerHTML=calendarMonthHTML();
+ const next=template.content.querySelector('.cal-day-number[data-date="'+day+'"]')?.parentElement;
+ if(next&&cell.innerHTML!==next.innerHTML)cell.innerHTML=next.innerHTML;
+}
 function calendarMonthHTML(){
- const b=calendarBounds(),from=calendarMonday(b.from),end=unitAddDays(calendarMonday(b.to),6),days=Math.round((Date.parse(end)-Date.parse(from))/86400000)+1,rows=calendarScopeRows().filter(r=>r.date<=end&&r.endDate>=from),byDay=new Map();
- for(let n=0;n<days;n++){const day=unitAddDays(from,n);byDay.set(day,rows.filter(r=>r.date<=day&&r.endDate>=day));}
+ const b=calendarBounds(),from=calendarMonday(b.from),end=unitAddDays(calendarMonday(b.to),6),days=Math.round((Date.parse(end)-Date.parse(from))/86400000)+1,rows=calendarScopeRows().filter(r=>r.date<=end&&r.endDate>=from),byDay=new Map(),clock=calendarClock();
+ for(let n=0;n<days;n++){const day=unitAddDays(from,n);byDay.set(day,calendarMonthCellRows(day,rows.filter(r=>r.date<=day&&r.endDate>=day),clock));}
  return MoradaI18n.html`<section class="card cal-board cal-month-board" aria-label="Monatskalender"><div class="cal-month" style="--cal-weeks:${days/7}">${MoradaI18n.registerLabels(['Mo','Di','Mi','Do','Fr','Sa','So']).map(d=>MoradaI18n.html`<div class="cal-weekday">${MoradaI18n.t(d)}</div>`).join('')}${Array.from({length:days},(_,i)=>{const day=unitAddDays(from,i),items=byDay.get(day),outside=day.slice(0,7)!==calendarUI.anchor.slice(0,7),limit=2;return MoradaI18n.html`<div class="cal-cell${outside?' is-outside':''}${i%7>4?' is-weekend':''}${day===crmToday()?' is-today':''}${day===calendarUI.selected?' is-selected':''}"><button type="button" class="cal-day-number" data-calendar-action="select-day" data-date="${day}" aria-label="${esc(calendarDateLabel(day))}, ${items.length} Einträge" aria-pressed="${day===calendarUI.selected}"${day===crmToday()?' aria-current="date"':''}><span>${Number(day.slice(8))}</span>${items.length?MoradaI18n.html`<small>${items.length}</small>`:''}</button>${items.slice(0,limit).map((r,index)=>MoradaI18n.html`<button type="button" class="cal-chip${index===1?' cal-chip-secondary':''} cal-${r.group}${r.status==='Abgesagt'?' is-cancelled':r.status==='Durchgeführt'?' is-completed':''}${r.kind!=='appointment'&&r.date<crmToday()?' is-late':''}" ${calendarRowAttrs(r)} ${calendarColorAttrs(r)} title="${esc(r.label+' · '+r.title+' · '+r.owners.join(' & '))}" aria-label="${esc((r.kind==='appointment'?MoradaI18n.t('Termin')+' · ':'')+r.label+' · '+r.title)}">${r.kind==='appointment'?esc(calendarInfo(r).allDay?MoradaI18n.t('Ganztägig'):r.date<day?'↳':r.time):MoradaI18n.t('Fällig')} ${esc(r.title)}</button>`).join('')}${items.length>limit?MoradaI18n.html`<button type="button" class="cal-more cal-more-compact" data-calendar-action="select-day" data-date="${day}">+${items.length-limit} weitere</button>`:''}${items.length>limit?MoradaI18n.html`<button type="button" class="cal-more cal-more-expanded" data-calendar-action="select-day" data-date="${day}">+${items.length-limit} weitere</button>`:''}</div>`;}).join('')}</div>${calendarLegend()}</section>`;
 }
 function calendarWeekHTML(){const b=calendarBounds();return MoradaI18n.html`<section class="card cal-board"><div class="cal-week-wrap"><div class="cal-week">${Array.from({length:7},(_,i)=>{const day=unitAddDays(b.from,i),rows=calendarDayRows(day);return MoradaI18n.html`<section class="cal-week-day${day===crmToday()?' is-today':''}"><button type="button" class="cal-week-title" data-calendar-action="day-modal" data-day="${day}" aria-label="${esc(calendarDateLabel(day))}, Tagesübersicht öffnen"><span>${esc(new Date(day+'T12:00:00Z').toLocaleDateString(MoradaI18n.locale,{timeZone:'UTC',weekday:'short'}))}</span><strong>${day.slice(8)}.${day.slice(5,7)}.</strong></button>${rows.slice(0,8).map(r=>calendarItem(r,day)).join('')||MoradaI18n.fragment('<p class="cal-empty">Keine Einträge</p>')}${rows.length>8?MoradaI18n.html`<button type="button" class="link" data-calendar-action="day-modal" data-day="${day}">+${rows.length-8} weitere ↗</button>`:''}<button type="button" class="link section-gap" data-calendar-action="new" data-day="${day}" aria-label="Termin am ${dateShort(day)} erfassen">+ Termin</button></section>`;}).join('')}</div></div>${calendarLegend()}</section>`;}
@@ -11715,6 +11743,7 @@ void portalLoadExtended();
   }
   const schedule=document.getElementById('todayScheduleCard');
   if(schedule&&schedule.dataset.day!==todayScheduleDay())refreshTodaySchedule();
+  calendarRefreshCurrentCell();
   // A minute boundary is also the midnight boundary in Europe/Zurich.
   timer=setTimeout(refreshCurrentDate,60000-Date.now()%60000);
  }

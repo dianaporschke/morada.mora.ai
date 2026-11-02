@@ -117,3 +117,29 @@ test('appointment colour follows create, edit, copy, views and validation',async
   assert.equal(d.querySelector('[name=calendarColor]:checked').value,'blue');
  }finally{w.close();}
 });
+
+test('today month cell advances past ended appointments while the day agenda retains every record',async()=>{
+ const clock={now:Date.parse('2026-11-02T10:00:00Z')}; // 11:00 in Zurich.
+ const w=await setup(false,clock);try{
+  w.eval(`state={...state,appointments:[
+   {id:'early',title:'Früher Termin',date:'2026-11-02',time:'06:00',owner:'Alexander',status:'Geplant',type:'Besprechung',calendarInfo:{endDate:'2026-11-02',endTime:'07:00'}},
+   {id:'next',title:'Nächster Termin',date:'2026-11-02',time:'12:10',owner:'Alexander',status:'Geplant',type:'Besprechung',calendarInfo:{endDate:'2026-11-02',endTime:'14:01'}},
+   {id:'later',title:'Späterer Termin',date:'2026-11-02',time:'15:00',owner:'Diana',status:'Geplant',type:'Besprechung',calendarInfo:{endDate:'2026-11-02',endTime:'16:00'}},
+   {id:'all-day',title:'Ganztägig',date:'2026-11-02',time:'',owner:'Diana',status:'Geplant',type:'Besprechung',calendarInfo:{allDay:true,endDate:'2026-11-02',endTime:''}},
+   {id:'unknown',title:'Alte Endzeit unbekannt',date:'2026-11-02',time:'05:00',owner:'Diana',status:'Geplant',type:'Besprechung'}
+  ]};calendarUI.view='month';calendarSetDate('2026-11-02');go('calendar');`);
+  const d=w.document,before=w.eval('JSON.stringify(state)');
+  const first=()=>d.querySelector('.cal-day-number[data-date="2026-11-02"]').parentElement.querySelector('.cal-chip').dataset.id;
+  assert.equal(first(),'next');
+  d.querySelector('#calSelectedDay .cal-section-more').click();
+  const agenda=[...d.querySelectorAll('#dialog .cal-item')].map(el=>el.dataset.id);
+  assert.equal(agenda.length,5);assert.ok(agenda.includes('early'));assert.ok(agenda.indexOf('early')<agenda.indexOf('next'));w.eval('portalCloseDialog()');
+  clock.now=Date.parse('2026-11-02T12:00:00Z');clock.tick();assert.equal(first(),'next'); // Running.
+  clock.now=Date.parse('2026-11-02T13:01:00Z');clock.tick();assert.equal(first(),'later'); // End reached.
+  clock.now=Date.parse('2026-11-02T15:00:00Z');clock.tick();assert.equal(first(),'all-day');
+  const rows=w.eval('calendarRows().filter(r=>r.kind==="appointment")');
+  assert.equal(w.calendarMonthCellRows('2026-11-03',rows),rows); // Future days are not judged by today's clock.
+  assert.equal(w.calendarMonthCellRows('2026-11-01',rows),rows);
+  assert.equal(w.eval('JSON.stringify(state)'),before);
+ }finally{w.close();}
+});
