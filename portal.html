@@ -1808,7 +1808,7 @@ button,input,select,textarea{font-family:var(--morada-font-body)}
 
 <style id="morada-calendar">
 /* Calendar: shared records, compact navigation, readable day agenda. */
-#portalPreview .cal-page{--cal-visit:#526c82;--cal-task:#4c6e60;--cal-work:#916b32;--cal-case:#706587;--cal-deadline:#a0666e;--cal-reletting:#a46449;--cal-applicant:#786b60}
+#portalPreview .cal-page{--cal-visit:#526c82;--cal-task:#4c6e60;--cal-work:#916b32;--cal-case:#706587;--cal-deadline:#a0666e;--cal-reletting:#a46449;--cal-applicant:#786b60;--cal-approval:#747861}
 #portalPreview .cal-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px}
 #portalPreview .cal-kpi{display:flex;text-align:left;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:18px;min-width:0}
 #portalPreview .cal-kpi:hover{border-color:var(--copper)}
@@ -1849,6 +1849,7 @@ button,input,select,textarea{font-family:var(--morada-font-body)}
 #portalPreview .cal-chip.cal-deadline{border-color:var(--cal-deadline);background:color-mix(in srgb,var(--cal-deadline) 9%,var(--card))}
 #portalPreview .cal-chip.cal-reletting{border-color:var(--cal-reletting);background:color-mix(in srgb,var(--cal-reletting) 9%,var(--card))}
 #portalPreview .cal-chip.cal-applicant{border-color:var(--cal-applicant);background:color-mix(in srgb,var(--cal-applicant) 9%,var(--card))}
+#portalPreview .cal-chip.cal-approval{border-color:var(--cal-approval);background:color-mix(in srgb,var(--cal-approval) 9%,var(--card))}
 #portalPreview .cal-chip.is-late{box-shadow:inset 0 0 0 1px #a14e42;background:color-mix(in srgb,#a14e42 14%,var(--card))}
 #portalPreview .cal-page .cal-item{border-left:3px solid var(--cal-color,var(--cal-visit));padding:10px 9px;margin:4px 0;border-bottom:1px solid var(--line);border-radius:5px;background:color-mix(in srgb,var(--cal-color,var(--cal-visit)) 5%,var(--card))}
 #portalPreview .cal-page .cal-item .cal-item-time{color:var(--cal-color,var(--cal-visit));font-weight:650}
@@ -1856,11 +1857,13 @@ button,input,select,textarea{font-family:var(--morada-font-body)}
 #portalPreview .cal-item.cal-case{--cal-color:var(--cal-case)}
 #portalPreview .cal-item.cal-maintenance{--cal-color:var(--cal-work)}
 #portalPreview .cal-item.cal-deadline{--cal-color:var(--cal-deadline)}
+#portalPreview .cal-item.cal-approval{--cal-color:var(--cal-approval)}
 #portalPreview .cal-item.cal-appointment{--cal-color:var(--cal-visit)}
 #portalPreview .cal-item.cal-reletting{--cal-color:var(--cal-reletting)}
 #portalPreview .cal-item.cal-applicant{--cal-color:var(--cal-applicant)}
 #portalPreview .cal-reletting .cal-dot{background:var(--cal-reletting)}
 #portalPreview .cal-applicant .cal-dot{background:var(--cal-applicant)}
+#portalPreview .cal-approval .cal-dot{background:var(--cal-approval)}
 #portalPreview .cal-chip.is-cancelled{text-decoration:line-through;opacity:.65}
 #portalPreview .cal-chip.is-completed{opacity:.7}
 #portalPreview .cal-more{font-size:10px;text-decoration:underline;padding:4px 5px;color:var(--brown)}
@@ -8608,7 +8611,7 @@ function calendarDayPanel(){
  return MoradaI18n.html`<aside class="card cal-day-panel" aria-labelledby="calDayTitle"><header class="cal-day-head"><h2 id="calDayTitle" tabindex="-1">Tagesübersicht</h2><div class="cal-day-date"><time datetime="${day}">${esc(calendarDateLabel(day,true))}</time><div class="cal-day-nav"><button type="button" class="cal-arrow" data-calendar-action="select-day" data-date="${unitAddDays(day,-1)}" aria-label="Vorheriger Tag"${day<='1900-01-01'?' disabled':''}>‹</button><button type="button" class="cal-arrow" data-calendar-action="select-day" data-date="${unitAddDays(day,1)}" aria-label="Nächster Tag"${day>='2100-12-31'?' disabled':''}>›</button></div></div>${calendarHasFilters()?MoradaI18n.html`<p class="cal-day-subtitle">${rows.length} ${MoradaI18n.t('Einträge')} ${MoradaI18n.t('· aktuelle Filter gelten')}</p>`:''}</header><div class="cal-day-body">${calendarDaySections(day,rows,2)}</div><footer class="cal-day-quick"><h3>Schnellzugriff</h3>${calendarDayActions(day)}</footer></aside>`;
 }
 function calendarHasFilters(){const f=calendarUI;return !!(f.query||f.owner||f.propertyId||f.kind||f.status!=='active');}
-function calendarLegend(){return MoradaI18n.html`<div class="cal-legend" aria-label="Eintragsarten">${[MoradaI18n.registerLabels(['appointment','Termin']),MoradaI18n.registerLabels(['task','Aufgabe']),MoradaI18n.registerLabels(['case','Anliegen']),MoradaI18n.registerLabels(['maintenance','Unterhalt']),MoradaI18n.registerLabels(['deadline','Vertragsfrist']),MoradaI18n.registerLabels(['reletting','Neuvermietung']),MoradaI18n.registerLabels(['applicant','Mietinteressenten'])].map((__uiLabels43)=>{const [k,l]=__uiLabels43;return MoradaI18n.html`<span class="cal-${k}"><i class="cal-dot" aria-hidden="true"></i>${MoradaI18n.t(l)}</span>`;}).join('')}</div>`;}
+function calendarLegend(){return MoradaI18n.html`<div class="cal-legend" aria-label="Eintragsarten">${[MoradaI18n.registerLabels(['appointment','Termin']),MoradaI18n.registerLabels(['task','Aufgabe']),MoradaI18n.registerLabels(['case','Anliegen']),MoradaI18n.registerLabels(['maintenance','Unterhalt']),MoradaI18n.registerLabels(['deadline','Vertragsfrist']),MoradaI18n.registerLabels(['reletting','Neuvermietung']),MoradaI18n.registerLabels(['applicant','Mietinteressenten']),MoradaI18n.registerLabels(['approval','Fachprüfungen'])].map((__uiLabels43)=>{const [k,l]=__uiLabels43;return MoradaI18n.html`<span class="cal-${k}"><i class="cal-dot" aria-hidden="true"></i>${MoradaI18n.t(l)}</span>`;}).join('')}</div>`;}
 function calendarMonthHTML(){
  const b=calendarBounds(),from=calendarMonday(b.from),end=unitAddDays(calendarMonday(b.to),6),days=Math.round((Date.parse(end)-Date.parse(from))/86400000)+1,rows=calendarScopeRows().filter(r=>r.date<=end&&r.endDate>=from),byDay=new Map();
  for(let n=0;n<days;n++){const day=unitAddDays(from,n);byDay.set(day,rows.filter(r=>r.date<=day&&r.endDate>=day));}
