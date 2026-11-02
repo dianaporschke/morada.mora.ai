@@ -31,6 +31,8 @@ test('dense months retain all records through separate day sections and the full
   assert.equal(d.querySelectorAll('.cal-cell').length,42);
   const cell=d.querySelector('.cal-day-number[data-date="2026-08-31"]').parentElement;
   assert.equal(cell.querySelectorAll('.cal-chip').length,2);
+  assert.match(cell.querySelector('.cal-more-compact').textContent,/\+12 weitere/);
+  assert.match(cell.querySelector('.cal-chip').getAttribute('aria-label'),/Termin/);
   assert.equal(d.querySelector('[data-cal-section="appointment"] h3').textContent.trim(),'Termine (12)');
   assert.equal(d.querySelector('[data-cal-section="task"] h3').textContent.trim(),'Aufgaben (1)');
   assert.equal(d.querySelector('[data-cal-section="due"] h3').textContent.trim(),'Fälligkeiten (1)');
@@ -55,6 +57,9 @@ test('date navigation, filters, week/list views and creation actions retain thei
   const owner=d.getElementById('calOwner');owner.value='Diana';owner.dispatchEvent(new w.Event('change',{bubbles:true}));
   assert.equal(w.eval('calendarDayRows(calendarUI.selected).length'),7);
   d.querySelector('[data-calendar-action="reset"]').click();
+  d.querySelector('[data-calendar-action="tomorrow"]').click();
+  assert.equal(w.eval('calendarUI.selected'),w.eval('unitAddDays(crmToday(),1)'));
+  w.eval("calendarSetDate('2026-08-31');calendarRefresh()");
   for(const view of ['week','list','month']){
    d.querySelector(`[data-calendar-action="view"][data-value="${view}"]`).click();
    assert.equal(w.eval('calendarUI.view'),view);assert.ok(d.querySelector('.cal-day-panel'));
