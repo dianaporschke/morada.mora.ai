@@ -63,6 +63,15 @@
           "value": "private, no-store"
         }
       ]
+    },
+    {
+      "source": "/portal-current.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        }
+      ]
     }
   ]
 }

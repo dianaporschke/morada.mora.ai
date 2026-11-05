@@ -9,3 +9,6 @@ for (const path of ['index.html','icons','assets', ...readdirSync('.').filter(na
 }
 console.log('Public portal built in dist/. Server routes remain in api/.');
 if(existsSync('portal.html'))cpSync('portal.html','dist/portal.html');
+
+// Current self-contained handoff, served beside the existing preview and APIs.
+if(existsSync('portal-current.html'))cpSync('portal-current.html','dist/portal-current.html');
